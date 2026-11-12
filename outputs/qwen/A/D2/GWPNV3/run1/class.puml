@@ -1,0 +1,38 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class PetriNet {
+  name : String
+  places : String
+  transitions : String
+  +addPlace()
+  +addTransition()
+}
+class Place {
+  name : String
+  net : String
+}
+class Transition {
+  name : String
+  net : String
+  outgoingArcs : String
+}
+class PTArc {
+  srcPlace : String
+  dstTransition : String
+}
+class TPArc {
+  srcTransition : String
+  dstTransition : String
+}
+class Net {
+  name : String
+  places : String
+  transitions : String
+}
+Net "1" *-- "0..1" Place : has
+PetriNet "1" -- "0..*" Place : has
+PetriNet "1" -- "1..*" Net : has
+PetriNet "1" -- "0..*" PTArc : has
+PetriNet "1" -- "0..*" TPArc : has
+@enduml

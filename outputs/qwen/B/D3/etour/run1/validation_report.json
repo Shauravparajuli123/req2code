@@ -1,0 +1,137 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [
+  "UC22 (incompleteness, \"data\"): readings []",
+  "UC23 (incompleteness, \"information\"): readings []",
+  "UC23 (incompleteness, \"data\"): readings []",
+  "UC23 (incompleteness, \"data\"): readings []",
+  "UC26 (incompleteness, \"data\"): readings []",
+  "UC30 (incompleteness, \"information\"): readings []",
+  "UC30 (incompleteness, \"data\"): readings []",
+  "UC31 (incompleteness, \"appropriate\"): readings []",
+  "UC33 (incompleteness, \"data\"): readings []",
+  "UC35 (incompleteness, \"information\"): readings []",
+  "UC41 (incompleteness, \"data\"): readings []",
+  "UC43 (incompleteness, \"information\"): readings []",
+  "UC43 (incompleteness, \"data\"): readings []",
+  "UC44 (incompleteness, \"data\"): readings []",
+  "UC47 (incompleteness, \"information\"): readings []",
+  "UC47 (incompleteness, \"data\"): readings []"
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The 'Agency' class will handle the deletion and insertion of cultural objects, refreshment points, and news, as well as the management of feedback and site data. The 'Tourist' class will handle the viewing and modification of personal data, preferences, and site details. The 'RestaurantOperator' class will handle the management of menus and data points."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Agency' has no methods for use cases 'Change Cultural Object Data (Agency; UC3)', 'Delete Cultural Object (Agency; UC1)', 'Insert Cultural Object (Agency; UC2)', 'Delete Refreshment Point (Agency; UC6)', 'Activate Convention At Refreshment Point (Agency; UC7)', 'Edit Refreshment Point Data (Agency; UC8)', 'Delete Banner Ad (Agency; UC19,UC40)', 'Insert Banner (Agency; UC20,UC38)', 'Insert News (Agency; UC21)', 'Delete News (Agency; UC22)', 'View Feedback (Agency; UC24)', 'View Report (Agency; UC25)', 'Insert Tag Search (AgencyOperator; UC30)', 'Remove Search Tag (AgencyOperator; UC28)', 'Ask Search Tag (AgencyOperator; UC29)', 'Ensure User (GuestUser; UC35)', 'Supply Login (RegisteredUser; UC36)', 'End Session (RegisteredUser; UC37)', 'Require Creation (GuestUser; UC33)', 'Research Heritage (GuestUser; UC34)', 'Change Menu (RestaurantOperator; UC41)', 'Delete Menu (RestaurantOperator; UC42)', 'Change Data Point (RestaurantOperator; UC43)', 'Require Convention (RestaurantOperator; UC44)', 'View Statistic (RestaurantOperator; UC45)', 'Edit Search Preference (Tourist; UC46)', 'Edit Personal Data (Tourist; UC47)', 'Edit Preferences (Tourist; UC48)', 'View List Of Favorites (Tourist; UC49)', 'View List Of Sites (Tourist; UC50)', 'Insert Site (Tourist; UC51)', 'Delete Site (Tourist; UC52)', 'Insert Feedback (Tourist; UC53)', 'Cancel Feedback (Tourist; )', 'Get Position (Tourist; )', 'Advanced Search (Tourist; )', 'View Detail (Tourist; )'",
+   "fix": "Add the missing methods to the 'Agency' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'CulturalHeritage' has no method for use case 'Search Cultural Heritage (Agency; UC4)'",
+   "fix": "Add the method 'searchCulturalHeritage' to the 'CulturalHeritage' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'RefreshmentPoint' has no method for use case 'Search Refreshment Point (Agency; UC9)'",
+   "fix": "Add the method 'searchRefreshmentPoint' to the 'RefreshmentPoint' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'TouristAccount' has no method for use case 'Search Tourist Account (Agency; UC14)'",
+   "fix": "Add the method 'searchTouristAccount' to the 'TouristAccount' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Tourist' has no method for use case 'View List Of Sites (Tourist; UC50)'",
+   "fix": "Add the method 'viewListSites' to the 'Tourist' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Tourist' has no method for use case 'View List Of Favorites (Tourist; UC49)'",
+   "fix": "Add the method 'viewListFavorites' to the 'Tourist' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Tourist' has no method for use case 'Insert Site (Tourist; UC51)'",
+   "fix": "Add the method 'insertSite' to the 'Tourist' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Tourist' has no method for use case 'Delete Site (Tourist; UC52)'",
+   "fix": "Add the method 'deleteSite' to the 'Tourist' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Tourist' has no method for use case 'Insert Feedback (Tourist; UC53)'",
+   "fix": "Add the method 'insertFeedback' to the 'Tourist' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Tourist' has no method for use case 'Cancel Feedback (Tourist; )'",
+   "fix": "Add the method 'cancelFeedback' to the 'Tourist' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Tourist' has no method for use case 'Get Position (Tourist; )'",
+   "fix": "Add the method 'getPosition' to the 'Tourist' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Tourist' has no method for use case 'Advanced Search (Tourist; )'",
+   "fix": "Add the method 'advancedSearch' to the 'Tourist' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Tourist' has no method for use case 'View Detail (Tourist; )'",
+   "fix": "Add the method 'viewDetail' to the 'Tourist' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'AgencyOperator' has no method for use case 'Insert Tag Search (AgencyOperator; UC30)'",
+   "fix": "Add the method 'insertTagSearch' to the 'AgencyOperator' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'AgencyOperator' has no method for use case 'Remove Search Tag (AgencyOperator; UC28)'",
+   "fix": "Add the method 'removeSearchTag' to the 'AgencyOperator' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'AgencyOperator' has no method for use case 'Ask Search Tag (AgencyOperator; UC29)'",
+   "fix": "Add the method 'askSearchTag' to the 'AgencyOperator' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'RestaurantOperator' has no method for use case 'Change Menu (RestaurantOperator; UC41)'",
+   "fix": "Add the method 'changeMenu' to the 'RestaurantOperator' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'RestaurantOperator' has no method for use case 'Delete Menu (RestaurantOperator; UC42)'",
+   "fix": "Add the method 'deleteMenu' to the 'RestaurantOperator' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'RestaurantOperator' has no method for use case 'Change Data Point (RestaurantOperator; UC43)'",
+   "fix": "Add the method 'changeDataPoint' to the 'RestaurantOperator' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'RestaurantOperator' has no method for use case 'Require Convention (RestaurantOperator; UC44)'",
+   "fix": "Add the method 'requireConvention' to the 'RestaurantOperator' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'RestaurantOperator' has no method for use case 'View Statistic (RestaurantOperator; UC45)'",
+   "fix": "Add the method 'viewStatistic' to the 'RestaurantOperator' class."
+  }
+ ]
+}

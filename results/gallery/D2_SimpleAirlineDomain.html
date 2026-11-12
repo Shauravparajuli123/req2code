@@ -1,0 +1,101 @@
+<html><head><meta charset='utf-8'><title>D2/SimpleAirlineDomain</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D2/SimpleAirlineDomain &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: In the airline domain, an airport has a name of type string.
+R2: A flight has a maximum number of passengers which is of type integer
+R3: An airplane has a name which is of type string.
+R4: a passenger in SimpleAirlineDomain has a name and a gender
+R5: A time consists of a year, a day, and a minute.
+R6: Each airport has multiple flights that depart from it. Each flight can depart from only one airport
+R7: A flight in an Airpline Domain has a unique time of departure and that timing is specific for that flight.
+R8: The model defines two classes, one called &#x27;Flight&#x27; and the other called &#x27;Passenger&#x27;. The class &#x27;Flight&#x27; is connected via a directed association to class &#x27;Passenger&#x27; which means that the associated &#x27;Passenger&#x27; object is reachable from a &#x27;Flight&#x27; object. One end of the association is labeled &#x27;passenger&#x27; and also carries the multiplicity constraint &#x27;0..*&#x27;, meaning that a &#x27;Passenger&#x27; object can be associated with 0 or more &#x27;Flight&#x27; objects.
+R9: Each flight has exactly one origin airport.
+R10: An airline conducts any number of flights.
+R11: Each passenger is assigned to exactly one flight.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (0 → 0)</th></tr></table></div>
+<div><table><tr><th>classes (6 → 5)</th></tr><tr><td class="">Airport</td></tr><tr><td class="del">Association</td></tr><tr><td class="">Flight</td></tr><tr><td class="">Object</td></tr><tr><td class="">Passenger</td></tr><tr><td class="">TypeString</td></tr></table></div>
+<div><table><tr><th>attributes (5 → 5)</th></tr><tr><td class="">Airport.name</td></tr><tr><td class="">Flight.origin airport</td></tr><tr><td class="">Passenger.gender</td></tr><tr><td class="">Passenger.name</td></tr><tr><td class="">TypeString.name</td></tr></table></div>
+<div><table><tr><th>relations (3 → 3)</th></tr><tr><td class="">association: Passenger -&gt; Flight</td></tr><tr><td class="">has: Airport -&gt; Flight</td></tr><tr><td class="">has: Flight -&gt; Passenger</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R6</td><td>quantifier</td><td>multiple</td><td><span class='tag resolved'>resolved</span></td><td>Each airport has multiple flights that depart from it.; Each airport has at least one flight that departs from it.<br><i>The phrase &#x27;multiple&#x27; could imply that an airport must have more than one flight, or it could mean at least one flight.</i></td></tr>
+<tr><td>A2</td><td>R8</td><td>coordination</td><td>and+or</td><td><span class='tag resolved'>resolved</span></td><td>One end of the association is labeled &#x27;passenger&#x27; and also carries the multiplicity constraint &#x27;0..*&#x27;, meaning that a &#x27;Passenger&#x27; object can be associated with 0 or more &#x27;Flight&#x27; objects.; One end of the association is labeled &#x27;passenger&#x27; and also carries the multiplicity constraint &#x27;1..*&#x27;, meaning that a &#x27;Passenger&#x27; object can be associated with 1 or more &#x27;Flight&#x27; objects.<br><i>The use of &#x27;and also&#x27; suggests that the multiplicity constraint and the label are related, but the exact relationship is unclear.</i></td></tr>
+<tr><td>A3</td><td>R8</td><td>quantifier</td><td>0 or more</td><td><span class='tag rejected'>rejected</span></td><td>One end of the association is labeled &#x27;passenger&#x27; and also carries the multiplicity constraint &#x27;0..*&#x27;, meaning that a &#x27;Passenger&#x27; object can be associated with 0 or more &#x27;Flight&#x27; objects.; One end of the association is labeled &#x27;passenger&#x27; and also carries the multiplicity constraint &#x27;1..*&#x27;, meaning that a &#x27;Passenger&#x27; object can be associated with 1 or more &#x27;Flight&#x27; objects.<br><i>This is a duplicate of A2 and does not provide new information.</i></td></tr>
+<tr><td>A4</td><td>R10</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>An airline conducts any number of flights.; An airline conducts at least one flight.<br><i>The phrase &#x27;any number&#x27; could imply that an airline must conduct at least one flight, or it could mean that an airline can conduct zero flights.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D2_SimpleAirlineDomain_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D2_SimpleAirlineDomain_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D2/SimpleAirlineDomain.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Airport:
+    &quot;&quot;&quot;Source: R1&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    flight: _t.Optional[&quot;Flight&quot;] = None
+
+
+@_dc.dataclass
+class Flight:
+    &quot;&quot;&quot;Source: R2, R6, R7, R9, R10&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    departureTime: _t.Optional[str] = None
+    maxPassengers: _t.Optional[int] = None
+    originAirport: _t.Optional[str] = None
+    passengers: _t.Optional[str] = None
+    passenger: _t.Optional[&quot;Passenger&quot;] = None
+
+    def addPassenger(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def createFlight(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Passenger:
+    &quot;&quot;&quot;Source: R4, R11&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    gender: _t.Optional[str] = None
+
+    def assignToFlight(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>0</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>0</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>0</td></tr>
+<tr><th>inconsistency_rate</th><td>0.0</td></tr>
+<tr><th>requirement_coverage</th><td>0.8182</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;The model assumes that a flight&#x27;s departure time is represented by the &#x27;departureTime&#x27; attribute in the Flight class, which is of type LocalDate, and not by a separate class for time as stated in R5.&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>1.0</td><td>0.5</td><td>0.667</td><td>3/0/3</td></tr>
+<tr><td>attributes</td><td>0.375</td><td>0.214</td><td>0.273</td><td>3/5/11</td></tr>
+<tr><td>relations</td><td>1.0</td><td>0.5</td><td>0.667</td><td>2/0/2</td></tr>
+<tr><td>relations_strict</td><td>1.0</td><td>0.5</td><td>0.667</td><td>2/0/2</td></tr>
+</table></body></html>

@@ -1,0 +1,86 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Flight",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "departureTime",
+    "maxPassengers",
+    "originAirport",
+    "passengers"
+   ],
+   "methods": [
+    {
+     "name": "addPassenger",
+     "use_case": null
+    },
+    {
+     "name": "createFlight",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R6",
+    "R7",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Passenger",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "gender"
+   ],
+   "methods": [
+    {
+     "name": "assignToFlight",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Flight",
+   "target": "Passenger",
+   "src": [
+    "R8",
+    "R11"
+   ]
+  },
+  {
+   "source": "Airport",
+   "target": "Flight",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/SimpleAirlineDomain.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Airport:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n    flight: _t.Optional[\"Flight\"] = None\n\n\n@_dc.dataclass\nclass Flight:\n    \"\"\"Source: R2, R6, R7, R9, R10\"\"\"\n    name: _t.Optional[str] = None\n    departureTime: _t.Optional[str] = None\n    maxPassengers: _t.Optional[int] = None\n    originAirport: _t.Optional[str] = None\n    passengers: _t.Optional[str] = None\n    passenger: _t.Optional[\"Passenger\"] = None\n\n    def addPassenger(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def createFlight(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Passenger:\n    \"\"\"Source: R4, R11\"\"\"\n    name: _t.Optional[str] = None\n    gender: _t.Optional[str] = None\n\n    def assignToFlight(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Airport.java": "/** Generated from shared model D2/SimpleAirlineDomain. Source: R1 */\npublic class Airport {\n    private java.lang.String name;\n    private Flight flight;\n}\n",
+  "Flight.java": "/** Generated from shared model D2/SimpleAirlineDomain. Source: R2, R6, R7, R9, R10 */\npublic class Flight {\n    private java.lang.String name;\n    private java.time.LocalDate departureTime;\n    private int maxPassengers;\n    private java.lang.String originAirport;\n    private java.lang.String passengers;\n    private Passenger passenger;\n\n    /** Operation. */\n    public void addPassenger() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void createFlight() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Passenger.java": "/** Generated from shared model D2/SimpleAirlineDomain. Source: R4, R11 */\npublic class Passenger {\n    private java.lang.String name;\n    private java.lang.String gender;\n\n    /** Operation. */\n    public void assignToFlight() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

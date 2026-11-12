@@ -1,0 +1,39 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [
+  "R10 (quantifier, \"one or more\"): readings ['Each extend extends exactly one use case', 'Each extend extends one or more use cases']",
+  "R11 (quantifier, \"one or more\"): readings ['Each include in a use case diagram includes exactly one use case', 'Each include in a use case diagram includes one or more use cases']",
+  "R12 (quantifier, \"zero or more\"): readings ['Each container is owned by exactly one named element', 'Each container is owned by zero or more named elements']"
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each extend extends exactly one use case"
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "No class for 'Extend' or 'Include' relationship",
+   "fix": "Add classes for 'Extend' and 'Include' relationships"
+  },
+  {
+   "agent": "class",
+   "issue": "No class for 'UseCaseContainer'",
+   "fix": "Add a class for 'UseCaseContainer'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "No relationship for 'extends' or 'includes'",
+   "fix": "Add relationships for 'extends' and 'includes' between use cases"
+  },
+  {
+   "agent": "relationship",
+   "issue": "No relationship for 'owned by'",
+   "fix": "Add a relationship for 'owned by' between 'UseCaseContainer' and 'UseCase'"
+  }
+ ]
+}

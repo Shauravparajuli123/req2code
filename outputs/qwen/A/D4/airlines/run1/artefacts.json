@@ -1,0 +1,134 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Game",
+   "actor": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airline",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "code",
+    "city"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "OperatingCost",
+   "kind": "class",
+   "attributes": [
+    "cost"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Operation",
+   "kind": "class",
+   "attributes": [
+    "startDateTime",
+    "stopDateTime",
+    "cost"
+   ],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "AirlineOperation",
+   "kind": "class",
+   "attributes": [
+    "airline",
+    "airport",
+    "operation"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": "Create Game"
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Airline",
+   "target": "Airport",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "source": "AirlineOperation",
+   "target": "Airline",
+   "src": []
+  },
+  {
+   "source": "AirlineOperation",
+   "target": "Airport",
+   "src": []
+  },
+  {
+   "source": "OperatingCost",
+   "target": "AirlineOperation",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "OperatingCost",
+   "target": "Airline",
+   "src": []
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D4/airlines.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Airline:\n    \"\"\"Source: R2\"\"\"\n    name: _t.Optional[str] = None\n    airports: _t.List[\"Airport\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Airport:\n    \"\"\"Source: R2\"\"\"\n    code: _t.Optional[str] = None\n    city: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass OperatingCost:\n    \"\"\"Source: R3, R4\"\"\"\n    cost: _t.Optional[float] = None\n    airlineOperation: _t.Optional[\"AirlineOperation\"] = None\n    airline: _t.Optional[\"Airline\"] = None\n\n\n@_dc.dataclass\nclass Operation:\n    \"\"\"Source: R4\"\"\"\n    startDateTime: _t.Optional[str] = None\n    stopDateTime: _t.Optional[str] = None\n    cost: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass AirlineOperation:\n    \"\"\"Source: R3, R4\"\"\"\n    airline: _t.Optional[str] = None\n    airport: _t.Optional[str] = None\n    operation: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Realizes UC1 \"Create Game\" (R1).\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Airline.java": "/** Generated from shared model D4/airlines. Source: R2 */\npublic class Airline {\n    private java.lang.String name;\n    private java.util.List<Airport> airports;\n}\n",
+  "Airport.java": "/** Generated from shared model D4/airlines. Source: R2 */\npublic class Airport {\n    private java.lang.String code;\n    private java.lang.String city;\n}\n",
+  "OperatingCost.java": "/** Generated from shared model D4/airlines. Source: R3, R4 */\npublic class OperatingCost {\n    private double cost;\n    private AirlineOperation airlineOperation;\n    private Airline airline;\n}\n",
+  "Operation.java": "/** Generated from shared model D4/airlines. Source: R4 */\npublic class Operation {\n    private java.time.LocalDate startDateTime;\n    private java.time.LocalDate stopDateTime;\n    private java.lang.String cost;\n}\n",
+  "AirlineOperation.java": "/** Generated from shared model D4/airlines. Source: R3, R4 */\npublic class AirlineOperation {\n    private java.lang.String airline;\n    private java.lang.String airport;\n    private java.lang.String operation;\n}\n",
+  "Game.java": "/** Generated from shared model D4/airlines. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Realizes UC1 \"Create Game\" (R1). */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

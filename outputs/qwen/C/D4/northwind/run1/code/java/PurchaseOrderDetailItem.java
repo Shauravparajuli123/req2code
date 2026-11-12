@@ -1,0 +1,6 @@
+/** Generated from shared model D4/northwind. Source: FR-POP-08 */
+public class PurchaseOrderDetailItem {
+    private java.lang.String product;
+    private int quantity;
+    private double unitPrice;
+}

@@ -1,0 +1,121 @@
+{
+ "actors": [
+  "owner"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineNamedElement",
+   "actor": "owner",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TupleElement",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [
+    {
+     "name": "defineValue",
+     "use_case": "DefineNamedElement"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Tuple",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addTupleElement",
+     "use_case": "DefineNamedElement"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Database",
+   "kind": "class",
+   "attributes": [
+    "sgbdName"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "RelationalDBcontent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addRelationalDBcontent",
+     "use_case": "DefineNamedElement"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "TupleElement",
+   "target": "Tuple",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "RelationalDBcontent",
+   "target": "Table",
+   "multiplicity_target": "1",
+   "src": [
+    "R3",
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Table",
+   "target": "Database",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "python": "class TupleElement:\n    def __init__(self, value):\n        self.value = value\n    def defineValue(self):\n        raise NotImplementedError\n\nclass Tuple:\n    def __init__(self):\n        pass\n    def addTupleElement(self, tuple_element):\n        raise NotImplementedError\n\nclass Database:\n    def __init__(self, sgbdName):\n        self.sgbdName = sgbdName\n\nclass RelationalDBcontent:\n    def __init__(self):\n        pass\n\nclass Table:\n    def __init__(self):\n        pass\n    def addRelationalDBcontent(self, relational_db_content):\n        raise NotImplementedError",
+ "java": {}
+}

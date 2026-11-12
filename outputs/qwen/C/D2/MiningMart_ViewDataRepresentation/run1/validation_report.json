@@ -1,0 +1,25 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class is missing in the model.",
+   "fix": "Add a Class class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Attribute class is incorrectly associated with DataType and Class, should only be associated with Class.",
+   "fix": "Remove association DataType -> Attribute and ensure Attribute is only associated with Class."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Composition relation between Class and Attribute is incorrect, should be aggregation.",
+   "fix": "Change composition relation to aggregation."
+  }
+ ]
+}

@@ -1,0 +1,682 @@
+{
+ "actors": [
+  "User",
+  "Visitor",
+  "Reseller",
+  "Artist",
+  "Company"
+ ],
+ "use_cases": [
+  {
+   "name": "Save Information",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Edit Information",
+   "actor": "User",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "See Preference",
+   "actor": "User",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "See Content",
+   "actor": "User",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "See History",
+   "actor": "User",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "See Overview",
+   "actor": "User",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "See Event",
+   "actor": "Visitor",
+   "src": [
+    "R11",
+    "R19",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "name": "Purchase Ticket",
+   "actor": "Visitor",
+   "src": [
+    "R12",
+    "R14",
+    "R20",
+    "R24",
+    "R25",
+    "R26"
+   ]
+  },
+  {
+   "name": "Read Event",
+   "actor": "Visitor",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Land Event Page",
+   "actor": "Visitor",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "Click Event",
+   "actor": "Visitor",
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "name": "Filter Search",
+   "actor": "Visitor",
+   "src": [
+    "R32",
+    "R33",
+    "R34"
+   ]
+  },
+  {
+   "name": "Filter List",
+   "actor": "Visitor",
+   "src": [
+    "R32",
+    "R33",
+    "R34"
+   ]
+  },
+  {
+   "name": "Filter Search Result",
+   "actor": "Visitor",
+   "src": [
+    "R32",
+    "R33",
+    "R34"
+   ]
+  },
+  {
+   "name": "Sort Search Result",
+   "actor": "Visitor",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Have Buying Process",
+   "actor": "Company",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "Have Search Engine",
+   "actor": "Visitor",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Have Description",
+   "actor": "Artist",
+   "src": [
+    "R52"
+   ]
+  },
+  {
+   "name": "Have Link",
+   "actor": "Artist",
+   "src": [
+    "R50",
+    "R51",
+    "R54"
+   ]
+  },
+  {
+   "name": "Have Price",
+   "actor": "Company",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Have Reseller",
+   "actor": "Company",
+   "src": [
+    "R36"
+   ]
+  },
+  {
+   "name": "Validate Ticket",
+   "actor": "Company",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Deduct Service Fee",
+   "actor": "Company",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "Avoid Behavior",
+   "actor": "Company",
+   "src": [
+    "R39"
+   ]
+  },
+  {
+   "name": "Protect User",
+   "actor": "Company",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "Resell Ticket",
+   "actor": "Reseller",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "Save Bank Account",
+   "actor": "Reseller",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Add Ticket",
+   "actor": "Visitor",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "See Seat",
+   "actor": "Visitor",
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "See Type",
+   "actor": "Visitor",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Change Password",
+   "actor": "User",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Favorite Event",
+   "actor": "User",
+   "src": [
+    "R53"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "dateOfBirth",
+    "email",
+    "address",
+    "preferences",
+    "bankAccount",
+    "favoriteEvents",
+    "history",
+    "profile"
+   ],
+   "methods": [
+    {
+     "name": "createUser",
+     "use_case": null
+    },
+    {
+     "name": "saveInformation",
+     "use_case": "Save Information"
+    },
+    {
+     "name": "editInformation",
+     "use_case": "Edit Information"
+    },
+    {
+     "name": "seePreference",
+     "use_case": "See Preference"
+    },
+    {
+     "name": "seeContent",
+     "use_case": "See Content"
+    },
+    {
+     "name": "changePassword",
+     "use_case": "Change Password"
+    },
+    {
+     "name": "favoriteEvent",
+     "use_case": "Favorite Event"
+    }
+   ],
+   "src": [
+    "R1",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R40",
+    "R43"
+   ]
+  },
+  {
+   "name": "UserProfile",
+   "kind": "class",
+   "attributes": [
+    "preferences",
+    "bankAccount"
+   ],
+   "methods": [
+    {
+     "name": "saveProfile",
+     "use_case": "Save Information"
+    },
+    {
+     "name": "editProfile",
+     "use_case": "Edit Information"
+    }
+   ],
+   "src": [
+    "R1",
+    "R3",
+    "R5",
+    "R43"
+   ]
+  },
+  {
+   "name": "Address",
+   "kind": "class",
+   "attributes": [
+    "street",
+    "city",
+    "state",
+    "zipCode"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Preference",
+   "kind": "class",
+   "attributes": [
+    "musicGenre",
+    "eventTypes",
+    "lastUpdated"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "name": "BankAccount",
+   "kind": "class",
+   "attributes": [
+    "iban"
+   ],
+   "methods": [],
+   "src": [
+    "R42",
+    "R45"
+   ]
+  },
+  {
+   "name": "Event",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "date",
+    "artist",
+    "venue",
+    "description",
+    "type",
+    "price"
+   ],
+   "methods": [
+    {
+     "name": "seeEvent",
+     "use_case": "See Event"
+    },
+    {
+     "name": "seeOverview",
+     "use_case": "See Overview"
+    },
+    {
+     "name": "seeSeat",
+     "use_case": "See Seat"
+    },
+    {
+     "name": "seeType",
+     "use_case": "See Type"
+    }
+   ],
+   "src": [
+    "R11",
+    "R19",
+    "R23",
+    "R28",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R46",
+    "R47",
+    "R49",
+    "R52"
+   ]
+  },
+  {
+   "name": "Venue",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "map"
+   ],
+   "methods": [],
+   "src": [
+    "R11",
+    "R28",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "name": "Ticket",
+   "kind": "class",
+   "attributes": [
+    "event",
+    "type",
+    "price",
+    "seat"
+   ],
+   "methods": [
+    {
+     "name": "purchaseTicket",
+     "use_case": "Purchase Ticket"
+    },
+    {
+     "name": "addTicket",
+     "use_case": "Add Ticket"
+    },
+    {
+     "name": "seeSeat",
+     "use_case": "See Seat"
+    },
+    {
+     "name": "seeType",
+     "use_case": "See Type"
+    },
+    {
+     "name": "seeOrderSummary",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R12",
+    "R14",
+    "R18",
+    "R20",
+    "R24",
+    "R25",
+    "R26",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R48",
+    "R50",
+    "R51",
+    "R53"
+   ]
+  },
+  {
+   "name": "Seat",
+   "kind": "class",
+   "attributes": [
+    "row",
+    "column"
+   ],
+   "methods": [],
+   "src": [
+    "R21",
+    "R22",
+    "R28",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R46",
+    "R47",
+    "R52"
+   ]
+  },
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "reseller",
+    "serviceFee"
+   ],
+   "methods": [],
+   "src": [
+    "R27",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  },
+  {
+   "name": "Reseller",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "bankAccount"
+   ],
+   "methods": [
+    {
+     "name": "resellTicket",
+     "use_case": "Resell Ticket"
+    },
+    {
+     "name": "uploadTicket",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "User",
+   "target": "UserProfile",
+   "src": [
+    "R1",
+    "R5",
+    "R7",
+    "R25",
+    "R34",
+    "R43",
+    "R53"
+   ]
+  },
+  {
+   "source": "User",
+   "target": "Preference",
+   "src": [
+    "R3",
+    "R4",
+    "R5",
+    "R53"
+   ]
+  },
+  {
+   "source": "Event",
+   "target": "Venue",
+   "src": [
+    "R11",
+    "R22",
+    "R32",
+    "R46",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R54"
+   ]
+  },
+  {
+   "source": "Event",
+   "target": "Ticket",
+   "src": [
+    "R19",
+    "R20",
+    "R24",
+    "R26",
+    "R28",
+    "R32",
+    "R33",
+    "R34",
+    "R46",
+    "R48",
+    "R53"
+   ]
+  },
+  {
+   "source": "Ticket",
+   "target": "Seat",
+   "src": [
+    "R21",
+    "R22",
+    "R24",
+    "R26",
+    "R46",
+    "R48"
+   ]
+  },
+  {
+   "source": "User",
+   "target": "BankAccount",
+   "src": [
+    "R2",
+    "R16"
+   ]
+  },
+  {
+   "source": "Reseller",
+   "target": "BankAccount",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "source": "Company",
+   "target": "Reseller",
+   "src": [
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "source": "Reseller",
+   "target": "Event",
+   "src": [
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D1/ticket.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass User:\n    \"\"\"Source: R1, R5, R6, R7, R8, R9, R40, R43\"\"\"\n    name: _t.Optional[str] = None\n    dateOfBirth: _t.Optional[str] = None\n    email: _t.Optional[str] = None\n    address: _t.Optional[str] = None\n    preferences: _t.Optional[str] = None\n    bankAccount: _t.Optional[str] = None\n    favoriteEvents: _t.Optional[str] = None\n    history: _t.Optional[str] = None\n    profile: _t.Optional[str] = None\n    userProfile: _t.Optional[\"UserProfile\"] = None\n    preference: _t.Optional[\"Preference\"] = None\n\n    def createUser(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def saveInformation(self) -> None:\n        \"\"\"Realizes UC1 \"Save Information\" (R1).\"\"\"\n        raise NotImplementedError\n\n    def editInformation(self) -> None:\n        \"\"\"Realizes UC2 \"Edit Information\" (R7).\"\"\"\n        raise NotImplementedError\n\n    def seePreference(self) -> None:\n        \"\"\"Realizes UC3 \"See Preference\" (R5).\"\"\"\n        raise NotImplementedError\n\n    def seeContent(self) -> None:\n        \"\"\"Realizes UC4 \"See Content\" (R4).\"\"\"\n        raise NotImplementedError\n\n    def changePassword(self) -> None:\n        \"\"\"Realizes UC31 \"Change Password\" (R6).\"\"\"\n        raise NotImplementedError\n\n    def favoriteEvent(self) -> None:\n        \"\"\"Realizes UC32 \"Favorite Event\" (R53).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass UserProfile:\n    \"\"\"Source: R1, R3, R5, R43\"\"\"\n    preferences: _t.Optional[str] = None\n    bankAccount: _t.Optional[str] = None\n\n    def saveProfile(self) -> None:\n        \"\"\"Realizes UC1 \"Save Information\" (R1).\"\"\"\n        raise NotImplementedError\n\n    def editProfile(self) -> None:\n        \"\"\"Realizes UC2 \"Edit Information\" (R7).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Address:\n    \"\"\"Source: R1\"\"\"\n    street: _t.Optional[str] = None\n    city: _t.Optional[str] = None\n    state: _t.Optional[str] = None\n    zipCode: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Preference:\n    \"\"\"Source: R3, R5\"\"\"\n    musicGenre: _t.Optional[str] = None\n    eventTypes: _t.Optional[str] = None\n    lastUpdated: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass BankAccount:\n    \"\"\"Source: R42, R45\"\"\"\n    iban: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Event:\n    \"\"\"Source: R11, R19, R23, R28, R30, R31, R32, R33, R46, R47, R49, R52\"\"\"\n    name: _t.Optional[str] = None\n    date: _t.Optional[str] = None\n    artist: _t.Optional[str] = None\n    venue: _t.Optional[str] = None\n    description: _t.Optional[str] = None\n    type: _t.Optional[str] = None\n    price: _t.Optional[float] = None\n    tickets: _t.List[\"Ticket\"] = _dc.field(default_factory=list)\n\n    def seeEvent(self) -> None:\n        \"\"\"Realizes UC7 \"See Event\" (R11, R19, R46, R47).\"\"\"\n        raise NotImplementedError\n\n    def seeOverview(self) -> None:\n        \"\"\"Realizes UC6 \"See Overview\" (R9).\"\"\"\n        raise NotImplementedError\n\n    def seeSeat(self) -> None:\n        \"\"\"Realizes UC29 \"See Seat\" (R21, R22).\"\"\"\n        raise NotImplementedError\n\n    def seeType(self) -> None:\n        \"\"\"Realizes UC30 \"See Type\" (R23).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Venue:\n    \"\"\"Source: R11, R28, R30, R31, R32, R33, R46, R47\"\"\"\n    name: _t.Optional[str] = None\n    map: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Ticket:\n    \"\"\"Source: R12, R14, R18, R20, R24, R25, R26, R34, R35, R36, R37, R38, R39, R41, R42, R43, R44, R48, R50, R51, R53\"\"\"\n    event: _t.Optional[str] = None\n    type: _t.Optional[str] = None\n    price: _t.Optional[float] = None\n    seat: _t.Optional[str] = None\n\n    def purchaseTicket(self) -> None:\n        \"\"\"Realizes UC8 \"Purchase Ticket\" (R12, R14, R20, R24, R25, R26).\"\"\"\n        raise NotImplementedError\n\n    def addTicket(self) -> None:\n        \"\"\"Realizes UC28 \"Add Ticket\" (R24).\"\"\"\n        raise NotImplementedError\n\n    def seeSeat(self) -> None:\n        \"\"\"Realizes UC29 \"See Seat\" (R21, R22).\"\"\"\n        raise NotImplementedError\n\n    def seeType(self) -> None:\n        \"\"\"Realizes UC30 \"See Type\" (R23).\"\"\"\n        raise NotImplementedError\n\n    def seeOrderSummary(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Seat:\n    \"\"\"Source: R21, R22, R28, R30, R31, R32, R33, R46, R47, R52\"\"\"\n    row: _t.Optional[int] = None\n    column: _t.Optional[int] = None\n\n\n@_dc.dataclass\nclass Company:\n    \"\"\"Source: R27, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45\"\"\"\n    reseller: _t.Optional[str] = None\n    serviceFee: _t.Optional[float] = None\n    resellers: _t.List[\"Reseller\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Reseller:\n    \"\"\"Source: R41, R42, R43, R44, R45\"\"\"\n    name: _t.Optional[str] = None\n    bankAccount: _t.Optional[str] = None\n    events: _t.List[\"Event\"] = _dc.field(default_factory=list)\n\n    def resellTicket(self) -> None:\n        \"\"\"Realizes UC26 \"Resell Ticket\" (R41).\"\"\"\n        raise NotImplementedError\n\n    def uploadTicket(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "User.java": "/** Generated from shared model D1/ticket. Source: R1, R5, R6, R7, R8, R9, R40, R43 */\npublic class User {\n    private java.lang.String name;\n    private java.time.LocalDate dateOfBirth;\n    private java.lang.String email;\n    private java.lang.String address;\n    private java.lang.String preferences;\n    private java.lang.String bankAccount;\n    private java.lang.String favoriteEvents;\n    private java.lang.String history;\n    private java.lang.String profile;\n    private UserProfile userProfile;\n    private Preference preference;\n\n    /** Operation. */\n    public void createUser() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC1 \"Save Information\" (R1). */\n    public void saveInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Edit Information\" (R7). */\n    public void editInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"See Preference\" (R5). */\n    public void seePreference() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC4 \"See Content\" (R4). */\n    public void seeContent() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC31 \"Change Password\" (R6). */\n    public void changePassword() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC32 \"Favorite Event\" (R53). */\n    public void favoriteEvent() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "UserProfile.java": "/** Generated from shared model D1/ticket. Source: R1, R3, R5, R43 */\npublic class UserProfile {\n    private java.lang.String preferences;\n    private java.lang.String bankAccount;\n\n    /** Realizes UC1 \"Save Information\" (R1). */\n    public void saveProfile() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Edit Information\" (R7). */\n    public void editProfile() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Address.java": "/** Generated from shared model D1/ticket. Source: R1 */\npublic class Address {\n    private java.lang.String street;\n    private java.lang.String city;\n    private java.lang.String state;\n    private java.lang.String zipCode;\n}\n",
+  "Preference.java": "/** Generated from shared model D1/ticket. Source: R3, R5 */\npublic class Preference {\n    private java.lang.String musicGenre;\n    private java.lang.String eventTypes;\n    private java.time.LocalDate lastUpdated;\n}\n",
+  "BankAccount.java": "/** Generated from shared model D1/ticket. Source: R42, R45 */\npublic class BankAccount {\n    private java.lang.String iban;\n}\n",
+  "Event.java": "/** Generated from shared model D1/ticket. Source: R11, R19, R23, R28, R30, R31, R32, R33, R46, R47, R49, R52 */\npublic class Event {\n    private java.lang.String name;\n    private java.time.LocalDate date;\n    private java.lang.String artist;\n    private java.lang.String venue;\n    private java.lang.String description;\n    private java.lang.String type;\n    private double price;\n    private java.util.List<Ticket> tickets;\n\n    /** Realizes UC7 \"See Event\" (R11, R19, R46, R47). */\n    public void seeEvent() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC6 \"See Overview\" (R9). */\n    public void seeOverview() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC29 \"See Seat\" (R21, R22). */\n    public void seeSeat() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC30 \"See Type\" (R23). */\n    public void seeType() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Venue.java": "/** Generated from shared model D1/ticket. Source: R11, R28, R30, R31, R32, R33, R46, R47 */\npublic class Venue {\n    private java.lang.String name;\n    private java.lang.String map;\n}\n",
+  "Ticket.java": "/** Generated from shared model D1/ticket. Source: R12, R14, R18, R20, R24, R25, R26, R34, R35, R36, R37, R38, R39, R41, R42, R43, R44, R48, R50, R51, R53 */\npublic class Ticket {\n    private java.lang.String event;\n    private java.lang.String type;\n    private double price;\n    private java.lang.String seat;\n\n    /** Realizes UC8 \"Purchase Ticket\" (R12, R14, R20, R24, R25, R26). */\n    public void purchaseTicket() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC28 \"Add Ticket\" (R24). */\n    public void addTicket() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC29 \"See Seat\" (R21, R22). */\n    public void seeSeat() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC30 \"See Type\" (R23). */\n    public void seeType() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void seeOrderSummary() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Seat.java": "/** Generated from shared model D1/ticket. Source: R21, R22, R28, R30, R31, R32, R33, R46, R47, R52 */\npublic class Seat {\n    private int row;\n    private int column;\n}\n",
+  "Company.java": "/** Generated from shared model D1/ticket. Source: R27, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45 */\npublic class Company {\n    private java.lang.String reseller;\n    private double serviceFee;\n    private java.util.List<Reseller> resellers;\n}\n",
+  "Reseller.java": "/** Generated from shared model D1/ticket. Source: R41, R42, R43, R44, R45 */\npublic class Reseller {\n    private java.lang.String name;\n    private java.lang.String bankAccount;\n    private java.util.List<Event> events;\n\n    /** Realizes UC26 \"Resell Ticket\" (R41). */\n    public void resellTicket() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void uploadTicket() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

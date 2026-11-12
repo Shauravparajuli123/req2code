@@ -1,0 +1,141 @@
+{
+ "case": "D2/TroposIntegratingActorConcept",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Game",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Agent",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "position",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "occupyPosition",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Position",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "role",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Role",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "literals": [
+    "CLASS_AND_ATTRIBUTE"
+   ],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "createGame",
+     "realizes": "UC1",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "occupies",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "covers",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

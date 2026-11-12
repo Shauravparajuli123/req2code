@@ -1,0 +1,76 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DisplayNews",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "News",
+   "kind": "class",
+   "attributes": [
+    "title",
+    "link",
+    "author",
+    "date"
+   ],
+   "methods": [
+    {
+     "name": "publishOn",
+     "use_case": "R8"
+    },
+    {
+     "name": "report",
+     "use_case": "R7"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Newspaper",
+   "kind": "class",
+   "attributes": [
+    "language",
+    "publishedDate"
+   ],
+   "methods": [
+    {
+     "name": "publish",
+     "use_case": "R6"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "aggregation",
+   "source": "Newspaper",
+   "target": "News",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R9"
+   ]
+  }
+ ],
+ "python": "from typing import List, Tuple\n\nclass News:\n    def __init__(self, title: str, link: str, author: str):\n        self.title = title\n        self.link = link\n        self.author = author\n        self.date: Tuple[str, int, int, int] = ('', 0, 0, 0)\n\n    def set_date(self, day_of_week: str, month: int, hours: int, seconds: int):\n        self.date = (day_of_week, month, hours, seconds)\n\n    def publish_on(self, newspaper: 'Newspaper', date: Tuple[str, int, int, int]) -> None:\n        newspaper.include_news(self, date)\n\nclass Newspaper:\n    def __init__(self, language: str):\n        self.language = language\n        self.news: List[News] = []\n\n    def include_news(self, news: News, date: Tuple[str, int, int, int]) -> None:\n        if any(n for n in self.news if n.title == news.title):\n            raise ValueError(\"News already included in this newspaper.\")\n        news.set_date(*date)\n        self.news.append(news)\n",
+ "java": {}
+}

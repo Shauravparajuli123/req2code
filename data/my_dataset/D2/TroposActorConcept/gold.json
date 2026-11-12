@@ -1,0 +1,142 @@
+{
+ "classes": [
+  {
+   "name": "Actor",
+   "kind": "class"
+  },
+  {
+   "name": "Goal",
+   "kind": "class"
+  },
+  {
+   "name": "SoftGoal",
+   "kind": "class"
+  },
+  {
+   "name": "HardGoal",
+   "kind": "class"
+  },
+  {
+   "name": "Dependency",
+   "kind": "class"
+  },
+  {
+   "name": "Plan",
+   "kind": "class"
+  },
+  {
+   "name": "Resource",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Actor": [],
+  "Goal": [],
+  "SoftGoal": [],
+  "HardGoal": [],
+  "Dependency": [],
+  "Plan": [],
+  "Resource": []
+ },
+ "relations": [
+  {
+   "type": "association",
+   "from": "Actor",
+   "to": "Dependency",
+   "label": "dependencyE 0..*",
+   "label_to": "dependee 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Actor",
+   "to": "Dependency",
+   "label": "dependencyR 0..*",
+   "label_to": "depender 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Actor",
+   "to": "Goal",
+   "label": "goal 0..*",
+   "label_to": "wanter 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Actor",
+   "to": "Plan",
+   "label": "plan 0..*",
+   "label_to": "capableOf 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Actor",
+   "to": "Resource",
+   "label": "resource 0..*",
+   "label_to": "use 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Goal",
+   "to": "Plan",
+   "label": "plan 1..*",
+   "label_to": "isFulfilled 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Goal",
+   "to": "Dependency",
+   "label": "dependencyWG 0..*",
+   "label_to": "WhyG 0..1"
+  },
+  {
+   "type": "association",
+   "from": "Goal",
+   "to": "Dependency",
+   "label": "dependencyG 0..*",
+   "label_to": "goal 0..1"
+  },
+  {
+   "type": "generalization",
+   "from": "SoftGoal",
+   "to": "Goal",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "HardGoal",
+   "to": "Goal",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Dependency",
+   "to": "Resource",
+   "label": "WhyR 0..1",
+   "label_to": "dependencyWR 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Dependency",
+   "to": "Resource",
+   "label": "resourceD 0..1",
+   "label_to": "dependencyR 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Dependency",
+   "to": "Plan",
+   "label": "WhyP 0..1",
+   "label_to": "dependencyWP 0..*"
+  },
+  {
+   "type": "association",
+   "from": "Dependency",
+   "to": "Plan",
+   "label": "plan 0..1",
+   "label_to": "dependencyP 0..*"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage ActorConcept {\nclass Actor {\n}\nActor \"dependencyE 0..*\" -- \"dependee 1..1\" Dependency\nActor \"dependencyR 0..*\" -- \"depender 1..1\" Dependency\nActor \"goal 0..*\" -- \"wanter 1..1\" Goal\nActor \"plan 0..*\" -- \"capableOf 1..1\" Plan\nActor \"resource 0..*\" -- \"use 1..1\" Resource\nclass Goal {\n}\nGoal \"plan 1..*\" -- \"isFulfilled 1..1\" Plan\nGoal \"dependencyWG 0..*\" -- \"WhyG 0..1\" Dependency\nGoal \"dependencyG 0..*\" -- \"goal 0..1\" Dependency\nclass SoftGoal {\n}\nGoal <|-- SoftGoal\nclass HardGoal {\n}\nGoal <|-- HardGoal\nclass Dependency {\n}\nDependency \"WhyR 0..1\" -- \"dependencyWR 1..1\" Resource\nDependency \"resourceD 0..1\" -- \"dependencyR 1..1\" Resource\nDependency \"WhyP 0..1\" -- \"dependencyWP 0..*\" Plan\nDependency \"plan 0..1\" -- \"dependencyP 0..*\" Plan\nclass Plan {\n}\nclass Resource {\n}\n}\n@enduml\n"
+}

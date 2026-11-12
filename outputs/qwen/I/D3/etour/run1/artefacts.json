@@ -1,0 +1,1399 @@
+{
+ "actors": [
+  "Agency",
+  "Tourist",
+  "Tourist",
+  "Agency",
+  "Guest User",
+  "Registered User",
+  "Agency Operator",
+  "Restaurant Operator",
+  "Visitor",
+  "Point Restaurant Operator",
+  "Tourist",
+  "tourist",
+  "Visitor"
+ ],
+ "use_cases": [
+  {
+   "name": "Delete Object",
+   "actor": "Agency",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Insert Object",
+   "actor": "Agency",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Change Data",
+   "actor": "Agency",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Return List",
+   "actor": "Agency",
+   "src": [
+    "R4",
+    "R9"
+   ]
+  },
+  {
+   "name": "View Detail",
+   "actor": "Agency",
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "View History",
+   "actor": "Agency",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Convention Request",
+   "actor": "Agency",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Edit Data",
+   "actor": "Agency",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Enable Account",
+   "actor": "Agency",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Return List",
+   "actor": "Tourist",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "SearchTourist",
+   "actor": "Agency",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "SearchRefreshmentPoint",
+   "actor": "Agency",
+   "src": [
+    "UC17",
+    "UC18",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "name": "Errored",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC15",
+    "UC17",
+    "UC23",
+    "UC26"
+   ]
+  },
+  {
+   "name": "ChangeData",
+   "actor": "Agency",
+   "src": [
+    "UC15",
+    "UC23"
+   ]
+  },
+  {
+   "name": "ChangeImage",
+   "actor": "Agency",
+   "src": [
+    "UC17"
+   ]
+  },
+  {
+   "name": "CheckPoint",
+   "actor": "Agency",
+   "src": [
+    "UC18"
+   ]
+  },
+  {
+   "name": "DeleteAccount",
+   "actor": "Agency",
+   "src": [
+    "UC16"
+   ]
+  },
+  {
+   "name": "DeleteBannerAd",
+   "actor": "Agency",
+   "src": [
+    "UC19"
+   ]
+  },
+  {
+   "name": "DeleteNews",
+   "actor": "Agency",
+   "src": [
+    "UC22"
+   ]
+  },
+  {
+   "name": "EditComment",
+   "actor": "Agency",
+   "src": [
+    "UC26"
+   ]
+  },
+  {
+   "name": "InsertBanner",
+   "actor": "Agency",
+   "src": [
+    "UC20"
+   ]
+  },
+  {
+   "name": "InsertNews",
+   "actor": "Agency",
+   "src": [
+    "UC21"
+   ]
+  },
+  {
+   "name": "ViewFeedback",
+   "actor": "Agency",
+   "src": [
+    "UC24"
+   ]
+  },
+  {
+   "name": "ViewReport",
+   "actor": "Agency",
+   "src": [
+    "UC25"
+   ]
+  },
+  {
+   "name": "Search Site",
+   "actor": "Visitor",
+   "src": [
+    "R1",
+    "UC27"
+   ]
+  },
+  {
+   "name": "Remove SearchTag",
+   "actor": "Registered User",
+   "src": [
+    "R1",
+    "UC28"
+   ]
+  },
+  {
+   "name": "Insert TagSearch",
+   "actor": "Registered User",
+   "src": [
+    "R1",
+    "UC30"
+   ]
+  },
+  {
+   "name": "Ask SearchTag",
+   "actor": "Registered User",
+   "src": [
+    "R1",
+    "UC29"
+   ]
+  },
+  {
+   "name": "Ensure User",
+   "actor": "Visitor",
+   "src": [
+    "R1",
+    "UC35"
+   ]
+  },
+  {
+   "name": "Supply Login",
+   "actor": "Visitor",
+   "src": [
+    "R1",
+    "UC36"
+   ]
+  },
+  {
+   "name": "Require Creation",
+   "actor": "Visitor",
+   "src": [
+    "R1",
+    "UC33"
+   ]
+  },
+  {
+   "name": "Research Heritage",
+   "actor": "Guest User",
+   "src": [
+    "R1",
+    "UC34"
+   ]
+  },
+  {
+   "name": "End Session",
+   "actor": "Registered User",
+   "src": [
+    "R1",
+    "UC37"
+   ]
+  },
+  {
+   "name": "Change Image",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC39"
+   ]
+  },
+  {
+   "name": "Delete BannerAd",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC40"
+   ]
+  },
+  {
+   "name": "Insert Banner",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC38"
+   ]
+  },
+  {
+   "name": "Change Menu",
+   "actor": "Point Restaurant Operator",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Delete Menu",
+   "actor": "Point Restaurant Operator",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Change DataPoint",
+   "actor": "Point Restaurant Operator",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Require Convention",
+   "actor": "Point Restaurant Operator",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "View Statistic",
+   "actor": "Point Restaurant Operator",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Edit SearchPreference",
+   "actor": "Tourist",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Edit EditPreferences",
+   "actor": "Tourist",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Insert Feedback",
+   "actor": "Tourist",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Delete Site",
+   "actor": "Tourist",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Insert Site",
+   "actor": "Tourist",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "View List",
+   "actor": "Tourist",
+   "src": [
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "name": "Edit Comment",
+   "actor": "tourist",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Entry EntryCondition",
+   "actor": "Visitor",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Return Position",
+   "actor": "tourist",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Search Site",
+   "actor": "tourist",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "View Detail",
+   "actor": "tourist",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Agency",
+   "kind": "class",
+   "attributes": [
+    "logged"
+   ],
+   "methods": [
+    {
+     "name": "viewCulturalHeritageList",
+     "use_case": "SearchCulturalHeritage"
+    },
+    {
+     "name": "viewRefreshmentPointList",
+     "use_case": "SearchRefreshmentPoint"
+    },
+    {
+     "name": "viewTouristAccountList",
+     "use_case": "SearchTourist"
+    },
+    {
+     "name": "confirmOperation",
+     "use_case": "DeleteObject"
+    },
+    {
+     "name": "confirmOperation",
+     "use_case": "InsertObject"
+    },
+    {
+     "name": "confirmOperation",
+     "use_case": "ChangeData"
+    },
+    {
+     "name": "confirmOperation",
+     "use_case": "EnableAccount"
+    },
+    {
+     "name": "confirmOperation",
+     "use_case": "DeleteRefreshment"
+    },
+    {
+     "name": "confirmOperation",
+     "use_case": "ConventionRequest"
+    },
+    {
+     "name": "confirmOperation",
+     "use_case": "EditData"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CulturalHeritage",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name",
+    "description"
+   ],
+   "methods": [
+    {
+     "name": "delete",
+     "use_case": "DeleteObject"
+    },
+    {
+     "name": "changeData",
+     "use_case": "ChangeData"
+    },
+    {
+     "name": "viewDetails",
+     "use_case": "ViewDetail"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "RefreshmentPoint",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name",
+    "address"
+   ],
+   "methods": [
+    {
+     "name": "delete",
+     "use_case": "DeleteRefreshment"
+    },
+    {
+     "name": "viewDetails",
+     "use_case": "ViewDetail"
+    },
+    {
+     "name": "viewHistory",
+     "use_case": "ViewHistory"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "TouristAccount",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name",
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "enableDisable",
+     "use_case": "EnableAccount"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "SystemRequirement",
+   "kind": "class",
+   "attributes": [
+    "timeLimit"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Account",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "data"
+   ],
+   "methods": [
+    {
+     "name": "modifyData",
+     "use_case": "Change Data (account tourist; UC15)"
+    },
+    {
+     "name": "delete",
+     "use_case": "Delete Account (tourist; UC16)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC15",
+    "UC16"
+   ]
+  },
+  {
+   "name": "BannerAd",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "image"
+   ],
+   "methods": [
+    {
+     "name": "changeImage",
+     "use_case": "Change Image (?; UC17)"
+    },
+    {
+     "name": "delete",
+     "use_case": "Delete BannerAd (?; UC19)"
+    },
+    {
+     "name": "insert",
+     "use_case": "Insert Banner (?; UC20)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC17",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "name": "News",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "content"
+   ],
+   "methods": [
+    {
+     "name": "insert",
+     "use_case": "Insert News (?; UC21)"
+    },
+    {
+     "name": "delete",
+     "use_case": "Delete News (?; UC22)"
+    },
+    {
+     "name": "modifyData",
+     "use_case": "Change Data (?; UC23)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC21",
+    "UC22",
+    "UC23"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "comments"
+   ],
+   "methods": [
+    {
+     "name": "viewFeedback",
+     "use_case": "View Feedback (?; UC24)"
+    },
+    {
+     "name": "editComment",
+     "use_case": "Edit Comment (?; UC26)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC24",
+    "UC26"
+   ]
+  },
+  {
+   "name": "Report",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "data"
+   ],
+   "methods": [
+    {
+     "name": "viewReport",
+     "use_case": "View Report (?; UC25)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC25"
+   ]
+  },
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "username",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "login",
+     "use_case": "Ensure User"
+    },
+    {
+     "name": "logout",
+     "use_case": "End Session"
+    },
+    {
+     "name": "searchSite",
+     "use_case": "Search Site"
+    },
+    {
+     "name": "askPassword",
+     "use_case": "Ask Password"
+    },
+    {
+     "name": "askSearchTag",
+     "use_case": "Ask SearchTag"
+    },
+    {
+     "name": "requireCreation",
+     "use_case": "Require Creation"
+    },
+    {
+     "name": "researchHeritage",
+     "use_case": "Research Heritage"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC35",
+    "UC37",
+    "UC34",
+    "UC36",
+    "UC33"
+   ]
+  },
+  {
+   "name": "AgencyOperator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "changePassword",
+     "use_case": "Change Password"
+    },
+    {
+     "name": "insertTagSearch",
+     "use_case": "Insert TagSearch"
+    },
+    {
+     "name": "removeSearchTag",
+     "use_case": "Remove SearchTag"
+    },
+    {
+     "name": "insertBanner",
+     "use_case": "Insert Banner"
+    },
+    {
+     "name": "changeImage",
+     "use_case": "Change Image"
+    },
+    {
+     "name": "deleteBannerAd",
+     "use_case": "Delete BannerAd"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC31",
+    "UC30",
+    "UC28",
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "name": "GuestUser",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "searchSite",
+     "use_case": "Search Site"
+    },
+    {
+     "name": "requireCreation",
+     "use_case": "Require Creation"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC34",
+    "UC33"
+   ]
+  },
+  {
+   "name": "SearchTag",
+   "kind": "class",
+   "attributes": [
+    "tag"
+   ],
+   "methods": [
+    {
+     "name": "askSearchTag",
+     "use_case": "Ask SearchTag"
+    },
+    {
+     "name": "removeSearchTag",
+     "use_case": "Remove SearchTag"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC28",
+    "UC30"
+   ]
+  },
+  {
+   "name": "TagSearch",
+   "kind": "class",
+   "attributes": [
+    "tag"
+   ],
+   "methods": [
+    {
+     "name": "insertTagSearch",
+     "use_case": "Insert TagSearch"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC30"
+   ]
+  },
+  {
+   "name": "BannerAd",
+   "kind": "class",
+   "attributes": [
+    "image",
+    "restaurant"
+   ],
+   "methods": [
+    {
+     "name": "insertBanner",
+     "use_case": "Insert Banner"
+    },
+    {
+     "name": "changeImage",
+     "use_case": "Change Image"
+    },
+    {
+     "name": "deleteBannerAd",
+     "use_case": "Delete BannerAd"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "name": "Image",
+   "kind": "class",
+   "attributes": [
+    "path"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "RestaurantOperator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "insertBanner",
+     "use_case": "Insert Banner"
+    },
+    {
+     "name": "changeImage",
+     "use_case": "Change Image"
+    },
+    {
+     "name": "deleteBannerAd",
+     "use_case": "Delete BannerAd"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "name": "Restaurant",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "insertBanner",
+     "use_case": "Insert Banner"
+    },
+    {
+     "name": "changeImage",
+     "use_case": "Change Image"
+    },
+    {
+     "name": "deleteBannerAd",
+     "use_case": "Delete BannerAd"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "name": "RestaurantOperator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "activateEditingMenu",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "deleteMenu",
+     "use_case": "Delete Menu"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Tourist",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "editPreferences",
+     "use_case": "Edit Preferences generic personal"
+    },
+    {
+     "name": "viewFavorites",
+     "use_case": "View the list of personal favorites"
+    },
+    {
+     "name": "viewVisitedSites",
+     "use_case": "View the list of sites for which it has issued a feedback"
+    },
+    {
+     "name": "insertFeedback",
+     "use_case": "Insert a feedback for the selected site"
+    },
+    {
+     "name": "insertSite",
+     "use_case": "Insert a site selected in the list of bookmarks"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Restaurant",
+   "kind": "class",
+   "attributes": [
+    "dailyMenu"
+   ],
+   "methods": [
+    {
+     "name": "displayMenu",
+     "use_case": "Change the daily menu of a restaurant"
+    },
+    {
+     "name": "deleteMenu",
+     "use_case": "Delete a daily menu of a restaurant"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "EditMenu",
+   "kind": "class",
+   "attributes": [
+    "dayOfWeek"
+   ],
+   "methods": [
+    {
+     "name": "uploadData",
+     "use_case": "Change the daily menu of a restaurant"
+    },
+    {
+     "name": "editData",
+     "use_case": "Change the daily menu of a restaurant"
+    },
+    {
+     "name": "confirmEdit",
+     "use_case": "Change the daily menu of a restaurant"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [
+    "vote",
+    "comment"
+   ],
+   "methods": [
+    {
+     "name": "issueFeedback",
+     "use_case": "Insert a feedback for the selected site"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Bookmark",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "insertSite",
+     "use_case": "Insert a site selected in the list of bookmarks"
+    },
+    {
+     "name": "removeSite",
+     "use_case": "Tourist delete a site from the list of bookmarks"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "authenticationStatus",
+    "interactionState"
+   ],
+   "methods": [
+    {
+     "name": "chooseToChangeComment",
+     "use_case": "Edit Comment (UC54)"
+    },
+    {
+     "name": "verifyData",
+     "use_case": "Edit Comment (UC54)"
+    },
+    {
+     "name": "confirmChange",
+     "use_case": "Edit Comment (UC54)"
+    },
+    {
+     "name": "editComment",
+     "use_case": "Edit Comment (UC54)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [
+    "siteId",
+    "touristId",
+    "comment"
+   ],
+   "methods": [
+    {
+     "name": "cancelFeedback",
+     "use_case": "Entry EntryCondition (UC55)"
+    },
+    {
+     "name": "confirmReading",
+     "use_case": "Entry EntryCondition (UC55)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  },
+  {
+   "name": "Gps",
+   "kind": "class",
+   "attributes": [
+    "position"
+   ],
+   "methods": [
+    {
+     "name": "calculatePosition",
+     "use_case": "Return Position (UC56)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC56"
+   ]
+  },
+  {
+   "name": "AdvancedSearch",
+   "kind": "class",
+   "attributes": [
+    "searchForm"
+   ],
+   "methods": [
+    {
+     "name": "enableAdvancedSearch",
+     "use_case": "Search Site (UC57)"
+    },
+    {
+     "name": "submitSearch",
+     "use_case": "Search Site (UC57)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC57"
+   ]
+  },
+  {
+   "name": "SiteDetail",
+   "kind": "class",
+   "attributes": [
+    "siteId",
+    "siteName"
+   ],
+   "methods": [
+    {
+     "name": "displayDetails",
+     "use_case": "View Detail (UC58)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC58"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Agency",
+   "target": "CulturalHeritage",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Agency",
+   "target": "RefreshmentPoint",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Agency",
+   "target": "TouristAccount",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SystemRequirement",
+   "target": "CulturalHeritage",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SystemRequirement",
+   "target": "RefreshmentPoint",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SystemRequirement",
+   "target": "TouristAccount",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Account",
+   "target": "Store",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC15",
+    "UC16"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BannerAd",
+   "target": "Image",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC17",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "News",
+   "target": "Deletion",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC21",
+    "UC22",
+    "UC23"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Feedback",
+   "target": "Comment",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC24",
+    "UC26"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Report",
+   "target": "Location",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC25"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Login",
+   "multiplicity_target": "1",
+   "src": [
+    "UC35",
+    "UC36"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Operation",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC35",
+    "UC37",
+    "UC34",
+    "UC33"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AgencyOperator",
+   "target": "Operation",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC31",
+    "UC30",
+    "UC28",
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "GuestUser",
+   "target": "Operation",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC34",
+    "UC33"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SearchTag",
+   "target": "Inclusion",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC28",
+    "UC30"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "TagSearch",
+   "target": "Inclusion",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC30"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BannerAd",
+   "target": "Image",
+   "multiplicity_target": "1",
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RestaurantOperator",
+   "target": "Restaurant",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Feedback",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Restaurant",
+   "target": "EditMenu",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Bookmark",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Gps",
+   "target": "Position",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC56"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Feedback",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  }
+ ],
+ "python": "from abc import ABC, abstractmethod\n\nclass Actor:\n    pass\n\nclass UseCase:\n    pass\n\nclass Operation:\n    pass\n\nclass SystemRequirement:\n    pass\n\nclass QualityRequirement:\n    pass\n\nclass Attribute:\n    pass\n\nclass Association:\n    pass\n\nclass Has:\n    pass\n\nclass Event:\n    pass\n\nclass Flow:\n    pass\n\nclass OperatorAgency:\n    pass\n\nclass Parameter:\n    pass\n\nclass Result:\n    pass\n\nclass SearchCriterion:\n    pass\n\nclass SearchForm:\n    pass\n\nclass UseCaseSearchculturalheritage:\n    pass\n\nclass UseCaseSearchrefreshmentpoint:\n    pass\n\nclass Visitor:\n    pass\n\nclass CulturalHeritage:\n    pass\n\nclass RefreshmentPoint:\n    pass\n\nclass AccountTourist:\n    pass\n\nclass Agency:\n    pass\n\nclass CulturalObject:\n    pass\n\nclass Refreshment:\n    pass\n\nclass Convention:\n    pass\n\nclass Deletion:\n    pass\n\nclass EditData:\n    pass\n\nclass InsertObject:\n    pass\n\nclass ReturnList:\n    pass\n\nclass ViewDetail:\n    pass\n\nclass ViewHistory:\n    pass\n\n# Method stubs\n\nclass CulturalHeritage:\n    def __init__(self, id: str, name: str, description: str):\n        self.id = id\n        self.name = name\n        self.description = description\n\n    @abstractmethod\ndef delete(self):\n        raise NotImplementedError\n\n    @abstractmethod\ndef insert(self):\n        raise NotImplementedError\n\n    @abstractmethod\ndef change_data(self):\n        raise NotImplementedError\n\n    @abstractmethod\ndef search(self, criteria: SearchCriterion) -> list[CulturalHeritage]:\n        raise NotImplementedError\n\n    @abstractmethod\ndef view_details(self) -> str:\n        raise NotImplementedError\n\nclass RefreshmentPoint:\n    def __init__(self, id: str, name: str, location: str):\n        self.id = id\n        self.name = name\n        self.location = location\n\n    @abstractmethod\ndef delete(self):\n        raise NotImplementedError\n\n    @abstractmethod\ndef insert(self):\n        raise NotImplementedError\n\n    @abstractmethod\ndef change_data(self):\n        raise NotImplementedError\n\n    @abstractmethod\ndef search(self, criteria: SearchCriterion) -> list[RefreshmentPoint]:\n        raise NotImplementedError\n\n    @abstractmethod\ndef view_details(self) -> str:\n        raise NotImplementedError\n\nclass AccountTourist:\n    def __init__(self, id: str, name: str, email: str):\n        self.id = id\n        self.name = name\n        self.email = email\n\n    @abstractmethod\ndef enable_disable(self):\n        raise NotImplementedError\n\n    @abstractmethod\ndef search(self, criteria: SearchCriterion) -> list[AccountTourist]:\n        raise NotImplementedError\n\n    @abstractmethod\ndef view_details(self) -> str:\n        raise NotImplementedError\n\n\nfrom abc import ABC, abstractmethod\n\nclass UseCase(ABC):\n    @abstractmethod\ndefine(self):\n        pass\n\nclass Account:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass Agency:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass BannerAd:\n    def __init__(self, id: int, image: str):\n        self.id = id\n        self.image = image\n\nclass Banner:\n    def __init__(self, id: int, ad: BannerAd):\n        self.id = id\n        self.ad = ad\n\nclass Computer:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass Connection:\n    def __init__(self, id: int, status: str):\n        self.id = id\n        self.status = status\n\nclass DataNews:\n    def __init__(self, id: int, title: str, content: str):\n        self.id = id\n        self.title = title\n        self.content = content\n\nclass Delete:\n    def __init__(self, id: int, confirmed: bool):\n        self.id = id\n        self.confirmed = confirmed\n\nclass Display:\n    def __init__(self, id: int, content: str):\n        self.id = id\n        self.content = content\n\nclass Event:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass EventsUserSystem:\n    def __init__(self, id: int, flow: Event):\n        self.id = id\n        self.flow = flow\n\nclass Feedback:\n    def __init__(self, id: int, comment: str):\n        self.id = id\n        self.comment = comment\n\nclass Image:\n    def __init__(self, id: int, path: str):\n        self.id = id\n        self.path = path\n\nclass Location:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass Notification:\n    def __init__(self, id: int, message: str):\n        self.id = id\n        self.message = message\n\nclass Operation:\n    def __init__(self, id: int, confirmed: bool):\n        self.id = id\n        self.confirmed = confirmed\n\nclass OperatorAgency:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass Picture:\n    def __init__(self, id: int, path: str):\n        self.id = id\n        self.path = path\n\nclass QualityRequirement:\n    def __init__(self, id: int, description: str):\n        self.id = id\n        self.description = description\n\nclass Restaurant:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass Site:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass Store:\n    def __init__(self, id: int, account: Account):\n        self.id = id\n        self.account = account\n\nclass Transaction:\n    def __init__(self, id: int, confirmed: bool):\n        self.id = id\n        self.confirmed = confirmed\n\nclass TransactionChange:\n    def __init__(self, id: int, confirmed: bool):\n        self.id = id\n        self.confirmed = confirmed\n\nclass UseCase:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass UserInteraction:\n    def __init__(self, id: int, flow: Event):\n        self.id = id\n        self.flow = flow\n\nclass View:\n    def __init__(self, id: int, content: str):\n        self.id = id\n        self.content = content\n\n# UseCase Implementations\nclass UC15(UseCase):\n    def define(self):\n        raise NotImplementedError\n\nclass UC16(UseCase):\n    def define(self):\n        raise NotImplementedError\n\nclass UC17(UseCase):\n    def define(self):\n        raise NotImplementedError\n\nclass UC18(UseCase):\n    def define(self):\n        raise NotImplementedError\n\nclass UC19(UseCase):\n    def define(self):\n        raise NotImplementedError\n\nclass UC20(UseCase):\n    def define(self):\n        raise NotImplementedError\n\nclass UC21(UseCase):\n    def define(self):\n        raise NotImplementedError\n\nclass UC22(UseCase):\n    def define(self):\n        raise NotImplementedError\n\nclass UC23(UseCase):\n    def define(self):\n        raise NotImplementedError\n\nclass UC24(UseCase):\n    def define(self):\n        raise NotImplementedError\n\nclass UC25(UseCase):\n    def define(self):\n        raise NotImplementedError\n\nclass UC26(UseCase):\n    def define(self):\n        raise NotImplementedError\n\nfrom abc import ABC, abstractmethod\n\nclass Actor:\n    pass\n\nclass UseCase:\n    pass\n\nclass QualityRequirement:\n    pass\n\nclass Attribute:\n    pass\n\nclass Relation:\n    pass\n\nclass Class:\n    def __init__(self, name, attributes=None, relations=None):\n        self.name = name\n        self.attributes = attributes if attributes else []\n        self.relations = relations if relations else []\n\nclass Attribute:\n    def __init__(self, name, type_):\n        self.name = name\n        self.type_ = type_\n\nclass Relation:\n    def __init__(self, from_class, to_class, type_):\n        self.from_class = from_class\n        self.to_class = to_class\n        self.type_ = type_\n\n# Classes\nUser = Class('User', [Attribute('access', 'Access')])\nGuestUser = Class('GuestUser', [Attribute('position', 'Position')])\nRegisteredUser = Class('RegisteredUser', [Attribute('access', 'Access')])\nAgencyOperator = Class('AgencyOperator', [Attribute('access', 'Access')])\nRestaurantOperator = Class('RestaurantOperator', [Attribute('access', 'Access')])\n\n# Attributes\nAccess = Class('Access')\nPosition = Class('Position')\nImage = Class('Image')\n\n# Relations\nUserAccess = Relation('User', 'Access', 'has')\nGuestUserPosition = Relation('GuestUser', 'Position', 'has')\nRegisteredUserAccess = Relation('RegisteredUser', 'Access', 'has')\nAgencyOperatorAccess = Relation('AgencyOperator', 'Access', 'has')\nRestaurantOperatorAccess = Relation('RestaurantOperator', 'Access', 'has')\nImageSelection = Relation('Image', 'Selection', 'has')\n\n# Use Cases\nUseCase = Class('UseCase')\n\n# Quality Requirements\nQualityRequirement = Class('QualityRequirement')\n\n# Example Use Case\nclass UC27(UseCase):\n    def __init__(self):\n        super().__init__()\n        self.entry_conditions = []\n        self.flow_of_events = []\n        self.exit_conditions = []\n        self.interruption = []\n        self.quality_requirements = []\n\n    def activate_search_functionality(self):\n        raise NotImplementedError\n\n    def show_form_for_research(self):\n        raise NotImplementedError\n\n    def fill_form_of_research_and_submit(self):\n        raise NotImplementedError\n\n    def process_request(self):\n        raise NotImplementedError\n\n    def return_results_within_time_limit(self):\n        raise NotImplementedError\n\n# Example Actor\nclass GuestUser(Actor):\n    def __init__(self):\n        super().__init__()\n        self.entry_conditions = []\n        self.flow_of_events = []\n        self.exit_conditions = []\n        self.interruption = []\n        self.quality_requirements = []\n\n    def enable_logging_feature(self):\n        raise NotImplementedError\n\n    def view_registration_form(self):\n        raise NotImplementedError\n\n    def fill_out_form_and_submit(self):\n        raise NotImplementedError\n\n    def verify_data_entered(self):\n        raise NotImplementedError\n\n    def ask_for_confirmation(self):\n        raise NotImplementedError\n\n    def create_new_account(self):\n        raise NotImplementedError\n\n\nfrom abc import ABC, abstractmethod\n\nclass Actor:\n    pass\n\nclass UseCase:\n    pass\n\nclass RestaurantOperator(Actor):\n    pass\n\nclass PointOfRestaurantOperator(RestaurantOperator):\n    pass\n\nclass Tourist(Actor):\n    pass\n\nclass UseCaseChangeMenu(UseCase):\n    class Day:\n        pass\n\nclass UseCaseDeleteMenu(UseCase):\n    class Day:\n        pass\n\nclass UseCaseChangeDataPoint(UseCase):\n    pass\n\nclass UseCaseRequireConvention(UseCase):\n    class Day:\n        pass\n\nclass UseCaseViewStatistic(UseCase):\n    pass\n\nclass UseCaseEditPreferences(UseCase):\n    pass\n\nclass UseCaseEditSearchPreference(UseCase):\n    pass\n\nclass UseCaseInsertSite(UseCase):\n    pass\n\nclass UseCaseInsertFeedback(UseCase):\n    pass\n\nclass UseCaseDeleteSite(UseCase):\n    pass\n\nclass UseCaseViewList(UseCase):\n    pass\n\nclass UseCaseViewListFeedback(UseCase):\n    pass\n\nclass UseCaseInsertFavorite(UseCase):\n    pass\n\nclass UseCaseDeleteFavorite(UseCase):\n    pass\n\nclass UseCaseViewStatistic(UseCase):\n    pass\n\nclass RestaurantOperator:\n    def __init__(self):\n        pass\n\n    def change_menu(self):\n        raise NotImplementedError\n\n    def delete_menu(self):\n        raise NotImplementedError\n\n    def change_data_point(self):\n        raise NotImplementedError\n\n    def require_convention(self):\n        raise NotImplementedError\n\n    def view_statistic(self):\n        raise NotImplementedError\n\nclass Tourist:\n    def __init__(self):\n        pass\n\n    def edit_preferences(self):\n        raise NotImplementedError\n\n    def edit_search_preference(self):\n        raise NotImplementedError\n\n    def insert_site(self):\n        raise NotImplementedError\n\n    def insert_feedback(self):\n        raise NotImplementedError\n\n    def delete_site(self):\n        raise NotImplementedError\n\n    def view_list(self):\n        raise NotImplementedError\n\n    def view_list_feedback(self):\n        raise NotImplementedError\n\n    def insert_favorite(self):\n        raise NotImplementedError\n\n    def delete_favorite(self):\n        raise NotImplementedError\n\n    def view_statistic(self):\n        raise NotImplementedError\n\nfrom typing import Optional\n\nclass Area:\n    pass\n\nclass Comment:\n    def __init__(self, alteration: Optional[str] = None):\n        self.alteration = alteration\n\nclass Connection:\n    def __init__(self, interruption: Optional[str] = None):\n        self.interruption = interruption\n\nclass Etour:\n    pass\n\nclass EventsUserSystem:\n    def __init__(self, favorites_flow: Optional[str] = None):\n        self.favorites_flow = favorites_flow\n\nclass Feedback:\n    pass\n\nclass Gps:\n    def __init__(self, position: Optional[str] = None):\n        self.position = position\n\nclass Interruption:\n    pass\n\nclass Notification:\n    def __init__(self, reading: Optional[str] = None):\n        self.reading = reading\n\nclass Operation:\n    pass\n\nclass Position:\n    pass\n\nclass QualityRequirement:\n    pass\n\nclass Result:\n    pass\n\nclass SearchForm:\n    pass\n\nclass Site:\n    pass\n\nclass State:\n    pass\n\nclass Transaction:\n    pass\n\nclass User:\n    pass\n\nclass UserInteraction:\n    pass\n\nclass Area:\n    pass\n\nclass Comment:\n    def __init__(self, alteration: Optional[str] = None):\n        self.alteration = alteration\n\nclass Connection:\n    def __init__(self, interruption: Optional[str] = None):\n        self.interruption = interruption\n\nclass Etour:\n    pass\n\nclass EventsUserSystem:\n    def __init__(self, favorites_flow: Optional[str] = None):\n        self.favorites_flow = favorites_flow\n\nclass Feedback:\n    pass\n\nclass Gps:\n    def __init__(self, position: Optional[str] = None):\n        self.position = position\n\nclass Interruption:\n    pass\n\nclass Notification:\n    def __init__(self, reading: Optional[str] = None):\n        self.reading = reading\n\nclass Operation:\n    pass\n\nclass Position:\n    pass\n\nclass QualityRequirement:\n    pass\n\nclass Result:\n    pass\n\nclass SearchForm:\n    pass\n\nclass Site:\n    pass\n\nclass State:\n    pass\n\nclass Transaction:\n    pass\n\nclass User:\n    pass\n\nclass UserInteraction:\n    pass\n\nclass EditComment:\n    def __init__(self, user: User, comment: Comment):\n        self.user = user\n        self.comment = comment\n    def change_comment(self, new_comment: str):\n        raise NotImplementedError\n\nclass EntryCondition:\n    def __init__(self, user: User):\n        self.user = user\n    def cancel_operation(self):\n        raise NotImplementedError\n\nclass ReturnPosition:\n    def __init__(self, tourist: User, gps: Gps):\n        self.tourist = tourist\n        self.gps = gps\n    def get_position(self):\n        raise NotImplementedError\n\nclass SearchSite:\n    def __init__(self, user: User, advanced_search_form: SearchForm):\n        self.user = user\n        self.advanced_search_form = advanced_search_form\n    def enable_advanced_search(self):\n        raise NotImplementedError\n    def view_advanced_search_form(self):\n        raise NotImplementedError\n    def submit_search(self):\n        raise NotImplementedError\n\nclass ViewDetail:\n    def __init__(self, user: User, site: Site):\n        self.user = user\n        self.site = site\n    def display_site_details(self):\n        raise NotImplementedError",
+ "java": {}
+}

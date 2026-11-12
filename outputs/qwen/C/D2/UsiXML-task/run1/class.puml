@@ -1,0 +1,24 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Node {
+  identifier : String
+  category : String
+  taskType : String
+  importance : int
+  complexityLevel : int
+  centrality : int
+  +createNode()
+}
+class Task {
+  importance : int
+  subTasks : String
+  +addSubTask()
+  +associateExpression()
+  +associateOperator()
+  +createTask()
+  +applyUnaryOperator()
+}
+Task "1" -- "1" Node : is described by
+Node "1" -- "1..*" Task : describes
+@enduml

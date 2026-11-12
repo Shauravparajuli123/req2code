@@ -1,0 +1,25 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "R4",
+   "assumption": "A Net has a single Place, as stated in R4"
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Net' is missing an attribute 'place'",
+   "fix": "Add 'place: String' to class 'Net'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Association 'Net -> Place' is not bidirectional",
+   "fix": "Make association 'Net -> Place' bidirectional [1..1..1..1]"
+  }
+ ]
+}

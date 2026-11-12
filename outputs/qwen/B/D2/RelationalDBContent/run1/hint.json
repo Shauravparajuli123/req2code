@@ -1,0 +1,360 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D2/RelationalDBContent",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "In a relational database, a tuple has one table that serves as an owner."
+     }
+    ],
+    "name": "owner"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s3",
+      "text": "It also defines a directed association that expresses that from an instance (objects) of 'TupleElement' associated 'Tuple' instances (objects) are reachable."
+     },
+     {
+      "sid": "R9.s4",
+      "text": "One end of the association is labeled 'tuple' and carries a multiplicity constraint that expresses that the association relates each 'Tuple' object with exactly one 'TupleElement' object."
+     }
+    ],
+    "name": "Association",
+    "freq": 3
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R1",
+     "R2",
+     "R7",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "In a relational database, a named element has a name of type string."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "Each database has an sgbdName field of type string"
+     },
+     {
+      "sid": "R7.s1",
+      "text": "Each table has one and only one database"
+     }
+    ],
+    "name": "Database",
+    "freq": 4
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s3",
+      "text": "It also defines a directed association that expresses that from an instance (objects) of 'TupleElement' associated 'Tuple' instances (objects) are reachable."
+     },
+     {
+      "sid": "R9.s4",
+      "text": "One end of the association is labeled 'tuple' and carries a multiplicity constraint that expresses that the association relates each 'Tuple' object with exactly one 'TupleElement' object."
+     }
+    ],
+    "name": "Object",
+    "freq": 4
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R3",
+     "R4"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A relationalDBcontent can have tables"
+     },
+     {
+      "sid": "R4.s1",
+      "text": "A relationalDBcontent can have tuples"
+     }
+    ],
+    "name": "Relationaldbcontent",
+    "freq": 2
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R3",
+     "R6",
+     "R7",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A relationalDBcontent can have tables"
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A relational database is composed of many tables."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "Each table has one and only one database"
+     }
+    ],
+    "name": "Table",
+    "freq": 4
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R4",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A relationalDBcontent can have tuples"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "In a relational database, a tuple has one table that serves as an owner."
+     }
+    ],
+    "name": "Tuple",
+    "freq": 2
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A class named \"TupleElement\", containing an attribute called \"value\", of type \"String\"."
+     }
+    ],
+    "name": "TupleElement",
+    "freq": 0
+   },
+   {
+    "id": "C8",
+    "src": [
+     "R1",
+     "R2"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "In a relational database, a named element has a name of type string."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "Each database has an sgbdName field of type string"
+     }
+    ],
+    "name": "TypeString",
+    "freq": 2
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "explicit_attribute"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A class named \"TupleElement\", containing an attribute called \"value\", of type \"String\"."
+     }
+    ],
+    "owner": "TupleElement",
+    "name": "value",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "In a relational database, a named element has a name of type string."
+     }
+    ],
+    "owner": "TypeString",
+    "name": "name",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s4",
+      "text": "One end of the association is labeled 'tuple' and carries a multiplicity constraint that expresses that the association relates each 'Tuple' object with exactly one 'TupleElement' object."
+     }
+    ],
+    "kind": "association",
+    "source": "Association",
+    "target": "Object",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A relationalDBcontent can have tables"
+     }
+    ],
+    "kind": "has",
+    "source": "Relationaldbcontent",
+    "target": "Table",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A relationalDBcontent can have tuples"
+     }
+    ],
+    "kind": "has",
+    "source": "Relationaldbcontent",
+    "target": "Tuple",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Each table has one and only one database"
+     }
+    ],
+    "kind": "has",
+    "source": "Table",
+    "target": "Database",
+    "multiplicity_target": "1..*"
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "In a relational database, a tuple has one table that serves as an owner."
+     }
+    ],
+    "kind": "has",
+    "source": "Tuple",
+    "target": "Table",
+    "multiplicity_target": "one"
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Database",
+     "target": "Table",
+     "multiplicity": "1..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

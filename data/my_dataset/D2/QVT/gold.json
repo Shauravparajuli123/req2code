@@ -1,0 +1,125 @@
+{
+ "classes": [
+  {
+   "name": "TemplateExp",
+   "kind": "class"
+  },
+  {
+   "name": "ObjectTemplateExp",
+   "kind": "class"
+  },
+  {
+   "name": "CollectionTemplateExp",
+   "kind": "class"
+  },
+  {
+   "name": "PropertyTemplateItem",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "TemplateExp": [],
+  "ObjectTemplateExp": [],
+  "CollectionTemplateExp": [
+   {
+    "name": "kind",
+    "type": "CollectionKind"
+   }
+  ],
+  "PropertyTemplateItem": []
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "TemplateExp",
+   "to": "LiteralExp",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "TemplateExp",
+   "to": "Variable",
+   "label": "bindsTo 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "TemplateExp",
+   "to": "OclExpression",
+   "label": "where 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ObjectTemplateExp",
+   "to": "TemplateExp",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "ObjectTemplateExp",
+   "to": "PropertyTemplateItem",
+   "label": "part 0..*",
+   "label_to": "objContainer 1..1"
+  },
+  {
+   "type": "association",
+   "from": "ObjectTemplateExp",
+   "to": "Class",
+   "label": "referredClass 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "CollectionTemplateExp",
+   "to": "TemplateExp",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "CollectionTemplateExp",
+   "to": "OclExpression",
+   "label": "part 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "CollectionTemplateExp",
+   "to": "CollectionType",
+   "label": "referredCollectionType 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "CollectionTemplateExp",
+   "to": "OclExpression",
+   "label": "match 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "PropertyTemplateItem",
+   "to": "Element",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "PropertyTemplateItem",
+   "to": "OclExpression",
+   "label": "value 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "PropertyTemplateItem",
+   "to": "Property",
+   "label": "referredProperty 1..1",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage qvttemplate {\nclass TemplateExp {\n}\nLiteralExp <|-- TemplateExp\nTemplateExp \"bindsTo 0..1\" *--> Variable\nTemplateExp \"where 0..1\" *--> OclExpression\nclass ObjectTemplateExp {\n}\nTemplateExp <|-- ObjectTemplateExp\nObjectTemplateExp \"part 0..*\" *-- \"objContainer 1..1\" PropertyTemplateItem\nObjectTemplateExp \"referredClass 1..1\" --> Class\nclass CollectionTemplateExp {\n\t kind : CollectionKind\n}\nTemplateExp <|-- CollectionTemplateExp\nCollectionTemplateExp \"part 0..*\" *--> OclExpression\nCollectionTemplateExp \"referredCollectionType 0..1\" --> CollectionType\nCollectionTemplateExp \"match 0..1\" --> OclExpression\nclass PropertyTemplateItem {\n}\nElement <|-- PropertyTemplateItem\nPropertyTemplateItem \"value 1..1\" *--> OclExpression\nPropertyTemplateItem \"referredProperty 1..1\" --> Property\n}\n@enduml\n"
+}

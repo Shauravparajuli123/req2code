@@ -1,0 +1,108 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Game",
+   "actor": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TaskNode",
+   "kind": "class",
+   "attributes": [
+    "identifier",
+    "category",
+    "taskType",
+    "importance",
+    "complexityLevel",
+    "centrality"
+   ],
+   "methods": [
+    {
+     "name": "createTaskNode",
+     "use_case": "Create Game"
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Task",
+   "kind": "class",
+   "attributes": [
+    "operand"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Operator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R6",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Task",
+   "target": "Expression",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "Task",
+   "target": "Operator",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "TaskNode",
+   "target": "Task",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "source": "Expression",
+   "target": "Operator",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/UsiXML-task.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass TaskNode:\n    \"\"\"Source: R1\"\"\"\n    identifier: _t.Optional[str] = None\n    category: _t.Optional[str] = None\n    taskType: _t.Optional[str] = None\n    importance: _t.Optional[int] = None\n    complexityLevel: _t.Optional[int] = None\n    centrality: _t.Optional[int] = None\n    task: _t.Optional[\"Task\"] = None\n\n    def createTaskNode(self) -> None:\n        \"\"\"Realizes UC1 \"Create Game\" (R1).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Task:\n    \"\"\"Source: -\"\"\"\n    operand: _t.Optional[str] = None\n    expression: _t.Optional[\"Expression\"] = None\n    operator: _t.Optional[\"Operator\"] = None\n\n\n@_dc.dataclass\nclass Expression:\n    \"\"\"Source: R7\"\"\"\n    operator: _t.Optional[\"Operator\"] = None\n\n\n@_dc.dataclass\nclass Operator:\n    \"\"\"Source: R2, R3, R4, R6, R8, R9, R10\"\"\"\n    pass\n",
+ "java": {
+  "TaskNode.java": "/** Generated from shared model D2/UsiXML-task. Source: R1 */\npublic class TaskNode {\n    private java.lang.String identifier;\n    private java.lang.String category;\n    private java.lang.String taskType;\n    private int importance;\n    private int complexityLevel;\n    private int centrality;\n    private Task task;\n\n    /** Realizes UC1 \"Create Game\" (R1). */\n    public void createTaskNode() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Task.java": "/** Generated from shared model D2/UsiXML-task. Source: - */\npublic class Task {\n    private java.lang.String operand;\n    private Expression expression;\n    private Operator operator;\n}\n",
+  "Expression.java": "/** Generated from shared model D2/UsiXML-task. Source: R7 */\npublic class Expression {\n    private Operator operator;\n}\n",
+  "Operator.java": "/** Generated from shared model D2/UsiXML-task. Source: R2, R3, R4, R6, R8, R9, R10 */\npublic class Operator {\n}\n"
+ }
+}

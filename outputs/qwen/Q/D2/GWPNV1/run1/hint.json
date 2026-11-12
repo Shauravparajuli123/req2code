@@ -1,0 +1,244 @@
+{
+ "condition": "Q",
+ "hint": {
+  "case": "D2/GWPNV1",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R3",
+     "R6",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "There is a Net."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A transition has exactly one net and vice versa."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A Net has at least one place."
+     }
+    ],
+    "name": "Net",
+    "freq": 3
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R2",
+     "R4"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "PetriNet has a transition."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "in a Petri Net a Place is mapped to a single Network"
+     }
+    ],
+    "name": "PetriNet",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R1",
+     "R4",
+     "R5",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "There is a place."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "in a Petri Net a Place is mapped to a single Network"
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A place may have transitions as its destination."
+     }
+    ],
+    "name": "Place",
+    "freq": 4
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R2",
+     "R5",
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "PetriNet has a transition."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A place may have transitions as its destination."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A transition has exactly one net and vice versa."
+     }
+    ],
+    "name": "Transition",
+    "freq": 4
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A place may have transitions as its destination."
+     }
+    ],
+    "owner": "Place",
+    "name": "destination",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A transition has at least one destination place."
+     }
+    ],
+    "owner": "Transition",
+    "name": "destination place",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "A Net has at least one place."
+     }
+    ],
+    "kind": "has",
+    "source": "Net",
+    "target": "Place",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "PetriNet has a transition."
+     }
+    ],
+    "kind": "has",
+    "source": "PetriNet",
+    "target": "Transition",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A place may have transitions as its destination."
+     }
+    ],
+    "kind": "has",
+    "source": "Place",
+    "target": "Transition",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A transition has exactly one net and vice versa."
+     }
+    ],
+    "kind": "has",
+    "source": "Transition",
+    "target": "Net",
+    "multiplicity_target": "one"
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": [
+  "R4 (terminological, \"passive 'mapped' without agent\"): readings ['A Place is mapped to a single Network in a Petri Net.', 'A Network is mapped to a single Place in a Petri Net.']"
+ ]
+}

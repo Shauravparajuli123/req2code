@@ -1,0 +1,33 @@
+@startuml
+class Cristal {
+  conditions
+  compositeParDefs
+  compositeActDefs
+  activityDefinitions
+}
+class Condition {
+}
+class CompositeParDef {
+  partCompositeMembers
+}
+class CompositeActDef {
+  actCompositeMembers
+}
+class ActCompositeMember {
+  activityDefinitions
+}
+class ActivityDefinition {
+  actCompositeMember
+}
+class PartCompositeMember {
+  partDefinition
+}
+Cristal -- Condition
+Cristal -- CompositeParDef
+Cristal -- CompositeActDef
+Cristal -- ActivityDefinition
+CompositeParDef -- PartCompositeMember
+CompositeActDef -- ActCompositeMember
+ActCompositeMember -- ActivityDefinition
+PartCompositeMember -- PartDefinitionNode
+@enduml

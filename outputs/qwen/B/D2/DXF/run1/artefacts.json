@@ -1,0 +1,50 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Mesh",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "points"
+   ],
+   "methods": [],
+   "src": [
+    "R2",
+    "R4"
+   ]
+  },
+  {
+   "name": "Point",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "coordinatesX",
+    "coordinatesZ",
+    "mesh"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mesh",
+   "target": "Point",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/DXF.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Mesh:\n    \"\"\"Source: R2, R4\"\"\"\n    name: _t.Optional[str] = None\n    points: _t.Optional[str] = None\n    point: _t.Optional[\"Point\"] = None\n\n\n@_dc.dataclass\nclass Point:\n    \"\"\"Source: R3, R5, R6\"\"\"\n    name: _t.Optional[str] = None\n    coordinatesX: _t.Optional[float] = None\n    coordinatesZ: _t.Optional[float] = None\n    mesh: _t.Optional[str] = None\n",
+ "java": {
+  "Mesh.java": "/** Generated from shared model D2/DXF. Source: R2, R4 */\npublic class Mesh {\n    private java.lang.String name;\n    private java.lang.String points;\n    private Point point;\n}\n",
+  "Point.java": "/** Generated from shared model D2/DXF. Source: R3, R5, R6 */\npublic class Point {\n    private java.lang.String name;\n    private double coordinatesX;\n    private double coordinatesZ;\n    private java.lang.String mesh;\n}\n"
+ }
+}

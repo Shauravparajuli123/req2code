@@ -1,0 +1,63 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "User" as A1
+actor "Visitor" as A2
+actor "Reseller" as A3
+actor "Artist" as A4
+actor "Company" as A5
+rectangle "ticket" {
+  usecase "Save Personal Information" as UC1
+  usecase "Save Payment Details" as UC2
+  usecase "Fill Out Survey" as UC3
+  usecase "See Personalized Content" as UC4
+  usecase "Edit Preferences" as UC5
+  usecase "Change Password" as UC6
+  usecase "Edit Personal Information" as UC7
+  usecase "See Ticket Order History" as UC8
+  usecase "See Upcoming Events" as UC9
+  usecase "Find Favorite Artists And Events" as UC10
+  usecase "Read Event Details" as UC11
+  usecase "Buy Tickets Directly" as UC12
+  usecase "Resell Tickets Directly" as UC13
+  usecase "Buy Ticket As Guest" as UC14
+  usecase "Purchase Ticket" as UC15
+  usecase "Search Events" as UC16
+  usecase "Validate Tickets" as UC17
+  usecase "Deduct Service Fee" as UC18
+  usecase "Avoid Fraud" as UC19
+  usecase "Resell Tickets" as UC20
+  usecase "See Upcoming Events Calendar" as UC21
+  usecase "See Popular Events" as UC22
+  usecase "Click Event On Homepage" as UC23
+  usecase "Find Event Information" as UC24
+  usecase "Favorite Events Or Artists" as UC25
+  usecase "Link To Music Platforms" as UC26
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+A1 --> UC7
+A1 --> UC8
+A1 --> UC9
+A1 --> UC10
+A2 --> UC11
+A2 --> UC12
+A3 --> UC13
+A2 --> UC14
+A2 --> UC15
+A2 --> UC16
+A5 --> UC17
+A5 --> UC18
+A5 --> UC19
+A3 --> UC20
+A2 --> UC21
+A2 --> UC22
+A2 --> UC23
+A4 --> UC24
+A1 --> UC25
+A4 --> UC26
+@enduml

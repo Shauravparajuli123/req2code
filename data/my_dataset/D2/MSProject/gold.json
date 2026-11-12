@@ -1,0 +1,55 @@
+{
+ "classes": [
+  {
+   "name": "MSProject",
+   "kind": "class"
+  },
+  {
+   "name": "NamedElement",
+   "kind": "class"
+  },
+  {
+   "name": "Task",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "MSProject": [],
+  "NamedElement": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Task": [
+   {
+    "name": "UID",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "MSProject",
+   "to": "Task",
+   "label": "tasks 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Task",
+   "to": "NamedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Task",
+   "to": "Task",
+   "label": "predecessors 0..*",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage MSProject {\nclass MSProject {\n}\nMSProject \"tasks 1..*\" *--> Task\nclass NamedElement {\n\t name : String\n}\nclass Task {\n\t UID : String\n}\nNamedElement <|-- Task\nTask \"predecessors 0..*\" --> Task\n}\n@enduml\n"
+}

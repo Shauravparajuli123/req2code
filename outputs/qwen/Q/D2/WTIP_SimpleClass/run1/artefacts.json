@@ -1,0 +1,116 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "PrimitiveDataType",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Association",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "src"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R7"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "type"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "SimpleClass",
+   "kind": "class",
+   "attributes": [
+    "parent",
+    "association",
+    "attribute"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "PrimitiveDataType",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "TypeString",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": []
+  },
+  {
+   "type": "association",
+   "source": "SimpleClass",
+   "target": "Class",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Association",
+   "target": "Class",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4",
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Attribute",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "from typing import Type, List\n\nclass Classifier:\n    def __init__(self):\n        pass\n    def __str__(self) -> str:\n        raise NotImplementedError()\n\nclass PrimitiveDataType(Classifier):\n    def __init__(self, name: str):\n        self.name = name\n    def __str__(self) -> str:\n        raise NotImplementedError()\n\nclass Association(Classifier):\n    def __init__(self, name: str, src: Type[Classifier]):\n        self.name = name\n        self.src = src\n    def __str__(self) -> str:\n        raise NotImplementedError()\n\nclass Attribute(Classifier):\n    def __init__(self, name: str, type: Type[Classifier]):\n        self.name = name\n        self.type = type\n    def __str__(self) -> str:\n        raise NotImplementedError()\n\nclass SimpleClass(Classifier):\n    def __init__(self, parent: Type[Classifier], association: Association, attribute: Attribute):\n        self.parent = parent\n        self.association = association\n        self.attribute = attribute\n    def __str__(self) -> str:\n        raise NotImplementedError()",
+ "java": {}
+}

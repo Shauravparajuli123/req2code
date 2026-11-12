@@ -1,0 +1,35 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a Rule instance can have dependencies, which is supported by the Rule -> RuleDep association."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R4 is not supported by the model.",
+   "fix": "Add a Macro class with an attribute named value."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R5 is not supported by the model.",
+   "fix": "Add a ShellLine class with an attribute named command."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R8 is not supported by the model.",
+   "fix": "Add a RuleDependency class."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R9 is not supported by the model.",
+   "fix": "Add a FileDependency class with an attribute named name."
+  }
+ ]
+}

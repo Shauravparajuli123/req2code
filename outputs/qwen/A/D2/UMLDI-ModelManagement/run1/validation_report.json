@@ -1,0 +1,50 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each GeneralizableElement has one and only one Generalization, as stated in R13 and R14, but the model enforces this through a composition relationship"
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'CoreModel' does not have attributes 'name' and 'isSpecification'",
+   "fix": "Add 'name' and 'isSpecification' attributes to class 'CoreModel'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Classifier' does not have attribute 'powerTypeRanges'",
+   "fix": "Add 'powerTypeRanges' attribute to class 'Classifier'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Feature' does not have attribute 'ownerScope'",
+   "fix": "Add 'ownerScope' attribute to class 'Feature'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'GeneralizableElement' does not have attribute 'parentGeneralization'",
+   "fix": "Add 'parentGeneralization' attribute to class 'GeneralizableElement'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Generalization' does not have attribute 'parent'",
+   "fix": "Add 'parent' attribute to class 'Generalization'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'GeneralizableElement' and 'Generalization' is not a composition",
+   "fix": "Change the relationship between 'GeneralizableElement' and 'Generalization' to a composition"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Generalization' and 'GeneralizableElement' is not a simple association",
+   "fix": "Change the relationship between 'Generalization' and 'GeneralizableElement' to a simple association"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "TemplateExp",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ObjectTemplateExp",
+   "kind": "class",
+   "attributes": [
+    "objectContainer",
+    "referredProperty"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "TemplateExp",
+   "target": "ObjectTemplateExp",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/QVT.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass TemplateExp:\n    \"\"\"Source: R1\"\"\"\n    objectTemplateExp: _t.Optional[\"ObjectTemplateExp\"] = None\n\n\n@_dc.dataclass\nclass ObjectTemplateExp:\n    \"\"\"Source: R2\"\"\"\n    objectContainer: _t.Optional[str] = None\n    referredProperty: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "TemplateExp.java": "/** Generated from shared model D2/QVT. Source: R1 */\npublic class TemplateExp {\n    private ObjectTemplateExp objectTemplateExp;\n}\n",
+  "ObjectTemplateExp.java": "/** Generated from shared model D2/QVT. Source: R2 */\npublic class ObjectTemplateExp {\n    private java.lang.String objectContainer;\n    private java.lang.String referredProperty;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

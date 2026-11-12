@@ -1,0 +1,124 @@
+{
+ "classes": [
+  {
+   "name": "Actor",
+   "kind": "class"
+  },
+  {
+   "name": "UseCase",
+   "kind": "class"
+  },
+  {
+   "name": "Extend",
+   "kind": "class"
+  },
+  {
+   "name": "Include",
+   "kind": "class"
+  },
+  {
+   "name": "UseCaseContainer",
+   "kind": "class"
+  },
+  {
+   "name": "BehavioredClassifier",
+   "kind": "class"
+  },
+  {
+   "name": "NamedElement",
+   "kind": "class"
+  },
+  {
+   "name": "Association",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Actor": [],
+  "UseCase": [],
+  "Extend": [],
+  "Include": [],
+  "UseCaseContainer": [],
+  "BehavioredClassifier": [],
+  "NamedElement": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Association": []
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "Actor",
+   "to": "NamedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "UseCase",
+   "to": "NamedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "UseCase",
+   "to": "Include",
+   "label": "include 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "UseCase",
+   "to": "Extend",
+   "label": "extend 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Extend",
+   "to": "UseCase",
+   "label": "extension 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Include",
+   "to": "UseCase",
+   "label": "includingCase 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "UseCaseContainer",
+   "to": "NamedElement",
+   "label": "ownedElement 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Association",
+   "to": "NamedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Association",
+   "to": "Actor",
+   "label": "actor 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Association",
+   "to": "UseCase",
+   "label": "useCase 0..1",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage UseCase {\nclass Actor {\n}\nNamedElement <|-- Actor\nclass UseCase {\n}\nNamedElement <|-- UseCase\nUseCase \"include 1..*\" *--> Include\nUseCase \"extend 1..*\" *--> Extend\nclass Extend {\n}\nExtend \"extension 1..*\" --> UseCase\nclass Include {\n}\nInclude \"includingCase 1..*\" --> UseCase\nclass UseCaseContainer {\n}\nUseCaseContainer \"ownedElement 0..*\" *--> NamedElement\nclass BehavioredClassifier {\n}\nclass NamedElement {\n\t name : String\n}\nclass Association {\n}\nNamedElement <|-- Association\nAssociation \"actor 0..1\" --> Actor\nAssociation \"useCase 0..1\" --> UseCase\n}\n@enduml\n"
+}

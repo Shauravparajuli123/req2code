@@ -1,0 +1,587 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D4/theater",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R5",
+     "R6",
+     "R8",
+     "R9",
+     "R12"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "There are many participants who act in a play, participants also have a name."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A particular participant acts in a particular session of a play, where each session begins and ends at a specific time."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "Any play can have any number of participants, and any participant can act in any number of plays."
+     }
+    ],
+    "name": "participant"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R4",
+     "R7",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "Plays are written by one or more authors, who have a name."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "Both authors and participants are persons."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "Regarding authors, one can be the author of more than one play."
+     }
+    ],
+    "name": "Author",
+    "freq": 4
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Theaters have a location, and they can play any play, which can be musicals or operas."
+     }
+    ],
+    "name": "Musical",
+    "freq": 1
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Theaters have a location, and they can play any play, which can be musicals or operas."
+     }
+    ],
+    "name": "Opera",
+    "freq": 1
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R12"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "There are many participants who act in a play, participants also have a name."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A particular participant acts in a particular session of a play, where each session begins and ends at a specific time."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "Both authors and participants are persons."
+     }
+    ],
+    "name": "Participant",
+    "freq": 8
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Both authors and participants are persons."
+     }
+    ],
+    "name": "Person",
+    "freq": 1
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Theaters have a location, and they can play any play, which can be musicals or operas."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "Plays have a name and can be played either at day or night."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "Plays are written by one or more authors, who have a name."
+     }
+    ],
+    "name": "Play",
+    "freq": 11
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R6",
+     "R9"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A particular participant acts in a particular session of a play, where each session begins and ends at a specific time."
+     },
+     {
+      "sid": "R9.s1",
+      "text": "Furthermore, each participant acts in specific sessions of a play, where the session has a begin time and an end time."
+     }
+    ],
+    "name": "Session",
+    "freq": 4
+   },
+   {
+    "id": "C8",
+    "src": [
+     "R1",
+     "R2",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "This is a model about theaters."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "Theaters have a location, and they can play any play, which can be musicals or operas."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "Besides, plays can take place in more than one theater."
+     }
+    ],
+    "name": "Theater",
+    "freq": 3
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "Plays are written by one or more authors, who have a name."
+     }
+    ],
+    "owner": "Author",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "There are many participants who act in a play, participants also have a name."
+     }
+    ],
+    "owner": "Participant",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Plays have a name and can be played either at day or night."
+     }
+    ],
+    "owner": "Play",
+    "name": "day",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Plays have a name and can be played either at day or night."
+     }
+    ],
+    "owner": "Play",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Plays have a name and can be played either at day or night."
+     }
+    ],
+    "owner": "Play",
+    "name": "night",
+    "type_hint": null
+   },
+   {
+    "id": "AT6",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "Furthermore, each participant acts in specific sessions of a play, where the session has a begin time and an end time."
+     }
+    ],
+    "owner": "Session",
+    "name": "end time",
+    "type_hint": null
+   },
+   {
+    "id": "AT7",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Theaters have a location, and they can play any play, which can be musicals or operas."
+     }
+    ],
+    "owner": "Theater",
+    "name": "location",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "verb:act"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A particular participant acts in a particular session of a play, where each session begins and ends at a specific time."
+     }
+    ],
+    "kind": "association",
+    "source": "Participant",
+    "target": "Session",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "verb:play"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Theaters have a location, and they can play any play, which can be musicals or operas."
+     }
+    ],
+    "kind": "association",
+    "source": "Theater",
+    "target": "Play",
+    "multiplicity_target": "any"
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "is_a"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Both authors and participants are persons."
+     }
+    ],
+    "kind": "generalization",
+    "source": "Author",
+    "target": "Person",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "can_be"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Theaters have a location, and they can play any play, which can be musicals or operas."
+     }
+    ],
+    "kind": "generalization",
+    "source": "Musical",
+    "target": "Play",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "can_be"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Theaters have a location, and they can play any play, which can be musicals or operas."
+     }
+    ],
+    "kind": "generalization",
+    "source": "Opera",
+    "target": "Play",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "is_a"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Both authors and participants are persons."
+     }
+    ],
+    "kind": "generalization",
+    "source": "Participant",
+    "target": "Person",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL7",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "Regarding authors, one can be the author of more than one play."
+     }
+    ],
+    "kind": "has",
+    "source": "Play",
+    "target": "Author",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL8",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "Any play can have any number of participants, and any participant can act in any number of plays."
+     }
+    ],
+    "kind": "has",
+    "source": "Play",
+    "target": "Participant",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL9",
+    "src": [
+     "R6",
+     "R9"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A particular participant acts in a particular session of a play, where each session begins and ends at a specific time."
+     },
+     {
+      "sid": "R9.s1",
+      "text": "Furthermore, each participant acts in specific sessions of a play, where the session has a begin time and an end time."
+     }
+    ],
+    "kind": "has",
+    "source": "Play",
+    "target": "Session",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL10",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Theaters have a location, and they can play any play, which can be musicals or operas."
+     }
+    ],
+    "kind": "has",
+    "source": "Theater",
+    "target": "Musical",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL11",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Theaters have a location, and they can play any play, which can be musicals or operas."
+     }
+    ],
+    "kind": "has",
+    "source": "Theater",
+    "target": "Opera",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": [
+  "R3 (actor, \"passive 'played' without agent\"): readings ['Plays have a name and can be played either at day or night.', 'Plays have a name, and can be played either at day or night.']"
+ ]
+}

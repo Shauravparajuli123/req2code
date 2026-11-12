@@ -1,0 +1,34 @@
+@startuml
+class Place {
+  name
+  tokens
+}
+class Transition {
+  name
+  weight
+}
+class Net {
+  name
+  places
+  transitions
+}
+class Arc {
+  source
+  destination
+}
+class PlaceTransitionArc {
+  source
+  destination
+}
+class TransitionPlaceArc {
+  source
+  destination
+}
+class Weight {
+}
+Place -- Net
+Arc -- Weight
+PlaceTransitionArc -- Transition
+Place -- Arc
+Transition -- Net
+@enduml

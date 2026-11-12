@@ -1,0 +1,141 @@
+{
+ "condition": "O",
+ "hint": {
+  "case": "D2/News",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C2",
+    "src": [
+     "R1",
+     "R3",
+     "R5",
+     "R7",
+     "R8",
+     "R9"
+    ],
+    "rule": [
+     "noun_role",
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "News have titles and links"
+     },
+     {
+      "sid": "R3.s1",
+      "text": "A class named \"News\", containing an attribute called \"author\", of type \"String\"."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "News have dates."
+     }
+    ],
+    "name": "News",
+    "freq": 6
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT5",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "explicit_attribute"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A class named \"News\", containing an attribute called \"author\", of type \"String\"."
+     }
+    ],
+    "owner": "News",
+    "name": "author",
+    "type_hint": null
+   },
+   {
+    "id": "AT6",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "News have titles and links"
+     }
+    ],
+    "owner": "News",
+    "name": "link",
+    "type_hint": null
+   },
+   {
+    "id": "AT7",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "News have titles and links"
+     }
+    ],
+    "owner": "News",
+    "name": "title",
+    "type_hint": null
+   }
+  ],
+  "relations": [],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [
+    "Date"
+   ],
+   "merge_classes": [
+    [
+     "News",
+     "Newspaper"
+    ]
+   ],
+   "merge_actors": [
+    [
+     "Publisher",
+     "Journalist"
+    ]
+   ],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "News",
+     "target": "Newspaper",
+     "multiplicity": "1..*"
+    },
+    {
+     "source": "News",
+     "target": "Date",
+     "multiplicity": "1..1"
+    }
+   ],
+   "actor_assumptions": [
+    {
+     "use_case": "Publish News",
+     "actor": "Publisher"
+    },
+    {
+     "use_case": "Write News",
+     "actor": "Journalist"
+    }
+   ]
+  }
+ },
+ "open_tags": []
+}

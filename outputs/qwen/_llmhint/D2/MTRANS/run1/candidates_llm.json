@@ -1,0 +1,217 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "MetaClass",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "MTRANSModel",
+   "src": [
+    "R2",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17"
+   ]
+  },
+  {
+   "name": "Module",
+   "src": [
+    "R3",
+    "R10",
+    "R11",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Rule",
+   "src": [
+    "R4",
+    "R12",
+    "R13",
+    "R14",
+    "R15"
+   ]
+  },
+  {
+   "name": "Inheritance",
+   "src": [
+    "R5",
+    "R16",
+    "R17"
+   ]
+  },
+  {
+   "name": "Expression",
+   "src": [
+    "R6",
+    "R18",
+    "R19"
+   ]
+  },
+  {
+   "name": "Instruction",
+   "src": [
+    "R8",
+    "R21",
+    "R19"
+   ]
+  },
+  {
+   "name": "Section",
+   "src": [
+    "R7",
+    "R20"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Expression",
+   "name": "instruction",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "owner": "Rule",
+   "name": "abstract",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "owner": "Rule",
+   "name": "name",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "owner": "Rule",
+   "name": "module",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "owner": "Rule",
+   "name": "source",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "owner": "Rule",
+   "name": "sections",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "owner": "Rule",
+   "name": "variables",
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "owner": "Module",
+   "name": "name",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Module",
+   "name": "rules",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "owner": "Inheritance",
+   "name": "rule",
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "MTRANSModel",
+   "target": "Module",
+   "src": [
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Module",
+   "target": "Rule",
+   "src": [
+    "R11",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Rule",
+   "target": "Section",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Section",
+   "target": "Rule",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Rule",
+   "target": "Variable",
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Expression",
+   "target": "Instruction",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Instruction",
+   "target": "Expression",
+   "src": [
+    "R21"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

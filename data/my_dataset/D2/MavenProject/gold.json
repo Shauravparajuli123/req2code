@@ -1,0 +1,218 @@
+{
+ "classes": [
+  {
+   "name": "Project",
+   "kind": "class"
+  },
+  {
+   "name": "Build",
+   "kind": "class"
+  },
+  {
+   "name": "Resource",
+   "kind": "class"
+  },
+  {
+   "name": "MailingList",
+   "kind": "class"
+  },
+  {
+   "name": "Person",
+   "kind": "class"
+  },
+  {
+   "name": "Developer",
+   "kind": "class"
+  },
+  {
+   "name": "Contributor",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Project": [
+   {
+    "name": "id",
+    "type": "String"
+   },
+   {
+    "name": "groupId",
+    "type": "String"
+   },
+   {
+    "name": "artifactId",
+    "type": "String"
+   },
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "description",
+    "type": "String"
+   }
+  ],
+  "Build": [
+   {
+    "name": "defaultGoal",
+    "type": "String"
+   },
+   {
+    "name": "sourceDirectory",
+    "type": "String"
+   },
+   {
+    "name": "unitTestSourceDirectory",
+    "type": "String"
+   }
+  ],
+  "Resource": [
+   {
+    "name": "targetPath",
+    "type": "String"
+   },
+   {
+    "name": "filtering",
+    "type": "String"
+   },
+   {
+    "name": "directory",
+    "type": "String"
+   },
+   {
+    "name": "includes",
+    "type": "String"
+   },
+   {
+    "name": "excludes",
+    "type": "String"
+   }
+  ],
+  "MailingList": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "subscribe",
+    "type": "String"
+   },
+   {
+    "name": "unsubscribe",
+    "type": "String"
+   },
+   {
+    "name": "post",
+    "type": "String"
+   },
+   {
+    "name": "archive",
+    "type": "String"
+   },
+   {
+    "name": "otherArchives",
+    "type": "String"
+   }
+  ],
+  "Person": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "email",
+    "type": "String"
+   },
+   {
+    "name": "url",
+    "type": "String"
+   },
+   {
+    "name": "organization",
+    "type": "String"
+   },
+   {
+    "name": "organizationUrl",
+    "type": "String"
+   },
+   {
+    "name": "roles",
+    "type": "String"
+   },
+   {
+    "name": "timezone",
+    "type": "String"
+   },
+   {
+    "name": "properties",
+    "type": "String"
+   }
+  ],
+  "Developer": [
+   {
+    "name": "id",
+    "type": "String"
+   }
+  ],
+  "Contributor": []
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Project",
+   "to": "MailingList",
+   "label": "mailingLists 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Project",
+   "to": "Person",
+   "label": "developersAndContributors 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Project",
+   "to": "Build",
+   "label": "build 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Project",
+   "to": "Project",
+   "label": "dependencies 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Build",
+   "to": "Resource",
+   "label": "uniTest 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Build",
+   "to": "Resource",
+   "label": "resources 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Developer",
+   "to": "Person",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Contributor",
+   "to": "Person",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage MavenProject {\nclass Project {\n\t id : String\n\t groupId : String\n\t artifactId : String\n\t name : String\n\t description : String\n}\nProject \"mailingLists 0..*\" *--> MailingList\nProject \"developersAndContributors 0..*\" *--> Person\nProject \"build 0..1\" *--> Build\nProject \"dependencies 0..*\" *--> Project\nclass Build {\n\t defaultGoal : String\n\t sourceDirectory : String\n\t unitTestSourceDirectory : String\n}\nBuild \"uniTest 0..*\" --> Resource\nBuild \"resources 0..*\" --> Resource\nclass Resource {\n\t targetPath : String\n\t filtering : String\n\t directory : String\n\t includes : String\n\t excludes : String\n}\nclass MailingList {\n\t name : String\n\t subscribe : String\n\t unsubscribe : String\n\t post : String\n\t archive : String\n\t otherArchives : String\n}\nclass Person {\n\t name : String\n\t email : String\n\t url : String\n\t organization : String\n\t organizationUrl : String\n\t roles : String\n\t timezone : String\n\t properties : String\n}\nclass Developer {\n\t id : String\n}\nPerson <|-- Developer\nclass Contributor {\n}\nPerson <|-- Contributor\n}\n@enduml\n"
+}

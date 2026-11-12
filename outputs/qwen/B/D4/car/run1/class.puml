@@ -1,0 +1,37 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Car {
+  numberPlate : String
+  +createCar()
+}
+class Make {
+  name : String
+  +createMake()
+}
+class Model {
+  name : String
+  +createModel()
+}
+class Engine {
+  power : int
+  +createEngine()
+}
+class Seat {
+  size : int
+  +createSeat()
+}
+class Wheel {
+  diameter : int
+  +createWheel()
+}
+Car "1" -- "0..1" Engine : has
+Car "1" -- "0..*" Seat : has
+Car "1" -- "0..*" Wheel : has
+Model "1" -- "1" Make : belongs to
+Make "0..*" -- "1" Model : has
+Model "0..*" -- "1" Car : has
+Car "1" *-- "4" Wheel : has
+Car "1" *-- "*" Seat : has
+Model --|> Make
+@enduml

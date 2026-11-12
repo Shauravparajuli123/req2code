@@ -1,0 +1,90 @@
+{
+ "classes": [
+  {
+   "name": "MProgramDependenceGraph",
+   "kind": "class"
+  },
+  {
+   "name": "EnterNode",
+   "kind": "class"
+  },
+  {
+   "name": "ExpressionNode",
+   "kind": "class"
+  },
+  {
+   "name": "Expression",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "MProgramDependenceGraph": [],
+  "EnterNode": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "ExpressionNode": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Expression": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "isIdentifier",
+    "type": "Boolean"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "MProgramDependenceGraph",
+   "to": "EnterNode",
+   "label": "node 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "EnterNode",
+   "to": "ExpressionNode",
+   "label": "controlDependenceNodes 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "ExpressionNode",
+   "to": "Expression",
+   "label": "expression 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "ExpressionNode",
+   "to": "ExpressionNode",
+   "label": "dataDependenceNodes 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "ExpressionNode",
+   "to": "ExpressionNode",
+   "label": "controlDependenceNodes 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Expression",
+   "to": "Expression",
+   "label": "innerExpressions 0..*",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage PDG {\nclass MProgramDependenceGraph {\n}\nMProgramDependenceGraph \"node 1..1\" *--> EnterNode\nclass EnterNode {\n\t name : String\n}\nEnterNode \"controlDependenceNodes 0..*\" *--> ExpressionNode\nclass ExpressionNode {\n\t name : String\n}\nExpressionNode \"expression 1..1\" *--> Expression\nExpressionNode \"dataDependenceNodes 0..*\" --> ExpressionNode\nExpressionNode \"controlDependenceNodes 0..*\" *--> ExpressionNode\nclass Expression {\n\t name : String\n\t isIdentifier : Boolean\n}\nExpression \"innerExpressions 0..*\" *--> Expression\n}\n@enduml\n"
+}

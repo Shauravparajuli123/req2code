@@ -1,0 +1,123 @@
+{
+ "classes": [
+  {
+   "name": "MgaObject",
+   "kind": "class"
+  },
+  {
+   "name": "Transition",
+   "kind": "class"
+  },
+  {
+   "name": "State",
+   "kind": "class"
+  },
+  {
+   "name": "StateMachine",
+   "kind": "class"
+  },
+  {
+   "name": "RootFolder",
+   "kind": "class"
+  },
+  {
+   "name": "AssociationStateState",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "MgaObject": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "position",
+    "type": "String"
+   }
+  ],
+  "Transition": [],
+  "State": [],
+  "StateMachine": [],
+  "RootFolder": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "AssociationStateState": []
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "Transition",
+   "to": "MgaObject",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Transition",
+   "to": "StateMachine",
+   "label": "stateMachine 1..1",
+   "label_to": "transition 0..*"
+  },
+  {
+   "type": "association",
+   "from": "Transition",
+   "to": "AssociationStateState",
+   "label": "associationStateState 1..1",
+   "label_to": "transition 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "State",
+   "to": "MgaObject",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "State",
+   "to": "StateMachine",
+   "label": "stateMachine 1..1",
+   "label_to": "state 0..*"
+  },
+  {
+   "type": "association",
+   "from": "State",
+   "to": "AssociationStateState",
+   "label": "associationStateStatedst 1..*",
+   "label_to": "dstTransition 1..*"
+  },
+  {
+   "type": "association",
+   "from": "State",
+   "to": "AssociationStateState",
+   "label": "associationStateStatesrc 1..*",
+   "label_to": "srcTransition 1..*"
+  },
+  {
+   "type": "generalization",
+   "from": "StateMachine",
+   "to": "MgaObject",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "StateMachine",
+   "to": "RootFolder",
+   "label": "rootFolder 1..1",
+   "label_to": "stateMachine 0..*"
+  },
+  {
+   "type": "composition",
+   "from": "RootFolder",
+   "to": "RootFolder",
+   "label": "rootFolders 0..*",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage FSM {\nclass MgaObject {\n\t name : String\n\t position : String\n}\nclass Transition {\n}\nMgaObject <|-- Transition\nTransition \"stateMachine 1..1\" --* \"transition 0..*\" StateMachine\nTransition \"associationStateState 1..1\" -- \"transition 1..1\" AssociationStateState\nclass State {\n}\nMgaObject <|-- State\nState \"stateMachine 1..1\" --* \"state 0..*\" StateMachine\nState \"associationStateStatedst 1..*\" -- \"dstTransition 1..*\" AssociationStateState\nState \"associationStateStatesrc 1..*\" -- \"srcTransition 1..*\" AssociationStateState\nclass StateMachine {\n}\nMgaObject <|-- StateMachine\nStateMachine \"rootFolder 1..1\" --* \"stateMachine 0..*\" RootFolder\nclass RootFolder {\n\t name : String\n}\nRootFolder \"rootFolders 0..*\" *--> RootFolder\nclass AssociationStateState {\n}\n}\n@enduml\n"
+}

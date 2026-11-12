@@ -1,0 +1,83 @@
+{
+ "classes": [
+  {
+   "name": "FCMSource",
+   "kind": "class"
+  },
+  {
+   "name": "EAISource",
+   "kind": "class"
+  },
+  {
+   "name": "FCMSink",
+   "kind": "class"
+  },
+  {
+   "name": "EAISink",
+   "kind": "class"
+  },
+  {
+   "name": "EAIResource",
+   "kind": "class"
+  },
+  {
+   "name": "EAIQueue",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "FCMSource": [],
+  "EAISource": [],
+  "FCMSink": [],
+  "EAISink": [],
+  "EAIResource": [],
+  "EAIQueue": [
+   {
+    "name": "maxLength",
+    "type": "Integer"
+   },
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "EAISource",
+   "to": "FCMSource",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "EAISource",
+   "to": "EAIResource",
+   "label": "resources 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "EAISink",
+   "to": "FCMSink",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "EAISink",
+   "to": "EAIResource",
+   "label": "resources 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "EAIQueue",
+   "to": "EAIResource",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage EAI {\nclass FCMSource {\n}\nclass EAISource {\n}\nFCMSource <|-- EAISource\nEAISource \"resources 0..*\" --> EAIResource\nclass FCMSink {\n}\nclass EAISink {\n}\nFCMSink <|-- EAISink\nEAISink \"resources 0..*\" --> EAIResource\nclass EAIResource {\n}\nclass EAIQueue {\n\t maxLength : Integer\n\t name : String\n}\nEAIResource <|-- EAIQueue\n}\n@enduml\n"
+}

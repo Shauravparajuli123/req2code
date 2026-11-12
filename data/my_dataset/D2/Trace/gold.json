@@ -1,0 +1,77 @@
+{
+ "classes": [
+  {
+   "name": "Trace",
+   "kind": "class"
+  },
+  {
+   "name": "Level",
+   "kind": "class"
+  },
+  {
+   "name": "Call",
+   "kind": "class"
+  },
+  {
+   "name": "Index",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Trace": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Level": [],
+  "Call": [
+   {
+    "name": "methodName",
+    "type": "String"
+   },
+   {
+    "name": "DBAccessesNumber",
+    "type": "Integer"
+   },
+   {
+    "name": "DBRowsNumber",
+    "type": "Integer"
+   },
+   {
+    "name": "CPUTime",
+    "type": "Integer"
+   }
+  ],
+  "Index": [
+   {
+    "name": "value",
+    "type": "Integer"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Trace",
+   "to": "Level",
+   "label": "levels 0..*",
+   "label_to": "trace 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Level",
+   "to": "Call",
+   "label": "calls 0..*",
+   "label_to": "level 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Call",
+   "to": "Index",
+   "label": "indexes 1..*",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage Trace {\nclass Trace {\n\t name : String\n}\nTrace \"levels 0..*\" *-- \"trace 1..1\" Level\nclass Level {\n}\nLevel \"calls 0..*\" *-- \"level 1..1\" Call\nclass Call {\n\t methodName : String\n\t DBAccessesNumber : Integer\n\t DBRowsNumber : Integer\n\t CPUTime : Integer\n}\nCall \"indexes 1..*\" *--> Index\nclass Index {\n\t value : Integer\n}\n}\n@enduml\n"
+}

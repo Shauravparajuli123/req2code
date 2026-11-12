@@ -1,0 +1,35 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a deployment can contain multiple nodes, which is represented by the association between Deployment and Node."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R2 is not supported by the model.",
+   "fix": "Add a class for devices or an attribute to the Deployment class to represent devices."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R3 is not supported by the model.",
+   "fix": "Add a class named 'ExecutionEnvironment'."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R5 is not supported by the model.",
+   "fix": "Add an attribute 'name' to the 'CommunicationLink' class or add a class for 'CommunicationLink'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R6 is not supported by the model.",
+   "fix": "Create a package named 'Deployment' and place the 'Node' class inside it."
+  }
+ ]
+}

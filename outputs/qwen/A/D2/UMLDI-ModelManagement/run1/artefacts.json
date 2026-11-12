@@ -1,0 +1,186 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "CoreModel",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "isSpecification"
+   ],
+   "methods": [
+    {
+     "name": "addNamespace",
+     "use_case": null
+    },
+    {
+     "name": "addClassifier",
+     "use_case": null
+    },
+    {
+     "name": "addFeature",
+     "use_case": null
+    },
+    {
+     "name": "addGeneralization",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1",
+    "R2",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15"
+   ]
+  },
+  {
+   "name": "Namespace",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "modelElements"
+   ],
+   "methods": [],
+   "src": [
+    "R9",
+    "R11"
+   ]
+  },
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "powerTypeRanges",
+    "owner"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Feature",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "ownerScope",
+    "owner"
+   ],
+   "methods": [],
+   "src": [
+    "R6",
+    "R13"
+   ]
+  },
+  {
+   "name": "GeneralizableElement",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "isRoot",
+    "isAbstract",
+    "generalizations",
+    "parentGeneralization"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R10",
+    "R15"
+   ]
+  },
+  {
+   "name": "Generalization",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "discriminator",
+    "parent"
+   ],
+   "methods": [],
+   "src": [
+    "R7",
+    "R8",
+    "R14"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "CoreModel",
+   "target": "Classifier",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "source": "CoreModel",
+   "target": "Feature",
+   "src": [
+    "R6",
+    "R13"
+   ]
+  },
+  {
+   "source": "CoreModel",
+   "target": "GeneralizableElement",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "CoreModel",
+   "target": "Namespace",
+   "src": [
+    "R4",
+    "R11"
+   ]
+  },
+  {
+   "source": "CoreModel",
+   "target": "Generalization",
+   "src": [
+    "R8",
+    "R14"
+   ]
+  },
+  {
+   "source": "GeneralizableElement",
+   "target": "Generalization",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "source": "Generalization",
+   "target": "GeneralizableElement",
+   "src": [
+    "R14"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/UMLDI-ModelManagement.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass CoreModel:\n    \"\"\"Source: R1, R2, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15\"\"\"\n    name: _t.Optional[str] = None\n    isSpecification: _t.Optional[bool] = None\n    classifiers: _t.List[\"Classifier\"] = _dc.field(default_factory=list)\n    features: _t.List[\"Feature\"] = _dc.field(default_factory=list)\n    generalizableElements: _t.List[\"GeneralizableElement\"] = _dc.field(default_factory=list)\n    namespaces: _t.List[\"Namespace\"] = _dc.field(default_factory=list)\n    generalizations: _t.List[\"Generalization\"] = _dc.field(default_factory=list)\n\n    def addNamespace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addClassifier(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addFeature(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addGeneralization(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Namespace:\n    \"\"\"Source: R9, R11\"\"\"\n    name: _t.Optional[str] = None\n    modelElements: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Classifier:\n    \"\"\"Source: R5, R12, R13\"\"\"\n    name: _t.Optional[str] = None\n    powerTypeRanges: _t.Optional[str] = None\n    owner: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Feature:\n    \"\"\"Source: R6, R13\"\"\"\n    name: _t.Optional[str] = None\n    ownerScope: _t.Optional[str] = None\n    owner: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass GeneralizableElement:\n    \"\"\"Source: R3, R10, R15\"\"\"\n    name: _t.Optional[str] = None\n    isRoot: _t.Optional[bool] = None\n    isAbstract: _t.Optional[bool] = None\n    generalizations: _t.Optional[str] = None\n    parentGeneralization: _t.Optional[str] = None\n    generalization: _t.Optional[\"Generalization\"] = None\n\n\n@_dc.dataclass\nclass Generalization:\n    \"\"\"Source: R7, R8, R14\"\"\"\n    name: _t.Optional[str] = None\n    discriminator: _t.Optional[str] = None\n    parent: _t.Optional[str] = None\n    generalizableElement: _t.Optional[\"GeneralizableElement\"] = None\n",
+ "java": {
+  "CoreModel.java": "/** Generated from shared model D2/UMLDI-ModelManagement. Source: R1, R2, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15 */\npublic class CoreModel {\n    private java.lang.String name;\n    private boolean isSpecification;\n    private java.util.List<Classifier> classifiers;\n    private java.util.List<Feature> features;\n    private java.util.List<GeneralizableElement> generalizableElements;\n    private java.util.List<Namespace> namespaces;\n    private java.util.List<Generalization> generalizations;\n\n    /** Operation. */\n    public void addNamespace() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addClassifier() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addFeature() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addGeneralization() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Namespace.java": "/** Generated from shared model D2/UMLDI-ModelManagement. Source: R9, R11 */\npublic class Namespace {\n    private java.lang.String name;\n    private java.lang.String modelElements;\n}\n",
+  "Classifier.java": "/** Generated from shared model D2/UMLDI-ModelManagement. Source: R5, R12, R13 */\npublic class Classifier {\n    private java.lang.String name;\n    private java.lang.String powerTypeRanges;\n    private java.lang.String owner;\n}\n",
+  "Feature.java": "/** Generated from shared model D2/UMLDI-ModelManagement. Source: R6, R13 */\npublic class Feature {\n    private java.lang.String name;\n    private java.lang.String ownerScope;\n    private java.lang.String owner;\n}\n",
+  "GeneralizableElement.java": "/** Generated from shared model D2/UMLDI-ModelManagement. Source: R3, R10, R15 */\npublic class GeneralizableElement {\n    private java.lang.String name;\n    private boolean isRoot;\n    private boolean isAbstract;\n    private java.lang.String generalizations;\n    private java.lang.String parentGeneralization;\n    private Generalization generalization;\n}\n",
+  "Generalization.java": "/** Generated from shared model D2/UMLDI-ModelManagement. Source: R7, R8, R14 */\npublic class Generalization {\n    private java.lang.String name;\n    private java.lang.String discriminator;\n    private java.lang.String parent;\n    private GeneralizableElement generalizableElement;\n}\n"
+ }
+}

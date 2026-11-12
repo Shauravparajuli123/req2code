@@ -1,0 +1,171 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "addPlace",
+     "use_case": "R7"
+    },
+    {
+     "name": "addTparcs",
+     "use_case": "R8"
+    },
+    {
+     "name": "addTransition",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "addArc",
+     "use_case": "R8"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addNet",
+     "use_case": "R3"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "addOutgoingArc",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "Ptarc",
+   "kind": "class",
+   "attributes": [
+    "srcPlace",
+    "dstPlace"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "Tparcs",
+   "kind": "class",
+   "attributes": [
+    "srcTransition",
+    "dstTransition"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Model",
+   "target": "Net",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Tparcs",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Transition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Place",
+   "target": "Arc",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "Tparcs",
+   "multiplicity_target": "1",
+   "src": [
+    "R12",
+    "R13"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Arc:\n    pass\nclass Model:\n    def __init__(self):\n        self.arcs: List[Arc] = []\n        self.nets: List[Net] = []\nclass Net:\n    def __init__(self):\n        self.places: List[Place] = []\n        self.tparcs: List[TPArc] = []\n        self.transitions: List[Transition] = []\nclass Place:\n    def __init__(self, net: Net):\n        self.net: Net = net\nclass PtArc:\n    pass\nclass TPArc:\n    def __init__(self, src: Transition, dst: Transition):\n        self.src: Transition = src\n        self.dst: Transition = dst\nclass Transition:\n    def __init__(self):\n        self.outgoing_tparcs: List[TPArc] = []\n        self.net: Net = None\n\nclass Model:\n    def __init__(self):\n        self.arcs: List[Arc] = []\n        self.nets: List[Net] = []\n\nclass Net:\n    def __init__(self):\n        self.places: List[Place] = []\n        self.tparcs: List[TPArc] = []\n        self.transitions: List[Transition] = []\n\nclass Place:\n    def __init__(self, net: Net):\n        self.net: Net = net\n\nclass PtArc:\n    pass\nclass TPArc:\n    def __init__(self, src: Transition, dst: Transition):\n        self.src: Transition = src\n        self.dst: Transition = dst\nclass Transition:\n    def __init__(self):\n        self.outgoing_tparcs: List[TPArc] = []\n        self.net: Net = None\n",
+ "java": {}
+}

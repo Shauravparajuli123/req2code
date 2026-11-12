@@ -1,0 +1,88 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  name : String
+  personalInformation : String
+  bankingDetails : String
+  membershipType : String
+  subscription : String
+  previousInformation : String
+  familyMembership : boolean
+  notificationMethod : String
+  checkInStatus : boolean
+  +createAccount()
+  +addPersonalInformation()
+  +addBankingDetail()
+  +chooseMembershipType()
+  +extendSubscription()
+  +knowSubscription()
+  +usePreviousInformation()
+  +unsubscribe()
+  +resetPassword()
+  +changeDetail()
+  +updatePaymentInformation()
+  +seeOverview()
+  +seeRecord()
+  +seeFutureLessons()
+  +callGym()
+  +bookSpot()
+  +seeAvailableSpots()
+  +seeRoom()
+  +seeMembership()
+  +seeInformation()
+  +seeNotification()
+  +confirmBooking()
+  +notifySession()
+}
+class Trainer {
+  name : String
+  lesson : String
+  +addLesson()
+  +setTime()
+  +setDescription()
+  +setRoom()
+  +setNumber()
+  +setType()
+  +editLesson()
+  +editTime()
+  +editRoom()
+  +editDescription()
+  +editNumber()
+}
+class Admin {
+  name : String
+  +editLesson()
+  +cancelLesson()
+  +seeCustomer()
+  +seeSubscription()
+  +haveFine()
+  +addAdmin()
+  +addTrainer()
+  +removeTrainer()
+}
+class Lesson {
+  name : String
+  time : String
+  description : String
+  room : String
+  number : int
+  type : String
+  record_ : String
+  +addLesson()
+  +setTime()
+  +setDescription()
+  +setRoom()
+  +setNumber()
+  +setType()
+  +editLesson()
+  +editTime()
+  +editRoom()
+  +editDescription()
+  +editNumber()
+}
+Customer "0..*" -- "1" Lesson : attends
+Admin "0..*" -- "1" Trainer : manages
+Trainer "1" -- "1" Lesson : teaches
+Admin "1" -- "1" Customer : manages
+@enduml

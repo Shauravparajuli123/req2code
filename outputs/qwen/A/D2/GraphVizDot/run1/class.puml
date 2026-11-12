@@ -1,0 +1,28 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class GraphElement {
+  label : String
+  zIndex : int
+  parentGraph : String
+  +createGraphElement()
+}
+class Node {
+  shape : String
+  +createNode()
+}
+class DirectedArc {
+  sourceNode : String
+  targetNode : String
+  shape : String
+  +createDirectedArc()
+}
+class Graph {
+  type : String
+  dimension : int
+  elements : String
+  +createGraph()
+}
+Graph "1" *-- "0..*" GraphElement : is composed of
+GraphElement "0..*" -- "1" Node : contains
+@enduml

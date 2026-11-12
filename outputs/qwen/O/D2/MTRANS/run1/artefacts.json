@@ -1,0 +1,236 @@
+{
+ "actors": [
+  "operator"
+ ],
+ "use_cases": [
+  {
+   "name": "associateExpressionWithInstruction",
+   "actor": "operator",
+   "src": [
+    "R18"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    "instruction"
+   ],
+   "methods": [
+    {
+     "name": "associateExpressionWithInstruction",
+     "use_case": "associateExpressionWithInstruction"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Inheritance",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "property",
+    "source"
+   ],
+   "methods": [
+    {
+     "name": "associateInheritanceWithModule",
+     "use_case": "associateInheritanceWithModule"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "Instruction",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "MetaClass",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Module",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "MtransModel",
+   "kind": "class",
+   "attributes": [
+    "inheritanceObjects",
+    "sections",
+    "rules",
+    "variables",
+    "metamodels",
+    "modules"
+   ],
+   "methods": [
+    {
+     "name": "addRule",
+     "use_case": "addRule"
+    },
+    {
+     "name": "addVariable",
+     "use_case": "addVariable"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15"
+   ]
+  },
+  {
+   "name": "Section",
+   "kind": "class",
+   "attributes": [
+    "kind"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Variable",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "rule"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R22"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Expression",
+   "target": "Instruction",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Inheritance",
+   "target": "Module",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MtransModel",
+   "target": "Expression",
+   "multiplicity_target": "1",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MtransModel",
+   "target": "Inheritance",
+   "multiplicity_target": "1",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MtransModel",
+   "target": "Instruction",
+   "multiplicity_target": "1",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MtransModel",
+   "target": "Metamodel",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MtransModel",
+   "target": "Module",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MtransModel",
+   "target": "Inheritance",
+   "multiplicity_target": "1",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MtransModel",
+   "target": "Variable",
+   "multiplicity_target": "1",
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Inheritance",
+   "target": "Module",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "python": "class Expression:\n    def __init__(self, instruction):\n        self.instruction = instruction\n    def associateExpressionWithInstruction(self):\n        raise NotImplementedError\n\nclass Inheritance:\n    def __init__(self, name, property, source):\n        self.name = name\n        self.property = property\n        self.source = source\n    def associateInheritanceWithModule(self):\n        raise NotImplementedError\n\nclass Instruction:\n    pass\n\nclass MetaClass:\n    def __init__(self, name):\n        self.name = name\n\nclass Module:\n    def __init__(self, name):\n        self.name = name\n\nclass MtransModel:\n    def __init__(self):\n        self.inheritanceObjects = []\n        self.sections = []\n        self.rules = []\n        self.variables = []\n        self.metamodels = []\n        self.modules = []\n    def addRule(self, rule):\n        self.rules.append(rule)\n    def addVariable(self, variable):\n        self.variables.append(variable)\n\nclass Section:\n    def __init__(self, kind):\n        self.kind = kind\n\nclass Variable:\n    def __init__(self, name, rule):\n        self.name = name\n        self.rule = rule",
+ "java": {}
+}

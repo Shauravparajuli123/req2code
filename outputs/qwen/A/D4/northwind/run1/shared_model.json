@@ -1,0 +1,714 @@
+{
+ "case": "D4/northwind",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "FR-CM-03"
+     ]
+    },
+    {
+     "name": "phoneNumber",
+     "type": "String",
+     "src": [
+      "FR-CM-03"
+     ]
+    },
+    {
+     "name": "address",
+     "type": "String",
+     "src": [
+      "FR-CM-03"
+     ]
+    },
+    {
+     "name": "state",
+     "type": "String",
+     "src": [
+      "FR-CM-05"
+     ]
+    },
+    {
+     "name": "zipCode",
+     "type": "String",
+     "src": [
+      "FR-CM-03"
+     ]
+    },
+    {
+     "name": "website",
+     "type": "String",
+     "src": [
+      "FR-CM-03"
+     ]
+    },
+    {
+     "name": "companyType",
+     "type": "String",
+     "src": [
+      "FR-CM-04"
+     ]
+    },
+    {
+     "name": "taxStatus",
+     "type": "String",
+     "src": [
+      "FR-CM-06"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-01",
+    "FR-CM-02",
+    "FR-CM-03",
+    "FR-CM-04",
+    "FR-CM-05",
+    "FR-CM-06"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "firstName",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    },
+    {
+     "name": "lastName",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    },
+    {
+     "name": "primaryPhoneNumber",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    },
+    {
+     "name": "secondaryPhoneNumber",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    },
+    {
+     "name": "email",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    },
+    {
+     "name": "jobTitle",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    },
+    {
+     "name": "notes",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-07"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "firstName",
+     "type": "String",
+     "src": [
+      "FR-EM-01"
+     ]
+    },
+    {
+     "name": "lastName",
+     "type": "String",
+     "src": [
+      "FR-EM-01"
+     ]
+    },
+    {
+     "name": "primaryPhoneNumber",
+     "type": "String",
+     "src": [
+      "FR-EM-01"
+     ]
+    },
+    {
+     "name": "secondaryPhoneNumber",
+     "type": "String",
+     "src": [
+      "FR-EM-01"
+     ]
+    },
+    {
+     "name": "jobTitle",
+     "type": "String",
+     "src": [
+      "FR-EM-01"
+     ]
+    },
+    {
+     "name": "email",
+     "type": "String",
+     "src": [
+      "FR-EM-01"
+     ]
+    },
+    {
+     "name": "title",
+     "type": "String",
+     "src": [
+      "FR-EM-02"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "assignSupervisor",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02",
+    "FR-EM-03",
+    "FR-EM-04",
+    "FR-EM-05"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Product",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "code",
+     "type": "String",
+     "src": [
+      "FR-PM-01"
+     ]
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "FR-PM-01"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "FR-PM-01"
+     ]
+    },
+    {
+     "name": "unitCost",
+     "type": "double",
+     "src": [
+      "FR-PM-03"
+     ]
+    },
+    {
+     "name": "retailPrice",
+     "type": "double",
+     "src": [
+      "FR-PM-03"
+     ]
+    },
+    {
+     "name": "category",
+     "type": "String",
+     "src": [
+      "FR-PM-02"
+     ]
+    },
+    {
+     "name": "discontinued",
+     "type": "boolean",
+     "src": [
+      "FR-PM-05"
+     ]
+    },
+    {
+     "name": "vendor",
+     "type": "String",
+     "src": [
+      "FR-PM-07"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-PM-01",
+    "FR-PM-02",
+    "FR-PM-03",
+    "FR-PM-04",
+    "FR-PM-05",
+    "FR-PM-06",
+    "FR-PM-07"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "ProductCategory",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "FR-PM-06"
+     ]
+    },
+    {
+     "name": "code",
+     "type": "String",
+     "src": [
+      "FR-PM-06"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "FR-PM-06"
+     ]
+    },
+    {
+     "name": "image",
+     "type": "String",
+     "src": [
+      "FR-PM-06"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-PM-06"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "StockTake",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "date",
+     "type": "java.time.LocalDate",
+     "src": [
+      "FR-IM-02"
+     ]
+    },
+    {
+     "name": "product",
+     "type": "String",
+     "src": [
+      "FR-IM-02"
+     ]
+    },
+    {
+     "name": "quantityOnHand",
+     "type": "int",
+     "src": [
+      "FR-IM-02"
+     ]
+    },
+    {
+     "name": "expectedQuantity",
+     "type": "int",
+     "src": [
+      "FR-IM-02"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-IM-01",
+    "FR-IM-02",
+    "FR-IM-03"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Order",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "date",
+     "type": "java.time.LocalDate",
+     "src": [
+      "FR-SOP-01"
+     ]
+    },
+    {
+     "name": "customer",
+     "type": "String",
+     "src": [
+      "FR-SOP-02"
+     ]
+    },
+    {
+     "name": "employee",
+     "type": "String",
+     "src": [
+      "FR-SOP-03"
+     ]
+    },
+    {
+     "name": "status",
+     "type": "String",
+     "src": [
+      "FR-SOP-04"
+     ]
+    },
+    {
+     "name": "shipper",
+     "type": "String",
+     "src": [
+      "FR-SOP-05"
+     ]
+    },
+    {
+     "name": "taxRate",
+     "type": "double",
+     "src": [
+      "FR-SOP-06"
+     ]
+    },
+    {
+     "name": "taxStatus",
+     "type": "String",
+     "src": [
+      "FR-SOP-06"
+     ]
+    },
+    {
+     "name": "invoiceDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "FR-SOP-07"
+     ]
+    },
+    {
+     "name": "paymentMethod",
+     "type": "String",
+     "src": [
+      "FR-SOP-07"
+     ]
+    },
+    {
+     "name": "paymentDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "FR-SOP-07"
+     ]
+    },
+    {
+     "name": "details",
+     "type": "String",
+     "src": [
+      "FR-SOP-08"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "addDetail",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-02",
+    "FR-SOP-03",
+    "FR-SOP-04",
+    "FR-SOP-05",
+    "FR-SOP-06",
+    "FR-SOP-07",
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "OrderDetail",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "product",
+     "type": "String",
+     "src": [
+      "FR-SOP-09"
+     ]
+    },
+    {
+     "name": "quantity",
+     "type": "int",
+     "src": [
+      "FR-SOP-09"
+     ]
+    },
+    {
+     "name": "unitPrice",
+     "type": "double",
+     "src": [
+      "FR-SOP-09"
+     ]
+    },
+    {
+     "name": "discount",
+     "type": "double",
+     "src": [
+      "FR-SOP-09"
+     ]
+    },
+    {
+     "name": "status",
+     "type": "String",
+     "src": [
+      "FR-SOP-10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "PurchaseOrder",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "date",
+     "type": "java.time.LocalDate",
+     "src": [
+      "FR-POP-06"
+     ]
+    },
+    {
+     "name": "vendor",
+     "type": "String",
+     "src": [
+      "FR-POP-02"
+     ]
+    },
+    {
+     "name": "submitter",
+     "type": "String",
+     "src": [
+      "FR-POP-03"
+     ]
+    },
+    {
+     "name": "approver",
+     "type": "String",
+     "src": [
+      "FR-POP-04"
+     ]
+    },
+    {
+     "name": "status",
+     "type": "String",
+     "src": [
+      "FR-POP-05"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addDetail",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-POP-01",
+    "FR-POP-02",
+    "FR-POP-03",
+    "FR-POP-04",
+    "FR-POP-05",
+    "FR-POP-06",
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  },
+  {
+   "id": "C10",
+   "name": "PurchaseOrderDetail",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "product",
+     "type": "String",
+     "src": [
+      "FR-POP-08"
+     ]
+    },
+    {
+     "name": "quantity",
+     "type": "int",
+     "src": [
+      "FR-POP-08"
+     ]
+    },
+    {
+     "name": "unitPrice",
+     "type": "double",
+     "src": [
+      "FR-POP-08"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-POP-08"
+   ]
+  },
+  {
+   "id": "C11",
+   "name": "AuditLog",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "addedBy",
+     "type": "String",
+     "src": [
+      "FR-DA-01"
+     ]
+    },
+    {
+     "name": "addedOn",
+     "type": "java.time.LocalDate",
+     "src": [
+      "FR-DA-01"
+     ]
+    },
+    {
+     "name": "modifiedBy",
+     "type": "String",
+     "src": [
+      "FR-DA-02"
+     ]
+    },
+    {
+     "name": "modifiedOn",
+     "type": "java.time.LocalDate",
+     "src": [
+      "FR-DA-02"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-DA-01",
+    "FR-DA-02"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "FR-CM-07"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C9",
+   "target": "C10",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "contains",
+   "src": [
+    "FR-POP-07"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C7",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "contains",
+   "src": [
+    "FR-SOP-08"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C4",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is in category",
+   "src": [
+    "FR-PM-02"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Assuming that the relationship between Company and Contact is a many-to-many relationship, as no specific cardinality is provided in the requirements."
+  }
+ ],
+ "open_tags": []
+}

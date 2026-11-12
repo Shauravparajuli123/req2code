@@ -1,0 +1,18 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Robot {
+  id : int
+}
+class Task {
+  id : int
+  +performTask()
+}
+class TaskExecution {
+  id : int
+  startTime : LocalDate
+  location : String
+}
+class Location {
+}
+@enduml

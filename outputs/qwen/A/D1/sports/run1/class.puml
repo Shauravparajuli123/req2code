@@ -1,0 +1,73 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  name : String
+  personalInformation : String
+  bankingDetails : String
+  membershipType : String
+  subscriptionEndDate : LocalDate
+  previousInformation : boolean
+  isSubscribed : boolean
+  password : String
+  personalDetails : String
+  paymentDetails : String
+  familyMembers : String
+  familyMembership : boolean
+  availableLessons : String
+  bookedLessons : String
+  lessonHistory : String
+  lessonBooked : boolean
+  lessonCanceled : boolean
+  notificationMethod : String
+  preferredNotifications : String
+  lessonCanceledNotification : boolean
+  checkInStatus : boolean
+  subscriptionStatus : boolean
+  +createAccount()
+  +managePersonalInformation()
+  +bookLessons()
+  +callGymToBookLesson()
+  +callGymToCancelLesson()
+  +bookPersonalTrainingSession()
+  +cancelLesson()
+  +editLesson()
+  +viewSchedule()
+  +checkIn()
+  +adminCheckIn()
+}
+class Trainer {
+  name : String
+  lessonSchedule : String
+  lessonTime : LocalDate
+  lessonDescription : String
+  lessonRoom : String
+  lessonType : String
+  maxPeopleAllowed : int
+  pastLessons : String
+  canEditLessons : boolean
+  lessonTimeEdited : LocalDate
+  lessonRoomEdited : String
+  lessonDescriptionEdited : String
+  lessonMaxPeopleEdited : int
+  lessonCanceled : boolean
+  checkInStatus : boolean
+  +addLesson()
+  +editLesson()
+  +viewSchedule()
+  +cancelLesson()
+  +checkIn()
+}
+class Admin {
+  name : String
+  canEditAnyLesson : boolean
+  lessonCanceled : boolean
+  checkInStatus : boolean
+  +editLesson()
+  +cancelLesson()
+  +viewSchedule()
+  +addTrainer()
+  +addAdmin()
+  +removeTrainer()
+}
+@enduml

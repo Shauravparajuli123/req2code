@@ -1,0 +1,136 @@
+{
+ "case": "D2/JavaSource",
+ "stage": "result2_after_ambiguity_removal",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "the definition of a class"
+    },
+    {
+     "sid": "R7.s1",
+     "text": "The definition of a class that can be a superclass of another class"
+    },
+    {
+     "sid": "R8.s1",
+     "text": "The definition of a method inside a class"
+    }
+   ],
+   "name": "Definition",
+   "freq": 3
+  },
+  {
+   "id": "C2",
+   "src": [
+    "R8",
+    "R9"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R8.s1",
+     "text": "The definition of a method inside a class"
+    },
+    {
+     "sid": "R9.s1",
+     "text": "the invocation a method that corresponds to a method definition"
+    }
+   ],
+   "name": "Method",
+   "freq": 2
+  },
+  {
+   "id": "C3",
+   "src": [
+    "R4",
+    "R9"
+   ],
+   "rule": [
+    "explicit_class",
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "A package called \"JavaSource\" with a class called \"MethodDefinition\"."
+    },
+    {
+     "sid": "R9.s1",
+     "text": "the invocation a method that corresponds to a method definition"
+    }
+   ],
+   "name": "MethodDefinition",
+   "freq": 1
+  }
+ ],
+ "attributes": [],
+ "relations": [
+  {
+   "id": "REL1",
+   "src": [
+    "R9"
+   ],
+   "rule": [
+    "verb:correspond"
+   ],
+   "evidence": [
+    {
+     "sid": "R9.s1",
+     "text": "the invocation a method that corresponds to a method definition"
+    }
+   ],
+   "kind": "association",
+   "source": "Method",
+   "target": "MethodDefinition",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL2",
+   "src": [
+    "R8"
+   ],
+   "rule": [
+    "of_phrase"
+   ],
+   "evidence": [
+    {
+     "sid": "R8.s1",
+     "text": "The definition of a method inside a class"
+    }
+   ],
+   "kind": "has",
+   "source": "Method",
+   "target": "Definition",
+   "multiplicity_target": null
+  }
+ ],
+ "enums": [],
+ "applied_edits": {
+  "remove_classes": [],
+  "merge_classes": [],
+  "merge_actors": [],
+  "enums": [],
+  "multiplicities": [
+   {
+    "source": "Definition",
+    "target": "Element",
+    "multiplicity": "1..*"
+   }
+  ],
+  "actor_assumptions": []
+ }
+}

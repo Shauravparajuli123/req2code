@@ -1,0 +1,95 @@
+{
+ "actors": [],
+ "use_cases": [
+  {
+   "name": "Create Technology Object",
+   "actor": "",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TechnologyObject",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "implement",
+     "use_case": "R5"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5"
+   ]
+  },
+  {
+   "name": "ImplementableStandard",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "extendTechnology",
+     "use_case": "R8"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Implementation",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "implementTechnology",
+     "use_case": "R2"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "IXIT",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "ImplementableStandard",
+   "target": "TechnologyObject",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "Implementation",
+   "target": "IXIT",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "python": "from abc import ABC\n\nclass ImplementableStandard(ABC):\n    pass\n\nclass Implementation(IXIT):\n    def __init__(self):\n        self.ixin = []\n\n    def add_ixin(self, ixin):\n        raise NotImplementedError\n\nclass IXIT(Implementation):\n    pass\n\nclass TechnologyObject(ImplementableStandard):\n    def __init__(self):\n        self.implementable_standards = []\n\n    def add_implementable_standard(self, standard):\n        raise NotImplementedError\n",
+ "java": {}
+}

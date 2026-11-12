@@ -1,0 +1,293 @@
+<html><head><meta charset='utf-8'><title>D1/supermarket</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D1/supermarket &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: As a customer, I want to create a personal account.
+R2: As a customer, I want to be able to sign up for the newsletter, so that I am aware of discounts and anomalies.
+R3: As a customer, I want to be able to unsubscribe from the newsletter, so that I no longer receive the newsletter.
+R4: As a customer, I want to activate push notifications, so that I am aware of discounts and anomalies.
+R5: As a customer, I want to be able to deactivate push notifications, so that I no longer receive push notifications.
+R6: As a customer, I want to reset my password.
+R7: As a customer, I want to change the font size of the text, so that it is easier for me to read.
+R8: As a customer, I want to change the contrast between the text and the background, so that it is easier for me to read.
+R9: As a customer, I want to change the application&#x27;s language to my native language, so that it is easier for me to understand the app.
+R10: As a customer, I want to receive suggestions on products that I might like, so that I can find my new favorite products.
+R11: As a customer, I want to receive a special personal discount on the products that I frequently buy, so that I can save money.
+R12: As a customer, I want to be notified of special personal discounts, so that I do not miss out on them.
+R13: As a customer, I want to have a subscription-based delivery service, so that I gain discounts in case of frequent deliveries.
+R14: As a customer, I want to get recipes based on products I like, so I can potentially discover new meals to cook.
+R15: As a customer, I want to contact customer service, so that I can have answers to urgent questions when I need them.
+R16: As a customer, I want to scan products in the store to build my shopping list, so that I do not have to scan my products again at checkout.
+R17: As a customer, I want to be able to add products to my wishlist, so that I can easily find them in the app.
+R18: As a customer, I want to search for a product, so that I know if it is in the supermarket&#x27;s stock.
+R19: As a customer, I want to filter products on dietary restrictions, so that I know which products are suited for my diet.
+R20: As a customer, I want to order products by price in ascending order, so that I can save money.
+R21: As a customer, I want to order products by popularity, so that I become aware of which products are liked by most people.
+R22: As a customer, I want to be notified of what products are on sale, so that I can save money.
+R23: As a customer, I want to scan the barcode of an item, so that I can see the product information without searching for it online.
+R24: As a customer, I want to read the product information, so that I find it easier than reading the product&#x27;s packaging.
+R25: As a customer, I want to see if the product I need is in stock, so that I do not end up going to the store for a product that is sold out.
+R26: As a customer, I want to be notified when an item I need is back in stock, so that I do not miss out on it.
+R27: As a customer, I want to be able to see if a product that is sold out in my store is available in another store, so that I can purchase the product there.
+R28: As a customer, I want to see the available quantity of a product in store, so that I know that there is enough to fulfill my needs.
+R29: As a customer, I want to see when a product will be available again when it is currently sold out, so that I know when I can buy it again.
+R30: As a customer, I want to be provided with recipe ideas, so that I gain inspiration for my meals.
+R31: As a customer, I want to see which products were used in a recipe, so that I know which products to buy when I am making a recipe.
+R32: As a customer, I want to purchase products online, so that I do not have to find the products in the store myself.
+R33: As a customer, I want to have my groceries delivered to me, so that I do not have to go to the store myself.
+R34: As a customer, I want to be able to select the date on which my groceries will be delivered, so that I am sure that I have them in time.
+R35: As a customer, I want to be able to select a time slot for the delivery of my groceries so that I can make sure that I am home to receive the delivery.
+R36: As a customer, I want to have my groceries delivered using an express delivery service, so that I can have products delivered to me when I need them quickly.
+R37: As a customer, I want to see my order history, so that I can easily find products that I have purchased before.
+R38: As a customer, I want to be able to place a previous order again, so that I do not have to add the products to my shopping cart again.
+R39: As a customer, I want to add products from the overview of my previous order to my new order, so that I can save time adding products to my order.
+R40: As a customer, I want to be able to digitally pay for my delivered groceries, so that I am not required to pay in person.
+R41: As a customer, I want to find the location of products in a specific store, so that my shopping becomes easier and faster.
+R42: As a customer, I want to get recommendation regarding the nearest store, so that I won&#x27;t be need to select the related store.
+R43: As a customer, I want to be able to change the selection of my default store, so that I can easily order groceries at a different location.
+R44: As a customer, I want to link my existing loyalty card, so that I do not have to physically have it.
+R45: As an employee, I want to update the application with new recipes, so that I can provide customers with inspiration for cooking a meal.
+R46: As an employee, I want to edit the discounts for a specific product, so that customers are provided with up-to-date information.
+R47: As an employee, I want to confirm an established delivery time, so that customers are accurately informed on when their groceries will arrive.
+R48: As an employee, I want to notify customers of suddenly unavailable products in their delivery, so that customers can manage their expectations accordingly.
+R49: As an employee, I want to notify customers in case of a delayed delivery, so that customers do not have to unnecessarily wait longer than needed.
+R50: As an employee, I want to contact the customer in case of a canceled delivery so that customers are given full transparency, and their delivery is handled adequately later.
+R51: As an employee, I want to provide the customer with a new delivery time in case of a canceled delivery, so that the customer remains in control of when their groceries will arrive.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (2 → 2)</th></tr><tr><td class="">customer</td></tr><tr><td class="">employee</td></tr></table></div>
+<div><table><tr><th>classes (24 → 24)</th></tr><tr><td class="">Anomaly</td></tr><tr><td class="">Customer</td></tr><tr><td class="">Date</td></tr><tr><td class="">Delivery</td></tr><tr><td class="">DeliveryService</td></tr><tr><td class="">DeliveryTime</td></tr><tr><td class="">Discount</td></tr><tr><td class="">Employee</td></tr><tr><td class="">Grocery</td></tr><tr><td class="">Inspiration</td></tr><tr><td class="">Item</td></tr><tr><td class="">Language</td></tr><tr><td class="">Location</td></tr><tr><td class="">Meal</td></tr><tr><td class="">Money</td></tr><tr><td class="">Newsletter</td></tr><tr><td class="">Order</td></tr><tr><td class="">Product</td></tr><tr><td class="">ProductInformation</td></tr><tr><td class="">PushNotification</td></tr><tr><td class="">Recipe</td></tr><tr><td class="">Stock</td></tr><tr><td class="">Store</td></tr><tr><td class="">Text</td></tr></table></div>
+<div><table><tr><th>attributes (5 → 5)</th></tr><tr><td class="">Customer.expectation</td></tr><tr><td class="">Item.barcode</td></tr><tr><td class="">Product.packaging</td></tr><tr><td class="">Product.quantity</td></tr><tr><td class="">Text.size</td></tr></table></div>
+<div><table><tr><th>relations (5 → 5)</th></tr><tr><td class="">has: Customer -&gt; Delivery</td></tr><tr><td class="">has: Customer -&gt; Grocery</td></tr><tr><td class="">has: Grocery -&gt; Delivery</td></tr><tr><td class="">has: Product -&gt; Customer</td></tr><tr><td class="">has: Product -&gt; Location</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R7</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the font size; it refers to the contrast<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to the font size or the contrast.</i></td></tr>
+<tr><td>A2</td><td>R8</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the font size; it refers to the contrast<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to the font size or the contrast.</i></td></tr>
+<tr><td>A3</td><td>R9</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the application&#x27;s language; it refers to the customer&#x27;s native language<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to the application&#x27;s language or the customer&#x27;s native language.</i></td></tr>
+<tr><td>A4</td><td>R15</td><td>referential</td><td>them</td><td><span class='tag resolved'>resolved</span></td><td>them refers to the questions; them refers to the urgent questions<br><i>The use of &#x27;them&#x27; is ambiguous as it could refer to the questions in general or the urgent questions.</i></td></tr>
+<tr><td>A5</td><td>R18</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the product; it refers to the search<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to the product or the search process.</i></td></tr>
+<tr><td>A6</td><td>R23</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the barcode; it refers to the product information<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to the barcode or the product information.</i></td></tr>
+<tr><td>A7</td><td>R23</td><td>incompleteness</td><td>information</td><td><span class='tag open'>open</span></td><td>information refers to the product; information refers to the barcode<br><i>The requirement is incomplete as it does not specify what information is being referred to.</i></td></tr>
+<tr><td>A8</td><td>R24</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the product information; it refers to the packaging<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to the product information or the packaging.</i></td></tr>
+<tr><td>A9</td><td>R24</td><td>incompleteness</td><td>information</td><td><span class='tag open'>open</span></td><td>information refers to the product; information refers to the barcode<br><i>The requirement is incomplete as it does not specify what information is being referred to.</i></td></tr>
+<tr><td>A10</td><td>R26</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the item; it refers to the stock<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to the item or the stock.</i></td></tr>
+<tr><td>A11</td><td>R29</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the product; it refers to the availability<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to the product or the availability.</i></td></tr>
+<tr><td>A12</td><td>R29</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the product; it refers to the availability<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to the product or the availability.</i></td></tr>
+<tr><td>A13</td><td>R36</td><td>referential</td><td>them</td><td><span class='tag resolved'>resolved</span></td><td>them refers to the delivery service; them refers to the products<br><i>The use of &#x27;them&#x27; is ambiguous as it could refer to the delivery service or the products.</i></td></tr>
+<tr><td>A14</td><td>R36</td><td>incompleteness</td><td>quickly</td><td><span class='tag open'>open</span></td><td>quickly refers to the delivery; quickly refers to the service<br><i>The requirement is incomplete as it does not specify what &#x27;quickly&#x27; refers to.</i></td></tr>
+<tr><td>A15</td><td>R44</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the loyalty card; it refers to the linking process<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to the loyalty card or the linking process.</i></td></tr>
+<tr><td>A16</td><td>R46</td><td>incompleteness</td><td>information</td><td><span class='tag open'>open</span></td><td>information refers to the discounts; information refers to the product<br><i>The requirement is incomplete as it does not specify what information is being referred to.</i></td></tr>
+<tr><td>A17</td><td>R48</td><td>referential</td><td>their</td><td><span class='tag resolved'>resolved</span></td><td>their refers to the customer&#x27;s; their refers to the delivery&#x27;s<br><i>The use of &#x27;their&#x27; is ambiguous as it could refer to the customer&#x27;s or the delivery&#x27;s.</i></td></tr>
+<tr><td>A18</td><td>R48</td><td>referential</td><td>their</td><td><span class='tag resolved'>resolved</span></td><td>their refers to the customer&#x27;s; their refers to the delivery&#x27;s<br><i>The use of &#x27;their&#x27; is ambiguous as it could refer to the customer&#x27;s or the delivery&#x27;s.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D1_supermarket_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D1_supermarket_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D1/supermarket.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Customer:
+    &quot;&quot;&quot;Source: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    email: _t.Optional[str] = None
+    password: _t.Optional[str] = None
+    language: _t.Optional[str] = None
+    pushNotifications: _t.Optional[bool] = None
+    newsletterSubscription: _t.Optional[bool] = None
+    defaultStore: _t.Optional[str] = None
+    loyaltyCard: _t.Optional[str] = None
+
+    def createAccount(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC1 &quot;Create Account&quot; (R1).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def signUpForNewsletter(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC2 &quot;Sign Newsletter&quot; (R2).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def unsubscribeFromNewsletter(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC3 &quot;Unsubscribe Newsletter&quot; (R3).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def activatePushNotification(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC4 &quot;Activate Push Notification&quot; (R4).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def deactivatePushNotification(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC5 &quot;Deactivate Push Notification&quot; (R5).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def resetPassword(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC6 &quot;Reset Password&quot; (R6).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def changeFontSize(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC7 &quot;Change Size&quot; (R7).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def changeContrast(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC8 &quot;Change Contrast&quot; (R8).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def changeLanguage(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC9 &quot;Change Language&quot; (R9).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def receiveSuggestion(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC10 &quot;Receive Suggestion&quot; (R10).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def receiveDiscount(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC11 &quot;Receive Discount&quot; (R11).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def getRecipe(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC13 &quot;Get Recipe&quot; (R14).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def contactCustomerService(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC14 &quot;Contact Customer Service&quot; (R15).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def scanProduct(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC15 &quot;Scan Product&quot; (R16).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def searchProduct(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC16 &quot;Search Product&quot; (R18).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def filterProduct(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC17 &quot;Filter Product&quot; (R19).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def orderProduct(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC18 &quot;Order Product&quot; (R20).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def orderProductByPopularity(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC19 &quot;Order Product By Popularity&quot; (R21).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def orderProductByPrice(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC20 &quot;Order Product By Price&quot; (R20).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def notifyProduct(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC21 &quot;Notify Product&quot; (R22).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def notifyItem(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC22 &quot;Notify Item&quot; (R26).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def notifyDiscount(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC23 &quot;Notify Discount&quot; (R12).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def notifySale(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC24 &quot;Notify Sale&quot; (R22).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def readProductInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC25 &quot;Read Product Information&quot; (R24).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeProduct(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC26 &quot;See Product&quot; (R25).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeQuantity(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC27 &quot;See Quantity&quot; (R28).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeOrderHistory(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC28 &quot;See Order History&quot; (R37).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def placeOrder(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC29 &quot;Place Order&quot; (R38).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def addProductToWishlist(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC30 &quot;Add Product To Wishlist&quot; (R17).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def addProductToOrder(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC31 &quot;Add Product To Order&quot; (R39).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def payGrocery(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC32 &quot;Pay Grocery&quot; (R40).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def findLocation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC33 &quot;Find Location&quot; (R41).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def getRecommendation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC34 &quot;Get Recommendation&quot; (R42).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def changeSelection(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC35 &quot;Change Selection&quot; (R43).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def linkLoyaltyCard(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC36 &quot;Link Loyalty Card&quot; (R44).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Employee:
+    &quot;&quot;&quot;Source: R45, R46, R47, R48, R49, R50, R51&quot;&quot;&quot;
+
+    def updateApplication(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC37 &quot;Update Application&quot; (R45).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editDiscount(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC38 &quot;Edit Discount&quot; (R46).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def confirmDeliveryTime(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC39 &quot;Confirm Delivery Time&quot; (R47).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def notifyCustomerOfDelay(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC41 &quot;Notify Customer Of Delay&quot; (R49).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def contactCustomer(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC42 </pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>43</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>1</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>1</td></tr>
+<tr><th>inconsistency_rate</th><td>0.0213</td></tr>
+<tr><th>requirement_coverage</th><td>1.0</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;Information refers to the product&quot;}, {&quot;tag&quot;: &quot;R24&quot;, &quot;assumption&quot;: &quot;Information refers to the product&quot;}, {&quot;tag&quot;: &quot;R36&quot;, &quot;assumption&quot;: &quot;Quickly refers to the delivery&quot;}, {&quot;tag&quot;: &quot;R46&quot;, &quot;assumption&quot;: &quot;Information refers to the discounts&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.5</td><td>0.091</td><td>0.154</td><td>1/1/10</td></tr>
+<tr><td>relations</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0/0/14</td></tr>
+<tr><td>use_cases_provisional</td><td>1.0</td><td>0.811</td><td>0.896</td><td>43/0/10</td></tr>
+</table></body></html>

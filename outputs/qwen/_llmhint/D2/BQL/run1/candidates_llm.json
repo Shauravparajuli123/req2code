@@ -1,0 +1,173 @@
+{
+ "actors": [
+  {
+   "name": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "CreateBLQModel",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "DefineQueries",
+   "actor": "User",
+   "src": [
+    "R2",
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "name": "DefineEntries",
+   "actor": "User",
+   "src": [
+    "R3",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "name": "DefineFields",
+   "actor": "User",
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "AddComments",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "BLQModel",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Element",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Query",
+   "src": [
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "name": "Entry",
+   "src": [
+    "R3",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "name": "Field",
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "BLQModel",
+   "name": "elements",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Entry",
+   "name": "name",
+   "src": [
+    "R3",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "owner": "Entry",
+   "name": "allFields",
+   "src": [
+    "R3",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "owner": "Field",
+   "name": "name",
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "BLQModel",
+   "target": "Element",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "BLQModel",
+   "target": "Query",
+   "src": [
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "BLQModel",
+   "target": "Entry",
+   "src": [
+    "R3",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "BLQModel",
+   "target": "Field",
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

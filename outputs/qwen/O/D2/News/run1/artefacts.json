@@ -1,0 +1,72 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DisplayNews",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "News",
+   "kind": "class",
+   "attributes": [
+    "title",
+    "link",
+    "author",
+    "date"
+   ],
+   "methods": [
+    {
+     "name": "publish",
+     "use_case": "DisplayNews"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Newspaper",
+   "kind": "class",
+   "attributes": [
+    "language",
+    "publishedDate",
+    "category"
+   ],
+   "methods": [
+    {
+     "name": "publishNews",
+     "use_case": "DisplayNews"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Newspaper",
+   "target": "News",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "python": "class News:\n    def __init__(self, title, link, author, date):\n        self.title = title\n        self.link = link\n        self.author = author\n        self.date = date\n\n    def publish(self):\n        raise NotImplementedError\n\nclass Newspaper:\n    def __init__(self, language, published_date, category):\n        self.language = language\n        self.publishedDate = published_date\n        self.category = category\n        self.news = []\n\n    def publishNews(self, news):\n        self.news.append(news)\n        raise NotImplementedError",
+ "java": {}
+}

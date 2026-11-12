@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for 'LaunchConfiguration' type mentioned in R1.",
+   "fix": "Add a class named 'LaunchConfiguration' with an attribute for 'type'.",
+   "requirement": "R1"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'MapAttribute' as per R5.",
+   "fix": "Add a class named 'MapAttribute'.",
+   "requirement": "R5"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'ListAttribute' as per R7.",
+   "fix": "Add a class named 'ListAttribute'.",
+   "requirement": "R7"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'MapAttribute' and 'MapEntry' as per R10 and R11.",
+   "fix": "Add a relationship between 'MapAttribute' and 'MapEntry' with cardinality 1..0..* from 'MapAttribute' to 'MapEntry'.",
+   "requirement": "R10, R11"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'ListAttribute' and 'ListEntry' as per R12 and R13.",
+   "fix": "Add a relationship between 'ListAttribute' and 'ListEntry' with cardinality 1..0..* from 'ListAttribute' to 'ListEntry'.",
+   "requirement": "R12, R13"
+  }
+ ]
+}

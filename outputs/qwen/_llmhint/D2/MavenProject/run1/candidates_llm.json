@@ -1,0 +1,270 @@
+{
+ "actors": [
+  {
+   "name": "User",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "DescribeProject",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ConfigureBuild",
+   "actor": "User",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "DefineResource",
+   "actor": "User",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "ManageMailingList",
+   "actor": "User",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "ContributeToProject",
+   "actor": "User",
+   "src": [
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Project",
+   "src": [
+    "R1",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "BuildConfiguration",
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "name": "Resource",
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "MailingList",
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "name": "Contributor",
+   "src": [
+    "R5",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Person",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Developer",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Project",
+   "name": "identifier",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Project",
+   "name": "artifactIdentifier",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Project",
+   "name": "description",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "BuildConfiguration",
+   "name": "defaultGoal",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "BuildConfiguration",
+   "name": "pathToUnitTestSourceDirectory",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "Resource",
+   "name": "targetPath",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Resource",
+   "name": "directory",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Resource",
+   "name": "excludes",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "MailingList",
+   "name": "name",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "owner": "MailingList",
+   "name": "subscribeString",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "owner": "MailingList",
+   "name": "archiveString",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "owner": "Person",
+   "name": "name",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "Person",
+   "name": "url",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "Person",
+   "name": "organizationUrl",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "Person",
+   "name": "timeZone",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "Developer",
+   "name": "uniqueIdentifier",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Project",
+   "target": "BuildConfiguration",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Project",
+   "target": "MailingList",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Project",
+   "target": "Resource",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Contributor",
+   "target": "Person",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Contributor",
+   "target": "Developer",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

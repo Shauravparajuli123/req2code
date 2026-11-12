@@ -1,0 +1,136 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "Date",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "ControlsSequence",
+    "src": [
+     "R2",
+     "R7",
+     "R8"
+    ]
+   },
+   {
+    "name": "Control",
+    "src": [
+     "R3",
+     "R7",
+     "R10",
+     "R12"
+    ]
+   },
+   {
+    "name": "Bug",
+    "src": [
+     "R6",
+     "R12",
+     "R13"
+    ]
+   },
+   {
+    "name": "SoftwareQualityControl",
+    "src": [
+     "R5",
+     "R6",
+     "R12"
+    ]
+   },
+   {
+    "name": "Architecture",
+    "src": [
+     "R11"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Date",
+    "name": "day",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "Date",
+    "name": "year",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "Bug",
+    "name": "number",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "owner": "Bug",
+    "name": "description",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "owner": "Bug",
+    "name": "originator",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "owner": "Bug",
+    "name": "comments",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "owner": "Bug",
+    "name": "closeDate",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "owner": "ControlsSequence",
+    "name": "controls",
+    "src": [
+     "R3",
+     "R7",
+     "R8"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "ControlsSequence",
+    "target": "Control",
+    "src": [
+     "R3",
+     "R7",
+     "R8"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Bug",
+    "target": "BugTracking",
+    "src": [
+     "R13"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

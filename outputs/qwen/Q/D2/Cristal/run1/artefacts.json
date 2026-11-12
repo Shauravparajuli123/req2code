@@ -1,0 +1,266 @@
+{
+ "actors": [
+  "part composite member"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Cristal",
+   "kind": "class",
+   "attributes": [
+    "elementaryActDef",
+    "elementaryPartDef",
+    "compositeActDef",
+    "compositeParDef",
+    "condition"
+   ],
+   "methods": [
+    {
+     "name": "hasActivityDefinition",
+     "use_case": "R7"
+    },
+    {
+     "name": "hasPartDefinition",
+     "use_case": "R8"
+    },
+    {
+     "name": "hasPartCompositeMember",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Condition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ElementaryActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "ElementaryPartDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "CompositeActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "CompositeParDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "ActCompositeMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasActivityDefinition",
+     "use_case": "R12"
+    },
+    {
+     "name": "hasCondition",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10",
+    "R12"
+   ]
+  },
+  {
+   "name": "ActivityDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasActCompositeMember",
+     "use_case": "R13"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "PartCompositeMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasPartDefinition",
+     "use_case": "R15"
+    },
+    {
+     "name": "hasActCompositeMember",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R15"
+   ]
+  },
+  {
+   "name": "PartDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "ActivityDefinition",
+   "multiplicity_target": "1",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ActCompositeMember",
+   "target": "ActivityDefinition",
+   "multiplicity_target": "*",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ActivityDefinition",
+   "target": "ActCompositeMember",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "CompositeActDef",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "CompositeParDef",
+   "multiplicity_target": "*",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "Condition",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "ElementaryActDef",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "ElementaryPartDef",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PartCompositeMember",
+   "target": "PartDefinition",
+   "multiplicity_target": "1",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PartDefinition",
+   "target": "PartCompositeMember",
+   "multiplicity_target": "1",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PartCompositeMember",
+   "target": "ActCompositeMember",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CompositeParDef",
+   "target": "PartCompositeMember",
+   "multiplicity_target": "*",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Condition:\n    pass\n\nclass ElementaryActDef:\n    pass\n\nclass ElementaryPartDef:\n    pass\n\nclass CompositeActDef:\n    pass\n\nclass CompositeParDef:\n    pass\n\nclass ActCompositeMember:\n    def hasActivityDefinition(self) -> bool:\n        raise NotImplementedError\n    def hasCondition(self) -> bool:\n        raise NotImplementedError\n\nclass PartCompositeMember:\n    def hasPartDefinition(self) -> bool:\n        raise NotImplementedError\n    def hasActCompositeMember(self) -> bool:\n        raise NotImplementedError\n\nclass PartDefinition:\n    pass\n\nclass ActivityDefinition:\n    def hasActCompositeMember(self) -> bool:\n        raise NotImplementedError\n\nclass Cristal:\n    def __init__(self, elementaryActDef: ElementaryActDef, elementaryPartDef: ElementaryPartDef, compositeActDef: CompositeActDef, compositeParDef: List[CompositeParDef], condition: Condition):\n        self.elementaryActDef = elementaryActDef\n        self.elementaryPartDef = elementaryPartDef\n        self.compositeActDef = compositeActDef\n        self.compositeParDef = compositeParDef\n        self.condition = condition\n    def hasActivityDefinition(self) -> bool:\n        raise NotImplementedError\n    def hasPartDefinition(self) -> bool:\n        raise NotImplementedError\n    def hasPartCompositeMember(self) -> bool:\n        raise NotImplementedError",
+ "java": {}
+}

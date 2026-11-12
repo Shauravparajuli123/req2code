@@ -1,0 +1,180 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The system assumes that the relationship between Company and CompanyType is a one-to-one relationship."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for Customer, Vendor, and Shipper",
+   "fix": "Add classes Customer, Vendor, and Shipper inheriting from Company"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for Tax Status in Company class",
+   "fix": "Add attribute taxStatus to Company class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for Company Type in Company class",
+   "fix": "Add attribute companyType to Company class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for Title in Employee class",
+   "fix": "Add attribute title to Employee class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for Supervisor in Employee class",
+   "fix": "Add attribute supervisor to Employee class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for Status in Order class",
+   "fix": "Add attribute status to Order class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for Shipper in Order class",
+   "fix": "Add attribute shipper to Order class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for Status in PurchaseOrder class",
+   "fix": "Add attribute status to PurchaseOrder class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for OrderDate in Order class",
+   "fix": "Add attribute orderDate to Order class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for Details in Order class",
+   "fix": "Add attribute details to Order class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for Vendor in PurchaseOrder class",
+   "fix": "Add attribute vendor to PurchaseOrder class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for EmployeeSubmitted in PurchaseOrder class",
+   "fix": "Add attribute employeeSubmitted to PurchaseOrder class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for EmployeeApproved in PurchaseOrder class",
+   "fix": "Add attribute employeeApproved to PurchaseOrder class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for OrderDate in PurchaseOrder class",
+   "fix": "Add attribute orderDate to PurchaseOrder class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing attribute for Details in PurchaseOrder class",
+   "fix": "Add attribute details to PurchaseOrder class"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Company and CompanyType",
+   "fix": "Add association Company -> CompanyType [1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Product and Company",
+   "fix": "Add association Product -> Company [1..0..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Order and Company",
+   "fix": "Add association Order -> Company [1..0..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between PurchaseOrder and Company",
+   "fix": "Add association PurchaseOrder -> Company [1..0..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between StockTake and Company",
+   "fix": "Add association StockTake -> Company [1..0..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between OrderDetail and Order",
+   "fix": "Add association OrderDetail -> Order [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between PurchaseOrderDetail and PurchaseOrder",
+   "fix": "Add association PurchaseOrderDetail -> PurchaseOrder [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between OrderDetail and Product",
+   "fix": "Add association OrderDetail -> Product [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between PurchaseOrderDetail and Product",
+   "fix": "Add association PurchaseOrderDetail -> Product [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Order and Employee",
+   "fix": "Add association Order -> Employee [1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between PurchaseOrder and Employee",
+   "fix": "Add association PurchaseOrder -> Employee [1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between StockTake and Product",
+   "fix": "Add association StockTake -> Product [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Order and OrderDetail",
+   "fix": "Add association Order -> OrderDetail [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between PurchaseOrder and PurchaseOrderDetail",
+   "fix": "Add association PurchaseOrder -> PurchaseOrderDetail [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between OrderDetail and Order",
+   "fix": "Add association OrderDetail -> Order [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between PurchaseOrderDetail and PurchaseOrder",
+   "fix": "Add association PurchaseOrderDetail -> PurchaseOrder [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between OrderDetail and Product",
+   "fix": "Add association OrderDetail -> Product [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between PurchaseOrderDetail and Product",
+   "fix": "Add association PurchaseOrderDetail -> Product [1..1..*]"
+  }
+ ]
+}

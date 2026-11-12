@@ -1,0 +1,93 @@
+{
+ "classes": [
+  {
+   "name": "Company",
+   "kind": "class"
+  },
+  {
+   "name": "CorporateHQ",
+   "kind": "class"
+  },
+  {
+   "name": "Store",
+   "kind": "class"
+  },
+  {
+   "name": "CorporateHQBackOffice",
+   "kind": "class"
+  },
+  {
+   "name": "StoreBackOffice",
+   "kind": "class"
+  },
+  {
+   "name": "Employee",
+   "kind": "class"
+  },
+  {
+   "name": "CashRegister",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Company": [],
+  "CorporateHQ": [],
+  "Store": [],
+  "CorporateHQBackOffice": [],
+  "StoreBackOffice": [],
+  "Employee": [],
+  "CashRegister": []
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Company",
+   "to": "CorporateHQ",
+   "label": "corporateHQ 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Company",
+   "to": "Store",
+   "label": "Store 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "CorporateHQ",
+   "to": "Store",
+   "label": "manages 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "CorporateHQ",
+   "to": "CorporateHQBackOffice",
+   "label": "corporateHQBackOffice 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Store",
+   "to": "StoreBackOffice",
+   "label": "storeBackOffice 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Store",
+   "to": "Employee",
+   "label": "employee 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Store",
+   "to": "CashRegister",
+   "label": "cashRegister 0..*",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage CompanyStructure {\nclass Company {\n}\nCompany \"corporateHQ 1..1\" *--> CorporateHQ\nCompany \"Store 0..*\" *--> Store\nclass CorporateHQ {\n}\nCorporateHQ \"manages 0..*\" --> Store\nCorporateHQ \"corporateHQBackOffice 1..1\" *--> CorporateHQBackOffice\nclass Store {\n}\nStore \"storeBackOffice 1..1\" *--> StoreBackOffice\nStore \"employee 0..*\" *--> Employee\nStore \"cashRegister 0..*\" *--> CashRegister\nclass CorporateHQBackOffice {\n}\nclass StoreBackOffice {\n}\nclass Employee {\n}\nclass CashRegister {\n}\n}\n@enduml\n"
+}

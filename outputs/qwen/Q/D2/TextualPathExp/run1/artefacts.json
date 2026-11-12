@@ -1,0 +1,101 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineTextualPath",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TextualPathExp",
+   "kind": "class",
+   "attributes": [
+    "path"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Path",
+   "kind": "class",
+   "attributes": [
+    "transitions"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "AlternativeTrans",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Path",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R2",
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "TextualPathExp",
+   "target": "Path",
+   "multiplicity_target": "1",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AlternativeTrans",
+   "target": "Path",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\n# Define the Path class\nclass Path:\n    def __init__(self, transitions: List['Transition']):\n        self.transitions = transitions\n\n    def __str__(self) -> str:\n        raise NotImplementedError\n\n# Define the Transition class\nclass Transition:\n    def __init__(self, name: str):\n        self.name = name\n\n    def __str__(self) -> str:\n        raise NotImplementedError\n\n# Define the AlternativeTrans class\nclass AlternativeTrans:\n    def __init__(self):\n        pass\n\n    def __str__(self) -> str:\n        raise NotImplementedError\n\n# Define the TextualPathExp class\nclass TextualPathExp:\n    def __init__(self, path: Path):\n        self.path = path\n\n    def __str__(self) -> str:\n        raise NotImplementedError",
+ "java": {}
+}

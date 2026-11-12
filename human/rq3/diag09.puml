@@ -1,0 +1,24 @@
+@startuml
+class LocatedElement {
+  location
+}
+class Outline {
+  extension
+}
+class Node {
+  name
+  icon
+}
+class Label {
+  label
+}
+class LabelSuite {
+}
+class Map {
+  mapString
+}
+Node -- Label
+Node -- Map
+LabelSuite -- Label
+Outline -- Node
+@enduml

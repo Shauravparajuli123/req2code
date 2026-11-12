@@ -1,0 +1,32 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class CompanyStructureModel {
+  hq : String
+  stores : String
+  backOffices : String
+  cashRegisters : String
+  +createHq()
+  +createStore()
+  +createBackOffice()
+  +createCashRegister()
+}
+class Hq {
+  name : String
+  +manageStores()
+}
+class Store {
+  name : String
+  +assignBackOffice()
+}
+class Office {
+  name : String
+}
+class CashRegister {
+  name : String
+}
+CompanyStructureModel "1" *-- "1" Hq : has
+CompanyStructureModel "1" -- "1..*" Store : has
+Store "1" -- "1" Office : has
+CompanyStructureModel "1" -- "0..*" CashRegister : has
+@enduml

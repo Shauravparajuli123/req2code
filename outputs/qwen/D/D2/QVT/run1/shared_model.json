@@ -1,0 +1,112 @@
+{
+ "case": "D2/QVT",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "TemplateExp",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "collectionKind",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "variable",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "ObjectTemplateExp",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "propertyTemplateItems",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "CollectionTemplateExp",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "oclExpressions",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "oclExpressionMatch",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "aggregation",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "can be bound to",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "aggregation",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "can be matched to",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "A collection template expression is assumed to have a collection kind, but the specific attribute is not explicitly defined in the model."
+  }
+ ],
+ "open_tags": []
+}

@@ -1,0 +1,181 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "net",
+    "inputArcs"
+   ],
+   "methods": [
+    {
+     "name": "addInputArc",
+     "use_case": null
+    },
+    {
+     "name": "removeInputArc",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R8",
+    "R9",
+    "R15"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "outputArcs"
+   ],
+   "methods": [
+    {
+     "name": "addOutputArc",
+     "use_case": null
+    },
+    {
+     "name": "removeOutputArc",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    "weight",
+    "transition",
+    "place"
+   ],
+   "methods": [
+    {
+     "name": "setWeight",
+     "use_case": null
+    },
+    {
+     "name": "setTransition",
+     "use_case": null
+    },
+    {
+     "name": "setPlace",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "Token",
+   "kind": "class",
+   "attributes": [
+    "place"
+   ],
+   "methods": [
+    {
+     "name": "moveTo",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "places",
+    "tokens"
+   ],
+   "methods": [
+    {
+     "name": "addPlace",
+     "use_case": null
+    },
+    {
+     "name": "removePlace",
+     "use_case": null
+    },
+    {
+     "name": "addToken",
+     "use_case": null
+    },
+    {
+     "name": "removeToken",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R7",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Net",
+   "target": "Place",
+   "src": [
+    "R1",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "source": "Net",
+   "target": "Transition",
+   "src": [
+    "R5",
+    "R6",
+    "R10"
+   ]
+  },
+  {
+   "source": "Arc",
+   "target": "Place",
+   "src": [
+    "R9",
+    "R13"
+   ]
+  },
+  {
+   "source": "Arc",
+   "target": "Transition",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "source": "Token",
+   "target": "Place",
+   "src": [
+    "R7",
+    "R15"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GWPNV5.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Place:\n    \"\"\"Source: R8, R9, R15\"\"\"\n    name: _t.Optional[str] = None\n    net: _t.Optional[str] = None\n    inputArcs: _t.Optional[str] = None\n\n    def addInputArc(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removeInputArc(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: R10, R11\"\"\"\n    name: _t.Optional[str] = None\n    outputArcs: _t.Optional[str] = None\n\n    def addOutputArc(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removeOutputArc(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Arc:\n    \"\"\"Source: R4, R5, R6, R13, R14\"\"\"\n    weight: _t.Optional[int] = None\n    transition: _t.Optional[str] = None\n    place: _t.Optional[str] = None\n\n    def setWeight(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def setTransition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def setPlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Token:\n    \"\"\"Source: R15\"\"\"\n    place: _t.Optional[str] = None\n\n    def moveTo(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Net:\n    \"\"\"Source: R3, R7, R12\"\"\"\n    name: _t.Optional[str] = None\n    places: _t.Optional[str] = None\n    tokens: _t.Optional[str] = None\n    transitions: _t.List[\"Transition\"] = _dc.field(default_factory=list)\n\n    def addPlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removePlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addToken(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removeToken(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Place.java": "/** Generated from shared model D2/GWPNV5. Source: R8, R9, R15 */\npublic class Place {\n    private java.lang.String name;\n    private java.lang.String net;\n    private java.lang.String inputArcs;\n\n    /** Operation. */\n    public void addInputArc() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removeInputArc() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Transition.java": "/** Generated from shared model D2/GWPNV5. Source: R10, R11 */\npublic class Transition {\n    private java.lang.String name;\n    private java.lang.String outputArcs;\n\n    /** Operation. */\n    public void addOutputArc() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removeOutputArc() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Arc.java": "/** Generated from shared model D2/GWPNV5. Source: R4, R5, R6, R13, R14 */\npublic class Arc {\n    private int weight;\n    private java.lang.String transition;\n    private java.lang.String place;\n\n    /** Operation. */\n    public void setWeight() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void setTransition() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void setPlace() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Token.java": "/** Generated from shared model D2/GWPNV5. Source: R15 */\npublic class Token {\n    private java.lang.String place;\n\n    /** Operation. */\n    public void moveTo() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Net.java": "/** Generated from shared model D2/GWPNV5. Source: R3, R7, R12 */\npublic class Net {\n    private java.lang.String name;\n    private java.lang.String places;\n    private java.lang.String tokens;\n    private java.util.List<Transition> transitions;\n\n    /** Operation. */\n    public void addPlace() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removePlace() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addToken() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removeToken() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

@@ -1,0 +1,171 @@
+<html><head><meta charset='utf-8'><title>D2/MTRANS</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D2/MTRANS &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: A class named MetaClass.
+R2: A MTRANS model contains metamodels
+R3: A MTRANS model has modules. Each module has a name
+R4: A MTRANS model has rules. Each rule has two properties: one to state whether the rule is abstract and the other one to store its name
+R5: A MTRANS model has inheritances
+R6: A MTRANS model has expressions. Each expression has an operator
+R7: A MTRANS model has Sections. Each section has a kind
+R8: A MTRANS model has instructions
+R9: A MTRANS model has variables. Each variable has a name
+R10: A MTRANS model contains modules. Each module may have metamodels associated
+R11: A MTRANS model has modules. Each module is composed by a set of one or more rules
+R12: A MTRANS model has rules. Each rule has a module associated to it
+R13: A MTRANS model has modules. Each rule has a source which is a metaclass
+R14: A MTRANS model has rules. Each rule is composed by at least one section
+R15: A MTRANS model has rules. Each rule might be composed by inheritances
+R16: A MTRANS model has inheritances. Each inheritance has a rule associated
+R17: A MTRANS model has inheritance objects. Each of which may have inherited rules
+R18: An expression can be composed of one and only inherited rule
+R19: There are two classes. The first one is named Expression and the second is named Instruction. The class Expression has an attribute named instruction of type Instruction and of cardinality 1. The class Instruction has no attribute.
+R20: A rule can have more than one section. A section can be in one and only rule.
+R21: An instruction is composed of one and only expression. An expression must be associated with one and only instruction.
+R22: A variable is associated with one and only rule. A rule is composed of multiple variables.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (1 → 1)</th></tr><tr><td class="">operator</td></tr></table></div>
+<div><table><tr><th>classes (11 → 9)</th></tr><tr><td class="">Expression</td></tr><tr><td class="">InOne</td></tr><tr><td class="">Inheritance</td></tr><tr><td class="">Instruction</td></tr><tr><td class="">Metamodel</td></tr><tr><td class="">Module</td></tr><tr><td class="">MtransModel</td></tr><tr><td class="">OnlyRule</td></tr><tr><td class="del">Rule</td></tr><tr><td class="del">Section</td></tr><tr><td class="">Variable</td></tr></table></div>
+<div><table><tr><th>attributes (8 → 8)</th></tr><tr><td class="">Expression.operator</td></tr><tr><td class="">Module.name</td></tr><tr><td class="">MtransModel.inheritance object</td></tr><tr><td class="">MtransModel.sections</td></tr><tr><td class="del">Rule.name</td></tr><tr><td class="del">Rule.property</td></tr><tr><td class="del">Rule.source</td></tr><tr><td class="">Variable.name</td></tr><tr><td class="add">Inheritance.name</td></tr><tr><td class="add">Inheritance.property</td></tr><tr><td class="add">Inheritance.source</td></tr></table></div>
+<div><table><tr><th>relations (14 → 10)</th></tr><tr><td class="">association: Expression -&gt; Instruction</td></tr><tr><td class="del">association: Variable -&gt; Rule</td></tr><tr><td class="del">generalization: InOne -&gt; Section</td></tr><tr><td class="del">generalization: OnlyRule -&gt; Section</td></tr><tr><td class="del">has: Inheritance -&gt; Rule</td></tr><tr><td class="">has: MtransModel -&gt; Expression</td></tr><tr><td class="">has: MtransModel -&gt; Inheritance</td></tr><tr><td class="">has: MtransModel -&gt; Instruction</td></tr><tr><td class="">has: MtransModel -&gt; Metamodel</td></tr><tr><td class="">has: MtransModel -&gt; Module</td></tr><tr><td class="del">has: MtransModel -&gt; Rule</td></tr><tr><td class="">has: MtransModel -&gt; Variable</td></tr><tr><td class="del">has: Rule -&gt; Module</td></tr><tr><td class="del">has: Rule -&gt; Section</td></tr><tr><td class="add">association: Variable -&gt; Inheritance</td></tr><tr><td class="add">has: Inheritance -&gt; Module</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R4</td><td>referential</td><td>its</td><td><span class='tag resolved'>resolved</span></td><td>its properties; the rule&#x27;s properties<br><i>The sentence is ambiguous as to whether &#x27;its&#x27; refers to the rule or the module.</i></td></tr>
+<tr><td>A2</td><td>R11</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>one rule per module; multiple rules per module<br><i>The phrase &#x27;one or more&#x27; is ambiguous and could imply either one rule per module or multiple rules per module.</i></td></tr>
+<tr><td>A3</td><td>R12</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>each rule has a module; each module has a rule<br><i>The sentence is ambiguous as to whether a rule is associated with a module or a module is associated with a rule.</i></td></tr>
+<tr><td>A4</td><td>R22</td><td>quantifier</td><td>multiple</td><td><span class='tag resolved'>resolved</span></td><td>a rule is composed of one variable; a rule is composed of multiple variables<br><i>The phrase &#x27;multiple&#x27; is ambiguous and could imply either one variable or multiple variables.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D2_MTRANS_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D2_MTRANS_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D2/MTRANS.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class MtransModel:
+    &quot;&quot;&quot;Source: R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    modules: _t.Optional[str] = None
+    rules: _t.Optional[str] = None
+    inheritances: _t.Optional[str] = None
+    expressions: _t.Optional[str] = None
+    sections: _t.Optional[str] = None
+    variables: _t.Optional[str] = None
+    expression: _t.Optional[&quot;Expression&quot;] = None
+    inheritance: _t.Optional[&quot;Inheritance&quot;] = None
+    instruction: _t.Optional[&quot;Instruction&quot;] = None
+    module: _t.Optional[&quot;Module&quot;] = None
+    variable: _t.Optional[&quot;Variable&quot;] = None
+
+    def addModule(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def addRule(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def addInheritance(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def addExpression(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def addSection(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def addVariable(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Module:
+    &quot;&quot;&quot;Source: R3, R10, R11, R12, R13&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    rule: _t.Optional[&quot;Rule&quot;] = None
+
+
+@_dc.dataclass
+class Rule:
+    &quot;&quot;&quot;Source: R4, R12, R13, R14, R15&quot;&quot;&quot;
+    moduleName: _t.Optional[str] = None
+    sections: _t.Optional[str] = None
+    inheritances: _t.Optional[str] = None
+    name: _t.Optional[str] = None
+    inheritance: _t.Optional[&quot;Inheritance&quot;] = None
+
+
+@_dc.dataclass
+class Inheritance:
+    &quot;&quot;&quot;Source: R5, R16, R17&quot;&quot;&quot;
+    ruleName: _t.Optional[str] = None
+    source: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class Expression:
+    &quot;&quot;&quot;Source: R6, R18, R19&quot;&quot;&quot;
+    instruction: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class Instruction:
+    &quot;&quot;&quot;Source: R19&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class Section:
+    &quot;&quot;&quot;Source: R7, R20&quot;&quot;&quot;
+    kind: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class Variable:
+    &quot;&quot;&quot;Source: R9, R22&quot;&quot;&quot;
+    ruleName: _t.Optional[str] = None
+    inheritance: _t.Optional[&quot;Inheritance&quot;] = None
+
+
+@_dc.dataclass
+class Metaclass:
+    &quot;&quot;&quot;Source: R13&quot;&quot;&quot;
+    pass
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>0</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>0</td></tr>
+<tr><th>actors_without_use_case</th><td>1</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>1</td></tr>
+<tr><th>inconsistency_rate</th><td>0.1</td></tr>
+<tr><th>requirement_coverage</th><td>0.9091</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;Each module may have metamodels associated&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.778</td><td>0.778</td><td>0.778</td><td>7/2/2</td></tr>
+<tr><td>attributes</td><td>0.176</td><td>0.375</td><td>0.24</td><td>3/14/5</td></tr>
+<tr><td>relations</td><td>0.4</td><td>0.4</td><td>0.4</td><td>4/6/6</td></tr>
+<tr><td>relations_strict</td><td>0.4</td><td>0.4</td><td>0.4</td><td>4/6/6</td></tr>
+</table></body></html>

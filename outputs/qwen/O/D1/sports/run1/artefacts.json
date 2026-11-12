@@ -1,0 +1,813 @@
+{
+ "actors": [
+  "Customer",
+  "Admin",
+  "Trainer",
+  "Customer with a family membership"
+ ],
+ "use_cases": [
+  {
+   "name": "Open Account",
+   "actor": "Customer",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Add Information",
+   "actor": "Customer",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Add BankingDetail",
+   "actor": "Customer",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Choose MembershipType",
+   "actor": "Customer",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Extend Subscription",
+   "actor": "Customer",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Know Subscription",
+   "actor": "Customer",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Use Information",
+   "actor": "Customer",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Unsubscribe",
+   "actor": "Customer",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Reset Password",
+   "actor": "Customer",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Change Detail",
+   "actor": "Customer",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Update PaymentInformation",
+   "actor": "Customer",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "See Overview",
+   "actor": "Customer",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "See Record",
+   "actor": "Customer",
+   "src": [
+    "R17"
+   ]
+  },
+  {
+   "name": "See Lesson",
+   "actor": "Customer",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "See Room",
+   "actor": "Trainer",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "See Schedule",
+   "actor": "Trainer",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "Add Lesson",
+   "actor": "Trainer",
+   "src": [
+    "R26"
+   ]
+  },
+  {
+   "name": "Set Description",
+   "actor": "Trainer",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Set Room",
+   "actor": "Trainer",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "Set Time",
+   "actor": "Trainer",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "Set Type",
+   "actor": "Trainer",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Set Number",
+   "actor": "Trainer",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Edit Lesson",
+   "actor": "Trainer",
+   "src": [
+    "R33",
+    "R38"
+   ]
+  },
+  {
+   "name": "Edit Time",
+   "actor": "Trainer",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Edit Room",
+   "actor": "Trainer",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Edit Description",
+   "actor": "Trainer",
+   "src": [
+    "R36"
+   ]
+  },
+  {
+   "name": "Edit Number",
+   "actor": "Trainer",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Edit TrainingSession",
+   "actor": "Admin",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "name": "Cancel Lesson",
+   "actor": "Trainer",
+   "src": [
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "name": "Cancel Lesson",
+   "actor": "Admin",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "Notify Session",
+   "actor": "Customer",
+   "src": [
+    "R41",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R56"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "Admin",
+   "src": [
+    "R43",
+    "R57"
+   ]
+  },
+  {
+   "name": "See Customer",
+   "actor": "Admin",
+   "src": [
+    "R43",
+    "R62",
+    "R63"
+   ]
+  },
+  {
+   "name": "See Information",
+   "actor": "Customer",
+   "src": [
+    "R59",
+    "R60"
+   ]
+  },
+  {
+   "name": "See Lesson",
+   "actor": "Customer",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "See Room",
+   "actor": "Trainer",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "See Schedule",
+   "actor": "Trainer",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "See Spot",
+   "actor": "Customer",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "Book Spot",
+   "actor": "Customer",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Call Gym",
+   "actor": "Customer",
+   "src": [
+    "R18",
+    "R19",
+    "R21"
+   ]
+  },
+  {
+   "name": "Call Gym",
+   "actor": "Customer",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Call Gym",
+   "actor": "Customer",
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "name": "Add Person",
+   "actor": "Customer with a family membership",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Remove Person",
+   "actor": "Customer with a family membership",
+   "src": [
+    "R14"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [
+    "personalInformation",
+    "bankingDetails",
+    "subscription",
+    "familyMembership"
+   ],
+   "methods": [
+    {
+     "name": "openAccount",
+     "use_case": "Open Account"
+    },
+    {
+     "name": "addInformation",
+     "use_case": "Add Information"
+    },
+    {
+     "name": "addBankingDetail",
+     "use_case": "Add BankingDetail"
+    },
+    {
+     "name": "chooseMembershipType",
+     "use_case": "Choose MembershipType"
+    },
+    {
+     "name": "extendSubscription",
+     "use_case": "Extend Subscription"
+    },
+    {
+     "name": "knowSubscription",
+     "use_case": "Know Subscription"
+    },
+    {
+     "name": "useInformation",
+     "use_case": "Use Information"
+    },
+    {
+     "name": "unsubscribe",
+     "use_case": "Unsubscribe"
+    },
+    {
+     "name": "resetPassword",
+     "use_case": "Reset Password"
+    },
+    {
+     "name": "changeDetail",
+     "use_case": "Change Detail"
+    },
+    {
+     "name": "updatePaymentInformation",
+     "use_case": "Update PaymentInformation"
+    },
+    {
+     "name": "seeOverview",
+     "use_case": "See Overview"
+    },
+    {
+     "name": "seeRecord",
+     "use_case": "See Record"
+    },
+    {
+     "name": "seeLesson",
+     "use_case": "See Lesson"
+    },
+    {
+     "name": "seeRoom",
+     "use_case": "See Room"
+    },
+    {
+     "name": "seeSchedule",
+     "use_case": "See Schedule"
+    },
+    {
+     "name": "bookSpot",
+     "use_case": "Book Spot"
+    },
+    {
+     "name": "callGym",
+     "use_case": "Call Gym"
+    },
+    {
+     "name": "addPerson",
+     "use_case": "Add Person"
+    },
+    {
+     "name": "removePerson",
+     "use_case": "Remove Person"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R21",
+    "R23",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R56",
+    "R58",
+    "R59",
+    "R60",
+    "R61",
+    "R62",
+    "R63"
+   ]
+  },
+  {
+   "name": "Admin",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "editLesson",
+     "use_case": "Edit Lesson"
+    },
+    {
+     "name": "editTime",
+     "use_case": "Edit Time"
+    },
+    {
+     "name": "editRoom",
+     "use_case": "Edit Room"
+    },
+    {
+     "name": "editDescription",
+     "use_case": "Edit Description"
+    },
+    {
+     "name": "editNumber",
+     "use_case": "Edit Number"
+    },
+    {
+     "name": "editTrainingSession",
+     "use_case": "Edit TrainingSession"
+    },
+    {
+     "name": "cancelLesson",
+     "use_case": "Cancel Lesson"
+    },
+    {
+     "name": "notifySession",
+     "use_case": "Notify Session"
+    },
+    {
+     "name": "seeCustomer",
+     "use_case": "See Customer"
+    },
+    {
+     "name": "seeInformation",
+     "use_case": "See Information"
+    },
+    {
+     "name": "seeLesson",
+     "use_case": "See Lesson"
+    },
+    {
+     "name": "seeRoom",
+     "use_case": "See Room"
+    },
+    {
+     "name": "seeSchedule",
+     "use_case": "See Schedule"
+    },
+    {
+     "name": "seeSpot",
+     "use_case": "See Spot"
+    },
+    {
+     "name": "bookSpot",
+     "use_case": "Book Spot"
+    },
+    {
+     "name": "callGym",
+     "use_case": "Call Gym"
+    },
+    {
+     "name": "addPerson",
+     "use_case": "Add Person"
+    },
+    {
+     "name": "removePerson",
+     "use_case": "Remove Person"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R20",
+    "R25",
+    "R32",
+    "R33",
+    "R38",
+    "R40",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R57"
+   ]
+  },
+  {
+   "name": "Trainer",
+   "kind": "class",
+   "attributes": [
+    "lessons"
+   ],
+   "methods": [
+    {
+     "name": "addLesson",
+     "use_case": "Add Lesson"
+    },
+    {
+     "name": "setDescription",
+     "use_case": "Set Description"
+    },
+    {
+     "name": "setRoom",
+     "use_case": "Set Room"
+    },
+    {
+     "name": "setTime",
+     "use_case": "Set Time"
+    },
+    {
+     "name": "setType",
+     "use_case": "Set Type"
+    },
+    {
+     "name": "setNumber",
+     "use_case": "Set Number"
+    },
+    {
+     "name": "editLesson",
+     "use_case": "Edit Lesson"
+    },
+    {
+     "name": "editTime",
+     "use_case": "Edit Time"
+    },
+    {
+     "name": "editRoom",
+     "use_case": "Edit Room"
+    },
+    {
+     "name": "editDescription",
+     "use_case": "Edit Description"
+    },
+    {
+     "name": "editNumber",
+     "use_case": "Edit Number"
+    },
+    {
+     "name": "cancelLesson",
+     "use_case": "Cancel Lesson"
+    },
+    {
+     "name": "seeSchedule",
+     "use_case": "See Schedule"
+    },
+    {
+     "name": "seeLesson",
+     "use_case": "See Lesson"
+    },
+    {
+     "name": "seeRoom",
+     "use_case": "See Room"
+    },
+    {
+     "name": "seeSchedule",
+     "use_case": "See Schedule"
+    },
+    {
+     "name": "seeSpot",
+     "use_case": "See Spot"
+    },
+    {
+     "name": "bookSpot",
+     "use_case": "Book Spot"
+    },
+    {
+     "name": "callGym",
+     "use_case": "Call Gym"
+    },
+    {
+     "name": "addPerson",
+     "use_case": "Add Person"
+    },
+    {
+     "name": "removePerson",
+     "use_case": "Remove Person"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "name": "Customer with a family membership",
+   "kind": "class",
+   "attributes": [
+    "familyMembership",
+    "people"
+   ],
+   "methods": [
+    {
+     "name": "addPerson",
+     "use_case": "Add Person"
+    },
+    {
+     "name": "removePerson",
+     "use_case": "Remove Person"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12",
+    "R13",
+    "R14"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Customer",
+   "target": "Booking",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R21",
+    "R23",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R56",
+    "R58",
+    "R59",
+    "R60",
+    "R61",
+    "R62",
+    "R63"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Customer",
+   "target": "Subscription",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R21",
+    "R23",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R56",
+    "R58",
+    "R59",
+    "R60",
+    "R61",
+    "R62",
+    "R63"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Lesson",
+   "target": "Room",
+   "multiplicity_target": "1",
+   "src": [
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  }
+ ],
+ "python": "class Customer:\n    def __init__(self, personalInformation, bankingDetails, subscription, familyMembership):\n        self.personalInformation = personalInformation\n        self.bankingDetails = bankingDetails\n        self.subscription = subscription\n        self.familyMembership = familyMembership\n\n    def openAccount(self):\n        raise NotImplementedError\n\n    def addInformation(self):\n        raise NotImplementedError\n\n    def addBankingDetail(self):\n        raise NotImplementedError\n\n    def chooseMembershipType(self):\n        raise NotImplementedError\n\n    def extendSubscription(self):\n        raise NotImplementedError\n\n    def knowSubscription(self):\n        raise NotImplementedError\n\n    def useInformation(self):\n        raise NotImplementedError\n\n    def unsubscribe(self):\n        raise NotImplementedError\n\n    def resetPassword(self):\n        raise NotImplementedError\n\n    def changeDetail(self):\n        raise NotImplementedError\n\n    def updatePaymentInformation(self):\n        raise NotImplementedError\n\n    def seeOverview(self):\n        raise NotImplementedError\n\n    def seeRecord(self):\n        raise NotImplementedError\n\n    def seeLesson(self):\n        raise NotImplementedError\n\n    def seeRoom(self):\n        raise NotImplementedError\n\n    def seeSchedule(self):\n        raise NotImplementedError\n\n    def bookSpot(self):\n        raise NotImplementedError\n\n    def callGym(self):\n        raise NotImplementedError\n\n    def addPerson(self):\n        raise NotImplementedError\n\n    def removePerson(self):\n        raise NotImplementedError\n\nclass Admin:\n    def __init__(self):\n        pass\n\n    def editLesson(self):\n        raise NotImplementedError\n\n    def editTime(self):\n        raise NotImplementedError\n\n    def editRoom(self):\n        raise NotImplementedError\n\n    def editDescription(self):\n        raise NotImplementedError\n\n    def editNumber(self):\n        raise NotImplementedError\n\n    def editTrainingSession(self):\n        raise NotImplementedError\n\n    def cancelLesson(self):\n        raise NotImplementedError\n\n    def notifySession(self):\n        raise NotImplementedError\n\n    def seeCustomer(self):\n        raise NotImplementedError\n\n    def seeInformation(self):\n        raise NotImplementedError\n\n    def seeLesson(self):\n        raise NotImplementedError\n\n    def seeRoom(self):\n        raise NotImplementedError\n\n    def seeSchedule(self):\n        raise NotImplementedError\n\n    def seeSpot(self):\n        raise NotImplementedError\n\n    def bookSpot(self):\n        raise NotImplementedError\n\n    def callGym(self):\n        raise NotImplementedError\n\n    def addPerson(self):\n        raise NotImplementedError\n\n    def removePerson(self):\n        raise NotImplementedError\n\nclass Trainer:\n    def __init__(self, lessons):\n        self.lessons = lessons\n\n    def addLesson(self):\n        raise NotImplementedError\n\n    def setDescription(self):\n        raise NotImplementedError\n\n    def setRoom(self):\n        raise NotImplementedError\n\n    def setTime(self):\n        raise NotImplementedError\n\n    def setType(self):\n        raise NotImplementedError\n\n    def setNumber(self):\n        raise NotImplementedError\n\n    def editLesson(self):\n        raise NotImplementedError\n\n    def editTime(self):\n        raise NotImplementedError\n\n    def editRoom(self):\n        raise NotImplementedError\n\n    def editDescription(self):\n        raise NotImplementedError\n\n    def editNumber(self):\n        raise NotImplementedError\n\n    def cancelLesson(self):\n        raise NotImplementedError\n\n    def seeSchedule(self):\n        raise NotImplementedError\n\n    def seeLesson(self):\n        raise NotImplementedError\n\n    def seeRoom(self):\n        raise NotImplementedError\n\n    def seeSchedule(self):\n        raise NotImplementedError\n\n    def seeSpot(self):\n        raise NotImplementedError\n\n    def bookSpot(self):\n        raise NotImplementedError\n\n    def callGym(self):\n        raise NotImplementedError\n\n    def addPerson(self):\n        raise NotImplementedError\n\n    def removePerson(self):\n        raise NotImplementedError\n\nclass CustomerWithFamilyMembership:\n    def __init__(self, familyMembership, people):\n        self.familyMembership = familyMembership\n        self.people = people\n\n    def addPerson(self):\n        raise NotImplementedError\n\n    def removePerson(self):\n        raise NotImplementedError\n",
+ "java": {}
+}

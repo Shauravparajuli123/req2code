@@ -1,0 +1,28 @@
+@startuml
+class Airport {
+  name
+}
+class Flight {
+  maxNumberOfPassengers
+  departureTime
+  originAirport
+}
+class Passenger {
+  name
+  gender
+  assignedFlight
+}
+class Airplane {
+  name
+}
+class Time {
+  year
+  day
+  minute
+}
+Flight -- Airport
+Flight -- Passenger
+Flight -- Time
+Airplane -- Flight
+Flight -- Airplane
+@enduml

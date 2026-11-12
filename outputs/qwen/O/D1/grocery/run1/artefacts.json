@@ -1,0 +1,685 @@
+{
+ "actors": [
+  "employee",
+  "manager",
+  "office_employee",
+  "applicant"
+ ],
+ "use_cases": [
+  {
+   "name": "Send SalaryStatement",
+   "actor": "manager",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Enable Option",
+   "actor": "manager",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Automate PaymentSystem",
+   "actor": "manager",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Outsource Part",
+   "actor": "manager",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Receive Notification",
+   "actor": "employee",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Express Hour",
+   "actor": "employee",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "File Complaint",
+   "actor": "employee",
+   "src": [
+    "R18",
+    "R19",
+    "R20"
+   ]
+  },
+  {
+   "name": "Hire Employee",
+   "actor": "manager",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "Notify HiringProcess",
+   "actor": "manager",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Have Overview",
+   "actor": "manager",
+   "src": [
+    "R29",
+    "R30"
+   ]
+  },
+  {
+   "name": "Have Application",
+   "actor": "employee",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "Have Ability",
+   "actor": "manager",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Notify Adjustment",
+   "actor": "manager",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Register Account",
+   "actor": "applicant",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Reset Password",
+   "actor": "employee",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "Respond Complaint",
+   "actor": "office_employee",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Semi SchedulingProcess",
+   "actor": "manager",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Authorize Schedule",
+   "actor": "manager",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "View Schedule",
+   "actor": "employee",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "View Complaint",
+   "actor": "office_employee",
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "View Contract",
+   "actor": "manager",
+   "src": [
+    "R32",
+    "R33"
+   ]
+  },
+  {
+   "name": "Change Information",
+   "actor": "employee",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "View Statement",
+   "actor": "employee",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "View Certificate",
+   "actor": "manager",
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "name": "Verify WorkHour",
+   "actor": "employee",
+   "src": [
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "name": "Use System",
+   "actor": "employee",
+   "src": [
+    "R36"
+   ]
+  },
+  {
+   "name": "Navigate Application",
+   "actor": "employee",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Choose Email",
+   "actor": "employee",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "Choose Payment",
+   "actor": "employee",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Share PaymentHandler",
+   "actor": "employee",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "Receive SalaryStatement",
+   "actor": "employee",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Contact Employee",
+   "actor": "manager",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Contact Management",
+   "actor": "employee",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Forward Message",
+   "actor": "manager",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Have System",
+   "actor": "manager",
+   "src": [
+    "R39"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    "certificate",
+    "group",
+    "qualification",
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "expressHour",
+     "use_case": "Express Hour"
+    },
+    {
+     "name": "choosePayment",
+     "use_case": "Choose Payment"
+    },
+    {
+     "name": "verifyWorkHour",
+     "use_case": "Verify WorkHour"
+    },
+    {
+     "name": "viewSchedule",
+     "use_case": "View Schedule"
+    },
+    {
+     "name": "viewStatement",
+     "use_case": "View Statement"
+    },
+    {
+     "name": "changeInformation",
+     "use_case": "Change Information"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R15",
+    "R16",
+    "R13",
+    "R45",
+    "R47"
+   ]
+  },
+  {
+   "name": "Manager",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "enableOption",
+     "use_case": "Enable Option"
+    },
+    {
+     "name": "automatePaymentSystem",
+     "use_case": "Automate PaymentSystem"
+    },
+    {
+     "name": "outsourcePart",
+     "use_case": "Outsource Part"
+    },
+    {
+     "name": "hireEmployee",
+     "use_case": "Hire Employee"
+    },
+    {
+     "name": "notifyHiringProcess",
+     "use_case": "Notify HiringProcess"
+    },
+    {
+     "name": "haveOverview",
+     "use_case": "Have Overview"
+    },
+    {
+     "name": "viewContract",
+     "use_case": "View Contract"
+    },
+    {
+     "name": "viewCertificate",
+     "use_case": "View Certificate"
+    },
+    {
+     "name": "viewSchedule",
+     "use_case": "View Schedule"
+    },
+    {
+     "name": "viewComplaint",
+     "use_case": "View Complaint"
+    },
+    {
+     "name": "respondComplaint",
+     "use_case": "Respond Complaint"
+    },
+    {
+     "name": "contactEmployee",
+     "use_case": "Contact Employee"
+    },
+    {
+     "name": "contactManagement",
+     "use_case": "Contact Management"
+    },
+    {
+     "name": "forwardMessage",
+     "use_case": "Forward Message"
+    },
+    {
+     "name": "haveSystem",
+     "use_case": "Have System"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4",
+    "R5",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R14",
+    "R32",
+    "R33",
+    "R13",
+    "R21",
+    "R22",
+    "R23",
+    "R35",
+    "R39"
+   ]
+  },
+  {
+   "name": "OfficeEmployee",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "categorizeComplaint",
+     "use_case": "Categorize Complaint"
+    },
+    {
+     "name": "prioritizeComplaint",
+     "use_case": "Prioritize Complaint"
+    },
+    {
+     "name": "respondComplaint",
+     "use_case": "Respond Complaint"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R24",
+    "R25",
+    "R23"
+   ]
+  },
+  {
+   "name": "Applicant",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "registerAccount",
+     "use_case": "Register Account"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Complaint",
+   "kind": "class",
+   "attributes": [
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "fileComplaint",
+     "use_case": "File Complaint"
+    },
+    {
+     "name": "respondComplaint",
+     "use_case": "Respond Complaint"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R18",
+    "R20",
+    "R23"
+   ]
+  },
+  {
+   "name": "Contract",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "viewContract",
+     "use_case": "View Contract"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "Schedule",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "viewSchedule",
+     "use_case": "View Schedule"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "Complaint",
+   "kind": "class",
+   "attributes": [
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "fileComplaint",
+     "use_case": "File Complaint"
+    },
+    {
+     "name": "respondComplaint",
+     "use_case": "Respond Complaint"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R18",
+    "R20",
+    "R23"
+   ]
+  },
+  {
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "receiveNotification",
+     "use_case": "Receive Notification"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R12",
+    "R26"
+   ]
+  },
+  {
+   "name": "SalaryStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "viewStatement",
+     "use_case": "View Statement"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "WorkHour",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "verifyWorkHour",
+     "use_case": "Verify WorkHour"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R15",
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Employee",
+   "target": "Contract",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Employee",
+   "target": "HiringProcess",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Employee",
+   "target": "Problem",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Employee",
+   "target": "SalaryStatement",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Employee",
+   "target": "WorkHour",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Employee",
+   "target": "Workplace",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Manager",
+   "target": "Employee",
+   "multiplicity_target": "1",
+   "src": [
+    "R29",
+    "R30"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Manager",
+   "target": "Complaint",
+   "multiplicity_target": "1",
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Manager",
+   "target": "Schedule",
+   "multiplicity_target": "1",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Manager",
+   "target": "Complaint",
+   "multiplicity_target": "1",
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "OfficeEmployee",
+   "target": "Complaint",
+   "multiplicity_target": "1",
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "OfficeEmployee",
+   "target": "Complaint",
+   "multiplicity_target": "1",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "OfficeEmployee",
+   "target": "Complaint",
+   "multiplicity_target": "1",
+   "src": [
+    "R24",
+    "R25"
+   ]
+  }
+ ],
+ "python": "from enum import Enum\n\nclass Employee:\n    def __init__(self, certificate, group, qualification, status):\n        self.certificate = certificate\n        self.group = group\n        self.qualification = qualification\n        self.status = status\n    def expressHour(self):\n        raise NotImplementedError\n    def choosePayment(self):\n        raise NotImplementedError\n    def verifyWorkHour(self):\n        raise NotImplementedError\n    def viewSchedule(self):\n        raise NotImplementedError\n    def viewStatement(self):\n        raise NotImplementedError\n    def changeInformation(self):\n        raise NotImplementedError\n\nclass Manager:\n    def __init__(self):\n        pass\n    def enableOption(self):\n        raise NotImplementedError\n    def automatePaymentSystem(self):\n        raise NotImplementedError\n    def outsourcePart(self):\n        raise NotImplementedError\n    def hireEmployee(self):\n        raise NotImplementedError\n    def notifyHiringProcess(self):\n        raise NotImplementedError\n    def haveOverview(self):\n        raise NotImplementedError\n    def viewContract(self):\n        raise NotImplementedError\n    def viewCertificate(self):\n        raise NotImplementedError\n    def viewSchedule(self):\n        raise NotImplementedError\n    def viewComplaint(self):\n        raise NotImplementedError\n    def respondComplaint(self):\n        raise NotImplementedError\n    def contactEmployee(self):\n        raise NotImplementedError\n    def contactManagement(self):\n        raise NotImplementedError\n    def forwardMessage(self):\n        raise NotImplementedError\n    def haveSystem(self):\n        raise NotImplementedError\n\nclass OfficeEmployee:\n    def __init__(self):\n        pass\n    def categorizeComplaint(self):\n        raise NotImplementedError\n    def prioritizeComplaint(self):\n        raise NotImplementedError\n    def respondComplaint(self):\n        raise NotImplementedError\n\nclass Applicant:\n    def __init__(self):\n        pass\n    def registerAccount(self):\n        raise NotImplementedError\n\nclass Complaint:\n    def __init__(self, status):\n        self.status = status\n    def fileComplaint(self):\n        raise NotImplementedError\n    def respondComplaint(self):\n        raise NotImplementedError\n\nclass Contract:\n    def __init__(self):\n        pass\n    def viewContract(self):\n        raise NotImplementedError\n\nclass Schedule:\n    def __init__(self):\n        pass\n    def viewSchedule(self):\n        raise NotImplementedError\n\nclass Notification:\n    def __init__(self):\n        pass\n    def receiveNotification(self):\n        raise NotImplementedError\n\nclass SalaryStatement:\n    def __init__(self):\n        pass\n    def viewStatement(self):\n        raise NotImplementedError\n\nclass WorkHour:\n    def __init__(self):\n        pass\n    def verifyWorkHour(self):\n        raise NotImplementedError",
+ "java": {}
+}

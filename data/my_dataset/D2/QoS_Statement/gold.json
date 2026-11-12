@@ -1,0 +1,98 @@
+{
+ "classes": [
+  {
+   "name": "QoSStatement",
+   "kind": "class"
+  },
+  {
+   "name": "SingleQoSStatement",
+   "kind": "class"
+  },
+  {
+   "name": "CoumpoundQoSStatement",
+   "kind": "class"
+  },
+  {
+   "name": "Parameter",
+   "kind": "class"
+  },
+  {
+   "name": "QoSContraint",
+   "kind": "class"
+  },
+  {
+   "name": "QualificationKind",
+   "kind": "class"
+  },
+  {
+   "name": "QoSCharacteristic",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "QoSStatement": [],
+  "SingleQoSStatement": [],
+  "CoumpoundQoSStatement": [],
+  "Parameter": [],
+  "QoSContraint": [],
+  "QualificationKind": [
+   {
+    "name": "value",
+    "type": "String"
+   }
+  ],
+  "QoSCharacteristic": []
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "QoSStatement",
+   "to": "CoumpoundQoSStatement",
+   "label": "relation 1..1",
+   "label_to": "statement 2..*"
+  },
+  {
+   "type": "composition",
+   "from": "QoSStatement",
+   "to": "Parameter",
+   "label": "parameter 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "SingleQoSStatement",
+   "to": "QoSStatement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "SingleQoSStatement",
+   "to": "QoSContraint",
+   "label": "contraint 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "CoumpoundQoSStatement",
+   "to": "QoSStatement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "QoSContraint",
+   "to": "QualificationKind",
+   "label": "qualification 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "QualificationKind",
+   "to": "QoSCharacteristic",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage QoSStatement {\nclass QoSStatement {\n}\nQoSStatement \"relation 1..1\" --* \"statement 2..*\" CoumpoundQoSStatement\nQoSStatement \"parameter 0..*\" *--> Parameter\nclass SingleQoSStatement {\n}\nQoSStatement <|-- SingleQoSStatement\nSingleQoSStatement \"contraint 1..1\" *--> QoSContraint\nclass CoumpoundQoSStatement {\n}\nQoSStatement <|-- CoumpoundQoSStatement\nclass Parameter {\n}\nclass QoSContraint {\n}\nQoSContraint \"qualification 1..1\" --> QualificationKind\nclass QualificationKind {\n\t value : String\n}\nQoSCharacteristic <|-- QualificationKind\nclass QoSCharacteristic {\n}\n}\n@enduml\n"
+}

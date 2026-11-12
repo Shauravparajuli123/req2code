@@ -1,0 +1,78 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Guardian {
+  +directMessage()
+  +fillAbsence()
+  +receiveNotification()
+}
+class Student {
+  +directMessage()
+  +directMessageMentor()
+  +handHomework()
+  +viewTimetable()
+  +viewDLM()
+  +receiveNotificationDueDate()
+  +receiveNotificationNewFiles()
+  +receiveNotificationTimetableChanges()
+  +viewAccountInfo()
+  +viewContactInfo()
+  +changePreferences()
+}
+class Teacher {
+  +directMessageStudent()
+  +directMessageClass()
+  +directMessageMentor()
+  +editDLM()
+  +assignSubmissionElements()
+  +addAnswerToQuestion()
+  +confirmFileUpload()
+  +recordDisciplinaryActions()
+  +recordBehavior()
+  +recordGrades()
+  +recordAttendance()
+  +viewSubmissions()
+  +viewClassPerformance()
+  +viewStudentProgress()
+  +setAppearanceDate()
+  +setAvailableDates()
+  +uploadFiles()
+  +viewClassInfo()
+  +viewClassList()
+}
+class Administrator {
+  +sendDirectMessage()
+  +assignSchedules()
+  +createAccount()
+  +editAccount()
+  +changeView()
+  +receiveNotification()
+  +receiveAbsenceForm()
+  +registerChanges()
+  +registerAbsence()
+  +sendBroadcastMessage()
+  +setAccountRole()
+  +uploadSchedules()
+  +viewAccountDetails()
+  +viewStatistics()
+}
+class Game {
+  name : String
+  +createGame()
+}
+class Account {
+  role : String
+}
+class Schedule {
+}
+class Statistic {
+}
+Administrator "1" -- "1..*" Account : manages
+Administrator "1" -- "1" Schedule : uploads
+Administrator "1" -- "1" Statistic : views
+Administrator "1" -- "0..*" Teacher : manages
+Administrator "1" -- "0..*" Student : manages
+Administrator "1" -- "0..*" Guardian : manages
+Schedule "1" -- "1..*" Teacher : assigns
+Schedule "1" -- "1..*" Student : assigns
+@enduml

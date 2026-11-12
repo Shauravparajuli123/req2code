@@ -1,0 +1,301 @@
+<html><head><meta charset='utf-8'><title>D1/recycling</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D1/recycling &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: As a user, I want to click on the address, so that it takes me to a new tab with Google Maps.
+R2: As a user, I want to be able to anonymously view public information, so that I know about recycling centers near me before creating an account.
+R3: As a user, I want to be able to enter my zip code and get a list of nearby recycling facilities, so that I can determine which ones I should consider.
+R4: As a user, I want to be able to get the hours of each recycling facility, so that I can arrange drop-offs on my off days or during after-work hours.
+R5: As a user, I want to have a flexible pick up time, so that I can more conveniently use the website.
+R6: As a user, I want to be able to select different types of recyclable waste, so I have and get a list of facilities that accept each type and their opening hours, so that I can find an optimal route and schedule.
+R7: As a user, I want to add donation centers as favorites on my profile, so that I can view them later.
+R8: As a user, I want to be able to give my email ID, so that I can receive notifications for new events as they are posted.
+R9: As a user, I want to be able to view a map display of the public recycling bins around my area.
+R10: As a user, I want to be able to view a map display of the special waste drop off sites around my area.
+R11: As a user, I want to be able to view the safe disposal events currently being organised around my area.
+R12: As a user, I want to choose a flexible pick up time, so that I can more conveniently use the website.
+R13: As a user, I want to view user documentation for the website, so that I know how to use the web app.
+R14: As a user, I want to get feedback when I enter an invalid zip code.
+R15: As a user, I want to be able to create an acocunt, so that I can create my own profile.
+R16: As an admin, I want to be able to add or remove recycling facilities&#x27; information, so that users get the most recent information.
+R17: As an admin, I want to be able to read users&#x27; feedback and complaints, so that we can add more features and keep improving the service we provide to them.
+R18: As a user, I want to be able to check transaction history and keep a record of it, so that I can go back when needed.
+R19: As a user, I want to have a great UI and UX from the sites, so that I have a pleasant experience when navigating through them.
+R20: As a user, I want to be able to access the site and do all the other stuffs on all of my electronic devices.
+R21: As an admin, I want to be able to block specific users based on IP address, so that I can prevent spamming on the websites.
+R22: As an admin, I want to view a dashboard that monitors all the sites&#x27; statuses, so that I can have a sense of what people are doing on our sites and know the service status.
+R23: As an admin, I want to have all data encrypted, so that important information will not be stolen during a server breach or an attack.
+R24: As an executive, I want to have full access to data related to my company, so that I can have a sense of my company&#x27;s performance.
+R25: As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood.
+R26: As an employee from the HR department, I want to have access to the full information of all employees working for this business.
+R27: As a developer, I want to access an API from the website, so that I can integrate it and implement certain features in my own iOS application.
+R28: As a user, I want to be able to receive tempting rewards, so that I have a reason to use the website.
+R29: As a user, I want to have my personal information kept securely in the database of the website, so that I will not suffer from identity theft or telephone harassment.
+R30: As an admin, I want to handle all users&#x27; activities, so that I can manage more efficiently.
+R31: As a company, I want to have a website that is easy to use, so that I can upload or delete stuff step by step.
+R32: As an employee, I want to get quick notifications, so that I can process cases the first time.
+R33: As a company accountant, I want to view all available activity fees online, so that I can easily create a bill statement.
+R34: As a developer, I want to use bootstrap in the process of developing, so that I can easily design my website.
+R35: As a developer, I want to attend some UI/UX lessons, so that I can develop an awesome and beautiful features website.
+R36: As a user, I want to view all locations of recycling centers on a map, so that I can check which routes to take to drop off waste.
+R37: As a user, I want to upload my week&#x27;s schedule, so that I can get recommendations for recycling centers that best fit my availability.
+R38: As a user, I want to link my email account to my profile, so that I can get a temporary password in case I forget my own one.
+R39: As a user, I want to contact the administrators, so that I can give feedback or ask for help.
+R40: As an admin, I want to add recycling center information, so that I can keep the database up-to-date over time.
+R41: As an admin, I want to view user error logs, so that I can fix or review any issues that are being faced by users of the system.
+R42: As an admin, I want to onboard recycling centers on the platform, so that I can increase information accuracy.
+R43: As a superuser, I want to update the recycling center information, so that I can provide the latest information about the recycling center.
+R44: As a superuser, I want to view users&#x27; stats, so that I can view in real-time how many users have visited my recycling center information and their recyclable waste.
+R45: As a superuser, I want to reply to user questions, so that I can answer any questions about my recycling center.
+R46: As an admin, I want to be able to have a dashboard that shows usage stats and locations, so that I can identify the neighbourhoods with the largest number of drop-offs and to try getting more facilities involved.
+R47: As an admin, I want to be able to communicate directly with facilities, so that I can keep them updated about features we have on our website.
+R48: As a user, I want to be able to browse through the list of facolities and see which ones are environment-friendly, so that I can know for sure my waste is not going to leave a negative ecological footprint.
+R49: As a recyclingfacility representative, I want to be able to update my information and the type of material I accept, so that I can avoid any miscommunication with users.
+R50: As a recyclingfacility representative, I want to have access to user stats and schedules, so that I can adjust my hours and/or upgrade equipment and capacity in order to be able to accomodate larger amounts of recyclable materials.
+R51: As a recyclingfacility, I want to be able to communicate directly with the site admin and convey any issues or concerns I have, so that they fix them.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (11 → 11)</th></tr><tr><td class="">admin</td></tr><tr><td class="">company</td></tr><tr><td class="">company accountant</td></tr><tr><td class="">developer</td></tr><tr><td class="">employee</td></tr><tr><td class="">employee from the hr department</td></tr><tr><td class="">executive</td></tr><tr><td class="">recyclingfacility</td></tr><tr><td class="">recyclingfacility representative</td></tr><tr><td class="">superuser</td></tr><tr><td class="">user</td></tr></table></div>
+<div><table><tr><th>classes (34 → 32)</th></tr><tr><td class="">Access</td></tr><tr><td class="">Admin</td></tr><tr><td class="">Area</td></tr><tr><td class="">Company</td></tr><tr><td class="">CompanyAccountant</td></tr><tr><td class="">Dashboard</td></tr><tr><td class="">Database</td></tr><tr><td class="">Developer</td></tr><tr><td class="">DropOff</td></tr><tr><td class="">Employee</td></tr><tr><td class="">EmployeeFromTheHrDepartment</td></tr><tr><td class="">Executive</td></tr><tr><td class="">Facility</td></tr><tr><td class="">Feedback</td></tr><tr><td class="">Hour</td></tr><tr><td class="">Issue</td></tr><tr><td class="">Location</td></tr><tr><td class="">MapDisplay</td></tr><tr><td class="">Material</td></tr><tr><td class="">Neighbourhood</td></tr><tr><td class="">Notification</td></tr><tr><td class="">Pick</td></tr><tr><td class="">Profile</td></tr><tr><td class="del">RecyclingCenter</td></tr><tr><td class="">RecyclingCenterInformation</td></tr><tr><td class="">RecyclingFacility</td></tr><tr><td class="">Recyclingfacility</td></tr><tr><td class="">RecyclingfacilityRepresentative</td></tr><tr><td class="">Schedule</td></tr><tr><td class="">Superuser</td></tr><tr><td class="">User</td></tr><tr><td class="">Waste</td></tr><tr><td class="del">Work</td></tr><tr><td class="">ZipCode</td></tr></table></div>
+<div><table><tr><th>attributes (5 → 5)</th></tr><tr><td class="">Company.performance</td></tr><tr><td class="">Facility.opening hour</td></tr><tr><td class="">Material.amount</td></tr><tr><td class="">User.activity</td></tr><tr><td class="">User.stat</td></tr></table></div>
+<div><table><tr><th>relations (4 → 3)</th></tr><tr><td class="del">has: RecyclingCenter -&gt; Location</td></tr><tr><td class="">has: RecyclingFacility -&gt; Hour</td></tr><tr><td class="">has: User -&gt; Feedback</td></tr><tr><td class="">has: User -&gt; Waste</td></tr></table></div>
+</div>
+<p>Enumerations added: PickType {RecyclingCenter, DonationCenter}</p>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R2</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A2</td><td>R5</td><td>incompleteness</td><td>flexible</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A3</td><td>R6</td><td>coordination</td><td>modifier scope: route</td><td><span class='tag resolved'>resolved</span></td><td>As a user, I want to select different types of recyclable waste, so I can get a list of facilities that accept each type and their opening hours.; As a user, I want to get a list of facilities that accept different types of recyclable waste and their opening hours, so I can select the one that best suits my needs.<br><i>The requirement is ambiguous as to whether the user selects the types of waste or gets a list of facilities.</i></td></tr>
+<tr><td>A4</td><td>R7</td><td>referential</td><td>them</td><td><span class='tag resolved'>resolved</span></td><td>As a user, I want to add donation centers as favorites on my profile, so that I can view them later.; As a user, I want to add donation centers as favorites on my profile, so that I can view them later, and they are not related to recycling centers.<br><i>The requirement is ambiguous as to whether the favorites are related to recycling centers or donation centers.</i></td></tr>
+<tr><td>A5</td><td>R8</td><td>referential</td><td>they</td><td><span class='tag resolved'>resolved</span></td><td>As a user, I want to give my email ID, so that I can receive notifications for new events as they are posted.; As a user, I want to give my email ID, so that I can receive notifications for new events as they are posted, and they are related to recycling centers.<br><i>The requirement is ambiguous as to whether the email ID is related to recycling centers or general notifications.</i></td></tr>
+<tr><td>A6</td><td>R12</td><td>incompleteness</td><td>flexible</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A7</td><td>R16</td><td>incompleteness</td><td>information</td><td><span class='tag open'>open</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A8</td><td>R17</td><td>referential</td><td>them</td><td><span class='tag resolved'>resolved</span></td><td>As an admin, I want to read users&#x27; feedback and complaints, so that we can add more features and keep improving the service we provide to them.; As an admin, I want to read users&#x27; feedback and complaints, so that we can add more features and keep improving the service we provide to the users.<br><i>The requirement is ambiguous as to whether the service is provided to the users or to the admin.</i></td></tr>
+<tr><td>A9</td><td>R18</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>As a user, I want to check transaction history and keep a record of it, so that I can go back when needed.; As a user, I want to check transaction history and keep a record of it, so that I can go back when needed, and it is related to recycling centers.<br><i>The requirement is ambiguous as to whether the transaction history is related to recycling centers or general transactions.</i></td></tr>
+<tr><td>A10</td><td>R19</td><td>incompleteness</td><td>modifier scope: UI</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A11</td><td>R20</td><td>incompleteness</td><td>stuffs</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A12</td><td>R23</td><td>coordination</td><td>noun or noun</td><td><span class='tag resolved'>resolved</span></td><td>As an admin, I want to have all data encrypted, so that important information will not be stolen during a server breach or an attack.; As an admin, I want to have all data encrypted, so that important information will not be stolen during a server breach or an attack, and it is related to recycling centers.<br><i>The requirement is ambiguous as to whether the data is related to recycling centers or general data.</i></td></tr>
+<tr><td>A13</td><td>R23</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A14</td><td>R26</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A15</td><td>R27</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>As a developer, I want to access an API from the website, so that I can integrate it and implement certain features in my own iOS application.; As a developer, I want to access an API from the website, so that I can integrate it and implement certain features in my own iOS application, and it is related to recycling centers.<br><i>The requirement is ambiguous as to whether the API is related to recycling centers or general APIs.</i></td></tr>
+<tr><td>A16</td><td>R27</td><td>incompleteness</td><td>certain</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A17</td><td>R29</td><td>incompleteness</td><td>noun or noun</td><td><span class='tag open'>open</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A18</td><td>R29</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A19</td><td>R31</td><td>incompleteness</td><td>stuff</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A20</td><td>R35</td><td>quantifier</td><td>some</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A21</td><td>R40</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A22</td><td>R41</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>As an admin, I want to view user error logs, so that I can fix or review any issues that are being faced by users of the system.; As an admin, I want to view user error logs, so that I can fix or review any issues that are being faced by users of the system, and it is related to recycling centers.<br><i>The requirement is ambiguous as to whether the user error logs are related to recycling centers or general user error logs.</i></td></tr>
+<tr><td>A23</td><td>R42</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A24</td><td>R43</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A25</td><td>R44</td><td>quantifier</td><td>many</td><td><span class='tag resolved'>resolved</span></td><td>As a superuser, I want to view users&#x27; stats, so that I can view in real-time how many users have visited my recycling center information and their recyclable waste.; As a superuser, I want to view users&#x27; stats, so that I can view in real-time how many users have visited my recycling center information and their recyclable waste, and it is related to recycling centers.<br><i>The requirement is ambiguous as to whether the users&#x27; stats are related to recycling centers or general users&#x27; stats.</i></td></tr>
+<tr><td>A26</td><td>R44</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A27</td><td>R45</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>As a superuser, I want to reply to user questions, so that I can answer any questions about my recycling center.; As a superuser, I want to reply to user questions, so that I can answer any questions about my recycling center, and it is related to recycling centers.<br><i>The requirement is ambiguous as to whether the user questions are related to recycling centers or general user questions.</i></td></tr>
+<tr><td>A28</td><td>R49</td><td>coordination</td><td>modifier scope: information (relative clause)</td><td><span class='tag resolved'>resolved</span></td><td>As a recyclingfacility representative, I want to be able to update my information and the type of material I accept, so that I can avoid any miscommunication with users.; As a recyclingfacility representative, I want to be able to update my information and the type of material I accept, so that I can avoid any miscommunication with users, and it is related to recycling centers.<br><i>The requirement is ambiguous as to whether the information and material are related to recycling centers or general information and material.</i></td></tr>
+<tr><td>A29</td><td>R49</td><td>incompleteness</td><td>any</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A30</td><td>R49</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>Requirement is incomplete and does not provide enough context to resolve.</i></td></tr>
+<tr><td>A31</td><td>R51</td><td>referential</td><td>they</td><td><span class='tag resolved'>resolved</span></td><td>they refer to the recyclingfacility; they refer to the site admin<br><i>The use of &#x27;they&#x27; is ambiguous as it could refer to either the recyclingfacility or the site admin.</i></td></tr>
+<tr><td>A32</td><td>R51</td><td>referential</td><td>them</td><td><span class='tag resolved'>resolved</span></td><td>them refer to the recyclingfacility; them refer to the site admin<br><i>The use of &#x27;them&#x27; is ambiguous as it could refer to either the recyclingfacility or the site admin.</i></td></tr>
+<tr><td>A33</td><td>R51</td><td>coordination</td><td>and+or</td><td><span class='tag resolved'>resolved</span></td><td>communicate directly with the site admin and convey any issues or concerns I have; communicate directly with the site admin or convey any issues or concerns I have<br><i>The use of &#x27;and/or&#x27; suggests a choice between the two actions.</i></td></tr>
+<tr><td>A34</td><td>R51</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>convey any issues or concerns I have; convey all issues or concerns I have<br><i>The use of &#x27;any&#x27; is ambiguous as it could mean &#x27;any&#x27; or &#x27;all&#x27; issues or concerns.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D1_recycling_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D1_recycling_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D1/recycling.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class User:
+    &quot;&quot;&quot;Source: R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R18, R19, R20, R28, R29, R38, R39&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    emailId: _t.Optional[str] = None
+    profile: _t.Optional[str] = None
+    activity: _t.Optional[str] = None
+    stat: _t.Optional[str] = None
+    notifications: _t.List[&quot;Notification&quot;] = _dc.field(default_factory=list)
+    feedbacks: _t.List[&quot;Feedback&quot;] = _dc.field(default_factory=list)
+    recyclingFacilities: _t.List[&quot;RecyclingFacility&quot;] = _dc.field(default_factory=list)
+    picks: _t.List[&quot;Pick&quot;] = _dc.field(default_factory=list)
+    materials: _t.List[&quot;Material&quot;] = _dc.field(default_factory=list)
+    schedules: _t.List[&quot;Schedule&quot;] = _dc.field(default_factory=list)
+
+    def clickAddress(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC1 &quot;Click Address&quot; (R1).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def enterZipCode(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC2 &quot;Enter Zip Code&quot; (R3).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def getFeedback(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC3 &quot;Get Feedback&quot; (R14).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def getHour(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC4 &quot;Get Hour&quot; (R4).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def addFavorite(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC10 &quot;Add Donation Center&quot; (R7).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def giveEmailId(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC6 &quot;Give Email Id&quot; (R8).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewMapDisplay(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC22 &quot;View Map Display&quot; (R9, R10).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewLocation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC21 &quot;View Location&quot; (R9, R10).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewDisposalEvent(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC19 &quot;View Disposal Event&quot; (R11).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def browseList(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC8 &quot;Browse List&quot; (R48).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def createAccount(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC16 &quot;Create Account&quot; (R15).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewUserDocumentation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC24 &quot;View User Documentation&quot; (R13).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewUserErrorLog(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC25 &quot;View User Error Log&quot; (R41).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def linkEmailAccount(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC29 &quot;Link Email Account&quot; (R38).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def contactAdministrator(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC15 &quot;Contact Administrator&quot; (R39).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class RecyclingFacility:
+    &quot;&quot;&quot;Source: R3, R4, R6, R10, R11, R16, R17, R20, R22, R23, R24, R26, R30, R32, R33, R34, R35, R36, R37, R39, R40, R41, R42, R43, R44, R45, R46, R47, R48, R50, R51&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    type: _t.Optional[str] = None
+    openingHour: _t.Optional[str] = None
+    location: _t.Optional[str] = None
+    schedule: _t.Optional[str] = None
+    material: _t.Optional[str] = None
+    hour: _t.Optional[&quot;Hour&quot;] = None
+    materials: _t.List[&quot;Material&quot;] = _dc.field(default_factory=list)
+    profile: _t.Optional[&quot;Profile&quot;] = None
+    feedbacks: _t.List[&quot;Feedback&quot;] = _dc.field(default_factory=list)
+
+    def addInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC11 &quot;Add Recycling Center Information&quot; (R40).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def onboardFacility(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC30 &quot;Onboard Recycling Center&quot; (R42).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def communicateSite(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC14 &quot;Communicate Site&quot; (R51).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def communicateFacility(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC13 &quot;Communicate Facility&quot; (R47).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def handleActivity(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC7 &quot;Handle Activity&quot; (R30).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewDashboard(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC18 &quot;View Dashboard&quot; (R22, R46).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewUserStats(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def replyUserQuestion(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC32 &quot;Reply User Question&quot; (R45).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def updateInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC34 &quot;Update Information&quot; (R49).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Admin:
+    &quot;&quot;&quot;Source: R16, R17, R21, R22, R23, R24, R26, R30, R32, R34, R41, R46, R47&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    password: _t.Optional[str] = None
+    recyclingFacilities: _t.List[&quot;RecyclingFacility&quot;] = _dc.field(default_factory=list)
+    users: _t.List[&quot;User&quot;] = _dc.field(default_factory=list)
+
+    def addRecyclingCenterInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC11 &quot;Add Recycling Center Information&quot; (R40).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def readFeedback(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC31 &quot;Read Feedback&quot; (R17).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def handleActivity(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC7 &quot;Handle Activity&quot; (R30).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewDashboard(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC18 &quot;View Dashboard&quot; (R22, R46).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewUserStats(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def replyUserQuestion(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC32 &quot;Reply User Question&quot; (R45).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def blockUser(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewUserErrorLog(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC25 &quot;View User Error Log&quot; (R41).&quot;&quot;&quot;
+        raise NotImpl</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>38</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>7</td></tr>
+<tr><th>actors_without_use_case</th><td>2</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>9</td></tr>
+<tr><th>inconsistency_rate</th><td>0.1385</td></tr>
+<tr><th>requirement_coverage</th><td>0.9804</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;The &#x27;information&#x27; in R16 is assumed to be related to the &#x27;RecyclingFacility&#x27; class.&quot;}, {&quot;tag&quot;: &quot;R29&quot;, &quot;assumption&quot;: &quot;The &#x27;noun or noun&#x27; in R29 is assumed to be related to the &#x27;User&#x27; class.&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.316</td><td>0.6</td><td>0.414</td><td>6/13/4</td></tr>
+<tr><td>relations</td><td>0.15</td><td>0.333</td><td>0.207</td><td>3/17/6</td></tr>
+<tr><td>use_cases_provisional</td><td>0.895</td><td>0.68</td><td>0.773</td><td>34/4/16</td></tr>
+</table></body></html>

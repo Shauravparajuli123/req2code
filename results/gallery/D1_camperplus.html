@@ -1,0 +1,297 @@
+<html><head><meta charset='utf-8'><title>D1/camperplus</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D1/camperplus &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: As a camp administrator, I want to be able to add campers, so that I can keep track of each individual camper.
+R2: As a camp administrator, I want to be able to remove campers if they don&#x27;t attend the camp anymore, so that I can keep the records organized.
+R3: As a camp administrator, I want to be able to keep camper records from previous years, so that the amount of work I need to do is lowered.
+R4: As a camp administrator, I want to be able to upload consent forms, so that campers or their parents can easily access the forms.
+R5: As a camp administrator, I want to be able to keep track of which camper submitted which forms, so that legal issues are avoided.
+R6: As a camp administrator, I want to be able to schedule activities for campers, so that camp workers can easily keep track of who is where at all times.
+R7: As a camp administrator, I want to be able to automatically create nametags for campers, so that I can lower the amount of work I need to do.
+R8: As a camp administrator, I want to be able to suspend a camper who had behavioral problems.
+R9: As a camp administrator, I want to be able to set a reminders related to specific tasks that has to be done.
+R10: As a camp administrator, I want to be able to assign different positions to the staff members, so that it is possible to organize activities in terms of responsibilities.
+R11: As a camp administrator, I want to be able to warn a camp worker who I think did his/her job inappropriate.
+R12: As a camp administrator, I want to be able to create, modify rules that campers and camp workers has to follow.
+R13: As a camp administrator, I want to keep track of the usage of internal camp facilities, so that I don&#x27;t create conflicting schedules for the different camp groups.
+R14: As a camp administrator, I want to create an avenue so parents can submit feedback and general concerns, so that I can keep improving the services I provide.
+R15: As a camp administrator, I want to store campers&#x27; emergency information in a database, so that I can easily notify the necessary parties in case of an emergency.
+R16: As a camp administrator, I want to store camper&#x27;s immediate parent/guardian&#x27;s information, so that I can easily call to notify them in case a grossly unacceptable behavior.
+R17: As a camp administrator, I want to provide bi-weekly feedback to camper&#x27;s parents, so that they can be aware of their camper behavior and performance at camp.
+R18: As a camp administrator, I want to be able to make nametags faster, so that I don&#x27;t have to spend two hours making 200+ nametags
+R19: As a camp administrator, I want to be able to create a registration form for both staff and kids, so that I can keep organized.
+R20: As a camp administrator, I want to be able to keep my information in one place, so that the admins next year can improve on the previous years.
+R21: As a camp administrator, I want to be able to see medical forms, so that we can be prepared for an allergy attack
+R22: As a camp administrator, I want to be able to notify parents all at once, so that they can be notified of any upcoming events.
+R23: As a camp administrator, I want to be quickly log attendance everyday, so that I can track which kids are coming in.
+R24: As a camp administrator, I want to be able to add parents, so that they can enroll their kids at camp.
+R25: As a camp administrator, I want to be able to create groups and add campers to the groups, so that I can easily organize the campers.
+R26: As a camp administrator, I want to be able to see all my camp groups and the events scheduled for each camp group, so that I can notify counselor of what their group will be doing for the day.
+R27: As a camp administrator, I want to be able to schedule tasks/activities for a specific camp group, so that I can track each groups daily/weekly and monthly activities.
+R28: As a camp administrator, I want to be able to delete tasks/activities I scheduled, so that I can keep the schedule clean of unneeded activities.
+R29: As a camp administrator, I want to be able to modify tasks/events I scheduled in case there is a change, so that I can always keep the schedule up to date.
+R30: As a camp administrator, I want to be able to modify the information of enrolled campers, so that I can keep the campers information up to date.
+R31: As a camp administrator, I want to be able to delete campers from the database, so that I can keep my pages free of clutter.
+R32: As a camp administrator, I want to be able to modify the information of added parents, so that I can keep parent&#x27;s information up to date.
+R33: As a camp administrator, I want to be able to delete parents from the database, so that I can keep my pages free of unneeded clutter.
+R34: As a camp administrator, I want to be able to modify a group&#x27;s information, so that I can keep the groups up to date.
+R35: As a camp administrator, I want to be able to see only events for a specific group/groups on the event calendar, so that I can easily read the data on the calendar without too much clutter.
+R36: As a parent, I want to be able to see which consent forms I have submitted, so that I can know what I still need to do.
+R37: As a parent, I want to be able to track my camper activity and schedule at camp, so that I can have peace of mind.
+R38: As a parent, I want to be able to submit various type of forms to the camp management.
+R39: As a parent, I want to be able to create an account, so that I can sign up my kids for camp online.
+R40: As a parent, I want to see which counselors are assigned to my kids, so that I can have peace of mind.
+R41: As a parent, I want to be able to message my camper counselors, so that I can voice my concerns or check on my camper progress.
+R42: As a parent, I want to be able to sign and submit consent forms online, so that I don&#x27;t have to deal with my camper losing a consent form.
+R43: As a parent, I want to be able to see if I made all the necessary payments.
+R44: As a parent, I want to be able to share any photos the camp has taken of my camper.
+R45: As a parent, I want to be able to connect with the staff in case of an emergency.
+R46: As a parent, I want to be able to enroll my campers, so that they can be admitted to camp.
+R47: As a parent, I want to be able to see and edit my enrolled campers to the camp year, so that I can know who I already enrolled to camp, who is still pending admission etc.
+R48: As a parent, I want to be able to see a schedule of the activities my campers are involved in at camp, so that I can be more informed as to what they are doing at camp.
+R49: As a camp worker, I want to be able to see which campers I am in charge of and where, so that I can make sure I am doing my job properly.
+R50: As a camp worker, I want to submit a completion report for the tasks which was assigned to me.
+R51: As a camp worker, I want to report a camper to the manager with an inappropriate behavior.
+R52: As a camp worker, I want to report a list of supplies to the manager that the camp is short of.
+R53: As a camp worker, I want to report necessary repairs to the manager that the camp is needed of.
+R54: As a camp worker, I want to see which campers I am in charge of and where, so that I can make sure I am doing my job properly.
+R55: As a camp counselor, I want to take attendance of my assigned kids, so that I can make ensure everybody is accounted for.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (4 → 4)</th></tr><tr><td class="">camp administrator</td></tr><tr><td class="">camp counselor</td></tr><tr><td class="">camp worker</td></tr><tr><td class="">parent</td></tr></table></div>
+<div><table><tr><th>classes (34 → 33)</th></tr><tr><td class="">Activity</td></tr><tr><td class="">Attendance</td></tr><tr><td class="">Behavior</td></tr><tr><td class="">Camp</td></tr><tr><td class="">CampAdministrator</td></tr><tr><td class="">CampCounselor</td></tr><tr><td class="">CampGroup</td></tr><tr><td class="">CampWorker</td></tr><tr><td class="">Camper</td></tr><tr><td class="">Charge</td></tr><tr><td class="del">Clutter</td></tr><tr><td class="">Concern</td></tr><tr><td class="">ConsentForm</td></tr><tr><td class="">Counselor</td></tr><tr><td class="">Database</td></tr><tr><td class="">Date</td></tr><tr><td class="">Emergency</td></tr><tr><td class="">Event</td></tr><tr><td class="">Feedback</td></tr><tr><td class="">Form</td></tr><tr><td class="">Group</td></tr><tr><td class="">Job</td></tr><tr><td class="">Kid</td></tr><tr><td class="">Manager</td></tr><tr><td class="">Nametag</td></tr><tr><td class="">Parent</td></tr><tr><td class="">Peace</td></tr><tr><td class="">PerformanceAtCamp</td></tr><tr><td class="">Schedule</td></tr><tr><td class="">Staff</td></tr><tr><td class="">Task</td></tr><tr><td class="">Track</td></tr><tr><td class="">Work</td></tr><tr><td class="">Year</td></tr></table></div>
+<div><table><tr><th>attributes (5 → 5)</th></tr><tr><td class="">Camper.emergency information</td></tr><tr><td class="">Camper.guardian</td></tr><tr><td class="">Camper.problem</td></tr><tr><td class="">Parent.camper behavior</td></tr><tr><td class="">Work.amount</td></tr></table></div>
+<div><table><tr><th>relations (7 → 7)</th></tr><tr><td class="">association: Counselor -&gt; Kid</td></tr><tr><td class="">generalization: PerformanceAtCamp -&gt; Parent</td></tr><tr><td class="">has: Activity -&gt; Schedule</td></tr><tr><td class="">has: Camper -&gt; Parent</td></tr><tr><td class="">has: Camper -&gt; Track</td></tr><tr><td class="">has: Event -&gt; Group</td></tr><tr><td class="">has: Kid -&gt; Attendance</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R4</td><td>referential</td><td>their</td><td><span class='tag resolved'>resolved</span></td><td>parents&#x27; consent forms; campers&#x27; consent forms<br><i>The phrase &#x27;their parents&#x27; or &#x27;their&#x27; is ambiguous, referring to either parents or campers.</i></td></tr>
+<tr><td>A6</td><td>R22</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>notify all parents at once; notify parents of a specific group at once<br><i>The term &#x27;any&#x27; is ambiguous, referring to either all parents or parents of a specific group.</i></td></tr>
+<tr><td>A12</td><td>R35</td><td>quantifier</td><td>much</td><td><span class='tag resolved'>resolved</span></td><td>events for a specific group; events for multiple groups<br><i>The term &#x27;specific group/groups&#x27; is ambiguous, referring to either a single group or multiple groups.</i></td></tr>
+<tr><td>A13</td><td>R38</td><td>terminological</td><td>various</td><td><span class='tag resolved'>resolved</span></td><td>submit various types of forms; submit a specific type of form<br><i>The term &#x27;various&#x27; is ambiguous, referring to either multiple types of forms or a single type of form.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D1_camperplus_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D1_camperplus_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D1/camperplus.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Camper:
+    &quot;&quot;&quot;Source: R1, R24, R37, R46, R47&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    emergencyInformation: _t.Optional[str] = None
+    guardian: _t.Optional[str] = None
+    problem: _t.Optional[str] = None
+    parent: _t.Optional[&quot;Parent&quot;] = None
+
+    def createCamper(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def removeCamper(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC6 &quot;Delete Camper&quot; (R31).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def modifyCamperInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC15 &quot;Modify Information&quot; (R30, R32, R34).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def enrollCamper(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC9 &quot;Enroll Camper&quot; (R46).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeCamperRecord(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC10 &quot;Keep Camper Record&quot; (R3).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Parent:
+    &quot;&quot;&quot;Source: R24, R39, R40, R41, R43, R44&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    camperBehavior: _t.Optional[str] = None
+
+    def createAccount(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC1 &quot;Create Account&quot; (R39).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeCamperActivity(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC23 &quot;See Camper&quot; (R47, R49, R54).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeConsentForm(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC24 &quot;See Consent Form&quot; (R36).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def submitForm(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC36 &quot;Submit Type&quot; (R38).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seePayment(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC28 &quot;See Payment&quot; (R43).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def sharePhoto(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC31 &quot;Share Photo&quot; (R44).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class CampAdministrator:
+    &quot;&quot;&quot;Source: R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R38, R42, R45&quot;&quot;&quot;
+    campers: _t.List[&quot;Camper&quot;] = _dc.field(default_factory=list)
+    parents: _t.List[&quot;Parent&quot;] = _dc.field(default_factory=list)
+    campCounselors: _t.List[&quot;CampCounselor&quot;] = _dc.field(default_factory=list)
+
+    def createCamper(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def removeCamper(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC6 &quot;Delete Camper&quot; (R31).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def keepCamperRecord(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC10 &quot;Keep Camper Record&quot; (R3).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def uploadConsentForm(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC40 &quot;Upload Consent Form&quot; (R4).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def keepTrackOfConsentForm(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC12 &quot;Keep Track&quot; (R5, R13).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def scheduleActivity(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC20 &quot;Schedule Activity&quot; (R6).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def createNametag(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC14 &quot;Make Nametag&quot; (R18).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def suspendCamper(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC37 &quot;Suspend Camper&quot; (R8).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def setReminder(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC30 &quot;Set Reminder&quot; (R9).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def assignPosition(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def warnCampWorker(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC41 &quot;Warn Camp Worker&quot; (R11).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def createRule(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC5 &quot;Create Rule&quot; (R12).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def modifyRule(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeCampGroup(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC22 &quot;See Camp Group&quot; (R26).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeCamper(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC23 &quot;See Camper&quot; (R47, R49, R54).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeConsentForm(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC24 &quot;See Consent Form&quot; (R36).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def notifyParent(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC17 &quot;Notify Parent&quot; (R22).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def provideFeedback(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC18 &quot;Provide Feedback&quot; (R17).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeMedicalForm(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def notifyParents(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def logAttendance(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC13 &quot;Log Attendance&quot; (R23).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeSchedule(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC29 &quot;See Schedule&quot; (R48).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeForm(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC27 &quot;See Form&quot; (R21).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seePayment(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC28 &quot;See Payment&quot; (R43).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def modifyInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC15 &quot;Modify Information&quot; (R30, R32, R34).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def modifyTask(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC16 &quot;Modify Task&quot; (R29).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def deleteTask(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC8 &quot;Delete Task&quot; (R28).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeEvent(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC26 &quot;See Event&quot; (R35).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeGroupInformation(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class CampCounselor:
+    &quot;&quot;&quot;Source: R49, R55&quot;&quot;&quot;
+    campers: _t.List[&quot;Camper&quot;] = _dc.field</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>41</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>10</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>10</td></tr>
+<tr><th>inconsistency_rate</th><td>0.2</td></tr>
+<tr><th>requirement_coverage</th><td>1.0</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.8</td><td>0.211</td><td>0.333</td><td>4/1/15</td></tr>
+<tr><td>relations</td><td>0.2</td><td>0.038</td><td>0.065</td><td>1/4/25</td></tr>
+<tr><td>use_cases_provisional</td><td>0.951</td><td>0.78</td><td>0.857</td><td>39/2/11</td></tr>
+</table></body></html>

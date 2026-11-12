@@ -1,0 +1,76 @@
+{
+ "classes": [
+  {
+   "name": "Place",
+   "kind": "class"
+  },
+  {
+   "name": "Transition",
+   "kind": "class"
+  },
+  {
+   "name": "Net",
+   "kind": "class"
+  },
+  {
+   "name": "PTArc",
+   "kind": "class"
+  },
+  {
+   "name": "TPArc",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Place": [],
+  "Transition": [],
+  "Net": [],
+  "PTArc": [],
+  "TPArc": []
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Place",
+   "to": "Net",
+   "label": "net 1..1",
+   "label_to": "place 1..*"
+  },
+  {
+   "type": "association",
+   "from": "Place",
+   "to": "PTArc",
+   "label": "out 0..*",
+   "label_to": "src 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Place",
+   "to": "TPArc",
+   "label": "in 0..*",
+   "label_to": "dst 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Transition",
+   "to": "Net",
+   "label": "net 1..1",
+   "label_to": "transition 1..*"
+  },
+  {
+   "type": "association",
+   "from": "Transition",
+   "to": "PTArc",
+   "label": "in 1..*",
+   "label_to": "dst 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Transition",
+   "to": "TPArc",
+   "label": "out 1..*",
+   "label_to": "src 1..1"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage PetriNet {\nclass Place {\n}\nPlace \"net 1..1\" --* \"place 1..*\" Net\nPlace \"out 0..*\" -- \"src 1..1\" PTArc\nPlace \"in 0..*\" -- \"dst 1..1\" TPArc\nclass Transition {\n}\nTransition \"net 1..1\" --* \"transition 1..*\" Net\nTransition \"in 1..*\" -- \"dst 1..1\" PTArc\nTransition \"out 1..*\" -- \"src 1..1\" TPArc\nclass Net {\n}\nclass PTArc {\n}\nclass TPArc {\n}\n}\n@enduml\n"
+}

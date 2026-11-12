@@ -1,0 +1,4 @@
+{
+ "plantuml": "@startuml\n\nenum Environment {\n  land\n  water\n  air\n}\n\nclass Vehicle {\n  - position: Integer\n  - speed: Integer\n  - maxSpeed: Integer\n  - environment: Environment\n}\n\nclass LandVehicle\nclass MarineVehicle\nclass AmphibiousVehicle\n\nVehicle <|-- LandVehicle\nVehicle <|-- MarineVehicle\nLandVehicle <|-- AmphibiousVehicle\nMarineVehicle <|-- AmphibiousVehicle\n@enduml\n",
+ "scorer": "NOMAD src/eval_helpers.py evaluate_uml"
+}

@@ -1,0 +1,70 @@
+[
+ {
+  "id": "A1",
+  "type": "quantifier",
+  "sid": "R6.s1",
+  "req_id": "R6",
+  "cue": "multiple",
+  "text": "Each airport has multiple flights that depart from it.",
+  "readings": [
+   "Each airport has multiple flights that depart from it.",
+   "Each airport has at least one flight that departs from it."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The phrase 'multiple' could imply that an airport must have more than one flight, or it could mean at least one flight.",
+  "chosen": "Each airport has at least one flight that departs from it."
+ },
+ {
+  "id": "A2",
+  "type": "coordination",
+  "sid": "R8.s3",
+  "req_id": "R8",
+  "cue": "and+or",
+  "text": "One end of the association is labeled 'passenger' and also carries the multiplicity constraint '0..*', meaning that a 'Passenger' object can be associated with 0 or more 'Flight' objects.",
+  "readings": [
+   "One end of the association is labeled 'passenger' and also carries the multiplicity constraint '0..*', meaning that a 'Passenger' object can be associated with 0 or more 'Flight' objects.",
+   "One end of the association is labeled 'passenger' and also carries the multiplicity constraint '1..*', meaning that a 'Passenger' object can be associated with 1 or more 'Flight' objects."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "coordination",
+  "explanation": "The use of 'and also' suggests that the multiplicity constraint and the label are related, but the exact relationship is unclear.",
+  "chosen": "One end of the association is labeled 'passenger' and also carries the multiplicity constraint '0..*', meaning that a 'Passenger' object can be associated with 0 or more 'Flight' objects."
+ },
+ {
+  "id": "A3",
+  "type": "quantifier",
+  "sid": "R8.s3",
+  "req_id": "R8",
+  "cue": "0 or more",
+  "text": "One end of the association is labeled 'passenger' and also carries the multiplicity constraint '0..*', meaning that a 'Passenger' object can be associated with 0 or more 'Flight' objects.",
+  "readings": [
+   "One end of the association is labeled 'passenger' and also carries the multiplicity constraint '0..*', meaning that a 'Passenger' object can be associated with 0 or more 'Flight' objects.",
+   "One end of the association is labeled 'passenger' and also carries the multiplicity constraint '1..*', meaning that a 'Passenger' object can be associated with 1 or more 'Flight' objects."
+  ],
+  "status": "rejected",
+  "confirmed": false,
+  "llm_type": "quantifier",
+  "explanation": "This is a duplicate of A2 and does not provide new information.",
+  "chosen": ""
+ },
+ {
+  "id": "A4",
+  "type": "quantifier",
+  "sid": "R10.s1",
+  "req_id": "R10",
+  "cue": "any",
+  "text": "An airline conducts any number of flights.",
+  "readings": [
+   "An airline conducts any number of flights.",
+   "An airline conducts at least one flight."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The phrase 'any number' could imply that an airline must conduct at least one flight, or it could mean that an airline can conduct zero flights.",
+  "chosen": "An airline conducts at least one flight."
+ }
+]

@@ -1,0 +1,201 @@
+{
+ "case": "D2/FiniteStateMachine",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Game",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createGame",
+     "realizes": "UC1",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "State",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "associationStateSource",
+     "type": "String",
+     "src": [
+      "R14"
+     ]
+    },
+    {
+     "name": "stateMachine",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C3",
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "stateMachine",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "sourceState",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C4",
+   "name": "StateMachine",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "rootFolder",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "transitions",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C5",
+   "name": "RootFolder",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "rootFolders",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "aggregation",
+   "source": "C4",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C4",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "A state machine may have a transition or many or none, as stated in the ambiguity decision."
+  }
+ ],
+ "open_tags": [
+  "R11 (coordination, \"noun or noun\"): readings ['A state machine may have a transition', 'A state machine may have many transitions or none']"
+ ]
+}

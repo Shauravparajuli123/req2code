@@ -1,0 +1,128 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class CulturalHeritage {
+  id : int
+  name : String
+  +createCulturalHeritage()
+  +updateCulturalHeritage()
+  +searchCulturalHeritage()
+  +viewCulturalHeritageDetails()
+}
+class RefreshmentPoint {
+  id : int
+  name : String
+  banners : String
+  +createRefreshmentPoint()
+  +updateRefreshmentPoint()
+  +searchRefreshmentPoint()
+  +viewRefreshmentPointDetails()
+  +viewRefreshmentPointHistory()
+  +checkBannerLimit()
+}
+class TouristAccount {
+  id : int
+  name : String
+  +searchTouristAccount()
+  +viewTouristAccountDetails()
+  +enableDisableTouristAccount()
+}
+class Tourist {
+  data : String
+  searchPreferences : String
+  accountData : String
+  favorites : String
+  visitedSites : String
+  +modifyData()
+  +editSearchPreferences()
+  +editAccountData()
+  +editGeneralPreferences()
+  +viewFavorites()
+  +viewVisitedSites()
+  +addBookmark()
+  +removeBookmark()
+  +insertFeedback()
+}
+class Banner {
+  image : String
+  +changeImage()
+  +insertBanner()
+  +changeBannerImage()
+  +removeBanner()
+}
+class News {
+  data : String
+  +insertNews()
+  +deleteNews()
+  +modifyNews()
+}
+class Site {
+  feedback : String
+  id : int
+  name : String
+  +viewFeedback()
+  +viewStatisticalReport()
+  +editComment()
+}
+class Feedback {
+  comments : String
+  comment : String
+  siteId : int
+  +uploadFeedback()
+  +editComment()
+}
+class Comment {
+  text : String
+  +editCommentText()
+}
+class Search {
+  site : String
+  +searchSite()
+}
+class Tag {
+  name : String
+  +removeTag()
+  +insertTag()
+}
+class UserAccount {
+  username : String
+  +changePassword()
+  +login()
+  +logout()
+}
+class Password {
+  password : String
+  +confirmPasswordChange()
+}
+class Login {
+  username : String
+  +loginUser()
+}
+class PointOfRestaurant {
+  banners : String
+}
+class Restaurant {
+  name : String
+  +changeDailyMenu()
+  +deleteDailyMenu()
+  +changeRefreshmentData()
+}
+class Convention {
+  name : String
+  +requestConvention()
+}
+class User {
+  userId : int
+  username : String
+}
+TouristAccount "1" -- "1" Tourist : has
+RefreshmentPoint "1" -- "0..*" Banner : has
+Site "1" -- "0..*" Feedback : has
+Feedback "1" -- "0..*" Comment : has
+Search "0..*" -- "1" Tag : has
+UserAccount "1" -- "1" Login : uses
+UserAccount "0..*" -- "1" Tag : has
+PointOfRestaurant "1" -- "1..*" Banner : has
+Tourist "0..*" -- "1" Feedback : has
+Restaurant "0..*" -- "1" Convention : has
+@enduml

@@ -1,0 +1,121 @@
+{
+ "case": "D2/Architectural_Description",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "ArchitectureDescription",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "selectView",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "selectViewPoint",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "defineMainView",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "ArchitectureView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "conformToViewPoint",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M5",
+     "name": "projectOntoMainView",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "MainView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M6",
+     "name": "defineViewPoint",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "selects",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C3",
+   "target": "C2",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "isProjectedOnto",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The class 'ArchitectureView' is assumed to be part of the 'ArchitecturalDescription' package, even though it is not explicitly mentioned in the requirements."
+  }
+ ],
+ "open_tags": []
+}

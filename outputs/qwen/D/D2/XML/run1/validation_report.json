@@ -1,0 +1,35 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R2 (An attribute node) is not supported by any class in the model.",
+   "fix": "Add a class for attribute nodes."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R3 (an XML file comprises Text elements) is not supported by any class in the model.",
+   "fix": "Add a class for Text elements."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R5 (an XML file comprises Root elements) is not supported by any class in the model.",
+   "fix": "Add a class for Root elements."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R6 (A Node of an XML file may have one parent which is an Element of the XML file) is not fully supported. The current model only supports a Node having multiple parent Nodes.",
+   "fix": "Modify the association to support one parent."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R7 (An Element of an XML file can have many children Nodes) is partially supported. The current model supports zero or more children Nodes.",
+   "fix": "Ensure the association supports one or more children Nodes."
+  }
+ ]
+}

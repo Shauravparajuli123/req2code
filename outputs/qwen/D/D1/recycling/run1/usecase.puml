@@ -1,0 +1,103 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "User" as A1
+actor "Admin" as A2
+actor "Superuser" as A3
+actor "RecyclingFacility" as A4
+actor "RecyclingFacilityRepresentative" as A5
+actor "Executive" as A6
+actor "Employee" as A7
+actor "HREmployee" as A8
+actor "Developer" as A9
+actor "Company" as A10
+actor "CompanyAccountant" as A11
+rectangle "recycling" {
+  usecase "View Public Information" as UC1
+  usecase "Enter Zip Code And Get List Of Nearby Recycling Facilities" as UC2
+  usecase "Get Hours Of Each Recycling Facility" as UC3
+  usecase "Select Different Types Of Recyclable Waste" as UC4
+  usecase "Add Donation Centers As Favorites" as UC5
+  usecase "Give Email ID" as UC6
+  usecase "View Map Display Of Public Recycling Bins" as UC7
+  usecase "View Map Display Of Special Waste Drop Off Sites" as UC8
+  usecase "View Safe Disposal Events" as UC9
+  usecase "View User Documentation" as UC10
+  usecase "Enter Invalid Zip Code" as UC11
+  usecase "Create An Account" as UC12
+  usecase "Add Or Remove Recycling Facilities Information" as UC13
+  usecase "Read Users Feedback And Complaints" as UC14
+  usecase "Block Specific Users Based On IP Address" as UC15
+  usecase "View A Dashboard That Monitors Sites Statuses" as UC16
+  usecase "Encrypt All Data" as UC17
+  usecase "Have Full Access To Company Data" as UC18
+  usecase "Access Route Planning System" as UC19
+  usecase "Access Full Information Of All Employees" as UC20
+  usecase "Access API From Website" as UC21
+  usecase "Receive Tempting Rewards" as UC22
+  usecase "Keep Personal Information Securely" as UC23
+  usecase "Handle Users Activities" as UC24
+  usecase "Upload Or Delete Stuff" as UC25
+  usecase "Get Quick Notifications" as UC26
+  usecase "View All Available Activity Fees" as UC27
+  usecase "Use Bootstrap" as UC28
+  usecase "Attend UI UX Lessons" as UC29
+  usecase "View Locations Of Recycling Centers On Map" as UC30
+  usecase "Upload Week S Schedule" as UC31
+  usecase "Link Email Account To Profile" as UC32
+  usecase "Contact Administrators" as UC33
+  usecase "Add Recycling Center Information" as UC34
+  usecase "View User Error Logs" as UC35
+  usecase "Onboard Recycling Centers" as UC36
+  usecase "Update Recycling Center Information" as UC37
+  usecase "View Users Stats" as UC38
+  usecase "Reply To User Questions" as UC39
+  usecase "Communicate Directly With Facilities" as UC40
+  usecase "Communicate Directly With Site Admin" as UC41
+  usecase "Update Information And Type Of Material Accepted" as UC42
+  usecase "Access User Stats And Schedules" as UC43
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+A1 --> UC7
+A1 --> UC8
+A1 --> UC9
+A1 --> UC10
+A1 --> UC11
+A1 --> UC12
+A2 --> UC13
+A2 --> UC14
+A2 --> UC15
+A2 --> UC16
+A2 --> UC17
+A6 --> UC18
+A7 --> UC19
+A8 --> UC20
+A9 --> UC21
+A1 --> UC22
+A1 --> UC23
+A2 --> UC24
+A10 --> UC25
+A7 --> UC26
+A11 --> UC27
+A9 --> UC28
+A9 --> UC29
+A1 --> UC30
+A1 --> UC31
+A1 --> UC32
+A1 --> UC33
+A2 --> UC34
+A2 --> UC35
+A2 --> UC36
+A3 --> UC37
+A3 --> UC38
+A3 --> UC39
+A2 --> UC40
+A4 --> UC41
+A5 --> UC42
+A4 --> UC43
+@enduml

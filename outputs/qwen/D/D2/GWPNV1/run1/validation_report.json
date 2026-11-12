@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "The class 'Net' should have a relationship with 'Place' to represent a Petri Net, but the relationship is missing.",
+   "fix": "Add an association between Net and Place."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Net and Place should be [1..1..1] to represent that a Net has exactly one Place.",
+   "fix": "Change the association Net -> Place to [1..1..1]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Transition and Net should be [1..1..1] to represent that a Transition belongs to exactly one Net.",
+   "fix": "Change the association Transition -> Net to [1..1..1]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Place and Transition should be [0..*..1] to represent that a Place may have multiple Transitions as its destination.",
+   "fix": "Change the association Place -> Transition to [0..*..1]"
+  }
+ ]
+}

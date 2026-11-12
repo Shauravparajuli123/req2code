@@ -1,0 +1,96 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "constraint"
+   ],
+   "methods": [
+    {
+     "name": "createSingleQoSStatement",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "statements"
+   ],
+   "methods": [
+    {
+     "name": "createCompoundQoSStatement",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "QoSConstraint",
+   "kind": "class",
+   "attributes": [
+    "qualification"
+   ],
+   "methods": [
+    {
+     "name": "createQoSConstraint",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "QoSStatement",
+   "target": "CompoundQoSStatement",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "SingleQoSStatement",
+   "target": "QoSConstraint",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "CompoundQoSStatement",
+   "target": "QoSStatement",
+   "src": [
+    "R7",
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/QoS_Statement.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass QoSStatement:\n    \"\"\"Source: R7, R8\"\"\"\n    compoundQoSStatements: _t.List[\"CompoundQoSStatement\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass SingleQoSStatement:\n    \"\"\"Source: R9\"\"\"\n    constraint: _t.Optional[str] = None\n    qoSConstraint: _t.Optional[\"QoSConstraint\"] = None\n\n    def createSingleQoSStatement(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass CompoundQoSStatement(QoSStatement):\n    \"\"\"Source: R3, R10\"\"\"\n    statements: _t.Optional[str] = None\n\n    def createCompoundQoSStatement(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass QoSConstraint:\n    \"\"\"Source: R5\"\"\"\n    qualification: _t.Optional[str] = None\n\n    def createQoSConstraint(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "QoSStatement.java": "/** Generated from shared model D2/QoS_Statement. Source: R7, R8 */\npublic class QoSStatement {\n    private java.util.List<CompoundQoSStatement> compoundQoSStatements;\n}\n",
+  "SingleQoSStatement.java": "/** Generated from shared model D2/QoS_Statement. Source: R9 */\npublic class SingleQoSStatement {\n    private java.lang.String constraint;\n    private QoSConstraint qoSConstraint;\n\n    /** Operation. */\n    public void createSingleQoSStatement() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "CompoundQoSStatement.java": "/** Generated from shared model D2/QoS_Statement. Source: R3, R10 */\npublic class CompoundQoSStatement extends QoSStatement {\n    private java.lang.String statements;\n\n    /** Operation. */\n    public void createCompoundQoSStatement() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "QoSConstraint.java": "/** Generated from shared model D2/QoS_Statement. Source: R5 */\npublic class QoSConstraint {\n    private java.lang.String qualification;\n\n    /** Operation. */\n    public void createQoSConstraint() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

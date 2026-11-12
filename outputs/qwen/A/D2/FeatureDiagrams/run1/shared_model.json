@@ -1,0 +1,248 @@
+{
+ "case": "D2/FeatureDiagrams",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Game",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "object_",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "attribute",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "xorGroup",
+     "type": "String",
+     "src": [
+      "R8",
+      "R12"
+     ]
+    },
+    {
+     "name": "orGroup",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    },
+    {
+     "name": "nodes",
+     "type": "String",
+     "src": [
+      "R10",
+      "R11"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addAttribute",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addXorGroup",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "addOrGroup",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M4",
+     "name": "addChild",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "key",
+     "type": "boolean",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "XORGroup",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "preliminary",
+     "type": "boolean",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ORGroup",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "preliminary",
+     "type": "boolean",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R10",
+    "R13"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "generalization",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is a",
+   "src": []
+  },
+  {
+   "id": "R5",
+   "kind": "generalization",
+   "source": "C4",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is a",
+   "src": []
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

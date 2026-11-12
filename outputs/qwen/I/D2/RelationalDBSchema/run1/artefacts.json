@@ -1,0 +1,84 @@
+{
+ "actors": [
+  "owner"
+ ],
+ "use_cases": [
+  {
+   "name": "storeName",
+   "actor": "owner",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Database",
+   "kind": "class",
+   "attributes": [
+    "sgbdName",
+    "tables"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "columns"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "dataType",
+    "defaultValue",
+    "owner"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Database",
+   "target": "Table",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Table",
+   "target": "Column",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Column:\n    def __init__(self, datatype: str, default_value: str, owner: 'Table'):\n        self.datatype = datatype\n        self.default_value = default_value\n        self.owner = owner\n\n    def __str__(self) -> str:\n        raise NotImplementedError\n\nclass Database:\n    def __init__(self, sgbd_name: str):\n        self.sgbd_name = sgbd_name\n        self.tables: List['Table'] = []\n\n    def add_table(self, table: 'Table'):\n        raise NotImplementedError\n\n    def __str__(self) -> str:\n        raise NotImplementedError\n\nclass Table:\n    def __init__(self, database: Database):\n        self.database = database\n\n    def add_column(self, column: Column) -> None:\n        raise NotImplementedError\n\n    def __str__(self) -> str:\n        raise NotImplementedError",
+ "java": {}
+}

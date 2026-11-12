@@ -1,0 +1,50 @@
+{
+ "classes": [
+  {
+   "name": "TechnologyObject",
+   "kind": "class"
+  },
+  {
+   "name": "Implementation",
+   "kind": "class"
+  },
+  {
+   "name": "IXIT",
+   "kind": "class"
+  },
+  {
+   "name": "ImplementableStandard",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "TechnologyObject": [],
+  "Implementation": [],
+  "IXIT": [],
+  "ImplementableStandard": []
+ },
+ "relations": [
+  {
+   "type": "association",
+   "from": "TechnologyObject",
+   "to": "ImplementableStandard",
+   "label": "implStandard 1..*",
+   "label_to": "techObject 1..*"
+  },
+  {
+   "type": "association",
+   "from": "TechnologyObject",
+   "to": "Implementation",
+   "label": "toImplementation 0..*",
+   "label_to": "implProduct 1..*"
+  },
+  {
+   "type": "association",
+   "from": "Implementation",
+   "to": "IXIT",
+   "label": "implIXIT 0..*",
+   "label_to": "ixitImplementation 0..*"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage ODPTV {\nclass TechnologyObject {\n}\nTechnologyObject \"implStandard 1..*\" -- \"techObject 1..*\" ImplementableStandard\nTechnologyObject \"toImplementation 0..*\" -- \"implProduct 1..*\" Implementation\nclass Implementation {\n}\nImplementation \"implIXIT 0..*\" -- \"ixitImplementation 0..*\" IXIT\nclass IXIT {\n}\nclass ImplementableStandard {\n}\n}\n@enduml\n"
+}

@@ -1,0 +1,88 @@
+{
+ "classes": [
+  {
+   "name": "JavaSource",
+   "kind": "class"
+  },
+  {
+   "name": "NamedElement",
+   "kind": "class"
+  },
+  {
+   "name": "ClassDeclaration",
+   "kind": "class"
+  },
+  {
+   "name": "MethodDefinition",
+   "kind": "class"
+  },
+  {
+   "name": "MethodInvocation",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "JavaSource": [],
+  "NamedElement": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "ClassDeclaration": [],
+  "MethodDefinition": [],
+  "MethodInvocation": []
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "JavaSource",
+   "to": "ClassDeclaration",
+   "label": "classes 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ClassDeclaration",
+   "to": "NamedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "ClassDeclaration",
+   "to": "ClassDeclaration",
+   "label": "superclass 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "ClassDeclaration",
+   "to": "MethodDefinition",
+   "label": "methods 0..*",
+   "label_to": "class 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "MethodDefinition",
+   "to": "NamedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "MethodDefinition",
+   "to": "MethodInvocation",
+   "label": "invocations 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "MethodInvocation",
+   "to": "MethodDefinition",
+   "label": "method 1..1",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage JavaSource {\nclass JavaSource {\n}\nJavaSource \"classes 1..*\" *--> ClassDeclaration\nclass NamedElement {\n\t name : String\n}\nclass ClassDeclaration {\n}\nNamedElement <|-- ClassDeclaration\nClassDeclaration \"superclass 0..1\" --> ClassDeclaration\nClassDeclaration \"methods 0..*\" *-- \"class 1..1\" MethodDefinition\nclass MethodDefinition {\n}\nNamedElement <|-- MethodDefinition\nMethodDefinition \"invocations 0..*\" *--> MethodInvocation\nclass MethodInvocation {\n}\nMethodInvocation \"method 1..1\" --> MethodDefinition\n}\n@enduml\n"
+}

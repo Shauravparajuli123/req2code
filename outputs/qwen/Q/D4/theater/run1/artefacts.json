@@ -1,0 +1,153 @@
+{
+ "actors": [
+  "participant"
+ ],
+ "use_cases": [
+  {
+   "name": "actInPlay",
+   "actor": "participant",
+   "src": [
+    "R6",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "name": "writePlay",
+   "actor": "author",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Author",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "writePlay",
+     "use_case": "writePlay"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Participant",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "actInPlay",
+     "use_case": "actInPlay"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "name": "Play",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "day",
+    "night"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Session",
+   "kind": "class",
+   "attributes": [
+    "beginTime",
+    "endTime"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "name": "Theater",
+   "kind": "class",
+   "attributes": [
+    "location"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Author",
+   "target": "Play",
+   "multiplicity_target": "1",
+   "src": [
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Participant",
+   "target": "Session",
+   "multiplicity_target": "1",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Play",
+   "target": "Theater",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Author",
+   "target": "Person",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Participant",
+   "target": "Person",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "class Author:\n    def __init__(self, name: str):\n        self.name = name\n\n    def writePlay(self):\n        raise NotImplementedError('R10')\n\n\nclass Participant:\n    def __init__(self, name: str):\n        self.name = name\n\n    def actInPlay(self):\n        raise NotImplementedError('R5', 'R9', 'R12')\n\n\nclass Play:\n    def __init__(self, name: str, day: bool, night: bool):\n        self.name = name\n        self.day = day\n        self.night = night\n\n\nclass Session:\n    def __init__(self, beginTime: str, endTime: str):\n        self.beginTime = beginTime\n        self.endTime = endTime\n\n\nclass Theater:\n    def __init__(self, location: str):\n        self.location = location",
+ "java": {}
+}

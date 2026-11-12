@@ -1,0 +1,135 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "AddBusinessTemplate",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "IdentifierBag",
+   "kind": "class",
+   "attributes": [
+    "identifiers"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "BusinessEntity",
+   "kind": "class",
+   "attributes": [
+    "businessContacts",
+    "identifiers"
+   ],
+   "methods": [
+    {
+     "name": "addBusinessContact(Contact)",
+     "use_case": "AddBusinessTemplate"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    "contactDetails"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "overviewDocuments"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "OverviewDocument",
+   "kind": "class",
+   "attributes": [
+    "documentContent"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "PifModel",
+   "kind": "class",
+   "attributes": [
+    "businessTemplates"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "BusinessEntity",
+   "target": "Contact",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Model",
+   "target": "OverviewDocument",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "UtilityClass",
+   "target": "IdentifierBag",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "PifModel",
+   "target": "Contact",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "class IdentifierBag:\n    def __init__(self):\n        self.identifiers = []\n\nclass BusinessEntity:\n    def __init__(self, identifiers):\n        self.identifiers = identifiers\n        self.businessContacts = []\n    def addBusinessContact(self, contact):\n        self.businessContacts.append(contact)\n\nclass Contact:\n    def __init__(self, contactDetails):\n        self.contactDetails = contactDetails\nclass Model:\n    def __init__(self):\n        self.overviewDocuments = []\nclass OverviewDocument:\n    def __init__(self, documentContent):\n        self.documentContent = documentContent\nclass PifModel:\n    def __init__(self, businessTemplates):\n        self.businessTemplates = businessTemplates",
+ "java": {}
+}

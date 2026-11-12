@@ -1,0 +1,79 @@
+{
+ "classes": [
+  {
+   "name": "TextualPathExp",
+   "kind": "class"
+  },
+  {
+   "name": "Path",
+   "kind": "class"
+  },
+  {
+   "name": "Transition",
+   "kind": "class"
+  },
+  {
+   "name": "AlternativeTrans",
+   "kind": "class"
+  },
+  {
+   "name": "PrimitiveTrans",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "TextualPathExp": [],
+  "Path": [],
+  "Transition": [
+   {
+    "name": "isMultiple",
+    "type": "Boolean"
+   }
+  ],
+  "AlternativeTrans": [],
+  "PrimitiveTrans": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "TextualPathExp",
+   "to": "Path",
+   "label": "path 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Path",
+   "to": "Transition",
+   "label": "transitions 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "AlternativeTrans",
+   "to": "Transition",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "AlternativeTrans",
+   "to": "Path",
+   "label": "altPaths 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "PrimitiveTrans",
+   "to": "Transition",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage TextualPathExp {\nclass TextualPathExp {\n}\nTextualPathExp \"path 1..1\" *--> Path\nclass Path {\n}\nPath \"transitions 1..*\" *--> Transition\nclass Transition {\n\t isMultiple : Boolean\n}\nclass AlternativeTrans {\n}\nTransition <|-- AlternativeTrans\nAlternativeTrans \"altPaths 1..*\" *--> Path\nclass PrimitiveTrans {\n\t name : String\n}\nTransition <|-- PrimitiveTrans\n}\n@enduml\n"
+}

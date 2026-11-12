@@ -1,0 +1,66 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "fkeys",
+    "columns"
+   ],
+   "methods": [],
+   "src": [
+    "R1",
+    "R5"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "FKey",
+   "kind": "class",
+   "attributes": [
+    "referencedTable"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Table",
+   "target": "Column",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "Table",
+   "target": "FKey",
+   "src": [
+    "R4",
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/WTIP_SimpleRDBMS.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Table:\n    \"\"\"Source: R1, R5\"\"\"\n    name: _t.Optional[str] = None\n    fkeys: _t.Optional[str] = None\n    columns: _t.Optional[str] = None\n    fKeys: _t.List[\"FKey\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Column:\n    \"\"\"Source: R2\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass FKey:\n    \"\"\"Source: R3, R6\"\"\"\n    referencedTable: _t.Optional[str] = None\n",
+ "java": {
+  "Table.java": "/** Generated from shared model D2/WTIP_SimpleRDBMS. Source: R1, R5 */\npublic class Table {\n    private java.lang.String name;\n    private java.lang.String fkeys;\n    private java.lang.String columns;\n    private java.util.List<FKey> fKeys;\n}\n",
+  "Column.java": "/** Generated from shared model D2/WTIP_SimpleRDBMS. Source: R2 */\npublic class Column {\n    private java.lang.String name;\n}\n",
+  "FKey.java": "/** Generated from shared model D2/WTIP_SimpleRDBMS. Source: R3, R6 */\npublic class FKey {\n    private java.lang.String referencedTable;\n}\n"
+ }
+}

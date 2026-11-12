@@ -1,0 +1,29 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class TemplateExp {
+}
+class CollectionTemplateExpression {
+  kind : String
+  oclExpressions : String
+}
+class ObjectTemplateExp {
+  objectContainer : String
+  property : String
+  +createGame()
+}
+class OclExpression {
+}
+class Property {
+}
+class PropertyTemplateItem {
+  objectContainer : String
+  property : String
+}
+class ObjectTemplateExpression {
+  objectContainer : String
+}
+ObjectTemplateExpression "1" -- "1" PropertyTemplateItem : has
+PropertyTemplateItem "1" -- "1" Property : has
+CollectionTemplateExpression "1" -- "0..1" OclExpression : has
+@enduml

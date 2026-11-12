@@ -1,0 +1,121 @@
+{
+ "classes": [
+  {
+   "name": "LocatedElement",
+   "kind": "class"
+  },
+  {
+   "name": "Query",
+   "kind": "class"
+  },
+  {
+   "name": "Entry",
+   "kind": "class"
+  },
+  {
+   "name": "Field",
+   "kind": "class"
+  },
+  {
+   "name": "Predicate",
+   "kind": "class"
+  },
+  {
+   "name": "Expression",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "LocatedElement": [
+   {
+    "name": "location",
+    "type": "String"
+   },
+   {
+    "name": "commentsBefore",
+    "type": "String"
+   },
+   {
+    "name": "commentsAfter",
+    "type": "String"
+   }
+  ],
+  "Query": [],
+  "Entry": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "type",
+    "type": "String"
+   },
+   {
+    "name": "allFields",
+    "type": "Boolean"
+   }
+  ],
+  "Field": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Predicate": [],
+  "Expression": [
+   {
+    "name": "field",
+    "type": "String"
+   },
+   {
+    "name": "value",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Query",
+   "to": "Entry",
+   "label": "entries 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Query",
+   "to": "Predicate",
+   "label": "predicates 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Entry",
+   "to": "LocatedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Entry",
+   "to": "Field",
+   "label": "fields 1..*",
+   "label_to": "entry 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Entry",
+   "to": "Predicate",
+   "label": "predicate 0..1",
+   "label_to": "entry 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Predicate",
+   "to": "Expression",
+   "label": "expression 1..*",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage BQL {\nclass LocatedElement {\n\t location : String\n\t commentsBefore : String\n\t commentsAfter : String\n}\nclass Query {\n}\nQuery \"entries 0..*\" *--> Entry\nQuery \"predicates 0..*\" *--> Predicate\nclass Entry {\n\t name : String\n\t type : String\n\t allFields : Boolean\n}\nLocatedElement <|-- Entry\nEntry \"fields 1..*\" *-- \"entry 1..1\" Field\nEntry \"predicate 0..1\" -- \"entry 1..1\" Predicate\nclass Field {\n\t name : String\n}\nclass Predicate {\n}\nPredicate \"expression 1..*\" *--> Expression\nclass Expression {\n\t field : String\n\t value : String\n}\n}\n@enduml\n"
+}

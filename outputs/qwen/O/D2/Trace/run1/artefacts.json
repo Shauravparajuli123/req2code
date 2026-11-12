@@ -1,0 +1,89 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "CreateTrace",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Trace",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Level",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Call",
+   "kind": "class",
+   "attributes": [
+    "methodName",
+    "databaseRows"
+   ],
+   "methods": [
+    {
+     "name": "verbObject",
+     "use_case": "CreateTrace"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Trace",
+   "target": "Level",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Level",
+   "target": "Trace",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Call",
+   "target": "Level",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "class Trace:\n    def __init__(self, name):\n        self.name = name\n\nclass Level:\n    def __init__(self, trace):\n        self.trace = trace\n\nclass Call:\n    def __init__(self, methodName, databaseRows):\n        self.methodName = methodName\n        self.databaseRows = databaseRows\n    def verbObject(self):\n        raise NotImplementedError",
+ "java": {}
+}

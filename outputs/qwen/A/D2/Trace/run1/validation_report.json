@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Trace' is missing an attribute to store the name as per R1.",
+   "fix": "Add a String attribute to class 'Trace'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Level' is missing a Trace attribute as per R5 and R6.",
+   "fix": "Add a Trace attribute to class 'Level'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between 'Level' and 'Trace' should be a composition or aggregation, not an association as per R5 and R6.",
+   "fix": "Change the relationship between 'Level' and 'Trace' to a composition or aggregation."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Call' is missing an integer attribute to store the number of database rows as per R3.",
+   "fix": "Add an integer attribute to store the number of database rows in class 'Call'."
+  }
+ ]
+}

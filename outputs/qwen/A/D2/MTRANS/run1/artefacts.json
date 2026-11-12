@@ -1,0 +1,185 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "MetaClass",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Module",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "abstract_",
+    "module",
+    "source",
+    "sections",
+    "inheritances"
+   ],
+   "methods": [
+    {
+     "name": "createRule",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R12",
+    "R13",
+    "R14",
+    "R15"
+   ]
+  },
+  {
+   "name": "Section",
+   "kind": "class",
+   "attributes": [
+    "kind"
+   ],
+   "methods": [],
+   "src": [
+    "R7",
+    "R20"
+   ]
+  },
+  {
+   "name": "Inheritance",
+   "kind": "class",
+   "attributes": [
+    "rule"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R16"
+   ]
+  },
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    "instruction"
+   ],
+   "methods": [],
+   "src": [
+    "R18",
+    "R19"
+   ]
+  },
+  {
+   "name": "Instruction",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Variable",
+   "kind": "class",
+   "attributes": [
+    "rule"
+   ],
+   "methods": [],
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "name": "InheritedRule",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R17",
+    "R18"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Module",
+   "target": "Rule",
+   "src": [
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "source": "Module",
+   "target": "Rule",
+   "src": []
+  },
+  {
+   "source": "Rule",
+   "target": "Section",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "source": "Rule",
+   "target": "Variable",
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "source": "Inheritance",
+   "target": "Rule",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "source": "Expression",
+   "target": "Instruction",
+   "src": [
+    "R18",
+    "R19"
+   ]
+  },
+  {
+   "source": "Instruction",
+   "target": "Expression",
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "source": "Variable",
+   "target": "Rule",
+   "src": [
+    "R22"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/MTRANS.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass MetaClass:\n    \"\"\"Source: R1\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Module:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    rules: _t.List[\"Rule\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Rule:\n    \"\"\"Source: R4, R12, R13, R14, R15\"\"\"\n    name: _t.Optional[str] = None\n    abstract_: _t.Optional[bool] = None\n    module: _t.Optional[str] = None\n    source: _t.Optional[str] = None\n    sections: _t.Optional[str] = None\n    inheritances: _t.Optional[str] = None\n    variables: _t.List[\"Variable\"] = _dc.field(default_factory=list)\n\n    def createRule(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Section:\n    \"\"\"Source: R7, R20\"\"\"\n    kind: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Inheritance:\n    \"\"\"Source: R5, R16\"\"\"\n    rule: _t.Optional[str] = None\n    rules: _t.List[\"Rule\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Expression:\n    \"\"\"Source: R18, R19\"\"\"\n    instruction: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Instruction:\n    \"\"\"Source: R19\"\"\"\n    expression: _t.Optional[\"Expression\"] = None\n\n\n@_dc.dataclass\nclass Variable:\n    \"\"\"Source: R22\"\"\"\n    rule: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass InheritedRule:\n    \"\"\"Source: R17, R18\"\"\"\n    pass\n",
+ "java": {
+  "MetaClass.java": "/** Generated from shared model D2/MTRANS. Source: R1 */\npublic class MetaClass {\n}\n",
+  "Module.java": "/** Generated from shared model D2/MTRANS. Source: - */\npublic class Module {\n    private java.lang.String name;\n    private java.util.List<Rule> rules;\n}\n",
+  "Rule.java": "/** Generated from shared model D2/MTRANS. Source: R4, R12, R13, R14, R15 */\npublic class Rule {\n    private java.lang.String name;\n    private boolean abstract_;\n    private java.lang.String module;\n    private java.lang.String source;\n    private java.lang.String sections;\n    private java.lang.String inheritances;\n    private java.util.List<Variable> variables;\n\n    /** Operation. */\n    public void createRule() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Section.java": "/** Generated from shared model D2/MTRANS. Source: R7, R20 */\npublic class Section {\n    private java.lang.String kind;\n}\n",
+  "Inheritance.java": "/** Generated from shared model D2/MTRANS. Source: R5, R16 */\npublic class Inheritance {\n    private java.lang.String rule;\n    private java.util.List<Rule> rules;\n}\n",
+  "Expression.java": "/** Generated from shared model D2/MTRANS. Source: R18, R19 */\npublic class Expression {\n    private java.lang.String instruction;\n}\n",
+  "Instruction.java": "/** Generated from shared model D2/MTRANS. Source: R19 */\npublic class Instruction {\n    private Expression expression;\n}\n",
+  "Variable.java": "/** Generated from shared model D2/MTRANS. Source: R22 */\npublic class Variable {\n    private java.lang.String rule;\n}\n",
+  "InheritedRule.java": "/** Generated from shared model D2/MTRANS. Source: R17, R18 */\npublic class InheritedRule {\n}\n"
+ }
+}

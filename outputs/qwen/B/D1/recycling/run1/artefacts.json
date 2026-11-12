@@ -1,0 +1,993 @@
+{
+ "actors": [
+  "User",
+  "Admin",
+  "Superuser",
+  "RecyclingfacilityRepresentative",
+  "Company",
+  "CompanyAccountant",
+  "Employee",
+  "HRDepartmentEmployee",
+  "Developer",
+  "Recyclingfacility"
+ ],
+ "use_cases": [
+  {
+   "name": "Click Address",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Enter Zip Code",
+   "actor": "User",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Get Feedback",
+   "actor": "User",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "Get Hour",
+   "actor": "User",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Get Notification",
+   "actor": "Employee",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "Give Email Id",
+   "actor": "User",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Handle Activity",
+   "actor": "Admin",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Browse List",
+   "actor": "User",
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "name": "Check Transaction History",
+   "actor": "User",
+   "src": [
+    "R18"
+   ]
+  },
+  {
+   "name": "Add Donation Center",
+   "actor": "User",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Add Recycling Center Information",
+   "actor": "Admin",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "Add Recycling Facility",
+   "actor": "Admin",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "Communicate Facility",
+   "actor": "Admin",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Communicate Site",
+   "actor": "Recyclingfacility",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "name": "Contact Administrator",
+   "actor": "User",
+   "src": [
+    "R39"
+   ]
+  },
+  {
+   "name": "Create Account",
+   "actor": "User",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "View Activity Fee",
+   "actor": "CompanyAccountant",
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "name": "View Dashboard",
+   "actor": "Admin",
+   "src": [
+    "R22",
+    "R46"
+   ]
+  },
+  {
+   "name": "View Disposal Event",
+   "actor": "User",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "View Information",
+   "actor": "User",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "View Location",
+   "actor": "User",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "View Map Display",
+   "actor": "User",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "View Stat",
+   "actor": "Superuser",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "View User Documentation",
+   "actor": "User",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "View User Error Log",
+   "actor": "Admin",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "Access Api",
+   "actor": "Developer",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "Access Route Planning System",
+   "actor": "Employee",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "Access Site",
+   "actor": "User",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "name": "Link Email Account",
+   "actor": "User",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "Onboard Recycling Center",
+   "actor": "Admin",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Read Feedback",
+   "actor": "Admin",
+   "src": [
+    "R17"
+   ]
+  },
+  {
+   "name": "Reply User Question",
+   "actor": "Superuser",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Select Type",
+   "actor": "User",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Update Information",
+   "actor": "RecyclingfacilityRepresentative",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "name": "Update Recycling Center Information",
+   "actor": "Superuser",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "Upload Schedule",
+   "actor": "User",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Use Bootstrap",
+   "actor": "Developer",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Attend Ux Lesson",
+   "actor": "Developer",
+   "src": [
+    "R35"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "emailId",
+    "profile",
+    "activity",
+    "stat"
+   ],
+   "methods": [
+    {
+     "name": "clickAddress",
+     "use_case": "Click Address"
+    },
+    {
+     "name": "enterZipCode",
+     "use_case": "Enter Zip Code"
+    },
+    {
+     "name": "getFeedback",
+     "use_case": "Get Feedback"
+    },
+    {
+     "name": "getHour",
+     "use_case": "Get Hour"
+    },
+    {
+     "name": "addFavorite",
+     "use_case": "Add Donation Center"
+    },
+    {
+     "name": "giveEmailId",
+     "use_case": "Give Email Id"
+    },
+    {
+     "name": "viewMapDisplay",
+     "use_case": "View Map Display"
+    },
+    {
+     "name": "viewLocation",
+     "use_case": "View Location"
+    },
+    {
+     "name": "viewDisposalEvent",
+     "use_case": "View Disposal Event"
+    },
+    {
+     "name": "browseList",
+     "use_case": "Browse List"
+    },
+    {
+     "name": "createAccount",
+     "use_case": "Create Account"
+    },
+    {
+     "name": "viewUserDocumentation",
+     "use_case": "View User Documentation"
+    },
+    {
+     "name": "viewUserErrorLog",
+     "use_case": "View User Error Log"
+    },
+    {
+     "name": "linkEmailAccount",
+     "use_case": "Link Email Account"
+    },
+    {
+     "name": "contactAdministrator",
+     "use_case": "Contact Administrator"
+    }
+   ],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R18",
+    "R19",
+    "R20",
+    "R28",
+    "R29",
+    "R38",
+    "R39"
+   ]
+  },
+  {
+   "name": "RecyclingFacility",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "type",
+    "openingHour",
+    "location",
+    "schedule",
+    "material"
+   ],
+   "methods": [
+    {
+     "name": "addInformation",
+     "use_case": "Add Recycling Center Information"
+    },
+    {
+     "name": "onboardFacility",
+     "use_case": "Onboard Recycling Center"
+    },
+    {
+     "name": "communicateSite",
+     "use_case": "Communicate Site"
+    },
+    {
+     "name": "communicateFacility",
+     "use_case": "Communicate Facility"
+    },
+    {
+     "name": "handleActivity",
+     "use_case": "Handle Activity"
+    },
+    {
+     "name": "viewDashboard",
+     "use_case": "View Dashboard"
+    },
+    {
+     "name": "viewUserStats",
+     "use_case": null
+    },
+    {
+     "name": "replyUserQuestion",
+     "use_case": "Reply User Question"
+    },
+    {
+     "name": "updateInformation",
+     "use_case": "Update Information"
+    }
+   ],
+   "src": [
+    "R3",
+    "R4",
+    "R6",
+    "R10",
+    "R11",
+    "R16",
+    "R17",
+    "R20",
+    "R22",
+    "R23",
+    "R24",
+    "R26",
+    "R30",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R50",
+    "R51"
+   ]
+  },
+  {
+   "name": "Admin",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "addRecyclingCenterInformation",
+     "use_case": "Add Recycling Center Information"
+    },
+    {
+     "name": "readFeedback",
+     "use_case": "Read Feedback"
+    },
+    {
+     "name": "handleActivity",
+     "use_case": "Handle Activity"
+    },
+    {
+     "name": "viewDashboard",
+     "use_case": "View Dashboard"
+    },
+    {
+     "name": "viewUserStats",
+     "use_case": null
+    },
+    {
+     "name": "replyUserQuestion",
+     "use_case": "Reply User Question"
+    },
+    {
+     "name": "blockUser",
+     "use_case": null
+    },
+    {
+     "name": "viewUserErrorLog",
+     "use_case": "View User Error Log"
+    }
+   ],
+   "src": [
+    "R16",
+    "R17",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R26",
+    "R30",
+    "R32",
+    "R34",
+    "R41",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "name": "Superuser",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "updateRecyclingCenterInformation",
+     "use_case": "Update Recycling Center Information"
+    },
+    {
+     "name": "viewUserStats",
+     "use_case": null
+    },
+    {
+     "name": "replyUserQuestion",
+     "use_case": "Reply User Question"
+    }
+   ],
+   "src": [
+    "R41",
+    "R44",
+    "R45",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "name": "RecyclingfacilityRepresentative",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "updateInformation",
+     "use_case": "Update Information"
+    },
+    {
+     "name": "viewUserStats",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R49",
+    "R50",
+    "R51"
+   ]
+  },
+  {
+   "name": "Profile",
+   "kind": "class",
+   "attributes": [
+    "favorites"
+   ],
+   "methods": [],
+   "src": [
+    "R7",
+    "R38"
+   ]
+  },
+  {
+   "name": "Pick",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "Material",
+   "kind": "class",
+   "attributes": [
+    "type"
+   ],
+   "methods": [],
+   "src": [
+    "R6",
+    "R16",
+    "R20",
+    "R22",
+    "R24",
+    "R30",
+    "R33",
+    "R36",
+    "R37",
+    "R40",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "name": "Schedule",
+   "kind": "class",
+   "attributes": [
+    "week"
+   ],
+   "methods": [],
+   "src": [
+    "R37",
+    "R39",
+    "R40",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "name": "Location",
+   "kind": "class",
+   "attributes": [
+    "coordinates"
+   ],
+   "methods": [],
+   "src": [
+    "R9",
+    "R10",
+    "R11",
+    "R16",
+    "R20",
+    "R22",
+    "R24",
+    "R30",
+    "R33",
+    "R36",
+    "R37",
+    "R40",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [
+    "message"
+   ],
+   "methods": [],
+   "src": [
+    "R14",
+    "R17",
+    "R41"
+   ]
+  },
+  {
+   "name": "Hour",
+   "kind": "class",
+   "attributes": [
+    "time"
+   ],
+   "methods": [],
+   "src": [
+    "R4",
+    "R10",
+    "R11",
+    "R16",
+    "R20",
+    "R22",
+    "R24",
+    "R30",
+    "R33",
+    "R36",
+    "R37",
+    "R40",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [
+    "message"
+   ],
+   "methods": [],
+   "src": [
+    "R8",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R26",
+    "R30",
+    "R32",
+    "R34",
+    "R41",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "name": "CompanyAccountant",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "viewActivityFee",
+     "use_case": "View Activity Fee"
+    }
+   ],
+   "src": [
+    "R24",
+    "R33"
+   ]
+  },
+  {
+   "name": "Executive",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "viewActivityFee",
+     "use_case": "View Activity Fee"
+    }
+   ],
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "accessRoutePlanningSystem",
+     "use_case": "Access Route Planning System"
+    },
+    {
+     "name": "viewEmployeeInfo",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R25",
+    "R26",
+    "R32"
+   ]
+  },
+  {
+   "name": "Developer",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "accessApi",
+     "use_case": "Access Api"
+    },
+    {
+     "name": "useBootstrap",
+     "use_case": "Use Bootstrap"
+    },
+    {
+     "name": "attendUxLesson",
+     "use_case": "Attend Ux Lesson"
+    }
+   ],
+   "src": [
+    "R27",
+    "R34",
+    "R35"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "User",
+   "target": "Profile",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "User",
+   "target": "Notification",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "User",
+   "target": "Feedback",
+   "src": [
+    "R14",
+    "R39"
+   ]
+  },
+  {
+   "source": "Admin",
+   "target": "RecyclingFacility",
+   "src": [
+    "R16",
+    "R40",
+    "R42"
+   ]
+  },
+  {
+   "source": "Admin",
+   "target": "User",
+   "src": [
+    "R30",
+    "R41"
+   ]
+  },
+  {
+   "source": "User",
+   "target": "RecyclingFacility",
+   "src": [
+    "R3",
+    "R4",
+    "R10",
+    "R36",
+    "R48"
+   ]
+  },
+  {
+   "source": "User",
+   "target": "Pick",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "source": "User",
+   "target": "Material",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "source": "User",
+   "target": "Schedule",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "source": "RecyclingFacility",
+   "target": "Hour",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "source": "RecyclingFacility",
+   "target": "Schedule",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "RecyclingFacility",
+   "target": "Material",
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "source": "RecyclingfacilityRepresentative",
+   "target": "RecyclingFacility",
+   "src": [
+    "R49",
+    "R50"
+   ]
+  },
+  {
+   "source": "RecyclingfacilityRepresentative",
+   "target": "Schedule",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "source": "RecyclingfacilityRepresentative",
+   "target": "Feedback",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "source": "RecyclingfacilityRepresentative",
+   "target": "Profile",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "source": "RecyclingfacilityRepresentative",
+   "target": "Material",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "source": "RecyclingfacilityRepresentative",
+   "target": "User",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "source": "RecyclingFacility",
+   "target": "Profile",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "source": "RecyclingFacility",
+   "target": "Feedback",
+   "src": [
+    "R41"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D1/recycling.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass User:\n    \"\"\"Source: R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R18, R19, R20, R28, R29, R38, R39\"\"\"\n    name: _t.Optional[str] = None\n    emailId: _t.Optional[str] = None\n    profile: _t.Optional[str] = None\n    activity: _t.Optional[str] = None\n    stat: _t.Optional[str] = None\n    notifications: _t.List[\"Notification\"] = _dc.field(default_factory=list)\n    feedbacks: _t.List[\"Feedback\"] = _dc.field(default_factory=list)\n    recyclingFacilities: _t.List[\"RecyclingFacility\"] = _dc.field(default_factory=list)\n    picks: _t.List[\"Pick\"] = _dc.field(default_factory=list)\n    materials: _t.List[\"Material\"] = _dc.field(default_factory=list)\n    schedules: _t.List[\"Schedule\"] = _dc.field(default_factory=list)\n\n    def clickAddress(self) -> None:\n        \"\"\"Realizes UC1 \"Click Address\" (R1).\"\"\"\n        raise NotImplementedError\n\n    def enterZipCode(self) -> None:\n        \"\"\"Realizes UC2 \"Enter Zip Code\" (R3).\"\"\"\n        raise NotImplementedError\n\n    def getFeedback(self) -> None:\n        \"\"\"Realizes UC3 \"Get Feedback\" (R14).\"\"\"\n        raise NotImplementedError\n\n    def getHour(self) -> None:\n        \"\"\"Realizes UC4 \"Get Hour\" (R4).\"\"\"\n        raise NotImplementedError\n\n    def addFavorite(self) -> None:\n        \"\"\"Realizes UC10 \"Add Donation Center\" (R7).\"\"\"\n        raise NotImplementedError\n\n    def giveEmailId(self) -> None:\n        \"\"\"Realizes UC6 \"Give Email Id\" (R8).\"\"\"\n        raise NotImplementedError\n\n    def viewMapDisplay(self) -> None:\n        \"\"\"Realizes UC22 \"View Map Display\" (R9, R10).\"\"\"\n        raise NotImplementedError\n\n    def viewLocation(self) -> None:\n        \"\"\"Realizes UC21 \"View Location\" (R9, R10).\"\"\"\n        raise NotImplementedError\n\n    def viewDisposalEvent(self) -> None:\n        \"\"\"Realizes UC19 \"View Disposal Event\" (R11).\"\"\"\n        raise NotImplementedError\n\n    def browseList(self) -> None:\n        \"\"\"Realizes UC8 \"Browse List\" (R48).\"\"\"\n        raise NotImplementedError\n\n    def createAccount(self) -> None:\n        \"\"\"Realizes UC16 \"Create Account\" (R15).\"\"\"\n        raise NotImplementedError\n\n    def viewUserDocumentation(self) -> None:\n        \"\"\"Realizes UC24 \"View User Documentation\" (R13).\"\"\"\n        raise NotImplementedError\n\n    def viewUserErrorLog(self) -> None:\n        \"\"\"Realizes UC25 \"View User Error Log\" (R41).\"\"\"\n        raise NotImplementedError\n\n    def linkEmailAccount(self) -> None:\n        \"\"\"Realizes UC29 \"Link Email Account\" (R38).\"\"\"\n        raise NotImplementedError\n\n    def contactAdministrator(self) -> None:\n        \"\"\"Realizes UC15 \"Contact Administrator\" (R39).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass RecyclingFacility:\n    \"\"\"Source: R3, R4, R6, R10, R11, R16, R17, R20, R22, R23, R24, R26, R30, R32, R33, R34, R35, R36, R37, R39, R40, R41, R42, R43, R44, R45, R46, R47, R48, R50, R51\"\"\"\n    name: _t.Optional[str] = None\n    type: _t.Optional[str] = None\n    openingHour: _t.Optional[str] = None\n    location: _t.Optional[str] = None\n    schedule: _t.Optional[str] = None\n    material: _t.Optional[str] = None\n    hour: _t.Optional[\"Hour\"] = None\n    materials: _t.List[\"Material\"] = _dc.field(default_factory=list)\n    profile: _t.Optional[\"Profile\"] = None\n    feedbacks: _t.List[\"Feedback\"] = _dc.field(default_factory=list)\n\n    def addInformation(self) -> None:\n        \"\"\"Realizes UC11 \"Add Recycling Center Information\" (R40).\"\"\"\n        raise NotImplementedError\n\n    def onboardFacility(self) -> None:\n        \"\"\"Realizes UC30 \"Onboard Recycling Center\" (R42).\"\"\"\n        raise NotImplementedError\n\n    def communicateSite(self) -> None:\n        \"\"\"Realizes UC14 \"Communicate Site\" (R51).\"\"\"\n        raise NotImplementedError\n\n    def communicateFacility(self) -> None:\n        \"\"\"Realizes UC13 \"Communicate Facility\" (R47).\"\"\"\n        raise NotImplementedError\n\n    def handleActivity(self) -> None:\n        \"\"\"Realizes UC7 \"Handle Activity\" (R30).\"\"\"\n        raise NotImplementedError\n\n    def viewDashboard(self) -> None:\n        \"\"\"Realizes UC18 \"View Dashboard\" (R22, R46).\"\"\"\n        raise NotImplementedError\n\n    def viewUserStats(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def replyUserQuestion(self) -> None:\n        \"\"\"Realizes UC32 \"Reply User Question\" (R45).\"\"\"\n        raise NotImplementedError\n\n    def updateInformation(self) -> None:\n        \"\"\"Realizes UC34 \"Update Information\" (R49).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Admin:\n    \"\"\"Source: R16, R17, R21, R22, R23, R24, R26, R30, R32, R34, R41, R46, R47\"\"\"\n    name: _t.Optional[str] = None\n    password: _t.Optional[str] = None\n    recyclingFacilities: _t.List[\"RecyclingFacility\"] = _dc.field(default_factory=list)\n    users: _t.List[\"User\"] = _dc.field(default_factory=list)\n\n    def addRecyclingCenterInformation(self) -> None:\n        \"\"\"Realizes UC11 \"Add Recycling Center Information\" (R40).\"\"\"\n        raise NotImplementedError\n\n    def readFeedback(self) -> None:\n        \"\"\"Realizes UC31 \"Read Feedback\" (R17).\"\"\"\n        raise NotImplementedError\n\n    def handleActivity(self) -> None:\n        \"\"\"Realizes UC7 \"Handle Activity\" (R30).\"\"\"\n        raise NotImplementedError\n\n    def viewDashboard(self) -> None:\n        \"\"\"Realizes UC18 \"View Dashboard\" (R22, R46).\"\"\"\n        raise NotImplementedError\n\n    def viewUserStats(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def replyUserQuestion(self) -> None:\n        \"\"\"Realizes UC32 \"Reply User Question\" (R45).\"\"\"\n        raise NotImplementedError\n\n    def blockUser(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def viewUserErrorLog(self) -> None:\n        \"\"\"Realizes UC25 \"View User Error Log\" (R41).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Superuser:\n    \"\"\"Source: R41, R44, R45, R46, R47\"\"\"\n    name: _t.Optional[str] = None\n    password: _t.Optional[str] = None\n\n    def updateRecyclingCenterInformation(self) -> None:\n        \"\"\"Realizes UC35 \"Update Recycling Center Information\" (R43).\"\"\"\n        raise NotImplementedError\n\n    def viewUserStats(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def replyUserQuestion(self) -> None:\n        \"\"\"Realizes UC32 \"Reply User Question\" (R45).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass RecyclingfacilityRepresentative:\n    \"\"\"Source: R49, R50, R51\"\"\"\n    name: _t.Optional[str] = None\n    password: _t.Optional[str] = None\n    recyclingFacility: _t.Optional[\"RecyclingFacility\"] = None\n    schedule: _t.Optional[\"Schedule\"] = None\n    feedbacks: _t.List[\"Feedback\"] = _dc.field(default_factory=list)\n    profile: _t.Optional[\"Profile\"] = None\n    material: _t.Optional[\"Material\"] = None\n    users: _t.List[\"User\"] = _dc.field(default_factory=list)\n\n    def updateInformation(self) -> None:\n        \"\"\"Realizes UC34 \"Update Information\" (R49).\"\"\"\n        raise NotImplementedError\n\n    def viewUserStats(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Profile:\n    \"\"\"Source: R7, R38\"\"\"\n    favorites: _t.Optional[str] = None\n\n\nclass Pick(_enum.Enum):\n    \"\"\"Source: R16\"\"\"\n    RECYCLINGCENTER = \"RECYCLINGCENTER\"\n    DONATIONCENTER = \"DONATIONCENTER\"\n\n\n@_dc.dataclass\nclass Material:\n    \"\"\"Source: R6, R16, R20, R22, R24, R30, R33, R36, R37, R40, R42, R43, R44, R45, R46, R47, R48\"\"\"\n    type: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Schedule:\n    \"\"\"Source: R37, R39, R40, R42, R43, R44, R45, R46, R47, R48\"\"\"\n    week: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Location:\n    \"\"\"Source: R9, R10, R11, R16, R20, R22, R24, R30, R33, R36, R37, R40, R42, R43, R44, R45, R46, R47, R48\"\"\"\n    coordinates: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Feedback:\n    \"\"\"Source: R14, R17, R41\"\"\"\n    message: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Hour:\n    \"\"\"Source: R4, R10, R11, R16, R20, R22, R24, R30, R33, R36, R37, R40, R42, R43, R44, R45, R46, R47, R48\"\"\"\n    time: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Notification:\n    \"\"\"Source: R8, R21, R22, R23, R24, R26, R30, R32, R34, R41, R46, R47\"\"\"\n    message: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass CompanyAccountant:\n    \"\"\"Source: R24, R33\"\"\"\n    name: _t.Optional[str] = None\n    password: _t.Optional[str] = None\n\n    def viewActivityFee(self) -> None:\n        \"\"\"Realizes UC17 \"View Activity Fee\" (R33).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Executive:\n    \"\"\"Source: R24\"\"\"\n    name: _t.Optional[str] = None\n    password: _t.Optional[str] = None\n\n    def viewActivityFee(self) -> None:\n        \"\"\"Realizes UC17 \"View Activity Fee\" (R33).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Employee:\n    \"\"\"Source: R25, R26, R32\"\"\"\n    name: _t.Optional[str] = None\n    password: _t.Optional[str] = None\n\n    def accessRoutePlanningSystem(self) -> None:\n        \"\"\"Realizes UC27 \"Access Route Planning System\" (R25).\"\"\"\n        raise NotImplementedError\n\n    def viewEmployeeInfo(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Developer:\n    \"\"\"Source: R27, R34, R35\"\"\"\n    name: _t.Optional[str] = None\n    password: _t.Optional[str] = None\n\n    def accessApi(self) -> None:\n        \"\"\"Realizes UC26 \"Access Api\" (R27).\"\"\"\n        raise NotImplementedError\n\n    def useBootstrap(self) -> None:\n        \"\"\"Realizes UC37 \"Use Bootstrap\" (R34).\"\"\"\n        raise NotImplementedError\n\n    def attendUxLesson(self) -> None:\n        \"\"\"Realizes UC38 \"Attend Ux Lesson\" (R35).\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "User.java": "/** Generated from shared model D1/recycling. Source: R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R18, R19, R20, R28, R29, R38, R39 */\npublic class User {\n    private java.lang.String name;\n    private java.lang.String emailId;\n    private java.lang.String profile;\n    private java.lang.String activity;\n    private java.lang.String stat;\n    private java.util.List<Notification> notifications;\n    private java.util.List<Feedback> feedbacks;\n    private java.util.List<RecyclingFacility> recyclingFacilities;\n    private java.util.List<Pick> picks;\n    private java.util.List<Material> materials;\n    private java.util.List<Schedule> schedules;\n\n    /** Realizes UC1 \"Click Address\" (R1). */\n    public void clickAddress() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Enter Zip Code\" (R3). */\n    public void enterZipCode() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Get Feedback\" (R14). */\n    public void getFeedback() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC4 \"Get Hour\" (R4). */\n    public void getHour() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"Add Donation Center\" (R7). */\n    public void addFavorite() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC6 \"Give Email Id\" (R8). */\n    public void giveEmailId() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC22 \"View Map Display\" (R9, R10). */\n    public void viewMapDisplay() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC21 \"View Location\" (R9, R10). */\n    public void viewLocation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC19 \"View Disposal Event\" (R11). */\n    public void viewDisposalEvent() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC8 \"Browse List\" (R48). */\n    public void browseList() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC16 \"Create Account\" (R15). */\n    public void createAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC24 \"View User Documentation\" (R13). */\n    public void viewUserDocumentation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC25 \"View User Error Log\" (R41). */\n    public void viewUserErrorLog() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC29 \"Link Email Account\" (R38). */\n    public void linkEmailAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"Contact Administrator\" (R39). */\n    public void contactAdministrator() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "RecyclingFacility.java": "/** Generated from shared model D1/recycling. Source: R3, R4, R6, R10, R11, R16, R17, R20, R22, R23, R24, R26, R30, R32, R33, R34, R35, R36, R37, R39, R40, R41, R42, R43, R44, R45, R46, R47, R48, R50, R51 */\npublic class RecyclingFacility {\n    private java.lang.String name;\n    private java.lang.String type;\n    private java.lang.String openingHour;\n    private java.lang.String location;\n    private java.lang.String schedule;\n    private java.lang.String material;\n    private Hour hour;\n    private java.util.List<Material> materials;\n    private Profile profile;\n    private java.util.List<Feedback> feedbacks;\n\n    /** Realizes UC11 \"Add Recycling Center Information\" (R40). */\n    public void addInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC30 \"Onboard Recycling Center\" (R42). */\n    public void onboardFacility() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC14 \"Communicate Site\" (R51). */\n    public void communicateSite() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC13 \"Communicate Facility\" (R47). */\n    public void communicateFacility() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC7 \"Handle Activity\" (R30). */\n    public void handleActivity() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC18 \"View Dashboard\" (R22, R46). */\n    public void viewDashboard() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewUserStats() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC32 \"Reply User Question\" (R45). */\n    public void replyUserQuestion() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC34 \"Update Information\" (R49). */\n    public void updateInformation() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Admin.java": "/** Generated from shared model D1/recycling. Source: R16, R17, R21, R22, R23, R24, R26, R30, R32, R34, R41, R46, R47 */\npublic class Admin {\n    private java.lang.String name;\n    private java.lang.String password;\n    private java.util.List<RecyclingFacility> recyclingFacilities;\n    private java.util.List<User> users;\n\n    /** Realizes UC11 \"Add Recycling Center Information\" (R40). */\n    public void addRecyclingCenterInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC31 \"Read Feedback\" (R17). */\n    public void readFeedback() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC7 \"Handle Activity\" (R30). */\n    public void handleActivity() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC18 \"View Dashboard\" (R22, R46). */\n    public void viewDashboard() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewUserStats() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC32 \"Reply User Question\" (R45). */\n    public void replyUserQuestion() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void blockUser() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC25 \"View User Error Log\" (R41). */\n    public void viewUserErrorLog() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Superuser.java": "/** Generated from shared model D1/recycling. Source: R41, R44, R45, R46, R47 */\npublic class Superuser {\n    private java.lang.String name;\n    private java.lang.String password;\n\n    /** Realizes UC35 \"Update Recycling Center Information\" (R43). */\n    public void updateRecyclingCenterInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewUserStats() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC32 \"Reply User Question\" (R45). */\n    public void replyUserQuestion() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "RecyclingfacilityRepresentative.java": "/** Generated from shared model D1/recycling. Source: R49, R50, R51 */\npublic class RecyclingfacilityRepresentative {\n    private java.lang.String name;\n    private java.lang.String password;\n    private RecyclingFacility recyclingFacility;\n    private Schedule schedule;\n    private java.util.List<Feedback> feedbacks;\n    private Profile profile;\n    private Material material;\n    private java.util.List<User> users;\n\n    /** Realizes UC34 \"Update Information\" (R49). */\n    public void updateInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewUserStats() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Profile.java": "/** Generated from shared model D1/recycling. Source: R7, R38 */\npublic class Profile {\n    private java.lang.String favorites;\n}\n",
+  "Pick.java": "/** Generated from shared model D1/recycling. Source: R16 */\npublic enum Pick {\n    RECYCLINGCENTER, DONATIONCENTER\n}\n",
+  "Material.java": "/** Generated from shared model D1/recycling. Source: R6, R16, R20, R22, R24, R30, R33, R36, R37, R40, R42, R43, R44, R45, R46, R47, R48 */\npublic class Material {\n    private java.lang.String type;\n}\n",
+  "Schedule.java": "/** Generated from shared model D1/recycling. Source: R37, R39, R40, R42, R43, R44, R45, R46, R47, R48 */\npublic class Schedule {\n    private java.lang.String week;\n}\n",
+  "Location.java": "/** Generated from shared model D1/recycling. Source: R9, R10, R11, R16, R20, R22, R24, R30, R33, R36, R37, R40, R42, R43, R44, R45, R46, R47, R48 */\npublic class Location {\n    private java.lang.String coordinates;\n}\n",
+  "Feedback.java": "/** Generated from shared model D1/recycling. Source: R14, R17, R41 */\npublic class Feedback {\n    private java.lang.String message;\n}\n",
+  "Hour.java": "/** Generated from shared model D1/recycling. Source: R4, R10, R11, R16, R20, R22, R24, R30, R33, R36, R37, R40, R42, R43, R44, R45, R46, R47, R48 */\npublic class Hour {\n    private java.lang.String time;\n}\n",
+  "Notification.java": "/** Generated from shared model D1/recycling. Source: R8, R21, R22, R23, R24, R26, R30, R32, R34, R41, R46, R47 */\npublic class Notification {\n    private java.lang.String message;\n}\n",
+  "CompanyAccountant.java": "/** Generated from shared model D1/recycling. Source: R24, R33 */\npublic class CompanyAccountant {\n    private java.lang.String name;\n    private java.lang.String password;\n\n    /** Realizes UC17 \"View Activity Fee\" (R33). */\n    public void viewActivityFee() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Executive.java": "/** Generated from shared model D1/recycling. Source: R24 */\npublic class Executive {\n    private java.lang.String name;\n    private java.lang.String password;\n\n    /** Realizes UC17 \"View Activity Fee\" (R33). */\n    public void viewActivityFee() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Employee.java": "/** Generated from shared model D1/recycling. Source: R25, R26, R32 */\npublic class Employee {\n    private java.lang.String name;\n    private java.lang.String password;\n\n    /** Realizes UC27 \"Access Route Planning System\" (R25). */\n    public void accessRoutePlanningSystem() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewEmployeeInfo() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Developer.java": "/** Generated from shared model D1/recycling. Source: R27, R34, R35 */\npublic class Developer {\n    private java.lang.String name;\n    private java.lang.String password;\n\n    /** Realizes UC26 \"Access Api\" (R27). */\n    public void accessApi() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC37 \"Use Bootstrap\" (R34). */\n    public void useBootstrap() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC38 \"Attend Ux Lesson\" (R35). */\n    public void attendUxLesson() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

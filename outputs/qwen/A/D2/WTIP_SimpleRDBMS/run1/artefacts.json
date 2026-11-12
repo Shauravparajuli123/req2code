@@ -1,0 +1,81 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Game",
+   "actor": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "addFKey",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "FKey",
+   "kind": "class",
+   "attributes": [
+    "referencedTable"
+   ],
+   "methods": [
+    {
+     "name": "referenceTable",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Table",
+   "target": "Column",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "Table",
+   "target": "FKey",
+   "src": [
+    "R4",
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/WTIP_SimpleRDBMS.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Table:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n    columns: _t.List[\"Column\"] = _dc.field(default_factory=list)\n    fKeys: _t.List[\"FKey\"] = _dc.field(default_factory=list)\n\n    def addFKey(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Column:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass FKey:\n    \"\"\"Source: R3, R4\"\"\"\n    referencedTable: _t.Optional[str] = None\n\n    def referenceTable(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Table.java": "/** Generated from shared model D2/WTIP_SimpleRDBMS. Source: R1 */\npublic class Table {\n    private java.lang.String name;\n    private java.util.List<Column> columns;\n    private java.util.List<FKey> fKeys;\n\n    /** Operation. */\n    public void addFKey() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Column.java": "/** Generated from shared model D2/WTIP_SimpleRDBMS. Source: - */\npublic class Column {\n    private java.lang.String name;\n}\n",
+  "FKey.java": "/** Generated from shared model D2/WTIP_SimpleRDBMS. Source: R3, R4 */\npublic class FKey {\n    private java.lang.String referencedTable;\n\n    /** Operation. */\n    public void referenceTable() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

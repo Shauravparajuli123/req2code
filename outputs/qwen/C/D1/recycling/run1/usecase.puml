@@ -1,0 +1,79 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "User" as A1
+actor "Admin" as A2
+actor "Superuser" as A3
+actor "Recyclingfacility" as A4
+actor "Company" as A5
+actor "CompanyAccountant" as A6
+actor "Employee" as A7
+actor "EmployeeFromTheHRDepartment" as A8
+actor "Executive" as A9
+actor "RecyclingfacilityRepresentative" as A10
+actor "Developer" as A11
+rectangle "recycling" {
+  usecase "Click Address" as UC1
+  usecase "Enter Zip Code" as UC2
+  usecase "Get Feedback" as UC3
+  usecase "Get Hour" as UC4
+  usecase "Get Notification" as UC5
+  usecase "Give Email Id" as UC6
+  usecase "Handle Activity" as UC7
+  usecase "Have Access" as UC8
+  usecase "Have Dashboard" as UC9
+  usecase "Have Data" as UC10
+  usecase "Have Information" as UC11
+  usecase "Have Website" as UC12
+  usecase "Link Email Account" as UC13
+  usecase "Onboard Recycling Center" as UC14
+  usecase "Read Feedback" as UC15
+  usecase "Receive Reward" as UC16
+  usecase "Reply User Question" as UC17
+  usecase "Select Type" as UC18
+  usecase "Update Information" as UC19
+  usecase "Update Recycling Center Information" as UC20
+  usecase "Upload Schedule" as UC21
+  usecase "Use Bootstrap" as UC22
+  usecase "View Activity Fee" as UC23
+  usecase "View Dashboard" as UC24
+  usecase "View Disposal Event" as UC25
+  usecase "View Information" as UC26
+  usecase "View Location" as UC27
+  usecase "View Map Display" as UC28
+  usecase "View Stat" as UC29
+  usecase "View User Documentation" as UC30
+  usecase "View User Error Log" as UC31
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A7 --> UC5
+A1 --> UC6
+A2 --> UC7
+A9 --> UC8
+A2 --> UC9
+A2 --> UC10
+A1 --> UC11
+A5 --> UC12
+A1 --> UC13
+A2 --> UC14
+A2 --> UC15
+A1 --> UC16
+A3 --> UC17
+A1 --> UC18
+A10 --> UC19
+A3 --> UC20
+A1 --> UC21
+A11 --> UC22
+A6 --> UC23
+A2 --> UC24
+A1 --> UC25
+A1 --> UC26
+A1 --> UC27
+A1 --> UC28
+A3 --> UC29
+A1 --> UC30
+A2 --> UC31
+@enduml

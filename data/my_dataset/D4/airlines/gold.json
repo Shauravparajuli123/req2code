@@ -1,0 +1,4 @@
+{
+ "plantuml": "@startuml\n\n\nclass Airline {\n  name: String\n}\n\nclass Airport{\ncode: String\ncity: String\n}\n\nAirline \"*\" - \"*\" Airport\n(Airline, Airport) .. Details\n\nclass Details {\n  operatingCost: Real\n}\n\n@enduml",
+ "scorer": "NOMAD src/eval_helpers.py evaluate_uml"
+}

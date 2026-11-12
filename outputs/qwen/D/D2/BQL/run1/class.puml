@@ -1,0 +1,30 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class BLQModel {
+  queries : String
+  entries : String
+  fields : String
+  +addQuery()
+  +addEntry()
+  +addField()
+}
+class Entry {
+  name : String
+  allFields : boolean
+  +associatePredicate()
+}
+class Field {
+  name : String
+  +associateEntry()
+}
+class Query {
+  +addEntry()
+}
+BLQModel "1" -- "1..*" Entry : has
+BLQModel "1" -- "1..*" Field : has
+Entry "1" -- "1" Field : is associated to
+BLQModel "1" -- "0..*" Query : has
+BLQModel "1" *-- "1..*" Entry : contains
+BLQModel "1" *-- "1..*" Field : contains
+@enduml

@@ -1,0 +1,94 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Vehicle",
+   "kind": "class",
+   "attributes": [
+    "position",
+    "speed",
+    "maximumSpeed",
+    "environment"
+   ],
+   "methods": [
+    {
+     "name": "move",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "name": "LandVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "MarineVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "AmphibiousVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "LandVehicle",
+   "target": "Vehicle",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "source": "MarineVehicle",
+   "target": "Vehicle",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "source": "AmphibiousVehicle",
+   "target": "Vehicle",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "AmphibiousVehicle",
+   "target": "LandVehicle",
+   "src": []
+  },
+  {
+   "source": "AmphibiousVehicle",
+   "target": "MarineVehicle",
+   "src": []
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D4/amphibious.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Vehicle:\n    \"\"\"Source: R2, R3, R5\"\"\"\n    position: _t.Optional[str] = None\n    speed: _t.Optional[int] = None\n    maximumSpeed: _t.Optional[int] = None\n    environment: _t.Optional[str] = None\n\n    def move(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass LandVehicle(Vehicle):\n    \"\"\"Source: R6\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass MarineVehicle(Vehicle):\n    \"\"\"Source: R6\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass AmphibiousVehicle(Vehicle):\n    \"\"\"Source: R7\"\"\"\n    landVehicle: _t.Optional[\"LandVehicle\"] = None\n    marineVehicle: _t.Optional[\"MarineVehicle\"] = None\n",
+ "java": {
+  "Vehicle.java": "/** Generated from shared model D4/amphibious. Source: R2, R3, R5 */\npublic class Vehicle {\n    private java.lang.String position;\n    private int speed;\n    private int maximumSpeed;\n    private java.lang.String environment;\n\n    /** Operation. */\n    public void move() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "LandVehicle.java": "/** Generated from shared model D4/amphibious. Source: R6 */\npublic class LandVehicle extends Vehicle {\n}\n",
+  "MarineVehicle.java": "/** Generated from shared model D4/amphibious. Source: R6 */\npublic class MarineVehicle extends Vehicle {\n}\n",
+  "AmphibiousVehicle.java": "/** Generated from shared model D4/amphibious. Source: R7 */\npublic class AmphibiousVehicle extends Vehicle {\n    private LandVehicle landVehicle;\n    private MarineVehicle marineVehicle;\n}\n"
+ }
+}

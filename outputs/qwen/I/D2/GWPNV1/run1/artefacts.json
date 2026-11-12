@@ -1,0 +1,116 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasTransition",
+     "use_case": "R2"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasTransition",
+     "use_case": "R5"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasNet",
+     "use_case": "R6"
+    },
+    {
+     "name": "hasDestinationPlace",
+     "use_case": "R7"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PetriNet",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Place",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "Net",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Net:\n    def __init__(self, places: List[Place] = []) -> None:\n        self.places = places\n\nclass PetriNet:\n    def __init__(self, transitions: List[Transition] = []) -> None:\n        self.transitions = transitions\n\nclass Place:\n    def __init__(self, destination: Transition = None) -> None:\n        self.destination = destination\n\nclass Transition:\n    def __init__(self, net: Net, destination_places: List[Place] = []) -> None:\n        self.net = net\n        self.destination_places = destination_places\n        if not self.net.transitions or self.net.transitions[0] != self:\n            raise ValueError('A transition has exactly one net and vice versa.')\n        if not self.destination_places:\n            raise ValueError('A transition has at least one destination place.')\n",
+ "java": {}
+}

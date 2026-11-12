@@ -1,0 +1,170 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "places",
+    "tokens"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "inputArcs",
+    "outputArcs"
+   ],
+   "methods": [
+    {
+     "name": "addInputArc",
+     "use_case": "R9"
+    },
+    {
+     "name": "addOutputArc",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9",
+    "R11"
+   ]
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    "weight"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R10"
+   ]
+  },
+  {
+   "name": "PlaceTransitionArc",
+   "kind": "class",
+   "attributes": [
+    "transition"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "Token",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R15"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Place",
+   "target": "Net",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Place",
+   "target": "Arc",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9",
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Net",
+   "target": "Arc",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Arc",
+   "target": "Place",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PlaceTransitionArc",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Token",
+   "target": "Place",
+   "multiplicity_target": "1",
+   "src": [
+    "R15"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Net:\n    def __init__(self):\n        self.places: List[Place] = []\n        self.tokens: List[Token] = []\n        self.arc: List[Arc] = []\n\n    def add_place(self, place: Place):\n        self.places.append(place)\n\n    def add_token(self, token: Token):\n        self.tokens.append(token)\n\n    def add_arc(self, arc: Arc):\n        self.arc.append(arc)\n\n    def __str__(self):\n        return f'Net with {len(self.places)} places and {len(self.tokens)} tokens'\n\n    src: List[str] = ['R3', 'R7', 'R8', 'R12']\n\nclass Place:\n    def __init__(self, name: str):\n        self.name: str = name\n        self.inputArcs: List[Arc] = []\n        self.outputArcs: List[Arc] = []\n\n    def add_input_arc(self, arc: Arc):\n        self.inputArcs.append(arc)\n\n    def add_output_arc(self, arc: Arc):\n        self.outputArcs.append(arc)\n\n    def __str__(self):\n        return f'Place {self.name} with {len(self.inputArcs)} input arcs and {len(self.outputArcs)} output arcs'\n\n    src: List[str] = ['R1', 'R9', 'R11']\n\nclass Arc:\n    def __init__(self, weight: float):\n        self.weight: float = weight\n\n    def __str__(self):\n        return f'Arc with weight {self.weight}'\n\n    src: List[str] = ['R4']\n\nclass Transition:\n    def __init__(self, name: str):\n        self.name: str = name\n\n    def __str__(self):\n        return f'Transition {self.name}'\n\n    src: List[str] = ['R2', 'R10']\n\nclass PlaceTransitionArc:\n    def __init__(self, transition: Transition):\n        self.transition: Transition = transition\n\n    def __str__(self):\n        return f'PlaceTransitionArc to {self.transition.name}'\n\n    src: List[str] = ['R5', 'R6', 'R13', 'R14']\n\nclass Token:\n    def __init__(self):\n        pass\n\n    def __str__(self):\n        return 'Token'\n\n    src: List[str] = ['R7', 'R15']\n",
+ "java": {}
+}

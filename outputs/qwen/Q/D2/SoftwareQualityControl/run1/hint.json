@@ -1,0 +1,538 @@
+{
+ "condition": "Q",
+ "hint": {
+  "case": "D2/SoftwareQualityControl",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "noun_role",
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "Architecture is a class that represents a specific architecture of a potential system."
+     }
+    ],
+    "name": "Architecture",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R6",
+     "R12",
+     "R13"
+    ],
+    "rule": [
+     "noun_role",
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "Bug is a class in SoftwareQualityControl package."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "The list of bugs in the software bug tracking system which are linked to control type."
+     },
+     {
+      "sid": "R13.s1",
+      "text": "A Bug is associated to one and only one Bug Tracking"
+     }
+    ],
+    "name": "Bug",
+    "freq": 3
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "A Bug is associated to one and only one Bug Tracking"
+     }
+    ],
+    "name": "BugTracking",
+    "freq": 1
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R4",
+     "R7",
+     "R8",
+     "R9",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "The different types of controls."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "This fragment is composed of two classes : ControlsSequence and Control."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "In a software quality control, a control belongs to a controls sequence"
+     }
+    ],
+    "name": "Control",
+    "freq": 5
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R12"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R12.s1",
+      "text": "The list of bugs in the software bug tracking system which are linked to control type."
+     }
+    ],
+    "name": "ControlType",
+    "freq": 1
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "The controls objects are linked to the controls sequence and their role (responsibility) in the sequence."
+     }
+    ],
+    "name": "ControlsObject",
+    "freq": 1
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R2",
+     "R3",
+     "R7",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "The ControlsSequence is a class in the SoftwareQualityControl package"
+     },
+     {
+      "sid": "R3.s1",
+      "text": "The controls objects are linked to the controls sequence and their role (responsibility) in the sequence."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "This fragment is composed of two classes : ControlsSequence and Control."
+     }
+    ],
+    "name": "ControlsSequence",
+    "freq": 4
+   },
+   {
+    "id": "C8",
+    "src": [
+     "R1",
+     "R9"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "It is a model class for describing the concept of a date."
+     },
+     {
+      "sid": "R9.s1",
+      "text": "The date of the control."
+     }
+    ],
+    "name": "Date",
+    "freq": 2
+   },
+   {
+    "id": "C9",
+    "src": [
+     "R12"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R12.s1",
+      "text": "The list of bugs in the software bug tracking system which are linked to control type."
+     }
+    ],
+    "name": "SoftwareBugTrackingSystem",
+    "freq": 1
+   },
+   {
+    "id": "C10",
+    "src": [
+     "R5",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A software quality control has a bug traking"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "In a software quality control, a control belongs to a controls sequence"
+     }
+    ],
+    "name": "SoftwareQualityControl",
+    "freq": 2
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s3",
+      "text": "It has also four other attributes of type String: description, originator, commentsAnswers and closeDate"
+     }
+    ],
+    "owner": "Bug",
+    "name": "closedate",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s3",
+      "text": "It has also four other attributes of type String: description, originator, commentsAnswers and closeDate"
+     }
+    ],
+    "owner": "Bug",
+    "name": "commentsanswer",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s3",
+      "text": "It has also four other attributes of type String: description, originator, commentsAnswers and closeDate"
+     }
+    ],
+    "owner": "Bug",
+    "name": "description",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "explicit_attribute"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s2",
+      "text": "It has an attribute named \"number\" of type \"Integer\"."
+     }
+    ],
+    "owner": "Bug",
+    "name": "number",
+    "type_hint": "Integer"
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s3",
+      "text": "It has also four other attributes of type String: description, originator, commentsAnswers and closeDate"
+     }
+    ],
+    "owner": "Bug",
+    "name": "originator",
+    "type_hint": null
+   },
+   {
+    "id": "AT6",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "The controls objects are linked to the controls sequence and their role (responsibility) in the sequence."
+     }
+    ],
+    "owner": "ControlsObject",
+    "name": "role",
+    "type_hint": null
+   },
+   {
+    "id": "AT7",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "It is a model class for describing the concept of a date."
+     }
+    ],
+    "owner": "Date",
+    "name": "concept",
+    "type_hint": null
+   },
+   {
+    "id": "AT8",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s2",
+      "text": "It includes an integer for the day and another integer for the year."
+     }
+    ],
+    "owner": "Date",
+    "name": "day",
+    "type_hint": null
+   },
+   {
+    "id": "AT9",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A software quality control has a bug traking"
+     }
+    ],
+    "owner": "SoftwareQualityControl",
+    "name": "bug traking",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "A Bug is associated to one and only one Bug Tracking"
+     }
+    ],
+    "kind": "association",
+    "source": "Bug",
+    "target": "BugTracking",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "In a software quality control, a control belongs to a controls sequence"
+     }
+    ],
+    "kind": "association",
+    "source": "Control",
+    "target": "ControlsSequence",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "In a software quality control, a control belongs to a controls sequence"
+     }
+    ],
+    "kind": "association",
+    "source": "Control",
+    "target": "SoftwareQualityControl",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "The controls objects are linked to the controls sequence and their role (responsibility) in the sequence."
+     }
+    ],
+    "kind": "association",
+    "source": "ControlsObject",
+    "target": "ControlsSequence",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R12"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R12.s1",
+      "text": "The list of bugs in the software bug tracking system which are linked to control type."
+     }
+    ],
+    "kind": "association",
+    "source": "SoftwareBugTrackingSystem",
+    "target": "ControlType",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "The date of the control."
+     }
+    ],
+    "kind": "has",
+    "source": "Control",
+    "target": "Date",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [
+   {
+    "name": "DateType",
+    "values": [
+     "Day",
+     "Year"
+    ]
+   }
+  ],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [
+    {
+     "name": "DateType",
+     "values": [
+      "Day",
+      "Year"
+     ]
+    }
+   ],
+   "multiplicities": [
+    {
+     "source": "Bug",
+     "target": "Date",
+     "multiplicity": "1..1"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

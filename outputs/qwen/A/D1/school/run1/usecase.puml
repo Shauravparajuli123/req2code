@@ -1,0 +1,119 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Guardian" as A1
+actor "Student" as A2
+actor "Teacher" as A3
+actor "Administrator" as A4
+actor "User" as A5
+rectangle "school" {
+  usecase "Direct Message" as UC1
+  usecase "Fill Absence" as UC2
+  usecase "Receive Notification" as UC3
+  usecase "View Information" as UC4
+  usecase "Access Files And DLM" as UC5
+  usecase "Direct Message Student" as UC6
+  usecase "Hand Homework" as UC7
+  usecase "View Timetable" as UC8
+  usecase "Access DLM" as UC9
+  usecase "Receive Notification For Due Date" as UC10
+  usecase "Receive Notification For New Files" as UC11
+  usecase "Receive Notification For Timetable Changes" as UC12
+  usecase "View Account Information" as UC13
+  usecase "View Contact Information" as UC14
+  usecase "Change Preferences" as UC15
+  usecase "Add Video To DLM" as UC16
+  usecase "Add Text And Pictures To DLM" as UC17
+  usecase "Add Question To DLM" as UC18
+  usecase "Assign DLM" as UC19
+  usecase "Assign Due Date" as UC20
+  usecase "Automatically Grade DLM" as UC21
+  usecase "Create DLM" as UC22
+  usecase "Direct Message Class" as UC23
+  usecase "Direct Message Mentor" as UC24
+  usecase "Edit DLM" as UC25
+  usecase "Assign Submission Elements" as UC26
+  usecase "Add Answer To Question" as UC27
+  usecase "Confirm File Upload" as UC28
+  usecase "Record Disciplinary Actions" as UC29
+  usecase "Record Behavior" as UC30
+  usecase "Record Grades" as UC31
+  usecase "Record Attendance" as UC32
+  usecase "View Submissions" as UC33
+  usecase "View Class Performance" as UC34
+  usecase "View Student Progress" as UC35
+  usecase "Set Appearance Date" as UC36
+  usecase "Set Available Dates" as UC37
+  usecase "Upload Files" as UC38
+  usecase "View Class Information" as UC39
+  usecase "View Class List" as UC40
+  usecase "Reset Password" as UC41
+  usecase "Send Direct Message" as UC42
+  usecase "Assign Schedules" as UC43
+  usecase "Create Account" as UC44
+  usecase "Edit Account" as UC45
+  usecase "Change View" as UC46
+  usecase "Receive Absence Form" as UC47
+  usecase "Register Changes" as UC48
+  usecase "Register Absence" as UC49
+  usecase "Send Broadcast Message" as UC50
+  usecase "Set Account Role" as UC51
+  usecase "Upload Schedules" as UC52
+  usecase "View Account Details" as UC53
+  usecase "View Statistics" as UC54
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A2 --> UC5
+A3 --> UC6
+A2 --> UC7
+A2 --> UC8
+A2 --> UC9
+A2 --> UC10
+A2 --> UC11
+A2 --> UC12
+A2 --> UC13
+A2 --> UC14
+A2 --> UC15
+A3 --> UC16
+A3 --> UC17
+A3 --> UC18
+A3 --> UC19
+A3 --> UC20
+A3 --> UC21
+A3 --> UC22
+A3 --> UC23
+A3 --> UC24
+A3 --> UC25
+A3 --> UC26
+A3 --> UC27
+A3 --> UC28
+A3 --> UC29
+A3 --> UC30
+A3 --> UC31
+A3 --> UC32
+A3 --> UC33
+A3 --> UC34
+A3 --> UC35
+A3 --> UC36
+A3 --> UC37
+A3 --> UC38
+A3 --> UC39
+A3 --> UC40
+A5 --> UC41
+A4 --> UC42
+A4 --> UC43
+A4 --> UC44
+A4 --> UC45
+A4 --> UC46
+A4 --> UC47
+A4 --> UC48
+A4 --> UC49
+A4 --> UC50
+A4 --> UC51
+A4 --> UC52
+A4 --> UC53
+A4 --> UC54
+@enduml

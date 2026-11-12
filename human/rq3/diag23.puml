@@ -1,0 +1,38 @@
+@startuml
+class Condition {
+}
+class CompositeParDef {
+}
+class ElementaryPartDef {
+}
+class ElementaryActDef {
+}
+class CompositeActDef {
+}
+class ActCompositeMember {
+}
+class Cristal {
+  activityDefinitions
+  partDefinitions
+  partCompositeMembers
+  compositeActDefs
+  compositeParDefs
+}
+class ActivityDefinition {
+  actCompositeMember
+}
+class PartCompositeMember {
+  partDefinition
+}
+Cristal -- Condition
+Cristal -- CompositeParDef
+Cristal -- CompositeActDef
+Cristal -- ActCompositeMember
+Cristal -- ActivityDefinition
+Cristal -- ElementaryActDef
+Cristal -- ElementaryPartDef
+Cristal -- PartCompositeMember
+ActivityDefinition -- ActCompositeMember
+CompositeParDef -- PartCompositeMember
+CompositeActDef -- ActCompositeMember
+@enduml

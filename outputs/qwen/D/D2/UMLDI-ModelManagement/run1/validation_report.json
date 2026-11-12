@@ -1,0 +1,65 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each generalizable element is linked to zero or many generalizations as per R10"
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Feature' is missing an attribute 'ownerScope' as per R6",
+   "fix": "Add 'ownerScope: String' to class 'Feature'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'GeneralizableElement' is missing an attribute 'isARoot' as per R3",
+   "fix": "Add 'isARoot: Boolean' to class 'GeneralizableElement'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'GeneralizableElement' is missing an attribute 'isAbstract' as per R3",
+   "fix": "Add 'isAbstract: Boolean' to class 'GeneralizableElement'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Generalization' is missing an attribute 'discriminator' as per R8",
+   "fix": "Add 'discriminator: Boolean' to class 'Generalization'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Classifier' is missing an attribute 'powerTypeRanges' as per R12",
+   "fix": "Add 'powerTypeRanges: String' to class 'Classifier'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Classifier' is missing an attribute 'owner' as per R13",
+   "fix": "Add 'owner: String' to class 'Classifier'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Classifier' is missing an attribute 'powerTypeRanges' as per R12",
+   "fix": "Add 'powerTypeRanges: String' to class 'Classifier'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Generalization' is missing a relationship to 'GeneralizableElement' as per R8",
+   "fix": "Add association 'Generalization -> GeneralizableElement [0..1..1]'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Generalization' is missing a relationship to 'Classifier' as per R14",
+   "fix": "Add association 'Generalization -> Classifier [1..0..*]'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'GeneralizableElement' is missing a relationship to 'Generalization' as per R10",
+   "fix": "Add association 'GeneralizableElement -> Generalization [0..*..1]'"
+  }
+ ]
+}

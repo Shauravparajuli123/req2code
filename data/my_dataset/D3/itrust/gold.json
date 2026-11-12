@@ -1,0 +1,729 @@
+{
+ "use_cases": null,
+ "code_classes": [
+  "AccessDAO",
+  "AddApptAction",
+  "AddERespAction",
+  "AddHCPAction",
+  "AddOfficeVisitAction",
+  "AddPHAAction",
+  "AddPatientAction",
+  "AddPatientValidator",
+  "AddPersonnelValidator",
+  "AddRemoteMonitoringDataAction",
+  "AddUAPAction",
+  "AdverseEventBean",
+  "AdverseEventBeanLoader",
+  "AdverseEventDAO",
+  "AdverseEventValidator",
+  "AdverseEventsData",
+  "AgeFactor",
+  "AllergyBean",
+  "AllergyBeanLoader",
+  "AllergyBeanValidator",
+  "AllergyDAO",
+  "ApptBean",
+  "ApptBeanLoader",
+  "ApptBeanValidator",
+  "ApptDAO",
+  "ApptTypeBean",
+  "ApptTypeBeanLoader",
+  "ApptTypeBeanValidator",
+  "ApptTypeDAO",
+  "AuthDAO",
+  "BeanBuilder",
+  "BeanLoader",
+  "BeanValidator",
+  "BloodType",
+  "CPTCodesDAO",
+  "ChangeSessionTimeoutAction",
+  "ChildhoodInfectionFactor",
+  "CholesterolFactor",
+  "ChronicDiseaseMediator",
+  "ChronicDiseaseRiskAction",
+  "DAOFactory",
+  "DBException",
+  "DBUtil",
+  "DateUtil",
+  "DeclareHCPAction",
+  "DiagnosisBean",
+  "DiagnosisBeanLoader",
+  "DiagnosisBeanValidator",
+  "DrugInteractionAction",
+  "DrugInteractionBean",
+  "DrugInteractionBeanLoader",
+  "DrugInteractionDAO",
+  "DrugInteractionValidator",
+  "EMailValidator",
+  "EditApptTypeAction",
+  "EditHealthHistoryAction",
+  "EditMonitoringListAction",
+  "EditOfficeVisitAction",
+  "EditOfficeVisitForm",
+  "EditOfficeVisitValidator",
+  "EditPHRAction",
+  "EditPatientAction",
+  "EditPersonnelAction",
+  "EditPrescriptionAction",
+  "EditRepresentativesAction",
+  "Email",
+  "EmailBeanLoader",
+  "EmailUtil",
+  "EmergencyReportAction",
+  "ErrorList",
+  "Ethnicity",
+  "EthnicityFactor",
+  "FakeEmailDAO",
+  "FamilyBeanLoader",
+  "FamilyDAO",
+  "FamilyHistoryFactor",
+  "FamilyMemberBean",
+  "FormValidationException",
+  "Gender",
+  "GenderFactor",
+  "GenerateCalendarAction",
+  "GetUserNameAction",
+  "GetVisitRemindersAction",
+  "HCPDiagnosisBean",
+  "HCPLinkBean",
+  "HCPVisitBean",
+  "HealthRecord",
+  "HealthRecordForm",
+  "HealthRecordFormValidator",
+  "HealthRecordsBeanLoader",
+  "HealthRecordsDAO",
+  "HeartDiseaseRisks",
+  "HospitalBean",
+  "HospitalBeanLoader",
+  "HospitalBeanValidator",
+  "HospitalsDAO",
+  "HtmlEncoder",
+  "HypertensionFactor",
+  "ICD9CMLink",
+  "ICDCodesDAO",
+  "IConnectionDriver",
+  "LOINCBeanLoader",
+  "LOINCBeanValidator",
+  "LOINCDAO",
+  "LOINCbean",
+  "LabProcHCPAction",
+  "LabProcUAPAction",
+  "LabProcedureBean",
+  "LabProcedureBeanLoader",
+  "LabProcedureDAO",
+  "LabProcedureValidator",
+  "Localization",
+  "LoginFailureAction",
+  "MailValidator",
+  "ManageHospitalAssignmentsAction",
+  "MedicationBean",
+  "MedicationBeanLoader",
+  "MedicationBeanValidator",
+  "MessageBean",
+  "MessageBeanLoader",
+  "MessageDAO",
+  "MessageValidator",
+  "Messages",
+  "MonitorAdverseEventAction",
+  "MyDiagnosisAction",
+  "NDCodesDAO",
+  "NoHealthRecordsException",
+  "OfficeVisitBaseAction",
+  "OfficeVisitBean",
+  "OfficeVisitDAO",
+  "OfficeVisitLoader",
+  "OperationalProfile",
+  "OperationalProfileLoader",
+  "ParameterUtil",
+  "PatientBaseAction",
+  "PatientBean",
+  "PatientDAO",
+  "PatientLoader",
+  "PatientNavigation",
+  "PatientRiskFactor",
+  "PatientValidator",
+  "PatientVisitBean",
+  "PersonnelBaseAction",
+  "PersonnelBean",
+  "PersonnelDAO",
+  "PersonnelLoader",
+  "PersonnelValidator",
+  "PrescriptionAlerts",
+  "PrescriptionBean",
+  "PrescriptionBeanLoader",
+  "PrescriptionReportAction",
+  "PrescriptionReportBean",
+  "PrescriptionReportBeanLoader",
+  "PriorDiagnosisFactor",
+  "ProcedureBean",
+  "ProcedureBeanLoader",
+  "ProcedureBeanValidator",
+  "ProductionConnectionDriver",
+  "RandomPassword",
+  "ReferralBean",
+  "ReferralBeanLoader",
+  "ReferralDAO",
+  "ReferralManagementAction",
+  "RemoteMonitoringDAO",
+  "RemoteMonitoringDataBean",
+  "RemoteMonitoringDataBeanLoader",
+  "RemoteMonitoringDataBeanValidator",
+  "ReportAdverseEventAction",
+  "ReportRequestBean",
+  "ReportRequestBeanLoader",
+  "ReportRequestDAO",
+  "ResetPasswordAction",
+  "RiskChecker",
+  "RiskDAO",
+  "Role",
+  "SearchUsersAction",
+  "SecurityQA",
+  "SecurityQAValidator",
+  "SendMessageAction",
+  "SessionTimeoutListener",
+  "SetSecurityQuestionAction",
+  "SmokingFactor",
+  "State",
+  "StateSelect",
+  "SurveyAction",
+  "SurveyBean",
+  "SurveyDAO",
+  "SurveyLoader",
+  "SurveyResultBean",
+  "SurveyResultBeanLoader",
+  "SurveyResultDAO",
+  "SurveySearchValidator",
+  "TransactionBean",
+  "TransactionBeanLoader",
+  "TransactionDAO",
+  "TransactionType",
+  "Type1DiabetesRisks",
+  "Type2DiabetesRisks",
+  "UpdateCPTCodeListAction",
+  "UpdateHospitalListAction",
+  "UpdateICDCodeListAction",
+  "UpdateLOINCListAction",
+  "UpdateNDCodeListAction",
+  "ValidationFormat",
+  "ViewAdverseEventAction",
+  "ViewExpiredPrescriptionsAction",
+  "ViewMyAccessLogAction",
+  "ViewMyApptsAction",
+  "ViewMyMessagesAction",
+  "ViewMyRecordsAction",
+  "ViewMyRemoteMonitoringListAction",
+  "ViewMyReportRequestsAction",
+  "ViewOfficeVisitAction",
+  "ViewPatientOfficeVisitHistoryAction",
+  "ViewPersonnelAction",
+  "ViewPrescriptionRecordsAction",
+  "ViewPrescriptionRenewalNeedsAction",
+  "ViewReportAction",
+  "ViewSurveyResultAction",
+  "ViewVisitedHCPsAction",
+  "VisitFlag",
+  "VisitReminderReturnForm",
+  "VisitReminderReturnFormLoader",
+  "VisitRemindersDAO",
+  "WeightFactor",
+  "iTrustException"
+ ],
+ "uc_to_code_links": {
+  "UC10E1": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC10E2": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC10S1": [
+   "EditPHRAction",
+   "PersonnelDAO",
+   "HealthRecordsDAO",
+   "OfficeVisitDAO",
+   "FamilyDAO",
+   "EditHealthHistoryAction",
+   "AuthDAO"
+  ],
+  "UC10S2": [
+   "TransactionDAO"
+  ],
+  "UC11E1": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC11E2": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC11S1": [
+   "EditOfficeVisitAction",
+   "OfficeVisitDAO",
+   "AllergyDAO"
+  ],
+  "UC11S2": [
+   "EditOfficeVisitAction",
+   "OfficeVisitDAO",
+   "AllergyDAO"
+  ],
+  "UC12": [
+   "TransactionDAO"
+  ],
+  "UC13": [
+   "EditRepresentativesAction",
+   "AuthDAO",
+   "PatientDAO"
+  ],
+  "UC13E1": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC15E1": [
+   "LOINCBeanValidator",
+   "MedicationBeanValidator",
+   "DiagnosisBeanValidator",
+   "ProcedureBeanValidator"
+  ],
+  "UC15S1": [
+   "UpdateCPTCodeListAction",
+   "CPTCodesDAO"
+  ],
+  "UC15S2": [
+   "UpdateICDCodeListAction",
+   "ICDCodesDAO"
+  ],
+  "UC15S3": [
+   "UpdateNDCodeListAction",
+   "NDCodesDAO"
+  ],
+  "UC15S4": [
+   "UpdateLOINCListAction",
+   "LOINCDAO"
+  ],
+  "UC16": [
+   "ChronicDiseaseRiskAction",
+   "RiskChecker",
+   "HeartDiseaseRisks",
+   "Type1DiabetesRisks",
+   "Type2DiabetesRisks",
+   "HealthRecordsDAO"
+  ],
+  "UC17S1": [
+   "GetVisitRemindersAction",
+   "VisitRemindersDAO"
+  ],
+  "UC17S2": [
+   "GetVisitRemindersAction",
+   "VisitRemindersDAO"
+  ],
+  "UC17S3": [
+   "GetVisitRemindersAction",
+   "VisitRemindersDAO"
+  ],
+  "UC18E1": [
+   "HospitalBeanValidator"
+  ],
+  "UC18E2": [
+   "HospitalBeanValidator"
+  ],
+  "UC18S1": [
+   "UpdateHospitalListAction",
+   "HospitalsDAO"
+  ],
+  "UC18S2": [
+   "UpdateHospitalListAction",
+   "HospitalsDAO"
+  ],
+  "UC19E1": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC19E2": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC19S1": [
+   "ViewPrescriptionRecordsAction",
+   "PatientDAO",
+   "EmailUtil"
+  ],
+  "UC19S2": [
+   "ViewPrescriptionRecordsAction",
+   "PatientDAO"
+  ],
+  "UC1E1": [
+   "AddPatientValidator"
+  ],
+  "UC1S1": [
+   "AddPatientAction",
+   "PatientDAO",
+   "AuthDAO",
+   "TransactionDAO"
+  ],
+  "UC21E1": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC21E2": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC21S1": [
+   "EmergencyReportAction",
+   "PatientDAO",
+   "AllergyDAO"
+  ],
+  "UC23E1": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC23E2": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC23S1": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC23S3": [
+   "ViewMyReportRequestsAction",
+   "ViewMyRecordsAction",
+   "ViewReportAction",
+   "ReportRequestDAO",
+   "PatientDAO",
+   "OfficeVisitDAO",
+   "HealthRecordsDAO",
+   "AllergyDAO",
+   "FamilyDAO"
+  ],
+  "UC23S4": [
+   "ViewMyReportRequestsAction",
+   "ReportRequestDAO"
+  ],
+  "UC24": [
+   "SurveyAction",
+   "SurveyDAO"
+  ],
+  "UC25": [
+   "ViewSurveyResultAction",
+   "HospitalsDAO",
+   "SurveyResultDAO"
+  ],
+  "UC26E1": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC26E2": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC26S1": [
+   "ViewMyRecordsAction",
+   "LabProcedureDAO"
+  ],
+  "UC26S2": [
+   "GetUserNameAction",
+   "AuthDAO",
+   "LabProcUAPAction",
+   "EditPatientAction",
+   "PatientDAO",
+   "LabProcedureDAO"
+  ],
+  "UC26S3": [
+   "GetUserNameAction",
+   "AuthDAO",
+   "LabProcUAPAction",
+   "LabProcedureDAO"
+  ],
+  "UC26S4": [
+   "LabProcedureDAO"
+  ],
+  "UC27S1": [
+   "ResetPasswordAction",
+   "EmailUtil"
+  ],
+  "UC27S2": [
+   "LabProcUAPAction",
+   "EmailUtil"
+  ],
+  "UC28": [
+   "ViewPatientOfficeVisitHistoryAction",
+   "OfficeVisitDAO",
+   "PatientDAO"
+  ],
+  "UC29": [
+   "MyDiagnosisAction",
+   "PatientDAO",
+   "PersonnelDAO",
+   "OfficeVisitDAO",
+   "LabProcedureDAO"
+  ],
+  "UC2E2": [
+   "AddPersonnelValidator"
+  ],
+  "UC2S1": [
+   "AddHCPAction",
+   "PersonnelDAO",
+   "AuthDAO"
+  ],
+  "UC2S2": [
+   "AddUAPAction",
+   "PersonnelDAO",
+   "AuthDAO"
+  ],
+  "UC30E1": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC30E2": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC30S1": [
+   "SendMessageAction",
+   "MessageDAO",
+   "EmailUtil"
+  ],
+  "UC30S2": [
+   "GetUserNameAction",
+   "AuthDAO",
+   "SendMessageAction",
+   "PatientDAO"
+  ],
+  "UC30S3": [
+   "ViewMyMessagesAction",
+   "MessageDAO",
+   "SendMessageAction"
+  ],
+  "UC30S4": [
+   "ViewMyMessagesAction",
+   "MessageDAO",
+   "SendMessageAction"
+  ],
+  "UC30S5": [
+   "ViewMyMessagesAction",
+   "MessageDAO"
+  ],
+  "UC31S1": [
+   "PatientDAO",
+   "ViewExpiredPrescriptionsAction",
+   "PersonnelDAO"
+  ],
+  "UC32S2": [
+   "ViewPrescriptionRenewalNeedsAction",
+   "PersonnelDAO",
+   "PatientDAO"
+  ],
+  "UC33S1": [
+   "PatientDAO",
+   "PersonnelDAO",
+   "ReferralManagementAction",
+   "ReferralDAO"
+  ],
+  "UC33S2": [
+   "ReferralManagementAction",
+   "PatientDAO",
+   "PersonnelDAO",
+   "ReferralDAO"
+  ],
+  "UC34E1": [
+   "GetUserNameAction",
+   "AuthDAO"
+  ],
+  "UC34E2": [
+   "RemoteMonitoringDataBeanValidator"
+  ],
+  "UC34E3": [
+   "RemoteMonitoringDataBeanValidator"
+  ],
+  "UC34E4": [
+   "RemoteMonitoringDAO"
+  ],
+  "UC34S1": [
+   "GetUserNameAction",
+   "AuthDAO",
+   "EditMonitoringListAction",
+   "RemoteMonitoringDAO"
+  ],
+  "UC34S2": [
+   "AddRemoteMonitoringDataAction",
+   "RemoteMonitoringDAO"
+  ],
+  "UC34S3": [
+   "ViewMyRemoteMonitoringListAction",
+   "AuthDAO",
+   "RemoteMonitoringDAO"
+  ],
+  "UC34S4": [
+   "ViewMyRemoteMonitoringListAction",
+   "PatientDAO",
+   "RemoteMonitoringDAO"
+  ],
+  "UC34S5": [
+   "ViewMyRemoteMonitoringListAction",
+   "RemoteMonitoringDAO",
+   "AuthDAO",
+   "AddRemoteMonitoringDataAction"
+  ],
+  "UC34S6": [
+   "AddRemoteMonitoringDataAction",
+   "RemoteMonitoringDAO",
+   "EditRepresentativesAction",
+   "PatientDAO"
+  ],
+  "UC35S1": [
+   "ViewPrescriptionRecordsAction",
+   "PatientDAO",
+   "ReportAdverseEventAction",
+   "AdverseEventDAO",
+   "EmailUtil"
+  ],
+  "UC35S2": [
+   "ViewMyRecordsAction",
+   "OfficeVisitDAO",
+   "ReportAdverseEventAction",
+   "AdverseEventDAO",
+   "EmailUtil"
+  ],
+  "UC36S1": [
+   "MonitorAdverseEventAction",
+   "AdverseEventDAO",
+   "PatientDAO",
+   "EmailUtil"
+  ],
+  "UC36S2": [
+   "MonitorAdverseEventAction",
+   "AdverseEventDAO",
+   "PatientDAO",
+   "EmailUtil"
+  ],
+  "UC36S3": [
+   "MonitorAdverseEventAction",
+   "SendMessageAction",
+   "MessageDAO",
+   "PersonnelDAO",
+   "EmailUtil",
+   "AdverseEventDAO"
+  ],
+  "UC37S1": [
+   "EditOfficeVisitAction",
+   "AllergyDAO"
+  ],
+  "UC37S2": [
+   "EditOfficeVisitAction",
+   "DrugInteractionDAO",
+   "OfficeVisitDAO"
+  ],
+  "UC37S3": [
+   "EmailUtil",
+   "EditOfficeVisitAction",
+   "PatientDAO"
+  ],
+  "UC38S1": [
+   "DrugInteractionAction",
+   "DrugInteractionDAO"
+  ],
+  "UC38S2": [
+   "DrugInteractionAction",
+   "DrugInteractionDAO"
+  ],
+  "UC3E1": [
+   "ResetPasswordAction",
+   "AuthDAO"
+  ],
+  "UC3E2": [
+   "ResetPasswordAction"
+  ],
+  "UC3S1": [
+   "ResetPasswordAction"
+  ],
+  "UC3S2": [
+   "ResetPasswordAction",
+   "AuthDAO",
+   "EmailUtil"
+  ],
+  "UC3S3": [
+   "ChangeSessionTimeoutAction",
+   "AccessDAO",
+   "SessionTimeoutListener"
+  ],
+  "UC3S4": [
+   "LabProcHCPAction",
+   "ReportRequestDAO",
+   "OfficeVisitDAO",
+   "LabProcedureDAO"
+  ],
+  "UC3S5": [
+   "LabProcedureDAO",
+   "ViewMyReportRequestsAction",
+   "ReportRequestDAO"
+  ],
+  "UC4E1": [
+   "SecurityQAValidator",
+   "PatientValidator",
+   "PersonnelValidator"
+  ],
+  "UC4S1": [
+   "EditPatientAction",
+   "EmailUtil",
+   "PatientDAO",
+   "SetSecurityQuestionAction",
+   "AuthDAO"
+  ],
+  "UC4S2": [
+   "SearchUsersAction",
+   "PatientDAO",
+   "EditPatientAction",
+   "EmailUtil"
+  ],
+  "UC4S3": [
+   "EditPersonnelAction",
+   "SetSecurityQuestionAction",
+   "PersonnelDAO",
+   "AuthDAO"
+  ],
+  "UC4S4": [
+   "TransactionDAO"
+  ],
+  "UC5S1": [
+   "TransactionDAO"
+  ],
+  "UC5S2": [
+   "TransactionDAO"
+  ],
+  "UC6S1": [
+   "ViewVisitedHCPsAction",
+   "PatientDAO",
+   "PersonnelDAO"
+  ],
+  "UC6S2": [
+   "ViewVisitedHCPsAction",
+   "DeclareHCPAction",
+   "PatientDAO"
+  ],
+  "UC6S3": [
+   "ViewVisitedHCPsAction",
+   "PersonnelDAO"
+  ],
+  "UC8S1": [
+   "ViewMyAccessLogAction",
+   "TransactionDAO"
+  ],
+  "UC8S2": [
+   "ViewMyAccessLogAction",
+   "TransactionDAO"
+  ],
+  "UC9S1": [
+   "ViewMyRecordsAction",
+   "AllergyDAO",
+   "OfficeVisitDAO",
+   "HealthRecordsDAO",
+   "LabProcedureDAO"
+  ],
+  "UC9S2": [
+   "ViewMyRecordsAction",
+   "FamilyDAO"
+  ]
+ }
+}

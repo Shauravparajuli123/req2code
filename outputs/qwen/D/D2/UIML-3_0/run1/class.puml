@@ -1,0 +1,20 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class UIML {
+  head : String
+}
+class Header {
+  metas : String
+  +addMetaData()
+}
+class MetaData {
+  name : String
+}
+class Game {
+  name : String
+  +createGame()
+}
+UIML "1" -- "1" Header : has
+Header "1" o-- "0..*" MetaData : has
+@enduml

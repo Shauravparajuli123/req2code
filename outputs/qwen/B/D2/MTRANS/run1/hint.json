@@ -1,0 +1,648 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D2/MTRANS",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s2",
+      "text": "Each expression has an operator"
+     }
+    ],
+    "name": "operator"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R6",
+     "R18",
+     "R21"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A MTRANS model has expressions."
+     },
+     {
+      "sid": "R6.s2",
+      "text": "Each expression has an operator"
+     },
+     {
+      "sid": "R18.s1",
+      "text": "An expression can be composed of one and only inherited rule"
+     }
+    ],
+    "name": "Expression",
+    "freq": 5
+   },
+   {
+    "id": "C2",
+    "src": [],
+    "rule": [
+     "inferred"
+    ],
+    "evidence": [],
+    "name": "InOne",
+    "freq": 0
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R5",
+     "R15",
+     "R16"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A MTRANS model has inheritances"
+     },
+     {
+      "sid": "R15.s2",
+      "text": "Each rule might be composed by inheritances"
+     },
+     {
+      "sid": "R16.s1",
+      "text": "A MTRANS model has inheritances."
+     }
+    ],
+    "name": "Inheritance",
+    "freq": 4
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R8",
+     "R21"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "A MTRANS model has instructions"
+     },
+     {
+      "sid": "R21.s1",
+      "text": "An instruction is composed of one and only expression."
+     },
+     {
+      "sid": "R21.s2",
+      "text": "An expression must be associated with one and only instruction."
+     }
+    ],
+    "name": "Instruction",
+    "freq": 3
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R2",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A MTRANS model contains metamodels"
+     },
+     {
+      "sid": "R10.s2",
+      "text": "Each module may have metamodels associated"
+     }
+    ],
+    "name": "Metamodel",
+    "freq": 2
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R3",
+     "R10",
+     "R11",
+     "R12",
+     "R13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A MTRANS model has modules."
+     },
+     {
+      "sid": "R3.s2",
+      "text": "Each module has a name"
+     },
+     {
+      "sid": "R10.s1",
+      "text": "A MTRANS model contains modules."
+     }
+    ],
+    "name": "Module",
+    "freq": 8
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R15",
+     "R16",
+     "R17"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A MTRANS model contains metamodels"
+     },
+     {
+      "sid": "R3.s1",
+      "text": "A MTRANS model has modules."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "A MTRANS model has rules."
+     }
+    ],
+    "name": "MtransModel",
+    "freq": 16
+   },
+   {
+    "id": "C8",
+    "src": [],
+    "rule": [
+     "inferred"
+    ],
+    "evidence": [],
+    "name": "OnlyRule",
+    "freq": 0
+   },
+   {
+    "id": "C11",
+    "src": [
+     "R9",
+     "R22"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "A MTRANS model has variables."
+     },
+     {
+      "sid": "R9.s2",
+      "text": "Each variable has a name"
+     },
+     {
+      "sid": "R22.s1",
+      "text": "A variable is associated with one and only rule."
+     }
+    ],
+    "name": "Variable",
+    "freq": 4
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s2",
+      "text": "Each expression has an operator"
+     }
+    ],
+    "owner": "Expression",
+    "name": "operator",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s2",
+      "text": "Each module has a name"
+     }
+    ],
+    "owner": "Module",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R17"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R17.s1",
+      "text": "A MTRANS model has inheritance objects."
+     }
+    ],
+    "owner": "MtransModel",
+    "name": "inheritance object",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A MTRANS model has Sections."
+     }
+    ],
+    "owner": "MtransModel",
+    "name": "sections",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s2",
+      "text": "Each rule has two properties: one to state whether the rule is abstract and the other one to store its name"
+     }
+    ],
+    "owner": "Inheritance",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT6",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s2",
+      "text": "Each rule has two properties: one to state whether the rule is abstract and the other one to store its name"
+     }
+    ],
+    "owner": "Inheritance",
+    "name": "property",
+    "type_hint": null
+   },
+   {
+    "id": "AT7",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s2",
+      "text": "Each rule has a source which is a metaclass"
+     }
+    ],
+    "owner": "Inheritance",
+    "name": "source",
+    "type_hint": null
+   },
+   {
+    "id": "AT8",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s2",
+      "text": "Each variable has a name"
+     }
+    ],
+    "owner": "Variable",
+    "name": "name",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R21"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R21.s2",
+      "text": "An expression must be associated with one and only instruction."
+     }
+    ],
+    "kind": "association",
+    "source": "Expression",
+    "target": "Instruction",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R22"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R22.s1",
+      "text": "A variable is associated with one and only rule."
+     }
+    ],
+    "kind": "association",
+    "source": "Variable",
+    "target": "Inheritance",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A MTRANS model has expressions."
+     }
+    ],
+    "kind": "has",
+    "source": "MtransModel",
+    "target": "Expression",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL7",
+    "src": [
+     "R5",
+     "R16"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A MTRANS model has inheritances"
+     },
+     {
+      "sid": "R16.s1",
+      "text": "A MTRANS model has inheritances."
+     }
+    ],
+    "kind": "has",
+    "source": "MtransModel",
+    "target": "Inheritance",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL8",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "A MTRANS model has instructions"
+     }
+    ],
+    "kind": "has",
+    "source": "MtransModel",
+    "target": "Instruction",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL9",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A MTRANS model contains metamodels"
+     }
+    ],
+    "kind": "has",
+    "source": "MtransModel",
+    "target": "Metamodel",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL10",
+    "src": [
+     "R3",
+     "R10",
+     "R11",
+     "R13"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A MTRANS model has modules."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "A MTRANS model contains modules."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "A MTRANS model has modules."
+     }
+    ],
+    "kind": "has",
+    "source": "MtransModel",
+    "target": "Module",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL11",
+    "src": [
+     "R4",
+     "R12",
+     "R14",
+     "R15"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A MTRANS model has rules."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "A MTRANS model has rules."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "A MTRANS model has rules."
+     }
+    ],
+    "kind": "has",
+    "source": "MtransModel",
+    "target": "Inheritance",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL12",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "A MTRANS model has variables."
+     }
+    ],
+    "kind": "has",
+    "source": "MtransModel",
+    "target": "Variable",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL13",
+    "src": [
+     "R12"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R12.s2",
+      "text": "Each rule has a module associated to it"
+     }
+    ],
+    "kind": "has",
+    "source": "Inheritance",
+    "target": "Module",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [
+    "Section"
+   ],
+   "merge_classes": [
+    [
+     "Inheritance",
+     "Rule"
+    ]
+   ],
+   "merge_actors": [
+    [
+     "operator",
+     "none"
+    ]
+   ],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Rule",
+     "target": "Module",
+     "multiplicity": "1"
+    },
+    {
+     "source": "Rule",
+     "target": "Variable",
+     "multiplicity": "1..*"
+    }
+   ],
+   "actor_assumptions": [
+    {
+     "use_case": "none",
+     "actor": "operator"
+    }
+   ]
+  }
+ },
+ "open_tags": []
+}

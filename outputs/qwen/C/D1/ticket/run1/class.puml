@@ -1,0 +1,114 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  email : String
+  address : String
+  preferences : String
+  history : String
+  favoriteEvents : String
+  password : String
+  +saveInformation()
+  +editInformation()
+  +seePreference()
+  +seeHistory()
+  +seeOverview()
+  +seeFavoriteEvents()
+  +changePassword()
+}
+class Visitor {
+  name : String
+  email : String
+  tickets : String
+  +readEvent()
+  +purchaseTicket()
+  +seeAvailableSeats()
+  +seeTicketTypes()
+  +addTicketToCart()
+  +seeOrderSummary()
+  +seePaymentMethods()
+  +searchEvents()
+  +filterSearchResults()
+  +sortSearchResults()
+  +seeUpcomingEvents()
+  +clickEvent()
+}
+class Reseller {
+  bankAccount : String
+  tickets : String
+  +resellTicket()
+  +uploadTicket()
+  +setTicketPrice()
+  +addDescription()
+}
+class Company {
+  +deductServiceFee()
+  +avoidBehavior()
+  +protectUser()
+}
+class Artist {
+  linkToWebsite : String
+  linkToSocialMedia : String
+  description : String
+  +findInformation()
+  +seeEventPage()
+}
+class Event {
+  name : String
+  date : LocalDate
+  artist : String
+  venue : String
+  type : String
+  description : String
+  price : double
+  tickets : String
+  +seeEventPage()
+  +seeDescription()
+  +seeType()
+  +seeOrderSummary()
+  +seePaymentMethods()
+  +searchEvents()
+  +filterSearchResults()
+  +sortSearchResults()
+  +seeUpcomingEvents()
+  +clickEvent()
+}
+class Ticket {
+  type : String
+  price : double
+  reseller : String
+  valid : boolean
+  +validateTicket()
+}
+class Address {
+  street : String
+  city : String
+  state : String
+  zipCode : String
+}
+class Preference {
+  genre : String
+  eventTypes : String
+}
+class BankAccount {
+  iban : String
+}
+class Link {
+  url : String
+}
+class Venue {
+  name : String
+  map : String
+}
+User "1" -- "1" Preference : has
+User "1" -- "1" Address : has
+User "1" -- "0..*" Ticket : buys
+Event "1" -- "0..*" Ticket : has
+Event "1" -- "1" Venue : takesPlaceIn
+Event "1" -- "1" Artist : features
+Visitor "1" -- "0..*" Ticket : buys
+Reseller "1" -- "0..*" Ticket : sells
+Company "1" -- "0..*" Reseller : manages
+Company "1" -- "0..*" Event : hosts
+@enduml

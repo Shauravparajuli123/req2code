@@ -1,0 +1,121 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "EAIResource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "EAIQueue",
+   "kind": "class",
+   "attributes": [
+    "maxLength"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "EAISource",
+   "kind": "class",
+   "attributes": [
+    "resources"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "EAISink",
+   "kind": "class",
+   "attributes": [
+    "resources"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "FCMSource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "FCMSink",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "FCMSource",
+   "target": "EAIResource",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "source": "EAISource",
+   "target": "EAIResource",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "EAISink",
+   "target": "EAIResource",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "EAISink",
+   "target": "FCMSink",
+   "src": []
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/EAI.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass EAIResource:\n    \"\"\"Source: R5\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass EAIQueue:\n    \"\"\"Source: -\"\"\"\n    maxLength: _t.Optional[int] = None\n\n\n@_dc.dataclass\nclass EAISource:\n    \"\"\"Source: R2\"\"\"\n    resources: _t.Optional[str] = None\n    eAIResource: _t.Optional[\"EAIResource\"] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass FCMSink:\n    \"\"\"Source: R3\"\"\"\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass EAISink(FCMSink):\n    \"\"\"Source: R4\"\"\"\n    resources: _t.Optional[str] = None\n    eAIResource: _t.Optional[\"EAIResource\"] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass FCMSource(EAIResource):\n    \"\"\"Source: R1\"\"\"\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "EAIResource.java": "/** Generated from shared model D2/EAI. Source: R5 */\npublic class EAIResource {\n}\n",
+  "EAIQueue.java": "/** Generated from shared model D2/EAI. Source: - */\npublic class EAIQueue {\n    private int maxLength;\n}\n",
+  "EAISource.java": "/** Generated from shared model D2/EAI. Source: R2 */\npublic class EAISource {\n    private java.lang.String resources;\n    private EAIResource eAIResource;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "FCMSink.java": "/** Generated from shared model D2/EAI. Source: R3 */\npublic class FCMSink {\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "EAISink.java": "/** Generated from shared model D2/EAI. Source: R4 */\npublic class EAISink extends FCMSink {\n    private java.lang.String resources;\n    private EAIResource eAIResource;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "FCMSource.java": "/** Generated from shared model D2/EAI. Source: R1 */\npublic class FCMSource extends EAIResource {\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

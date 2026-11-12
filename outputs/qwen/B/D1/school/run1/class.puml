@@ -1,0 +1,101 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Guardian {
+  +directMessage()
+  +fillAbsence()
+  +receiveNotification()
+  +viewInformation()
+}
+class Student {
+  +directMessage()
+  +handHomework()
+  +haveAccess()
+  +receiveNotification()
+  +viewContactInformation()
+}
+class Teacher {
+  +directMessage()
+  +editPage()
+  +makeSubmissionElement()
+  +receiveConfirmation()
+  +recordAction()
+  +recordBehavior()
+  +recordGrade()
+  +recordAttendance()
+  +seeAnswer()
+  +seeProgress()
+  +setAppearanceDate()
+  +uploadFile()
+  +viewAttendance()
+  +viewClass()
+}
+class Administrator {
+  +directMessage()
+  +assignSchedule()
+  +createAccount()
+  +editData()
+  +makeUse()
+  +registerChange()
+  +registerAbsence()
+  +sendBroadcastMessage()
+  +setRole()
+  +uploadSchedule()
+  +viewDetail()
+  +viewStatistic()
+}
+class Message {
+  content : String
+  participants : String
+  +send()
+  +receive()
+}
+class Notification {
+  +send()
+}
+class Absence {
+  +register()
+}
+class Dlm {
+  +addPage()
+  +assign()
+  +edit()
+  +makeSubmissionElement()
+  +setAppearanceDate()
+  +uploadFile()
+}
+class File {
+  +upload()
+}
+class Grade {
+  +record_()
+  +see()
+  +seeProgress()
+}
+enum Behavior {
+  SUFFICIENT
+  INSUFFICIENT
+}
+class Account {
+  role : String
+}
+class Participant {
+}
+class Schedule {
+  date : LocalDate
+  details : String
+}
+Guardian "1" -- "0..*" Message : receives
+Student "1" -- "0..*" Message : receives
+Teacher "1" -- "0..*" Message : receives
+Administrator "1" -- "0..*" Message : receives
+Student "1" -- "0..1" Absence : fills
+Student "1" -- "0..*" Notification : receives
+Teacher "1" -- "0..*" Notification : receives
+Administrator "1" -- "0..*" Notification : receives
+Student "1" -- "1..*" Dlm : accesses
+Teacher "1" -- "1..*" Dlm : assigns
+Administrator "1" -- "1" Account : sets role of
+Administrator "1" -- "1..*" Schedule : uploads
+Student "1" -- "1" Schedule : has
+@enduml

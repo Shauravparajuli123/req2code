@@ -1,0 +1,167 @@
+{
+ "actors": [],
+ "use_cases": [
+  {
+   "name": "DefineGraphElement",
+   "actor": "none",
+   "src": [
+    "R1",
+    "R4",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "DefineGraph",
+   "actor": "none",
+   "src": [
+    "R3",
+    "R9"
+   ]
+  },
+  {
+   "name": "DefineNode",
+   "actor": "none",
+   "src": [
+    "R2",
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "DefineDirectedArc",
+   "actor": "none",
+   "src": [
+    "R6",
+    "R10"
+   ]
+  },
+  {
+   "name": "DefineConstraint",
+   "actor": "none",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "GraphElement",
+   "kind": "class",
+   "attributes": [
+    "label",
+    "zIndex",
+    "parentGraph"
+   ],
+   "methods": [
+    {
+     "name": "DefineGraphElement",
+     "use_case": "DefineGraphElement"
+    },
+    {
+     "name": "DefineNode",
+     "use_case": "DefineNode"
+    },
+    {
+     "name": "DefineDirectedArc",
+     "use_case": "DefineDirectedArc"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Graph",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "dimension"
+   ],
+   "methods": [
+    {
+     "name": "DefineGraph",
+     "use_case": "DefineGraph"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R9"
+   ]
+  },
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "shape"
+   ],
+   "methods": [
+    {
+     "name": "DefineNode",
+     "use_case": "DefineNode"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "DirectedArc",
+   "kind": "class",
+   "attributes": [
+    "sourceNode",
+    "targetNode",
+    "shape"
+   ],
+   "methods": [
+    {
+     "name": "DefineDirectedArc",
+     "use_case": "DefineDirectedArc"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R10"
+   ]
+  },
+  {
+   "name": "Constraint",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [
+    {
+     "name": "DefineConstraint",
+     "use_case": "DefineConstraint"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Graph",
+   "target": "GraphElement",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass GraphElement:\n    def __init__(self, label: str, zIndex: int, parentGraph: 'Graph'):\n        self.label = label\n        self.zIndex = zIndex\n        self.parentGraph = parentGraph\n    def DefineGraphElement(self) -> None:\n        raise NotImplementedError\n    def DefineNode(self) -> None:\n        raise NotImplementedError\n    def DefineDirectedArc(self) -> None:\n        raise NotImplementedError\n\nclass Graph:\n    def __init__(self, type: str, dimension: int):\n        self.type = type\n        self.dimension = dimension\n    def DefineGraph(self) -> None:\n        raise NotImplementedError\n\nclass Node:\n    def __init__(self, shape: str):\n        self.shape = shape\n    def DefineNode(self) -> None:\n        raise NotImplementedError\n\nclass DirectedArc:\n    def __init__(self, sourceNode: 'Node', targetNode: 'Node', shape: str):\n        self.sourceNode = sourceNode\n        self.targetNode = targetNode\n        self.shape = shape\n    def DefineDirectedArc(self) -> None:\n        raise NotImplementedError\n\nclass Constraint:\n    def __init__(self, value: str):\n        self.value = value\n    def DefineConstraint(self) -> None:\n        raise NotImplementedError",
+ "java": {}
+}

@@ -1,0 +1,39 @@
+@startuml
+class CoreModel {
+  name
+  isSpecification
+}
+class Namespace {
+  name
+  modelElements
+}
+class Classifier {
+  name
+  powerTypeRanges
+  owner
+}
+class Feature {
+  name
+  ownerScope
+  owner
+}
+class GeneralizableElement {
+  name
+  isRoot
+  isAbstract
+  generalizations
+  parentGeneralization
+}
+class Generalization {
+  name
+  discriminator
+  parent
+}
+CoreModel -- Classifier
+CoreModel -- Feature
+CoreModel -- GeneralizableElement
+CoreModel -- Namespace
+CoreModel -- Generalization
+GeneralizableElement -- Generalization
+Generalization -- GeneralizableElement
+@enduml

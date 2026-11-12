@@ -1,0 +1,306 @@
+{
+ "case": "D2/GWPNV3",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "nets",
+     "type": "String",
+     "src": [
+      "R7",
+      "R11"
+     ]
+    },
+    {
+     "name": "transitions",
+     "type": "String",
+     "src": [
+      "R2",
+      "R9",
+      "R10"
+     ]
+    },
+    {
+     "name": "places",
+     "type": "String",
+     "src": [
+      "R7",
+      "R11"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addPlace",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addTransition",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "places",
+     "type": "String",
+     "src": [
+      "R7",
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R11"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "net",
+     "type": "String",
+     "src": [
+      "R7",
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R11"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "net",
+     "type": "String",
+     "src": [
+      "R9",
+      "R10"
+     ]
+    },
+    {
+     "name": "outgoingArcs",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "PTArc",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "srcPlace",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "dstTransition",
+     "type": "String",
+     "src": [
+      "R4",
+      "R12"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "TPArc",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "srcTransition",
+     "type": "String",
+     "src": [
+      "R4",
+      "R13"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R6",
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R7",
+    "R11"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C5",
+   "target": "C3",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is composed of",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": []
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C6",
+   "target": "C5",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": []
+  },
+  {
+   "id": "R7",
+   "kind": "association",
+   "source": "C5",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "id": "R8",
+   "kind": "association",
+   "source": "C6",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

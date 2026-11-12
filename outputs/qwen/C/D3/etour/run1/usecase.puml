@@ -1,0 +1,95 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Moderator" as A1
+actor "Agency" as A2
+actor "Visitor" as A3
+actor "Tourist" as A4
+actor "GuestUser" as A5
+actor "RegisteredUser" as A6
+actor "RestaurantOperator" as A7
+rectangle "etour" {
+  usecase "Delete Object" as UC1
+  usecase "Insert Object" as UC2
+  usecase "Change Data" as UC3
+  usecase "Return List" as UC4
+  usecase "View Detail" as UC5
+  usecase "View History" as UC6
+  usecase "Enable Account" as UC7
+  usecase "Delete Account" as UC8
+  usecase "Delete Banner Ad" as UC9
+  usecase "Delete News" as UC10
+  usecase "Edit Comment" as UC11
+  usecase "Insert Banner" as UC12
+  usecase "Insert News" as UC13
+  usecase "View Feedback" as UC14
+  usecase "View Report" as UC15
+  usecase "Change Image" as UC16
+  usecase "Check Point" as UC17
+  usecase "Create Game" as UC18
+  usecase "Remove Search Tag" as UC19
+  usecase "Insert Tag Search" as UC20
+  usecase "Change Password" as UC21
+  usecase "Ask Password" as UC22
+  usecase "Require Creation" as UC23
+  usecase "Research Heritage" as UC24
+  usecase "Search Site" as UC25
+  usecase "Supply Login" as UC26
+  usecase "End Session" as UC27
+  usecase "Change Menu" as UC28
+  usecase "Delete Menu" as UC29
+  usecase "Change Data Point" as UC30
+  usecase "Require Convention" as UC31
+  usecase "View Statistic" as UC32
+  usecase "Edit Search Preference" as UC33
+  usecase "Edit Preferences" as UC34
+  usecase "Insert Site" as UC35
+  usecase "Delete Site" as UC36
+  usecase "Insert Feedback" as UC37
+  usecase "View List" as UC38
+  usecase "Cancel Feedback" as UC39
+  usecase "Get Position" as UC40
+  usecase "Advanced Search" as UC41
+}
+A2 --> UC1
+A2 --> UC2
+A2 --> UC3
+A2 --> UC4
+A2 --> UC5
+A2 --> UC6
+A2 --> UC7
+A2 --> UC8
+A2 --> UC9
+A2 --> UC10
+A2 --> UC11
+A2 --> UC12
+A2 --> UC13
+A2 --> UC14
+A2 --> UC15
+A2 --> UC16
+A2 --> UC17
+A1 --> UC18
+A1 --> UC19
+A1 --> UC20
+A1 --> UC21
+A1 --> UC22
+A5 --> UC23
+A5 --> UC24
+A5 --> UC25
+A6 --> UC26
+A6 --> UC27
+A7 --> UC28
+A7 --> UC29
+A7 --> UC30
+A7 --> UC31
+A7 --> UC32
+A4 --> UC33
+A4 --> UC34
+A4 --> UC35
+A4 --> UC36
+A4 --> UC37
+A4 --> UC38
+A4 --> UC39
+A4 --> UC40
+A4 --> UC41
+@enduml

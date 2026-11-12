@@ -1,0 +1,79 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1",
+    "R5",
+    "R7"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Network",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3",
+    "R8"
+   ]
+  },
+  {
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "source": "PetriNet",
+   "target": "Place",
+   "src": [
+    "R1",
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "source": "PetriNet",
+   "target": "Transition",
+   "src": [
+    "R2",
+    "R7"
+   ]
+  },
+  {
+   "source": "PetriNet",
+   "target": "Network",
+   "src": [
+    "R3",
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GWPNV0.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Place:\n    \"\"\"Source: R1, R5, R7\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: R2, R6, R7\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Network:\n    \"\"\"Source: R3, R8\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass PetriNet:\n    \"\"\"Source: -\"\"\"\n    place: _t.Optional[\"Place\"] = None\n    transitions: _t.List[\"Transition\"] = _dc.field(default_factory=list)\n    network: _t.Optional[\"Network\"] = None\n",
+ "java": {
+  "Place.java": "/** Generated from shared model D2/GWPNV0. Source: R1, R5, R7 */\npublic class Place {\n}\n",
+  "Transition.java": "/** Generated from shared model D2/GWPNV0. Source: R2, R6, R7 */\npublic class Transition {\n}\n",
+  "Network.java": "/** Generated from shared model D2/GWPNV0. Source: R3, R8 */\npublic class Network {\n}\n",
+  "PetriNet.java": "/** Generated from shared model D2/GWPNV0. Source: - */\npublic class PetriNet {\n    private Place place;\n    private java.util.List<Transition> transitions;\n    private Network network;\n}\n"
+ }
+}

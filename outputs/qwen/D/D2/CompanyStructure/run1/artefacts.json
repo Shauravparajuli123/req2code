@@ -1,0 +1,151 @@
+{
+ "actors": [
+  "CompanyStructureModel"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "backOffice",
+    "stores"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CorporateHQ",
+   "kind": "class",
+   "attributes": [
+    "stores"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Store",
+   "kind": "class",
+   "attributes": [
+    "cashRegisters"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "BackOffice",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "CashRegister",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R7",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Company",
+   "target": "CorporateHQ",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Company",
+   "target": "Store",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "Company",
+   "target": "BackOffice",
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "source": "Company",
+   "target": "CashRegister",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "CorporateHQ",
+   "target": "Store",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "Store",
+   "target": "BackOffice",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "Store",
+   "target": "CashRegister",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/CompanyStructure.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Company:\n    \"\"\"Source: R1\"\"\"\n    backOffice: _t.Optional[str] = None\n    stores: _t.Optional[str] = None\n    corporateHQ: _t.Optional[\"CorporateHQ\"] = None\n    cashRegisters: _t.List[\"CashRegister\"] = _dc.field(default_factory=list)\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass CorporateHQ:\n    \"\"\"Source: R8, R9\"\"\"\n    stores: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Store:\n    \"\"\"Source: R3, R10, R11\"\"\"\n    cashRegisters: _t.Optional[str] = None\n    backOffice: _t.Optional[\"BackOffice\"] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass BackOffice:\n    \"\"\"Source: R4, R5, R10\"\"\"\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass CashRegister:\n    \"\"\"Source: R7, R11\"\"\"\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Company.java": "/** Generated from shared model D2/CompanyStructure. Source: R1 */\npublic class Company {\n    private java.lang.String backOffice;\n    private java.lang.String stores;\n    private CorporateHQ corporateHQ;\n    private java.util.List<CashRegister> cashRegisters;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "CorporateHQ.java": "/** Generated from shared model D2/CompanyStructure. Source: R8, R9 */\npublic class CorporateHQ {\n    private java.lang.String stores;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Store.java": "/** Generated from shared model D2/CompanyStructure. Source: R3, R10, R11 */\npublic class Store {\n    private java.lang.String cashRegisters;\n    private BackOffice backOffice;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "BackOffice.java": "/** Generated from shared model D2/CompanyStructure. Source: R4, R5, R10 */\npublic class BackOffice {\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "CashRegister.java": "/** Generated from shared model D2/CompanyStructure. Source: R7, R11 */\npublic class CashRegister {\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

@@ -1,0 +1,93 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  dateOfBirth : LocalDate
+  email : String
+  address : String
+  preferences : String
+  bankAccount : String
+  favoriteEvents : String
+  history : String
+  profile : String
+  +createUser()
+  +saveInformation()
+  +editInformation()
+  +seePreference()
+  +seeContent()
+  +changePassword()
+  +favoriteEvent()
+}
+class UserProfile {
+  preferences : String
+  bankAccount : String
+  +saveProfile()
+  +editProfile()
+}
+class Address {
+  street : String
+  city : String
+  state : String
+  zipCode : String
+}
+class Preference {
+  musicGenre : String
+  eventTypes : String
+  lastUpdated : LocalDate
+}
+class BankAccount {
+  iban : String
+}
+class Event {
+  name : String
+  date : LocalDate
+  artist : String
+  venue : String
+  description : String
+  type : String
+  price : double
+  +seeEvent()
+  +seeOverview()
+  +seeSeat()
+  +seeType()
+}
+class Venue {
+  name : String
+  map : String
+}
+class Ticket {
+  event : String
+  type : String
+  price : double
+  seat : String
+  +purchaseTicket()
+  +addTicket()
+  +seeSeat()
+  +seeType()
+  +seeOrderSummary()
+}
+class Seat {
+  row : int
+  column : int
+}
+class Company {
+  reseller : String
+  serviceFee : double
+}
+class Reseller {
+  name : String
+  bankAccount : String
+  +resellTicket()
+  +uploadTicket()
+}
+User "1" -- "1" UserProfile : has
+User "1" -- "1" Preference : has
+Event "1" -- "1" Venue : is held at
+Event "1" -- "1..*" Ticket : has
+Ticket "1" -- "1" Seat : is for
+User "1" -- "0..1" BankAccount : has
+Reseller "1" -- "1" BankAccount : has
+Company "1" -- "1..*" Reseller : manages
+Reseller "1" -- "1..*" Event : sells
+@enduml

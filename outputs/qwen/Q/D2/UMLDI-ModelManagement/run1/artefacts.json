@@ -1,0 +1,166 @@
+{
+ "actors": [
+  "owner"
+ ],
+ "use_cases": [
+  {
+   "name": "contains",
+   "actor": "owner",
+   "src": [
+    "R1",
+    "R5",
+    "R11",
+    "R12",
+    "R14"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "CoreModel",
+   "kind": "class",
+   "attributes": [
+    "namespaces",
+    "classifiers",
+    "generalizations",
+    "elements"
+   ],
+   "methods": [
+    {
+     "name": "contains",
+     "use_case": "contains"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R11",
+    "R12",
+    "R14"
+   ]
+  },
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    "powerTypeRanges"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "isSpecification",
+    "isRoot",
+    "isAbstract"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3"
+   ]
+  },
+  {
+   "name": "Generalization",
+   "kind": "class",
+   "attributes": [
+    "discriminator",
+    "parent"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R14"
+   ]
+  },
+  {
+   "name": "ModelElement",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "namespace"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R11"
+   ]
+  },
+  {
+   "name": "Namespace",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "elements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Classifier",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Element",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R5",
+    "R11",
+    "R12",
+    "R14"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Generalization",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Namespace",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ModelElement",
+   "target": "Namespace",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "python": "from typing import List, Union\n\nclass CoreModel:\n    def __init__(self):\n        self.namespaces: List[Namespace] = []\n        self.classifiers: List[Classifier] = []\n        self.generalizations: List[Generalization] = []\n        self.elements: List[ModelElement] = []\n\n    def contains(self, element: Union[Namespace, Classifier, Generalization, ModelElement]) -> bool:\n        raise NotImplementedError('Method not implemented')\n\nclass Classifier:\n    def __init__(self):\n        self.powerTypeRanges: List[Generalization] = []\n\nclass Element:\n    def __init__(self, name: str, isSpecification: bool, isRoot: bool, isAbstract: bool):\n        self.name: str = name\n        self.isSpecification: bool = isSpecification\n        self.isRoot: bool = isRoot\n        self.isAbstract: bool = isAbstract\n\nclass Generalization:\n    def __init__(self, discriminator: str, parent: GeneralizableElement):\n        self.discriminator: str = discriminator\n        self.parent: GeneralizableElement = parent\n\nclass ModelElement:\n    def __init__(self, name: str, namespace: Namespace):\n        self.name: str = name\n        self.namespace: Namespace = namespace\n\nclass Namespace:\n    def __init__(self, name: str):\n        self.name: str = name\n        self.elements: List[ModelElement] = []",
+ "java": {}
+}

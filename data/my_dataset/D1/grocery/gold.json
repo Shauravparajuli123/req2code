@@ -1,0 +1,402 @@
+{
+ "classes": [
+  {
+   "name": "employee",
+   "status": "mandatory"
+  },
+  {
+   "name": "payments",
+   "status": "mandatory"
+  },
+  {
+   "name": "schedule",
+   "status": "mandatory"
+  },
+  {
+   "name": "message",
+   "status": "mandatory"
+  },
+  {
+   "name": "contracts",
+   "status": "mandatory"
+  },
+  {
+   "name": "certificates",
+   "status": "mandatory"
+  },
+  {
+   "name": "complaint",
+   "status": "mandatory"
+  },
+  {
+   "name": "salary statement",
+   "status": "mandatory"
+  },
+  {
+   "name": "working hours",
+   "status": "mandatory"
+  },
+  {
+   "name": "manager",
+   "status": "mandatory"
+  }
+ ],
+ "associations": [
+  {
+   "pair": [
+    "employe",
+    "schedul"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "employe",
+    "working hour"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "employe",
+    "working hour"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "employe",
+    "messag"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "employe",
+    "salary stat"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "employe",
+    "contract"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "employe",
+    "certif"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "payment",
+    "salary stat"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "employee",
+    "payment"
+   ],
+   "status": "optional"
+  },
+  {
+   "pair": [
+    "manager",
+    "employee"
+   ],
+   "status": "optional"
+  },
+  {
+   "pair": [
+    "manager",
+    "complaint"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "manager",
+    "message"
+   ],
+   "status": "mandatory"
+  }
+ ],
+ "synonyms": {
+  "employeepay": "salary statement",
+  "financial statement": "salary statement",
+  "salary": "salary statement",
+  "salarystatement": "salary statement",
+  "financial annual statement": "salary statement",
+  "financialstatement": "salary statement",
+  "statement": "salary statement",
+  "scheduled wwrk hours": "working hour",
+  "workhour": "working hour",
+  "work hour": "working hour",
+  "workinghour": "working hour",
+  "work schedule": "schedule",
+  "employeecontract": "contract",
+  "employee contract": "contract",
+  "employeecertificate": "certificate",
+  "employee certificate": "certificate",
+  "certification": "certificate",
+  "employer": "manager"
+ },
+ "use_case_draft": {
+  "status": "auto-extracted, not yet validated",
+  "actors": {
+   "employee": 21,
+   "manager": 21,
+   "office employee": 5,
+   "applicant": 1
+  },
+  "use_cases": [
+   {
+    "actor": "employee",
+    "goal": "receive my salary statement",
+    "src": "R1"
+   },
+   {
+    "actor": "manager",
+    "goal": "send salary statements",
+    "src": "R2"
+   },
+   {
+    "actor": "manager",
+    "goal": "enable the option for weekly and monthly payments for my employees",
+    "src": "R3"
+   },
+   {
+    "actor": "manager",
+    "goal": "automate the payment system",
+    "src": "R4"
+   },
+   {
+    "actor": "manager",
+    "goal": "outsource part of the payment process",
+    "src": "R5"
+   },
+   {
+    "actor": "employee",
+    "goal": "receive a notification when my salary payment is handled",
+    "src": "R6"
+   },
+   {
+    "actor": "employee",
+    "goal": "express my preferred working hours",
+    "src": "R7"
+   },
+   {
+    "actor": "manager",
+    "goal": "semi-automate the scheduling process",
+    "src": "R8"
+   },
+   {
+    "actor": "manager",
+    "goal": "have the ability to manually edit the automatically-generated  schedule",
+    "src": "R9"
+   },
+   {
+    "actor": "manager",
+    "goal": "manually authorize the schedule before it goes live",
+    "src": "R10"
+   },
+   {
+    "actor": "manager",
+    "goal": "be notified as soon as manual adjustments need to be made",
+    "src": "R11"
+   },
+   {
+    "actor": "employee",
+    "goal": "receive notification when the new schedule is available",
+    "src": "R12"
+   },
+   {
+    "actor": "employee",
+    "goal": "view the schedule at any given time",
+    "src": "R13"
+   },
+   {
+    "actor": "manager",
+    "goal": "view the schedule at any given time",
+    "src": "R14"
+   },
+   {
+    "actor": "employee",
+    "goal": "the system to automatically verify my work hours",
+    "src": "R15"
+   },
+   {
+    "actor": "manager",
+    "goal": "the system to automatically verify employees' work hours",
+    "src": "R16"
+   },
+   {
+    "actor": "office employee",
+    "goal": "a separate complaint system with tickets",
+    "src": "R17"
+   },
+   {
+    "actor": "employee",
+    "goal": "file a complaint regarding my workplace",
+    "src": "R18"
+   },
+   {
+    "actor": "manager",
+    "goal": "file a complaint regarding my workplace",
+    "src": "R19"
+   },
+   {
+    "actor": "manager",
+    "goal": "my employees to be able to file complaints regarding their workplace",
+    "src": "R20"
+   },
+   {
+    "actor": "office employee",
+    "goal": "view all complaints",
+    "src": "R21"
+   },
+   {
+    "actor": "manager",
+    "goal": "view all complaints",
+    "src": "R22"
+   },
+   {
+    "actor": "office employee",
+    "goal": "respond to unsolved complaints",
+    "src": "R23"
+   },
+   {
+    "actor": "office employee",
+    "goal": "categorize complaints",
+    "src": "R24"
+   },
+   {
+    "actor": "office employee",
+    "goal": "prioritize complaints that require high management intervention to solve",
+    "src": "R25"
+   },
+   {
+    "actor": "employee",
+    "goal": "receive a notification when my filed complaint is handled",
+    "src": "R26"
+   },
+   {
+    "actor": "manager",
+    "goal": "be notified when the hiring process of an employee is finished",
+    "src": "R28"
+   },
+   {
+    "actor": "manager",
+    "goal": "have an overview of all our active employees",
+    "src": "R29"
+   },
+   {
+    "actor": "manager",
+    "goal": "have an overview of all our absent employees",
+    "src": "R30"
+   },
+   {
+    "actor": "applicant",
+    "goal": "register an account",
+    "src": "R31"
+   },
+   {
+    "actor": "manager",
+    "goal": "view my employee’s contracts at any given time",
+    "src": "R32"
+   },
+   {
+    "actor": "manager",
+    "goal": "view my employee’s certificates at any given time",
+    "src": "R33"
+   },
+   {
+    "actor": "employee",
+    "goal": "contact the management when needed",
+    "src": "R34"
+   },
+   {
+    "actor": "manager",
+    "goal": "contact an employee easily",
+    "src": "R35"
+   },
+   {
+    "actor": "employee",
+    "goal": "use the messaging system to message other employees when needed",
+    "src": "R36"
+   },
+   {
+    "actor": "manager",
+    "goal": "forward formal messages to employees in bulk",
+    "src": "R37"
+   },
+   {
+    "actor": "employee",
+    "goal": "view my personal inbox easily",
+    "src": "R38"
+   },
+   {
+    "actor": "manager",
+    "goal": "have one system with one login",
+    "src": "R39"
+   },
+   {
+    "actor": "employee",
+    "goal": "reset my password",
+    "src": "R40"
+   },
+   {
+    "actor": "employee",
+    "goal": "have a user-friendly application",
+    "src": "R41"
+   },
+   {
+    "actor": "employee",
+    "goal": "navigate through the application easily",
+    "src": "R42"
+   },
+   {
+    "actor": "employee",
+    "goal": "choose between email or application notifications",
+    "src": "R43"
+   },
+   {
+    "actor": "employee",
+    "goal": "choose between weekly or monthly payments",
+    "src": "R44"
+   },
+   {
+    "actor": "employee",
+    "goal": "view my financial annual statements",
+    "src": "R45"
+   },
+   {
+    "actor": "employee",
+    "goal": "the information that is shared with the payment handler to be encrypted",
+    "src": "R46"
+   },
+   {
+    "actor": "employee",
+    "goal": "change my personal information",
+    "src": "R47"
+   },
+   {
+    "actor": "employee",
+    "goal": "view my contract",
+    "src": "R48"
+   },
+   {
+    "actor": "employee",
+    "goal": "the application as secure as possible",
+    "src": "R49"
+   }
+  ],
+  "unparsed": 1
+ }
+}

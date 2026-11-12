@@ -1,0 +1,679 @@
+{
+ "actors": [
+  "employee",
+  "manager",
+  "office employee",
+  "applicant"
+ ],
+ "use_cases": [
+  {
+   "name": "Receive SalaryStatement",
+   "actor": "employee",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Send SalaryStatement",
+   "actor": "manager",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Enable Option",
+   "actor": "manager",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Automate PaymentSystem",
+   "actor": "manager",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Outsource Part",
+   "actor": "manager",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Receive Notification",
+   "actor": "employee",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "ExpressHour",
+   "actor": "employee",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "SemiSchedulingProcess",
+   "actor": "manager",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Have Ability",
+   "actor": "manager",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Authorize Schedule",
+   "actor": "manager",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Notify Adjustment",
+   "actor": "manager",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "File Complaint",
+   "actor": "employee",
+   "src": [
+    "R18",
+    "R19",
+    "R20"
+   ]
+  },
+  {
+   "name": "View Complaint",
+   "actor": "office employee",
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "Categorize Complaint",
+   "actor": "office employee",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "Prioritize Complaint",
+   "actor": "office employee",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "Notify HiringProcess",
+   "actor": "manager",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Have Overview",
+   "actor": "manager",
+   "src": [
+    "R29",
+    "R30"
+   ]
+  },
+  {
+   "name": "Register Account",
+   "actor": "applicant",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Have Application",
+   "actor": "employee",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "Navigate Application",
+   "actor": "employee",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Choose Email",
+   "actor": "employee",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "Choose Payment",
+   "actor": "employee",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Have System",
+   "actor": "manager",
+   "src": [
+    "R39"
+   ]
+  },
+  {
+   "name": "Hire Employee",
+   "actor": "manager",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "Contact Employee",
+   "actor": "manager",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Contact Management",
+   "actor": "employee",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Forward Message",
+   "actor": "manager",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Respond Complaint",
+   "actor": "office employee",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Change Information",
+   "actor": "employee",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "View Contract",
+   "actor": "manager",
+   "src": [
+    "R32",
+    "R33",
+    "R48"
+   ]
+  },
+  {
+   "name": "View Schedule",
+   "actor": "employee",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "View Statement",
+   "actor": "employee",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Share PaymentHandler",
+   "actor": "employee",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "Use System",
+   "actor": "employee",
+   "src": [
+    "R36"
+   ]
+  },
+  {
+   "name": "Verify WorkHour",
+   "actor": "employee",
+   "src": [
+    "R15",
+    "R16"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    "preferredWorkingHours",
+    "certificate",
+    "status",
+    "group"
+   ],
+   "methods": [
+    {
+     "name": "receiveSalaryStatement",
+     "use_case": "ReceiveSalaryStatement"
+    },
+    {
+     "name": "receiveNotification",
+     "use_case": "ReceiveNotification"
+    },
+    {
+     "name": "viewSchedule",
+     "use_case": "ViewSchedule"
+    },
+    {
+     "name": "viewStatement",
+     "use_case": "ViewStatement"
+    },
+    {
+     "name": "viewContract",
+     "use_case": "ViewContract"
+    },
+    {
+     "name": "changeInformation",
+     "use_case": "ChangeInformation"
+    },
+    {
+     "name": "choosePayment",
+     "use_case": "ChoosePayment"
+    },
+    {
+     "name": "chooseEmail",
+     "use_case": "ChooseEmail"
+    },
+    {
+     "name": "viewComplaint",
+     "use_case": "ViewComplaint"
+    },
+    {
+     "name": "respondComplaint",
+     "use_case": "RespondComplaint"
+    },
+    {
+     "name": "viewInbox",
+     "use_case": "ViewInbox"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6",
+    "R12",
+    "R13",
+    "R15",
+    "R16",
+    "R18",
+    "R26",
+    "R44",
+    "R45",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "name": "Manager",
+   "kind": "class",
+   "attributes": [
+    "hiringProcess",
+    "schedulingProcess"
+   ],
+   "methods": [
+    {
+     "name": "sendSalaryStatement",
+     "use_case": "SendSalaryStatement"
+    },
+    {
+     "name": "enableOption",
+     "use_case": "EnableOption"
+    },
+    {
+     "name": "semiSchedulingProcess",
+     "use_case": "SemiSchedulingProcess"
+    },
+    {
+     "name": "authorizeSchedule",
+     "use_case": "AuthorizeSchedule"
+    },
+    {
+     "name": "viewSchedule",
+     "use_case": "ViewSchedule"
+    },
+    {
+     "name": "viewOverview",
+     "use_case": "HaveOverview"
+    },
+    {
+     "name": "viewComplaint",
+     "use_case": "ViewComplaint"
+    },
+    {
+     "name": "prioritizeComplaint",
+     "use_case": "PrioritizeComplaint"
+    },
+    {
+     "name": "notifyAdjustment",
+     "use_case": "NotifyAdjustment"
+    },
+    {
+     "name": "notifyHiringProcess",
+     "use_case": "NotifyHiringProcess"
+    },
+    {
+     "name": "outsourcePart",
+     "use_case": "OutsourcePart"
+    },
+    {
+     "name": "viewContract",
+     "use_case": "ViewContract"
+    },
+    {
+     "name": "viewCertificate",
+     "use_case": "ViewCertificate"
+    },
+    {
+     "name": "viewComplaint",
+     "use_case": "ViewComplaint"
+    },
+    {
+     "name": "contactEmployee",
+     "use_case": "ContactEmployee"
+    },
+    {
+     "name": "contactManagement",
+     "use_case": "ContactManagement"
+    },
+    {
+     "name": "forwardMessage",
+     "use_case": "ForwardMessage"
+    },
+    {
+     "name": "haveSystem",
+     "use_case": "HaveSystem"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R5",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R14",
+    "R19",
+    "R20",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R32",
+    "R33",
+    "R35",
+    "R37",
+    "R39"
+   ]
+  },
+  {
+   "name": "OfficeEmployee",
+   "kind": "class",
+   "attributes": [
+    "complaints"
+   ],
+   "methods": [
+    {
+     "name": "categorizeComplaint",
+     "use_case": "CategorizeComplaint"
+    },
+    {
+     "name": "prioritizeComplaint",
+     "use_case": "PrioritizeComplaint"
+    },
+    {
+     "name": "respondComplaint",
+     "use_case": "RespondComplaint"
+    },
+    {
+     "name": "viewComplaint",
+     "use_case": "ViewComplaint"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R21",
+    "R22",
+    "R23",
+    "R25"
+   ]
+  },
+  {
+   "name": "Complaint",
+   "kind": "class",
+   "attributes": [
+    "status"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R26"
+   ]
+  },
+  {
+   "name": "HiringProcess",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "finishHiringProcess",
+     "use_case": "NotifyHiringProcess"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R27",
+    "R28"
+   ]
+  },
+  {
+   "name": "SchedulingProcess",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "semiSchedulingProcess",
+     "use_case": "SemiSchedulingProcess"
+    },
+    {
+     "name": "authorizeSchedule",
+     "use_case": "AuthorizeSchedule"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "receiveNotification",
+     "use_case": "ReceiveNotification"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R12",
+    "R26"
+   ]
+  },
+  {
+   "name": "SalaryStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "receiveSalaryStatement",
+     "use_case": "ReceiveSalaryStatement"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Schedule",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "viewSchedule",
+     "use_case": "ViewSchedule"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "WorkHour",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "verifyWorkHour",
+     "use_case": "VerifyWorkHour"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R15",
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Employee",
+   "target": "WorkHour",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Employee",
+   "target": "SalaryStatement",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Employee",
+   "target": "Complaint",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R18",
+    "R19",
+    "R20",
+    "R26"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Manager",
+   "target": "HiringProcess",
+   "multiplicity_target": "1",
+   "src": [
+    "R27",
+    "R28"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Manager",
+   "target": "SchedulingProcess",
+   "multiplicity_target": "1",
+   "src": [
+    "R8",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Manager",
+   "target": "Notification",
+   "multiplicity_target": "1",
+   "src": [
+    "R11",
+    "R28"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Manager",
+   "target": "Complaint",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R19",
+    "R20",
+    "R22"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "OfficeEmployee",
+   "target": "Complaint",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R21",
+    "R22",
+    "R23",
+    "R25"
+   ]
+  }
+ ],
+ "python": "from typing import TypedDict, List, Optional\n\nclass Employee(TypedDict):\n    certificate: str\n    qualification: str\n    status: str\n    work_hours: List[WorkHour]\n    salary_statement: Optional[SalaryStatement]\n    preferred_hours: List[Hour]\n    notifications: List[Notification]\n\nclass Manager(TypedDict):\n    employees: List[Employee]\n    schedules: List[Schedule]\n    complaints: List[Complaint]\n    notifications: List[Notification]\n\nclass OfficeEmployee(TypedDict):\n    notifications: List[Notification]\n    complaints: List[Complaint]\n\nclass Applicant(TypedDict):\n    account: Optional[Account]\n\nclass Account(TypedDict):\n    username: str\n    password: str\n\nclass Notification(TypedDict):\n    message: str\n    recipient: str\n    timestamp: str\n\nclass Complaint(TypedDict):\n    status: str\n    category: str\n    description: str\n\nclass Contract(TypedDict):\n    due_date: str\n\nclass Schedule(TypedDict):\n    date: str\n    hours: List[Hour]\n\nclass Hour(TypedDict):\n    start_time: str\n    end_time: str\n\nclass SalaryStatement(TypedDict):\n    amount: float\n    date: str\n\nclass WorkHour(TypedDict):\n    start_time: str\n    end_time: str\n    verified: bool\n\nclass Payment(TypedDict):\n    amount: float\n    date: str\n\nclass Problem(TypedDict):\n    description: str\n    status: str\n\nclass Operation(TypedDict):\n    pass\n\nclass Track(TypedDict):\n    pass\n\nclass Workplace(TypedDict):\n    pass\n\nclass Operation:\n    def __init__(self):\n        pass\n\nclass Track:\n    def __init__(self):\n        pass\n\nclass Workplace:\n    def __init__(self):\n        pass\n\nclass Employee:\n    def __init__(self, certificate: str, qualification: str, status: str, work_hours: List[WorkHour], salary_statement: Optional[SalaryStatement] = None, preferred_hours: List[Hour] = [], notifications: List[Notification] = []):\n        self.certificate = certificate\n        self.qualification = qualification\n        self.status = status\n        self.work_hours = work_hours\n        self.salary_statement = salary_statement\n        self.preferred_hours = preferred_hours\n        self.notifications = notifications\n\nclass Manager:\n    def __init__(self, employees: List[Employee], schedules: List[Schedule], complaints: List[Complaint], notifications: List[Notification] = []):\n        self.employees = employees\n        self.schedules = schedules\n        self.complaints = complaints\n        self.notifications = notifications\n\nclass OfficeEmployee:\n    def __init__(self, notifications: List[Notification] = [], complaints: List[Complaint] = []):\n        self.notifications = notifications\n        self.complaints = complaints\n\nclass Applicant:\n    def __init__(self, account: Optional[Account] = None):\n        self.account = account\n\nclass Account:\n    def __init__(self, username: str, password: str):\n        self.username = username\n        self.password = password\n\nclass Notification:\n    def __init__(self, message: str, recipient: str, timestamp: str):\n        self.message = message\n        self.recipient = recipient\n        self.timestamp = timestamp\n\nclass Complaint:\n    def __init__(self, status: str, category: str, description: str):\n        self.status = status\n        self.category = category\n        self.description = description\n\nclass Contract:\n    def __init__(self, due_date: str):\n        self.due_date = due_date\n\nclass Schedule:\n    def __init__(self, date: str, hours: List[Hour]):\n        self.date = date\n        self.hours = hours\n\nclass Hour:\n    def __init__(self, start_time: str, end_time: str, verified: bool = False):\n        self.start_time = start_time\n        self.end_time = end_time\n        self.verified = verified\n\nclass SalaryStatement:\n    def __init__(self, amount: float, date: str):\n        self.amount = amount\n        self.date = date\n\nclass WorkHour:\n    def __init__(self, start_time: str, end_time: str):\n        self.start_time = start_time\n        self.end_time = end_time\n\nclass Payment:\n    def __init__(self, amount: float, date: str):\n        self.amount = amount\n        self.date = date\n\nclass Problem:\n    def __init__(self, description: str, status: str):\n        self.description = description\n        self.status = status\n\nclass Operation:\n    def __init__(self):\n        pass\n\nclass Track:\n    def __init__(self):\n        pass\n\nclass Workplace:\n    def __init__(self):\n        pass\n",
+ "java": {}
+}

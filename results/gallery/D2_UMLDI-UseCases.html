@@ -1,0 +1,125 @@
+<html><head><meta charset='utf-8'><title>D2/UMLDI-UseCases</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D2/UMLDI-UseCases &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: Instance is a class which belongs to Common_Behavior package
+R2: AttributeLink is a class which belongs to Common_Behavior package
+R3: The link class.
+R4: The linkend class
+R5: the componentinstance class
+R6: the nodeinstance class
+R7: An Instance is owned by 0 or several instances
+R8: The instance has one or more classifiers.
+R9: The instance has zero or more slots from the attributelink type.
+R10: attributelink has zero or one instance of the Instance type.
+R11: attributelink has zero or one linkend attributes from the linkend type
+R12: the link instance has an association attribute from the association type
+R13: linkend has one link attribute of the link type
+R14: linkend has one attribute of the instance type
+R15: componentinstance has zero or more residents
+R16: nodeinstance has 0 or more componentinstance node that serves as resident</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (0 → 0)</th></tr></table></div>
+<div><table><tr><th>classes (5 → 5)</th></tr><tr><td class="">AttributeLink</td></tr><tr><td class="">Attributelink</td></tr><tr><td class="">InstanceType</td></tr><tr><td class="">Linkend</td></tr><tr><td class="">Resident</td></tr></table></div>
+<div><table><tr><th>attributes (1 → 1)</th></tr><tr><td class="">AttributeLink.link</td></tr></table></div>
+<div><table><tr><th>relations (0 → 0)</th></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R7</td><td>quantifier</td><td>0 or several</td><td><span class='tag resolved'>resolved</span></td><td>0..*; 0..0<br><i>The phrase &#x27;0 or several&#x27; is ambiguous and could mean 0 to many or 0 to 0.</i></td></tr>
+<tr><td>A2</td><td>R8</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>1..*; 1..1<br><i>The phrase &#x27;one or more&#x27; is ambiguous and could mean 1 to many or 1 to 1.</i></td></tr>
+<tr><td>A3</td><td>R9</td><td>quantifier</td><td>zero or more</td><td><span class='tag resolved'>resolved</span></td><td>0..*; 0..0<br><i>The phrase &#x27;zero or more&#x27; is ambiguous and could mean 0 to many or 0 to 0.</i></td></tr>
+<tr><td>A4</td><td>R15</td><td>quantifier</td><td>zero or more</td><td><span class='tag resolved'>resolved</span></td><td>0..*; 0..0<br><i>The phrase &#x27;zero or more&#x27; is ambiguous and could mean 0 to many or 0 to 0.</i></td></tr>
+<tr><td>A5</td><td>R16</td><td>quantifier</td><td>0 or more</td><td><span class='tag resolved'>resolved</span></td><td>0..*; 0..0<br><i>The phrase &#x27;0 or more&#x27; is ambiguous and could mean 0 to many or 0 to 0.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D2_UMLDI-UseCases_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D2_UMLDI-UseCases_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D2/UMLDI-UseCases.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Instance:
+    &quot;&quot;&quot;Source: R1&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+
+    def createInstance(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class AttributeLink:
+    &quot;&quot;&quot;Source: R2&quot;&quot;&quot;
+    link: _t.Optional[str] = None
+    instance: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class Linkend:
+    &quot;&quot;&quot;Source: R4&quot;&quot;&quot;
+    link: _t.Optional[str] = None
+    instance: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class Link:
+    &quot;&quot;&quot;Source: R3&quot;&quot;&quot;
+    association: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class ComponentInstance:
+    &quot;&quot;&quot;Source: R5&quot;&quot;&quot;
+    residents: _t.Optional[str] = None
+    resident: _t.Optional[&quot;Resident&quot;] = None
+
+
+@_dc.dataclass
+class NodeInstance:
+    &quot;&quot;&quot;Source: R6&quot;&quot;&quot;
+    componentInstances: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class Association:
+    &quot;&quot;&quot;Source: -&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class Resident:
+    &quot;&quot;&quot;Source: -&quot;&quot;&quot;
+    pass
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>0</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>0</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>0</td></tr>
+<tr><th>inconsistency_rate</th><td>0.0</td></tr>
+<tr><th>requirement_coverage</th><td>0.375</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.625</td><td>0.833</td><td>0.714</td><td>5/3/1</td></tr>
+<tr><td>attributes</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0/8/0</td></tr>
+<tr><td>relations</td><td>0.5</td><td>0.059</td><td>0.105</td><td>1/1/16</td></tr>
+<tr><td>relations_strict</td><td>0.5</td><td>0.056</td><td>0.1</td><td>1/1/17</td></tr>
+</table></body></html>

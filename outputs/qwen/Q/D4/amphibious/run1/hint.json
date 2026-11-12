@@ -1,0 +1,250 @@
+{
+ "condition": "Q",
+ "hint": {
+  "case": "D4/amphibious",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "Then, we have land vehicles and marine vehicles as specific types of vehicles, where both have all the same features as a vehicle."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "Finally, an amphibious vehicle can be both a land vehicle and a marine vehicle."
+     }
+    ],
+    "name": "LandVehicle",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [],
+    "rule": [
+     "inferred"
+    ],
+    "evidence": [],
+    "name": "MarineVehicle",
+    "freq": 0
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A Vehicle has a position, a speed and a maximum speed."
+     }
+    ],
+    "name": "Speed",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R1",
+     "R2",
+     "R5",
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "This system represents different types of vehicles."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "A Vehicle has a position, a speed and a maximum speed."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "Those are the features of a generic vehicle."
+     }
+    ],
+    "name": "Vehicle",
+    "freq": 8
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Besides, it has an environment (with a value among \"land\", \"water\" and \"air\")."
+     }
+    ],
+    "owner": "Vehicle",
+    "name": "air",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Besides, it has an environment (with a value among \"land\", \"water\" and \"air\")."
+     }
+    ],
+    "owner": "Vehicle",
+    "name": "environment",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Besides, it has an environment (with a value among \"land\", \"water\" and \"air\")."
+     }
+    ],
+    "owner": "Vehicle",
+    "name": "land",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A Vehicle has a position, a speed and a maximum speed."
+     }
+    ],
+    "owner": "Vehicle",
+    "name": "position",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Besides, it has an environment (with a value among \"land\", \"water\" and \"air\")."
+     }
+    ],
+    "owner": "Vehicle",
+    "name": "water",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "can_be"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Finally, an amphibious vehicle can be both a land vehicle and a marine vehicle."
+     }
+    ],
+    "kind": "generalization",
+    "source": "LandVehicle",
+    "target": "Vehicle",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "can_be"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Finally, an amphibious vehicle can be both a land vehicle and a marine vehicle."
+     }
+    ],
+    "kind": "generalization",
+    "source": "MarineVehicle",
+    "target": "Vehicle",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A Vehicle has a position, a speed and a maximum speed."
+     }
+    ],
+    "kind": "has",
+    "source": "Vehicle",
+    "target": "Speed",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

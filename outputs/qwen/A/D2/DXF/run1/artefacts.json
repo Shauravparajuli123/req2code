@@ -1,0 +1,69 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Game",
+   "actor": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": "Create Game"
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Mesh",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "points"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Point",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "x",
+    "z"
+   ],
+   "methods": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "source": "Mesh",
+   "target": "Point",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/DXF.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Realizes UC1 \"Create Game\" (R1).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Mesh:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    points: _t.Optional[str] = None\n    point: _t.Optional[\"Point\"] = None\n\n\n@_dc.dataclass\nclass Point:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    x: _t.Optional[float] = None\n    z: _t.Optional[float] = None\n",
+ "java": {
+  "Game.java": "/** Generated from shared model D2/DXF. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Realizes UC1 \"Create Game\" (R1). */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Mesh.java": "/** Generated from shared model D2/DXF. Source: - */\npublic class Mesh {\n    private java.lang.String name;\n    private java.lang.String points;\n    private Point point;\n}\n",
+  "Point.java": "/** Generated from shared model D2/DXF. Source: - */\npublic class Point {\n    private java.lang.String name;\n    private double x;\n    private double z;\n}\n"
+ }
+}

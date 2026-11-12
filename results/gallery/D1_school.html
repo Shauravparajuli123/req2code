@@ -1,0 +1,331 @@
+<html><head><meta charset='utf-8'><title>D1/school</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D1/school &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: As a guardian, I want to directly message any teacher of my child, the mentor assigned to my child, or an administrative staff member, so that I can contact them when needed.
+R2: As a guardian, I want to fill in an absence of my child, so that administrative staff is aware that my child will not attend school today.
+R3: As a guardian, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages.
+R4: As a guardian, I want to view any information related to my children, so that I can gain insight into their behavior and performance.
+R5: As a student, I want to access files and Digital Learning Module (DLM) in the Learning Management System (LMS) that have been assigned to the class that I participate in, so I am able to work with the material.
+R6: As a student, I want to directly message any of my teachers, so that I can directly communicate with them when needed.
+R7: As a student, I want to directly message my mentor, so that I can directly communicate with my her when needed.
+R8: As a student, I want to hand my homework to the DLM when they are finished, so that the teacher is able to see my work.
+R9: As a student, I want to have access to an up-to-date timetable, so that I always know for sure that I am in the correct place at a certain time.
+R10: As a student, I want to have access to DLM, so that I can do the work that is expected of me.
+R11: As a student, I want to receive a notification when an assignment is due soon and I have not completed it yet, so that I can complete it prior to the due date.
+R12: As a student, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages.
+R13: As a student, I want to receive a notification when new files have been made available through the LMS, so that I am always up to date with the uploaded files.
+R14: As a student, I want to receive a notification when something changes within my timetable, so that I am notified of any changes in the timetable in a timely manner.
+R15: As a student, I want to view any information related to my account, so that I can gain insight into my performance and behavior.
+R16: As a student, I want to view the contact information of students attending my classes, so that collaboration is made possible.
+R17: As a student, once I am 18 years old I want to change my preferences in regard to data being shared with coupled guardians, so that I have a say in what can be accessed by my guardians.
+R18: As a teacher I want to receive a notification when a student has uploaded a submission onto the LMs, so that I do not have to manually check to see if a student has submitted work.
+R19: As a teacher I want to receive a notification when something changes within my timetable, so that I am notified of any changes regarding the timetable in a timely manner.
+R20: As a teacher, I want to add a page containing a video to a DLM, so that video material can be used within a DLM.
+R21: As a teacher, I want to add a page containing text and pictures to a DLM, so that this material can be used within a DLM.
+R22: As a teacher, I want to add a page that contains a multiple-choice question or an open question to a DLM, so that I can test the student&#x27;s knowledge.
+R23: As a teacher, I want to assign a DLM to a specific class or student(s), so that the DLM is accessible by the right user.
+R24: As a teacher, I want to assign a due date to a DLM, so that students can be informed about when they are expected to finish a DLM.
+R25: As a teacher, I want to automatically grade DLM submissions, where possible, when I have submitted all the answers, so that I do not have to manually correct all questions within a DLM.
+R26: As a teacher, I want to create digital learning modules containing pages, so that I can create interactive study material.
+R27: As a teacher, I want to directly message any student that is assigned to my class, so that I am able to have contact with any participants of my class.
+R28: As a teacher, I want to directly message any student to which I am assigned mentor, so that I can gain insight into the performance of my students.
+R29: As a teacher, I want to edit any page contained within a DLM, so that I do not have to create a new DLM if the need arises to change a minor detail.
+R30: As a teacher, I want to make submission elements, so that students can submit assignments that they have made.
+R31: As a teacher, I want to optionally add the corresponding answer to a question page contained within a DLM, so that it can be used to correct a submitted DLM.
+R32: As a teacher, I want to receive a confirmation from the LMS system once files have been fully uploaded, so that I do not have to check if any uploads have failed.
+R33: As a teacher, I want to receive a notification when a student that I mentor is sent out of class, so that I am informed about the behavior of my students.
+R34: As a teacher, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages.
+R35: As a teacher, I want to record disciplinary actions for a student such as: missed homework, no books, or sent out, so that rules that are set about these measures can be policed by administrative staff and that guardians, teachers, and mentors can gain insight.
+R36: As a teacher, I want to record either a sufficient or insufficient a student&#x27;s behavior every single academic period, so that other users can gain insight into their behavior.
+R37: As a teacher, I want to record grades for a student, so that they can be informed about their performance.
+R38: As a teacher, I want to record the attendance of students within my class, so that any students skipping class can be detected.
+R39: As a teacher, I want to see the answers submitted by individual students within the corresponding DLM, so that I can gain insight into their submissions.
+R40: As a teacher, I want to see the average grade that students received last year, starting when they are in their second year, so that I am able to gain insight into the class&#x27; prior performance.
+R41: As a teacher, I want to see the progress that an individual student has made within a DLM, so that I can gain insight into their performance.
+R42: As a teacher, I want to set an appearance date to a DLM, so that students are only able to access the DLM after the appearance date has passed.
+R43: As a teacher, I want to set available dates and times either to instant or a specific date and time combination, so that I am able to upload the material in advance.
+R44: As a teacher, I want to upload files to the LMS page of one or multiple classes, so that students can download and access the files.
+R45: As a teacher, I want to view the attendance, grades that are obtained this year (including behavioral marks), personal details, and disciplinary actions of (any student in my class) or (any student that I am assigned to as mentor), so that I can gain insight into their performance.
+R46: As a teacher, I want to view who is in a specific class that is mentioned in my timetable, so that I can gain insight into whom can be expected to attend the class.
+R47: As a user, I want to reset my password on request once I supply my previous password, so that I can uphold safety standards.
+R48: As an administrator I want to send direct messages to any student, guardian, teacher, or administrator, so that I am able to quickly contact them if needed.
+R49: As an administrator, I want to assign schedules to groups of students (classes) or teachers, so that these schedules are accessible by the correct student(s) or teacher.
+R50: As an administrator, I want to create an account, so that I can facilitate access to the system for users.
+R51: As an administrator, I want to edit the personal data of an account, so that the information associated to this account is linked to the correct identity.
+R52: As an administrator, I want to make use of various filters and viewpoints, ch</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (5 → 5)</th></tr><tr><td class="">administrator</td></tr><tr><td class="">guardian</td></tr><tr><td class="del">student</td></tr><tr><td class="">teacher</td></tr><tr><td class="">user</td></tr><tr><td class="add">StudentS</td></tr></table></div>
+<div><table><tr><th>classes (40 → 37)</th></tr><tr><td class="">Absence</td></tr><tr><td class="del">AbsenceForm</td></tr><tr><td class="">Access</td></tr><tr><td class="">Account</td></tr><tr><td class="">Action</td></tr><tr><td class="">Administrator</td></tr><tr><td class="">Answer</td></tr><tr><td class="">AppearanceDate</td></tr><tr><td class="">Assignment</td></tr><tr><td class="">Attendance</td></tr><tr><td class="del">Behavior</td></tr><tr><td class="">Change</td></tr><tr><td class="">Child</td></tr><tr><td class="">Date</td></tr><tr><td class="">Dlm</td></tr><tr><td class="">File</td></tr><tr><td class="">Grade</td></tr><tr><td class="">Guardian</td></tr><tr><td class="del">Homework</td></tr><tr><td class="">Insight</td></tr><tr><td class="">Lms</td></tr><tr><td class="">Manner</td></tr><tr><td class="">Material</td></tr><tr><td class="">Mentor</td></tr><tr><td class="">Message</td></tr><tr><td class="">Notification</td></tr><tr><td class="">Participant</td></tr><tr><td class="">Performance</td></tr><tr><td class="">Question</td></tr><tr><td class="">Schedule</td></tr><tr><td class="">School</td></tr><tr><td class="">Staff</td></tr><tr><td class="">Student</td></tr><tr><td class="">StudentS</td></tr><tr><td class="">Submission</td></tr><tr><td class="">Teacher</td></tr><tr><td class="">Timetable</td></tr><tr><td class="">User</td></tr><tr><td class="">Work</td></tr><tr><td class="">Year</td></tr></table></div>
+<div><table><tr><th>attributes (4 → 4)</th></tr><tr><td class="">Account.role</td></tr><tr><td class="">Student.contact information</td></tr><tr><td class="">Student.group</td></tr><tr><td class="">Student.knowledge</td></tr></table></div>
+<div><table><tr><th>relations (15 → 15)</th></tr><tr><td class="">association: Student -&gt; Work</td></tr><tr><td class="">has: Child -&gt; Absence</td></tr><tr><td class="">has: Child -&gt; Behavior</td></tr><tr><td class="">has: Child -&gt; Teacher</td></tr><tr><td class="">has: Student -&gt; Absence</td></tr><tr><td class="">has: Student -&gt; Action</td></tr><tr><td class="">has: Student -&gt; Attendance</td></tr><tr><td class="">has: Student -&gt; Behavior</td></tr><tr><td class="">has: Student -&gt; Performance</td></tr><tr><td class="">has: Student -&gt; Schedule</td></tr><tr><td class="">has: Student -&gt; Submission</td></tr><tr><td class="">has: Student -&gt; Year</td></tr><tr><td class="">has: User -&gt; Absence</td></tr><tr><td class="">has: User -&gt; Behavior</td></tr><tr><td class="">has: User -&gt; Performance</td></tr></table></div>
+</div>
+<p>Enumerations added: Behavior {sufficient, insufficient}</p>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R1</td><td>coordination</td><td>noun or noun</td><td><span class='tag resolved'>resolved</span></td><td>any teacher; the mentor assigned to my child; an administrative staff member<br><i>The phrase &#x27;any teacher of my child, the mentor assigned to my child, or an administrative staff member&#x27; could be interpreted as a list of options or as a single role that could be any of the three.</i></td></tr>
+<tr><td>A2</td><td>R1</td><td>quantifier</td><td>any</td><td><span class='tag rejected'>rejected</span></td><td>any; all<br><i>The use of &#x27;any&#x27; in the context of teachers does not change the meaning significantly and is likely to be interpreted as &#x27;all&#x27; teachers.</i></td></tr>
+<tr><td>A3</td><td>R4</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any information; specific information<br><i>The phrase &#x27;any information related to my children&#x27; could be interpreted as all or specific information.</i></td></tr>
+<tr><td>A4</td><td>R4</td><td>incompleteness</td><td>information</td><td><span class='tag resolved'>resolved</span></td><td>information; specific details<br><i>The phrase &#x27;information related to my children&#x27; is incomplete and could refer to all or specific details.</i></td></tr>
+<tr><td>A5</td><td>R6</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any of my teachers; specific teachers<br><i>The phrase &#x27;any of my teachers&#x27; could be interpreted as all or specific teachers.</i></td></tr>
+<tr><td>A6</td><td>R9</td><td>incompleteness</td><td>certain</td><td><span class='tag resolved'>resolved</span></td><td>certain; up-to-date<br><i>The phrase &#x27;up-to-date timetable&#x27; is incomplete and could be interpreted as &#x27;certain&#x27; or &#x27;up-to-date&#x27;.</i></td></tr>
+<tr><td>A7</td><td>R11</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it; the assignment<br><i>The phrase &#x27;it&#x27; could refer to the assignment or the notification.</i></td></tr>
+<tr><td>A8</td><td>R11</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it; the assignment<br><i>The phrase &#x27;it&#x27; could refer to the assignment or the notification.</i></td></tr>
+<tr><td>A9</td><td>R14</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any; specific<br><i>The phrase &#x27;any information&#x27; could be interpreted as all or specific information.</i></td></tr>
+<tr><td>A10</td><td>R15</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any information; specific information<br><i>The phrase &#x27;any information related to my account&#x27; could be interpreted as all or specific information.</i></td></tr>
+<tr><td>A11</td><td>R15</td><td>incompleteness</td><td>information</td><td><span class='tag resolved'>resolved</span></td><td>information; specific details<br><i>The phrase &#x27;information related to my account&#x27; is incomplete and could refer to all or specific details.</i></td></tr>
+<tr><td>A12</td><td>R16</td><td>incompleteness</td><td>information</td><td><span class='tag resolved'>resolved</span></td><td>information; specific details<br><i>The phrase &#x27;information related to my account&#x27; is incomplete and could refer to all or specific details.</i></td></tr>
+<tr><td>A13</td><td>R17</td><td>actor</td><td>passive &#x27;shared&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>passive &#x27;shared&#x27; without agent; active &#x27;shared&#x27; with agent<br><i>The phrase &#x27;passive &#x27;shared&#x27; without agent&#x27; could be interpreted as the student sharing data with guardians or guardians sharing data with the student.</i></td></tr>
+<tr><td>A14</td><td>R19</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any; specific<br><i>The phrase &#x27;any changes within my timetable&#x27; could be interpreted as all or specific changes.</i></td></tr>
+<tr><td>A15</td><td>R19</td><td>actor</td><td>passive &#x27;notified&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>passive &#x27;notified&#x27; without agent; active &#x27;notified&#x27; with agent<br><i>The phrase &#x27;passive &#x27;notified&#x27; without agent&#x27; could be interpreted as the system notifying the teacher or the teacher being notified by the system.</i></td></tr>
+<tr><td>A16</td><td>R22</td><td>coordination</td><td>noun or noun</td><td><span class='tag resolved'>resolved</span></td><td>a multiple-choice question; an open question<br><i>The phrase &#x27;a multiple-choice question or an open question&#x27; could be interpreted as either one or both.</i></td></tr>
+<tr><td>A17</td><td>R22</td><td>quantifier</td><td>multiple</td><td><span class='tag resolved'>resolved</span></td><td>multiple; one<br><i>The phrase &#x27;multiple-choice question&#x27; could be interpreted as one or multiple questions.</i></td></tr>
+<tr><td>A18</td><td>R23</td><td>coordination</td><td>noun or noun</td><td><span class='tag resolved'>resolved</span></td><td>a specific class; a student<br><i>The phrase &#x27;a specific class or student(s)&#x27; could be interpreted as either a class or students.</i></td></tr>
+<tr><td>A19</td><td>R27</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any student; specific students<br><i>The phrase &#x27;any student that is assigned to my class&#x27; could be interpreted as all or specific students.</i></td></tr>
+<tr><td>A20</td><td>R28</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any student; specific students<br><i>The phrase &#x27;any student to which I am assigned mentor&#x27; could be interpreted as all or specific students.</i></td></tr>
+<tr><td>A21</td><td>R29</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any page; specific page<br><i>The phrase &#x27;any page contained within a DLM&#x27; could be interpreted as all or specific pages.</i></td></tr>
+<tr><td>A22</td><td>R29</td><td>incompleteness</td><td>detail</td><td><span class='tag resolved'>resolved</span></td><td>detail; specific detail<br><i>The phrase &#x27;any detail&#x27; is incomplete and could refer to all or specific details.</i></td></tr>
+<tr><td>A23</td><td>R30</td><td>referential</td><td>they</td><td><span class='tag resolved'>resolved</span></td><td>they; the students<br><i>The phrase &#x27;they&#x27; could refer to the students or the assignments.</i></td></tr>
+<tr><td>A24</td><td>R31</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it; the question page<br><i>The phrase &#x27;it&#x27; could refer to the question page or the corresponding answer.</i></td></tr>
+<tr><td>A25</td><td>R32</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any; specific<br><i>The phrase &#x27;any files&#x27; could be interpreted as all or specific files.</i></td></tr>
+<tr><td>A26</td><td>R35</td><td>coordination</td><td>and+or</td><td><span class='tag resolved'>resolved</span></td><td>missed homework, no books, or sent out; missed homework, no books, or sent out as a single action<br><i>The phrase &#x27;such as: missed homework, no books, or sent out&#x27; could be interpreted as separate actions or a single action.</i></td></tr>
+<tr><td>A27</td><td>R36</td><td>coordination</td><td>either/or</td><td><span class='tag resolved'>resolved</span></td><td>sufficient or insufficient; sufficient and insufficient<br><i>The phrase &#x27;either a sufficient or insufficient&#x27; could be interpreted as separate or combined behaviors.</i></td></tr>
+<tr><td>A28</td><td>R36</td><td>incompleteness</td><td>sufficient</td><td><span class='tag resolved'>resolved</span></td><td>sufficient; sufficient and insufficient<br><i>The phrase &#x27;sufficient&#x27; is incomplete and could refer to either sufficient or insufficient behaviors.</i></td></tr>
+<tr><td>A29</td><td>R38</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any; specific<br><i>The phrase &#x27;any attendance&#x27; could be interpreted as all or specific attendance records.</i></td></tr>
+<tr><td>A30</td><td>R39</td><td>referential</td><td>their</td><td><span class='tag resolved'>resolved</span></td><td>their; the students<br><i>The phrase &#x27;their&#x27; could refer to the students or the individual students.</i></td></tr>
+<tr><td>A31</td><td>R43</td><td>coordination</td><td>either/or</td><td><span class='tag resolved'>resolved</span></td><td>either instant or a specific date and time combination; both instant and a specific date and time combination<br><i>The requirement suggests that the teacher can choose between setting the date and time as an instant or a specific combination, but it is not clear if both options are available.</i></td></tr>
+<tr><td>A32</td><td>R44</td><td>coordination</td><td>and+or</td><td><span class='tag resolved'>resolved</span></td><td>upload to one class; upload to multiple classes<br><i>The requirement indicates that the teacher can upload files to either one or multiple classes, but it is not clear if both options are mutually exclusive or if the teacher can choose between them.</i></td></tr>
+<tr><td>A33</td><td>R45</td><td>referential</td><td>their</td><td><span class='tag resolved'>resolved</span></td><td>any student in the teacher&#x27;s class; any student the teacher is assigned to<br><i>The requirement is ambiguous regarding whether the teacher can view details of any student in their class or any student they are assigned to.</i></td></tr>
+<tr><td>A34</td><td>R45</td><td>coordination</td><td>and+or</td><td><span class='tag resolved'>resolved</span></td><td>view details of any student in the teacher&#x27;s class or any student the teacher is assigned to; view details of any student in the teacher&#x27;s class or any student the teacher is assigned to, but not both at the same time<br><i>The requirement is unclear if the teacher can view details of any student in their class or any student they are assigned to, and if both options are mutually exclusive.</i></td></tr>
+<tr><td>A35</td><td>R45</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>view details of any student in the teacher&#x27;s class; view details of any student the teacher is assigned to<br><i>The requirement is ambiguous regarding whether the teacher can view details of any student in their class or any student they are assigned to.</i></td></tr>
+<tr><td>A36</td><td>R45</td><td>incompleteness</td><td>details</td><td><span class='tag resolved'>resolved</span></td><td>view details of any student in the teacher&#x27;s class; view details of any student the teacher is assigned to<br><i>The requirement is incomplete and does not specify whether the teacher can view details of any student in their class or any student they are assigned to.</i></td></tr>
+<tr><td>A37</td><td>R48</td><td>coordination</td><td>noun or noun</td><td><span class='tag resolved'>resolved</span></td><td>send direct messages to students, guardians, teachers, or administrators; send direct messages to students, guardians, teachers, or administrators, but not all at the same time<br><i>The requirement is ambiguous regarding whether the administrator can send direct messages to all types of users at the same time or if they must choose one type of user.</i></td></tr>
+<tr><td>A38</td><td>R48</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>send direct messages to any student, guardian, teacher, or administrator; send direct messages to any student, guardian, teacher, or administrator, but not all at the same time<br><i>The requirement is ambiguous regarding whether the administrator can send direct messages to all types of users at the same time or if they must choose one type of user.</i></td></tr>
+<tr><td>A39</td><td>R48</td><td>incompleteness</td><td>quickly</td><td><span class='tag resolved'>resolved</span></td><td>send direct messages to any student, guardian, teacher, or administrator; send direct messages to any student, guardian, teacher, or administrator, but not all at the same time<br><i>The requirement is incomplete and does not specify whether the administrator can send direct messages to all types of users at the same time or if they must choose one type of user.</i></td></tr>
+<tr><td>A40</td><td>R49</td><td>coordination</td><td>noun or noun</td><td><span class='tag resolved'>resolved</span></td><td>assign schedules to groups of students or teachers; assign schedules to groups of students or teachers, but not both at the same time<br><i>The requirement is ambiguous regarding whether the administrator can assign schedules to groups of students or teachers, and if both options are mutually exclusive.</i></td></tr>
+<tr><td>A41</td><td>R51</td><td>incompleteness</td><td>information</td><td><span class='tag resolved'>resolved</span></td><td>edit the personal data of an account; edit the personal data of an account, but not all at the same time<br><i>The requirement is incomplete and does not specify whether the administrator can edit the personal data of an account at the same time.</i></td></tr>
+<tr><td>A42</td><td>R52</td><td>coordination</td><td>and+or</td><td><span class='tag resolved'>resolved</span></td><td>make use of various filters and viewpoints, change the view of the visual dashboard to a specific class, year, period, or subject; make use of various filters and viewpoints, change the view of the visual dashboard to a specific class, year, period, or subject, but not all at the same time<br><i>The requirement is ambiguous regarding whether the administrator can make use of various filters and viewpoints, and change the view of the visual dashboard to a specific class, year, period, or subject, and if both options are mutually exclusive.</i></td></tr>
+<tr><td>A43</td><td>R52</td><td>quantifier</td><td>various</td><td><span class='tag resolved'>resolved</span></td><td>make use of various filters and viewpoints, change the view of the visual dashboard to a specific class, year, period, or subject; make use of various filters and viewpoints, change the view of the visual dashboard to a specific class, year, period, or subject, but not all at the same time<br><i>The requirement is ambiguous regarding whether the administrator can make use of various filters and viewpoints, and change the view of the visual dashboard to a specific class, year, period, or subject, and if both options are mutually exclusive.</i></td></tr>
+<tr><td>A44</td><td>R52</td><td>incompleteness</td><td>various</td><td><span class='tag resolved'>resolved</span></td><td>make use of various filters and viewpoints, change the view of the visual dashboard to a specific class, year, period, or subject; make use of various filters and viewpoints, change the view of the visual dashboard to a specific class, year, period, or subject, but not all at the same time<br><i>The requirement is incomplete and does not specify whether the administrator can make use of various filters and viewpoints, and change the view of the visual dashboard to a specific class, year, period, or subject, and if both options are mutually exclusive.</i></td></tr>
+<tr><td>A45</td><td>R55</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>register any changes to the schedule; register changes to the schedule<br><i>The requirement is ambiguous regarding whether the administrator can register any changes to the schedule or if they must specify the changes.</i></td></tr>
+<tr><td>A46</td><td>R56</td><td>coordination</td><td>noun or noun</td><td><span class='tag resolved'>resolved</span></td><td>register the absence of a student, teacher, or administrator; register the absence of a student, teacher, or administrator, but not all at the same time<br><i>The requirement is ambiguous regarding whether the administrator can register the absence of a student, teacher, or administrator, and if both options are mutually exclusive.</i></td></tr>
+<tr><td>A47</td><td>R57</td><td>coordination</td><td>noun or noun</td><td><span class='tag resolved'>resolved</span></td><td>send broadcast messages to multiple selected teachers, students, guardians, classes, or other administrators; send broadcast messages to multiple selected teachers, students, guardians, classes, or other administrators, but not all at the same time<br><i>The requirement is ambiguous regarding whether the administrator can send broadcast messages to multiple selected teachers, students, guardians, classes, or other administrators, and if both options are mutually exclusive.</i></td></tr>
+<tr><td>A48</td><td>R57</td><td>quantifier</td><td>multiple</td><td><span class='tag resolved'>resolved</span></td><td>send broadcast messages to multiple selected teachers, students, guardians, classes, or other administrators; send broadcast messages to multiple selected teachers, students, guardians, classes, or other administrators, but not all at the same time<br><i>The requirement is ambiguous regarding whether the administrator can send broadcast messages to multiple selected teachers, students, guardians, classes, or other administrators, and if both options are mutually exclusive.</i></td></tr>
+<tr><td>A49</td><td>R58</td><td>coordination</td><td>either/or</td><td><span class='tag resolved'>resolved</span></td><td>set the role of an account to student, teacher, administrator, or guardian; set the role of an account to student, teacher, administrator, or guardian, but not all at the same time<br><i>The requirement is ambiguous regarding whether the administrator can set the role of an account to student, teacher, administrator, or guardian, and if both options are mutually exclusive.</i></td></tr>
+<tr><td>A50</td><td>R59</td><td>coordination</td><td>their</td><td><span class='tag resolved'>resolved</span></td><td>upload schedules for students and teachers; upload schedules for students and teachers, but not both at the same time<br><i>The requirement is ambiguous regarding whether the administrator can upload schedules for students and teachers, and if both options are mutually exclusive.</i></td></tr>
+<tr><td>A51</td><td>R60</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>view any details associated with any account; view details associated with any account<br><i>The requirement is ambiguous regarding whether the administrator can view any details associated with any account or if they must specify the details.</i></td></tr>
+<tr><td>A52</td><td>R60</td><td>incompleteness</td><td>details</td><td><span class='tag resolved'>resolved</span></td><td>view any details associated with any account; view details associated with any account<br><i>The requirement is incomplete and does not specify whether the administrator can view any details associated with any account or if they must specify the details.</i></td></tr>
+<tr><td>A53</td><td>R61</td><td>coordination</td><td>modifier scope: grades (relative clause)</td><td><span class='tag resolved'>resolved</span></td><td>view statistics related to grades, attendance, and disciplinary actions that can be mapped over the whole school; view statistics related to grades, attendance, and disciplinary actions that can be mapped over the whole school, but not all at the same time<br><i>The requirement is ambiguous regarding whether the administrator can view statistics related to grades, attendance, and disciplinary actions that can be mapped over the whole school, and if both options are mutually exclusive.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D1_school_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D1_school_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D1/school.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Guardian:
+    &quot;&quot;&quot;Source: R3, R12, R13, R14, R15, R16, R48&quot;&quot;&quot;
+    messages: _t.List[&quot;Message&quot;] = _dc.field(default_factory=list)
+
+    def directMessage(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC2 &quot;Direct Message&quot; (R1, R6, R12, R34).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def fillAbsence(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC3 &quot;Fill Absence&quot; (R2).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def receiveNotification(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC19 &quot;Receive Notification&quot; (R3, R11, R12).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC4 &quot;View Information&quot; (R4, R15).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Student:
+    &quot;&quot;&quot;Source: R5, R6, R7, R8, R9, R10, R11, R12, R16, R17, R45, R46&quot;&quot;&quot;
+    messages: _t.List[&quot;Message&quot;] = _dc.field(default_factory=list)
+    absence: _t.Optional[&quot;Absence&quot;] = None
+    notifications: _t.List[&quot;Notification&quot;] = _dc.field(default_factory=list)
+    dlms: _t.List[&quot;Dlm&quot;] = _dc.field(default_factory=list)
+    schedule: _t.Optional[&quot;Schedule&quot;] = None
+
+    def directMessage(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC2 &quot;Direct Message&quot; (R1, R6, R12, R34).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def handHomework(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC14 &quot;Hand Homework&quot; (R8).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def haveAccess(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC15 &quot;Have Access&quot; (R9, R10).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def receiveNotification(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC19 &quot;Receive Notification&quot; (R3, R11, R12).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewContactInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC35 &quot;View Contact Information&quot; (R16).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Teacher:
+    &quot;&quot;&quot;Source: R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46&quot;&quot;&quot;
+    messages: _t.List[&quot;Message&quot;] = _dc.field(default_factory=list)
+    notifications: _t.List[&quot;Notification&quot;] = _dc.field(default_factory=list)
+    dlms: _t.List[&quot;Dlm&quot;] = _dc.field(default_factory=list)
+
+    def directMessage(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC2 &quot;Direct Message&quot; (R1, R6, R12, R34).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editPage(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC11 &quot;Edit Data&quot; (R51).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def makeSubmissionElement(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC16 &quot;Make Submission Element&quot; (R30).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def receiveConfirmation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC18 &quot;Receive Confirmation&quot; (R32).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def recordAction(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC20 &quot;Record Action&quot; (R35).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def recordBehavior(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC22 &quot;Record Behavior&quot; (R36).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def recordGrade(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC23 &quot;Record Grade&quot; (R37).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def recordAttendance(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC21 &quot;Record Attendance&quot; (R38).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeAnswer(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC27 &quot;See Answer&quot; (R39).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeProgress(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC29 &quot;See Progress&quot; (R41).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def setAppearanceDate(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC30 &quot;Set Appearance Date&quot; (R42).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def uploadFile(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC32 &quot;Upload File&quot; (R44).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewAttendance(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC33 &quot;View Attendance&quot; (R45).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewClass(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC34 &quot;View Class&quot; (R46).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Administrator:
+    &quot;&quot;&quot;Source: R48, R49, R50, R51, R52, R53, R54, R55, R56&quot;&quot;&quot;
+    messages: _t.List[&quot;Message&quot;] = _dc.field(default_factory=list)
+    notifications: _t.List[&quot;Notification&quot;] = _dc.field(default_factory=list)
+    account: _t.Optional[&quot;Account&quot;] = None
+    schedules: _t.List[&quot;Schedule&quot;] = _dc.field(default_factory=list)
+
+    def directMessage(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC2 &quot;Direct Message&quot; (R1, R6, R12, R34).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def assignSchedule(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC9 &quot;Assign Schedule&quot; (R49).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def createAccount(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC10 &quot;Create Account&quot; (R50).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editData(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC11 &quot;Edit Data&quot; (R51).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def makeUse(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC17 &quot;Make Use&quot; (R52).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def registerChange(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC25 &quot;Register Change&quot; (R55).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def registerAbsence(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC24 &quot;Register Absence&quot; (R56).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def sendBroadcastMessage(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC36 &quot;Send Broadcast Message&quot; (R57).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def setRole(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC37 &quot;Set Role&quot; (R58).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def uploadSchedule(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC38 &quot;Upload Schedule&quot; (R59).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewDetail(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC39 &quot;View Detail&quot; (R60).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewStatistic(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC40 &quot;View Statistic&quot; (R61).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Message:
+ </pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>40</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>5</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>5</td></tr>
+<tr><th>inconsistency_rate</th><td>0.0833</td></tr>
+<tr><th>requirement_coverage</th><td>1.0</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;The &#x27;Message&#x27; class is assumed to handle both sending and receiving messages, as it has methods for both &#x27;Direct Message&#x27; and &#x27;Receive Notification&#x27;. This assumption should be verified with the requirements.&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.625</td><td>0.556</td><td>0.588</td><td>10/6/8</td></tr>
+<tr><td>relations</td><td>0.385</td><td>0.208</td><td>0.27</td><td>5/8/19</td></tr>
+<tr><td>use_cases_provisional</td><td>0.95</td><td>0.745</td><td>0.835</td><td>38/2/13</td></tr>
+</table></body></html>

@@ -1,0 +1,151 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Makefile",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "comments",
+    "rules"
+   ],
+   "methods": [
+    {
+     "name": "addComment",
+     "use_case": null
+    },
+    {
+     "name": "addRule",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "shellLines",
+    "dependencies"
+   ],
+   "methods": [
+    {
+     "name": "addShellLine",
+     "use_case": null
+    },
+    {
+     "name": "addDependency",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "name": "RuleDep",
+   "kind": "class",
+   "attributes": [
+    "rule",
+    "dependency"
+   ],
+   "methods": [],
+   "src": [
+    "R7",
+    "R11"
+   ]
+  },
+  {
+   "name": "FileDependency",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [
+    "text"
+   ],
+   "methods": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "ShellLine",
+   "kind": "class",
+   "attributes": [
+    "command"
+   ],
+   "methods": [],
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Makefile",
+   "target": "Rule",
+   "src": [
+    "R3",
+    "R11"
+   ]
+  },
+  {
+   "source": "Makefile",
+   "target": "FileDependency",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "Makefile",
+   "target": "Comment",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "Rule",
+   "target": "RuleDep",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "source": "ShellLine",
+   "target": "Rule",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "source": "Makefile",
+   "target": "Rule",
+   "src": []
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/Make.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Makefile:\n    \"\"\"Source: R10, R11\"\"\"\n    name: _t.Optional[str] = None\n    comments: _t.Optional[str] = None\n    rules: _t.Optional[str] = None\n    fileDependencies: _t.List[\"FileDependency\"] = _dc.field(default_factory=list)\n    comment: _t.Optional[\"Comment\"] = None\n    rule: _t.Optional[\"Rule\"] = None\n\n    def addComment(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addRule(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Rule:\n    \"\"\"Source: R3, R11, R12\"\"\"\n    name: _t.Optional[str] = None\n    shellLines: _t.Optional[str] = None\n    dependencies: _t.Optional[str] = None\n    ruleDeps: _t.List[\"RuleDep\"] = _dc.field(default_factory=list)\n\n    def addShellLine(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addDependency(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass RuleDep:\n    \"\"\"Source: R7, R11\"\"\"\n    rule: _t.Optional[str] = None\n    dependency: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass FileDependency:\n    \"\"\"Source: R9\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Comment:\n    \"\"\"Source: R10\"\"\"\n    text: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass ShellLine:\n    \"\"\"Source: R12\"\"\"\n    command: _t.Optional[str] = None\n    rules: _t.List[\"Rule\"] = _dc.field(default_factory=list)\n",
+ "java": {
+  "Makefile.java": "/** Generated from shared model D2/Make. Source: R10, R11 */\npublic class Makefile {\n    private java.lang.String name;\n    private java.lang.String comments;\n    private java.lang.String rules;\n    private java.util.List<FileDependency> fileDependencies;\n    private Comment comment;\n    private Rule rule;\n\n    /** Operation. */\n    public void addComment() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addRule() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Rule.java": "/** Generated from shared model D2/Make. Source: R3, R11, R12 */\npublic class Rule {\n    private java.lang.String name;\n    private java.lang.String shellLines;\n    private java.lang.String dependencies;\n    private java.util.List<RuleDep> ruleDeps;\n\n    /** Operation. */\n    public void addShellLine() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addDependency() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "RuleDep.java": "/** Generated from shared model D2/Make. Source: R7, R11 */\npublic class RuleDep {\n    private java.lang.String rule;\n    private java.lang.String dependency;\n}\n",
+  "FileDependency.java": "/** Generated from shared model D2/Make. Source: R9 */\npublic class FileDependency {\n    private java.lang.String name;\n}\n",
+  "Comment.java": "/** Generated from shared model D2/Make. Source: R10 */\npublic class Comment {\n    private java.lang.String text;\n}\n",
+  "ShellLine.java": "/** Generated from shared model D2/Make. Source: R12 */\npublic class ShellLine {\n    private java.lang.String command;\n    private java.util.List<Rule> rules;\n}\n"
+ }
+}

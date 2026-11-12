@@ -1,0 +1,41 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Attribute {
+  key : String
+}
+class StringAttribute {
+  value : String
+}
+class BooleanAttribute {
+  value : boolean
+}
+class MapAttribute {
+  entries : String
+}
+class MapEntry {
+  key : String
+  value : String
+}
+class ListAttribute {
+  entries : String
+}
+class ListEntry {
+  value : String
+}
+class LaunchConfiguration {
+  attributes : String
+  +createAttribute()
+}
+LaunchConfiguration "1" -- "0..*" Attribute : has
+StringAttribute "1" -- "1" Attribute : is a type of
+BooleanAttribute "1" -- "1" Attribute : is a type of
+MapAttribute "1" -- "1" Attribute : is a type of
+MapEntry "1" -- "1" MapAttribute : is connected to
+ListAttribute "1" -- "1" Attribute : is a type of
+ListEntry "1" -- "1" ListAttribute : is connected to
+Attribute "1" -- "1" StringAttribute : has a value
+Attribute "1" -- "1" BooleanAttribute : has a value
+Attribute "1" -- "0..*" MapEntry : has
+Attribute "1" -- "0..*" ListEntry : has
+@enduml

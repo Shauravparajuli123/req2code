@@ -1,0 +1,130 @@
+{
+ "classes": [
+  {
+   "name": "LaunchConfiguration",
+   "kind": "class"
+  },
+  {
+   "name": "Attribute",
+   "kind": "class"
+  },
+  {
+   "name": "StringAttribute",
+   "kind": "class"
+  },
+  {
+   "name": "BooleanAttribute",
+   "kind": "class"
+  },
+  {
+   "name": "MapAttribute",
+   "kind": "class"
+  },
+  {
+   "name": "MapEntry",
+   "kind": "class"
+  },
+  {
+   "name": "ListAttribute",
+   "kind": "class"
+  },
+  {
+   "name": "ListEntry",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "LaunchConfiguration": [
+   {
+    "name": "type",
+    "type": "String"
+   }
+  ],
+  "Attribute": [
+   {
+    "name": "key",
+    "type": "String"
+   }
+  ],
+  "StringAttribute": [
+   {
+    "name": "value",
+    "type": "String"
+   }
+  ],
+  "BooleanAttribute": [
+   {
+    "name": "value",
+    "type": "Boolean"
+   }
+  ],
+  "MapAttribute": [],
+  "MapEntry": [],
+  "ListAttribute": [],
+  "ListEntry": [
+   {
+    "name": "value",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "LaunchConfiguration",
+   "to": "Attribute",
+   "label": "attributes 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "StringAttribute",
+   "to": "Attribute",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "BooleanAttribute",
+   "to": "Attribute",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "MapAttribute",
+   "to": "Attribute",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "MapAttribute",
+   "to": "MapEntry",
+   "label": "entries 0..*",
+   "label_to": "mapAttribute 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "MapEntry",
+   "to": "StringAttribute",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ListAttribute",
+   "to": "Attribute",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "ListAttribute",
+   "to": "ListEntry",
+   "label": "entries 0..*",
+   "label_to": "listAttribute 1..1"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage EclipseLaunchConfigurations {\nclass LaunchConfiguration {\n\t type : String\n}\nLaunchConfiguration \"attributes 0..*\" *--> Attribute\nclass Attribute {\n\t key : String\n}\nclass StringAttribute {\n\t value : String\n}\nAttribute <|-- StringAttribute\nclass BooleanAttribute {\n\t value : Boolean\n}\nAttribute <|-- BooleanAttribute\nclass MapAttribute {\n}\nAttribute <|-- MapAttribute\nMapAttribute \"entries 0..*\" *-- \"mapAttribute 1..1\" MapEntry\nclass MapEntry {\n}\nStringAttribute <|-- MapEntry\nclass ListAttribute {\n}\nAttribute <|-- ListAttribute\nListAttribute \"entries 0..*\" *-- \"listAttribute 1..1\" ListEntry\nclass ListEntry {\n\t value : String\n}\n}\n@enduml\n"
+}

@@ -1,0 +1,121 @@
+{
+ "classes": [
+  {
+   "name": "SeminarSchedulingSystem",
+   "kind": "class"
+  },
+  {
+   "name": "Presenter",
+   "kind": "class"
+  },
+  {
+   "name": "Seminar",
+   "kind": "class"
+  },
+  {
+   "name": "Offering",
+   "kind": "class"
+  },
+  {
+   "name": "Date",
+   "kind": "class"
+  },
+  {
+   "name": "Attendee",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "SeminarSchedulingSystem": [],
+  "Presenter": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Seminar": [
+   {
+    "name": "title",
+    "type": "String"
+   }
+  ],
+  "Offering": [
+   {
+    "name": "is_cancelled",
+    "type": "Boolean"
+   }
+  ],
+  "Date": [
+   {
+    "name": "year",
+    "type": "Integer"
+   },
+   {
+    "name": "month",
+    "type": "Integer"
+   },
+   {
+    "name": "day",
+    "type": "Integer"
+   }
+  ],
+  "Attendee": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "association",
+   "from": "SeminarSchedulingSystem",
+   "to": "Presenter",
+   "label": "presenter 0..*",
+   "label_to": "seminarSchedulingSystem 1..1"
+  },
+  {
+   "type": "association",
+   "from": "SeminarSchedulingSystem",
+   "to": "Seminar",
+   "label": "seminar 0..*",
+   "label_to": "seminarSchedulingSystem 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Presenter",
+   "to": "Seminar",
+   "label": "qualifiedFor 0..*",
+   "label_to": "qualified 0..*"
+  },
+  {
+   "type": "association",
+   "from": "Presenter",
+   "to": "Offering",
+   "label": "offering 0..*",
+   "label_to": "presenter 0..1"
+  },
+  {
+   "type": "association",
+   "from": "Seminar",
+   "to": "Offering",
+   "label": "offering 0..*",
+   "label_to": "seminar 0..1"
+  },
+  {
+   "type": "association",
+   "from": "Offering",
+   "to": "Date",
+   "label": "date 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Offering",
+   "to": "Attendee",
+   "label": "attendee 0..*",
+   "label_to": "offering 0..*"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage SeminarSchedulingSystem {\nclass SeminarSchedulingSystem {\n}\nSeminarSchedulingSystem \"presenter 0..*\" -- \"seminarSchedulingSystem 1..1\" Presenter\nSeminarSchedulingSystem \"seminar 0..*\" -- \"seminarSchedulingSystem 1..1\" Seminar\nclass Presenter {\n\t name : String\n}\nPresenter \"qualifiedFor 0..*\" -- \"qualified 0..*\" Seminar\nPresenter \"offering 0..*\" -- \"presenter 0..1\" Offering\nclass Seminar {\n\t title : String\n}\nSeminar \"offering 0..*\" -- \"seminar 0..1\" Offering\nclass Offering {\n\t is_cancelled : Boolean\n}\nOffering \"date 1..1\" --> Date\nOffering \"attendee 0..*\" -- \"offering 0..*\" Attendee\nclass Date {\n\t year : Integer\n\t month : Integer\n\t day : Integer\n}\nclass Attendee {\n\t name : String\n}\n}\n@enduml\n"
+}

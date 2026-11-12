@@ -1,0 +1,22 @@
+{
+ "schema_valid": true,
+ "issues": [
+  "enumeration ControlType has no literals"
+ ],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "The ControlType enum has no defined literals in the model.",
+   "fix": "Add the necessary literals to the ControlType enum."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The association between Control and Date is missing the multiplicity on the ControlsSequence side.",
+   "fix": "Add the correct multiplicity (0..*..1) to the association Control -> Date."
+  }
+ ]
+}

@@ -1,0 +1,142 @@
+{
+ "case": "D2/useCase",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "User",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Login",
+   "actor": "A1",
+   "src": [
+    "R1",
+    "R2",
+    "R9"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Actor",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1",
+      "R13"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R13"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "UseCase",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "containers",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "include",
+     "realizes": "UC1",
+     "src": [
+      "R1",
+      "R2",
+      "R9"
+     ]
+    },
+    {
+     "id": "M2",
+     "name": "extend",
+     "realizes": "UC1",
+     "src": [
+      "R1",
+      "R2",
+      "R9"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "UseCaseContainer",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "is performed by",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

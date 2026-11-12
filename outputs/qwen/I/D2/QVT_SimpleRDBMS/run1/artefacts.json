@@ -1,0 +1,91 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "RmodelElement",
+   "kind": "class",
+   "attributes": [
+    "kind"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Schema",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "type"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Key",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "ForeignKey",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R14",
+    "R15"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Table",
+   "target": "Schema",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass RmodelElement:\n    def __init__(self, kind: str):\n        self.kind: str = kind\n\nclass SimpleRDBMS:\n    pass\n\nclass Schema:\n    def __init__(self, tables: List[Table] = []) -> None:\n        self.tables: List[Table] = tables\n\nclass Table:\n    def __init__(self, schema: Schema, keys: List[Key] = [], columns: List[Column] = []) -> None:\n        self.schema: Schema = schema\n        self.keys: List[Key] = keys\n        self.columns: List[Column] = columns\n\nclass Column:\n    def __init__(self, table: Table, type: str) -> None:\n        self.table: Table = table\n        self.type: str = type\n\nclass Key:\n    def __init__(self, table: Table, opposite_keys: List[ForeignKey] = []) -> None:\n        self.table: Table = table\n        self.opposite_keys: List[ForeignKey] = opposite_keys\n\nclass ForeignKey:\n    def __init__(self, columns: List[Column] = [], key: Key = None) -> None:\n        self.columns: List[Column] = columns\n        self.key: Key = key\n",
+ "java": {}
+}

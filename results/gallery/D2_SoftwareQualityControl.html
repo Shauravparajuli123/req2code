@@ -1,0 +1,143 @@
+<html><head><meta charset='utf-8'><title>D2/SoftwareQualityControl</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D2/SoftwareQualityControl &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: It is a model class for describing the concept of a date. It includes an integer for the day and another integer for the year.
+R2: The ControlsSequence is a class in the SoftwareQualityControl package
+R3: The controls objects are linked to the controls sequence and their role (responsibility) in the sequence.
+R4: The different types of controls.
+R5: A software quality control has a bug traking
+R6: Bug is a class in SoftwareQualityControl package. It has an attribute named &quot;number&quot; of type &quot;Integer&quot;. It has also four other attributes of type String: description, originator, commentsAnswers and closeDate
+R7: This fragment is composed of two classes : ControlsSequence and Control. And the controls relationship between them.
+R8: In a software quality control, a control belongs to a controls sequence
+R9: The date of the control.
+R10: A control has a type
+R11: Architecture is a class that represents a specific architecture of a potential system.
+R12: The list of bugs in the software bug tracking system which are linked to control type.
+R13: A Bug is associated to one and only one Bug Tracking</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (0 → 0)</th></tr></table></div>
+<div><table><tr><th>classes (10 → 10)</th></tr><tr><td class="">Architecture</td></tr><tr><td class="">Bug</td></tr><tr><td class="">BugTracking</td></tr><tr><td class="">Control</td></tr><tr><td class="">ControlType</td></tr><tr><td class="">ControlsObject</td></tr><tr><td class="">ControlsSequence</td></tr><tr><td class="">Date</td></tr><tr><td class="">SoftwareBugTrackingSystem</td></tr><tr><td class="">SoftwareQualityControl</td></tr></table></div>
+<div><table><tr><th>attributes (9 → 9)</th></tr><tr><td class="">Bug.closedate</td></tr><tr><td class="">Bug.commentsanswer</td></tr><tr><td class="">Bug.description</td></tr><tr><td class="">Bug.number</td></tr><tr><td class="">Bug.originator</td></tr><tr><td class="">ControlsObject.role</td></tr><tr><td class="">Date.concept</td></tr><tr><td class="">Date.day</td></tr><tr><td class="">SoftwareQualityControl.bug traking</td></tr></table></div>
+<div><table><tr><th>relations (6 → 6)</th></tr><tr><td class="">association: Bug -&gt; BugTracking</td></tr><tr><td class="">association: Control -&gt; ControlsSequence</td></tr><tr><td class="">association: Control -&gt; SoftwareQualityControl</td></tr><tr><td class="">association: ControlsObject -&gt; ControlsSequence</td></tr><tr><td class="">association: SoftwareBugTrackingSystem -&gt; ControlType</td></tr><tr><td class="">has: Control -&gt; Date</td></tr></table></div>
+</div>
+<p>Enumerations added: DateType {Day, Year}</p>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R1</td><td>quantifier</td><td>It</td><td><span class='tag resolved'>resolved</span></td><td>It includes one integer for the day and one integer for the year.; It includes multiple integers for the day and multiple integers for the year.<br><i>The sentence is ambiguous regarding the number of integers for day and year.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D2_SoftwareQualityControl_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D2_SoftwareQualityControl_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D2/SoftwareQualityControl.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Date:
+    &quot;&quot;&quot;Source: R1&quot;&quot;&quot;
+    day: _t.Optional[int] = None
+    year: _t.Optional[int] = None
+
+
+class ControlType(_enum.Enum):
+    &quot;&quot;&quot;Source: R4&quot;&quot;&quot;
+    TYPE1 = &quot;TYPE1&quot;
+    TYPE2 = &quot;TYPE2&quot;
+    TYPE3 = &quot;TYPE3&quot;
+    TYPE4 = &quot;TYPE4&quot;
+
+
+@_dc.dataclass
+class Control:
+    &quot;&quot;&quot;Source: R8, R10&quot;&quot;&quot;
+    type: _t.Optional[str] = None
+    controlsSequences: _t.List[&quot;ControlsSequence&quot;] = _dc.field(default_factory=list)
+    controlType: _t.Optional[&quot;ControlType&quot;] = None
+    date: _t.Optional[&quot;Date&quot;] = None
+
+    def setType(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class ControlsSequence:
+    &quot;&quot;&quot;Source: R2, R7, R8&quot;&quot;&quot;
+
+    def addControl(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class ControlsObject:
+    &quot;&quot;&quot;Source: R3, R7, R8&quot;&quot;&quot;
+    role: _t.Optional[str] = None
+    controlsSequences: _t.List[&quot;ControlsSequence&quot;] = _dc.field(default_factory=list)
+
+    def setRole(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Bug:
+    &quot;&quot;&quot;Source: R6, R12&quot;&quot;&quot;
+    number: _t.Optional[int] = None
+    description: _t.Optional[str] = None
+    originator: _t.Optional[str] = None
+    comments: _t.Optional[str] = None
+    closeDate: _t.Optional[str] = None
+    bugTracking: _t.Optional[&quot;BugTracking&quot;] = None
+
+    def setCloseDate(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class BugTracking:
+    &quot;&quot;&quot;Source: R5, R12, R13&quot;&quot;&quot;
+    bugs: _t.Optional[str] = None
+
+    def addBug(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Architecture:
+    &quot;&quot;&quot;Source: R11&quot;&quot;&quot;
+    pass
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>0</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>0</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>0</td></tr>
+<tr><th>inconsistency_rate</th><td>0.0</td></tr>
+<tr><th>requirement_coverage</th><td>1.0</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.625</td><td>0.714</td><td>0.667</td><td>5/3/2</td></tr>
+<tr><td>attributes</td><td>0.4</td><td>0.2</td><td>0.267</td><td>4/6/16</td></tr>
+<tr><td>relations</td><td>0.6</td><td>0.6</td><td>0.6</td><td>3/2/2</td></tr>
+<tr><td>relations_strict</td><td>0.6</td><td>0.6</td><td>0.6</td><td>3/2/2</td></tr>
+</table></body></html>

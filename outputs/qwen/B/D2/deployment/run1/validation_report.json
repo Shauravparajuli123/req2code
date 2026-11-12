@@ -1,0 +1,20 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R2 is not represented in the model.",
+   "fix": "Add a class or an attribute to represent the existence of devices in a deployment."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Deployment and CommunicationLink is not fully aligned with R5 and R8. R5 states that a communication link has a name, but the model does not specify this. R8 states that a communication link has one source node at most, but the model does not specify the source node relationship.",
+   "fix": "Add an attribute 'name' to the CommunicationLink class and a relationship from CommunicationLink to Node with a cardinality of 0..1."
+  }
+ ]
+}

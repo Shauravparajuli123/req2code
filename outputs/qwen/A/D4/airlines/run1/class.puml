@@ -1,0 +1,33 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Airline {
+  name : String
+}
+class Airport {
+  code : String
+  city : String
+}
+class OperatingCost {
+  cost : double
+}
+class Operation {
+  startDateTime : LocalDate
+  stopDateTime : LocalDate
+  cost : String
+}
+class AirlineOperation {
+  airline : String
+  airport : String
+  operation : String
+}
+class Game {
+  name : String
+  +createGame()
+}
+Airline "1" -- "1..*" Airport : operates at
+AirlineOperation "1" o-- "1" Airline : is operated by
+AirlineOperation "1" o-- "1" Airport : at
+OperatingCost "1" *-- "1" AirlineOperation : has
+OperatingCost "0..1" o-- "1" Airline : is for
+@enduml

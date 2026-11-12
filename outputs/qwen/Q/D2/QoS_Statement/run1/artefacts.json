@@ -1,0 +1,82 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "QoSConstraint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Parameter",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "CompoundQoSStatement",
+   "target": "QoSStatement",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "SingleQoSStatement",
+   "target": "QoSConstraint",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Parameter:\n    def __init__(self, value: str):\n        self.value = value\n\nclass QoSConstraint:\n    pass\n\nclass QoSStatement:\n    def __init__(self):\n        pass\n\nclass SingleQoSStatement(QoSStatement):\n    def __init__(self, constraint: QoSConstraint):\n        super().__init__()\n        self.constraint = constraint\n\nclass CompoundQoSStatement(QoSStatement):\n    def __init__(self, statements: List[QoSStatement]):\n        super().__init__()\n        self.statements = statements\n",
+ "java": {}
+}

@@ -1,0 +1,53 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class MTRANSModel {
+  modules : String
+  rules : String
+  inheritances : String
+  expressions : String
+  sections : String
+  variables : String
+  +addModule()
+  +addRule()
+  +addInheritance()
+  +addExpression()
+  +addSection()
+  +addVariable()
+}
+class Module {
+  name : String
+  +addRule()
+}
+class Rule {
+  abstract_ : boolean
+  name : String
+  module : String
+  source : String
+  sections : String
+  variables : String
+  +addSection()
+}
+class Inheritance {
+  rule : String
+}
+class Expression {
+  instruction : String
+}
+class Instruction {
+}
+class Section {
+  kind : String
+}
+class Variable {
+}
+class MetaClass {
+}
+MTRANSModel "1" -- "1..*" Module : has
+Module "1" -- "1..*" Rule : contains
+Rule "1" -- "1..*" Section : has
+Section "1" -- "1" Rule : belongs_to
+Rule "1" -- "1..*" Variable : uses
+Expression "1" -- "1" Instruction : contains
+Instruction "1" -- "1" Expression : is_contained_in
+@enduml

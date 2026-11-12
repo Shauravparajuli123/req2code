@@ -1,0 +1,111 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Vehicle",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "LandVehicle",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "MarineVehicle",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "AmphibiousVehicle",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Vehicle",
+   "name": "position",
+   "src": [
+    "R2",
+    "R5"
+   ]
+  },
+  {
+   "owner": "Vehicle",
+   "name": "speed",
+   "src": [
+    "R2",
+    "R5"
+   ]
+  },
+  {
+   "owner": "Vehicle",
+   "name": "maximumSpeed",
+   "src": [
+    "R2",
+    "R5"
+   ]
+  },
+  {
+   "owner": "Vehicle",
+   "name": "environment",
+   "src": [
+    "R3",
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "generalization",
+   "source": "LandVehicle",
+   "target": "Vehicle",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "kind": "generalization",
+   "source": "MarineVehicle",
+   "target": "Vehicle",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "kind": "generalization",
+   "source": "AmphibiousVehicle",
+   "target": "Vehicle",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "AmphibiousVehicle",
+   "target": "LandVehicle",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "AmphibiousVehicle",
+   "target": "MarineVehicle",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

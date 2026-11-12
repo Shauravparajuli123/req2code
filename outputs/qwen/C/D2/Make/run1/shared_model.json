@@ -1,0 +1,114 @@
+{
+ "case": "D2/Make",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Makefile",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "fileDependencies",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "name": "comment",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addRule",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addFileDependency",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addDependency",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "RuleDependency",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "rule",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R11",
+    "R3"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "A makefile contains rules, and each rule may have dependencies as per R3 and R11."
+  }
+ ],
+ "open_tags": []
+}

@@ -1,0 +1,283 @@
+{
+ "case": "D2/Cristal",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Cristal",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "elementaryActDef",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "elementaryPartDef",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "compositeActDef",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "compositeParDef",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "condition",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "activityDefinitions",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createGame",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C2",
+   "name": "Condition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "CompositeParDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ElementaryActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "ElementaryPartDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "CompositeActDef",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "actCompositeMembers",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "ActCompositeMember",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "activityDefinitions",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "ActivityDefinition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "actCompositeMember",
+     "type": "String",
+     "src": [
+      "R14"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "PartCompositeMember",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "partDefinition",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C10",
+   "name": "PartDefinitionNode",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "partCompositeMember",
+     "type": "String",
+     "src": [
+      "R16"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C6",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "composes",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "aggregation",
+   "source": "C10",
+   "target": "C9",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C9",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "composes",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "composes",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The Cristal class realizes the use cases ElementaryPartDef, ElementaryActDef, CompositeActDef, ActCompositeMember, and PartCompositeMember as per the requirements."
+  }
+ ],
+ "open_tags": []
+}

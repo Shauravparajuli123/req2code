@@ -1,0 +1,168 @@
+{
+ "actors": [
+  {
+   "name": "Professor",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Student",
+   "src": [
+    "R5",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Dormitory Manager",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "Teach Course",
+   "actor": "Professor",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Enroll In Course",
+   "actor": "Student",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Live In Dormitory",
+   "actor": "Student",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Course",
+   "src": [
+    "R1",
+    "R2",
+    "R5"
+   ]
+  },
+  {
+   "name": "Professor",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Student",
+   "src": [
+    "R5",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Dormitory",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Course",
+   "name": "name",
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "owner": "Course",
+   "name": "credits",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "Course",
+   "name": "professors",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Course",
+   "name": "students",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "Professor",
+   "name": "name",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Student",
+   "name": "name",
+   "src": [
+    "R5",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "owner": "Dormitory",
+   "name": "price",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "owner": "Dormitory",
+   "name": "students",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Course",
+   "target": "Professor",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Course",
+   "target": "Student",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Student",
+   "target": "Dormitory",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

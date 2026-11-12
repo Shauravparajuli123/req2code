@@ -1,0 +1,91 @@
+{
+ "classes": [
+  {
+   "name": "DocBook",
+   "kind": "class"
+  },
+  {
+   "name": "Book",
+   "kind": "class"
+  },
+  {
+   "name": "TitledElement",
+   "kind": "class"
+  },
+  {
+   "name": "Article",
+   "kind": "class"
+  },
+  {
+   "name": "Sect1",
+   "kind": "class"
+  },
+  {
+   "name": "Para",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "DocBook": [],
+  "Book": [],
+  "TitledElement": [
+   {
+    "name": "title",
+    "type": "String"
+   }
+  ],
+  "Article": [],
+  "Sect1": [],
+  "Para": [
+   {
+    "name": "content",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "DocBook",
+   "to": "Book",
+   "label": "books 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Book",
+   "to": "Article",
+   "label": "articles 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Article",
+   "to": "TitledElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Article",
+   "to": "Sect1",
+   "label": "sections_1 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Sect1",
+   "to": "TitledElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Sect1",
+   "to": "Para",
+   "label": "paras 1..*",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage DocBook {\nclass DocBook {\n}\nDocBook \"books 1..*\" *--> Book\nclass Book {\n}\nBook \"articles 1..*\" *--> Article\nclass TitledElement {\n\t title : String\n}\nclass Article {\n}\nTitledElement <|-- Article\nArticle \"sections_1 1..*\" *--> Sect1\nclass Sect1 {\n}\nTitledElement <|-- Sect1\nSect1 \"paras 1..*\" *--> Para\nclass Para {\n\t content : String\n}\n}\n@enduml\n"
+}

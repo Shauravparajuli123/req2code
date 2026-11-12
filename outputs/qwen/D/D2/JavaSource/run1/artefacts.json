@@ -1,0 +1,57 @@
+{
+ "actors": [
+  "JavaDeveloper"
+ ],
+ "use_cases": [
+  {
+   "name": "Invoke A Class",
+   "actor": "JavaDeveloper",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Invoke A Method",
+   "actor": "JavaDeveloper",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "MethodDefinition",
+   "kind": "class",
+   "attributes": [
+    "method"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R9"
+   ]
+  }
+ ],
+ "relations": [],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/JavaSource.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass MethodDefinition:\n    \"\"\"Source: R5, R9\"\"\"\n    method: _t.Optional[str] = None\n",
+ "java": {
+  "Game.java": "/** Generated from shared model D2/JavaSource. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "MethodDefinition.java": "/** Generated from shared model D2/JavaSource. Source: R5, R9 */\npublic class MethodDefinition {\n    private java.lang.String method;\n}\n"
+ }
+}

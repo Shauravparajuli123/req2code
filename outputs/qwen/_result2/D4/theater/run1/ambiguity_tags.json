@@ -1,0 +1,155 @@
+[
+ {
+  "id": "A1",
+  "type": "coordination",
+  "sid": "R2.s1",
+  "req_id": "R2",
+  "cue": "and+or",
+  "text": "Theaters have a location, and they can play any play, which can be musicals or operas.",
+  "readings": [
+   "Theaters have a location and can play any play.",
+   "Theaters have a location, and they can play any play."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "coordination",
+  "explanation": "Both readings are supported by the text, but the second one is more explicit.",
+  "chosen": "Theaters have a location, and they can play any play."
+ },
+ {
+  "id": "A2",
+  "type": "quantifier",
+  "sid": "R2.s1",
+  "req_id": "R2",
+  "cue": "any",
+  "text": "Theaters have a location, and they can play any play, which can be musicals or operas.",
+  "readings": [
+   "Theaters can play any play.",
+   "Theaters can play any play, which can be musicals or operas."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "Both readings are supported by the text, but the second one is more explicit.",
+  "chosen": "Theaters can play any play, which can be musicals or operas."
+ },
+ {
+  "id": "A3",
+  "type": "coordination",
+  "sid": "R3.s1",
+  "req_id": "R3",
+  "cue": "either/or",
+  "text": "Plays have a name and can be played either at day or night.",
+  "readings": [
+   "Plays have a name and can be played either at day or night.",
+   "Plays have a name, and can be played either at day or night."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "coordination",
+  "explanation": "Both readings are supported by the text, but the second one is more explicit.",
+  "chosen": "Plays have a name, and can be played either at day or night."
+ },
+ {
+  "id": "A4",
+  "type": "actor",
+  "sid": "R3.s1",
+  "req_id": "R3",
+  "cue": "passive 'played' without agent",
+  "text": "Plays have a name and can be played either at day or night.",
+  "readings": [
+   "Plays have a name and can be played either at day or night.",
+   "Plays have a name, and can be played either at day or night."
+  ],
+  "status": "open",
+  "confirmed": true,
+  "llm_type": "actor",
+  "explanation": "The text does not specify an actor, so this is a terminological ambiguity.",
+  "chosen": null
+ },
+ {
+  "id": "A5",
+  "type": "quantifier",
+  "sid": "R4.s1",
+  "req_id": "R4",
+  "cue": "one or more",
+  "text": "Plays are written by one or more authors, who have a name.",
+  "readings": [
+   "Plays are written by one or more authors.",
+   "Plays are written by one or more authors, who have a name."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "Both readings are supported by the text, but the second one is more explicit.",
+  "chosen": "Plays are written by one or more authors, who have a name."
+ },
+ {
+  "id": "A6",
+  "type": "quantifier",
+  "sid": "R5.s1",
+  "req_id": "R5",
+  "cue": "many",
+  "text": "There are many participants who act in a play, participants also have a name.",
+  "readings": [
+   "There are many participants who act in a play.",
+   "There are many participants, who act in a play."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "Both readings are supported by the text, but the second one is more explicit.",
+  "chosen": "There are many participants, who act in a play."
+ },
+ {
+  "id": "A7",
+  "type": "quantifier",
+  "sid": "R8.s1",
+  "req_id": "R8",
+  "cue": "Any",
+  "text": "Any play can have any number of participants, and any participant can act in any number of plays.",
+  "readings": [
+   "Any play can have any number of participants, and any participant can act in any number of plays.",
+   "Any play can have any number of participants, and any participant can act in any number of plays."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "Both readings are supported by the text, but the second one is more explicit.",
+  "chosen": "Any play can have any number of participants, and any participant can act in any number of plays."
+ },
+ {
+  "id": "A8",
+  "type": "coordination",
+  "sid": "R9.s1",
+  "req_id": "R9",
+  "cue": "modifier scope: time",
+  "text": "Furthermore, each participant acts in specific sessions of a play, where the session has a begin time and an end time.",
+  "readings": [
+   "Each participant acts in specific sessions of a play, where the session has a begin time and an end time.",
+   "Each participant acts in specific sessions of a play, where the session has a begin time and an end time."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "coordination",
+  "explanation": "Both readings are supported by the text, but the second one is more explicit.",
+  "chosen": "Each participant acts in specific sessions of a play, where the session has a begin time and an end time."
+ },
+ {
+  "id": "A9",
+  "type": "quantifier",
+  "sid": "R12.s1",
+  "req_id": "R12",
+  "cue": "any",
+  "text": "Finally, participants can act in any number of plays.",
+  "readings": [
+   "Participants can act in any number of plays.",
+   "Participants can act in any number of plays."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "Both readings are supported by the text, but the second one is more explicit.",
+  "chosen": "Participants can act in any number of plays."
+ }
+]

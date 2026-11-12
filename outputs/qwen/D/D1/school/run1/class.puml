@@ -1,0 +1,146 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Guardian {
+  +directMessage()
+  +fillInAbsence()
+  +receiveNotification()
+}
+class Student {
+  +accessFilesAndDLM()
+  +directMessage()
+  +handHomework()
+  +viewTimetable()
+  +receiveNotificationForDueDate()
+  +viewAccountInformation()
+  +viewContactInformation()
+  +changePreferences()
+}
+class Teacher {
+  +directMessage()
+  +addPageToDLM()
+  +assignDLM()
+  +assignDueDate()
+  +automaticallyGradeDLM()
+  +createDLM()
+  +makeSubmissionElements()
+  +addAnswerToDLM()
+  +confirmFileUpload()
+  +recordDisciplinaryActions()
+  +recordBehavior()
+  +recordGrades()
+  +recordAttendance()
+  +viewStudentAnswers()
+  +viewClassPerformance()
+  +viewStudentProgress()
+  +setAppearanceDate()
+  +setAvailableDates()
+  +uploadFiles()
+  +viewStudentData()
+}
+class Administrator {
+  +sendDirectMessage()
+  +assignSchedules()
+  +createAccount()
+  +editAccountData()
+  +changeDashboardView()
+  +receiveNotification()
+  +registerChanges()
+  +registerAbsence()
+}
+class Message {
+  +send()
+}
+class Notification {
+  +send()
+}
+class File {
+  +upload()
+}
+class DLM {
+  +addPage()
+  +assign()
+  +assignDueDate()
+  +grade()
+  +create()
+  +makeSubmissionElements()
+  +addAnswer()
+  +confirmUpload()
+}
+class Page {
+  +addContent()
+}
+class Submission {
+  +handIn()
+}
+class Answer {
+  +add()
+}
+class Schedule {
+  schedule : String
+  +assign()
+  +uploadSchedule()
+}
+class Account {
+  role : String
+  details : String
+  +edit()
+  +setRole()
+  +viewDetails()
+  +viewStatistics()
+}
+class Class {
+  +view()
+}
+class Behavior {
+  +record_()
+}
+class Grade {
+  +record_()
+  +view()
+  +viewProgress()
+}
+class Attendance {
+  +record_()
+}
+class Dashboard {
+  +changeView()
+}
+class BroadcastMessage {
+  message : String
+  recipients : String
+  +sendBroadcastMessage()
+}
+Guardian "0..*" -- "0..*" Teacher : can message
+Guardian "0..*" -- "0..*" Administrator : can message
+Guardian "1" -- "1" Notification : receives
+Student "0..*" -- "0..*" Teacher : can message
+Student "1" -- "1" DLM : accesses
+Student "1" -- "1" Notification : receives
+Student "1" -- "1" Account : has
+Student "1" -- "1" Class : attends
+Student "1" -- "1" Guardian : is related to
+Teacher "0..*" -- "0..*" Student : can message
+Teacher "1" -- "1" DLM : creates
+Teacher "1" -- "1" Notification : receives
+Teacher "1" -- "1" Class : teaches
+Teacher "1" -- "1" Submission : receives
+Teacher "1" -- "1" Grade : records
+Teacher "1" -- "1" Attendance : records
+Teacher "1" -- "1" Answer : records
+Teacher "1" -- "1" Schedule : views
+Administrator "0..*" -- "0..*" Student : can message
+Administrator "0..*" -- "0..*" Teacher : can message
+Administrator "0..*" -- "0..*" Guardian : can message
+Administrator "1" -- "1" Notification : receives
+Administrator "1" -- "1" Schedule : registers
+Administrator "1" -- "1" Class : assigns
+Administrator "1" -- "1" Account : creates
+Administrator "1" -- "1" Dashboard : views
+Administrator "1" -- "0..*" Message : sends
+Account "0..*" -- "1" Schedule : has
+Account "0..*" -- "1" Message : receives
+Account "0..*" -- "1" Grade : has
+Account "0..*" -- "1" Attendance : has
+Account "0..*" -- "1" Behavior : has
+@enduml

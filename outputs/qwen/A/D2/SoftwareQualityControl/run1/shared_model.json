@@ -1,0 +1,251 @@
+{
+ "case": "D2/SoftwareQualityControl",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "day",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "year",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Control",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "date",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createControl",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C3",
+   "name": "ControlsSequence",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "controls",
+     "type": "String",
+     "src": [
+      "R3",
+      "R8"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "addControl",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ControlType",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "literals": [
+    "TYPE1",
+    "TYPE2",
+    "TYPE3"
+   ],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Bug",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "number",
+     "type": "int",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "originator",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "comments",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "closeDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "createBug",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R13"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "BugTracking",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "bugs",
+     "type": "String",
+     "src": [
+      "R12",
+      "R13"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "addBug",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "createArchitecture",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "belongs to",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is associated to",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

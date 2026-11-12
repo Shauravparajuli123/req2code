@@ -1,0 +1,133 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "SetLocation",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Label",
+   "kind": "class",
+   "attributes": [
+    "label"
+   ],
+   "methods": [
+    {
+     "name": "set_label",
+     "use_case": "SetLocation"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "LabelSuite",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "add_label",
+     "use_case": "SetLocation"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Map",
+   "kind": "class",
+   "attributes": [
+    "map_string"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "icon",
+    "label",
+    "maps"
+   ],
+   "methods": [
+    {
+     "name": "add_map",
+     "use_case": "SetLocation"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "name": "Outline",
+   "kind": "class",
+   "attributes": [
+    "extension"
+   ],
+   "methods": [
+    {
+     "name": "add_node",
+     "use_case": "SetLocation"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "LabelSuite",
+   "target": "Label",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Node",
+   "target": "Map",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Outline",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "class Label:\n    def __init__(self):\n        self.label = None\n    def set_label(self, label):\n        raise NotImplementedError\n\nclass LabelSuite:\n    def __init__(self):\n        self.labels = []\n    def add_label(self, label):\n        raise NotImplementedError\n\nclass Map:\n    def __init__(self):\n        self.map_string = None\n\nclass Node:\n    def __init__(self):\n        self.name = None\n        self.icon = None\n        self.label = None\n        self.maps = []\n    def add_map(self, map):\n        raise NotImplementedError\n\nclass Outline:\n    def __init__(self):\n        self.extension = None\n    def add_node(self, node):\n        raise NotImplementedError",
+ "java": {}
+}

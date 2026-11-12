@@ -1,0 +1,103 @@
+{
+ "actors": [
+  {
+   "name": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "Load Drawing Interchange Format",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "DrawingInterchangeModel",
+   "src": [
+    "R1",
+    "R4"
+   ]
+  },
+  {
+   "name": "Mesh",
+   "src": [
+    "R1",
+    "R2",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Point",
+   "src": [
+    "R1",
+    "R3",
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Mesh",
+   "name": "name",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "Point",
+   "name": "name",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Point",
+   "name": "X",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Point",
+   "name": "Z",
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "DrawingInterchangeModel",
+   "target": "Mesh",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Mesh",
+   "target": "Point",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "kind": "generalization",
+   "source": "Point",
+   "target": "Mesh",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

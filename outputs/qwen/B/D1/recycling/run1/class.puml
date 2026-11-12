@@ -1,0 +1,136 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  emailId : String
+  profile : String
+  activity : String
+  stat : String
+  +clickAddress()
+  +enterZipCode()
+  +getFeedback()
+  +getHour()
+  +addFavorite()
+  +giveEmailId()
+  +viewMapDisplay()
+  +viewLocation()
+  +viewDisposalEvent()
+  +browseList()
+  +createAccount()
+  +viewUserDocumentation()
+  +viewUserErrorLog()
+  +linkEmailAccount()
+  +contactAdministrator()
+}
+class RecyclingFacility {
+  name : String
+  type : String
+  openingHour : String
+  location : String
+  schedule : String
+  material : String
+  +addInformation()
+  +onboardFacility()
+  +communicateSite()
+  +communicateFacility()
+  +handleActivity()
+  +viewDashboard()
+  +viewUserStats()
+  +replyUserQuestion()
+  +updateInformation()
+}
+class Admin {
+  name : String
+  password : String
+  +addRecyclingCenterInformation()
+  +readFeedback()
+  +handleActivity()
+  +viewDashboard()
+  +viewUserStats()
+  +replyUserQuestion()
+  +blockUser()
+  +viewUserErrorLog()
+}
+class Superuser {
+  name : String
+  password : String
+  +updateRecyclingCenterInformation()
+  +viewUserStats()
+  +replyUserQuestion()
+}
+class RecyclingfacilityRepresentative {
+  name : String
+  password : String
+  +updateInformation()
+  +viewUserStats()
+}
+class Profile {
+  favorites : String
+}
+enum Pick {
+  RECYCLINGCENTER
+  DONATIONCENTER
+}
+class Material {
+  type : String
+}
+class Schedule {
+  week : String
+}
+class Location {
+  coordinates : String
+}
+class Feedback {
+  message : String
+}
+class Hour {
+  time : String
+}
+class Notification {
+  message : String
+}
+class CompanyAccountant {
+  name : String
+  password : String
+  +viewActivityFee()
+}
+class Executive {
+  name : String
+  password : String
+  +viewActivityFee()
+}
+class Employee {
+  name : String
+  password : String
+  +accessRoutePlanningSystem()
+  +viewEmployeeInfo()
+}
+class Developer {
+  name : String
+  password : String
+  +accessApi()
+  +useBootstrap()
+  +attendUxLesson()
+}
+User "1" -- "1" Profile : has
+User "1" -- "0..*" Notification : receives
+User "1" -- "0..*" Feedback : gives
+Admin "1" -- "0..*" RecyclingFacility : manages
+Admin "1" -- "0..*" User : monitors
+User "1" -- "0..*" RecyclingFacility : findsNearby
+User "1" -- "0..*" Pick : chooses
+User "1" -- "0..*" Material : selects
+User "1" -- "0..*" Schedule : uploads
+RecyclingFacility "1" -- "1" Hour : has
+RecyclingFacility "1" -- "1" Schedule : has
+RecyclingFacility "1" -- "0..*" Material : accepts
+RecyclingfacilityRepresentative "1" -- "1" RecyclingFacility : manages
+RecyclingfacilityRepresentative "1" -- "1" Schedule : updates
+RecyclingfacilityRepresentative "1" -- "0..*" Feedback : receives
+RecyclingfacilityRepresentative "1" -- "1" Profile : has
+RecyclingfacilityRepresentative "1" -- "1" Material : accepts
+RecyclingfacilityRepresentative "1" -- "0..*" User : answers
+RecyclingFacility "1" -- "1" Profile : has
+RecyclingFacility "1" -- "0..*" Feedback : receives
+@enduml

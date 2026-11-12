@@ -1,0 +1,58 @@
+@startuml
+class Customer {
+  username
+  password
+  language
+  pushNotifications
+  deliveryService
+  loyaltyCard
+}
+class Employee {
+  username
+  password
+}
+class DeliveryService {
+  subscription
+}
+class Delivery {
+  date
+  timeSlot
+  status
+}
+class Newsletter {
+  subscriptionStatus
+}
+class Discount {
+  percentage
+}
+class Product {
+  name
+  barcode
+  quantity
+  price
+  dietaryRestrictions
+}
+class Order {
+  date
+  timeSlot
+  status
+  products
+}
+class Recipe {
+  name
+  ingredients
+}
+class LoyaltyCard {
+  cardNumber
+  points
+}
+Customer -- DeliveryService
+Customer -- Newsletter
+Customer -- Order
+Customer -- Product
+Employee -- Discount
+Employee -- Delivery
+Employee -- Customer
+Product -- Recipe
+Order -- Product
+@enduml

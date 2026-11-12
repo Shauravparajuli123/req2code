@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "User" as A1
+rectangle "BQL" {
+  usecase "Define Entries" as UC1
+  usecase "Define Fields" as UC2
+  usecase "Define Queries" as UC3
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+@enduml

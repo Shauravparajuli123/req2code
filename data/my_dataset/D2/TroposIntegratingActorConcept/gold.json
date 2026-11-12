@@ -1,0 +1,71 @@
+{
+ "classes": [
+  {
+   "name": "Actor",
+   "kind": "class"
+  },
+  {
+   "name": "Agent",
+   "kind": "class"
+  },
+  {
+   "name": "Position",
+   "kind": "class"
+  },
+  {
+   "name": "Role",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Actor": [],
+  "Agent": [],
+  "Position": [],
+  "Role": []
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "Agent",
+   "to": "Actor",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Agent",
+   "to": "Position",
+   "label": "occupy 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Agent",
+   "to": "Role",
+   "label": "play 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Position",
+   "to": "Actor",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Position",
+   "to": "Role",
+   "label": "cover 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Role",
+   "to": "Actor",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage IntegratingTroposActorConcept {\nclass Actor {\n}\nclass Agent {\n}\nActor <|-- Agent\nAgent \"occupy 1..1\" --> Position\nAgent \"play 0..*\" --> Role\nclass Position {\n}\nActor <|-- Position\nPosition \"cover 0..*\" *--> Role\nclass Role {\n}\nActor <|-- Role\n}\n@enduml\n"
+}

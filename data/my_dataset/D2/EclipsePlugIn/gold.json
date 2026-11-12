@@ -1,0 +1,163 @@
+{
+ "classes": [
+  {
+   "name": "Application",
+   "kind": "class"
+  },
+  {
+   "name": "ExtensionPoint",
+   "kind": "class"
+  },
+  {
+   "name": "Description",
+   "kind": "class"
+  },
+  {
+   "name": "Extension",
+   "kind": "class"
+  },
+  {
+   "name": "PlugIn",
+   "kind": "class"
+  },
+  {
+   "name": "Librairy",
+   "kind": "class"
+  },
+  {
+   "name": "Class",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Application": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "version",
+    "type": "String"
+   },
+   {
+    "name": "author",
+    "type": "String"
+   }
+  ],
+  "ExtensionPoint": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "id",
+    "type": "String"
+   }
+  ],
+  "Description": [
+   {
+    "name": "xmlSchema",
+    "type": "String"
+   }
+  ],
+  "Extension": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "id",
+    "type": "String"
+   }
+  ],
+  "PlugIn": [
+   {
+    "name": "id",
+    "type": "String"
+   },
+   {
+    "name": "displayableName",
+    "type": "String"
+   },
+   {
+    "name": "version",
+    "type": "String"
+   },
+   {
+    "name": "supplier",
+    "type": "String"
+   }
+  ],
+  "Librairy": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Class": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Application",
+   "to": "ExtensionPoint",
+   "label": "extensionPoints 1..*",
+   "label_to": "application 1..1"
+  },
+  {
+   "type": "association",
+   "from": "ExtensionPoint",
+   "to": "Description",
+   "label": "descriptions 0..*",
+   "label_to": "extensionPoints 0..*"
+  },
+  {
+   "type": "composition",
+   "from": "ExtensionPoint",
+   "to": "PlugIn",
+   "label": "plugIn 1..1",
+   "label_to": "extensionPoints 0..*"
+  },
+  {
+   "type": "association",
+   "from": "Extension",
+   "to": "ExtensionPoint",
+   "label": "isConfiguredInto 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "PlugIn",
+   "to": "Extension",
+   "label": "configures 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "PlugIn",
+   "to": "PlugIn",
+   "label": "requires 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "PlugIn",
+   "to": "Librairy",
+   "label": "uses 0..*",
+   "label_to": "plugIn 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Librairy",
+   "to": "Class",
+   "label": "classes 1..*",
+   "label_to": "librairy 1..1"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage EclipsePlugIn {\nclass Application {\n\t name : String\n\t version : String\n\t author : String\n}\nApplication \"extensionPoints 1..*\" *-- \"application 1..1\" ExtensionPoint\nclass ExtensionPoint {\n\t name : String\n\t id : String\n}\nExtensionPoint \"descriptions 0..*\" -- \"extensionPoints 0..*\" Description\nExtensionPoint \"plugIn 1..1\" --* \"extensionPoints 0..*\" PlugIn\nclass Description {\n\t xmlSchema : String\n}\nclass Extension {\n\t name : String\n\t id : String\n}\nExtension \"isConfiguredInto 1..1\" --> ExtensionPoint\nclass PlugIn {\n\t id : String\n\t displayableName : String\n\t version : String\n\t supplier : String\n}\nPlugIn \"configures 1..*\" --> Extension\nPlugIn \"requires 0..*\" --> PlugIn\nPlugIn \"uses 0..*\" -- \"plugIn 1..1\" Librairy\nclass Librairy {\n\t name : String\n}\nLibrairy \"classes 1..*\" *-- \"librairy 1..1\" Class\nclass Class {\n\t name : String\n}\n}\n@enduml\n"
+}

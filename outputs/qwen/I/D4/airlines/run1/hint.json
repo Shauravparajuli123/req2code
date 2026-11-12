@@ -1,0 +1,165 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D4/airlines",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "Many different airlines can operate in different airports."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "An airline has a name and an airport has a code and is in a city."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "Each airline has associated a cost for operating in a specific airport."
+     }
+    ],
+    "name": "Airline",
+    "freq": 5
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "Many different airlines can operate in different airports."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "An airline has a name and an airport has a code and is in a city."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "Each airline has associated a cost for operating in a specific airport."
+     }
+    ],
+    "name": "Airport",
+    "freq": 5
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R4",
+     "R5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "Besides, the operation of an airline in a specific airport can be started and stopped at any time, and its operating cost can be updated at any time."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "The relation between airport and airline contains a details class with the operating cost."
+     }
+    ],
+    "name": "OperatingCost",
+    "freq": 2
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "An airline has a name and an airport has a code and is in a city."
+     }
+    ],
+    "owner": "Airline",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "Besides, the operation of an airline in a specific airport can be started and stopped at any time, and its operating cost can be updated at any time."
+     }
+    ],
+    "owner": "Airline",
+    "name": "operation",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "An airline has a name and an airport has a code and is in a city."
+     }
+    ],
+    "kind": "has",
+    "source": "Airline",
+    "target": "Airport",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": [
+  "R1 (quantifier, \"Many\"): readings ['Many different airlines can operate in the same airport.', 'A single airline can operate in many airports.']",
+  "R4 (quantifier, \"any\"): readings ['The operation of an airline in a specific airport can be started and stopped at any time.', 'The operation of an airline in any airport can be started and stopped at any time.']",
+  "R4 (actor, \"passive 'started' without agent\"): readings ['The operation of an airline can be started and stopped by the airline itself.', 'The operation of an airline can be started and stopped by an external entity.']",
+  "R5 (incompleteness, \"details\"): readings ['The relation between airport and airline contains a class with the operating cost.', 'The relation between airport and airline does not contain a class with the operating cost.']"
+ ]
+}

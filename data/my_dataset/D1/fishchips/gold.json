@@ -1,0 +1,372 @@
+{
+ "classes": [
+  {
+   "name": "orders",
+   "status": "mandatory"
+  },
+  {
+   "name": "coupons",
+   "status": "mandatory"
+  },
+  {
+   "name": "payment",
+   "status": "mandatory"
+  },
+  {
+   "name": "products",
+   "status": "mandatory"
+  },
+  {
+   "name": "cash",
+   "status": "mandatory"
+  },
+  {
+   "name": "requests",
+   "status": "mandatory"
+  },
+  {
+   "name": "customer",
+   "status": "mandatory"
+  },
+  {
+   "name": "cashier",
+   "status": "optional"
+  },
+  {
+   "name": "delivery person",
+   "status": "mandatory"
+  }
+ ],
+ "associations": [
+  {
+   "pair": [
+    "order",
+    "product"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "request",
+    "product"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "custom",
+    "order"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "order",
+    "coupon"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "delivery person",
+    "cash"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "delivery person",
+    "order"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "order",
+    "payment"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "cashier",
+    "payment"
+   ],
+   "status": "optional"
+  }
+ ],
+ "synonyms": {
+  "deliveryperson": "delivery person",
+  "home delivery person": "delivery person",
+  "delivery-person": "delivery person",
+  "deliveryemployee": "delivery person",
+  "delivery driver": "delivery person",
+  "delivery employee": "delivery person",
+  "special request": "request",
+  "specialrequest": "request"
+ },
+ "use_case_draft": {
+  "status": "auto-extracted, not yet validated",
+  "actors": {
+   "kitchen employee": 7,
+   "ticket master": 15,
+   "customer": 2,
+   "cashier": 14,
+   "restaurant owner": 8,
+   "home delivery person": 4
+  },
+  "use_cases": [
+   {
+    "actor": "Kitchen Employee",
+    "goal": "see the orders with their status",
+    "src": "R1"
+   },
+   {
+    "actor": "Kitchen Employee",
+    "goal": "have an overview of all orders at a glance",
+    "src": "R2"
+   },
+   {
+    "actor": "Kitchen Employee",
+    "goal": "receive only the products of an order",
+    "src": "R3"
+   },
+   {
+    "actor": "Kitchen Employee",
+    "goal": "see special requests to be shown together with the product they are concerned about",
+    "src": "R4"
+   },
+   {
+    "actor": "Kitchen Employee",
+    "goal": "have the order number shown together with its related products",
+    "src": "R5"
+   },
+   {
+    "actor": "Kitchen Employee",
+    "goal": "receive a notification when a new order is received",
+    "src": "R6"
+   },
+   {
+    "actor": "Kitchen Employee",
+    "goal": "receive a notification if the customer makes changes after the order is already paid",
+    "src": "R7"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "label new orders as ‘incoming orders’",
+    "src": "R8"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "label a product as ‘current orders’ at the moment the preparation of the products is started",
+    "src": "R9"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "label a product as ‘finished orders’ after the preparation of the products is finished",
+    "src": "R10"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "label products as ‘scheduled orders’ if their requested time is not yet within ten minutes",
+    "src": "R11"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "have an overview of all the incoming orders",
+    "src": "R12"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "have an overview of all orders that are currently made by the kitchen",
+    "src": "R13"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "have an overview of all orders that are completed by the kitchen",
+    "src": "R14"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "have an overview of all scheduled orders",
+    "src": "R15"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "separate the scheduled orders from the other statuses",
+    "src": "R16"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "see the statuses of the products of an order",
+    "src": "R17"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "see matching colors with the status of each product",
+    "src": "R18"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "see the order type",
+    "src": "R19"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "operate the screen with a touchscreen",
+    "src": "R20"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "select orders",
+    "src": "R21"
+   },
+   {
+    "actor": "Ticket Master",
+    "goal": "delete an order",
+    "src": "R22"
+   },
+   {
+    "actor": "Customer",
+    "goal": "have a screen during the ordering process",
+    "src": "R23"
+   },
+   {
+    "actor": "Customer",
+    "goal": "request a confirmation of payment",
+    "src": "R24"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "have a physical ticket that shows the relevant information being printed automatically for the customer",
+    "src": "R25"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "print a physical ticket that shows the relevant order details",
+    "src": "R26"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "make changes during the order",
+    "src": "R27"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "make changes after the order has been processed",
+    "src": "R28"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "add the type of order",
+    "src": "R29"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "add the pickup time for a takeaway order",
+    "src": "R30"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "have a digital ticket sent to the kitchen",
+    "src": "R31"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "add the delivery address to the order",
+    "src": "R32"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "add the phone number to the order",
+    "src": "R33"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "add the customer’s name to the order in the case of takeaway",
+    "src": "R34"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "add special requests to a product they are concerned about",
+    "src": "R35"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "offer different payment methods",
+    "src": "R36"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "add a tip to the price of the order with all possible payment options",
+    "src": "R37"
+   },
+   {
+    "actor": "Cashier",
+    "goal": "activate coupons during the order process",
+    "src": "R38"
+   },
+   {
+    "actor": "Restaurant Owner",
+    "goal": "see the VAT of each order",
+    "src": "R39"
+   },
+   {
+    "actor": "Restaurant Owner",
+    "goal": "see the sold products",
+    "src": "R40"
+   },
+   {
+    "actor": "Restaurant Owner",
+    "goal": "have an overview of the types of orders",
+    "src": "R41"
+   },
+   {
+    "actor": "Restaurant Owner",
+    "goal": "have an overview of prices per order",
+    "src": "R42"
+   },
+   {
+    "actor": "Restaurant Owner",
+    "goal": "search for specific orders if a customer has questions about an order",
+    "src": "R43"
+   },
+   {
+    "actor": "Restaurant Owner",
+    "goal": "fill in the number of tips received on a day by the restaurant and the delivery employees",
+    "src": "R44"
+   },
+   {
+    "actor": "Restaurant Owner",
+    "goal": "have cashier accounts",
+    "src": "R45"
+   },
+   {
+    "actor": "Restaurant Owner",
+    "goal": "fill in the amount of cash the delivery people receive per day",
+    "src": "R46"
+   },
+   {
+    "actor": "Home Delivery Person",
+    "goal": "have the address printed on the ticket",
+    "src": "R47"
+   },
+   {
+    "actor": "Home Delivery Person",
+    "goal": "have the delivery address before the order is finished",
+    "src": "R48"
+   },
+   {
+    "actor": "Home Delivery Person",
+    "goal": "have the order price on a printed ticket",
+    "src": "R49"
+   },
+   {
+    "actor": "Home Delivery Person",
+    "goal": "know the phone number of the customer on a printed ticket",
+    "src": "R50"
+   }
+  ],
+  "unparsed": 0
+ }
+}

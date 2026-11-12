@@ -1,0 +1,93 @@
+{
+ "actors": [
+  "parent"
+ ],
+ "use_cases": [
+  {
+   "name": "hasParent",
+   "actor": "parent",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "startLine",
+    "endLine",
+    "parent"
+   ],
+   "methods": [
+    {
+     "name": "hasParent",
+     "use_case": "hasParent"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addChild",
+     "use_case": "addChild"
+    },
+    {
+     "name": "removeChild",
+     "use_case": "removeChild"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R7"
+   ]
+  },
+  {
+   "name": "XmlFile",
+   "kind": "class",
+   "attributes": [
+    "rootElement",
+    "textElements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "XmlFile",
+   "target": "Element",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "XmlFile",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Node:\n    def __init__(self, name: str, startLine: int, endLine: int, parent: 'Element' = None):\n        self.name = name\n        self.startLine = startLine\n        self.endLine = endLine\n        self.parent = parent\n\n    def hasParent(self) -> bool:\n        raise NotImplementedError()\n\nclass Element:\n    def __init__(self):\n        pass\n\n    def addChild(self, child: 'Node') -> None:\n        raise NotImplementedError()\n\n    def removeChild(self, child: 'Node') -> None:\n        raise NotImplementedError()\n\nclass XmlFile:\n    def __init__(self):\n        self.rootElement: 'Element' = None\n        self.textElements: List[Node] = []\n",
+ "java": {}
+}

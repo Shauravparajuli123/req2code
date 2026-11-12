@@ -1,0 +1,108 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "BusinessTemplate",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "BusinessContact",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Service",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "BusinessEntity",
+   "src": [
+    "R4",
+    "R9"
+   ]
+  },
+  {
+   "name": "IdentifierBag",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Model",
+   "src": [
+    "R6",
+    "R10"
+   ]
+  },
+  {
+   "name": "OverviewDocument",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "BusinessEntity",
+   "name": "identifiers",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "owner": "BusinessEntity",
+   "name": "businessContacts",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "owner": "BusinessEntity",
+   "name": "services",
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "BusinessEntity",
+   "target": "BusinessContact",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "BusinessEntity",
+   "target": "Service",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "BusinessEntity",
+   "target": "IdentifierBag",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Model",
+   "target": "OverviewDocument",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

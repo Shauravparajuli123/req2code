@@ -1,0 +1,239 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [
+   {
+    "name": "MgaObject",
+    "src": [
+     "R1"
+    ]
+   }
+  ],
+  "use_cases": [
+   {
+    "name": "has a name",
+    "actor": "MgaObject",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "Transition of finite state machines",
+    "actor": "FSM",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "name": "have a state",
+    "actor": "FSM",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "name": "have a state machine",
+    "actor": "FSM",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "have a name",
+    "actor": "root folder",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "name": "has a class that is an AssociationStateState",
+    "actor": "FiniteStateMachine",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "name": "has one and only one state machine",
+    "actor": "transition",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "name": "has one and only one state machine",
+    "actor": "state",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "name": "has one or more association state source",
+    "actor": "state",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "name": "has one and only one root folder",
+    "actor": "state machine",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "name": "may have a transition or many or not",
+    "actor": "state machine",
+    "src": [
+     "R11"
+    ]
+   },
+   {
+    "name": "may have root folders, potentially many",
+    "actor": "root folder",
+    "src": [
+     "R12"
+    ]
+   },
+   {
+    "name": "has one and only one transition",
+    "actor": "association state",
+    "src": [
+     "R13"
+    ]
+   },
+   {
+    "name": "has one or many source state",
+    "actor": "association state",
+    "src": [
+     "R14"
+    ]
+   }
+  ],
+  "classes": [
+   {
+    "name": "MgaObject",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "FSM",
+    "src": [
+     "R2",
+     "R3",
+     "R4"
+    ]
+   },
+   {
+    "name": "root folder",
+    "src": [
+     "R5",
+     "R10",
+     "R12"
+    ]
+   },
+   {
+    "name": "FiniteStateMachine",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "name": "transition",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "name": "state",
+    "src": [
+     "R8",
+     "R9"
+    ]
+   },
+   {
+    "name": "state machine",
+    "src": [
+     "R10",
+     "R11"
+    ]
+   },
+   {
+    "name": "association state",
+    "src": [
+     "R13",
+     "R14"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "MgaObject",
+    "name": "name",
+    "src": [
+     "R1"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "state machine",
+    "target": "root folder",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "state machine",
+    "target": "transition",
+    "src": [
+     "R11"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "root folder",
+    "target": "root folder",
+    "src": [
+     "R12"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "state",
+    "target": "state machine",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "state",
+    "target": "association state",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "association state",
+    "target": "transition",
+    "src": [
+     "R13"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "association state",
+    "target": "state",
+    "src": [
+     "R14"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

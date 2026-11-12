@@ -1,0 +1,79 @@
+{
+ "classes": [
+  {
+   "name": "BusinessTemplate",
+   "kind": "class"
+  },
+  {
+   "name": "BusinessContact",
+   "kind": "class"
+  },
+  {
+   "name": "BusinessService",
+   "kind": "class"
+  },
+  {
+   "name": "BusinessEntity",
+   "kind": "class"
+  },
+  {
+   "name": "IdentifierBag",
+   "kind": "class"
+  },
+  {
+   "name": "TModel",
+   "kind": "class"
+  },
+  {
+   "name": "OverviewDocument",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "BusinessTemplate": [],
+  "BusinessContact": [],
+  "BusinessService": [],
+  "BusinessEntity": [],
+  "IdentifierBag": [],
+  "TModel": [],
+  "OverviewDocument": []
+ },
+ "relations": [
+  {
+   "type": "association",
+   "from": "BusinessEntity",
+   "to": "BusinessContact",
+   "label": "businessContacts 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "BusinessEntity",
+   "to": "BusinessService",
+   "label": "businessServices 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "BusinessEntity",
+   "to": "IdentifierBag",
+   "label": "identifierBag 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "TModel",
+   "to": "OverviewDocument",
+   "label": "overviewDocuments 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "TModel",
+   "to": "IdentifierBag",
+   "label": "identifierBag 0..1",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage PIF {\nclass BusinessTemplate {\n}\nclass BusinessContact {\n}\nclass BusinessService {\n}\nclass BusinessEntity {\n}\nBusinessEntity \"businessContacts 0..*\" --> BusinessContact\nBusinessEntity \"businessServices 0..*\" *--> BusinessService\nBusinessEntity \"identifierBag 0..1\" --> IdentifierBag\nclass IdentifierBag {\n}\nclass TModel {\n}\nTModel \"overviewDocuments 0..*\" *--> OverviewDocument\nTModel \"identifierBag 0..1\" --> IdentifierBag\nclass OverviewDocument {\n}\n}\n@enduml\n"
+}

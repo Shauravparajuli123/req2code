@@ -1,0 +1,422 @@
+{
+ "classes": [
+  {
+   "name": "questions",
+   "status": "removed"
+  },
+  {
+   "name": "feedback",
+   "status": "mandatory"
+  },
+  {
+   "name": "complaints",
+   "status": "mandatory"
+  },
+  {
+   "name": "user",
+   "status": "mandatory"
+  },
+  {
+   "name": "safe disposal events",
+   "status": "mandatory"
+  },
+  {
+   "name": "employees",
+   "status": "mandatory"
+  },
+  {
+   "name": "recycling facility",
+   "status": "mandatory"
+  },
+  {
+   "name": "waste type",
+   "status": "mandatory"
+  },
+  {
+   "name": "schedule",
+   "status": "mandatory"
+  },
+  {
+   "name": "reward",
+   "status": "mandatory"
+  },
+  {
+   "name": "activity",
+   "status": "mandatory"
+  }
+ ],
+ "associations": [
+  {
+   "pair": [
+    "user",
+    "question"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "user",
+    "feedback"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "user",
+    "complaint"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "recycling facil",
+    "recyclable wast"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "recycling facil",
+    "schedul"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "user",
+    "schedul"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "employe",
+    "user"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "employe",
+    "event"
+   ],
+   "status": "optional"
+  },
+  {
+   "pair": [
+    "user",
+    "reward"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "user",
+    "activity"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "activity",
+    "waste type"
+   ],
+   "status": "optional"
+  }
+ ],
+ "synonyms": {
+  "recycling center": "recycling facility",
+  "special waste drop off site": "recycling facility",
+  "facility": "recycling facility",
+  "wastedropoffsite": "recycling facility",
+  "waste drop off site": "recycling facility",
+  "recyclingfacility": "recycling facility",
+  "special waste drop off sites": "recycling facility",
+  "center": "recycling facility",
+  "recyclable waste type": "waste type",
+  "recyclable material": "waste type",
+  "non-recycllable material": "waste type",
+  "material": "waste type",
+  "type of waste": "waste type",
+  "type of recyclable waste": "waste type",
+  "recyclable waste": "waste type",
+  "question": "feedback",
+  "userquestion": "feedback",
+  "disposal event": "safe disposal event",
+  "safedisposalevent": "safe disposal event"
+ },
+ "use_case_draft": {
+  "status": "auto-extracted, not yet validated",
+  "actors": {
+   "user": 25,
+   "admin": 11,
+   "executive": 1,
+   "employee": 2,
+   "employee from the hr department": 1,
+   "developer": 3,
+   "company": 1,
+   "company accountant": 1,
+   "superuser": 3,
+   "recyclingfacility representative": 2,
+   "recyclingfacility": 1
+  },
+  "use_cases": [
+   {
+    "actor": "user",
+    "goal": "click on the address",
+    "src": "R1"
+   },
+   {
+    "actor": "user",
+    "goal": "anonymously view public information",
+    "src": "R2"
+   },
+   {
+    "actor": "user",
+    "goal": "enter my zip code and get a list of nearby recycling facilities",
+    "src": "R3"
+   },
+   {
+    "actor": "user",
+    "goal": "get the hours of each recycling facility",
+    "src": "R4"
+   },
+   {
+    "actor": "user",
+    "goal": "have a flexible pick up time",
+    "src": "R5"
+   },
+   {
+    "actor": "user",
+    "goal": "select different types of recyclable waste",
+    "src": "R6"
+   },
+   {
+    "actor": "user",
+    "goal": "add donation centers as favorites on my profile",
+    "src": "R7"
+   },
+   {
+    "actor": "user",
+    "goal": "give my email ID",
+    "src": "R8"
+   },
+   {
+    "actor": "user",
+    "goal": "view a map display of the public recycling bins around my area",
+    "src": "R9"
+   },
+   {
+    "actor": "user",
+    "goal": "view a map display of the special waste drop off sites around my area",
+    "src": "R10"
+   },
+   {
+    "actor": "user",
+    "goal": "view the safe disposal events currently being organised around my area",
+    "src": "R11"
+   },
+   {
+    "actor": "user",
+    "goal": "choose a flexible pick up time",
+    "src": "R12"
+   },
+   {
+    "actor": "user",
+    "goal": "view user documentation for the website",
+    "src": "R13"
+   },
+   {
+    "actor": "user",
+    "goal": "get feedback when I enter an invalid zip code",
+    "src": "R14"
+   },
+   {
+    "actor": "user",
+    "goal": "create an acocunt",
+    "src": "R15"
+   },
+   {
+    "actor": "admin",
+    "goal": "add or remove recycling facilities' information",
+    "src": "R16"
+   },
+   {
+    "actor": "admin",
+    "goal": "read users' feedback and complaints",
+    "src": "R17"
+   },
+   {
+    "actor": "user",
+    "goal": "check transaction history and keep a record of it",
+    "src": "R18"
+   },
+   {
+    "actor": "user",
+    "goal": "have a great UI and UX from the sites",
+    "src": "R19"
+   },
+   {
+    "actor": "user",
+    "goal": "access the site and do all the other stuffs on all of my electronic devices",
+    "src": "R20"
+   },
+   {
+    "actor": "admin",
+    "goal": "block specific users based on IP address",
+    "src": "R21"
+   },
+   {
+    "actor": "admin",
+    "goal": "view a dashboard that monitors all the sites' statuses",
+    "src": "R22"
+   },
+   {
+    "actor": "admin",
+    "goal": "have all data encrypted",
+    "src": "R23"
+   },
+   {
+    "actor": "executive",
+    "goal": "have full access to data related to my company",
+    "src": "R24"
+   },
+   {
+    "actor": "employee",
+    "goal": "access the route planning system during work",
+    "src": "R25"
+   },
+   {
+    "actor": "employee from the HR department",
+    "goal": "have access to the full information of all employees working for this business",
+    "src": "R26"
+   },
+   {
+    "actor": "developer",
+    "goal": "access an API from the website",
+    "src": "R27"
+   },
+   {
+    "actor": "user",
+    "goal": "receive tempting rewards",
+    "src": "R28"
+   },
+   {
+    "actor": "user",
+    "goal": "have my personal information kept securely in the database of the website",
+    "src": "R29"
+   },
+   {
+    "actor": "admin",
+    "goal": "handle all users' activities",
+    "src": "R30"
+   },
+   {
+    "actor": "company",
+    "goal": "have a website that is easy to use",
+    "src": "R31"
+   },
+   {
+    "actor": "employee",
+    "goal": "get quick notifications",
+    "src": "R32"
+   },
+   {
+    "actor": "company accountant",
+    "goal": "view all available activity fees online",
+    "src": "R33"
+   },
+   {
+    "actor": "developer",
+    "goal": "use bootstrap in the process of developing",
+    "src": "R34"
+   },
+   {
+    "actor": "developer",
+    "goal": "attend some UI/UX lessons",
+    "src": "R35"
+   },
+   {
+    "actor": "user",
+    "goal": "view all locations of recycling centers on a map",
+    "src": "R36"
+   },
+   {
+    "actor": "user",
+    "goal": "upload my week's schedule",
+    "src": "R37"
+   },
+   {
+    "actor": "user",
+    "goal": "link my email account to my profile",
+    "src": "R38"
+   },
+   {
+    "actor": "user",
+    "goal": "contact the administrators",
+    "src": "R39"
+   },
+   {
+    "actor": "admin",
+    "goal": "add recycling center information",
+    "src": "R40"
+   },
+   {
+    "actor": "admin",
+    "goal": "view user error logs",
+    "src": "R41"
+   },
+   {
+    "actor": "admin",
+    "goal": "onboard recycling centers on the platform",
+    "src": "R42"
+   },
+   {
+    "actor": "superuser",
+    "goal": "update the recycling center information",
+    "src": "R43"
+   },
+   {
+    "actor": "superuser",
+    "goal": "view users' stats",
+    "src": "R44"
+   },
+   {
+    "actor": "superuser",
+    "goal": "reply to user questions",
+    "src": "R45"
+   },
+   {
+    "actor": "admin",
+    "goal": "have a dashboard that shows usage stats and locations",
+    "src": "R46"
+   },
+   {
+    "actor": "admin",
+    "goal": "communicate directly with facilities",
+    "src": "R47"
+   },
+   {
+    "actor": "user",
+    "goal": "browse through the list of facolities and see which ones are environment-friendly",
+    "src": "R48"
+   },
+   {
+    "actor": "recyclingfacility representative",
+    "goal": "update my information and the type of material I accept",
+    "src": "R49"
+   },
+   {
+    "actor": "recyclingfacility representative",
+    "goal": "have access to user stats and schedules",
+    "src": "R50"
+   },
+   {
+    "actor": "recyclingfacility",
+    "goal": "communicate directly with the site admin and convey any issues or concerns I have",
+    "src": "R51"
+   }
+  ],
+  "unparsed": 0
+ }
+}

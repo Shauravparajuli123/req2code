@@ -1,0 +1,100 @@
+<html><head><meta charset='utf-8'><title>D2/deployment</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D2/deployment &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: A class named &quot;Node&quot;, containing an attribute called &quot;name&quot;, of type &quot;String&quot;.
+R2: There exist devices in a deployment
+R3: Deployments may have execution environments, which ae of type ExecutionEnvironment)
+R4: A class named &quot;Specification&quot;.
+R5: A communication link of a deployment has a name
+R6: A package called &quot;Deployment&quot;, containing a hierarchy of &quot;Nodes&quot;.
+R7: A package called &quot;Deployment&quot; containing a &quot;Specification&quot;, that can contain arbitrary number of Nodes.
+R8: A communication link of a deployment has one source node at the most</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (0 → 0)</th></tr></table></div>
+<div><table><tr><th>classes (5 → 5)</th></tr><tr><td class="">CommunicationLink</td></tr><tr><td class="">Deployment</td></tr><tr><td class="">Node</td></tr><tr><td class="">Nodes</td></tr><tr><td class="">Specification</td></tr></table></div>
+<div><table><tr><th>attributes (5 → 5)</th></tr><tr><td class="">CommunicationLink.name</td></tr><tr><td class="">CommunicationLink.source node</td></tr><tr><td class="">Deployment.execution environment</td></tr><tr><td class="">Node.name</td></tr><tr><td class="">Nodes.hierarchy</td></tr></table></div>
+<div><table><tr><th>relations (2 → 2)</th></tr><tr><td class="">has: Deployment -&gt; CommunicationLink</td></tr><tr><td class="">has: Specification -&gt; Nodes</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D2_deployment_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D2_deployment_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D2/deployment.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Node:
+    &quot;&quot;&quot;Source: R1&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class CommunicationLink:
+    &quot;&quot;&quot;Source: R5, R8&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    sourceNode: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class Deployment:
+    &quot;&quot;&quot;Source: R6, R7&quot;&quot;&quot;
+    nodes: _t.Optional[str] = None
+    executionEnvironment: _t.Optional[str] = None
+    communicationLink: _t.Optional[&quot;CommunicationLink&quot;] = None
+
+
+@_dc.dataclass
+class Nodes:
+    &quot;&quot;&quot;Source: R6, R7&quot;&quot;&quot;
+    hierarchy: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class ExecutionEnvironment:
+    &quot;&quot;&quot;Source: R3&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class Specification:
+    &quot;&quot;&quot;Source: R4, R7&quot;&quot;&quot;
+    node: _t.Optional[&quot;Node&quot;] = None
+
+    def addNode(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>0</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>0</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>0</td></tr>
+<tr><th>inconsistency_rate</th><td>0.0</td></tr>
+<tr><th>requirement_coverage</th><td>0.875</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.8</td><td>0.8</td><td>0.8</td><td>4/1/1</td></tr>
+<tr><td>attributes</td><td>0.333</td><td>1.0</td><td>0.5</td><td>2/4/0</td></tr>
+<tr><td>relations</td><td>0.5</td><td>0.167</td><td>0.25</td><td>1/1/5</td></tr>
+<tr><td>relations_strict</td><td>0.5</td><td>0.167</td><td>0.25</td><td>1/1/5</td></tr>
+</table></body></html>

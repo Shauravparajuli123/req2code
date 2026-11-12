@@ -1,0 +1,135 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "reference"
+   ],
+   "methods": [
+    {
+     "name": "addAttribute",
+     "use_case": "R9"
+    },
+    {
+     "name": "addChild",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "name",
+    "key"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "XORGroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "name": "ORGroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": "R13"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R13"
+   ]
+  },
+  {
+   "name": "Child",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Node",
+   "target": "Attribute",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "Node",
+   "target": "XORGroup",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "Node",
+   "target": "ORGroup",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Child",
+   "target": "Node",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Node:\n    def __init__(self, description: str, reference: Attribute):\n        self.description = description\n        self.reference = reference\n        self.attributes: List[Attribute] = []\n        self.xor_groups: List[XORGroup] = []\n        self.or_groups: List[ORGroup] = []\n\n    def addAttribute(self) -> None:\n        raise NotImplementedError\n\n    def addChild(self) -> None:\n        raise NotImplementedError\n\n    def addNode(self, node: 'Node') -> None:\n        raise NotImplementedError\n\nclass Attribute:\n    def __init__(self, description: str, name: str, key: bool):\n        self.description = description\n        self.name = name\n        self.key = key\n\nclass XORGroup:\n    def __init__(self, preliminary: bool):\n        self.preliminary = preliminary\n\n    def addNode(self, node: Node) -> None:\n        raise NotImplementedError\n\nclass ORGroup:\n    def __init__(self, preliminary: bool):\n        self.preliminary = preliminary\n\n    def addNode(self, node: Node) -> None:\n        raise NotImplementedError\n\nclass Child:\n    def __init__(self):\n        pass\n\n    def addNode(self, node: Node) -> None:\n        raise NotImplementedError",
+ "java": {}
+}

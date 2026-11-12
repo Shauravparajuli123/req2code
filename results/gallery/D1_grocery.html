@@ -1,0 +1,296 @@
+<html><head><meta charset='utf-8'><title>D1/grocery</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D1/grocery &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: As an employee, I want to receive my salary statement, so that I have a clear overview.
+R2: As a manager, I want to send salary statements, so that my employees have a clear overview.
+R3: As a manager, I want to enable the option for weekly and monthly payments for my employees, so that employee satisfaction rises.
+R4: As a manager, I want to automate the payment system, so that all payments are handled correctly and on time.
+R5: As a manager, I want to outsource part of the payment process, so that I do not have to worry about local payment regulations for each country.
+R6: As an employee, I want to receive a notification when my salary payment is handled, so that I stay up to date with my financial status.
+R7: As an employee, I want to express my preferred working hours, so that I am most likely to work on hours that best suit me.
+R8: As a manager, I want to semi-automate the scheduling process, so that the scheduling process is more efficient.
+R9: As a manager, I want to have the ability to manually edit the automatically-generated schedule, so that I can keep the operations running on busy days.
+R10: As a manager, I want to manually authorize the schedule before it goes live, so that I can ensure a correct schedule is being shared.
+R11: As a manager, I want to be notified as soon as manual adjustments need to be made, so that I can swiftly handle these adjustments and keep a clear overview.
+R12: As an employee, I want to receive notification when the new schedule is available, so that I can keep the scheduled hours free from other activities.
+R13: As an employee, I want to view the schedule at any given time, so that I can effectively keep track of my personal time.
+R14: As a manager, I want to view the schedule at any given time, so that I can effectively manage the employee presence on the work floor.
+R15: As an employee, I want the system to automatically verify my work hours, so that my salary statements are calculated accurately.
+R16: As a manager, I want the system to automatically verify employees&#x27; work hours, so that employees&#x27; salary statements are calculated accurately.
+R17: As an office employee, I want a separate complaint system with tickets, so that I don&#x27;t have to filter through my email for complaints anymore.
+R18: As an employee, I want to be able to file a complaint regarding my workplace, so that my problems can be solved.
+R19: As a manager, I want to be able to file a complaint regarding my workplace, so that my problems can be solved.
+R20: As a manager, I want my employees to be able to file complaints regarding their workplace, so that employee satisfaction rises.
+R21: As an office employee, I want to be able to view all complaints, so that I can have an overview of the problems other employees face.
+R22: As a manager, I want to be able to view all complaints, so that I can have an overview of the problems my employees face.
+R23: As an office employee, I want to be able to respond to unsolved complaints, so that I can help the employees with their problems.
+R24: As an office employee, I want to be able to categorize complaints, so that there is an overview of the extent of problem areas.
+R25: As an office employee, I want to be able to prioritize complaints that require high management intervention to solve, so that important complaints will be solved swiftly.
+R26: As an employee, I want to receive a notification when my filed complaint is handled, so that I can stay up to date with the status of my complaint.
+R27: As a manager, I want to be able to quickly and effectively hire new employees, so that I can easily scale up our operations.
+R28: As a manager, I want to be notified when the hiring process of an employee is finished, so that I am up to date regarding the status of our new employees.
+R29: As a manager, I want to be able to have an overview of all our active employees, so that I can easily evaluate our employees.
+R30: As a manager, I want to be able to have an overview of all our absent employees, so that I can manually verify these absences.
+R31: As an applicant, I want to be able to register an account, so that I can finalize my hiring process and start working at the organization.
+R32: As a manager, I want to be able to view my employee&#x27;s contracts at any given time, so that I have a clear overview of when extensions are due.
+R33: As a manager, I want to be able to view my employee&#x27;s certificates at any given time, so that I have a clear overview of the qualifications of my employees.
+R34: As an employee, I want to be able to contact the management when needed, so that I can discuss important topics regarding my employment with them.
+R35: As a manager, I want to be able to contact an employee easily, so I can reach them when needed.
+R36: As an employee, I want to be able to use the messaging system to message other employees when needed, so that I can keep in touch with my colleagues.
+R37: As a manager, I want to be able to forward formal messages to employees in bulk, so that I can communicate with a big group of employees when needed.
+R38: As an employee, I want to view my personal inbox easily, so that I have a clear overview of important work-related information.
+R39: As a manager, I want to have one system with one login, so that I don&#x27;t lose track of my account information.
+R40: As an employee, I want to be able to reset my password, so that I can always access my account.
+R41: As an employee, I want to have a user-friendly application, so that I can access all functionalities easily.
+R42: As an employee, I want to be able to navigate through the application easily, so that I can quickly see my schedule while riding.
+R43: As an employee, I want to be able to choose between email or application notifications, so that I can adjust my administration in the way that I prefer.
+R44: As an employee, I want to be able to choose between weekly or monthly payments, so that I can adjust my payment routine to my lifestyle.
+R45: As an employee, I want to be able to view my financial annual statements, so that I can easily find my financial information for filing taxes, etc.
+R46: As an employee, I want the information that is shared with the payment handler to be encrypted, so that my privacy is ensured.
+R47: As an employee, I want to be able to change my personal information, so that the information my employer has is always up to date.
+R48: As an employee, I want to be able to view my contract, so that I have a clear overview of important work-related information.
+R49: As an employee, I want the application as secure as possible, so that my data does not fall into malicious hands.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (4 → 4)</th></tr><tr><td class="">applicant</td></tr><tr><td class="">employee</td></tr><tr><td class="">manager</td></tr><tr><td class="">office employee</td></tr></table></div>
+<div><table><tr><th>classes (22 → 22)</th></tr><tr><td class="">Account</td></tr><tr><td class="">Adjustment</td></tr><tr><td class="">Applicant</td></tr><tr><td class="">Complaint</td></tr><tr><td class="">Contract</td></tr><tr><td class="">Date</td></tr><tr><td class="">Employee</td></tr><tr><td class="">EmployeeSatisfaction</td></tr><tr><td class="">HiringProcess</td></tr><tr><td class="">Hour</td></tr><tr><td class="">Manager</td></tr><tr><td class="">Notification</td></tr><tr><td class="">OfficeEmployee</td></tr><tr><td class="">Operation</td></tr><tr><td class="">Payment</td></tr><tr><td class="">Problem</td></tr><tr><td class="">SalaryStatement</td></tr><tr><td class="">Schedule</td></tr><tr><td class="">SchedulingProcess</td></tr><tr><td class="">Track</td></tr><tr><td class="">WorkHour</td></tr><tr><td class="">Workplace</td></tr></table></div>
+<div><table><tr><th>attributes (5 → 5)</th></tr><tr><td class="">Complaint.status</td></tr><tr><td class="">Employee.certificate</td></tr><tr><td class="">Employee.group</td></tr><tr><td class="">Employee.qualification</td></tr><tr><td class="">Employee.status</td></tr></table></div>
+<div><table><tr><th>relations (6 → 6)</th></tr><tr><td class="">has: Employee -&gt; Contract</td></tr><tr><td class="">has: Employee -&gt; HiringProcess</td></tr><tr><td class="">has: Employee -&gt; Problem</td></tr><tr><td class="">has: Employee -&gt; SalaryStatement</td></tr><tr><td class="">has: Employee -&gt; WorkHour</td></tr><tr><td class="">has: Employee -&gt; Workplace</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R8</td><td>incompleteness</td><td>efficient</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine a specific reading.</i></td></tr>
+<tr><td>A2</td><td>R10</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>the schedule that is about to be authorized; the schedule that is already live<br><i>The use of &#x27;it&#x27; could refer to the schedule before it is authorized or the schedule that is already live.</i></td></tr>
+<tr><td>A3</td><td>R13</td><td>quantifier</td><td>any</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The use of &#x27;any&#x27; is ambiguous and does not provide enough context to determine a specific reading.</i></td></tr>
+<tr><td>A4</td><td>R14</td><td>quantifier</td><td>any</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The use of &#x27;any&#x27; is ambiguous and does not provide enough context to determine a specific reading.</i></td></tr>
+<tr><td>A5</td><td>R20</td><td>referential</td><td>their</td><td><span class='tag resolved'>resolved</span></td><td>their own workplace; the workplace of the manager<br><i>The use of &#x27;their&#x27; could refer to the employees&#x27; own workplace or the manager&#x27;s workplace.</i></td></tr>
+<tr><td>A6</td><td>R23</td><td>referential</td><td>their</td><td><span class='tag resolved'>resolved</span></td><td>their own complaints; the complaints of the manager<br><i>The use of &#x27;their&#x27; could refer to the employee&#x27;s own complaints or the manager&#x27;s complaints.</i></td></tr>
+<tr><td>A7</td><td>R27</td><td>incompleteness</td><td>quickly</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine a specific reading.</i></td></tr>
+<tr><td>A8</td><td>R32</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any of the manager&#x27;s employees; any specific employee<br><i>The use of &#x27;any&#x27; could refer to any of the manager&#x27;s employees or a specific employee.</i></td></tr>
+<tr><td>A9</td><td>R33</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any of the manager&#x27;s employees; any specific employee<br><i>The use of &#x27;any&#x27; could refer to any of the manager&#x27;s employees or a specific employee.</i></td></tr>
+<tr><td>A10</td><td>R38</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine a specific reading.</i></td></tr>
+<tr><td>A11</td><td>R39</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine a specific reading.</i></td></tr>
+<tr><td>A12</td><td>R42</td><td>incompleteness</td><td>quickly</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine a specific reading.</i></td></tr>
+<tr><td>A13</td><td>R43</td><td>coordination</td><td>noun or noun</td><td><span class='tag resolved'>resolved</span></td><td>email notifications; application notifications<br><i>The use of &#x27;or&#x27; could refer to choosing between email or application notifications.</i></td></tr>
+<tr><td>A14</td><td>R45</td><td>incompleteness</td><td>etc</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine a specific reading.</i></td></tr>
+<tr><td>A15</td><td>R46</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine a specific reading.</i></td></tr>
+<tr><td>A16</td><td>R47</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine a specific reading.</i></td></tr>
+<tr><td>A17</td><td>R48</td><td>incompleteness</td><td>information</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine a specific reading.</i></td></tr>
+<tr><td>A18</td><td>R49</td><td>incompleteness</td><td>data</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine a specific reading.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D1_grocery_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D1_grocery_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D1/grocery.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Employee:
+    &quot;&quot;&quot;Source: R1, R13, R15, R16, R26, R47, R48&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    certificate: _t.Optional[str] = None
+    status: _t.Optional[str] = None
+    preferredWorkingHours: _t.Optional[str] = None
+    emailNotificationPreference: _t.Optional[str] = None
+    paymentPreference: _t.Optional[str] = None
+    contract: _t.Optional[str] = None
+
+    def expressHour(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC7 &quot;Express Hour&quot; (R7).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewSchedule(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC13 &quot;View Schedule&quot; (R13, R14).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def verifyWorkHour(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC14 &quot;Verify Work Hour&quot; (R15, R16).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def changeInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC26 &quot;Change Information&quot; (R47).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewContract(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC27 &quot;View Contract&quot; (R32, R48).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewStatement(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC25 &quot;View Statement&quot; (R45).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def resetPassword(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC16 &quot;Respond Complaint&quot; (R23).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Manager:
+    &quot;&quot;&quot;Source: R2, R3, R4, R5, R8, R9, R10, R11, R12, R14, R18, R19, R20, R21, R22, R23, R24, R25, R27, R28, R29, R30, R34, R35, R36, R37, R39, R40, R41, R42, R43, R44, R45, R46, R49&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    password: _t.Optional[str] = None
+
+    def sendSalaryStatement(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC2 &quot;Send Salary Statement&quot; (R2).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def enableOption(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC3 &quot;Enable Option&quot; (R3).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def automatePaymentSystem(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC4 &quot;Automate Payment System&quot; (R4).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def outsourcePart(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC5 &quot;Outsource Part&quot; (R5).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def semiSchedulingProcess(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC8 &quot;Semi Scheduling Process&quot; (R8).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def manuallyEditSchedule(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC9 &quot;Manually Edit Schedule&quot; (R9).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def notifyAdjustment(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC10 &quot;Notify Adjustment&quot; (R11).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def notifyHiringProcess(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC11 &quot;Notify Hiring Process&quot; (R28).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewSchedule(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC13 &quot;View Schedule&quot; (R13, R14).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewCertificate(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC33 &quot;View Certificate&quot; (R33).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewContract(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC27 &quot;View Contract&quot; (R32, R48).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def forwardMessage(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC28 &quot;Forward Message&quot; (R37).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def contactEmployee(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC30 &quot;Contact Employee&quot; (R35).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def haveSystem(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC31 &quot;Have System&quot; (R39).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def hireEmployee(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC32 &quot;Hire Employee&quot; (R27).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewInbox(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC34 &quot;View Inbox&quot; (R38).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Applicant:
+    &quot;&quot;&quot;Source: R31&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    email: _t.Optional[str] = None
+
+    def registerAccount(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC20 &quot;Register Account&quot; (R31).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Complaint:
+    &quot;&quot;&quot;Source: R17, R18, R19, R20, R21, R22, R23, R24, R25&quot;&quot;&quot;
+    status: _t.Optional[str] = None
+    category: _t.Optional[str] = None
+    priority: _t.Optional[str] = None
+
+    def fileComplaint(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC15 &quot;File Complaint&quot; (R18).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def respondComplaint(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC16 &quot;Respond Complaint&quot; (R23).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def categorizeComplaint(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC17 &quot;Categorize Complaint&quot; (R24).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def prioritizeComplaint(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC18 &quot;Prioritize Complaint&quot; (R25).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class SalaryStatement:
+    &quot;&quot;&quot;Source: R1, R2&quot;&quot;&quot;
+    employeeName: _t.Optional[str] = None
+    paymentDate: _t.Optional[str] = None
+
+    def receiveSalaryStatement(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC1 &quot;Receive Salary Statement&quot; (R1).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def sendSalaryStatement(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC2 &quot;Send Salary Statement&quot; (R2).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Schedule:
+    &quot;&quot;&quot;Source: R7, R8, R9, R10, R11, R12, R14&quot;&quot;&quot;
+    employeeName: _t.Optional[str] = None
+    workingHours: _t.Optional[str] = None
+    status: _t.Optional[str] = None
+
+    def semiSchedulingProcess(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC8 &quot;Semi Scheduling Process&quot; (R8).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def manuallyEditSchedule(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC9 &quot;Manually Edit Schedule&quot; (R9).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def notifyAdjustment(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC10 &quot;Notify Adjustment&quot; (R11).&quot;&quot;&quot;
+        raise NotImplementedError
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>36</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>10</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>10</td></tr>
+<tr><th>inconsistency_rate</th><td>0.2174</td></tr>
+<tr><th>requirement_coverage</th><td>1.0</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.714</td><td>0.5</td><td>0.588</td><td>5/2/5</td></tr>
+<tr><td>relations</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0/0/9</td></tr>
+<tr><td>use_cases_provisional</td><td>0.972</td><td>0.795</td><td>0.875</td><td>35/1/9</td></tr>
+</table></body></html>

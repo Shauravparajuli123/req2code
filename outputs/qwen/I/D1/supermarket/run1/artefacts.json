@@ -1,0 +1,519 @@
+{
+ "actors": [
+  "customer",
+  "employee"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Account",
+   "actor": "customer",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Sign Newsletter",
+   "actor": "customer",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Unsubscribe Newsletter",
+   "actor": "customer",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Activate PushNotification",
+   "actor": "customer",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Deactivate PushNotification",
+   "actor": "customer",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Reset Password",
+   "actor": "customer",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Change Size",
+   "actor": "customer",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Change Contrast",
+   "actor": "customer",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Change Language",
+   "actor": "customer",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Receive Suggestion",
+   "actor": "customer",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Receive Discount",
+   "actor": "customer",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Have DeliveryService",
+   "actor": "customer",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Have Grocery",
+   "actor": "customer",
+   "src": [
+    "R33",
+    "R36"
+   ]
+  },
+  {
+   "name": "Order Product",
+   "actor": "customer",
+   "src": [
+    "R20",
+    "R21"
+   ]
+  },
+  {
+   "name": "Pay Grocery",
+   "actor": "customer",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "Place Order",
+   "actor": "customer",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "See OrderHistory",
+   "actor": "customer",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "See Product",
+   "actor": "customer",
+   "src": [
+    "R25",
+    "R27",
+    "R29"
+   ]
+  },
+  {
+   "name": "See Quantity",
+   "actor": "customer",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Select Date",
+   "actor": "customer",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Select TimeSlot",
+   "actor": "customer",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Scan Barcode",
+   "actor": "customer",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Read ProductInformation",
+   "actor": "customer",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "Search Product",
+   "actor": "customer",
+   "src": [
+    "R18"
+   ]
+  },
+  {
+   "name": "Filter Product",
+   "actor": "customer",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Find Location",
+   "actor": "customer",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "Get Recommendation",
+   "actor": "customer",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Get Recipe",
+   "actor": "customer",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "Link LoyaltyCard",
+   "actor": "customer",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Update Application",
+   "actor": "employee",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Edit Discount",
+   "actor": "employee",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "Confirm DeliveryTime",
+   "actor": "employee",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Notify Customer",
+   "actor": "employee",
+   "src": [
+    "R48",
+    "R49"
+   ]
+  },
+  {
+   "name": "Notify Discount",
+   "actor": "employee",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Notify Item",
+   "actor": "employee",
+   "src": [
+    "R26"
+   ]
+  },
+  {
+   "name": "Contact Customer",
+   "actor": "employee",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "name": "Provide Customer",
+   "actor": "employee",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "name": "Provide RecipeIdea",
+   "actor": "customer",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Add Product",
+   "actor": "customer",
+   "src": [
+    "R17",
+    "R39"
+   ]
+  },
+  {
+   "name": "Change Selection",
+   "actor": "customer",
+   "src": [
+    "R43"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [
+    "username",
+    "password",
+    "language",
+    "fontSize",
+    "pushNotifications",
+    "newsletterSubscription"
+   ],
+   "methods": [
+    {
+     "name": "createAccount",
+     "use_case": "R1"
+    },
+    {
+     "name": "resetPassword",
+     "use_case": "R6"
+    },
+    {
+     "name": "changeLanguage",
+     "use_case": "R9"
+    },
+    {
+     "name": "changeFontSize",
+     "use_case": "R7"
+    },
+    {
+     "name": "activatePushNotification",
+     "use_case": "R4"
+    },
+    {
+     "name": "deactivatePushNotification",
+     "use_case": "R5"
+    },
+    {
+     "name": "subscribeNewsletter",
+     "use_case": "R2"
+    },
+    {
+     "name": "unsubscribeNewsletter",
+     "use_case": "R3"
+    },
+    {
+     "name": "changeSelection",
+     "use_case": "R43"
+    },
+    {
+     "name": "linkLoyaltyCard",
+     "use_case": "R44"
+    },
+    {
+     "name": "placeOrder",
+     "use_case": "R38"
+    },
+    {
+     "name": "addProductToWishlist",
+     "use_case": "R17"
+    },
+    {
+     "name": "searchProduct",
+     "use_case": "R18"
+    },
+    {
+     "name": "filterProduct",
+     "use_case": "R19"
+    },
+    {
+     "name": "seeOrderHistory",
+     "use_case": "R37"
+    },
+    {
+     "name": "seeProduct",
+     "use_case": "R25"
+    },
+    {
+     "name": "seeQuantity",
+     "use_case": "R28"
+    },
+    {
+     "name": "seeLocation",
+     "use_case": "R41"
+    },
+    {
+     "name": "seeRecipe",
+     "use_case": "R30"
+    },
+    {
+     "name": "seeMeal",
+     "use_case": "R30"
+    },
+    {
+     "name": "seeDiscount",
+     "use_case": "R11"
+    },
+    {
+     "name": "seeSuggestion",
+     "use_case": "R10"
+    },
+    {
+     "name": "seeAnomaly",
+     "use_case": "R22"
+    },
+    {
+     "name": "seeItem",
+     "use_case": "R26"
+    },
+    {
+     "name": "seeDeliveryTime",
+     "use_case": "R47"
+    },
+    {
+     "name": "seeNewDeliveryTime",
+     "use_case": "R51"
+    },
+    {
+     "name": "seePayment",
+     "use_case": "R40"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6",
+    "R9",
+    "R7",
+    "R4",
+    "R5",
+    "R2",
+    "R3",
+    "R43",
+    "R44",
+    "R38",
+    "R17",
+    "R18",
+    "R19",
+    "R37",
+    "R25",
+    "R28",
+    "R41",
+    "R30",
+    "R10",
+    "R11",
+    "R22",
+    "R26",
+    "R47",
+    "R51",
+    "R40"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "updateApplication",
+     "use_case": "R45"
+    },
+    {
+     "name": "editDiscount",
+     "use_case": "R46"
+    },
+    {
+     "name": "confirmDeliveryTime",
+     "use_case": "R47"
+    },
+    {
+     "name": "notifyCustomer",
+     "use_case": "R48"
+    },
+    {
+     "name": "notifyCustomerOfDelay",
+     "use_case": "R49"
+    },
+    {
+     "name": "contactCustomer",
+     "use_case": "R50"
+    },
+    {
+     "name": "provideNewDeliveryTime",
+     "use_case": "R51"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Customer",
+   "target": "Delivery",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Product",
+   "target": "Store",
+   "multiplicity_target": "1",
+   "src": [
+    "R25",
+    "R27",
+    "R29",
+    "R34",
+    "R35",
+    "R36"
+   ]
+  }
+ ],
+ "python": "from abc import ABC, abstractmethod\n\nclass Customer:\n    def __init__(self, id: int):\n        self.id = id\n        self.push_notifications = True\n        self.password = None\n        self.default_store = None\n        self.language = 'en'\n        self.text_size = 12\n        self.newsletter_subscription = True\n        self.password_reset_token = None\n\n    def activate_push_notifications(self):\n        self.push_notifications = True\n        raise NotImplementedError\n\n    def deactivate_push_notifications(self):\n        self.push_notifications = False\n        raise NotImplementedError\n\n    def reset_password(self):\n        raise NotImplementedError\n\n    def change_text_size(self, size: int):\n        self.text_size = size\n        raise NotImplementedError\n\n    def change_language(self, language: str):\n        self.language = language\n        raise NotImplementedError\n\n    def sign_up_for_newsletter(self):\n        self.newsletter_subscription = True\n        raise NotImplementedError\n\n    def unsubscribe_from_newsletter(self):\n        self.newsletter_subscription = False\n        raise NotImplementedError\n\n    def create_account(self):\n        raise NotImplementedError\n\n    def add_product_to_wishlist(self, product_id: int):\n        raise NotImplementedError\n\n    def search_product(self, product_name: str):\n        raise NotImplementedError\n\n    def filter_products_by_dietary_restrictions(self, restrictions: list):\n        raise NotImplementedError\n\n    def order_product_by_price(self, ascending: bool):\n        raise NotImplementedError\n\n    def order_product_by_popularity(self):\n        raise NotImplementedError\n\n    def check_product_stock(self, product_id: int):\n        raise NotImplementedError\n\n    def get_product_information(self, product_id: int):\n        raise NotImplementedError\n\n    def scan_product(self, barcode: str):\n        raise NotImplementedError\n\n    def purchase_product(self, product_id: int):\n        raise NotImplementedError\n\n    def place_order(self, products: list):\n        raise NotImplementedError\n\n    def see_order_history(self):\n        raise NotImplementedError\n\n    def see_product(self, product_id: int):\n        raise NotImplementedError\n\n    def see_quantity(self, product_id: int):\n        raise NotImplementedError\n\n    def select_date(self, date: str):\n        raise NotImplementedError\n\n    def select_time_slot(self, time_slot: str):\n        raise NotImplementedError\n\n    def have_delivery_service(self, service_type: str):\n        raise NotImplementedError\n\n    def digitally_pay_for_groceries(self, amount: float):\n        raise NotImplementedError\n\n    def contact_customer_service(self):\n        raise NotImplementedError\n\n    def see_product_location(self, product_id: int):\n        raise NotImplementedError\n\n    def get_recipe(self, recipe_id: int):\n        raise NotImplementedError\n\n    def get_recommendation(self, store_id: int):\n        raise NotImplementedError\n\n    def change_default_store(self, store_id: int):\n        self.default_store = store_id\n        raise NotImplementedError\n\n    def link_loyalty_card(self, card_id: int):\n        raise NotImplementedError\n\n    def receive_discount(self, product_id: int):\n        raise NotImplementedError\n\n    def receive_suggestion(self, product_id: int):\n        raise NotImplementedError\n\n    def see_product_on_sale(self):\n        raise NotImplementedError\n\n    def see_special_personal_discount(self, product_id: int):\n        raise NotImplementedError\n\n    def see_item_back_in_stock(self, product_id: int):\n        raise NotImplementedError\n\n    def see_product_in_other_store(self, product_id: int):\n        raise NotImplementedError\n\n    def see_order_delivery_time(self, order_id: int):\n        raise NotImplementedError\n\n    def provide_customer_with_new_delivery_time(self, order_id: int, new_time: str):\n        raise NotImplementedError\n\n    def provide_customer_with_recipe_idea(self, recipe_id: int):\n        raise NotImplementedError\n\n    def update_application_with_new_recipes(self, recipes: list):\n        raise NotImplementedError\n\n    def edit_discount_for_product(self, product_id: int, discount: float):\n        raise NotImplementedError\n\n    def confirm_delivery_time(self, order_id: int, delivery_time: str):\n        raise NotImplementedError\n\n    def notify_customer_of_unavailable_product(self, order_id: int, product_id: int):\n        raise NotImplementedError\n\n    def notify_customer_of_delayed_delivery(self, order_id: int, delay_reason: str):\n        raise NotImplementedError\n\n    def notify_customer_of_canceled_delivery(self, order_id: int):\n        raise NotImplementedError\n\n    def notify_customer_of_new_delivery_time(self, order_id: int, new_time: str):\n        raise NotImplementedError\n",
+ "java": {}
+}

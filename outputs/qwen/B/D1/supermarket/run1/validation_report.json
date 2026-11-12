@@ -1,0 +1,152 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [
+  "R23 (incompleteness, \"information\"): readings ['information refers to the product', 'information refers to the barcode']",
+  "R24 (incompleteness, \"information\"): readings ['information refers to the product', 'information refers to the barcode']",
+  "R36 (incompleteness, \"quickly\"): readings ['quickly refers to the delivery', 'quickly refers to the service']",
+  "R46 (incompleteness, \"information\"): readings ['information refers to the discounts', 'information refers to the product']"
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Information refers to the product"
+  },
+  {
+   "tag": "R24",
+   "assumption": "Information refers to the product"
+  },
+  {
+   "tag": "R36",
+   "assumption": "Quickly refers to the delivery"
+  },
+  {
+   "tag": "R46",
+   "assumption": "Information refers to the discounts"
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class attribute 'information'",
+   "fix": "Add 'information: String' to the Customer class"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class attribute 'quickly'",
+   "fix": "Add 'quickly: String' to the Customer class"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'scanProduct'",
+   "fix": "Add a relationship from Customer to Product for the 'scanProduct' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'searchProduct'",
+   "fix": "Add a relationship from Customer to Product for the 'searchProduct' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'filterProduct'",
+   "fix": "Add a relationship from Customer to Product for the 'filterProduct' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'orderProduct'",
+   "fix": "Add a relationship from Customer to Product for the 'orderProduct' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'orderProductByPopularity'",
+   "fix": "Add a relationship from Customer to Product for the 'orderProductByPopularity' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'orderProductByPrice'",
+   "fix": "Add a relationship from Customer to Product for the 'orderProductByPrice' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'notifyProduct'",
+   "fix": "Add a relationship from Customer to Product for the 'notifyProduct' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'notifyItem'",
+   "fix": "Add a relationship from Customer to Product for the 'notifyItem' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'notifyDiscount'",
+   "fix": "Add a relationship from Customer to Product for the 'notifyDiscount' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'notifySale'",
+   "fix": "Add a relationship from Customer to Product for the 'notifySale' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'readProductInformation'",
+   "fix": "Add a relationship from Customer to Product for the 'readProductInformation' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'seeProduct'",
+   "fix": "Add a relationship from Customer to Product for the 'seeProduct' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'seeQuantity'",
+   "fix": "Add a relationship from Customer to Product for the 'seeQuantity' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'seeOrderHistory'",
+   "fix": "Add a relationship from Customer to Product for the 'seeOrderHistory' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'placeOrder'",
+   "fix": "Add a relationship from Customer to Product for the 'placeOrder' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'addProductToOrder'",
+   "fix": "Add a relationship from Customer to Product for the 'addProductToOrder' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'addProductToWishlist'",
+   "fix": "Add a relationship from Customer to Product for the 'addProductToWishlist' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'payGrocery'",
+   "fix": "Add a relationship from Customer to Product for the 'payGrocery' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'findLocation'",
+   "fix": "Add a relationship from Customer to Product for the 'findLocation' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'getRecommendation'",
+   "fix": "Add a relationship from Customer to Product for the 'getRecommendation' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'changeSelection'",
+   "fix": "Add a relationship from Customer to Product for the 'changeSelection' use case"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Customer and Product for 'linkLoyaltyCard'",
+   "fix": "Add a relationship from Customer to Product for the 'linkLoyaltyCard' use case"
+  }
+ ]
+}

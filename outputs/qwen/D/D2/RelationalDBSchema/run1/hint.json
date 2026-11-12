@@ -1,0 +1,118 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "NamedElement",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "Database",
+    "src": [
+     "R2",
+     "R5",
+     "R6"
+    ]
+   },
+   {
+    "name": "Table",
+    "src": [
+     "R3",
+     "R7"
+    ]
+   },
+   {
+    "name": "Column",
+    "src": [
+     "R4",
+     "R8"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "NamedElement",
+    "name": "name",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "Database",
+    "name": "SGBDName",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "owner": "Database",
+    "name": "tables",
+    "src": [
+     "R5",
+     "R6"
+    ]
+   },
+   {
+    "owner": "Table",
+    "name": "columns",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "owner": "Column",
+    "name": "dataType",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "owner": "Column",
+    "name": "defaultValue",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "owner": "Column",
+    "name": "table",
+    "src": [
+     "R8"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Database",
+    "target": "Table",
+    "src": [
+     "R5",
+     "R6"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Table",
+    "target": "Column",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Column",
+    "target": "Table",
+    "src": [
+     "R8"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

@@ -1,0 +1,124 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "MoveVehicle",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Vehicle",
+   "kind": "class",
+   "attributes": [
+    "position",
+    "speed",
+    "max_speed",
+    "environment"
+   ],
+   "methods": [
+    {
+     "name": "move",
+     "use_case": "MoveVehicle"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "LandVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6"
+   ]
+  },
+  {
+   "name": "MarineVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6"
+   ]
+  },
+  {
+   "name": "AmphibiousVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Speed",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "LandVehicle",
+   "target": "Vehicle",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "MarineVehicle",
+   "target": "Vehicle",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "AmphibiousVehicle",
+   "target": "Vehicle",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Vehicle",
+   "target": "Speed",
+   "multiplicity_target": "1",
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "python": "class Vehicle:\n    def __init__(self, position, speed, max_speed, environment):\n        self.position = position\n        self.speed = speed\n        self.max_speed = max_speed\n        self.environment = environment\n\n    def move(self, time):\n        raise NotImplementedError\n\nclass LandVehicle(Vehicle):\n    pass\nclass MarineVehicle(Vehicle):\n    pass\nclass AmphibiousVehicle(Vehicle):\n    pass\nclass Speed:\n    pass",
+ "java": {}
+}

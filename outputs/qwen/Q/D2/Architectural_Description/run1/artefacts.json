@@ -1,0 +1,112 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "ArchitectureDescription",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "ArchitectureView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R12"
+   ]
+  },
+  {
+   "name": "ArchitectureViewPoint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "MainView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "ArchitectureDescription",
+   "target": "Architecture",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ArchitectureDescription",
+   "target": "ArchitectureView",
+   "multiplicity_target": "1",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ArchitectureViewPoint",
+   "target": "ArchitectureView",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ArchitectureViewPoint",
+   "target": "MainView",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MainView",
+   "target": "ArchitectureView",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Architecture:\n    def __init__(self):\n        pass\n    def describe(self) -> 'ArchitectureDescription':\n        raise NotImplementedError\n\nclass ArchitectureDescription:\n    def __init__(self):\n        pass\n    def __str__(self) -> str:\n        raise NotImplementedError\n    def describe_architecture(self, architecture: Architecture) -> None:\n        raise NotImplementedError\n\nclass ArchitectureView:\n    def __init__(self):\n        pass\n    def conform_to(self, view_point: 'ArchitectureViewPoint') -> None:\n        raise NotImplementedError\n\nclass ArchitectureViewPoint:\n    def __init__(self):\n        pass\n    def __str__(self) -> str:\n        raise NotImplementedError\n\nclass MainView:\n    def __init__(self):\n        pass\n    def project_on(self, view: ArchitectureView) -> None:\n        raise NotImplementedError\n",
+ "java": {}
+}

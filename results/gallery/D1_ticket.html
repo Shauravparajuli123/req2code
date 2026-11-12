@@ -1,0 +1,282 @@
+<html><head><meta charset='utf-8'><title>D1/ticket</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D1/ticket &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: As a user, I want to save my personal information (i.e., name, date of birth, email, address, and preferences) so that I don&#x27;t have to repeat this process with every ticket purchase.
+R2: As a user, I want to save my payment details so that I don&#x27;t have to fill these details in every time.
+R3: As a user, I want to fill out a short survey about my preferences in (music) genre and event types so that I can receive personalized content.
+R4: As a user, I want to see personalized content (e.g., recommended events) based on my user profile to quickly see events I am interested in.
+R5: As a user, I want to see and edit my preferences so that my information does not become outdated.
+R6: As a user, I want to be able to change my password so that I can keep my account information safe.
+R7: As a user, I want to be able to edit my personal information (e.g., address) so that I can update it when needed.
+R8: As a user, I want to see a history of previous ticket orders, so that I can easily retrieve tickets and additional information when needed.
+R9: As a user, I want to see an overview of upcoming events for which I bought a ticket, so that I can easily find this information when needed.
+R10: As a user, I want to find my list of favorited artists and events under my profile, so that I can easily find them back.
+R11: As a visitor, I want to read about the event (e.g., location, date, and artist information), so that I can decide whether to buy a ticket.
+R12: As a visitor, I want to be able to buy tickets directly from the event page, so that the purchasing process is shortened.
+R13: As a reseller, I want to be able to sell my tickets directly from the event page, so that the reselling process is shortened.
+R14: As a (single-time) visitor, I want to buy a ticket as a guest, so that the overall purchase progress is shorter.
+R15: As a guest (i.e., single-time user), I want to only fill in my name and email when buying a ticket so that the process is faster than creating an account.
+R16: As a guest, I want to not fill in all my information to buy a ticket, so that I can avoid unnecessarily sharing my personal data.
+R17: As a guest, I can use the platform the same way as users looking to buy a ticket, so that I am not forced into registering.
+R18: As a visitor, I want to purchase a ticket in an easy and short process, so that I can avoid any complications during the process.
+R19: As a visitor, I want to see events with available tickets so that I can buy the tickets.
+R20: As a visitor, I want to be able to buy multiple tickets for one event in one purchase so that I can buy tickets for me and whomever I go with.
+R21: As a visitor, I want to see available seats at the event, so that I can decide which one to buy.
+R22: As a visitor, I want to see the available seats in a map of the venue so that I can pick the right seating place for during the event.
+R23: As a visitor, I want to see the types of tickets (e.g., normal, premium, gold tickets) once I select the event, so that I can choose which type I want to buy.
+R24: As a visitor, I want to add tickets to the shopping cart, so that I can buy tickets.
+R25: As a visitor, I want to see my order summary, so that I can make sure that I buy the correct ticket(s).
+R26: As a visitor, I want to see a list of payment methods. so that I can pay for my tickets.
+R27: As a company, I want to have the overall buying process as intuitive and quick as possible so that we can attract (and retain) visitors to use our platform.
+R28: As a visitor, I want to get a list of events as search results, so that I can select the desired event.
+R29: As a visitor, I want to be able to land on the event page when clicking on a search result so that I can visit the page I want.
+R30: As a visitor, I want to have the search engine non-case sensitive and punctuation sensitive so that I can still find the desired event when I misspell the name.
+R31: As a visitor, I want to be able to sort my search results by date so that I can see which events are up first.
+R32: As a visitor, I want to be able to filter my search by price so that I can only see tickets within my price range.
+R33: As a visitor, I want to be able to filter my search results by venue, so that I can easily find the event I want to go to.
+R34: As a visitor, I want to be able to filter a list of events by genre, so that I don&#x27;t have to see events I&#x27;m not interested in.
+R35: As a company, I want to have the minimum price for reselling a ticket at 5 cents so that I can receive a service fee.
+R36: As a company, I want to have resellers sell only digital tickets, so that the tickets can be validated automatically.
+R37: As a company, I want to validate tickets, so that I can ensure visitors a trustworthy platform.
+R38: As a company, I want to deduct a service fee of 3% from the total price set by the reseller so that the reselling platform is a financially beneficial addition to the business.
+R39: As a company, I want to avoid fraudulent behavior on the reselling platform, so that visitors gain trust in the platform.
+R40: As a company, I want to protect users from online fraud, so that I can avoid the failure of the reselling platform.
+R41: As a reseller, I want to be able to resell tickets directly from the event page so that the reselling process is shortened.
+R42: As a reseller, I can upload my digital ticket from my local device, so that I can offer it to other users.
+R43: As a reseller, I can set any price above 5 cents for the ticket I&#x27;m selling.
+R44: As a reseller, I can add a short description of the event so that the other (buying) users know what type of ticket, and for which event, I&#x27;m selling.
+R45: As a reseller, I want to save my bank account (IBAN number) in my user profile, so that I can receive the money for the tickets directly to my bank account.
+R46: As a visitor, I want to see upcoming events in a calendar-type view so that I can compare it to my own planner.
+R47: As a visitor, I want to see popular, upcoming events so that I can stay updated about interesting events.
+R48: As a visitor, I want to click on an event shown on the homepage and be directed to the event page, so that I don&#x27;t have to search for it.
+R49: As an artist, I want to find information about my events on the designated event page so that visitors can read about my event and consider buying tickets.
+R50: As an artist, I want to have a link to my website on the event page so that fans can find out more about me.
+R51: As an artist, I want to have a link to my social media on the event page, so that fans can follow me for regular updates.
+R52: As an artist, I want to have a description of myself and my upcoming event (or tour) to be shown on my event page so that visitors can inform themselves about my show.
+R53: As a user, I want to favorite events or artists on the related event page, so that I can easily find it back.
+R54: As an artist, I want to have a link to music platforms (e.g., YouTube, Spotify, Apple Music), so that visitors buying tickets for my show can stream my music.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (8 → 8)</th></tr><tr><td class="">artist</td></tr><tr><td class="">company</td></tr><tr><td class="">guest</td></tr><tr><td class="">guest i e single time user</td></tr><tr><td class="">reseller</td></tr><tr><td class="">single time visitor</td></tr><tr><td class="">user</td></tr><tr><td class="">visitor</td></tr></table></div>
+<div><table><tr><th>classes (28 → 28)</th></tr><tr><td class="">Address</td></tr><tr><td class="">Artist</td></tr><tr><td class="">BankAccount</td></tr><tr><td class="">Cent</td></tr><tr><td class="">Company</td></tr><tr><td class="">Content</td></tr><tr><td class="">Date</td></tr><tr><td class="">Event</td></tr><tr><td class="">EventPage</td></tr><tr><td class="">Fan</td></tr><tr><td class="">Guest</td></tr><tr><td class="">GuestIESingleTimeUser</td></tr><tr><td class="">Link</td></tr><tr><td class="">Platform</td></tr><tr><td class="">Preference</td></tr><tr><td class="">Process</td></tr><tr><td class="">Reseller</td></tr><tr><td class="">ResellingProcess</td></tr><tr><td class="">SearchResult</td></tr><tr><td class="">Seat</td></tr><tr><td class="">ServiceFee</td></tr><tr><td class="">Show</td></tr><tr><td class="">SingleTimeVisitor</td></tr><tr><td class="">Ticket</td></tr><tr><td class="">User</td></tr><tr><td class="">UserProfile</td></tr><tr><td class="">Venue</td></tr><tr><td class="">Visitor</td></tr></table></div>
+<div><table><tr><th>attributes (3 → 3)</th></tr><tr><td class="">Event.description</td></tr><tr><td class="">Platform.failure</td></tr><tr><td class="">Venue.map</td></tr></table></div>
+<div><table><tr><th>relations (0 → 0)</th></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A7</td><td>R7</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>personal information includes address; personal information does not include address<br><i>The use of &#x27;it&#x27; in R7 could refer to &#x27;personal information&#x27; or &#x27;address&#x27; from R1, making the scope ambiguous.</i></td></tr>
+<tr><td>A11</td><td>R10</td><td>referential</td><td>them</td><td><span class='tag resolved'>resolved</span></td><td>favorited artists and events; favorited artists only<br><i>The use of &#x27;them&#x27; in R10 could refer to &#x27;artists and events&#x27; or just &#x27;artists&#x27; from R12, making the scope ambiguous.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D1_ticket_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D1_ticket_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D1/ticket.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class User:
+    &quot;&quot;&quot;Source: R1, R5, R6, R7, R8, R9, R40, R43&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    dateOfBirth: _t.Optional[str] = None
+    email: _t.Optional[str] = None
+    address: _t.Optional[str] = None
+    preferences: _t.Optional[str] = None
+    bankAccount: _t.Optional[str] = None
+    favoriteEvents: _t.Optional[str] = None
+    history: _t.Optional[str] = None
+    profile: _t.Optional[str] = None
+    userProfile: _t.Optional[&quot;UserProfile&quot;] = None
+    preference: _t.Optional[&quot;Preference&quot;] = None
+
+    def createUser(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def saveInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC1 &quot;Save Information&quot; (R1).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC2 &quot;Edit Information&quot; (R7).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seePreference(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC3 &quot;See Preference&quot; (R5).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeContent(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC4 &quot;See Content&quot; (R4).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def changePassword(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC31 &quot;Change Password&quot; (R6).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def favoriteEvent(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC32 &quot;Favorite Event&quot; (R53).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class UserProfile:
+    &quot;&quot;&quot;Source: R1, R3, R5, R43&quot;&quot;&quot;
+    preferences: _t.Optional[str] = None
+    bankAccount: _t.Optional[str] = None
+
+    def saveProfile(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC1 &quot;Save Information&quot; (R1).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editProfile(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC2 &quot;Edit Information&quot; (R7).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Address:
+    &quot;&quot;&quot;Source: R1&quot;&quot;&quot;
+    street: _t.Optional[str] = None
+    city: _t.Optional[str] = None
+    state: _t.Optional[str] = None
+    zipCode: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class Preference:
+    &quot;&quot;&quot;Source: R3, R5&quot;&quot;&quot;
+    musicGenre: _t.Optional[str] = None
+    eventTypes: _t.Optional[str] = None
+    lastUpdated: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class BankAccount:
+    &quot;&quot;&quot;Source: R42, R45&quot;&quot;&quot;
+    iban: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class Event:
+    &quot;&quot;&quot;Source: R11, R19, R23, R28, R30, R31, R32, R33, R46, R47, R49, R52&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    date: _t.Optional[str] = None
+    artist: _t.Optional[str] = None
+    venue: _t.Optional[str] = None
+    description: _t.Optional[str] = None
+    type: _t.Optional[str] = None
+    price: _t.Optional[float] = None
+    tickets: _t.List[&quot;Ticket&quot;] = _dc.field(default_factory=list)
+
+    def seeEvent(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC7 &quot;See Event&quot; (R11, R19, R46, R47).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeOverview(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC6 &quot;See Overview&quot; (R9).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeSeat(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC29 &quot;See Seat&quot; (R21, R22).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeType(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC30 &quot;See Type&quot; (R23).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Venue:
+    &quot;&quot;&quot;Source: R11, R28, R30, R31, R32, R33, R46, R47&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    map: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class Ticket:
+    &quot;&quot;&quot;Source: R12, R14, R18, R20, R24, R25, R26, R34, R35, R36, R37, R38, R39, R41, R42, R43, R44, R48, R50, R51, R53&quot;&quot;&quot;
+    event: _t.Optional[str] = None
+    type: _t.Optional[str] = None
+    price: _t.Optional[float] = None
+    seat: _t.Optional[str] = None
+
+    def purchaseTicket(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC8 &quot;Purchase Ticket&quot; (R12, R14, R20, R24, R25, R26).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def addTicket(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC28 &quot;Add Ticket&quot; (R24).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeSeat(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC29 &quot;See Seat&quot; (R21, R22).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeType(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC30 &quot;See Type&quot; (R23).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeOrderSummary(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Seat:
+    &quot;&quot;&quot;Source: R21, R22, R28, R30, R31, R32, R33, R46, R47, R52&quot;&quot;&quot;
+    row: _t.Optional[int] = None
+    column: _t.Optional[int] = None
+
+
+@_dc.dataclass
+class Company:
+    &quot;&quot;&quot;Source: R27, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45&quot;&quot;&quot;
+    reseller: _t.Optional[str] = None
+    serviceFee: _t.Optional[float] = None
+    resellers: _t.List[&quot;Reseller&quot;] = _dc.field(default_factory=list)
+
+
+@_dc.dataclass
+class Reseller:
+    &quot;&quot;&quot;Source: R41, R42, R43, R44, R45&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    bankAccount: _t.Optional[str] = None
+    events: _t.List[&quot;Event&quot;] = _dc.field(default_factory=list)
+
+    def resellTicket(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC26 &quot;Resell Ticket&quot; (R41).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def uploadTicket(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>32</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>19</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>19</td></tr>
+<tr><th>inconsistency_rate</th><td>0.3958</td></tr>
+<tr><th>requirement_coverage</th><td>0.9259</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.462</td><td>0.6</td><td>0.522</td><td>6/7/4</td></tr>
+<tr><td>relations</td><td>0.222</td><td>0.154</td><td>0.182</td><td>2/7/11</td></tr>
+<tr><td>use_cases_provisional</td><td>0.969</td><td>0.689</td><td>0.805</td><td>31/1/14</td></tr>
+</table></body></html>

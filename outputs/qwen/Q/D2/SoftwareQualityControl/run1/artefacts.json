@@ -1,0 +1,235 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "TrackBug",
+   "actor": "User",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "name": "DescribeControl",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R6",
+    "R10"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    "day",
+    "year"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Control",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "date"
+   ],
+   "methods": [
+    {
+     "name": "hasDate",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10",
+    "R9"
+   ]
+  },
+  {
+   "name": "ControlsSequence",
+   "kind": "class",
+   "attributes": [
+    "controls"
+   ],
+   "methods": [
+    {
+     "name": "addControlsObject",
+     "use_case": "R8"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "ControlsObject",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "ControlType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [
+    "Day",
+    "Year"
+   ],
+   "src": []
+  },
+  {
+   "name": "Bug",
+   "kind": "class",
+   "attributes": [
+    "number",
+    "description",
+    "originator",
+    "comments",
+    "closeDate"
+   ],
+   "methods": [
+    {
+     "name": "describeBug",
+     "use_case": "R6"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "BugTracking",
+   "kind": "class",
+   "attributes": [
+    "bugs"
+   ],
+   "methods": [
+    {
+     "name": "trackBug",
+     "use_case": "R5"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "SoftwareQualityControl",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "SoftwareBugTrackingSystem",
+   "kind": "class",
+   "attributes": [
+    "controlTypes"
+   ],
+   "methods": [
+    {
+     "name": "associateBugWithControlType",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Control",
+   "target": "Date",
+   "multiplicity_target": "1",
+   "src": [
+    "R10",
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Control",
+   "target": "ControlType",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ControlsObject",
+   "target": "ControlsSequence",
+   "multiplicity_target": "1",
+   "src": [
+    "R3",
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Bug",
+   "target": "BugTracking",
+   "multiplicity_target": "1",
+   "src": [
+    "R6",
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BugTracking",
+   "target": "SoftwareQualityControl",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SoftwareBugTrackingSystem",
+   "target": "ControlType",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "python": "from enum import Enum\n\nclass Date:\n    def __init__(self, day: int, year: int):\n        self.day = day\n        self.year = year\n\nclass ControlType(Enum):\n    Day = 'Day'\n    Year = 'Year'\n\nclass Control:\n    def __init__(self, type: ControlType, date: Date):\n        self.type = type\n        self.date = date\n    def hasDate(self) -> bool:\n        raise NotImplementedError()\n\nclass ControlsObject:\n    def __init__(self, role: str):\n        self.role = role\n\nclass ControlsSequence:\n    def __init__(self):\n        self.controls = []\n    def addControlsObject(self, controlsObject: ControlsObject) -> None:\n        raise NotImplementedError()\n\nclass Bug:\n    def __init__(self, number: int, description: str, originator: str, comments: str, closeDate: Date):\n        self.number = number\n        self.description = description\n        self.originator = originator\n        self.comments = comments\n        self.closeDate = closeDate\n    def describeBug(self) -> str:\n        raise NotImplementedError()\n\nclass BugTracking:\n    def __init__(self):\n        self.bugs = []\n    def trackBug(self, bug: Bug) -> None:\n        raise NotImplementedError()\n\nclass SoftwareQualityControl:\n    def __init__(self):\n        self.bugTracking = BugTracking()\n\nclass Architecture:\n    def __init__(self):\n        pass\n\nclass SoftwareBugTrackingSystem:\n    def __init__(self):\n        self.controlTypes = []\n    def associateBugWithControlType(self, bug: Bug, controlType: ControlType) -> None:\n        raise NotImplementedError()",
+ "java": {}
+}

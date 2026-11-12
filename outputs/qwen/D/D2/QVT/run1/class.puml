@@ -1,0 +1,17 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class TemplateExp {
+  collectionKind : String
+  variable : String
+}
+class ObjectTemplateExp {
+  propertyTemplateItems : String
+}
+class CollectionTemplateExp {
+  oclExpressions : String
+  oclExpressionMatch : String
+}
+TemplateExp "0..*" o-- "1" ObjectTemplateExp : can be bound to
+TemplateExp "0..*" o-- "1" CollectionTemplateExp : can be matched to
+@enduml

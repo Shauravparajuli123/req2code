@@ -1,0 +1,63 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DisplayNews",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "News",
+   "kind": "class",
+   "attributes": [
+    "title",
+    "link",
+    "author",
+    "date"
+   ],
+   "methods": [
+    {
+     "name": "display",
+     "use_case": "DisplayNews"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Newspaper",
+   "kind": "class",
+   "attributes": [
+    "language",
+    "publishedDate"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "aggregation",
+   "source": "Newspaper",
+   "target": "News",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R9"
+   ]
+  }
+ ],
+ "python": "from datetime import date\n\nclass News:\n    def __init__(self, title: str, link: str, author: str, date: date):\n        self.title = title\n        self.link = link\n        self.author = author\n        self.date = date\n\n    def display(self):\n        raise NotImplementedError('display method not implemented')\n\nclass Newspaper:\n    def __init__(self, language: str, published_date: date):\n        self.language = language\n        self.published_date = published_date\n\n    def __str__(self):\n        return f'Newspaper(language={self.language}, published_date={self.published_date})'\n",
+ "java": {}
+}

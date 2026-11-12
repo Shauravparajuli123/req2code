@@ -1,0 +1,92 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  emailId : String
+  profile : String
+  activity : String
+  stat : String
+  +createAccount()
+  +giveEmailId()
+  +viewDocumentation()
+  +viewErrorLog()
+}
+class Profile {
+  favoriteFacilities : String
+}
+class Facility {
+  name : String
+  type : String
+  openingHours : String
+  location : String
+  specialWasteDropOff : boolean
+  safeDisposalEvents : String
+}
+class Location {
+  coordinates : String
+}
+class Event {
+  name : String
+  date : LocalDate
+}
+class Admin {
+  dashboard : String
+  blockedUsers : String
+  +addFacilityInfo()
+  +removeFacilityInfo()
+  +readFeedback()
+  +handleActivity()
+  +viewDashboard()
+  +communicateWithFacility()
+}
+class Dashboard {
+  facilities : String
+  userStats : String
+}
+class Executive {
+  companyPerformance : String
+}
+class CompanyAccountant {
+  activityFees : String
+}
+class ActivityFee {
+  name : String
+  amount : double
+}
+class RecyclingCenter {
+  name : String
+  facilities : String
+  materialAccepted : String
+  +addFacilityInfo()
+  +updateInfo()
+  +viewStats()
+}
+class Material {
+  name : String
+}
+class RecyclingfacilityRepresentative {
+  facility : String
+  stats : String
+  +updateInfo()
+  +viewUserStats()
+}
+class Superuser {
+  +replyToUserQuestions()
+}
+class Recyclingfacility {
+  name : String
+  facilities : String
+  +communicateWithAdmin()
+}
+User "0..*" -- "1" RecyclingCenter : has
+User "0..*" -- "1" Recyclingfacility : has
+Recyclingfacility "1" -- "1" RecyclingfacilityRepresentative : has
+Admin "1" -- "0..*" RecyclingCenter : has
+Superuser "1" -- "0..*" RecyclingCenter : has
+User "1" -- "1" Profile : has
+Admin "1" -- "1" Dashboard : has
+Admin "1" -- "0..*" User : has
+CompanyAccountant "1" -- "1" ActivityFee : has
+User "0..*" -- "1" Location : has
+@enduml

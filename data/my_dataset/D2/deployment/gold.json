@@ -1,0 +1,93 @@
+{
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class"
+  },
+  {
+   "name": "Device",
+   "kind": "class"
+  },
+  {
+   "name": "ExecutionEnvironment",
+   "kind": "class"
+  },
+  {
+   "name": "Specification",
+   "kind": "class"
+  },
+  {
+   "name": "CommunicationLink",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Node": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Device": [],
+  "ExecutionEnvironment": [],
+  "Specification": [],
+  "CommunicationLink": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Node",
+   "to": "Node",
+   "label": "nestedNode 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Device",
+   "to": "Node",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ExecutionEnvironment",
+   "to": "Node",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Specification",
+   "to": "Node",
+   "label": "ownedNode 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Specification",
+   "to": "CommunicationLink",
+   "label": "ownedCommunicationLink 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "CommunicationLink",
+   "to": "Node",
+   "label": "source 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "CommunicationLink",
+   "to": "Node",
+   "label": "target 0..1",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage Deployment {\nclass Node {\n\t name : String\n}\nNode \"nestedNode 0..*\" *--> Node\nclass Device {\n}\nNode <|-- Device\nclass ExecutionEnvironment {\n}\nNode <|-- ExecutionEnvironment\nclass Specification {\n}\nSpecification \"ownedNode 0..*\" *--> Node\nSpecification \"ownedCommunicationLink 0..*\" *--> CommunicationLink\nclass CommunicationLink {\n\t name : String\n}\nCommunicationLink \"source 0..1\" --> Node\nCommunicationLink \"target 0..1\" --> Node\n}\n@enduml\n"
+}

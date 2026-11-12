@@ -1,0 +1,109 @@
+{
+ "case": "D2/UIML-3_0",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Uiml",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "head",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "interfaces",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Header",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "metas",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "MetaData",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "aggregation",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "belongs to",
+   "src": []
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

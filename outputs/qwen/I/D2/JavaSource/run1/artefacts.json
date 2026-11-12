@@ -1,0 +1,118 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Invoke Class",
+   "actor": "User",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Define Class",
+   "actor": "User",
+   "src": [
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "Define Method",
+   "actor": "User",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Invoke Method",
+   "actor": "User",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Definition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "invoke",
+     "use_case": "invoking a class"
+    },
+    {
+     "name": "defineMethod",
+     "use_case": "the definition of a method inside a class"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R5",
+    "R7"
+   ]
+  },
+  {
+   "name": "MethodDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "methodDefinition",
+     "use_case": "the definition of a method inside a class"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "name": "Method",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "invoke",
+     "use_case": "invoking a method that corresponds to a method definition"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Definition",
+   "target": "MethodDefinition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Definition",
+   "target": "Method",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from abc import ABC, abstractmethod\n\nclass Definition(ABC):\n    @abstractmethod\ndefinition_id(self) -> str:\n        pass\n\nclass MethodDefinition:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Method(Definition):\n    def __init__(self, method_definition: MethodDefinition):\n        self.method_definition = method_definition\n        self.name = method_definition.name\n    def invoke(self):\n        raise NotImplementedError\n\nclass ClassDefinition(Definition):\n    def __init__(self, name: str, superclass: 'ClassDefinition' = None):\n        self.name = name\n        self.superclass = superclass\n    def definition_id(self) -> str:\n        return self.name\n\nclass JavaSource:\n    def __init__(self):\n        self.classes = []\n    def add_class(self, class_def: ClassDefinition):\n        self.classes.append(class_def)\n    def invoke_method(self, method: Method):\n        method.invoke()",
+ "java": {}
+}

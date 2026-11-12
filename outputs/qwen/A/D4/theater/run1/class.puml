@@ -1,0 +1,32 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Theater {
+  location : String
+}
+class Play {
+  name : String
+  type : String
+  theaters : String
+  +createPlay()
+}
+class Author {
+  name : String
+  +writePlay()
+}
+class Participant {
+  name : String
+  +actInPlay()
+}
+class Session {
+  beginTime : LocalDate
+  endTime : LocalDate
+}
+class Game {
+  name : String
+  +createGame()
+}
+Play "1" -- "1..*" Author : writtenBy
+Play "1" -- "0..*" Participant : has
+Session "1" -- "1..*" Participant : in
+@enduml

@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The 'News' class assumes an attribute 'author' of type 'String' as stated in R3."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R4: A category has a value is not represented in the model.",
+   "fix": "Add a class named 'Category' with an attribute 'value'."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R5: News have dates. Each date contains the day of the week, the month, the hours and the seconds is partially represented. The 'Date' class is missing attributes for day of the week, hours, and seconds.",
+   "fix": "Add attributes 'dayOfWeek', 'hour', and 'second' to the 'Date' class."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R9: News are related to one Newspaper and a newspaper can only include one instance of news. The relationship between 'News' and 'Newspaper' is not correctly defined. The relationship should be 'aggregation' with a cardinality of 1..* on 'Newspaper -> News' and 0..1 on 'News -> Newspaper'.",
+   "fix": "Change the relationship between 'News' and 'Newspaper' to aggregation with the correct cardinalities."
+  }
+ ]
+}

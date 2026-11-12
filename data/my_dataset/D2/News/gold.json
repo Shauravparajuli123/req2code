@@ -1,0 +1,182 @@
+{
+ "classes": [
+  {
+   "name": "Element",
+   "kind": "class"
+  },
+  {
+   "name": "Newspaper",
+   "kind": "class"
+  },
+  {
+   "name": "News",
+   "kind": "class"
+  },
+  {
+   "name": "Category",
+   "kind": "class"
+  },
+  {
+   "name": "Date",
+   "kind": "class"
+  },
+  {
+   "name": "DayKind",
+   "kind": "enum"
+  }
+ ],
+ "attributes": {
+  "Element": [
+   {
+    "name": "title",
+    "type": "String"
+   },
+   {
+    "name": "description",
+    "type": "String"
+   },
+   {
+    "name": "link",
+    "type": "String"
+   }
+  ],
+  "Newspaper": [
+   {
+    "name": "language",
+    "type": "String"
+   },
+   {
+    "name": "copyright",
+    "type": "String"
+   }
+  ],
+  "News": [
+   {
+    "name": "author",
+    "type": "String"
+   },
+   {
+    "name": "comments",
+    "type": "String"
+   }
+  ],
+  "Category": [
+   {
+    "name": "value",
+    "type": "String"
+   }
+  ],
+  "Date": [
+   {
+    "name": "eDay",
+    "type": "DayKind"
+   },
+   {
+    "name": "day",
+    "type": "Integer"
+   },
+   {
+    "name": "month",
+    "type": "Integer"
+   },
+   {
+    "name": "year",
+    "type": "Integer"
+   },
+   {
+    "name": "hours",
+    "type": "Integer"
+   },
+   {
+    "name": "minutes",
+    "type": "Integer"
+   },
+   {
+    "name": "seconds",
+    "type": "Integer"
+   }
+  ],
+  "DayKind": [
+   {
+    "name": "Monday",
+    "type": "literal"
+   },
+   {
+    "name": "Tuesday",
+    "type": "literal"
+   },
+   {
+    "name": "Wednesday",
+    "type": "literal"
+   },
+   {
+    "name": "Thursday",
+    "type": "literal"
+   },
+   {
+    "name": "Friday",
+    "type": "literal"
+   },
+   {
+    "name": "Saturday",
+    "type": "literal"
+   },
+   {
+    "name": "Sunday",
+    "type": "literal"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "Newspaper",
+   "to": "Element",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Newspaper",
+   "to": "Date",
+   "label": "pubDate 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Newspaper",
+   "to": "Category",
+   "label": "category 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Newspaper",
+   "to": "News",
+   "label": "news 0..*",
+   "label_to": "newspaper 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "News",
+   "to": "Element",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "News",
+   "to": "Date",
+   "label": "pubDate 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "News",
+   "to": "Category",
+   "label": "category 0..1",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage News {\nclass Element {\n\t title : String\n\t description : String\n\t link : String\n}\nclass Newspaper {\n\t language : String\n\t copyright : String\n}\nElement <|-- Newspaper\nNewspaper \"pubDate 0..1\" *--> Date\nNewspaper \"category 0..1\" *--> Category\nNewspaper \"news 0..*\" *-- \"newspaper 1..1\" News\nclass News {\n\t author : String\n\t comments : String\n}\nElement <|-- News\nNews \"pubDate 0..1\" *--> Date\nNews \"category 0..1\" *--> Category\nclass Category {\n\t value : String\n}\nclass Date {\n\t eDay : DayKind\n\t day : Integer\n\t month : Integer\n\t year : Integer\n\t hours : Integer\n\t minutes : Integer\n\t seconds : Integer\n}\nenum DayKind {\nMonday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday\n}\n}\n@enduml\n"
+}

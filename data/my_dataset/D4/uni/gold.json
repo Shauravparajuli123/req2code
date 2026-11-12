@@ -1,0 +1,4 @@
+{
+ "plantuml": "@startuml\n\nclass Course{\nname: String\nnumCredits: String\n}\n\nclass DormUnit{\nprice: Real\n}\n\nclass Student{\nname: String\n}\n\nclass Professor{\nname: String\n}\n\nProfessor \"1..*\" -- \"*\" Course\nStudent \"5..*\" --o \"*\" Course\nStudent \"1..4\" --o DormUnit\n@enduml\n",
+ "scorer": "NOMAD src/eval_helpers.py evaluate_uml"
+}

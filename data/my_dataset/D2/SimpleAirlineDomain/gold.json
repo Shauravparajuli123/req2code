@@ -1,0 +1,151 @@
+{
+ "classes": [
+  {
+   "name": "Airport",
+   "kind": "class"
+  },
+  {
+   "name": "Flight",
+   "kind": "class"
+  },
+  {
+   "name": "Airline",
+   "kind": "class"
+  },
+  {
+   "name": "Passenger",
+   "kind": "class"
+  },
+  {
+   "name": "Genre",
+   "kind": "enum"
+  },
+  {
+   "name": "Time",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Airport": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Flight": [
+   {
+    "name": "maxnrPassengers",
+    "type": "Integer"
+   }
+  ],
+  "Airline": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "nationality",
+    "type": "String"
+   }
+  ],
+  "Passenger": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "age",
+    "type": "Integer"
+   },
+   {
+    "name": "gender",
+    "type": "Genre"
+   },
+   {
+    "name": "needsAssistance",
+    "type": "Boolean"
+   }
+  ],
+  "Genre": [
+   {
+    "name": "male",
+    "type": "literal"
+   },
+   {
+    "name": "female",
+    "type": "literal"
+   }
+  ],
+  "Time": [
+   {
+    "name": "year",
+    "type": "Integer"
+   },
+   {
+    "name": "month",
+    "type": "Integer"
+   },
+   {
+    "name": "day",
+    "type": "Integer"
+   },
+   {
+    "name": "hour",
+    "type": "Integer"
+   },
+   {
+    "name": "minute",
+    "type": "Integer"
+   },
+   {
+    "name": "second",
+    "type": "Integer"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "association",
+   "from": "Airport",
+   "to": "Flight",
+   "label": "departingFlight 0..*",
+   "label_to": "origin 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Airport",
+   "to": "Flight",
+   "label": "arrivingFlight 0..*",
+   "label_to": "destination 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Flight",
+   "to": "Time",
+   "label": "departTime 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Flight",
+   "to": "Time",
+   "label": "duration 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Flight",
+   "to": "Passenger",
+   "label": "passenger 0..*",
+   "label_to": "flight 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Flight",
+   "to": "Airline",
+   "label": "airline 1..1",
+   "label_to": "flight 0..*"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage SimpleAirlineDomain {\nclass Airport {\n\t name : String\n}\nAirport \"departingFlight 0..*\" -- \"origin 1..1\" Flight\nAirport \"arrivingFlight 0..*\" -- \"destination 1..1\" Flight\nclass Flight {\n\t maxnrPassengers : Integer\n}\nFlight \"departTime 1..1\" --> Time\nFlight \"duration 1..1\" --> Time\nFlight \"passenger 0..*\" -- \"flight 1..1\" Passenger\nFlight \"airline 1..1\" -- \"flight 0..*\" Airline\nclass Airline {\n\t name : String\n\t nationality : String\n}\nclass Passenger {\n\t name : String\n\t age : Integer\n\t gender : Genre\n\t needsAssistance : Boolean\n}\nenum Genre {\nmale\nfemale\n}\nclass Time {\n\t year : Integer\n\t month : Integer\n\t day : Integer\n\t hour : Integer\n\t minute : Integer\n\t second : Integer\n}\n}\n@enduml\n"
+}

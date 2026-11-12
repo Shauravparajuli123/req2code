@@ -1,0 +1,108 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "News",
+   "src": [
+    "R1",
+    "R3",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Newspaper",
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "News",
+   "name": "title",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "News",
+   "name": "link",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "News",
+   "name": "author",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "News",
+   "name": "date",
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "owner": "Date",
+   "name": "dayOfWeek",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "Date",
+   "name": "month",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "Date",
+   "name": "hours",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "Date",
+   "name": "seconds",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "Newspaper",
+   "name": "language",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "Newspaper",
+   "name": "publicationDate",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Newspaper",
+   "target": "News",
+   "src": [
+    "R7",
+    "R9"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

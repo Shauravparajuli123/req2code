@@ -1,0 +1,106 @@
+{
+ "actors": [
+  "Airline",
+  "Airport"
+ ],
+ "use_cases": [
+  {
+   "name": "Start Operation",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Stop Operation",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Update Operating Cost",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airline",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "operations"
+   ],
+   "methods": [
+    {
+     "name": "startOperation",
+     "use_case": "Start Operation"
+    },
+    {
+     "name": "stopOperation",
+     "use_case": "Stop Operation"
+    },
+    {
+     "name": "updateOperatingCost",
+     "use_case": "Update Operating Cost"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "code",
+    "city"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Operation",
+   "kind": "class",
+   "attributes": [
+    "airline",
+    "airport",
+    "cost"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Airline",
+   "target": "Operation",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Operation",
+   "target": "Airport",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "python": "from typing import List, Double\n\nclass Airport:\n    def __init__(self, code: String, city: String):\n        self.code = code\n        self.city = city\n\nclass Operation:\n    def __init__(self, airline: Airline, airport: Airport, cost: Double):\n        self.airline = airline\n        self.airport = airport\n        self.cost = cost\n\nclass Airline:\n    def __init__(self, name: String):\n        self.name = name\n        self.operations = []\n\n    def startOperation(self, operation: Operation):\n        raise NotImplementedError\n\n    def stopOperation(self, operation: Operation):\n        raise NotImplementedError\n\n    def updateOperatingCost(self, operation: Operation, new_cost: Double):\n        raise NotImplementedError",
+ "java": {}
+}

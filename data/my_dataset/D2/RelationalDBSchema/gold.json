@@ -1,0 +1,94 @@
+{
+ "classes": [
+  {
+   "name": "NamedElement",
+   "kind": "class"
+  },
+  {
+   "name": "DataBase",
+   "kind": "class"
+  },
+  {
+   "name": "Table",
+   "kind": "class"
+  },
+  {
+   "name": "Column",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "NamedElement": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "DataBase": [
+   {
+    "name": "SGBDname",
+    "type": "String"
+   }
+  ],
+  "Table": [],
+  "Column": [
+   {
+    "name": "dataType",
+    "type": "String"
+   },
+   {
+    "name": "null",
+    "type": "Boolean"
+   },
+   {
+    "name": "defaultValue",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "DataBase",
+   "to": "NamedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "DataBase",
+   "to": "Table",
+   "label": "tables 0..*",
+   "label_to": "database 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "Table",
+   "to": "NamedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Table",
+   "to": "Column",
+   "label": "columns 0..*",
+   "label_to": "owner 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Table",
+   "to": "Column",
+   "label": "key 0..*",
+   "label_to": "keyOf 0..1"
+  },
+  {
+   "type": "generalization",
+   "from": "Column",
+   "to": "NamedElement",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage RelationalDBSchema {\nclass NamedElement {\n\t name : String\n}\nclass DataBase {\n\t SGBDname : String\n}\nNamedElement <|-- DataBase\nDataBase \"tables 0..*\" *-- \"database 1..1\" Table\nclass Table {\n}\nNamedElement <|-- Table\nTable \"columns 0..*\" *-- \"owner 1..1\" Column\nTable \"key 0..*\" -- \"keyOf 0..1\" Column\nclass Column {\n\t dataType : String\n\t null : Boolean\n\t defaultValue : String\n}\nNamedElement <|-- Column\n}\n@enduml\n"
+}

@@ -1,0 +1,130 @@
+{
+ "classes": [
+  {
+   "name": "WorkflowProcessDefinition",
+   "kind": "class"
+  },
+  {
+   "name": "WorkflowApplicationDeclaration",
+   "kind": "class"
+  },
+  {
+   "name": "WorkflowRelevantData",
+   "kind": "class"
+  },
+  {
+   "name": "WorkflowParticipantSpecification",
+   "kind": "class"
+  },
+  {
+   "name": "WorkflowProcessActivity",
+   "kind": "class"
+  },
+  {
+   "name": "TransitionInformation",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "WorkflowProcessDefinition": [],
+  "WorkflowApplicationDeclaration": [],
+  "WorkflowRelevantData": [],
+  "WorkflowParticipantSpecification": [],
+  "WorkflowProcessActivity": [],
+  "TransitionInformation": []
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "WorkflowProcessDefinition",
+   "to": "WorkflowParticipantSpecification",
+   "label": "participantSpecificatons 0..*",
+   "label_to": "processDefinition 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "WorkflowProcessDefinition",
+   "to": "WorkflowRelevantData",
+   "label": "revelantDatas 0..*",
+   "label_to": "processDefinition 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "WorkflowProcessDefinition",
+   "to": "WorkflowApplicationDeclaration",
+   "label": "applicationDeclarations 0..*",
+   "label_to": "processDefinition 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "WorkflowProcessDefinition",
+   "to": "WorkflowProcessActivity",
+   "label": "processActivities 0..*",
+   "label_to": "processDefinition 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "WorkflowProcessDefinition",
+   "to": "TransitionInformation",
+   "label": "transitionInformations 0..*",
+   "label_to": "processDefinition 1..1"
+  },
+  {
+   "type": "association",
+   "from": "WorkflowApplicationDeclaration",
+   "to": "WorkflowProcessActivity",
+   "label": "processActivities 0..*",
+   "label_to": "applicationDeclarations 0..*"
+  },
+  {
+   "type": "association",
+   "from": "WorkflowApplicationDeclaration",
+   "to": "WorkflowRelevantData",
+   "label": "revelantDatas 0..*",
+   "label_to": "applicationDeclarations 0..*"
+  },
+  {
+   "type": "association",
+   "from": "WorkflowRelevantData",
+   "to": "WorkflowProcessActivity",
+   "label": "processActivities 0..*",
+   "label_to": "revelantDatas 0..*"
+  },
+  {
+   "type": "association",
+   "from": "WorkflowRelevantData",
+   "to": "WorkflowParticipantSpecification",
+   "label": "participantSpecifications 0..*",
+   "label_to": "revelantDatas 0..*"
+  },
+  {
+   "type": "association",
+   "from": "WorkflowRelevantData",
+   "to": "TransitionInformation",
+   "label": "transitionInformations 0..*",
+   "label_to": "revelantDatas 0..*"
+  },
+  {
+   "type": "association",
+   "from": "WorkflowParticipantSpecification",
+   "to": "WorkflowProcessActivity",
+   "label": "processActivities 0..*",
+   "label_to": "participantSpecifications 0..*"
+  },
+  {
+   "type": "association",
+   "from": "WorkflowProcessActivity",
+   "to": "TransitionInformation",
+   "label": "to_transitionInformation 1..1",
+   "label_to": "to_processActivity 1..1"
+  },
+  {
+   "type": "association",
+   "from": "WorkflowProcessActivity",
+   "to": "TransitionInformation",
+   "label": "from_transitionInformation 1..1",
+   "label_to": "from_processActivity 1..1"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage WfMC {\nclass WorkflowProcessDefinition {\n}\nWorkflowProcessDefinition \"participantSpecificatons 0..*\" *-- \"processDefinition 1..1\" WorkflowParticipantSpecification\nWorkflowProcessDefinition \"revelantDatas 0..*\" *-- \"processDefinition 1..1\" WorkflowRelevantData\nWorkflowProcessDefinition \"applicationDeclarations 0..*\" *-- \"processDefinition 1..1\" WorkflowApplicationDeclaration\nWorkflowProcessDefinition \"processActivities 0..*\" *-- \"processDefinition 1..1\" WorkflowProcessActivity\nWorkflowProcessDefinition \"transitionInformations 0..*\" *-- \"processDefinition 1..1\" TransitionInformation\nclass WorkflowApplicationDeclaration {\n}\nWorkflowApplicationDeclaration \"processActivities 0..*\" -- \"applicationDeclarations 0..*\" WorkflowProcessActivity\nWorkflowApplicationDeclaration \"revelantDatas 0..*\" -- \"applicationDeclarations 0..*\" WorkflowRelevantData\nclass WorkflowRelevantData {\n}\nWorkflowRelevantData \"processActivities 0..*\" -- \"revelantDatas 0..*\" WorkflowProcessActivity\nWorkflowRelevantData \"participantSpecifications 0..*\" -- \"revelantDatas 0..*\" WorkflowParticipantSpecification\nWorkflowRelevantData \"transitionInformations 0..*\" -- \"revelantDatas 0..*\" TransitionInformation\nclass WorkflowParticipantSpecification {\n}\nWorkflowParticipantSpecification \"processActivities 0..*\" -- \"participantSpecifications 0..*\" WorkflowProcessActivity\nclass WorkflowProcessActivity {\n}\nWorkflowProcessActivity \"to_transitionInformation 1..1\" -- \"to_processActivity 1..1\" TransitionInformation\nWorkflowProcessActivity \"from_transitionInformation 1..1\" -- \"from_processActivity 1..1\" TransitionInformation\nclass TransitionInformation {\n}\n}\n@enduml\n"
+}

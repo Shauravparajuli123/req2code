@@ -1,0 +1,185 @@
+{
+ "condition": "C",
+ "hint": {
+  "case": "D2/WTIP_SimpleRDBMS",
+  "stage": "result1_before_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R2",
+     "R5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Columns have name String."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A table has zero or more columns."
+     }
+    ],
+    "name": "Column",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R3",
+     "R4"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "There is a FKey in SimpleRDBMS."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "A table has zero or more fkeys."
+     }
+    ],
+    "name": "Fkey",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R1",
+     "R2"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "Tables have name String."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "Columns have name String."
+     }
+    ],
+    "name": "NameString",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R1",
+     "R4",
+     "R5",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "Tables have name String."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "A table has zero or more fkeys."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A table has zero or more columns."
+     }
+    ],
+    "name": "Table",
+    "freq": 4
+   }
+  ],
+  "attributes": [],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Columns have name String."
+     }
+    ],
+    "kind": "has",
+    "source": "Column",
+    "target": "NameString",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A table has zero or more columns."
+     }
+    ],
+    "kind": "has",
+    "source": "Table",
+    "target": "Column",
+    "multiplicity_target": "zero or more"
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A table has zero or more fkeys."
+     }
+    ],
+    "kind": "has",
+    "source": "Table",
+    "target": "Fkey",
+    "multiplicity_target": "zero or more"
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "Tables have name String."
+     }
+    ],
+    "kind": "has",
+    "source": "Table",
+    "target": "NameString",
+    "multiplicity_target": null
+   }
+  ]
+ },
+ "open_tags": []
+}

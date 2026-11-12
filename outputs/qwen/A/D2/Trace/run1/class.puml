@@ -1,0 +1,24 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Trace {
+  name : String
+}
+class Level {
+  trace : String
+}
+class Call {
+  methodName : String
+  numberOfRows : int
+  level : String
+}
+class Index {
+  value : int
+}
+class Game {
+  name : String
+  +createGame()
+}
+Call "1" -- "1" Level : has
+Level "1" -- "0..*" Trace : has
+@enduml

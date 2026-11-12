@@ -1,0 +1,96 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "FCMSource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "EAISource",
+   "kind": "class",
+   "attributes": [
+    "resources"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "FCMSink",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "EAISink",
+   "kind": "class",
+   "attributes": [
+    "resources"
+   ],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "EAIResource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "EAIQueue",
+   "kind": "class",
+   "attributes": [
+    "maxLength"
+   ],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "EAISource",
+   "target": "FCMSource",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "source": "EAISource",
+   "target": "EAIResource",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "EAISink",
+   "target": "EAIResource",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/EAI.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass FCMSource:\n    \"\"\"Source: -\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass EAISource(FCMSource):\n    \"\"\"Source: R2\"\"\"\n    resources: _t.Optional[str] = None\n    eAIResources: _t.List[\"EAIResource\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass FCMSink:\n    \"\"\"Source: R3\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass EAISink:\n    \"\"\"Source: R4\"\"\"\n    resources: _t.Optional[str] = None\n    eAIResource: _t.Optional[\"EAIResource\"] = None\n\n\n@_dc.dataclass\nclass EAIResource:\n    \"\"\"Source: R5\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass EAIQueue:\n    \"\"\"Source: R6\"\"\"\n    maxLength: _t.Optional[int] = None\n",
+ "java": {
+  "FCMSource.java": "/** Generated from shared model D2/EAI. Source: - */\npublic class FCMSource {\n}\n",
+  "EAISource.java": "/** Generated from shared model D2/EAI. Source: R2 */\npublic class EAISource extends FCMSource {\n    private java.lang.String resources;\n    private java.util.List<EAIResource> eAIResources;\n}\n",
+  "FCMSink.java": "/** Generated from shared model D2/EAI. Source: R3 */\npublic class FCMSink {\n}\n",
+  "EAISink.java": "/** Generated from shared model D2/EAI. Source: R4 */\npublic class EAISink {\n    private java.lang.String resources;\n    private EAIResource eAIResource;\n}\n",
+  "EAIResource.java": "/** Generated from shared model D2/EAI. Source: R5 */\npublic class EAIResource {\n}\n",
+  "EAIQueue.java": "/** Generated from shared model D2/EAI. Source: R6 */\npublic class EAIQueue {\n    private int maxLength;\n}\n"
+ }
+}

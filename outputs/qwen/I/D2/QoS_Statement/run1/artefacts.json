@@ -1,0 +1,81 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "qosConstraint"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "qosStatements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "QoSConstraint",
+   "kind": "class",
+   "attributes": [
+    "qualificationKind"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R11"
+   ]
+  },
+  {
+   "name": "QualificationKind",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "CompoundQoSStatement",
+   "target": "QoSStatement",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8",
+    "R10"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass QualificationKind:\n    pass\n\nclass Parameter:\n    pass\n\nclass QoSConstraint:\n    pass\n\nclass QoSStatement:\n    def __init__(self, compound_qos_statement: 'CompoundQoSStatement'):\n        self.compound_qos_statement = compound_qos_statement\n\nclass SingleQoSStatement(QoSStatement):\n    def __init__(self, qos_constraint: QoSConstraint):\n        super().__init__(compound_qos_statement=None)\n        self.qos_constraint = qos_constraint\n\nclass CompoundQoSStatement(QoSStatement):\n    def __init__(self, qos_statements: List[QoSStatement]):\n        if len(qos_statements) < 2:\n            raise ValueError(\"A CompoundQoSStatement must contain at least 2 QoSStatements.\")\n        self.qos_statements = qos_statements\n",
+ "java": {}
+}

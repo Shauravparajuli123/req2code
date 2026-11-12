@@ -1,0 +1,112 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Makefile",
+   "kind": "class",
+   "attributes": [
+    "comment",
+    "rules"
+   ],
+   "methods": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "dependencies"
+   ],
+   "methods": [
+    {
+     "name": "addDependency",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "name": "RuleDep",
+   "kind": "class",
+   "attributes": [
+    "rule",
+    "file"
+   ],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [
+    "text"
+   ],
+   "methods": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Makefile",
+   "target": "Rule",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "source": "Makefile",
+   "target": "Comment",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "Rule",
+   "target": "RuleDep",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "source": "Makefile",
+   "target": "Element",
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/Make.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Makefile:\n    \"\"\"Source: R10, R11\"\"\"\n    comment: _t.Optional[str] = None\n    rules: _t.Optional[str] = None\n    elements: _t.List[\"Element\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Rule:\n    \"\"\"Source: R3, R11, R12\"\"\"\n    name: _t.Optional[str] = None\n    dependencies: _t.Optional[str] = None\n    ruleDeps: _t.List[\"RuleDep\"] = _dc.field(default_factory=list)\n\n    def addDependency(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass RuleDep:\n    \"\"\"Source: R7\"\"\"\n    rule: _t.Optional[str] = None\n    file: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Comment:\n    \"\"\"Source: R10\"\"\"\n    text: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Element:\n    \"\"\"Source: R2\"\"\"\n    name: _t.Optional[str] = None\n",
+ "java": {
+  "Makefile.java": "/** Generated from shared model D2/Make. Source: R10, R11 */\npublic class Makefile {\n    private java.lang.String comment;\n    private java.lang.String rules;\n    private java.util.List<Element> elements;\n}\n",
+  "Rule.java": "/** Generated from shared model D2/Make. Source: R3, R11, R12 */\npublic class Rule {\n    private java.lang.String name;\n    private java.lang.String dependencies;\n    private java.util.List<RuleDep> ruleDeps;\n\n    /** Operation. */\n    public void addDependency() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "RuleDep.java": "/** Generated from shared model D2/Make. Source: R7 */\npublic class RuleDep {\n    private java.lang.String rule;\n    private java.lang.String file;\n}\n",
+  "Comment.java": "/** Generated from shared model D2/Make. Source: R10 */\npublic class Comment {\n    private java.lang.String text;\n}\n",
+  "Element.java": "/** Generated from shared model D2/Make. Source: R2 */\npublic class Element {\n    private java.lang.String name;\n}\n"
+ }
+}

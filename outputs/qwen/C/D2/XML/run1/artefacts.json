@@ -1,0 +1,76 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "startLine",
+    "endLine"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "children"
+   ],
+   "methods": [
+    {
+     "name": "addChild",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "XmlFile",
+   "kind": "class",
+   "attributes": [
+    "rootElement"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "source": "XmlFile",
+   "target": "Element",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "source": "XmlFile",
+   "target": "Node",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "source": "Element",
+   "target": "Node",
+   "src": []
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/XML.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n    startLine: _t.Optional[int] = None\n    endLine: _t.Optional[int] = None\n\n\n@_dc.dataclass\nclass Element:\n    \"\"\"Source: -\"\"\"\n    children: _t.Optional[str] = None\n    node: _t.Optional[\"Node\"] = None\n\n    def addChild(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass XmlFile:\n    \"\"\"Source: -\"\"\"\n    rootElement: _t.Optional[str] = None\n    elements: _t.List[\"Element\"] = _dc.field(default_factory=list)\n    nodes: _t.List[\"Node\"] = _dc.field(default_factory=list)\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Node.java": "/** Generated from shared model D2/XML. Source: R1 */\npublic class Node {\n    private java.lang.String name;\n    private int startLine;\n    private int endLine;\n}\n",
+  "Element.java": "/** Generated from shared model D2/XML. Source: - */\npublic class Element {\n    private java.lang.String children;\n    private Node node;\n\n    /** Operation. */\n    public void addChild() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "XmlFile.java": "/** Generated from shared model D2/XML. Source: - */\npublic class XmlFile {\n    private java.lang.String rootElement;\n    private java.util.List<Element> elements;\n    private java.util.List<Node> nodes;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

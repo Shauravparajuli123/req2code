@@ -1,0 +1,21 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class QoSStatement {
+}
+class SingleQoSStatement {
+  constraint : String
+  +createSingleQoSStatement()
+}
+class CompoundQoSStatement {
+  statements : String
+  +createCompoundQoSStatement()
+}
+class QoSConstraint {
+  qualification : String
+  +createQoSConstraint()
+}
+QoSStatement "1" -- "0..*" CompoundQoSStatement : has
+SingleQoSStatement "1" *-- "1" QoSConstraint : is composed of
+CompoundQoSStatement --|> QoSStatement
+@enduml

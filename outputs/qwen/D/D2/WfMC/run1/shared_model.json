@@ -1,0 +1,191 @@
+{
+ "case": "D2/WfMC",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Game",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createGame",
+     "realizes": "UC1",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "WorkflowProcessDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "ParticipantSpecification",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "processDefinition",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    },
+    {
+     "name": "processActivity",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "WorkflowProcessActivity",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "processDefinition",
+     "type": "String",
+     "src": [
+      "R13",
+      "R17"
+     ]
+    },
+    {
+     "name": "relevantData",
+     "type": "String",
+     "src": [
+      "R18"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R13",
+    "R14",
+    "R17",
+    "R18"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "TransitionInformation",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "targetActivity",
+     "type": "String",
+     "src": [
+      "R21"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R20",
+    "R21"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..1",
+   "label": "has",
+   "src": [
+    "R7",
+    "R15"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C4",
+   "target": "C5",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C4",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R17"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Assuming R11 is not directly related to the current model elements"
+  }
+ ],
+ "open_tags": []
+}

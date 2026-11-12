@@ -1,0 +1,1302 @@
+{
+ "actors": [
+  "user",
+  "visitor",
+  "reseller",
+  "artist"
+ ],
+ "use_cases": [
+  {
+   "name": "Fill Information",
+   "actor": "user",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Save Information",
+   "actor": "user",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Save PaymentDetail",
+   "actor": "user",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Fill Survey",
+   "actor": "user",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "See Content",
+   "actor": "user",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "See Event",
+   "actor": "visitor",
+   "src": [
+    "R11",
+    "R19",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "name": "Purchase Ticket",
+   "actor": "visitor",
+   "src": [
+    "R12",
+    "R14",
+    "R20",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "See History",
+   "actor": "user",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "See Overview",
+   "actor": "user",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "See Preference",
+   "actor": "user",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "See Seat",
+   "actor": "visitor",
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "See Type",
+   "actor": "visitor",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Edit Information",
+   "actor": "user",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Change Password",
+   "actor": "user",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "See OrderSummary",
+   "actor": "visitor",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "Land EventPage",
+   "actor": "visitor",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "Click Event",
+   "actor": "visitor",
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "name": "Have BuyingProcess",
+   "actor": "company",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R39"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R36"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R52"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R50",
+    "R51",
+    "R54"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R40"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "dateOfBirth",
+    "email",
+    "address",
+    "preferences"
+   ],
+   "methods": [
+    {
+     "name": "fillInformation",
+     "use_case": "Fill Information (guest; R15)"
+    },
+    {
+     "name": "editInformation",
+     "use_case": "Edit Information (user; R7)"
+    },
+    {
+     "name": "saveInformation",
+     "use_case": "Save Information (user; R1)"
+    },
+    {
+     "name": "seePreference",
+     "use_case": "See Preference (user; R5)"
+    },
+    {
+     "name": "seeContent",
+     "use_case": "See Content (user; R4)"
+    },
+    {
+     "name": "seeOrderSummary",
+     "use_case": "See OrderSummary (visitor; R25)"
+    },
+    {
+     "name": "seeHistory",
+     "use_case": "See History (user; R8)"
+    },
+    {
+     "name": "seeOverview",
+     "use_case": "See Overview (user; R9)"
+    },
+    {
+     "name": "seeEvent",
+     "use_case": "See Event (visitor; R19)"
+    },
+    {
+     "name": "seeSeat",
+     "use_case": "See Seat (visitor; R21)"
+    },
+    {
+     "name": "seeType",
+     "use_case": "See Type (visitor; R23)"
+    },
+    {
+     "name": "seeOrderSummary",
+     "use_case": "See OrderSummary (visitor; R25)"
+    },
+    {
+     "name": "seeEventPage",
+     "use_case": "Land EventPage (visitor; R29)"
+    },
+    {
+     "name": "seeCalendarView",
+     "use_case": "See Event (visitor; R46)"
+    },
+    {
+     "name": "seePopularEvents",
+     "use_case": "See Event (visitor; R47)"
+    },
+    {
+     "name": "seeUserProfile",
+     "use_case": "Find Information (artist; R49)"
+    },
+    {
+     "name": "seeLinks",
+     "use_case": "Have Link (artist; R50, R51, R54)"
+    },
+    {
+     "name": "seeDescription",
+     "use_case": "Have Description (artist; R52)"
+    },
+    {
+     "name": "seeFavoriteEvents",
+     "use_case": "Favorite Event (user; R53)"
+    },
+    {
+     "name": "changePassword",
+     "use_case": "Change Password (user; R6)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Guest",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "email"
+   ],
+   "methods": [
+    {
+     "name": "fillName",
+     "use_case": "Fill Name (guest i.e. single time user; R15)"
+    },
+    {
+     "name": "fillInformation",
+     "use_case": "Fill Information (guest; R16)"
+    },
+    {
+     "name": "seeOrderSummary",
+     "use_case": "See OrderSummary (visitor; R25)"
+    },
+    {
+     "name": "seeEvent",
+     "use_case": "See Event (visitor; R19)"
+    },
+    {
+     "name": "seeSeat",
+     "use_case": "See Seat (visitor; R21)"
+    },
+    {
+     "name": "seeType",
+     "use_case": "See Type (visitor; R23)"
+    },
+    {
+     "name": "seeOrderSummary",
+     "use_case": "See OrderSummary (visitor; R25)"
+    },
+    {
+     "name": "seeEventPage",
+     "use_case": "Land EventPage (visitor; R29)"
+    },
+    {
+     "name": "seeCalendarView",
+     "use_case": "See Event (visitor; R46)"
+    },
+    {
+     "name": "seePopularEvents",
+     "use_case": "See Event (visitor; R47)"
+    },
+    {
+     "name": "seeFavoriteEvents",
+     "use_case": "Favorite Event (user; R53)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Visitor",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "seeEvent",
+     "use_case": "See Event (visitor; R19)"
+    },
+    {
+     "name": "seeSeat",
+     "use_case": "See Seat (visitor; R21)"
+    },
+    {
+     "name": "seeType",
+     "use_case": "See Type (visitor; R23)"
+    },
+    {
+     "name": "seeOrderSummary",
+     "use_case": "See OrderSummary (visitor; R25)"
+    },
+    {
+     "name": "seeEventPage",
+     "use_case": "Land EventPage (visitor; R29)"
+    },
+    {
+     "name": "seeCalendarView",
+     "use_case": "See Event (visitor; R46)"
+    },
+    {
+     "name": "seePopularEvents",
+     "use_case": "See Event (visitor; R47)"
+    },
+    {
+     "name": "seeFavoriteEvents",
+     "use_case": "Favorite Event (user; R53)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "minimumResellPrice",
+    "resellingProcess"
+   ],
+   "methods": [
+    {
+     "name": "haveBuyingProcess",
+     "use_case": "Have BuyingProcess (company; R27)"
+    },
+    {
+     "name": "haveReseller",
+     "use_case": "Have Reseller (company; R36)"
+    },
+    {
+     "name": "avoidBehavior",
+     "use_case": "Avoid Behavior (company; R39)"
+    },
+    {
+     "name": "protectUser",
+     "use_case": "Protect User (company; R40)"
+    },
+    {
+     "name": "validateTicket",
+     "use_case": "Validate Ticket (company; R37)"
+    },
+    {
+     "name": "deductServiceFee",
+     "use_case": "Deduct ServiceFee (company; R38)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R27",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "name": "Reseller",
+   "kind": "class",
+   "attributes": [
+    "bankAccount"
+   ],
+   "methods": [
+    {
+     "name": "resellTicket",
+     "use_case": "Resell Ticket (reseller; R41)"
+    },
+    {
+     "name": "uploadTicket",
+     "use_case": "Upload Ticket (reseller; R42)"
+    },
+    {
+     "name": "setPrice",
+     "use_case": "Set Price (reseller; R43)"
+    },
+    {
+     "name": "addDescription",
+     "use_case": "Add Description (reseller; R44)"
+    },
+    {
+     "name": "saveBankAccount",
+     "use_case": "Save BankAccount (reseller; R45)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  },
+  {
+   "name": "Event",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "date",
+    "venue",
+    "artist",
+    "price"
+   ],
+   "methods": [
+    {
+     "name": "findInformation",
+     "use_case": "Find Information (artist; R49)"
+    },
+    {
+     "name": "seeEventPage",
+     "use_case": "See Event (visitor; R19, R46, R47, R48, R49, R50, R51, R52, R53, R54)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Ticket",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "seat"
+   ],
+   "methods": [
+    {
+     "name": "addTicketToCart",
+     "use_case": "Add Ticket (visitor; R24)"
+    },
+    {
+     "name": "seeOrderSummary",
+     "use_case": "See OrderSummary (visitor; R25)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12",
+    "R13",
+    "R18",
+    "R20",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Address",
+   "kind": "class",
+   "attributes": [
+    "street",
+    "city",
+    "zipCode"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Preference",
+   "kind": "class",
+   "attributes": [
+    "genre",
+    "eventTypes"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "BankAccount",
+   "kind": "class",
+   "attributes": [
+    "iban"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Cent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "ResellingProcess",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R36"
+   ]
+  },
+  {
+   "name": "SearchResult",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34"
+   ]
+  },
+  {
+   "name": "Seat",
+   "kind": "class",
+   "attributes": [
+    "row",
+    "column"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "Venue",
+   "kind": "class",
+   "attributes": [
+    "map"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "Artist",
+   "kind": "class",
+   "attributes": [
+    "links"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Link",
+   "kind": "class",
+   "attributes": [
+    "url"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "User",
+   "target": "UserProfile",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Preference",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Ticket",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Event",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Guest",
+   "target": "Ticket",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12",
+    "R14",
+    "R18",
+    "R20",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Visitor",
+   "target": "Ticket",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12",
+    "R14",
+    "R18",
+    "R20",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Company",
+   "target": "Reseller",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Reseller",
+   "target": "Ticket",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Event",
+   "target": "Venue",
+   "multiplicity_target": "1",
+   "src": [
+    "R11",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Event",
+   "target": "Artist",
+   "multiplicity_target": "1",
+   "src": [
+    "R11",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Artist",
+   "target": "Event",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  }
+ ],
+ "python": "from typing import TypedDict, List, Optional\n\nclass Address(TypedDict):\n    street: str\n    city: str\n    state: str\n    zip_code: str\n\nclass BankAccount(TypedDict):\n    iban: str\n\nclass Event(TypedDict):\n    name: str\n    date: Date\n    venue: Venue\n    description: str\n    artist: Artist\n    genre: str\n    types: List[str]\n\nclass EventPage(TypedDict):\n    event: Event\n    artist_links: List[Link]\n\nclass Fan(TypedDict):\n    name: str\n    email: str\n\nclass Guest(TypedDict):\n    name: str\n    email: str\n\nclass Link(TypedDict):\n    url: str\n    platform: str\n\nclass Platform(TypedDict):\n    name: str\n    failure: bool\n\nclass Preference(TypedDict):\n    music_genre: str\n    event_types: List[str]\n\nclass Process(TypedDict):\n    steps: List[str]\n\nclass Reseller(TypedDict):\n    name: str\n    bank_account: BankAccount\n\nclass ResellingProcess(TypedDict):\n    reseller: Reseller\n    ticket: Ticket\n    price: int\n\nclass SearchResult(TypedDict):\n    events: List[Event]\n\nclass Seat(TypedDict):\n    row: int\n    column: int\n\nclass ServiceFee(TypedDict):\n    percentage: float\n\nclass Show(TypedDict):\n    name: str\n    date: Date\n    artist: Artist\n\nclass Ticket(TypedDict):\n    event: Event\n    type: str\n    seat: Seat\n\nclass User(TypedDict):\n    name: str\n    email: str\n    address: Address\n    preferences: Preference\n    profile: UserProfile\n    tickets: List[Ticket]\n    favorites: List[Event]\n\nclass UserProfile(TypedDict):\n    name: str\n    email: str\n    address: Address\n    preferences: Preference\n    payment_details: PaymentDetails\n    history: List[Ticket]\n\nclass Venue(TypedDict):\n    name: str\n    map: str\n\nclass Visitor(TypedDict):\n    name: str\n    email: str\n\nclass PaymentDetails(TypedDict):\n    card_number: str\n    expiration_date: str\n    cvv: str\n\nclass Company(TypedDict):\n    name: str\n    process: Process\n    service_fee: ServiceFee\n    resellers: List[Reseller]\n    search_engine: Platform\n    validation_process: Process\n\nclass Date(TypedDict):\n    year: int\n    month: int\n    day: int\n\n\nclass AddTicket:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass AvoidBehavior:\n    def __init__(self, company: Company):\n        raise NotImplementedError\n\nclass BuyTicket:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass ChangePassword:\n    def __init__(self, user: User):\n        raise NotImplementedError\n\nclass ClickEvent:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass DeductServiceFee:\n    def __init__(self, company: Company):\n        raise NotImplementedError\n\nclass EditInformation:\n    def __init__(self, user: User):\n        raise NotImplementedError\n\nclass FavoriteEvent:\n    def __init__(self, user: User):\n        raise NotImplementedError\n\nclass FillInformation:\n    def __init__(self, guest: Guest):\n        raise NotImplementedError\n\nclass FillName:\n    def __init__(self, guest: Guest):\n        raise NotImplementedError\n\nclass FillSurvey:\n    def __init__(self, user: User):\n        raise NotImplementedError\n\nclass FilterList:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass FilterSearch:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass FilterSearchResult:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass FindInformation:\n    def __init__(self, artist: Artist):\n        raise NotImplementedError\n\nclass FindList:\n    def __init__(self, user: User):\n        raise NotImplementedError\n\nclass GetList:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass HaveBuyingProcess:\n    def __init__(self, company: Company):\n        raise NotImplementedError\n\nclass HaveDescription:\n    def __init__(self, artist: Artist):\n        raise NotImplementedError\n\nclass HaveLink:\n    def __init__(self, artist: Artist):\n        raise NotImplementedError\n\nclass HavePrice:\n    def __init__(self, company: Company):\n        raise NotImplementedError\n\nclass HaveReseller:\n    def __init__(self, company: Company):\n        raise NotImplementedError\n\nclass HaveSearchEngine:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass LandEventPage:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass ProtectUser:\n    def __init__(self, company: Company):\n        raise NotImplementedError\n\nclass PurchaseTicket:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass ReadEvent:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass ResellTicket:\n    def __init__(self, reseller: Reseller):\n        raise NotImplementedError\n\nclass SaveBankAccount:\n    def __init__(self, reseller: Reseller):\n        raise NotImplementedError\n\nclass SaveInformation:\n    def __init__(self, user: User):\n        raise NotImplementedError\n\nclass SeeContent:\n    def __init__(self, user: User):\n        raise NotImplementedError\n\nclass SeeEvent:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass SeeHistory:\n    def __init__(self, user: User):\n        raise NotImplementedError\n\nclass SeeList:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass SeeOrderSummary:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass SeeOverview:\n    def __init__(self, user: User):\n        raise NotImplementedError\n\nclass SeePreference:\n    def __init__(self, user: User):\n        raise NotImplementedError\n\nclass SeeSeat:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass SeeType:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass SellTicket:\n    def __init__(self, reseller: Reseller):\n        raise NotImplementedError\n\nclass SortSearchResult:\n    def __init__(self, visitor: Visitor):\n        raise NotImplementedError\n\nclass ValidateTicket:\n    def __init__(self, company: Company):\n        raise NotImplementedError",
+ "java": {}
+}

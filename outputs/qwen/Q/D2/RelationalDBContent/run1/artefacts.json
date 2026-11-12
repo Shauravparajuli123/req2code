@@ -1,0 +1,115 @@
+{
+ "actors": [
+  "owner"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "RelationalDatabaseContent",
+   "kind": "class",
+   "attributes": [
+    "tables",
+    "tuples"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4",
+    "R6",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "TupleElement",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Tuple",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Database",
+   "kind": "class",
+   "attributes": [
+    "sgbdName"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "RelationalDatabaseContent",
+   "target": "Table",
+   "multiplicity_target": "1",
+   "src": [
+    "R6",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "RelationalDatabaseContent",
+   "target": "Tuple",
+   "multiplicity_target": "1",
+   "src": [
+    "R3",
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Table",
+   "target": "Database",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tuple",
+   "target": "TupleElement",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "class RelationalDatabaseContent:\n    def __init__(self):\n        self.tables = []\n        self.tuples = []\n\n    def add_table(self, table: Table):\n        raise NotImplementedError\n\n    def add_tuple(self, tuple: Tuple):\n        raise NotImplementedError\n\n\nclass TupleElement:\n    def __init__(self, value: str):\n        self.value = value\n\n\nclass Tuple:\n    pass\n\n\nclass Database:\n    def __init__(self, sgbdName: str):\n        self.sgbdName = sgbdName\n\n\nclass Table:\n    def __init__(self, database: Database):\n        self.database = database\n\n    def set_database(self, database: Database):\n        raise NotImplementedError\n\n",
+ "java": {}
+}

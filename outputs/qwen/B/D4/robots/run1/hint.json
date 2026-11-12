@@ -1,0 +1,353 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D4/robots",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [],
+    "rule": [
+     "inferred"
+    ],
+    "evidence": [],
+    "name": "CleaningRobot",
+    "freq": 0
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "The location can be either corridors or rooms."
+     }
+    ],
+    "name": "Corridor",
+    "freq": 1
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A task execution has an id, a start time and a location."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "The location can be either corridors or rooms."
+     }
+    ],
+    "name": "Location",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "This model represents robots in charge of performing tasks."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "There are robots that have an id."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "Robots can be of type cleaning robot and transport robot."
+     }
+    ],
+    "name": "Robot",
+    "freq": 6
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "The location can be either corridors or rooms."
+     }
+    ],
+    "name": "Room",
+    "freq": 1
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R1",
+     "R4",
+     "R5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "This model represents robots in charge of performing tasks."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "Robots can perform tasks, which have an id."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "When a robot performs a task, the task execution is recorded."
+     }
+    ],
+    "name": "Task",
+    "freq": 3
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R5",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "When a robot performs a task, the task execution is recorded."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A task execution has an id, a start time and a location."
+     }
+    ],
+    "name": "TaskExecution",
+    "freq": 2
+   },
+   {
+    "id": "C8",
+    "src": [],
+    "rule": [
+     "inferred"
+    ],
+    "evidence": [],
+    "name": "TransportRobot",
+    "freq": 0
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "There are robots that have an id."
+     }
+    ],
+    "owner": "Robot",
+    "name": "id",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A task execution has an id, a start time and a location."
+     }
+    ],
+    "owner": "TaskExecution",
+    "name": "id",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "Robots can perform tasks, which have an id."
+     }
+    ],
+    "owner": "Task",
+    "name": "id",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "verb:perform"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "Robots can perform tasks, which have an id."
+     }
+    ],
+    "kind": "association",
+    "source": "Robot",
+    "target": "Task",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "can_be"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Robots can be of type cleaning robot and transport robot."
+     }
+    ],
+    "kind": "generalization",
+    "source": "CleaningRobot",
+    "target": "Robot",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "can_be"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "The location can be either corridors or rooms."
+     }
+    ],
+    "kind": "generalization",
+    "source": "Corridor",
+    "target": "Location",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "can_be"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "The location can be either corridors or rooms."
+     }
+    ],
+    "kind": "generalization",
+    "source": "Room",
+    "target": "Location",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "can_be"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Robots can be of type cleaning robot and transport robot."
+     }
+    ],
+    "kind": "generalization",
+    "source": "TransportRobot",
+    "target": "Robot",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A task execution has an id, a start time and a location."
+     }
+    ],
+    "kind": "has",
+    "source": "TaskExecution",
+    "target": "Location",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Robot",
+     "target": "TaskExecution",
+     "multiplicity": "1..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

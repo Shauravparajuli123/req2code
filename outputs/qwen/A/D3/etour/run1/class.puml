@@ -1,0 +1,114 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Agency {
+}
+class CulturalHeritage {
+  name : String
+  id : int
+  +searchCulturalHeritage()
+  +viewCulturalDetails()
+}
+class RefreshmentPoint {
+  name : String
+  id : int
+  +searchRefreshmentPoint()
+  +viewRefreshmentPointDetails()
+  +viewRefreshmentPointHistory()
+}
+class TouristAccount {
+  username : String
+  id : int
+  +searchTouristAccount()
+  +viewTouristAccountDetails()
+  +enableDisableTouristAccount()
+}
+class Tourist {
+  name : String
+  +modifyData()
+  +deleteAccount()
+  +editPersonalSearchPreferences()
+  +changeDataAssociatedWithAccount()
+  +editGenericPersonalPreferences()
+  +viewPersonalFavorites()
+  +viewSitesVisited()
+  +insertSiteInBookmarks()
+  +deleteSiteFromBookmarks()
+  +insertFeedbackForSelectedSite()
+}
+class Banner {
+  image : String
+  +changeImage()
+  +checkBannerLimit()
+  +deleteBanner()
+  +insertBanner()
+}
+class News {
+  title : String
+  content : String
+  +insertNews()
+  +deleteNews()
+  +changeNewsData()
+}
+class Site {
+  name : String
+  id : int
+  +viewFeedback()
+  +viewStatisticalReport()
+  +editFeedbackComment()
+}
+class Game {
+  name : String
+  +createGame()
+}
+class SearchTag {
+  name : String
+  status : String
+  +removeSearchTag()
+  +enterSearchTag()
+  +insertNewSearchTag()
+}
+class User {
+  username : String
+  password : String
+  status : String
+  +register()
+  +login()
+  +logout()
+  +authenticate()
+}
+class RestaurantOperator {
+  username : String
+  password : String
+  status : String
+  +insertBanner()
+  +editBanner()
+  +deleteBanner()
+  +changeDailyMenu()
+  +deleteDailyMenu()
+  +changeDataPointRefreshment()
+  +requestConvention()
+  +viewStatistics()
+}
+class Feedback {
+  comment : String
+  siteId : int
+  +editComment()
+}
+class Gps {
+  position : String
+  +getPosition()
+}
+Agency "1" -- "0..*" CulturalHeritage : manages
+Agency "1" -- "0..*" RefreshmentPoint : manages
+Agency "1" -- "0..*" TouristAccount : manages
+Agency "1" -- "1..*" Site : manages
+RefreshmentPoint "1" -- "0..*" Banner : has
+Agency "1" -- "1" User : is
+RestaurantOperator "1" -- "0..*" Game : has
+Tourist "1" -- "0..*" Game : has
+Tourist "1" -- "0..*" Site : visits
+Tourist "1" -- "0..*" Feedback : issues
+Gps "1" -- "1" Tourist : tracks
+Tourist "1" -- "0..*" SearchTag : uses
+@enduml

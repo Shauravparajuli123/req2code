@@ -1,0 +1,148 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Agency {
+  +logIn()
+  +logOut()
+}
+class CulturalHeritage {
+  name : String
+  description : String
+  location : String
+  +searchCulturalHeritage()
+  +viewDetails()
+  +viewHistory()
+}
+class RefreshmentPoint {
+  name : String
+  location : String
+  type : String
+  +searchRefreshmentPoint()
+  +viewDetails()
+  +viewHistory()
+  +deleteRefreshmentPoint()
+  +activateConvention()
+  +editData()
+  +checkBanners()
+  +insertBanner()
+  +deleteBanner()
+}
+class TouristAccount {
+  username : String
+  status : String
+  email : String
+  +searchTouristAccount()
+  +viewDetails()
+  +enableDisableAccount()
+  +viewHistory()
+}
+class Tourist {
+  name : String
+  +searchTourist()
+  +modifyData()
+  +deleteAccount()
+  +editSearchPreference()
+  +editPersonalData()
+  +editPreferences()
+  +viewListFavorites()
+  +viewListSites()
+  +insertSite()
+  +deleteSite()
+  +insertFeedback()
+}
+class BannerAd {
+  image : String
+}
+class News {
+  title : String
+  content : String
+  +insertNews()
+  +deleteNews()
+  +modifyNews()
+}
+class Feedback {
+  site : String
+  comments : String
+  text : String
+  siteId : int
+  +viewFeedback()
+  +viewReport()
+  +editComment()
+}
+class Site {
+  name : String
+  id : int
+}
+class GuestUser {
+  name : String
+  password : String
+  +requireCreation()
+  +researchHeritage()
+}
+class RegisteredUser {
+  username : String
+  password : String
+  +supplyLogin()
+  +endSession()
+}
+class AgencyOperator {
+  username : String
+  password : String
+  +removeSearchTag()
+  +askSearchTag()
+  +insertTagSearch()
+  +changePassword()
+}
+class RestaurantOperator {
+  username : String
+  password : String
+  +insertBanner()
+  +changeImage()
+  +deleteBannerAd()
+  +changeMenu()
+  +deleteMenu()
+  +changeDataPoint()
+  +requireConvention()
+}
+class SearchTag {
+  name : String
+}
+class TagSearch {
+  name : String
+}
+class Banner {
+  image : String
+}
+class Comment {
+  text : String
+  siteId : int
+  +editComment()
+}
+class Gps {
+  position : String
+}
+class Position {
+  latitude : double
+  longitude : double
+}
+class AdvancedSearch {
+  criteria : String
+}
+class User {
+  id : int
+  username : String
+}
+Agency "1" -- "0..*" CulturalHeritage : manages
+Agency "1" -- "0..*" RefreshmentPoint : manages
+Agency "1" -- "0..*" TouristAccount : manages
+Agency "1" -- "0..*" Site : has
+Agency "1" -- "0..*" News : has
+Agency "1" -- "0..*" Feedback : has
+RestaurantOperator "1" -- "1" BannerAd : has
+Tourist "0..*" -- "1" Site : visits
+Site "0..*" -- "1" Feedback : receives
+Tourist "0..*" -- "1" Feedback : gives
+Gps "1" -- "1" Position : calculates
+Tourist "1" -- "1" AdvancedSearch : uses
+User "1" -- "0..*" Feedback : issues
+@enduml

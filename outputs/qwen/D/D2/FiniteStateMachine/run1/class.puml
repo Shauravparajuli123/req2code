@@ -1,0 +1,18 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Game {
+  name : String
+  +createGame()
+}
+class FSM {
+}
+class State {
+}
+class StateMachine {
+}
+class AssociationState {
+}
+State "1" -- "1" StateMachine : has
+State "1" -- "1..*" AssociationState : has
+@enduml

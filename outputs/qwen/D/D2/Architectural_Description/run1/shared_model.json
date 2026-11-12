@@ -1,0 +1,188 @@
+{
+ "case": "D2/Architectural_Description",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "ArchitectureDescription",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "architectureViews",
+     "type": "String",
+     "src": [
+      "R7",
+      "R8"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "selectArchitectureView",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "selectArchitectureDescription",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "ArchitectureView",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "architectureViewPoints",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "mainView",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "conformToArchitectureViewPoint",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M4",
+     "name": "projectOntoMainView",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R12"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "MainView",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "architectureViews",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "projectOntoArchitectureView",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ArchitectureViewPoint",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "architectureViews",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M6",
+     "name": "conformToArchitectureView",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "1..*",
+   "mult_target": "1",
+   "label": "conformsTo",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "defines",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C3",
+   "target": "C2",
+   "mult_source": "1..*",
+   "mult_target": "1",
+   "label": "isProjectedOnto",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

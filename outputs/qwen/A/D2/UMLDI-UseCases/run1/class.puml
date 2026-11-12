@@ -1,0 +1,38 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Instance {
+  name : String
+  classifiers : String
+  slots : String
+  +addClassifier()
+  +addSlot()
+}
+class AttributeLink {
+  instance : String
+  linkend : String
+}
+class Linkend {
+  link : String
+  instance : String
+}
+class Link {
+  association : String
+}
+class ComponentInstance {
+  name : String
+  residents : String
+}
+class NodeInstance {
+  name : String
+  componentInstances : String
+}
+class Association {
+}
+class Classifier {
+}
+Instance "1" o-- "0..*" Classifier : has
+Instance "1" o-- "0..*" AttributeLink : has
+Link "1" *-- "1..*" Linkend : has
+ComponentInstance "0..*" o-- "1" NodeInstance : has
+@enduml

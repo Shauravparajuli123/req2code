@@ -1,0 +1,67 @@
+{
+ "case": "D2/useCase",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Game",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createGame",
+     "realizes": "UC1",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each extend extends exactly one use case"
+  }
+ ],
+ "open_tags": [
+  "R10 (quantifier, \"one or more\"): readings ['Each extend extends exactly one use case', 'Each extend extends one or more use cases']",
+  "R11 (quantifier, \"one or more\"): readings ['Each include in a use case diagram includes exactly one use case', 'Each include in a use case diagram includes one or more use cases']",
+  "R12 (quantifier, \"zero or more\"): readings ['Each container is owned by exactly one named element', 'Each container is owned by zero or more named elements']"
+ ]
+}

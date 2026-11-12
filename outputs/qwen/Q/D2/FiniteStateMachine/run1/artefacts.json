@@ -1,0 +1,149 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Fsm",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "state",
+    "rootFolder",
+    "transition"
+   ],
+   "methods": [
+    {
+     "name": "transitionStateMachine",
+     "use_case": "R2"
+    },
+    {
+     "name": "hasStateMachine",
+     "use_case": "R4"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R7",
+    "R11"
+   ]
+  },
+  {
+   "name": "RootFolder",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasRootFolder",
+     "use_case": "R10"
+    },
+    {
+     "name": "hasRootFolders",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R10",
+    "R12"
+   ]
+  },
+  {
+   "name": "State",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasStateMachine",
+     "use_case": "R8"
+    },
+    {
+     "name": "hasAssociationStateSource",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasStateMachine",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Fsm",
+   "target": "State",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Fsm",
+   "target": "RootFolder",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Fsm",
+   "target": "Transition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "State",
+   "target": "Fsm",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "Fsm",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass State:\n    def __init__(self, name: str):\n        self.name = name\n        self_fsm: Fsm = None\n\n    def hasStateMachine(self) -> bool:\n        return self_fsm is not None\n\n    def hasAssociationStateSource(self) -> bool:\n        raise NotImplementedError\n\nclass RootFolder:\n    def __init__(self, name: str):\n        self.name = name\n        self.sub_folders: List[RootFolder] = []\n\n    def hasRootFolder(self) -> bool:\n        return len(self.sub_folders) > 0\n\n    def hasRootFolders(self) -> bool:\n        return len(self.sub_folders) > 1\n\nclass Transition:\n    def __init__(self, name: str):\n        self.name = name\n        self_fsm: Fsm = None\n\n    def hasStateMachine(self) -> bool:\n        return self_fsm is not None\n\nclass Fsm:\n    def __init__(self, name: str, state: State, rootFolder: RootFolder, transition: List[Transition] = None):\n        self.name = name\n        self.state = state\n        self.rootFolder = rootFolder\n        self.transition = transition if transition is not None else []\n\n    def transitionStateMachine(self):\n        raise NotImplementedError\n\n    def hasStateMachine(self) -> bool:\n        return True\n",
+ "java": {}
+}

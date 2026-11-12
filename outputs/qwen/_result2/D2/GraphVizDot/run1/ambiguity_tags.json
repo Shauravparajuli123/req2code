@@ -1,0 +1,70 @@
+[
+ {
+  "id": "A1",
+  "type": "referential",
+  "sid": "R1.s1",
+  "req_id": "R1",
+  "cue": "its",
+  "text": "An element in a graph along its location within that graph.",
+  "readings": [
+   "An element in a graph refers to a GraphElement within a Graph.",
+   "An element in a graph refers to a Graph within a GraphElement."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The phrase 'its location within that graph' is ambiguous and could refer to either a GraphElement within a Graph or a Graph within a GraphElement.",
+  "chosen": "An element in a graph refers to a GraphElement within a Graph."
+ },
+ {
+  "id": "A2",
+  "type": "coordination",
+  "sid": "R9.s1",
+  "req_id": "R9",
+  "cue": "noun or noun",
+  "text": "A Graph object is composed of any number (or none) of GraphElements.",
+  "readings": [
+   "A Graph object is composed of any number of GraphElements (0..*).",
+   "A Graph object is composed of any number of GraphElements (0..1)."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "coordination",
+  "explanation": "The phrase 'any number (or none) of GraphElements' is ambiguous and could mean 0 or more GraphElements or exactly one GraphElement.",
+  "chosen": "A Graph object is composed of any number of GraphElements (0..*)."
+ },
+ {
+  "id": "A3",
+  "type": "quantifier",
+  "sid": "R9.s1",
+  "req_id": "R9",
+  "cue": "any",
+  "text": "A Graph object is composed of any number (or none) of GraphElements.",
+  "readings": [
+   "A Graph object is composed of any number of GraphElements (0..*).",
+   "A Graph object is composed of any number of GraphElements (0..1)."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The phrase 'any number (or none) of GraphElements' is ambiguous and could mean 0 or more GraphElements or exactly one GraphElement.",
+  "chosen": "A Graph object is composed of any number of GraphElements (0..*)."
+ },
+ {
+  "id": "A4",
+  "type": "referential",
+  "sid": "R10.s1",
+  "req_id": "R10",
+  "cue": "its",
+  "text": "A GraphElement contains a reference to its parent Graph.",
+  "readings": [
+   "A GraphElement contains a reference to its parent Graph.",
+   "A GraphElement contains a reference to its parent GraphElement."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The phrase 'its parent' is ambiguous and could refer to a parent Graph or a parent GraphElement.",
+  "chosen": "A GraphElement contains a reference to its parent Graph."
+ }
+]

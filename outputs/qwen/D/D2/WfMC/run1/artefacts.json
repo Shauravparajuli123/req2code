@@ -1,0 +1,115 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Game",
+   "actor": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": "Create Game"
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "WorkflowProcessDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "ParticipantSpecification",
+   "kind": "class",
+   "attributes": [
+    "processDefinition",
+    "processActivity"
+   ],
+   "methods": [],
+   "src": [
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "name": "WorkflowProcessActivity",
+   "kind": "class",
+   "attributes": [
+    "processDefinition",
+    "relevantData"
+   ],
+   "methods": [],
+   "src": [
+    "R13",
+    "R14",
+    "R17",
+    "R18"
+   ]
+  },
+  {
+   "name": "TransitionInformation",
+   "kind": "class",
+   "attributes": [
+    "targetActivity"
+   ],
+   "methods": [],
+   "src": [
+    "R20",
+    "R21"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "WorkflowProcessDefinition",
+   "target": "ParticipantSpecification",
+   "src": [
+    "R7",
+    "R15"
+   ]
+  },
+  {
+   "source": "WorkflowProcessActivity",
+   "target": "TransitionInformation",
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "source": "WorkflowProcessActivity",
+   "target": "WorkflowProcessDefinition",
+   "src": [
+    "R17"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/WfMC.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Realizes UC1 \"Create Game\" (R1).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass WorkflowProcessDefinition:\n    \"\"\"Source: R8, R9, R10\"\"\"\n    participantSpecification: _t.Optional[\"ParticipantSpecification\"] = None\n\n\n@_dc.dataclass\nclass ParticipantSpecification:\n    \"\"\"Source: R15, R16\"\"\"\n    processDefinition: _t.Optional[str] = None\n    processActivity: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass WorkflowProcessActivity:\n    \"\"\"Source: R13, R14, R17, R18\"\"\"\n    processDefinition: _t.Optional[str] = None\n    relevantData: _t.Optional[str] = None\n    transitionInformation: _t.Optional[\"TransitionInformation\"] = None\n    workflowProcessDefinition: _t.Optional[\"WorkflowProcessDefinition\"] = None\n\n\n@_dc.dataclass\nclass TransitionInformation:\n    \"\"\"Source: R20, R21\"\"\"\n    targetActivity: _t.Optional[str] = None\n",
+ "java": {
+  "Game.java": "/** Generated from shared model D2/WfMC. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Realizes UC1 \"Create Game\" (R1). */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "WorkflowProcessDefinition.java": "/** Generated from shared model D2/WfMC. Source: R8, R9, R10 */\npublic class WorkflowProcessDefinition {\n    private ParticipantSpecification participantSpecification;\n}\n",
+  "ParticipantSpecification.java": "/** Generated from shared model D2/WfMC. Source: R15, R16 */\npublic class ParticipantSpecification {\n    private java.lang.String processDefinition;\n    private java.lang.String processActivity;\n}\n",
+  "WorkflowProcessActivity.java": "/** Generated from shared model D2/WfMC. Source: R13, R14, R17, R18 */\npublic class WorkflowProcessActivity {\n    private java.lang.String processDefinition;\n    private java.lang.String relevantData;\n    private TransitionInformation transitionInformation;\n    private WorkflowProcessDefinition workflowProcessDefinition;\n}\n",
+  "TransitionInformation.java": "/** Generated from shared model D2/WfMC. Source: R20, R21 */\npublic class TransitionInformation {\n    private java.lang.String targetActivity;\n}\n"
+ }
+}

@@ -1,0 +1,83 @@
+{
+ "classes": [
+  {
+   "name": "AbstractNode",
+   "kind": "class"
+  },
+  {
+   "name": "Node",
+   "kind": "class"
+  },
+  {
+   "name": "ConditionalNode",
+   "kind": "class"
+  },
+  {
+   "name": "Expression",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "AbstractNode": [],
+  "Node": [],
+  "ConditionalNode": [],
+  "Expression": [
+   {
+    "name": "expressionName",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "AbstractNode",
+   "to": "Expression",
+   "label": "expression 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Node",
+   "to": "AbstractNode",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Node",
+   "to": "Node",
+   "label": "inNode 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Node",
+   "to": "Node",
+   "label": "outNode 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ConditionalNode",
+   "to": "AbstractNode",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "ConditionalNode",
+   "to": "Node",
+   "label": "trueConditionNode 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "ConditionalNode",
+   "to": "Node",
+   "label": "falseConditionNode 1..1",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage CFG {\nclass AbstractNode {\n}\nAbstractNode \"expression 1..1\" *--> Expression\nclass Node {\n}\nAbstractNode <|-- Node\nNode \"inNode 0..1\" --> Node\nNode \"outNode 0..1\" --> Node\nclass ConditionalNode {\n}\nAbstractNode <|-- ConditionalNode\nConditionalNode \"trueConditionNode 1..1\" --> Node\nConditionalNode \"falseConditionNode 1..1\" --> Node\nclass Expression {\n\t expressionName : String\n}\n}\n@enduml\n"
+}

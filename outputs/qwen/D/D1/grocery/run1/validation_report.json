@@ -1,0 +1,60 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The application is assumed to be secure as per R49, but no specific class or method is provided to enforce this."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R11 is not represented in the model.",
+   "fix": "Add a notification class or a relationship between Employee and Notification to represent this requirement."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R28 is not represented in the model.",
+   "fix": "Add a relationship between Manager and Notification to represent this requirement."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R31 is not represented in the model.",
+   "fix": "Add a class for Applicant and a relationship between Applicant and Employee to represent this requirement."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Employee and Notification is missing.",
+   "fix": "Add a relationship Employee -> Notification [0..*..1] to represent the requirement R6."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Manager and Notification is missing.",
+   "fix": "Add a relationship Manager -> Notification [0..*..1] to represent the requirement R28."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Employee and Notification is missing.",
+   "fix": "Add a relationship Employee -> Notification [0..*..1] to represent the requirement R26."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Manager and Notification is missing.",
+   "fix": "Add a relationship Manager -> Notification [0..*..1] to represent the requirement R22."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between OfficeEmployee and Notification is missing.",
+   "fix": "Add a relationship OfficeEmployee -> Notification [0..*..1] to represent the requirement R21."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Manager and Notification is missing.",
+   "fix": "Add a relationship Manager -> Notification [0..*..1] to represent the requirement R25."
+  }
+ ]
+}

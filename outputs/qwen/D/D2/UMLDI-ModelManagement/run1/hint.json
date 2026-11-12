@@ -1,0 +1,178 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "CoreModel",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R15"
+    ]
+   },
+   {
+    "name": "ModelElement",
+    "src": [
+     "R2",
+     "R3",
+     "R9"
+    ]
+   },
+   {
+    "name": "Namespace",
+    "src": [
+     "R11"
+    ]
+   },
+   {
+    "name": "Classifier",
+    "src": [
+     "R5",
+     "R12"
+    ]
+   },
+   {
+    "name": "Feature",
+    "src": [
+     "R6",
+     "R13"
+    ]
+   },
+   {
+    "name": "GeneralizableElement",
+    "src": [
+     "R10",
+     "R15"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "CoreModel",
+    "name": "contains elements",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "ModelElement",
+    "name": "name",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "owner": "ModelElement",
+    "name": "is a specification",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "owner": "GeneralizableElement",
+    "name": "is a root",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "owner": "GeneralizableElement",
+    "name": "is abstract",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "owner": "Namespace",
+    "name": "composed by model elements",
+    "src": [
+     "R11"
+    ]
+   },
+   {
+    "owner": "Classifier",
+    "name": "power type ranges",
+    "src": [
+     "R12"
+    ]
+   },
+   {
+    "owner": "Feature",
+    "name": "ownerScope",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "owner": "Feature",
+    "name": "owner",
+    "src": [
+     "R13"
+    ]
+   },
+   {
+    "owner": "Generalization",
+    "name": "discriminator",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "owner": "Generalization",
+    "name": "parent",
+    "src": [
+     "R14"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "CoreModel",
+    "target": "ModelElement",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R15"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "GeneralizableElement",
+    "target": "Generalization",
+    "src": [
+     "R10",
+     "R15"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

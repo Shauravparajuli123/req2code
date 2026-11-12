@@ -1,0 +1,260 @@
+{
+ "actors": [
+  "part composite member"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Cristal",
+   "kind": "class",
+   "attributes": [
+    "elementaryActDef",
+    "elementaryPartDef",
+    "compositeActDef",
+    "compositeParDef",
+    "condition"
+   ],
+   "methods": [
+    {
+     "name": "hasActCompositemember",
+     "use_case": "R7"
+    },
+    {
+     "name": "hasActivityDefinition",
+     "use_case": "R7"
+    },
+    {
+     "name": "hasCompositeActDef",
+     "use_case": "R7"
+    },
+    {
+     "name": "hasCompositeParDef",
+     "use_case": "R8"
+    },
+    {
+     "name": "hasPartCompositeMember",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "name": "Condition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ElementaryActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "ElementaryPartDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "CompositeActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "CompositeParDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "ActCompositemember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasActivityDefinition",
+     "use_case": "R13"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "ActivityDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasActCompositemember",
+     "use_case": "R14"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "PartCompositeMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "PartDefinitionNode",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R15",
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "ActCompositemember",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ActCompositemember",
+   "target": "ActivityDefinition",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "ActivityDefinition",
+   "multiplicity_target": "1",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "CompositeActDef",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "CompositeParDef",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "Condition",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "ElementaryActDef",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "ElementaryPartDef",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "PartCompositeMember",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CompositeParDef",
+   "target": "PartCompositeMember",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PartCompositeMember",
+   "target": "PartDefinitionNode",
+   "multiplicity_target": "1",
+   "src": [
+    "R15",
+    "R16"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Member:\n    pass\nclass PartDefinitionNode:\n    pass\nclass PartCompositeMember(Member):\n    def __init__(self, part_definition_node: PartDefinitionNode):\n        self.part_definition_node = part_definition_node\nclass ActivityDefinition:\n    def __init__(self, act_compositemember: ActCompositeMember):\n        self.act_compositemember = act_compositemember\nclass ActCompositeMember:\n    def __init__(self, activity_definitions: List[ActivityDefinition]):\n        self.activity_definitions = activity_definitions\nclass CompositeActDef:\n    pass\nclass CompositeParDef:\n    pass\nclass Condition:\n    def __init__(self, part_compositemembers: List[PartCompositeMember]):\n        self.part_compositemembers = part_compositemembers\nclass Cristal:\n    def __init__(self, elementary_part_def: ElementaryPartDef, elementary_act_def: ElementaryActDef, composite_par_defs: List[CompositeParDef], composite_act_def: CompositeActDef, act_compositemembers: List[ActCompositeMember], conditions: List[Condition], part_compositemembers: List[PartCompositeMember]):\n        self.elementary_part_def = elementary_part_def\n        self.elementary_act_def = elementary_act_def\n        self.composite_par_defs = composite_par_defs\n        self.composite_act_def = composite_act_def\n        self.act_compositemembers = act_compositemembers\n        self.conditions = conditions\n        self.part_compositemembers = part_compositemembers\n    def add_activity_definition(self, act_compositemember: ActCompositeMember, activity_definition: ActivityDefinition):\n        raise NotImplementedError\n    def add_composite_par_def(self, composite_par_def: CompositeParDef):\n        raise NotImplementedError\n    def add_condition(self, condition: Condition):\n        raise NotImplementedError\n    def add_part_compositemember(self, part_compositemember: PartCompositeMember):\n        raise NotImplementedError\n",
+ "java": {}
+}

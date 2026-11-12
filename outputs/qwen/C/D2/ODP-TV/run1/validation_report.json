@@ -1,0 +1,45 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "IXIT extends Implementation on a 0 to many basis, as stated in R6 and R7, but this relationship is not present in the model."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "TechnologyObject class is missing in the model.",
+   "fix": "Add TechnologyObject class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "ImplementableStandard class is missing in the model.",
+   "fix": "Add ImplementableStandard class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "IXIT class is missing in the model.",
+   "fix": "Add IXIT class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Implementation class is missing in the model.",
+   "fix": "Add Implementation class to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between ImplementableStandard and TechnologyObject is missing.",
+   "fix": "Add a generalization relationship between ImplementableStandard and TechnologyObject [1..*..1]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between ImplementableStandard and TechnologyObject is incorrect.",
+   "fix": "Change the generalization relationship between ImplementableStandard and TechnologyObject to [1..*..1]."
+  }
+ ]
+}

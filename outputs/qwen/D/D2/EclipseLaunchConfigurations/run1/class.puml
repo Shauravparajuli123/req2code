@@ -1,0 +1,29 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class LaunchConfiguration {
+  attributes : String
+}
+class Attribute {
+  key : String
+}
+class StringAttribute {
+  stringValue : String
+}
+class BooleanAttribute {
+  booleanValue : boolean
+}
+class MapAttribute {
+  mapEntries : String
+}
+class MapEntry {
+}
+class ListAttribute {
+  listEntries : String
+}
+class ListEntry {
+}
+LaunchConfiguration "1" -- "0..*" Attribute : has
+MapAttribute "1" -- "0..*" MapEntry : has
+ListAttribute "1" -- "0..*" ListEntry : has
+@enduml

@@ -1,0 +1,88 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineTraceName",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Trace",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "DefineTraceName",
+     "use_case": "DefineTraceName"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Level",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Call",
+   "kind": "class",
+   "attributes": [
+    "methodName",
+    "databaseRow"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Call",
+   "target": "Level",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Level",
+   "target": "Trace",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Trace",
+   "target": "Level",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Trace:\n    def __init__(self, name: str):\n        self.name = name\n        self.levels: List[Level] = []\n\n    def DefineTraceName(self) -> None:\n        raise NotImplementedError()\n\nclass Level:\n    def __init__(self, trace: Trace):\n        self.trace = trace\n\n    def __str__(self) -> str:\n        return f'Level for {self.trace.name}'\n\nclass Call:\n    def __init__(self, methodName: str, databaseRow: int):\n        self.methodName = methodName\n        self.databaseRow = databaseRow\n        self.level: Level = None\n\n    def setLevel(self, level: Level) -> None:\n        if self.level is not None:\n            raise ValueError('Call already has a level')\n        self.level = level\n\n    def __str__(self) -> str:\n        return f'Call to {self.methodName} with {self.databaseRow} database rows'\n",
+ "java": {}
+}

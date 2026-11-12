@@ -1,0 +1,105 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Invoke Class",
+   "actor": "User",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Define Class",
+   "actor": "User",
+   "src": [
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "Define Method",
+   "actor": "User",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Invoke Method",
+   "actor": "User",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Definition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "defineClass",
+     "use_case": "Define Class"
+    },
+    {
+     "name": "defineMethod",
+     "use_case": "Define Method"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "MethodDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "methodDefinition",
+     "use_case": "Define Method"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "name": "Method",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "invokeMethod",
+     "use_case": "Invoke Method"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Method",
+   "target": "MethodDefinition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "from abc import ABC, abstractmethod\n\nclass Definition(ABC):\n    def __init__(self, name: str):\n        self.name = name\n    @abstractmethod\ndefineClass(self):\n        pass\n    @abstractmethod\ndefineMethod(self):\n        pass\n\nclass MethodDefinition:\n    def __init__(self):\n        pass\n    def methodDefinition(self):\n        raise NotImplementedError\n\nclass Method:\n    def __init__(self):\n        pass\n    def invokeMethod(self):\n        raise NotImplementedError\n",
+ "java": {}
+}

@@ -1,0 +1,175 @@
+{
+ "classes": [
+  {
+   "name": "DateType",
+   "kind": "class"
+  },
+  {
+   "name": "ControlsSequence",
+   "kind": "class"
+  },
+  {
+   "name": "Control",
+   "kind": "class"
+  },
+  {
+   "name": "ControlType",
+   "kind": "class"
+  },
+  {
+   "name": "BugTracking",
+   "kind": "class"
+  },
+  {
+   "name": "Bug",
+   "kind": "class"
+  },
+  {
+   "name": "BugStatusType",
+   "kind": "enum"
+  }
+ ],
+ "attributes": {
+  "DateType": [
+   {
+    "name": "day",
+    "type": "Integer"
+   },
+   {
+    "name": "month",
+    "type": "Integer"
+   },
+   {
+    "name": "year",
+    "type": "Integer"
+   }
+  ],
+  "ControlsSequence": [],
+  "Control": [
+   {
+    "name": "responsible",
+    "type": "String"
+   },
+   {
+    "name": "component",
+    "type": "String"
+   },
+   {
+    "name": "developmentPhase",
+    "type": "String"
+   },
+   {
+    "name": "scope",
+    "type": "String"
+   },
+   {
+    "name": "controlledElt",
+    "type": "String"
+   },
+   {
+    "name": "eltRef",
+    "type": "String"
+   },
+   {
+    "name": "eltAuthor",
+    "type": "String"
+   },
+   {
+    "name": "formRef",
+    "type": "String"
+   }
+  ],
+  "ControlType": [],
+  "BugTracking": [],
+  "Bug": [
+   {
+    "name": "number",
+    "type": "Integer"
+   },
+   {
+    "name": "componentVersion",
+    "type": "String"
+   },
+   {
+    "name": "description",
+    "type": "String"
+   },
+   {
+    "name": "status",
+    "type": "BugStatusType"
+   },
+   {
+    "name": "originator",
+    "type": "String"
+   },
+   {
+    "name": "responsible",
+    "type": "String"
+   },
+   {
+    "name": "commentsAnswers",
+    "type": "String"
+   },
+   {
+    "name": "openDate",
+    "type": "String"
+   },
+   {
+    "name": "closeDate",
+    "type": "String"
+   }
+  ],
+  "BugStatusType": [
+   {
+    "name": "bst_open",
+    "type": "literal"
+   },
+   {
+    "name": "bst_closed",
+    "type": "literal"
+   },
+   {
+    "name": "bst_skipped",
+    "type": "literal"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "ControlsSequence",
+   "to": "Control",
+   "label": "controls 0..*",
+   "label_to": "c_controlsSequence 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Control",
+   "to": "DateType",
+   "label": "date 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Control",
+   "to": "ControlType",
+   "label": "type 1..1",
+   "label_to": "ct_control 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "BugTracking",
+   "to": "ControlType",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "BugTracking",
+   "to": "Bug",
+   "label": "bugs 0..*",
+   "label_to": "b_bugTracking 1..1"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage SoftwareQualityControl {\nclass DateType {\n\t day : Integer\n\t month : Integer\n\t year : Integer\n}\nclass ControlsSequence {\n}\nControlsSequence \"controls 0..*\" *-- \"c_controlsSequence 1..1\" Control\nclass Control {\n\t responsible : String\n\t component : String\n\t developmentPhase : String\n\t scope : String\n\t controlledElt : String\n\t eltRef : String\n\t eltAuthor : String\n\t formRef : String\n}\nControl \"date 1..1\" *--> DateType\nControl \"type 1..1\" *-- \"ct_control 1..1\" ControlType\nclass ControlType {\n}\nclass BugTracking {\n}\nControlType <|-- BugTracking\nBugTracking \"bugs 0..*\" *-- \"b_bugTracking 1..1\" Bug\nclass Bug {\n\t number : Integer\n\t componentVersion : String\n\t description : String\n\t status : BugStatusType\n\t originator : String\n\t responsible : String\n\t commentsAnswers : String\n\t openDate : String\n\t closeDate : String\n}\nenum BugStatusType {\nbst_open\nbst_closed\nbst_skipped\n}\n}\n@enduml\n"
+}

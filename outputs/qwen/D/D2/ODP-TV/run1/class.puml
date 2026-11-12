@@ -1,0 +1,15 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class TechnologyObject {
+}
+class ImplementableStandard {
+}
+class Implementation {
+  +createGame()
+}
+class IXIT {
+}
+IXIT --|> Implementation
+ImplementableStandard --|> TechnologyObject
+@enduml

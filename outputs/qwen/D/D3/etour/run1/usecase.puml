@@ -1,0 +1,134 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Agency" as A1
+actor "Tourist" as A2
+actor "EntryOperator" as A3
+actor "User" as A4
+actor "AgencyOperator" as A5
+actor "PointOfRestaurantOperator" as A6
+actor "GuestUser" as A7
+actor "GpsSystem" as A8
+rectangle "etour" {
+  usecase "Delete A Cultural Object" as UC1
+  usecase "Insert A New Cultural Object" as UC2
+  usecase "Change Data Of A Cultural Object" as UC3
+  usecase "Return The List Of Cultural Objects" as UC4
+  usecase "View The Details Of A Selected Cultural Object" as UC5
+  usecase "Delete A Refreshment Point" as UC6
+  usecase "Activate A Convention At A Refreshment Point" as UC7
+  usecase "Edit Data Of A Refreshment Point" as UC8
+  usecase "Return The List Of Refreshment Points" as UC9
+  usecase "View The Details Of A Selected Refreshment Point" as UC10
+  usecase "View The History Of Conventions For A Refreshment Point" as UC11
+  usecase "View The Details Of A Selected Tourist Account" as UC12
+  usecase "Enable Or Disable A Tourist Account" as UC13
+  usecase "Return The List Of Tourist Accounts" as UC14
+  usecase "Search Tourist" as UC15
+  usecase "Modify Tourist Data" as UC16
+  usecase "Delete Tourist" as UC17
+  usecase "Search Refreshment Point" as UC18
+  usecase "Change Banner Image" as UC19
+  usecase "Check Banner Limit" as UC20
+  usecase "Delete Banner" as UC21
+  usecase "Insert Banner" as UC22
+  usecase "Insert News" as UC23
+  usecase "Delete News" as UC24
+  usecase "Change News Data" as UC25
+  usecase "View Site Feedback" as UC26
+  usecase "View Statistical Report" as UC27
+  usecase "Change Feedback Comment" as UC28
+  usecase "Search For A Specific Site On The Computer" as UC29
+  usecase "Remove One Or More Search Tags" as UC30
+  usecase "Enter Search Tags Already In The System" as UC31
+  usecase "Insert A New Search Tag" as UC32
+  usecase "Change The Password Associated With Your Account" as UC33
+  usecase "Enter A Password But Is Not Confirmed In A Correct Way" as UC34
+  usecase "Create A New System" as UC35
+  usecase "Research And Cultural Heritage For All" as UC36
+  usecase "Ensure A Registered User To Access The System With The Privileges That Fall" as UC37
+  usecase "Data Supplied For The Login Is Incorrect" as UC38
+  usecase "End The Current Session" as UC39
+  usecase "Inserting A New Banner Associated With The Point Of Rest" as UC40
+  usecase "Changing The Image Of A Banner Ad" as UC41
+  usecase "Delete A Banner Ad Associated With The Point Of Rest" as UC42
+  usecase "Change Daily Menu" as UC43
+  usecase "Delete Daily Menu" as UC44
+  usecase "Change Refreshment Data" as UC45
+  usecase "Request Convention" as UC46
+  usecase "View Personal Statistics" as UC47
+  usecase "Edit Personal Search Preferences" as UC48
+  usecase "Change Account Data" as UC49
+  usecase "Edit Generic Personal Preferences" as UC50
+  usecase "View Personal Favorites" as UC51
+  usecase "View Sites For Feedback" as UC52
+  usecase "Insert Bookmark" as UC53
+  usecase "Delete Bookmark" as UC54
+  usecase "Insert Feedback" as UC55
+  usecase "Edit Comment" as UC56
+  usecase "Cancel Feedback" as UC57
+  usecase "Get Position" as UC58
+  usecase "Advanced Search" as UC59
+  usecase "View Site Details" as UC60
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+A1 --> UC7
+A1 --> UC8
+A1 --> UC9
+A1 --> UC10
+A1 --> UC11
+A1 --> UC12
+A1 --> UC13
+A1 --> UC14
+A3 --> UC15
+A3 --> UC16
+A3 --> UC17
+A3 --> UC18
+A3 --> UC19
+A3 --> UC20
+A3 --> UC21
+A3 --> UC22
+A3 --> UC23
+A3 --> UC24
+A3 --> UC25
+A3 --> UC26
+A3 --> UC27
+A3 --> UC28
+A4 --> UC29
+A4 --> UC30
+A4 --> UC31
+A4 --> UC32
+A5 --> UC33
+A4 --> UC34
+A7 --> UC35
+A7 --> UC36
+A4 --> UC37
+A4 --> UC38
+A4 --> UC39
+A6 --> UC40
+A6 --> UC41
+A6 --> UC42
+A6 --> UC43
+A6 --> UC44
+A6 --> UC45
+A6 --> UC46
+A6 --> UC47
+A2 --> UC48
+A2 --> UC49
+A2 --> UC50
+A2 --> UC51
+A2 --> UC52
+A2 --> UC53
+A2 --> UC54
+A2 --> UC55
+A2 --> UC56
+A2 --> UC57
+A8 --> UC58
+A2 --> UC59
+A2 --> UC60
+@enduml

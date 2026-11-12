@@ -1,0 +1,125 @@
+{
+ "actors": [
+  "Airport",
+  "Passenger",
+  "Airline",
+  "Flight"
+ ],
+ "use_cases": [
+  {
+   "name": "Departure Management",
+   "actor": "Airport",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "name": "Passenger Assignment",
+   "actor": "Airline",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Flight Scheduling",
+   "actor": "Airline",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Passenger Boarding",
+   "actor": "Flight",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Flight",
+   "kind": "class",
+   "attributes": [
+    "departureTime",
+    "originAirport",
+    "maxPassengers"
+   ],
+   "methods": [
+    {
+     "name": "addPassenger",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Passenger",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "gender"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Time",
+   "kind": "class",
+   "attributes": [
+    "year",
+    "day",
+    "minute"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Airport",
+   "target": "Flight",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Flight",
+   "target": "Passenger",
+   "multiplicity_target": "1",
+   "src": [
+    "R8",
+    "R11"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Airport:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Flight:\n    def __init__(self, max_passengers: int, departure_time: 'Time', origin_airport: Airport):\n        self.max_passengers = max_passengers\n        self.departure_time = departure_time\n        self.origin_airport = origin_airport\n        self.passengers: List['Passenger'] = []\n\nclass Passenger:\n    def __init__(self, name: str, gender: str):\n        self.name = name\n        self.gender = gender\n\nclass Time:\n    def __init__(self, year: int, day: int, minute: int):\n        self.year = year\n        self.day = day\n        self.minute = minute\n\n# Example usage\nairport1 = Airport('JFK')\nflight1 = Flight(150, Time(2023, 100, 30), airport1)\npassenger1 = Passenger('Alice', 'Female')\npassenger2 = Passenger('Bob', 'Male')\nflight1.passengers.append(passenger1)\nflight1.passengers.append(passenger2)",
+ "java": {}
+}

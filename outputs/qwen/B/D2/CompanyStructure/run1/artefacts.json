@@ -1,0 +1,125 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "CompanyStructureModel",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "hq",
+    "stores",
+    "backOffices",
+    "cashRegisters"
+   ],
+   "methods": [
+    {
+     "name": "createCompany",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Hq",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Store",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "backOffice"
+   ],
+   "methods": [
+    {
+     "name": "createStore",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Office",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R4",
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "CashRegister",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "CompanyStructureModel",
+   "target": "Company",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "source": "CompanyStructureModel",
+   "target": "Hq",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "CompanyStructureModel",
+   "target": "Store",
+   "src": [
+    "R3",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "source": "CompanyStructureModel",
+   "target": "CashRegister",
+   "src": [
+    "R7",
+    "R11"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/CompanyStructure.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass CompanyStructureModel:\n    \"\"\"Source: R1\"\"\"\n    company: _t.Optional[\"Company\"] = None\n    hq: _t.Optional[\"Hq\"] = None\n    stores: _t.List[\"Store\"] = _dc.field(default_factory=list)\n    cashRegisters: _t.List[\"CashRegister\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Company:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n    hq: _t.Optional[str] = None\n    stores: _t.Optional[str] = None\n    backOffices: _t.Optional[str] = None\n    cashRegisters: _t.Optional[str] = None\n\n    def createCompany(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Hq:\n    \"\"\"Source: R8, R9\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Store:\n    \"\"\"Source: R3\"\"\"\n    name: _t.Optional[str] = None\n    backOffice: _t.Optional[str] = None\n\n    def createStore(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Office:\n    \"\"\"Source: R4, R5, R10\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass CashRegister:\n    \"\"\"Source: R7, R11\"\"\"\n    pass\n",
+ "java": {
+  "CompanyStructureModel.java": "/** Generated from shared model D2/CompanyStructure. Source: R1 */\npublic class CompanyStructureModel {\n    private Company company;\n    private Hq hq;\n    private java.util.List<Store> stores;\n    private java.util.List<CashRegister> cashRegisters;\n}\n",
+  "Company.java": "/** Generated from shared model D2/CompanyStructure. Source: R1 */\npublic class Company {\n    private java.lang.String name;\n    private java.lang.String hq;\n    private java.lang.String stores;\n    private java.lang.String backOffices;\n    private java.lang.String cashRegisters;\n\n    /** Operation. */\n    public void createCompany() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Hq.java": "/** Generated from shared model D2/CompanyStructure. Source: R8, R9 */\npublic class Hq {\n}\n",
+  "Store.java": "/** Generated from shared model D2/CompanyStructure. Source: R3 */\npublic class Store {\n    private java.lang.String name;\n    private java.lang.String backOffice;\n\n    /** Operation. */\n    public void createStore() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Office.java": "/** Generated from shared model D2/CompanyStructure. Source: R4, R5, R10 */\npublic class Office {\n}\n",
+  "CashRegister.java": "/** Generated from shared model D2/CompanyStructure. Source: R7, R11 */\npublic class CashRegister {\n}\n"
+ }
+}

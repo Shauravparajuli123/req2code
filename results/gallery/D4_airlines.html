@@ -1,0 +1,92 @@
+<html><head><meta charset='utf-8'><title>D4/airlines</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D4/airlines &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: Many different airlines can operate in different airports.
+R2: An airline has a name and an airport has a code and is in a city.
+R3: Each airline has associated a cost for operating in a specific airport.
+R4: Besides, the operation of an airline in a specific airport can be started and stopped at any time, and its operating cost can be updated at any time.
+R5: The relation between airport and airline contains a details class with the operating cost.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (0 → 0)</th></tr></table></div>
+<div><table><tr><th>classes (3 → 3)</th></tr><tr><td class="">Airline</td></tr><tr><td class="">Airport</td></tr><tr><td class="">OperatingCost</td></tr></table></div>
+<div><table><tr><th>attributes (2 → 2)</th></tr><tr><td class="">Airline.name</td></tr><tr><td class="">Airline.operation</td></tr></table></div>
+<div><table><tr><th>relations (1 → 1)</th></tr><tr><td class="">has: Airline -&gt; Airport</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R1</td><td>quantifier</td><td>Many</td><td><span class='tag open'>open</span></td><td>Many different airlines can operate in the same airport.; A single airline can operate in many airports.<br><i>The phrase &#x27;Many different airlines&#x27; could imply multiple airlines operating in the same airport or a single airline operating in multiple airports.</i></td></tr>
+<tr><td>A2</td><td>R4</td><td>referential</td><td>its</td><td><span class='tag resolved'>resolved</span></td><td>The operating cost can be updated at any time.; The operating cost of the specific airport can be updated at any time.<br><i>The pronoun &#x27;its&#x27; could refer to the operating cost of the airline or the airport.</i></td></tr>
+<tr><td>A3</td><td>R4</td><td>quantifier</td><td>any</td><td><span class='tag open'>open</span></td><td>The operation of an airline in a specific airport can be started and stopped at any time.; The operation of an airline in any airport can be started and stopped at any time.<br><i>The word &#x27;any&#x27; could refer to any specific airport or any airport in general.</i></td></tr>
+<tr><td>A4</td><td>R4</td><td>actor</td><td>passive &#x27;started&#x27; without agent</td><td><span class='tag open'>open</span></td><td>The operation of an airline can be started and stopped by the airline itself.; The operation of an airline can be started and stopped by an external entity.<br><i>The passive voice &#x27;can be started and stopped&#x27; could imply that the airline itself or an external entity can perform these actions.</i></td></tr>
+<tr><td>A5</td><td>R5</td><td>incompleteness</td><td>details</td><td><span class='tag open'>open</span></td><td>The relation between airport and airline contains a class with the operating cost.; The relation between airport and airline does not contain a class with the operating cost.<br><i>The phrase &#x27;The relation between airport and airline contains a details class with the operating cost&#x27; is incomplete and could imply the presence or absence of such a class.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D4_airlines_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D4_airlines_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D4/airlines.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Airline:
+    &quot;&quot;&quot;Source: -&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    airports: _t.List[&quot;Airport&quot;] = _dc.field(default_factory=list)
+    operatingCost: _t.Optional[&quot;OperatingCost&quot;] = None
+
+    def startOperation(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def stopOperation(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def updateOperatingCost(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Airport:
+    &quot;&quot;&quot;Source: -&quot;&quot;&quot;
+    code: _t.Optional[str] = None
+    city: _t.Optional[str] = None
+    operatingCost: _t.Optional[&quot;OperatingCost&quot;] = None
+
+
+@_dc.dataclass
+class OperatingCost:
+    &quot;&quot;&quot;Source: R5&quot;&quot;&quot;
+    cost: _t.Optional[float] = None
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>1</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>1</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>1</td></tr>
+<tr><th>inconsistency_rate</th><td>0.2</td></tr>
+<tr><th>requirement_coverage</th><td>0.6</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;The relation between airport and airline contains a class with the operating cost.&quot;}, {&quot;tag&quot;: &quot;R4&quot;, &quot;assumption&quot;: &quot;The operation of an airline in a specific airport can be started and stopped by an external entity.&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.667</td><td>0.667</td><td>0.667</td><td>2/1/1</td></tr>
+<tr><td>attributes</td><td>1.0</td><td>0.75</td><td>0.857</td><td>3/0/1</td></tr>
+<tr><td>relations</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0/3/1</td></tr>
+</table></body></html>

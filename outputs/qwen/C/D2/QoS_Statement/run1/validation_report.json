@@ -1,0 +1,35 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "CompoundQoSStatement is assumed to be a class that can contain other QoSStatements, as it is a subclass of QoSStatement."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R4 is not represented in the model.",
+   "fix": "Add a class named 'Parameter' to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R8 is not fully represented. The relationship between QoSStatement and CompoundQoSStatement is missing.",
+   "fix": "Add an association between QoSStatement and CompoundQoSStatement."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R10 is not represented in the model.",
+   "fix": "Add a class named 'CompoundQoSStatement' and ensure it has the correct multiplicity for containing other QoSStatements."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R11 is not represented in the model.",
+   "fix": "Add a class named 'QualificationKind' and ensure it has the correct attributes and relationships."
+  }
+ ]
+}

@@ -1,0 +1,172 @@
+{
+ "classes": [
+  {
+   "name": "Instance",
+   "kind": "class"
+  },
+  {
+   "name": "AttributeLink",
+   "kind": "class"
+  },
+  {
+   "name": "Link",
+   "kind": "class"
+  },
+  {
+   "name": "LinkEnd",
+   "kind": "class"
+  },
+  {
+   "name": "ComponentInstance",
+   "kind": "class"
+  },
+  {
+   "name": "NodeInstance",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Instance": [],
+  "AttributeLink": [],
+  "Link": [],
+  "LinkEnd": [],
+  "ComponentInstance": [],
+  "NodeInstance": []
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "Instance",
+   "to": "ModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Instance",
+   "to": "Instance",
+   "label": "ownedInstance 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Instance",
+   "to": "LinkEnd",
+   "label": "linkEnd 0..*",
+   "label_to": "instance 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Instance",
+   "to": "Classifier",
+   "label": "classifier 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Instance",
+   "to": "ComponentInstance",
+   "label": "componentInstance 0..1",
+   "label_to": "resident 0..*"
+  },
+  {
+   "type": "composition",
+   "from": "Instance",
+   "to": "AttributeLink",
+   "label": "slot 0..*",
+   "label_to": "instance 0..1"
+  },
+  {
+   "type": "composition",
+   "from": "Instance",
+   "to": "Link",
+   "label": "ownedLink 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "AttributeLink",
+   "to": "ModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "AttributeLink",
+   "to": "Instance",
+   "label": "value 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "AttributeLink",
+   "to": "LinkEnd",
+   "label": "linkEnd 0..1",
+   "label_to": "qualifiedValue 0..*"
+  },
+  {
+   "type": "association",
+   "from": "AttributeLink",
+   "to": "Attribute",
+   "label": "attribute 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Link",
+   "to": "ModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Link",
+   "to": "Association",
+   "label": "association 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Link",
+   "to": "LinkEnd",
+   "label": "connection 2..*",
+   "label_to": "link 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "LinkEnd",
+   "to": "ModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "LinkEnd",
+   "to": "AssociationEnd",
+   "label": "associationEnd 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ComponentInstance",
+   "to": "Instance",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "ComponentInstance",
+   "to": "NodeInstance",
+   "label": "nodeInstance 0..1",
+   "label_to": "resident 0..*"
+  },
+  {
+   "type": "generalization",
+   "from": "NodeInstance",
+   "to": "Instance",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage Common_Behavior {\nclass Instance {\n}\nModelElement <|-- Instance\nInstance \"ownedInstance 0..*\" *--> Instance\nInstance \"linkEnd 0..*\" -- \"instance 1..1\" LinkEnd\nInstance \"classifier 1..*\" --> Classifier\nInstance \"componentInstance 0..1\" -- \"resident 0..*\" ComponentInstance\nInstance \"slot 0..*\" *-- \"instance 0..1\" AttributeLink\nInstance \"ownedLink 0..*\" *--> Link\nclass AttributeLink {\n}\nModelElement <|-- AttributeLink\nAttributeLink \"value 1..1\" --> Instance\nAttributeLink \"linkEnd 0..1\" --* \"qualifiedValue 0..*\" LinkEnd\nAttributeLink \"attribute 1..1\" --> Attribute\nclass Link {\n}\nModelElement <|-- Link\nLink \"association 1..1\" --> Association\nLink \"connection 2..*\" *-- \"link 1..1\" LinkEnd\nclass LinkEnd {\n}\nModelElement <|-- LinkEnd\nLinkEnd \"associationEnd 1..1\" --> AssociationEnd\nclass ComponentInstance {\n}\nInstance <|-- ComponentInstance\nComponentInstance \"nodeInstance 0..1\" -- \"resident 0..*\" NodeInstance\nclass NodeInstance {\n}\nInstance <|-- NodeInstance\n}\n@enduml\n"
+}

@@ -1,0 +1,101 @@
+{
+ "case": "D2/EclipseLaunchConfigurations",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "LaunchConfiguration",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "attributes",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "key",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "value",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "MapEntry",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "literals": [
+    "NAME____KEY____TYPE____STRING____SRC_____R2",
+    "NAME____VALUE____TYPE____ATTRIBUTE____SRC_____R9"
+   ],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ListEntry",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "value",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

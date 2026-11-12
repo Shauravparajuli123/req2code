@@ -1,0 +1,86 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Database",
+   "kind": "class",
+   "attributes": [
+    "sgbdName",
+    "tables"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [
+    "database",
+    "columns"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "dataType",
+    "defaultValue",
+    "owner"
+   ],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Database",
+   "target": "Table",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "source": "Table",
+   "target": "Column",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/RelationalDBSchema.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Database:\n    \"\"\"Source: -\"\"\"\n    sgbdName: _t.Optional[str] = None\n    tables: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Table:\n    \"\"\"Source: R3, R7, R8\"\"\"\n    database: _t.Optional[str] = None\n    columns: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Column:\n    \"\"\"Source: R4\"\"\"\n    dataType: _t.Optional[str] = None\n    defaultValue: _t.Optional[str] = None\n    owner: _t.Optional[str] = None\n",
+ "java": {
+  "Game.java": "/** Generated from shared model D2/RelationalDBSchema. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Database.java": "/** Generated from shared model D2/RelationalDBSchema. Source: - */\npublic class Database {\n    private java.lang.String sgbdName;\n    private java.lang.String tables;\n}\n",
+  "Table.java": "/** Generated from shared model D2/RelationalDBSchema. Source: R3, R7, R8 */\npublic class Table {\n    private java.lang.String database;\n    private java.lang.String columns;\n}\n",
+  "Column.java": "/** Generated from shared model D2/RelationalDBSchema. Source: R4 */\npublic class Column {\n    private java.lang.String dataType;\n    private java.lang.String defaultValue;\n    private java.lang.String owner;\n}\n"
+ }
+}

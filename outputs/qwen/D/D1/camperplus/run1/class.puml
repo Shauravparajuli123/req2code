@@ -1,0 +1,89 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Camper {
+  name : String
+  group : String
+  attendance : boolean
+  +addCamper()
+  +removeCamper()
+  +modifyCamperInfo()
+  +deleteCamper()
+}
+class Parent {
+  name : String
+  camper : String
+  payment : String
+  consentForms : String
+  photos : String
+  messages : String
+  +createAccount()
+  +enrollCamper()
+  +modifyParentInfo()
+  +deleteParent()
+  +viewCamperSchedule()
+}
+class CampWorker {
+  name : String
+  assignedCampers : String
+  +takeAttendance()
+  +reportBehavior()
+  +reportSupplies()
+  +reportRepairs()
+}
+class Group {
+  name : String
+  events : String
+  +createGroup()
+  +modifyGroupInfo()
+  +deleteGroup()
+}
+class Event {
+  name : String
+  date : LocalDate
+  assignedCampers : String
+  tasks : String
+  +scheduleEvent()
+  +modifyEvent()
+  +deleteEvent()
+}
+class ConsentForm {
+  name : String
+  submittedBy : String
+  +uploadConsentForm()
+  +trackSubmission()
+}
+class Rule {
+  name : String
+  description : String
+  +createRule()
+  +modifyRule()
+}
+class Facility {
+  name : String
+  usage : int
+  +trackUsage()
+}
+class Payment {
+  amount : double
+  +makePayment()
+}
+class Photo {
+  name : String
+  camper : String
+  +sharePhoto()
+}
+class Task {
+  name : String
+  status : String
+  +completeTask()
+}
+Camper "0..*" -- "1" Parent : isEnrolledBy
+Camper "1" -- "1" Group : belongs_to
+Camper "1" -- "1" Event : participates_in
+Parent "1" -- "1" Camper : enrolls
+Parent "1" -- "1" ConsentForm : submits
+CampWorker "1" -- "1" Group : manages
+Group "1" -- "1" Event : schedules
+Event "1" -- "1" Camper : attends
+@enduml

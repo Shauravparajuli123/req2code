@@ -1,0 +1,121 @@
+[
+ {
+  "id": "A1",
+  "type": "referential",
+  "sid": "R1.s1",
+  "req_id": "R1",
+  "cue": "its",
+  "text": "A named element has a string that stores its name.",
+  "readings": [
+   "stores the name of the element",
+   "stores the name of the SGBD"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The term 'its' is ambiguous between referring to the element's name or the SGBD's name.",
+  "chosen": "stores the name of the element"
+ },
+ {
+  "id": "A2",
+  "type": "referential",
+  "sid": "R2.s1",
+  "req_id": "R2",
+  "cue": "its",
+  "text": "A Database has a String that stores its SGBD name.",
+  "readings": [
+   "stores the name of the element",
+   "stores the name of the SGBD"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The term 'its' is ambiguous between referring to the element's name or the SGBD's name.",
+  "chosen": "stores the name of the SGBD"
+ },
+ {
+  "id": "A3",
+  "type": "referential",
+  "sid": "R4.s1",
+  "req_id": "R4",
+  "cue": "its",
+  "text": "A Column has a string to store its datatype and a string to store its default value.",
+  "readings": [
+   "stores the datatype and default value of the column",
+   "stores the datatype and default value of the column"
+  ],
+  "status": "open",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The term 'its' is redundant and does not introduce ambiguity.",
+  "chosen": ""
+ },
+ {
+  "id": "A4",
+  "type": "referential",
+  "sid": "R4.s1",
+  "req_id": "R4",
+  "cue": "its",
+  "text": "A Column has a string to store its datatype and a string to store its default value.",
+  "readings": [
+   "stores the datatype and default value of the column",
+   "stores the datatype and default value of the column"
+  ],
+  "status": "open",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The term 'its' is redundant and does not introduce ambiguity.",
+  "chosen": ""
+ },
+ {
+  "id": "A5",
+  "type": "quantifier",
+  "sid": "R5.s1",
+  "req_id": "R5",
+  "cue": "any",
+  "text": "A Database may contain any number of Tables.",
+  "readings": [
+   "may contain any number of tables",
+   "may contain a specific number of tables"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The term 'any' is ambiguous between allowing any number or a specific number of tables.",
+  "chosen": "may contain any number of tables"
+ },
+ {
+  "id": "A6",
+  "type": "quantifier",
+  "sid": "R7.s1",
+  "req_id": "R7",
+  "cue": "any",
+  "text": "A table can have any number of columns as keys.",
+  "readings": [
+   "can have any number of columns as keys",
+   "can have a specific number of columns as keys"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The term 'any' is ambiguous between allowing any number or a specific number of columns.",
+  "chosen": "can have any number of columns as keys"
+ },
+ {
+  "id": "A7",
+  "type": "referential",
+  "sid": "R8.s1",
+  "req_id": "R8",
+  "cue": "its",
+  "text": "In a Relational Database Schema, a Column has exactly one Table as its owner.",
+  "readings": [
+   "has exactly one table as its owner",
+   "has exactly one column as its owner"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The term 'its' is ambiguous between referring to the column's or the table's owner.",
+  "chosen": "has exactly one table as its owner"
+ }
+]

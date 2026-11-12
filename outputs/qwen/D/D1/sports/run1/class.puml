@@ -1,0 +1,92 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  personalInformation : String
+  bankingDetails : String
+  membershipType : String
+  subscription : String
+  notificationPreferences : String
+  previousInformation : String
+  +openAccount()
+  +addPersonalInformation()
+  +addBankingDetails()
+  +chooseMembershipType()
+  +extendSubscription()
+  +knowSubscriptionDuration()
+  +usePreviousInformation()
+  +unsubscribe()
+  +resetPassword()
+  +changePersonalDetails()
+  +updatePaymentInformation()
+  +seeFamilyMembers()
+  +addPersonToMembership()
+  +removePersonFromMembership()
+  +seeAvailableLessons()
+  +seeBookedLessons()
+  +seePastLessons()
+  +callToBookLesson()
+  +callToCancelLesson()
+  +seeCustomerSubscriptions()
+  +seeCustomerCheckIn()
+}
+class Admin {
+  permissions : String
+  +addNewTrainer()
+  +removeTrainer()
+  +seeNoShows()
+  +seeNoShowCount()
+  +issueFineForNoShow()
+  +increaseFineForRepeatNoShow()
+}
+class Trainer {
+  schedule : String
+  +addLessonToSchedule()
+  +setLessonTime()
+  +setLessonDescription()
+  +setLessonRoom()
+  +setLessonType()
+  +setLessonMaxPeople()
+  +editLessonTime()
+  +changeLessonRoom()
+  +editLessonDescription()
+  +editLessonMaxPeople()
+  +editAnyLesson()
+  +cancelLesson()
+}
+class Lesson {
+  time : LocalDate
+  description : String
+  room : String
+  type : String
+  maxPeople : int
+  +setTime()
+  +setDescription()
+  +setRoom()
+  +setType()
+  +setMaxPeople()
+  +editTime()
+  +changeRoom()
+  +editDescription()
+  +editMaxPeople()
+  +editAnyLesson()
+  +cancelLesson()
+}
+class Notification {
+  preferences : String
+  method : String
+  lessonCanceled : boolean
+}
+class Subscription {
+  type : String
+  duration : int
+}
+class Room {
+  availability : boolean
+}
+Customer "1" -- "1" Subscription : has
+Customer "1" -- "0..*" Notification : receives
+Admin "0..*" -- "1" Customer : manages
+Trainer "1" -- "1" Lesson : teaches
+Room "1" -- "1" Lesson : hosts
+@enduml

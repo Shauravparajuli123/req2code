@@ -1,0 +1,184 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [
+   {
+    "name": "WorkflowApplicationDeclaration",
+    "src": [
+     "R1",
+     "R8"
+    ]
+   }
+  ],
+  "use_cases": [
+   {
+    "name": "has",
+    "actor": "WorkflowProcessDefinition",
+    "src": [
+     "R7",
+     "R15"
+    ]
+   },
+   {
+    "name": "composed of",
+    "actor": "WorkflowProcessDefinition",
+    "src": [
+     "R8",
+     "R19"
+    ]
+   },
+   {
+    "name": "has",
+    "actor": "WorkflowProcessActivity",
+    "src": [
+     "R17",
+     "R19",
+     "R20",
+     "R21"
+    ]
+   }
+  ],
+  "classes": [
+   {
+    "name": "WorkflowApplicationDeclaration",
+    "src": [
+     "R1",
+     "R8"
+    ]
+   },
+   {
+    "name": "WorkflowProcessDefinition",
+    "src": [
+     "R4",
+     "R7",
+     "R8",
+     "R15",
+     "R19"
+    ]
+   },
+   {
+    "name": "WorkflowProcessActivity",
+    "src": [
+     "R6",
+     "R16",
+     "R17",
+     "R19",
+     "R20",
+     "R21"
+    ]
+   },
+   {
+    "name": "ParticipantSpecification",
+    "src": [
+     "R4",
+     "R7",
+     "R15"
+    ]
+   },
+   {
+    "name": "Workflow",
+    "src": [
+     "R10",
+     "R12"
+    ]
+   },
+   {
+    "name": "WorkflowState",
+    "src": [
+     "R5",
+     "R6"
+    ]
+   },
+   {
+    "name": "TransitionDefinition",
+    "src": [
+     "R8",
+     "R9",
+     "R10",
+     "R12"
+    ]
+   },
+   {
+    "name": "TransitionInformation",
+    "src": [
+     "R20",
+     "R21"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "WorkflowProcessActivity",
+    "name": "processDefinition",
+    "src": [
+     "R17",
+     "R19"
+    ]
+   },
+   {
+    "owner": "WorkflowProcessActivity",
+    "name": "relevantData",
+    "src": [
+     "R18",
+     "R19"
+    ]
+   },
+   {
+    "owner": "ParticipantSpecification",
+    "name": "processDefinition",
+    "src": [
+     "R15"
+    ]
+   },
+   {
+    "owner": "ParticipantSpecification",
+    "name": "processActivity",
+    "src": [
+     "R15"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "WorkflowProcessDefinition",
+    "target": "ParticipantSpecification",
+    "src": [
+     "R7",
+     "R15"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "WorkflowProcessDefinition",
+    "target": "TransitionDefinition",
+    "src": [
+     "R8",
+     "R9",
+     "R10",
+     "R12"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "WorkflowProcessDefinition",
+    "target": "WorkflowApplicationDeclaration",
+    "src": [
+     "R8",
+     "R19"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "WorkflowProcessActivity",
+    "target": "TransitionInformation",
+    "src": [
+     "R20",
+     "R21"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

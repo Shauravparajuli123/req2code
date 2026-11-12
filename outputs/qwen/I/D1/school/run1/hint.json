@@ -1,0 +1,3222 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D1/school",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R48",
+     "R49",
+     "R50",
+     "R51",
+     "R52",
+     "R53",
+     "R54",
+     "R55",
+     "R56",
+     "R57",
+     "R58",
+     "R59",
+     "R60",
+     "R61"
+    ],
+    "rule": [
+     "person_noun",
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R48.s1",
+      "text": "As an administrator I want to send direct messages to any student, guardian, teacher, or administrator, so that I am able to quickly contact them if needed."
+     },
+     {
+      "sid": "R49.s1",
+      "text": "As an administrator, I want to assign schedules to groups of students (classes) or teachers, so that these schedules are accessible by the correct student(s) or teacher."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As an administrator, I want to create an account, so that I can facilitate access to the system for users."
+     }
+    ],
+    "name": "administrator"
+   },
+   {
+    "id": "A2",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R17"
+    ],
+    "rule": [
+     "story_role",
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a guardian, I want to directly message any teacher of my child, the mentor assigned to my child, or an administrative staff member, so that I can contact them when needed."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "As a guardian, I want to fill in an absence of my child, so that administrative staff is aware that my child will not attend school today."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a guardian, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages."
+     }
+    ],
+    "name": "guardian"
+   },
+   {
+    "id": "A3",
+    "src": [
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R15",
+     "R16",
+     "R17",
+     "R18",
+     "R48"
+    ],
+    "rule": [
+     "story_role",
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a student, I want to access files and Digital Learning Module (DLM) in the Learning Management System (LMS) that have been assigned to the class that I participate in, so I am able to work with the material."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "As a student, I want to directly message any of my teachers, so that I can directly communicate with them when needed."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "As a student, I want to directly message my mentor, so that I can directly communicate with my her when needed."
+     }
+    ],
+    "name": "StudentS"
+   },
+   {
+    "id": "A4",
+    "src": [
+     "R18",
+     "R19",
+     "R20",
+     "R21",
+     "R22",
+     "R23",
+     "R24",
+     "R25",
+     "R26",
+     "R27",
+     "R28",
+     "R29",
+     "R30",
+     "R31",
+     "R32",
+     "R33",
+     "R34",
+     "R35",
+     "R36",
+     "R37",
+     "R38",
+     "R39",
+     "R40",
+     "R41",
+     "R42",
+     "R43",
+     "R44",
+     "R45",
+     "R46"
+    ],
+    "rule": [
+     "person_noun",
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R18.s1",
+      "text": "As a teacher I want to receive a notification when a student has uploaded a submission onto the LMs, so that I do not have to manually check to see if a student has submitted work."
+     },
+     {
+      "sid": "R19.s1",
+      "text": "As a teacher I want to receive a notification when something changes within my timetable, so that I am notified of any changes regarding the timetable in a timely manner."
+     },
+     {
+      "sid": "R20.s1",
+      "text": "As a teacher, I want to add a page containing a video to a DLM, so that video material can be used within a DLM."
+     }
+    ],
+    "name": "teacher"
+   },
+   {
+    "id": "A5",
+    "src": [
+     "R47"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R47.s1",
+      "text": "As a user, I want to reset my password on request once I supply my previous password, so that I can uphold safety standards."
+     }
+    ],
+    "name": "user"
+   }
+  ],
+  "use_cases": [
+   {
+    "id": "UC1",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a student, I want to access files and Digital Learning Module (DLM) in the Learning Management System (LMS) that have been assigned to the class that I participate in, so I am able to work with the material."
+     }
+    ],
+    "name": "Access File",
+    "actor": "StudentS",
+    "goal_text": "access files and Digital Learning Module (DLM) in the Learning Management System (LMS) that have been assigned to the class that I participate in"
+   },
+   {
+    "id": "UC2",
+    "src": [
+     "R31"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R31.s1",
+      "text": "As a teacher, I want to optionally add the corresponding answer to a question page contained within a DLM, so that it can be used to correct a submitted DLM."
+     }
+    ],
+    "name": "Add Answer",
+    "actor": "teacher",
+    "goal_text": "optionally add the corresponding answer to a question page contained within a DLM"
+   },
+   {
+    "id": "UC3",
+    "src": [
+     "R20",
+     "R21",
+     "R22"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R20.s1",
+      "text": "As a teacher, I want to add a page containing a video to a DLM, so that video material can be used within a DLM."
+     },
+     {
+      "sid": "R21.s1",
+      "text": "As a teacher, I want to add a page containing text and pictures to a DLM, so that this material can be used within a DLM."
+     },
+     {
+      "sid": "R22.s1",
+      "text": "As a teacher, I want to add a page that contains a multiple-choice question or an open question to a DLM, so that I can test the student's knowledge."
+     }
+    ],
+    "name": "Add Page",
+    "actor": "teacher",
+    "goal_text": "add a page containing a video to a DLM"
+   },
+   {
+    "id": "UC4",
+    "src": [
+     "R24"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As a teacher, I want to assign a due date to a DLM, so that students can be informed about when they are expected to finish a DLM."
+     }
+    ],
+    "name": "Assign Date",
+    "actor": "teacher",
+    "goal_text": "assign a due date to a DLM"
+   },
+   {
+    "id": "UC5",
+    "src": [
+     "R23"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As a teacher, I want to assign a DLM to a specific class or student(s), so that the DLM is accessible by the right user."
+     }
+    ],
+    "name": "Assign Dlm",
+    "actor": "teacher",
+    "goal_text": "assign a DLM to a specific class or student(s)"
+   },
+   {
+    "id": "UC6",
+    "src": [
+     "R49"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R49.s1",
+      "text": "As an administrator, I want to assign schedules to groups of students (classes) or teachers, so that these schedules are accessible by the correct student(s) or teacher."
+     }
+    ],
+    "name": "Assign Schedule",
+    "actor": "administrator",
+    "goal_text": "assign schedules to groups of students (classes) or teachers"
+   },
+   {
+    "id": "UC7",
+    "src": [
+     "R50"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R50.s1",
+      "text": "As an administrator, I want to create an account, so that I can facilitate access to the system for users."
+     }
+    ],
+    "name": "Create Account",
+    "actor": "administrator",
+    "goal_text": "create an account"
+   },
+   {
+    "id": "UC8",
+    "src": [
+     "R26"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R26.s1",
+      "text": "As a teacher, I want to create digital learning modules containing pages, so that I can create interactive study material."
+     }
+    ],
+    "name": "Create LearningModule",
+    "actor": "teacher",
+    "goal_text": "create digital learning modules containing pages"
+   },
+   {
+    "id": "UC9",
+    "src": [
+     "R51"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R51.s1",
+      "text": "As an administrator, I want to edit the personal data of an account, so that the information associated to this account is linked to the correct identity."
+     }
+    ],
+    "name": "Edit Data",
+    "actor": "administrator",
+    "goal_text": "edit the personal data of an account"
+   },
+   {
+    "id": "UC10",
+    "src": [
+     "R29"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R29.s1",
+      "text": "As a teacher, I want to edit any page contained within a DLM, so that I do not have to create a new DLM if the need arises to change a minor detail."
+     }
+    ],
+    "name": "Edit Page",
+    "actor": "teacher",
+    "goal_text": "edit any page contained within a DLM"
+   },
+   {
+    "id": "UC11",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a guardian, I want to fill in an absence of my child, so that administrative staff is aware that my child will not attend school today."
+     }
+    ],
+    "name": "Fill Absence",
+    "actor": "guardian",
+    "goal_text": "fill in an absence of my child"
+   },
+   {
+    "id": "UC12",
+    "src": [
+     "R25"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R25.s1",
+      "text": "As a teacher, I want to automatically grade DLM submissions, where possible, when I have submitted all the answers, so that I do not have to manually correct all questions within a DLM."
+     }
+    ],
+    "name": "Grade DlmSubmission",
+    "actor": "teacher",
+    "goal_text": "automatically grade DLM submissions, where possible, when I have submitted all the answers"
+   },
+   {
+    "id": "UC13",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a student, I want to hand my homework to the DLM when they are finished, so that the teacher is able to see my work."
+     }
+    ],
+    "name": "Hand Homework",
+    "actor": "StudentS",
+    "goal_text": "hand my homework to the DLM when they are finished"
+   },
+   {
+    "id": "UC14",
+    "src": [
+     "R9",
+     "R10"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a student, I want to have access to an up-to-date timetable, so that I always know for sure that I am in the correct place at a certain time."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "As a student, I want to have access to DLM, so that I can do the work that is expected of me."
+     }
+    ],
+    "name": "Have Access",
+    "actor": "StudentS",
+    "goal_text": "have access to an up-to-date timetable"
+   },
+   {
+    "id": "UC15",
+    "src": [
+     "R30"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R30.s1",
+      "text": "As a teacher, I want to make submission elements, so that students can submit assignments that they have made."
+     }
+    ],
+    "name": "Make SubmissionElement",
+    "actor": "teacher",
+    "goal_text": "make submission elements"
+   },
+   {
+    "id": "UC16",
+    "src": [
+     "R52"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R52.s1",
+      "text": "As an administrator, I want to make use of various filters and viewpoints, change the view of the visual dashboard to a specific class, year, period, or subject, so that I can gain insight into numerous levels of performance data."
+     }
+    ],
+    "name": "Make Use",
+    "actor": "administrator",
+    "goal_text": "make use of various filters and viewpoints, change the view of the visual dashboard to a specific class, year, period, or subject"
+   },
+   {
+    "id": "UC17",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As a student, I want to directly message my mentor, so that I can directly communicate with my her when needed."
+     }
+    ],
+    "name": "Message Mentor",
+    "actor": "StudentS",
+    "goal_text": "directly message my mentor"
+   },
+   {
+    "id": "UC18",
+    "src": [
+     "R27",
+     "R28"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a teacher, I want to directly message any student that is assigned to my class, so that I am able to have contact with any participants of my class."
+     },
+     {
+      "sid": "R28.s1",
+      "text": "As a teacher, I want to directly message any student to which I am assigned mentor, so that I can gain insight into the performance of my students."
+     }
+    ],
+    "name": "Message Student",
+    "actor": "teacher",
+    "goal_text": "directly message any student that is assigned to my class"
+   },
+   {
+    "id": "UC19",
+    "src": [
+     "R1",
+     "R6"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a guardian, I want to directly message any teacher of my child, the mentor assigned to my child, or an administrative staff member, so that I can contact them when needed."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "As a student, I want to directly message any of my teachers, so that I can directly communicate with them when needed."
+     }
+    ],
+    "name": "Message Teacher",
+    "actor": "guardian",
+    "goal_text": "directly message any teacher of my child, the mentor assigned to my child, or an administrative staff member"
+   },
+   {
+    "id": "UC20",
+    "src": [
+     "R32"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R32.s1",
+      "text": "As a teacher, I want to receive a confirmation from the LMS system once files have been fully uploaded, so that I do not have to check if any uploads have failed."
+     }
+    ],
+    "name": "Receive Confirmation",
+    "actor": "teacher",
+    "goal_text": "receive a confirmation from the LMS system once files have been fully uploaded"
+   },
+   {
+    "id": "UC21",
+    "src": [
+     "R3",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R33",
+     "R34",
+     "R53",
+     "R54"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a guardian, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "As a student, I want to receive a notification when an assignment is due soon and I have not completed it yet, so that I can complete it prior to the due date."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As a student, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages."
+     }
+    ],
+    "name": "Receive Notification",
+    "actor": "guardian",
+    "goal_text": "receive a notification when I receive a message"
+   },
+   {
+    "id": "UC22",
+    "src": [
+     "R35"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a teacher, I want to record disciplinary actions for a student such as: missed homework, no books, or sent out, so that rules that are set about these measures can be policed by administrative staff and that guardians, teachers, and mentors can gain insight."
+     }
+    ],
+    "name": "Record Action",
+    "actor": "teacher",
+    "goal_text": "record disciplinary actions for a student such as: missed homework, no books, or sent out"
+   },
+   {
+    "id": "UC23",
+    "src": [
+     "R38"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R38.s1",
+      "text": "As a teacher, I want to record the attendance of students within my class, so that any students skipping class can be detected."
+     }
+    ],
+    "name": "Record Attendance",
+    "actor": "teacher",
+    "goal_text": "record the attendance of students within my class"
+   },
+   {
+    "id": "UC24",
+    "src": [
+     "R36"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R36.s1",
+      "text": "As a teacher, I want to record either a sufficient or insufficient a student's behavior every single academic period, so that other users can gain insight into their behavior."
+     }
+    ],
+    "name": "Record Behavior",
+    "actor": "teacher",
+    "goal_text": "record either a sufficient or insufficient a student's behavior every single academic period"
+   },
+   {
+    "id": "UC25",
+    "src": [
+     "R37"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a teacher, I want to record grades for a student, so that they can be informed about their performance."
+     }
+    ],
+    "name": "Record Grade",
+    "actor": "teacher",
+    "goal_text": "record grades for a student"
+   },
+   {
+    "id": "UC26",
+    "src": [
+     "R56"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R56.s1",
+      "text": "As an administrator, I want to register the absence of a student, teacher, or administrator, so that other users can be notified of their absence."
+     }
+    ],
+    "name": "Register Absence",
+    "actor": "administrator",
+    "goal_text": "register the absence of a student, teacher, or administrator"
+   },
+   {
+    "id": "UC27",
+    "src": [
+     "R55"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R55.s1",
+      "text": "As an administrator, I want to register any changes to the schedule, so that these are as up-to-date as possible."
+     }
+    ],
+    "name": "Register Change",
+    "actor": "administrator",
+    "goal_text": "register any changes to the schedule"
+   },
+   {
+    "id": "UC28",
+    "src": [
+     "R47"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R47.s1",
+      "text": "As a user, I want to reset my password on request once I supply my previous password, so that I can uphold safety standards."
+     }
+    ],
+    "name": "Reset Password",
+    "actor": "user",
+    "goal_text": "reset my password on request once I supply my previous password"
+   },
+   {
+    "id": "UC29",
+    "src": [
+     "R39"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R39.s1",
+      "text": "As a teacher, I want to see the answers submitted by individual students within the corresponding DLM, so that I can gain insight into their submissions."
+     }
+    ],
+    "name": "See Answer",
+    "actor": "teacher",
+    "goal_text": "see the answers submitted by individual students within the corresponding DLM"
+   },
+   {
+    "id": "UC30",
+    "src": [
+     "R40"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R40.s1",
+      "text": "As a teacher, I want to see the average grade that students received last year, starting when they are in their second year, so that I am able to gain insight into the class' prior performance."
+     }
+    ],
+    "name": "See Grade",
+    "actor": "teacher",
+    "goal_text": "see the average grade that students received last year, starting when they are in their second year"
+   },
+   {
+    "id": "UC31",
+    "src": [
+     "R41"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R41.s1",
+      "text": "As a teacher, I want to see the progress that an individual student has made within a DLM, so that I can gain insight into their performance."
+     }
+    ],
+    "name": "See Progress",
+    "actor": "teacher",
+    "goal_text": "see the progress that an individual student has made within a DLM"
+   },
+   {
+    "id": "UC32",
+    "src": [
+     "R57"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R57.s1",
+      "text": "As an administrator, I want to send broadcast messages to multiple selected teachers, students, guardians, classes, or other administrators, so that I do not have to manually send the same message to multiple participants."
+     }
+    ],
+    "name": "Send BroadcastMessage",
+    "actor": "administrator",
+    "goal_text": "send broadcast messages to multiple selected teachers, students, guardians, classes, or other administrators"
+   },
+   {
+    "id": "UC33",
+    "src": [
+     "R42"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R42.s1",
+      "text": "As a teacher, I want to set an appearance date to a DLM, so that students are only able to access the DLM after the appearance date has passed."
+     }
+    ],
+    "name": "Set AppearanceDate",
+    "actor": "teacher",
+    "goal_text": "set an appearance date to a DLM"
+   },
+   {
+    "id": "UC34",
+    "src": [
+     "R43"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R43.s1",
+      "text": "As a teacher, I want to set available dates and times either to instant or a specific date and time combination, so that I am able to upload the material in advance."
+     }
+    ],
+    "name": "Set Date",
+    "actor": "teacher",
+    "goal_text": "set available dates and times either to instant or a specific date and time combination"
+   },
+   {
+    "id": "UC35",
+    "src": [
+     "R58"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R58.s1",
+      "text": "As an administrator, I want to set the role of an account either to student, teacher, administrator or guardian, so that I am able to facilitate role-based restrictions."
+     }
+    ],
+    "name": "Set Role",
+    "actor": "administrator",
+    "goal_text": "set the role of an account either to student, teacher, administrator or guardian"
+   },
+   {
+    "id": "UC36",
+    "src": [
+     "R44"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R44.s1",
+      "text": "As a teacher, I want to upload files to the LMS page of one or multiple classes, so that students can download and access the files."
+     }
+    ],
+    "name": "Upload File",
+    "actor": "teacher",
+    "goal_text": "upload files to the LMS page of one or multiple classes"
+   },
+   {
+    "id": "UC37",
+    "src": [
+     "R59"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R59.s1",
+      "text": "As an administrator, I want to upload schedules, so that students and teachers are able to gain insight into their daily schedules."
+     }
+    ],
+    "name": "Upload Schedule",
+    "actor": "administrator",
+    "goal_text": "upload schedules"
+   },
+   {
+    "id": "UC38",
+    "src": [
+     "R45"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R45.s1",
+      "text": "As a teacher, I want to view the attendance, grades that are obtained this year (including behavioral marks), personal details, and disciplinary actions of (any student in my class) or (any student that I am assigned to as mentor), so that I can gain insight into their performance."
+     }
+    ],
+    "name": "View Attendance",
+    "actor": "teacher",
+    "goal_text": "view the attendance, grades that are obtained this year (including behavioral marks), personal details, and disciplinary actions of (any student in my class) or (any student that I am assigned to as mentor)"
+   },
+   {
+    "id": "UC39",
+    "src": [
+     "R46"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R46.s1",
+      "text": "As a teacher, I want to view who is in a specific class that is mentioned in my timetable, so that I can gain insight into whom can be expected to attend the class."
+     }
+    ],
+    "name": "View Class",
+    "actor": "teacher",
+    "goal_text": "view who is in a specific class that is mentioned in my timetable"
+   },
+   {
+    "id": "UC40",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As a student, I want to view the contact information of students attending my classes, so that collaboration is made possible."
+     }
+    ],
+    "name": "View ContactInformation",
+    "actor": "StudentS",
+    "goal_text": "view the contact information of students attending my classes"
+   },
+   {
+    "id": "UC41",
+    "src": [
+     "R60"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R60.s1",
+      "text": "As an administrator, I want to view any details associated with any account, so that I can gather insight into the specific user."
+     }
+    ],
+    "name": "View Detail",
+    "actor": "administrator",
+    "goal_text": "view any details associated with any account"
+   },
+   {
+    "id": "UC42",
+    "src": [
+     "R4",
+     "R15"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a guardian, I want to view any information related to my children, so that I can gain insight into their behavior and performance."
+     },
+     {
+      "sid": "R15.s1",
+      "text": "As a student, I want to view any information related to my account, so that I can gain insight into my performance and behavior."
+     }
+    ],
+    "name": "View Information",
+    "actor": "guardian",
+    "goal_text": "view any information related to my children"
+   },
+   {
+    "id": "UC43",
+    "src": [
+     "R61"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R61.s1",
+      "text": "As an administrator, I want to view statistics related to grades, attendance and disciplinary actions that can be mapped over the whole school, so that I am able to gain insight into the performance as a whole."
+     }
+    ],
+    "name": "View Statistic",
+    "actor": "administrator",
+    "goal_text": "view statistics related to grades, attendance and disciplinary actions that can be mapped over the whole school"
+   }
+  ],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R2",
+     "R56"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a guardian, I want to fill in an absence of my child, so that administrative staff is aware that my child will not attend school today."
+     },
+     {
+      "sid": "R56.s1",
+      "text": "As an administrator, I want to register the absence of a student, teacher, or administrator, so that other users can be notified of their absence."
+     }
+    ],
+    "name": "Absence",
+    "freq": 3
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R9",
+     "R10",
+     "R50"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a student, I want to have access to an up-to-date timetable, so that I always know for sure that I am in the correct place at a certain time."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "As a student, I want to have access to DLM, so that I can do the work that is expected of me."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As an administrator, I want to create an account, so that I can facilitate access to the system for users."
+     }
+    ],
+    "name": "Access",
+    "freq": 3
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R15",
+     "R50",
+     "R51",
+     "R58",
+     "R60"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "As a student, I want to view any information related to my account, so that I can gain insight into my performance and behavior."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As an administrator, I want to create an account, so that I can facilitate access to the system for users."
+     },
+     {
+      "sid": "R51.s1",
+      "text": "As an administrator, I want to edit the personal data of an account, so that the information associated to this account is linked to the correct identity."
+     }
+    ],
+    "name": "Account",
+    "freq": 6
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R35",
+     "R45",
+     "R61"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a teacher, I want to record disciplinary actions for a student such as: missed homework, no books, or sent out, so that rules that are set about these measures can be policed by administrative staff and that guardians, teachers, and mentors can gain insight."
+     },
+     {
+      "sid": "R45.s1",
+      "text": "As a teacher, I want to view the attendance, grades that are obtained this year (including behavioral marks), personal details, and disciplinary actions of (any student in my class) or (any student that I am assigned to as mentor), so that I can gain insight into their performance."
+     },
+     {
+      "sid": "R61.s1",
+      "text": "As an administrator, I want to view statistics related to grades, attendance and disciplinary actions that can be mapped over the whole school, so that I am able to gain insight into the performance as a whole."
+     }
+    ],
+    "name": "Action",
+    "freq": 3
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R48",
+     "R49",
+     "R50",
+     "R51",
+     "R52",
+     "R53",
+     "R54",
+     "R55",
+     "R56",
+     "R57",
+     "R58",
+     "R59",
+     "R60",
+     "R61"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R48.s1",
+      "text": "As an administrator I want to send direct messages to any student, guardian, teacher, or administrator, so that I am able to quickly contact them if needed."
+     },
+     {
+      "sid": "R49.s1",
+      "text": "As an administrator, I want to assign schedules to groups of students (classes) or teachers, so that these schedules are accessible by the correct student(s) or teacher."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As an administrator, I want to create an account, so that I can facilitate access to the system for users."
+     }
+    ],
+    "name": "Administrator",
+    "freq": 18
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R25",
+     "R31",
+     "R39"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R25.s1",
+      "text": "As a teacher, I want to automatically grade DLM submissions, where possible, when I have submitted all the answers, so that I do not have to manually correct all questions within a DLM."
+     },
+     {
+      "sid": "R31.s1",
+      "text": "As a teacher, I want to optionally add the corresponding answer to a question page contained within a DLM, so that it can be used to correct a submitted DLM."
+     },
+     {
+      "sid": "R39.s1",
+      "text": "As a teacher, I want to see the answers submitted by individual students within the corresponding DLM, so that I can gain insight into their submissions."
+     }
+    ],
+    "name": "Answer",
+    "freq": 3
+   },
+   {
+    "id": "C8",
+    "src": [
+     "R42"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R42.s1",
+      "text": "As a teacher, I want to set an appearance date to a DLM, so that students are only able to access the DLM after the appearance date has passed."
+     }
+    ],
+    "name": "AppearanceDate",
+    "freq": 2
+   },
+   {
+    "id": "C9",
+    "src": [
+     "R11",
+     "R30"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a student, I want to receive a notification when an assignment is due soon and I have not completed it yet, so that I can complete it prior to the due date."
+     },
+     {
+      "sid": "R30.s1",
+      "text": "As a teacher, I want to make submission elements, so that students can submit assignments that they have made."
+     }
+    ],
+    "name": "Assignment",
+    "freq": 2
+   },
+   {
+    "id": "C10",
+    "src": [
+     "R38",
+     "R45",
+     "R61"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R38.s1",
+      "text": "As a teacher, I want to record the attendance of students within my class, so that any students skipping class can be detected."
+     },
+     {
+      "sid": "R45.s1",
+      "text": "As a teacher, I want to view the attendance, grades that are obtained this year (including behavioral marks), personal details, and disciplinary actions of (any student in my class) or (any student that I am assigned to as mentor), so that I can gain insight into their performance."
+     },
+     {
+      "sid": "R61.s1",
+      "text": "As an administrator, I want to view statistics related to grades, attendance and disciplinary actions that can be mapped over the whole school, so that I am able to gain insight into the performance as a whole."
+     }
+    ],
+    "name": "Attendance",
+    "freq": 3
+   },
+   {
+    "id": "C12",
+    "src": [
+     "R14",
+     "R19",
+     "R55"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "As a student, I want to receive a notification when something changes within my timetable, so that I am notified of any changes in the timetable in a timely manner."
+     },
+     {
+      "sid": "R19.s1",
+      "text": "As a teacher I want to receive a notification when something changes within my timetable, so that I am notified of any changes regarding the timetable in a timely manner."
+     },
+     {
+      "sid": "R55.s1",
+      "text": "As an administrator, I want to register any changes to the schedule, so that these are as up-to-date as possible."
+     }
+    ],
+    "name": "Change",
+    "freq": 3
+   },
+   {
+    "id": "C13",
+    "src": [
+     "R1",
+     "R2",
+     "R4"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a guardian, I want to directly message any teacher of my child, the mentor assigned to my child, or an administrative staff member, so that I can contact them when needed."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "As a guardian, I want to fill in an absence of my child, so that administrative staff is aware that my child will not attend school today."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "As a guardian, I want to view any information related to my children, so that I can gain insight into their behavior and performance."
+     }
+    ],
+    "name": "Child",
+    "freq": 5
+   },
+   {
+    "id": "C14",
+    "src": [
+     "R9",
+     "R11",
+     "R13",
+     "R24",
+     "R43",
+     "R55"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a student, I want to have access to an up-to-date timetable, so that I always know for sure that I am in the correct place at a certain time."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "As a student, I want to receive a notification when an assignment is due soon and I have not completed it yet, so that I can complete it prior to the due date."
+     },
+     {
+      "sid": "R13.s1",
+      "text": "As a student, I want to receive a notification when new files have been made available through the LMS, so that I am always up to date with the uploaded files."
+     }
+    ],
+    "name": "Date",
+    "freq": 6
+   },
+   {
+    "id": "C15",
+    "src": [
+     "R5",
+     "R8",
+     "R10",
+     "R20",
+     "R21",
+     "R22",
+     "R23",
+     "R24",
+     "R25",
+     "R29",
+     "R31",
+     "R39",
+     "R41",
+     "R42"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a student, I want to access files and Digital Learning Module (DLM) in the Learning Management System (LMS) that have been assigned to the class that I participate in, so I am able to work with the material."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "As a student, I want to hand my homework to the DLM when they are finished, so that the teacher is able to see my work."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "As a student, I want to have access to DLM, so that I can do the work that is expected of me."
+     }
+    ],
+    "name": "Dlm",
+    "freq": 21
+   },
+   {
+    "id": "C16",
+    "src": [
+     "R5",
+     "R13",
+     "R32",
+     "R44"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a student, I want to access files and Digital Learning Module (DLM) in the Learning Management System (LMS) that have been assigned to the class that I participate in, so I am able to work with the material."
+     },
+     {
+      "sid": "R13.s1",
+      "text": "As a student, I want to receive a notification when new files have been made available through the LMS, so that I am always up to date with the uploaded files."
+     },
+     {
+      "sid": "R32.s1",
+      "text": "As a teacher, I want to receive a confirmation from the LMS system once files have been fully uploaded, so that I do not have to check if any uploads have failed."
+     }
+    ],
+    "name": "File",
+    "freq": 6
+   },
+   {
+    "id": "C17",
+    "src": [
+     "R37",
+     "R40",
+     "R61"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a teacher, I want to record grades for a student, so that they can be informed about their performance."
+     },
+     {
+      "sid": "R40.s1",
+      "text": "As a teacher, I want to see the average grade that students received last year, starting when they are in their second year, so that I am able to gain insight into the class' prior performance."
+     },
+     {
+      "sid": "R61.s1",
+      "text": "As an administrator, I want to view statistics related to grades, attendance and disciplinary actions that can be mapped over the whole school, so that I am able to gain insight into the performance as a whole."
+     }
+    ],
+    "name": "Grade",
+    "freq": 3
+   },
+   {
+    "id": "C18",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R17",
+     "R35",
+     "R48",
+     "R57",
+     "R58"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a guardian, I want to directly message any teacher of my child, the mentor assigned to my child, or an administrative staff member, so that I can contact them when needed."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "As a guardian, I want to fill in an absence of my child, so that administrative staff is aware that my child will not attend school today."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a guardian, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages."
+     }
+    ],
+    "name": "Guardian",
+    "freq": 10
+   },
+   {
+    "id": "C20",
+    "src": [
+     "R4",
+     "R15",
+     "R28",
+     "R35",
+     "R36",
+     "R39",
+     "R40",
+     "R41",
+     "R45",
+     "R46",
+     "R52",
+     "R59",
+     "R60",
+     "R61"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a guardian, I want to view any information related to my children, so that I can gain insight into their behavior and performance."
+     },
+     {
+      "sid": "R15.s1",
+      "text": "As a student, I want to view any information related to my account, so that I can gain insight into my performance and behavior."
+     },
+     {
+      "sid": "R28.s1",
+      "text": "As a teacher, I want to directly message any student to which I am assigned mentor, so that I can gain insight into the performance of my students."
+     }
+    ],
+    "name": "Insight",
+    "freq": 14
+   },
+   {
+    "id": "C21",
+    "src": [
+     "R5",
+     "R13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a student, I want to access files and Digital Learning Module (DLM) in the Learning Management System (LMS) that have been assigned to the class that I participate in, so I am able to work with the material."
+     },
+     {
+      "sid": "R13.s1",
+      "text": "As a student, I want to receive a notification when new files have been made available through the LMS, so that I am always up to date with the uploaded files."
+     }
+    ],
+    "name": "Lms",
+    "freq": 2
+   },
+   {
+    "id": "C22",
+    "src": [
+     "R14",
+     "R19"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "As a student, I want to receive a notification when something changes within my timetable, so that I am notified of any changes in the timetable in a timely manner."
+     },
+     {
+      "sid": "R19.s1",
+      "text": "As a teacher I want to receive a notification when something changes within my timetable, so that I am notified of any changes regarding the timetable in a timely manner."
+     }
+    ],
+    "name": "Manner",
+    "freq": 2
+   },
+   {
+    "id": "C23",
+    "src": [
+     "R5",
+     "R21",
+     "R43"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a student, I want to access files and Digital Learning Module (DLM) in the Learning Management System (LMS) that have been assigned to the class that I participate in, so I am able to work with the material."
+     },
+     {
+      "sid": "R21.s1",
+      "text": "As a teacher, I want to add a page containing text and pictures to a DLM, so that this material can be used within a DLM."
+     },
+     {
+      "sid": "R43.s1",
+      "text": "As a teacher, I want to set available dates and times either to instant or a specific date and time combination, so that I am able to upload the material in advance."
+     }
+    ],
+    "name": "Material",
+    "freq": 3
+   },
+   {
+    "id": "C24",
+    "src": [
+     "R1",
+     "R7",
+     "R28",
+     "R35",
+     "R45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a guardian, I want to directly message any teacher of my child, the mentor assigned to my child, or an administrative staff member, so that I can contact them when needed."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "As a student, I want to directly message my mentor, so that I can directly communicate with my her when needed."
+     },
+     {
+      "sid": "R28.s1",
+      "text": "As a teacher, I want to directly message any student to which I am assigned mentor, so that I can gain insight into the performance of my students."
+     }
+    ],
+    "name": "Mentor",
+    "freq": 5
+   },
+   {
+    "id": "C25",
+    "src": [
+     "R3",
+     "R12",
+     "R34",
+     "R48",
+     "R53",
+     "R57"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a guardian, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As a student, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages."
+     },
+     {
+      "sid": "R34.s1",
+      "text": "As a teacher, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages."
+     }
+    ],
+    "name": "Message",
+    "freq": 10
+   },
+   {
+    "id": "C26",
+    "src": [
+     "R3",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R18",
+     "R19",
+     "R33",
+     "R34",
+     "R53",
+     "R54"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a guardian, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "As a student, I want to receive a notification when an assignment is due soon and I have not completed it yet, so that I can complete it prior to the due date."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As a student, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages."
+     }
+    ],
+    "name": "Notification",
+    "freq": 11
+   },
+   {
+    "id": "C27",
+    "src": [
+     "R27",
+     "R57"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a teacher, I want to directly message any student that is assigned to my class, so that I am able to have contact with any participants of my class."
+     },
+     {
+      "sid": "R57.s1",
+      "text": "As an administrator, I want to send broadcast messages to multiple selected teachers, students, guardians, classes, or other administrators, so that I do not have to manually send the same message to multiple participants."
+     }
+    ],
+    "name": "Participant",
+    "freq": 2
+   },
+   {
+    "id": "C28",
+    "src": [
+     "R4",
+     "R15",
+     "R28",
+     "R37",
+     "R40",
+     "R41",
+     "R45",
+     "R61"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a guardian, I want to view any information related to my children, so that I can gain insight into their behavior and performance."
+     },
+     {
+      "sid": "R15.s1",
+      "text": "As a student, I want to view any information related to my account, so that I can gain insight into my performance and behavior."
+     },
+     {
+      "sid": "R28.s1",
+      "text": "As a teacher, I want to directly message any student to which I am assigned mentor, so that I can gain insight into the performance of my students."
+     }
+    ],
+    "name": "Performance",
+    "freq": 8
+   },
+   {
+    "id": "C29",
+    "src": [
+     "R22",
+     "R25"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R22.s1",
+      "text": "As a teacher, I want to add a page that contains a multiple-choice question or an open question to a DLM, so that I can test the student's knowledge."
+     },
+     {
+      "sid": "R25.s1",
+      "text": "As a teacher, I want to automatically grade DLM submissions, where possible, when I have submitted all the answers, so that I do not have to manually correct all questions within a DLM."
+     }
+    ],
+    "name": "Question",
+    "freq": 2
+   },
+   {
+    "id": "C30",
+    "src": [
+     "R49",
+     "R55",
+     "R59"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R49.s1",
+      "text": "As an administrator, I want to assign schedules to groups of students (classes) or teachers, so that these schedules are accessible by the correct student(s) or teacher."
+     },
+     {
+      "sid": "R55.s1",
+      "text": "As an administrator, I want to register any changes to the schedule, so that these are as up-to-date as possible."
+     },
+     {
+      "sid": "R59.s1",
+      "text": "As an administrator, I want to upload schedules, so that students and teachers are able to gain insight into their daily schedules."
+     }
+    ],
+    "name": "Schedule",
+    "freq": 5
+   },
+   {
+    "id": "C31",
+    "src": [
+     "R2",
+     "R61"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a guardian, I want to fill in an absence of my child, so that administrative staff is aware that my child will not attend school today."
+     },
+     {
+      "sid": "R61.s1",
+      "text": "As an administrator, I want to view statistics related to grades, attendance and disciplinary actions that can be mapped over the whole school, so that I am able to gain insight into the performance as a whole."
+     }
+    ],
+    "name": "School",
+    "freq": 2
+   },
+   {
+    "id": "C32",
+    "src": [
+     "R2",
+     "R35"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a guardian, I want to fill in an absence of my child, so that administrative staff is aware that my child will not attend school today."
+     },
+     {
+      "sid": "R35.s1",
+      "text": "As a teacher, I want to record disciplinary actions for a student such as: missed homework, no books, or sent out, so that rules that are set about these measures can be policed by administrative staff and that guardians, teachers, and mentors can gain insight."
+     }
+    ],
+    "name": "Staff",
+    "freq": 2
+   },
+   {
+    "id": "C33",
+    "src": [
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R15",
+     "R16",
+     "R17",
+     "R18",
+     "R24",
+     "R27",
+     "R28",
+     "R30",
+     "R33",
+     "R35",
+     "R37",
+     "R38",
+     "R39",
+     "R40",
+     "R41",
+     "R42",
+     "R44",
+     "R45",
+     "R48",
+     "R49",
+     "R56",
+     "R57",
+     "R59"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a student, I want to access files and Digital Learning Module (DLM) in the Learning Management System (LMS) that have been assigned to the class that I participate in, so I am able to work with the material."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "As a student, I want to directly message any of my teachers, so that I can directly communicate with them when needed."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "As a student, I want to directly message my mentor, so that I can directly communicate with my her when needed."
+     }
+    ],
+    "name": "Student",
+    "freq": 39
+   },
+   {
+    "id": "C34",
+    "src": [
+     "R23",
+     "R49"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As a teacher, I want to assign a DLM to a specific class or student(s), so that the DLM is accessible by the right user."
+     },
+     {
+      "sid": "R49.s1",
+      "text": "As an administrator, I want to assign schedules to groups of students (classes) or teachers, so that these schedules are accessible by the correct student(s) or teacher."
+     }
+    ],
+    "name": "StudentS",
+    "freq": 2
+   },
+   {
+    "id": "C35",
+    "src": [
+     "R18",
+     "R39"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R18.s1",
+      "text": "As a teacher I want to receive a notification when a student has uploaded a submission onto the LMs, so that I do not have to manually check to see if a student has submitted work."
+     },
+     {
+      "sid": "R39.s1",
+      "text": "As a teacher, I want to see the answers submitted by individual students within the corresponding DLM, so that I can gain insight into their submissions."
+     }
+    ],
+    "name": "Submission",
+    "freq": 2
+   },
+   {
+    "id": "C36",
+    "src": [
+     "R1",
+     "R6",
+     "R8",
+     "R18",
+     "R19",
+     "R20",
+     "R21",
+     "R22",
+     "R23",
+     "R24",
+     "R25",
+     "R26",
+     "R27",
+     "R28",
+     "R29",
+     "R30",
+     "R31",
+     "R32",
+     "R33",
+     "R34",
+     "R35",
+     "R36",
+     "R37",
+     "R38",
+     "R39",
+     "R40",
+     "R41",
+     "R42",
+     "R43",
+     "R44",
+     "R45",
+     "R46",
+     "R48",
+     "R49",
+     "R56",
+     "R57",
+     "R58",
+     "R59"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a guardian, I want to directly message any teacher of my child, the mentor assigned to my child, or an administrative staff member, so that I can contact them when needed."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "As a student, I want to directly message any of my teachers, so that I can directly communicate with them when needed."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "As a student, I want to hand my homework to the DLM when they are finished, so that the teacher is able to see my work."
+     }
+    ],
+    "name": "Teacher",
+    "freq": 40
+   },
+   {
+    "id": "C37",
+    "src": [
+     "R9",
+     "R14",
+     "R19",
+     "R46"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a student, I want to have access to an up-to-date timetable, so that I always know for sure that I am in the correct place at a certain time."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "As a student, I want to receive a notification when something changes within my timetable, so that I am notified of any changes in the timetable in a timely manner."
+     },
+     {
+      "sid": "R19.s1",
+      "text": "As a teacher I want to receive a notification when something changes within my timetable, so that I am notified of any changes regarding the timetable in a timely manner."
+     }
+    ],
+    "name": "Timetable",
+    "freq": 6
+   },
+   {
+    "id": "C38",
+    "src": [
+     "R23",
+     "R36",
+     "R47",
+     "R50",
+     "R56",
+     "R60"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As a teacher, I want to assign a DLM to a specific class or student(s), so that the DLM is accessible by the right user."
+     },
+     {
+      "sid": "R36.s1",
+      "text": "As a teacher, I want to record either a sufficient or insufficient a student's behavior every single academic period, so that other users can gain insight into their behavior."
+     },
+     {
+      "sid": "R47.s1",
+      "text": "As a user, I want to reset my password on request once I supply my previous password, so that I can uphold safety standards."
+     }
+    ],
+    "name": "User",
+    "freq": 6
+   },
+   {
+    "id": "C39",
+    "src": [
+     "R8",
+     "R10",
+     "R18"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a student, I want to hand my homework to the DLM when they are finished, so that the teacher is able to see my work."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "As a student, I want to have access to DLM, so that I can do the work that is expected of me."
+     },
+     {
+      "sid": "R18.s1",
+      "text": "As a teacher I want to receive a notification when a student has uploaded a submission onto the LMs, so that I do not have to manually check to see if a student has submitted work."
+     }
+    ],
+    "name": "Work",
+    "freq": 3
+   },
+   {
+    "id": "C40",
+    "src": [
+     "R40",
+     "R52"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R40.s1",
+      "text": "As a teacher, I want to see the average grade that students received last year, starting when they are in their second year, so that I am able to gain insight into the class' prior performance."
+     },
+     {
+      "sid": "R52.s1",
+      "text": "As an administrator, I want to make use of various filters and viewpoints, change the view of the visual dashboard to a specific class, year, period, or subject, so that I can gain insight into numerous levels of performance data."
+     }
+    ],
+    "name": "Year",
+    "freq": 2
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R58"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R58.s1",
+      "text": "As an administrator, I want to set the role of an account either to student, teacher, administrator or guardian, so that I am able to facilitate role-based restrictions."
+     }
+    ],
+    "owner": "Account",
+    "name": "role",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As a student, I want to view the contact information of students attending my classes, so that collaboration is made possible."
+     }
+    ],
+    "owner": "Student",
+    "name": "contact information",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R49"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R49.s1",
+      "text": "As an administrator, I want to assign schedules to groups of students (classes) or teachers, so that these schedules are accessible by the correct student(s) or teacher."
+     }
+    ],
+    "owner": "Student",
+    "name": "group",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R22"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R22.s1",
+      "text": "As a teacher, I want to add a page that contains a multiple-choice question or an open question to a DLM, so that I can test the student's knowledge."
+     }
+    ],
+    "owner": "Student",
+    "name": "knowledge",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R56"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R56.s1",
+      "text": "As an administrator, I want to register the absence of a student, teacher, or administrator, so that other users can be notified of their absence."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Administrator",
+    "target": "Absence",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R50"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R50.s1",
+      "text": "As an administrator, I want to create an account, so that I can facilitate access to the system for users."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Administrator",
+    "target": "Account",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R57"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R57.s1",
+      "text": "As an administrator, I want to send broadcast messages to multiple selected teachers, students, guardians, classes, or other administrators, so that I do not have to manually send the same message to multiple participants."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Administrator",
+    "target": "BroadcastMessage",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R55"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R55.s1",
+      "text": "As an administrator, I want to register any changes to the schedule, so that these are as up-to-date as possible."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Administrator",
+    "target": "Change",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R53",
+     "R54"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R53.s1",
+      "text": "As an administrator, I want to receive a notification when I receive a message so that I do not have to manually check for new messages."
+     },
+     {
+      "sid": "R54.s1",
+      "text": "As an administrator, I want to receive a notification when I receive an absence form, so that I do not have to manually check for new absence forms."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Administrator",
+    "target": "Notification",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R58"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R58.s1",
+      "text": "As an administrator, I want to set the role of an account either to student, teacher, administrator or guardian, so that I am able to facilitate role-based restrictions."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Administrator",
+    "target": "Role",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL7",
+    "src": [
+     "R49",
+     "R59"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R49.s1",
+      "text": "As an administrator, I want to assign schedules to groups of students (classes) or teachers, so that these schedules are accessible by the correct student(s) or teacher."
+     },
+     {
+      "sid": "R59.s1",
+      "text": "As an administrator, I want to upload schedules, so that students and teachers are able to gain insight into their daily schedules."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Administrator",
+    "target": "Schedule",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL8",
+    "src": [
+     "R61"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R61.s1",
+      "text": "As an administrator, I want to view statistics related to grades, attendance and disciplinary actions that can be mapped over the whole school, so that I am able to gain insight into the performance as a whole."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Administrator",
+    "target": "Statistic",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL9",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a guardian, I want to fill in an absence of my child, so that administrative staff is aware that my child will not attend school today."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Guardian",
+    "target": "Absence",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL10",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a guardian, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Guardian",
+    "target": "Notification",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL11",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a guardian, I want to directly message any teacher of my child, the mentor assigned to my child, or an administrative staff member, so that I can contact them when needed."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Guardian",
+    "target": "Teacher",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL12",
+    "src": [
+     "R9",
+     "R10"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a student, I want to have access to an up-to-date timetable, so that I always know for sure that I am in the correct place at a certain time."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "As a student, I want to have access to DLM, so that I can do the work that is expected of me."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Student",
+    "target": "Access",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL13",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As a student, I want to view the contact information of students attending my classes, so that collaboration is made possible."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Student",
+    "target": "ContactInformation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL14",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a student, I want to access files and Digital Learning Module (DLM) in the Learning Management System (LMS) that have been assigned to the class that I participate in, so I am able to work with the material."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Student",
+    "target": "File",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL15",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a student, I want to hand my homework to the DLM when they are finished, so that the teacher is able to see my work."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Student",
+    "target": "Assignment",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL16",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As a student, I want to directly message my mentor, so that I can directly communicate with my her when needed."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Student",
+    "target": "Mentor",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL17",
+    "src": [
+     "R11",
+     "R12",
+     "R13",
+     "R14"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a student, I want to receive a notification when an assignment is due soon and I have not completed it yet, so that I can complete it prior to the due date."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As a student, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages."
+     },
+     {
+      "sid": "R13.s1",
+      "text": "As a student, I want to receive a notification when new files have been made available through the LMS, so that I am always up to date with the uploaded files."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Student",
+    "target": "Notification",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL18",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As a student, I want to directly message any of my teachers, so that I can directly communicate with them when needed."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Student",
+    "target": "Teacher",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL19",
+    "src": [
+     "R35"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a teacher, I want to record disciplinary actions for a student such as: missed homework, no books, or sent out, so that rules that are set about these measures can be policed by administrative staff and that guardians, teachers, and mentors can gain insight."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "Action",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL20",
+    "src": [
+     "R31",
+     "R39"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R31.s1",
+      "text": "As a teacher, I want to optionally add the corresponding answer to a question page contained within a DLM, so that it can be used to correct a submitted DLM."
+     },
+     {
+      "sid": "R39.s1",
+      "text": "As a teacher, I want to see the answers submitted by individual students within the corresponding DLM, so that I can gain insight into their submissions."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "Answer",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL21",
+    "src": [
+     "R42"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R42.s1",
+      "text": "As a teacher, I want to set an appearance date to a DLM, so that students are only able to access the DLM after the appearance date has passed."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "AppearanceDate",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL22",
+    "src": [
+     "R38",
+     "R45"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R38.s1",
+      "text": "As a teacher, I want to record the attendance of students within my class, so that any students skipping class can be detected."
+     },
+     {
+      "sid": "R45.s1",
+      "text": "As a teacher, I want to view the attendance, grades that are obtained this year (including behavioral marks), personal details, and disciplinary actions of (any student in my class) or (any student that I am assigned to as mentor), so that I can gain insight into their performance."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "Attendance",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL23",
+    "src": [
+     "R36"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R36.s1",
+      "text": "As a teacher, I want to record either a sufficient or insufficient a student's behavior every single academic period, so that other users can gain insight into their behavior."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "Behavior",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL24",
+    "src": [
+     "R32"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R32.s1",
+      "text": "As a teacher, I want to receive a confirmation from the LMS system once files have been fully uploaded, so that I do not have to check if any uploads have failed."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "Confirmation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL25",
+    "src": [
+     "R24",
+     "R43"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As a teacher, I want to assign a due date to a DLM, so that students can be informed about when they are expected to finish a DLM."
+     },
+     {
+      "sid": "R43.s1",
+      "text": "As a teacher, I want to set available dates and times either to instant or a specific date and time combination, so that I am able to upload the material in advance."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "Date",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL26",
+    "src": [
+     "R25"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R25.s1",
+      "text": "As a teacher, I want to automatically grade DLM submissions, where possible, when I have submitted all the answers, so that I do not have to manually correct all questions within a DLM."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "DlmSubmission",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL27",
+    "src": [
+     "R23"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As a teacher, I want to assign a DLM to a specific class or student(s), so that the DLM is accessible by the right user."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "Dlm",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL28",
+    "src": [
+     "R44"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R44.s1",
+      "text": "As a teacher, I want to upload files to the LMS page of one or multiple classes, so that students can download and access the files."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "File",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL29",
+    "src": [
+     "R37",
+     "R40"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a teacher, I want to record grades for a student, so that they can be informed about their performance."
+     },
+     {
+      "sid": "R40.s1",
+      "text": "As a teacher, I want to see the average grade that students received last year, starting when they are in their second year, so that I am able to gain insight into the class' prior performance."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "Grade",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL30",
+    "src": [
+     "R26"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R26.s1",
+      "text": "As a teacher, I want to create digital learning modules containing pages, so that I can create interactive study material."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "LearningModule",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL31",
+    "src": [
+     "R33",
+     "R34"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a teacher, I want to receive a notification when a student that I mentor is sent out of class, so that I am informed about the behavior of my students."
+     },
+     {
+      "sid": "R34.s1",
+      "text": "As a teacher, I want to receive a notification when I receive a message, so that I do not have to manually check for new messages."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "Notification",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL32",
+    "src": [
+     "R41"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R41.s1",
+      "text": "As a teacher, I want to see the progress that an individual student has made within a DLM, so that I can gain insight into their performance."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "Progress",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL33",
+    "src": [
+     "R27",
+     "R28"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a teacher, I want to directly message any student that is assigned to my class, so that I am able to have contact with any participants of my class."
+     },
+     {
+      "sid": "R28.s1",
+      "text": "As a teacher, I want to directly message any student to which I am assigned mentor, so that I can gain insight into the performance of my students."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "Student",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL34",
+    "src": [
+     "R30"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R30.s1",
+      "text": "As a teacher, I want to make submission elements, so that students can submit assignments that they have made."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Teacher",
+    "target": "SubmissionElement",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL35",
+    "src": [
+     "R47"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R47.s1",
+      "text": "As a user, I want to reset my password on request once I supply my previous password, so that I can uphold safety standards."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Password",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL36",
+    "src": [
+     "R18"
+    ],
+    "rule": [
+     "verb:submit"
+    ],
+    "evidence": [
+     {
+      "sid": "R18.s1",
+      "text": "As a teacher I want to receive a notification when a student has uploaded a submission onto the LMs, so that I do not have to manually check to see if a student has submitted work."
+     }
+    ],
+    "kind": "association",
+    "source": "Student",
+    "target": "Work",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL37",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a guardian, I want to fill in an absence of my child, so that administrative staff is aware that my child will not attend school today."
+     }
+    ],
+    "kind": "has",
+    "source": "Child",
+    "target": "Absence",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL38",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a guardian, I want to view any information related to my children, so that I can gain insight into their behavior and performance."
+     }
+    ],
+    "kind": "has",
+    "source": "Child",
+    "target": "Behavior",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL39",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a guardian, I want to directly message any teacher of my child, the mentor assigned to my child, or an administrative staff member, so that I can contact them when needed."
+     }
+    ],
+    "kind": "has",
+    "source": "Child",
+    "target": "Teacher",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL40",
+    "src": [
+     "R56"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R56.s1",
+      "text": "As an administrator, I want to register the absence of a student, teacher, or administrator, so that other users can be notified of their absence."
+     }
+    ],
+    "kind": "has",
+    "source": "Student",
+    "target": "Absence",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL41",
+    "src": [
+     "R45"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R45.s1",
+      "text": "As a teacher, I want to view the attendance, grades that are obtained this year (including behavioral marks), personal details, and disciplinary actions of (any student in my class) or (any student that I am assigned to as mentor), so that I can gain insight into their performance."
+     }
+    ],
+    "kind": "has",
+    "source": "Student",
+    "target": "Action",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL42",
+    "src": [
+     "R38"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R38.s1",
+      "text": "As a teacher, I want to record the attendance of students within my class, so that any students skipping class can be detected."
+     }
+    ],
+    "kind": "has",
+    "source": "Student",
+    "target": "Attendance",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL43",
+    "src": [
+     "R33",
+     "R36"
+    ],
+    "rule": [
+     "of_phrase",
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a teacher, I want to receive a notification when a student that I mentor is sent out of class, so that I am informed about the behavior of my students."
+     },
+     {
+      "sid": "R36.s1",
+      "text": "As a teacher, I want to record either a sufficient or insufficient a student's behavior every single academic period, so that other users can gain insight into their behavior."
+     }
+    ],
+    "kind": "has",
+    "source": "Student",
+    "target": "Behavior",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL44",
+    "src": [
+     "R28",
+     "R41",
+     "R45"
+    ],
+    "rule": [
+     "of_phrase",
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a teacher, I want to directly message any student to which I am assigned mentor, so that I can gain insight into the performance of my students."
+     },
+     {
+      "sid": "R41.s1",
+      "text": "As a teacher, I want to see the progress that an individual student has made within a DLM, so that I can gain insight into their performance."
+     },
+     {
+      "sid": "R45.s1",
+      "text": "As a teacher, I want to view the attendance, grades that are obtained this year (including behavioral marks), personal details, and disciplinary actions of (any student in my class) or (any student that I am assigned to as mentor), so that I can gain insight into their performance."
+     }
+    ],
+    "kind": "has",
+    "source": "Student",
+    "target": "Performance",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL45",
+    "src": [
+     "R59"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R59.s1",
+      "text": "As an administrator, I want to upload schedules, so that students and teachers are able to gain insight into their daily schedules."
+     }
+    ],
+    "kind": "has",
+    "source": "Student",
+    "target": "Schedule",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL46",
+    "src": [
+     "R39"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R39.s1",
+      "text": "As a teacher, I want to see the answers submitted by individual students within the corresponding DLM, so that I can gain insight into their submissions."
+     }
+    ],
+    "kind": "has",
+    "source": "Student",
+    "target": "Submission",
+    "multiplicity_target": "0..*"
+   },
+   {
+    "id": "REL47",
+    "src": [
+     "R40"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R40.s1",
+      "text": "As a teacher, I want to see the average grade that students received last year, starting when they are in their second year, so that I am able to gain insight into the class' prior performance."
+     }
+    ],
+    "kind": "has",
+    "source": "Student",
+    "target": "Year",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL48",
+    "src": [
+     "R56"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R56.s1",
+      "text": "As an administrator, I want to register the absence of a student, teacher, or administrator, so that other users can be notified of their absence."
+     }
+    ],
+    "kind": "has",
+    "source": "User",
+    "target": "Absence",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL49",
+    "src": [
+     "R36"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R36.s1",
+      "text": "As a teacher, I want to record either a sufficient or insufficient a student's behavior every single academic period, so that other users can gain insight into their behavior."
+     }
+    ],
+    "kind": "has",
+    "source": "User",
+    "target": "Behavior",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL50",
+    "src": [
+     "R37"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a teacher, I want to record grades for a student, so that they can be informed about their performance."
+     }
+    ],
+    "kind": "has",
+    "source": "User",
+    "target": "Performance",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [
+   {
+    "name": "Behavior",
+    "values": [
+     "sufficient",
+     "insufficient"
+    ]
+   }
+  ],
+  "applied_edits": {
+   "remove_classes": [
+    "AbsenceForm"
+   ],
+   "merge_classes": [
+    [
+     "Assignment",
+     "Homework"
+    ]
+   ],
+   "merge_actors": [
+    [
+     "StudentS",
+     "Student"
+    ]
+   ],
+   "enums": [
+    {
+     "name": "Behavior",
+     "values": [
+      "sufficient",
+      "insufficient"
+     ]
+    }
+   ],
+   "multiplicities": [
+    {
+     "source": "Student",
+     "target": "Submission",
+     "multiplicity": "0..*"
+    }
+   ],
+   "actor_assumptions": [
+    {
+     "use_case": "Receive Notification",
+     "actor": "Guardian"
+    }
+   ]
+  }
+ },
+ "open_tags": []
+}

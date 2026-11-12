@@ -1,0 +1,15 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Node {
+  name : String
+  +createNode()
+}
+class ConditionalNode {
+  trueConditionNode : String
+}
+class Expression {
+  name : String
+}
+ConditionalNode "1" -- "1" Node : has
+@enduml

@@ -1,0 +1,4 @@
+{
+ "plantuml": "@startuml\n\nclass Folder \n\nclass File{\nextension: String\nsize: int\n}\n\nclass FileSystemElement{\nname: String\n}\n\nFileSystemElement \"*\" --o \"1\" Folder\nFolder --|> FileSystemElement\nFile --|> FileSystemElement\n\n@enduml",
+ "scorer": "NOMAD src/eval_helpers.py evaluate_uml"
+}

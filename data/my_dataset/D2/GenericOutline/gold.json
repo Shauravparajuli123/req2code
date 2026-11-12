@@ -1,0 +1,144 @@
+{
+ "classes": [
+  {
+   "name": "LocatedElement",
+   "kind": "class"
+  },
+  {
+   "name": "Outline",
+   "kind": "class"
+  },
+  {
+   "name": "Node",
+   "kind": "class"
+  },
+  {
+   "name": "Label",
+   "kind": "class"
+  },
+  {
+   "name": "LabelSuite",
+   "kind": "class"
+  },
+  {
+   "name": "Map",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "LocatedElement": [
+   {
+    "name": "location",
+    "type": "String"
+   }
+  ],
+  "Outline": [
+   {
+    "name": "extension",
+    "type": "String"
+   }
+  ],
+  "Node": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "icon",
+    "type": "String"
+   }
+  ],
+  "Label": [
+   {
+    "name": "label",
+    "type": "String"
+   },
+   {
+    "name": "methodCall",
+    "type": "String"
+   }
+  ],
+  "LabelSuite": [
+   {
+    "name": "label",
+    "type": "String"
+   },
+   {
+    "name": "methodCall",
+    "type": "String"
+   }
+  ],
+  "Map": [
+   {
+    "name": "mapString",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "Outline",
+   "to": "LocatedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Outline",
+   "to": "Node",
+   "label": "nodes 0..*",
+   "label_to": "outline 0..1"
+  },
+  {
+   "type": "generalization",
+   "from": "Node",
+   "to": "LocatedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Node",
+   "to": "Label",
+   "label": "label 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Node",
+   "to": "Map",
+   "label": "mapping 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Label",
+   "to": "LocatedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Label",
+   "to": "LabelSuite",
+   "label": "labelSuite 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "LabelSuite",
+   "to": "LocatedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Map",
+   "to": "LocatedElement",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage Outline {\nclass LocatedElement {\n\t location : String\n}\nclass Outline {\n\t extension : String\n}\nLocatedElement <|-- Outline\nOutline \"nodes 0..*\" *-- \"outline 0..1\" Node\nclass Node {\n\t name : String\n\t icon : String\n}\nLocatedElement <|-- Node\nNode \"label 1..1\" *--> Label\nNode \"mapping 0..*\" *--> Map\nclass Label {\n\t label : String\n\t methodCall : String\n}\nLocatedElement <|-- Label\nLabel \"labelSuite 0..*\" *--> LabelSuite\nclass LabelSuite {\n\t label : String\n\t methodCall : String\n}\nLocatedElement <|-- LabelSuite\nclass Map {\n\t mapString : String\n}\nLocatedElement <|-- Map\n}\n@enduml\n"
+}

@@ -1,0 +1,212 @@
+{
+ "classes": [
+  {
+   "name": "Task",
+   "kind": "class"
+  },
+  {
+   "name": "Operator",
+   "kind": "class"
+  },
+  {
+   "name": "BinaryOperator",
+   "kind": "class"
+  },
+  {
+   "name": "UnaryOperator",
+   "kind": "class"
+  },
+  {
+   "name": "FiniteInteration",
+   "kind": "class"
+  },
+  {
+   "name": "BinaryType",
+   "kind": "enum"
+  },
+  {
+   "name": "UnaryType",
+   "kind": "enum"
+  }
+ ],
+ "attributes": {
+  "Task": [
+   {
+    "name": "id",
+    "type": "String"
+   },
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "category",
+    "type": "String"
+   },
+   {
+    "name": "frequency",
+    "type": "Integer"
+   },
+   {
+    "name": "importance",
+    "type": "Integer"
+   },
+   {
+    "name": "structurationLevel",
+    "type": "Integer"
+   },
+   {
+    "name": "complexityLevel",
+    "type": "Integer"
+   },
+   {
+    "name": "criticity",
+    "type": "Integer"
+   },
+   {
+    "name": "centrality",
+    "type": "Integer"
+   },
+   {
+    "name": "terminationValue",
+    "type": "String"
+   },
+   {
+    "name": "taskType",
+    "type": "String"
+   },
+   {
+    "name": "taskItem",
+    "type": "String"
+   }
+  ],
+  "Operator": [
+   {
+    "name": "id",
+    "type": "String"
+   },
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "BinaryOperator": [
+   {
+    "name": "type",
+    "type": "BinaryType"
+   }
+  ],
+  "UnaryOperator": [
+   {
+    "name": "UnaryType",
+    "type": "UnaryType"
+   }
+  ],
+  "FiniteInteration": [
+   {
+    "name": "interation",
+    "type": "Integer"
+   }
+  ],
+  "BinaryType": [
+   {
+    "name": "Enabling",
+    "type": "literal"
+   },
+   {
+    "name": "Disabling",
+    "type": "literal"
+   },
+   {
+    "name": "SuspendResume",
+    "type": "literal"
+   },
+   {
+    "name": "OrderIndependence",
+    "type": "literal"
+   },
+   {
+    "name": "IndependentConcurrency",
+    "type": "literal"
+   },
+   {
+    "name": "ConcurencyWithInformationPassing",
+    "type": "literal"
+   },
+   {
+    "name": "UnderterministicChoice",
+    "type": "literal"
+   },
+   {
+    "name": "EnablingWithInformationPassing",
+    "type": "literal"
+   }
+  ],
+  "UnaryType": [
+   {
+    "name": "Optional",
+    "type": "literal"
+   },
+   {
+    "name": "Iteration",
+    "type": "literal"
+   },
+   {
+    "name": "finitIteration",
+    "type": "literal"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Task",
+   "to": "Task",
+   "label": "decompositionTasks 0..*",
+   "label_to": "decomposedTask 0..1"
+  },
+  {
+   "type": "association",
+   "from": "Task",
+   "to": "BinaryOperator",
+   "label": "leftOperator 0..1",
+   "label_to": "rightTask 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Task",
+   "to": "BinaryOperator",
+   "label": "rightOperator 0..1",
+   "label_to": "leftTask 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Task",
+   "to": "UnaryOperator",
+   "label": "decoration 0..1",
+   "label_to": "decoratedTask 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "BinaryOperator",
+   "to": "Operator",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "UnaryOperator",
+   "to": "Operator",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "FiniteInteration",
+   "to": "UnaryOperator",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage TaskUsiXML {\nclass Task {\n\t id : String\n\t name : String\n\t category : String\n\t frequency : Integer\n\t importance : Integer\n\t structurationLevel : Integer\n\t complexityLevel : Integer\n\t criticity : Integer\n\t centrality : Integer\n\t terminationValue : String\n\t taskType : String\n\t taskItem : String\n}\nTask \"decompositionTasks 0..*\" *-- \"decomposedTask 0..1\" Task\nTask \"leftOperator 0..1\" -- \"rightTask 1..1\" BinaryOperator\nTask \"rightOperator 0..1\" -- \"leftTask 1..1\" BinaryOperator\nTask \"decoration 0..1\" -- \"decoratedTask 1..1\" UnaryOperator\nclass Operator {\n\t id : String\n\t name : String\n}\nclass BinaryOperator {\n\t type : BinaryType\n}\nOperator <|-- BinaryOperator\nclass UnaryOperator {\n\t UnaryType : UnaryType\n}\nOperator <|-- UnaryOperator\nclass FiniteInteration {\n\t interation : Integer\n}\nUnaryOperator <|-- FiniteInteration\nenum BinaryType {\nEnabling\nDisabling\nSuspendResume\nOrderIndependence\nIndependentConcurrency\nConcurencyWithInformationPassing\nUnderterministicChoice\nEnablingWithInformationPassing\n}\nenum UnaryType {\nOptional\nIteration\nfinitIteration\n}\n}\n@enduml\n"
+}

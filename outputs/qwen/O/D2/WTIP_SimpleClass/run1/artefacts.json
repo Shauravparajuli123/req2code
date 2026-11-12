@@ -1,0 +1,118 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineClassifier",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "PrimitiveDataType",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "TypeString",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Association",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "src"
+   ],
+   "methods": [
+    {
+     "name": "verbObject",
+     "use_case": "DefineClassifier"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R7"
+   ]
+  },
+  {
+   "name": "SimpleClass",
+   "kind": "class",
+   "attributes": [
+    "parent",
+    "association",
+    "attribute"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "PrimitiveDataType",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "TypeString",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SimpleClass",
+   "target": "Association",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4",
+    "R7"
+   ]
+  }
+ ],
+ "python": "class Classifier:\n    def __init__(self, name: str):\n        self.name = name\n\nclass PrimitiveDataType(Classifier):\n    def __init__(self, name: str):\n        super().__init__(name)\n\nclass TypeString(Classifier):\n    def __init__(self, name: str):\n        super().__init__(name)\n\nclass Association:\n    def __init__(self, name: str, src: Classifier):\n        self.name = name\n        self.src = src\n\nclass SimpleClass:\n    def __init__(self, parent: Classifier, association: Association, attribute: TypeString):\n        self.parent = parent\n        self.association = association\n        self.attribute = attribute\n\n    def verbObject(self):\n        raise NotImplementedError",
+ "java": {}
+}

@@ -1,0 +1,109 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Company {
+  name : String
+  phoneNumber : String
+  addressDetails : String
+  state : String
+  zipCode : String
+  website : String
+  companyType : String
+  taxStatus : String
+  contacts : String
+  +addContact()
+}
+class Contact {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  emailAddress : String
+  jobTitle : String
+  notes : String
+}
+class Employee {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  jobTitle : String
+  email : String
+  title : String
+  +assignTitle()
+}
+class Order {
+  customer : String
+  employee : String
+  orderStatus : String
+  shipper : String
+  taxRate : double
+  taxStatus : String
+  invoiceDate : LocalDate
+  paymentMethod : String
+  paymentDate : LocalDate
+  orderDetails : String
+  +addOrderDetail()
+}
+class OrderDetailItem {
+  product : String
+  quantity : int
+  unitPrice : double
+  discount : double
+  status : String
+  +updateStatus()
+}
+class Product {
+  code : String
+  name : String
+  description : String
+  unitCost : double
+  retailPrice : double
+  category : String
+  inventoryLevel : int
+  reorderLevel : int
+  targetLevel : int
+  minReorderQuantity : int
+  discontinued : boolean
+}
+class PurchaseOrder {
+  vendor : String
+  employeeSubmitted : String
+  employeeApproved : String
+  status : String
+  orderDate : LocalDate
+  purchaseOrderDetails : String
+  +addPurchaseOrderDetail()
+}
+class PurchaseOrderDetailItem {
+  product : String
+  quantity : int
+  unitPrice : double
+}
+class Customer {
+  name : String
+}
+class Shipper {
+  name : String
+}
+class Vendor {
+  name : String
+}
+class PhoneNumber {
+  number : String
+}
+class JobTitle {
+  title : String
+}
+class Date {
+  date : String
+}
+Company "0..*" -- "1" Contact : has
+Employee "1" -- "1" JobTitle : has
+Order "1" -- "1" Customer : is associated with
+Order "1" -- "1" Employee : is processed by
+PurchaseOrder "1" -- "1" Vendor : is associated with
+PurchaseOrder "1" -- "1" Employee : is submitted by
+Order "1..*" -- "1" OrderDetailItem : contains
+PurchaseOrder "1..*" -- "1" PurchaseOrderDetailItem : contains
+@enduml

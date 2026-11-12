@@ -1,0 +1,4 @@
+{
+ "plantuml": "@startuml\n\nclass Make{\nname: String\n}\n\nclass Model{\nname: String\n}\n\nMake \"1\" - \"*\" Model\n\nclass Car{\nnumberPlate: String\n}\n\nModel \"1\" - \"*\" Car\n\nclass Seat{\nsize: Real\n}\n\nclass Wheel{\ndiameter: Real\n}\n\nclass Engine{\npower: Real\n}\n\nSeat \"*\" --* \"1\" Car\nWheel \"4\" --* \"1\" Car\nEngine \"1\" --* \"1\" Car\n\n\n\n@enduml",
+ "scorer": "NOMAD src/eval_helpers.py evaluate_uml"
+}

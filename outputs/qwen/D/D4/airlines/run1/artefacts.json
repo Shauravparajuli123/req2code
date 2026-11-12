@@ -1,0 +1,88 @@
+{
+ "actors": [
+  "Airline",
+  "Airport"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Airline",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "operationDetails"
+   ],
+   "methods": [
+    {
+     "name": "startOperation",
+     "use_case": null
+    },
+    {
+     "name": "stopOperation",
+     "use_case": null
+    },
+    {
+     "name": "updateOperatingCost",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R4"
+   ]
+  },
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "code",
+    "city"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "OperationDetails",
+   "kind": "class",
+   "attributes": [
+    "operatingCost"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Airline",
+   "target": "OperationDetails",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "OperationDetails",
+   "target": "Airport",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "Airline",
+   "target": "Airport",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D4/airlines.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Airline:\n    \"\"\"Source: R2, R4\"\"\"\n    name: _t.Optional[str] = None\n    operationDetails: _t.Optional[str] = None\n    operationDetailses: _t.List[\"OperationDetails\"] = _dc.field(default_factory=list)\n    airports: _t.List[\"Airport\"] = _dc.field(default_factory=list)\n\n    def startOperation(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def stopOperation(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def updateOperatingCost(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Airport:\n    \"\"\"Source: R2\"\"\"\n    code: _t.Optional[str] = None\n    city: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass OperationDetails:\n    \"\"\"Source: R3, R4\"\"\"\n    operatingCost: _t.Optional[float] = None\n    airport: _t.Optional[\"Airport\"] = None\n",
+ "java": {
+  "Airline.java": "/** Generated from shared model D4/airlines. Source: R2, R4 */\npublic class Airline {\n    private java.lang.String name;\n    private java.lang.String operationDetails;\n    private java.util.List<OperationDetails> operationDetailses;\n    private java.util.List<Airport> airports;\n\n    /** Operation. */\n    public void startOperation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void stopOperation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void updateOperatingCost() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Airport.java": "/** Generated from shared model D4/airlines. Source: R2 */\npublic class Airport {\n    private java.lang.String code;\n    private java.lang.String city;\n}\n",
+  "OperationDetails.java": "/** Generated from shared model D4/airlines. Source: R3, R4 */\npublic class OperationDetails {\n    private double operatingCost;\n    private Airport airport;\n}\n"
+ }
+}

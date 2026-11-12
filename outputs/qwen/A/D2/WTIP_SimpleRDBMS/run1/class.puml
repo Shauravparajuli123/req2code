@@ -1,0 +1,17 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Table {
+  name : String
+  +addFKey()
+}
+class Column {
+  name : String
+}
+class FKey {
+  referencedTable : String
+  +referenceTable()
+}
+Table "1" -- "0..*" Column : has
+Table "1" -- "0..*" FKey : has
+@enduml

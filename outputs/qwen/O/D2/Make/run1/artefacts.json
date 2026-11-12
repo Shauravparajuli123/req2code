@@ -1,0 +1,166 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Execute Makefile",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [
+    "text"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Dependency",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "File",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Makefile",
+   "kind": "class",
+   "attributes": [
+    "file_dependencies",
+    "comment",
+    "rules"
+   ],
+   "methods": [
+    {
+     "name": "add_file_dependency",
+     "use_case": "Execute Makefile"
+    },
+    {
+     "name": "add_rule",
+     "use_case": "Execute Makefile"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    "dependencies"
+   ],
+   "methods": [
+    {
+     "name": "add_dependency",
+     "use_case": "Execute Makefile"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "RuleDep",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Makefile",
+   "target": "Element",
+   "multiplicity_target": "1",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Makefile",
+   "target": "Rule",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Rule",
+   "target": "Dependency",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "RuleDep",
+   "target": "Dependency",
+   "multiplicity_target": null,
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "File",
+   "target": "Dependency",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "class Comment:\n    def __init__(self, text):\n        self.text = text\n\nclass Dependency:\n    pass\nclass Element:\n    def __init__(self, name):\n        self.name = name\nclass File:\n    def __init__(self, name):\n        self.name = name\nclass Makefile:\n    def __init__(self):\n        self.file_dependencies = []\n        self.comment = None\n        self.rules = []\n    def add_file_dependency(self, dependency):\n        self.file_dependencies.append(dependency)\n    def add_rule(self, rule):\n        self.rules.append(rule)\nclass Rule:\n    def __init__(self):\n        self.dependencies = []\n    def add_dependency(self, dependency):\n        self.dependencies.append(dependency)\nclass RuleDep(Dependency):\n    def __init__(self, value):\n        self.value = value",
+ "java": {}
+}

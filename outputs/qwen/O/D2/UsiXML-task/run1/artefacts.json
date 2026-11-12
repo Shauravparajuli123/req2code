@@ -1,0 +1,120 @@
+{
+ "actors": [
+  "operator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "TaskNode",
+   "kind": "class",
+   "attributes": [
+    "identifier",
+    "category",
+    "task_type",
+    "importance",
+    "complexity_level",
+    "centrality"
+   ],
+   "methods": [
+    {
+     "name": "TaskNode",
+     "use_case": null
+    },
+    {
+     "name": "get_identifier",
+     "use_case": null
+    },
+    {
+     "name": "set_identifier",
+     "use_case": null
+    },
+    {
+     "name": "get_category",
+     "use_case": null
+    },
+    {
+     "name": "set_category",
+     "use_case": null
+    },
+    {
+     "name": "get_task_type",
+     "use_case": null
+    },
+    {
+     "name": "set_task_type",
+     "use_case": null
+    },
+    {
+     "name": "get_importance",
+     "use_case": null
+    },
+    {
+     "name": "set_importance",
+     "use_case": null
+    },
+    {
+     "name": "get_complexity_level",
+     "use_case": null
+    },
+    {
+     "name": "set_complexity_level",
+     "use_case": null
+    },
+    {
+     "name": "get_centrality",
+     "use_case": null
+    },
+    {
+     "name": "set_centrality",
+     "use_case": null
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Operator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "Operator",
+     "use_case": null
+    },
+    {
+     "name": "apply",
+     "use_case": null
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Operator",
+   "target": "TaskNode",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "python": "class TaskNode:\n    def __init__(self, identifier, category, task_type, importance, complexity_level, centrality):\n        self.identifier = identifier\n        self.category = category\n        self.task_type = task_type\n        self.importance = importance\n        self.complexity_level = complexity_level\n        self.centrality = centrality\n\n    def get_identifier(self):\n        pass\n\n    def set_identifier(self, identifier):\n        pass\n\n    def get_category(self):\n        pass\n\n    def set_category(self, category):\n        pass\n\n    def get_task_type(self):\n        pass\n\n    def set_task_type(self, task_type):\n        pass\n\n    def get_importance(self):\n        pass\n\n    def set_importance(self, importance):\n        pass\n\n    def get_complexity_level(self):\n        pass\n\n    def set_complexity_level(self, complexity_level):\n        pass\n\n    def get_centrality(self):\n        pass\n\n    def set_centrality(self, centrality):\n        pass\n\n\nclass Operator:\n    def __init__(self):\n        pass\n\n    def apply(self):\n        raise NotImplementedError",
+ "java": {}
+}

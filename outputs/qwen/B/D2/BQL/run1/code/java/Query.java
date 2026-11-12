@@ -1,0 +1,5 @@
+/** Generated from shared model D2/BQL. Source: R7 */
+public class Query {
+    private java.lang.String entries;
+    private java.util.List<Predicate> predicates;
+}

@@ -1,0 +1,178 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Car",
+   "kind": "class",
+   "attributes": [
+    "numberPlate"
+   ],
+   "methods": [
+    {
+     "name": "createCar",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Make",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createMake",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R4"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createModel",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R4"
+   ]
+  },
+  {
+   "name": "Engine",
+   "kind": "class",
+   "attributes": [
+    "power"
+   ],
+   "methods": [
+    {
+     "name": "createEngine",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Seat",
+   "kind": "class",
+   "attributes": [
+    "size"
+   ],
+   "methods": [
+    {
+     "name": "createSeat",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Wheel",
+   "kind": "class",
+   "attributes": [
+    "diameter"
+   ],
+   "methods": [
+    {
+     "name": "createWheel",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Car",
+   "target": "Engine",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "Car",
+   "target": "Seat",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "Car",
+   "target": "Wheel",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "Model",
+   "target": "Make",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "source": "Make",
+   "target": "Model",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "source": "Model",
+   "target": "Car",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "Car",
+   "target": "Wheel",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "Car",
+   "target": "Seat",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "Model",
+   "target": "Make",
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D4/car.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Car:\n    \"\"\"Source: R1\"\"\"\n    numberPlate: _t.Optional[str] = None\n    engine: _t.Optional[\"Engine\"] = None\n    seats: _t.List[\"Seat\"] = _dc.field(default_factory=list)\n    wheels: _t.List[\"Wheel\"] = _dc.field(default_factory=list)\n    wheel: _t.Optional[\"Wheel\"] = None\n\n    def createCar(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Make:\n    \"\"\"Source: R2, R4\"\"\"\n    name: _t.Optional[str] = None\n    model: _t.Optional[\"Model\"] = None\n\n    def createMake(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Model(Make):\n    \"\"\"Source: R2, R4\"\"\"\n    name: _t.Optional[str] = None\n    make: _t.Optional[\"Make\"] = None\n    car: _t.Optional[\"Car\"] = None\n\n    def createModel(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Engine:\n    \"\"\"Source: R6\"\"\"\n    power: _t.Optional[int] = None\n\n    def createEngine(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Seat:\n    \"\"\"Source: R7\"\"\"\n    size: _t.Optional[int] = None\n\n    def createSeat(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Wheel:\n    \"\"\"Source: R5\"\"\"\n    diameter: _t.Optional[int] = None\n\n    def createWheel(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Car.java": "/** Generated from shared model D4/car. Source: R1 */\npublic class Car {\n    private java.lang.String numberPlate;\n    private Engine engine;\n    private java.util.List<Seat> seats;\n    private java.util.List<Wheel> wheels;\n    private Wheel wheel;\n\n    /** Operation. */\n    public void createCar() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Make.java": "/** Generated from shared model D4/car. Source: R2, R4 */\npublic class Make {\n    private java.lang.String name;\n    private Model model;\n\n    /** Operation. */\n    public void createMake() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Model.java": "/** Generated from shared model D4/car. Source: R2, R4 */\npublic class Model extends Make {\n    private java.lang.String name;\n    private Make make;\n    private Car car;\n\n    /** Operation. */\n    public void createModel() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Engine.java": "/** Generated from shared model D4/car. Source: R6 */\npublic class Engine {\n    private int power;\n\n    /** Operation. */\n    public void createEngine() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Seat.java": "/** Generated from shared model D4/car. Source: R7 */\npublic class Seat {\n    private int size;\n\n    /** Operation. */\n    public void createSeat() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Wheel.java": "/** Generated from shared model D4/car. Source: R5 */\npublic class Wheel {\n    private int diameter;\n\n    /** Operation. */\n    public void createWheel() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

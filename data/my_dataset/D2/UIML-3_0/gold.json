@@ -1,0 +1,68 @@
+{
+ "classes": [
+  {
+   "name": "UIML",
+   "kind": "class"
+  },
+  {
+   "name": "Header",
+   "kind": "class"
+  },
+  {
+   "name": "MetaData",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "UIML": [],
+  "Header": [],
+  "MetaData": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "content",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "UIML",
+   "to": "Header",
+   "label": "head 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "UIML",
+   "to": "Template",
+   "label": "templates 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "UIML",
+   "to": "Interface",
+   "label": "interfaces 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "UIML",
+   "to": "Peer",
+   "label": "peers 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Header",
+   "to": "MetaData",
+   "label": "metas 0..*",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage UIML {\nclass UIML {\n}\nUIML \"head 0..1\" *--> Header\nUIML \"templates 0..*\" *--> Template\nUIML \"interfaces 0..*\" *--> Interface\nUIML \"peers 0..*\" *--> Peer\nclass Header {\n}\nHeader \"metas 0..*\" *--> MetaData\nclass MetaData {\n\t name : String\n\t content : String\n}\n}\n@enduml\n"
+}

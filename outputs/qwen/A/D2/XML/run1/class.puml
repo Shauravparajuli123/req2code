@@ -1,0 +1,19 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Node {
+  name : String
+  startLine : int
+  endLine : int
+}
+class Element {
+  +addChild()
+}
+class AttributeNode {
+  name : String
+  +createAttributeNode()
+}
+Element "1" -- "0..*" Node : contains
+Element "0..*" o-- "0..*" AttributeNode : has
+Element "1" o-- "1..*" Node : contains
+@enduml

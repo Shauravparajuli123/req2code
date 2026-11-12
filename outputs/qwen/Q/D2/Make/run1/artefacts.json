@@ -1,0 +1,148 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "CreateMakefile",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Makefile",
+   "kind": "class",
+   "attributes": [
+    "fileDependencies",
+    "comment"
+   ],
+   "methods": [
+    {
+     "name": "addFileDependency",
+     "use_case": "CreateMakefile"
+    },
+    {
+     "name": "addRule",
+     "use_case": "CreateMakefile"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    "dependencies"
+   ],
+   "methods": [
+    {
+     "name": "addDependency",
+     "use_case": "CreateMakefile"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "name": "RuleDep",
+   "kind": "class",
+   "attributes": [
+    "targetRule"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R13"
+   ]
+  },
+  {
+   "name": "Dependency",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R7"
+   ]
+  },
+  {
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [
+    "text"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "Dependency",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "Comment",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "Rule",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Rule",
+   "target": "RuleDep",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "RuleDep",
+   "target": "Dependency",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R13"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Dependency:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Comment:\n    def __init__(self, text: str):\n        self.text = text\n\nclass RuleDep:\n    def __init__(self, targetRule: Rule):\n        self.targetRule = targetRule\n\nclass Rule:\n    def __init__(self):\n        self.dependencies: List[RuleDep] = []\n    def addDependency(self, dep: RuleDep) -> None:\n        raise NotImplementedError\n\nclass Makefile:\n    def __init__(self):\n        self.fileDependencies: List[Dependency] = []\n        self.comment: Optional[Comment] = None\n    def addFileDependency(self, dep: Dependency) -> None:\n        raise NotImplementedError\n    def addRule(self, rule: Rule) -> None:\n        raise NotImplementedError",
+ "java": {}
+}

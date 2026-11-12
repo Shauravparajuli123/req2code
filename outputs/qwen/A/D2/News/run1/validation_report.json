@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The 'News' class in the model is assumed to have an attribute 'author' of type 'String' as stated in Requirement R3."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R4: A category has a value is not represented in the model.",
+   "fix": "Add a class named 'Category' with an attribute 'value'."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R5: News have dates. Each date contains the day of the week, the month, the hours and the seconds is not fully represented in the model. The model only includes the date attribute.",
+   "fix": "Add a 'Date' class with attributes for day of the week, month, hours, and seconds to the 'News' class."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Requirement R6: A newspaper is published on a specific date is not represented in the model.",
+   "fix": "Add a use case 'Publish' to the 'Newspaper' class."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R7: A newspaper reports many news is not represented in the model.",
+   "fix": "Add a relationship 'reports' from 'Newspaper' to 'News' with a multiplicity of 1..*."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R9: News are related to one Newspaper and a newspaper can only include one instance of news is not represented in the model.",
+   "fix": "Correct the relationship from 'Newspaper' to 'News' to be a composition with a multiplicity of 1..1."
+  }
+ ]
+}

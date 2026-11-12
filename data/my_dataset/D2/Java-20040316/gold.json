@@ -1,0 +1,177 @@
+{
+ "classes": [
+  {
+   "name": "JavaElement",
+   "kind": "class"
+  },
+  {
+   "name": "ClassFeature",
+   "kind": "class"
+  },
+  {
+   "name": "ClassMember",
+   "kind": "class"
+  },
+  {
+   "name": "Field",
+   "kind": "class"
+  },
+  {
+   "name": "JavaClass",
+   "kind": "class"
+  },
+  {
+   "name": "Method",
+   "kind": "class"
+  },
+  {
+   "name": "Package",
+   "kind": "class"
+  },
+  {
+   "name": "PrimitiveType",
+   "kind": "class"
+  },
+  {
+   "name": "FeatureParameter",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "JavaElement": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "ClassFeature": [
+   {
+    "name": "isFinal",
+    "type": "Boolean"
+   }
+  ],
+  "ClassMember": [
+   {
+    "name": "isStatic",
+    "type": "Boolean"
+   },
+   {
+    "name": "isPublic",
+    "type": "Boolean"
+   }
+  ],
+  "Field": [],
+  "JavaClass": [
+   {
+    "name": "isAbstract",
+    "type": "Boolean"
+   },
+   {
+    "name": "isStatic",
+    "type": "Boolean"
+   },
+   {
+    "name": "isPublic",
+    "type": "Boolean"
+   }
+  ],
+  "Method": [],
+  "Package": [],
+  "PrimitiveType": [],
+  "FeatureParameter": []
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "ClassFeature",
+   "to": "JavaElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ClassMember",
+   "to": "ClassFeature",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "ClassMember",
+   "to": "JavaClass",
+   "label": "owner 1..1",
+   "label_to": "members 0..*"
+  },
+  {
+   "type": "association",
+   "from": "ClassMember",
+   "to": "JavaClass",
+   "label": "type 1..1",
+   "label_to": "typedElements 0..*"
+  },
+  {
+   "type": "generalization",
+   "from": "Field",
+   "to": "ClassMember",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "JavaClass",
+   "to": "ClassFeature",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "JavaClass",
+   "to": "Package",
+   "label": "package 1..1",
+   "label_to": "classes 0..*"
+  },
+  {
+   "type": "association",
+   "from": "JavaClass",
+   "to": "FeatureParameter",
+   "label": "parameters 0..*",
+   "label_to": "type 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "Method",
+   "to": "ClassMember",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Method",
+   "to": "FeatureParameter",
+   "label": "parameters 0..*",
+   "label_to": "method 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "Package",
+   "to": "JavaElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "PrimitiveType",
+   "to": "JavaClass",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "FeatureParameter",
+   "to": "ClassFeature",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage JAVA {\nclass JavaElement {\n\t name : String\n}\nclass ClassFeature {\n\t isFinal : Boolean\n}\nJavaElement <|-- ClassFeature\nclass ClassMember {\n\t isStatic : Boolean\n\t isPublic : Boolean\n}\nClassFeature <|-- ClassMember\nClassMember \"owner 1..1\" --* \"members 0..*\" JavaClass\nClassMember \"type 1..1\" -- \"typedElements 0..*\" JavaClass\nclass Field {\n}\nClassMember <|-- Field\nclass JavaClass {\n\t isAbstract : Boolean\n\t isStatic : Boolean\n\t isPublic : Boolean\n}\nClassFeature <|-- JavaClass\nJavaClass \"package 1..1\" --* \"classes 0..*\" Package\nJavaClass \"parameters 0..*\" -- \"type 1..1\" FeatureParameter\nclass Method {\n}\nClassMember <|-- Method\nMethod \"parameters 0..*\" *-- \"method 1..1\" FeatureParameter\nclass Package {\n}\nJavaElement <|-- Package\nclass PrimitiveType {\n}\nJavaClass <|-- PrimitiveType\nclass FeatureParameter {\n}\nClassFeature <|-- FeatureParameter\n}\n@enduml\n"
+}

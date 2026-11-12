@@ -1,0 +1,105 @@
+<html><head><meta charset='utf-8'><title>D2/CDE</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D2/CDE &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: The class IUmlType tries to represent the different types of uml elements.
+R2: Class ICdeComponentSpec represents a subtype of IUmlType
+R3: Class IUmlClass is a subclass of IUmlType
+R4: IUmlComponent is a subtype of IUmlClass
+R5: A class named ICdeServer
+R6: A class named ICdeComponent
+R7: A class named IUmlMember
+R8: A class named ICdeMember in the CDE package.
+R9: The ICdeMemberExe of a CDE has two attributes: a String named executionPerformance and another String called executionDetails.
+R10: The overall model seems to describe the structure of UML types (classes or components), and the fragment represents the fact that each type has a bunch of members (attributes/functions)
+R11: In this model, class ICdeServer implements zero or more ICdeComponent</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (1 → 1)</th></tr><tr><td class="">member</td></tr></table></div>
+<div><table><tr><th>classes (10 → 10)</th></tr><tr><td class="">IcdeComponent</td></tr><tr><td class="">IcdeMember</td></tr><tr><td class="">IcdeServer</td></tr><tr><td class="">IumlComponent</td></tr><tr><td class="">IumlMember</td></tr><tr><td class="">IumlType</td></tr><tr><td class="">Iumlclass</td></tr><tr><td class="">Member</td></tr><tr><td class="">Subclass</td></tr><tr><td class="">Subtype</td></tr></table></div>
+<div><table><tr><th>attributes (1 → 1)</th></tr><tr><td class="">Member.bunch</td></tr></table></div>
+<div><table><tr><th>relations (5 → 5)</th></tr><tr><td class="">generalization: ClassIumlClass -&gt; Subclass</td></tr><tr><td class="">generalization: IumlComponent -&gt; Iumlclass</td></tr><tr><td class="">has: IumlType -&gt; Subclass</td></tr><tr><td class="">has: IumlType -&gt; Subtype</td></tr><tr><td class="">has: Iumlclass -&gt; Subtype</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R10</td><td>coordination</td><td>and+or</td><td><span class='tag resolved'>resolved</span></td><td>The model describes UML types and their members.; The fragment represents the fact that each type has members.<br><i>The sentence suggests both a description of UML types and their members, which could be interpreted in two ways.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D2_CDE_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D2_CDE_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D2/CDE.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class IumlType:
+    &quot;&quot;&quot;Source: R1&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class IumlClass(IumlType):
+    &quot;&quot;&quot;Source: R3&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class IumlComponent(IumlClass):
+    &quot;&quot;&quot;Source: R4&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class ICdeServer:
+    &quot;&quot;&quot;Source: R5&quot;&quot;&quot;
+    iCdeComponent: _t.Optional[&quot;ICdeComponent&quot;] = None
+
+
+@_dc.dataclass
+class ICdeComponent:
+    &quot;&quot;&quot;Source: R6&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class ICdeMember:
+    &quot;&quot;&quot;Source: R8&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class ICdeMemberExe:
+    &quot;&quot;&quot;Source: -&quot;&quot;&quot;
+    executionPerformance: _t.Optional[str] = None
+    executionDetails: _t.Optional[str] = None
+    iCdeMember: _t.Optional[&quot;ICdeMember&quot;] = None
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>0</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>0</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>0</td></tr>
+<tr><th>inconsistency_rate</th><td>0.0</td></tr>
+<tr><th>requirement_coverage</th><td>0.6364</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>1.0</td><td>0.778</td><td>0.875</td><td>7/0/2</td></tr>
+<tr><td>attributes</td><td>1.0</td><td>0.667</td><td>0.8</td><td>2/0/1</td></tr>
+<tr><td>relations</td><td>0.75</td><td>0.375</td><td>0.5</td><td>3/1/5</td></tr>
+<tr><td>relations_strict</td><td>0.25</td><td>0.125</td><td>0.167</td><td>1/3/7</td></tr>
+</table></body></html>

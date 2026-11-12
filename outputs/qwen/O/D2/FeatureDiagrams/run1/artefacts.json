@@ -1,0 +1,52 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "reference"
+   ],
+   "methods": [
+    {
+     "name": "verbObject",
+     "use_case": "Verb Object"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "name",
+    "key"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Node",
+   "target": "Attribute",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "class Node:\n    def __init__(self, description, reference):\n        self.description = description\n        self.reference = reference\n\nclass Attribute:\n    def __init__(self, description, name, key):\n        self.description = description\n        self.name = name\n        self.key = key\n\n# Example usage\nnode = Node('description', Attribute('attr description', 'attr name', True))\n",
+ "java": {}
+}

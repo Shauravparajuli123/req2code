@@ -1,0 +1,278 @@
+{
+ "condition": "O",
+ "hint": {
+  "case": "D2/useCase",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R1",
+     "R13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "use case diagrams have actors"
+     },
+     {
+      "sid": "R13.s1",
+      "text": "Use case diagrams have associations, each one could be linked to an actor"
+     }
+    ],
+    "name": "Actor",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R8",
+     "R13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "Use case diagrams have associations"
+     },
+     {
+      "sid": "R13.s1",
+      "text": "Use case diagrams have associations, each one could be linked to an actor"
+     }
+    ],
+    "name": "Association",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R5",
+     "R12"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "Use case diagrams have use case containers"
+     },
+     {
+      "sid": "R12.s1",
+      "text": "Use case diagrams have use case containers."
+     }
+    ],
+    "name": "CaseContainer",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "Use case diagrams have extends."
+     },
+     {
+      "sid": "R10.s2",
+      "text": "Each extend extends one or more use cases"
+     }
+    ],
+    "name": "Extend",
+    "freq": 2
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R9",
+     "R10",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "Use cases are composed by includes"
+     },
+     {
+      "sid": "R10.s2",
+      "text": "Each extend extends one or more use cases"
+     },
+     {
+      "sid": "R11.s1",
+      "text": "Use case diagrams have includes. each include includes one or more use cases"
+     }
+    ],
+    "name": "UseCase",
+    "freq": 3
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R10",
+     "R11",
+     "R12",
+     "R13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "use case diagrams have actors"
+     },
+     {
+      "sid": "R2.s1",
+      "text": "use case diagrams have use cases"
+     },
+     {
+      "sid": "R3.s1",
+      "text": "Use case diagrams have extends"
+     }
+    ],
+    "name": "UseCaseDiagram",
+    "freq": 12
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Use case diagrams have name elements, which have a name"
+     }
+    ],
+    "owner": "UseCaseDiagram",
+    "name": "name element",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "verb:extend"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s2",
+      "text": "Each extend extends one or more use cases"
+     }
+    ],
+    "kind": "association",
+    "source": "Extend",
+    "target": "UseCase",
+    "multiplicity_target": "one or more"
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "verb:use"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "Use case diagrams have use case containers"
+     }
+    ],
+    "kind": "association",
+    "source": "UseCaseDiagram",
+    "target": "CaseContainer",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "use case diagrams have actors"
+     }
+    ],
+    "kind": "has",
+    "source": "UseCaseDiagram",
+    "target": "Actor",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R8",
+     "R13"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "Use case diagrams have associations"
+     },
+     {
+      "sid": "R13.s1",
+      "text": "Use case diagrams have associations, each one could be linked to an actor"
+     }
+    ],
+    "kind": "has",
+    "source": "UseCaseDiagram",
+    "target": "Association",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": [
+  "R10 (quantifier, \"one or more\"): readings ['Each extend extends exactly one use case', 'Each extend extends one or more use cases']",
+  "R11 (quantifier, \"one or more\"): readings ['Each include in a use case diagram includes exactly one use case', 'Each include in a use case diagram includes one or more use cases']",
+  "R12 (quantifier, \"zero or more\"): readings ['Each container is owned by exactly one named element', 'Each container is owned by zero or more named elements']"
+ ]
+}

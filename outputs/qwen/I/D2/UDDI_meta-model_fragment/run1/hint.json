@@ -1,0 +1,273 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D2/UDDI_meta-model_fragment",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R3",
+     "R4",
+     "R8",
+     "R9"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "This is one of the 0 or many services provided by a business entity."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "This class describes a business entity."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "a business entity may have business contacts"
+     }
+    ],
+    "name": "BusinessEntity",
+    "freq": 4
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "This is contact of a business modelled using the given meta-model."
+     }
+    ],
+    "name": "Contact",
+    "freq": 1
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R2",
+     "R6",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "This is contact of a business modelled using the given meta-model."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A generic, abstract model."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "This class describes a model, which can contain 0 or many overview documents."
+     }
+    ],
+    "name": "Model",
+    "freq": 3
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R7",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "An overview document."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "This class describes a model, which can contain 0 or many overview documents."
+     }
+    ],
+    "name": "OverviewDocument",
+    "freq": 2
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A PIF model contains Business templates"
+     }
+    ],
+    "name": "PifModel",
+    "freq": 1
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "a business entity may have business contacts"
+     }
+    ],
+    "owner": "BusinessEntity",
+    "name": "business contact",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A PIF model contains Business templates"
+     }
+    ],
+    "owner": "PifModel",
+    "name": "business template",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "verb:describe"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "This class describes a business entity."
+     }
+    ],
+    "kind": "association",
+    "source": "Class",
+    "target": "BusinessEntity",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "verb:describe"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "This class describes a model, which can contain 0 or many overview documents."
+     }
+    ],
+    "kind": "association",
+    "source": "Class",
+    "target": "Model",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "is_a"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "This class is a utility class used to store identifiers, presumably Strings."
+     }
+    ],
+    "kind": "generalization",
+    "source": "Class",
+    "target": "UtilityClass",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "is_a"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "This is contact of a business modelled using the given meta-model."
+     }
+    ],
+    "kind": "generalization",
+    "source": "PifModel",
+    "target": "Contact",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "This class describes a model, which can contain 0 or many overview documents."
+     }
+    ],
+    "kind": "has",
+    "source": "Model",
+    "target": "OverviewDocument",
+    "multiplicity_target": "0 or many"
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "BusinessEntity",
+     "target": "Service",
+     "multiplicity": "1..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

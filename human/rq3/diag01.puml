@@ -1,0 +1,23 @@
+@startuml
+class TemplateExp {
+}
+class CollectionTemplateExpression {
+  kind
+  ocl_expressions
+}
+class ObjectTemplateExpression {
+  property_template_items
+}
+class OclExpression {
+}
+class Property {
+}
+class PropertyTemplateItem {
+  object_container
+  referred_property
+}
+CollectionTemplateExpression -- OclExpression
+ObjectTemplateExpression -- PropertyTemplateItem
+PropertyTemplateItem -- ObjectTemplateExpression
+PropertyTemplateItem -- Property
+@enduml

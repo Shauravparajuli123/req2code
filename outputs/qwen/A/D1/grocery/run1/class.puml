@@ -1,0 +1,69 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Employee {
+  name : String
+  email : String
+  preferredWorkingHours : String
+  contract : String
+  certificates : String
+  personalInformation : String
+  paymentFrequency : String
+  +receiveSalaryStatement()
+  +receiveNotification()
+  +expressPreferredWorkingHours()
+  +viewFinancialStatements()
+  +updatePersonalInformation()
+  +viewContract()
+  +viewPersonalInbox()
+  +chooseNotifications()
+  +choosePaymentFrequency()
+  +viewSchedule()
+}
+class Manager {
+  name : String
+  password : String
+  +sendSalaryStatements()
+  +enablePaymentOptions()
+  +automatePaymentSystem()
+  +outsourcePaymentProcess()
+  +semiAutomateSchedulingProcess()
+  +manuallyEditSchedule()
+  +manuallyAuthorizeSchedule()
+  +beNotifiedOfManualAdjustments()
+  +viewSchedule()
+  +viewEmployeeOverview()
+  +viewEmployeeContracts()
+  +viewEmployeeCertificates()
+  +contactManagement()
+  +contactEmployee()
+  +forwardMessages()
+  +viewPersonalInbox()
+  +singleLogin()
+}
+class Complaint {
+  title : String
+  description : String
+  status : String
+  priority : String
+  +fileComplaint()
+  +respondToUnsolvedComplaints()
+  +viewComplaints()
+}
+class Application {
+  name : String
+  login : String
+  +registerAccount()
+  +viewComplaints()
+  +viewPersonalInbox()
+  +chooseNotifications()
+  +choosePaymentFrequency()
+  +viewFinancialStatements()
+  +viewSchedule()
+}
+Manager "1" -- "1..*" Employee : manages
+Employee "0..*" -- "1" Complaint : files
+Manager "1" -- "1..*" Complaint : views
+Manager "1" -- "1" Application : uses
+Employee "1" -- "1" Application : uses
+@enduml

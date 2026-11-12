@@ -1,0 +1,137 @@
+{
+ "classes": [
+  {
+   "name": "RModelElement",
+   "kind": "class"
+  },
+  {
+   "name": "Schema",
+   "kind": "class"
+  },
+  {
+   "name": "Table",
+   "kind": "class"
+  },
+  {
+   "name": "Column",
+   "kind": "class"
+  },
+  {
+   "name": "Key",
+   "kind": "class"
+  },
+  {
+   "name": "ForeignKey",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "RModelElement": [
+   {
+    "name": "kind",
+    "type": "String"
+   },
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Schema": [],
+  "Table": [],
+  "Column": [
+   {
+    "name": "type",
+    "type": "String"
+   }
+  ],
+  "Key": [],
+  "ForeignKey": []
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "Schema",
+   "to": "RModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Schema",
+   "to": "Table",
+   "label": "tables 0..*",
+   "label_to": "schema 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "Table",
+   "to": "RModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Table",
+   "to": "Column",
+   "label": "column 0..*",
+   "label_to": "owner 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Table",
+   "to": "Key",
+   "label": "key 0..*",
+   "label_to": "owner 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Table",
+   "to": "ForeignKey",
+   "label": "foreignKey 0..*",
+   "label_to": "owner 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "Column",
+   "to": "RModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Column",
+   "to": "Key",
+   "label": "key 0..*",
+   "label_to": "column 0..*"
+  },
+  {
+   "type": "association",
+   "from": "Column",
+   "to": "ForeignKey",
+   "label": "foreignKey 0..*",
+   "label_to": "column 0..*"
+  },
+  {
+   "type": "generalization",
+   "from": "Key",
+   "to": "RModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Key",
+   "to": "ForeignKey",
+   "label": "refersToOpposite 0..*",
+   "label_to": "refersTo 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "ForeignKey",
+   "to": "RModelElement",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage SimpleRDBMS {\nclass RModelElement {\n\t kind : String\n\t name : String\n}\nclass Schema {\n}\nRModelElement <|-- Schema\nSchema \"tables 0..*\" *-- \"schema 1..1\" Table\nclass Table {\n}\nRModelElement <|-- Table\nTable \"column 0..*\" *-- \"owner 1..1\" Column\nTable \"key 0..*\" *-- \"owner 1..1\" Key\nTable \"foreignKey 0..*\" *-- \"owner 1..1\" ForeignKey\nclass Column {\n\t type : String\n}\nRModelElement <|-- Column\nColumn \"key 0..*\" -- \"column 0..*\" Key\nColumn \"foreignKey 0..*\" -- \"column 0..*\" ForeignKey\nclass Key {\n}\nRModelElement <|-- Key\nKey \"refersToOpposite 0..*\" -- \"refersTo 1..1\" ForeignKey\nclass ForeignKey {\n}\nRModelElement <|-- ForeignKey\n}\n@enduml\n"
+}

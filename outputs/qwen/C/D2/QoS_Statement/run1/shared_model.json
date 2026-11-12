@@ -1,0 +1,147 @@
+{
+ "case": "D2/QoS_Statement",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "qosConstraint",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createSingleQoSStatement",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "qosStatements",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "createCompoundQoSStatement",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "QoSConstraint",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "qualificationKind",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "createQoSConstraint",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [
+    "NAME____QUALIFICATIONKIND____LITERALS_____LITERAL1____LITERAL2____LITERAL3"
+   ],
+   "src": [
+    "R5",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is composed of",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "generalization",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is a",
+   "src": [
+    "R7",
+    "R10"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "CompoundQoSStatement is assumed to be a class that can contain other QoSStatements, as it is a subclass of QoSStatement."
+  }
+ ],
+ "open_tags": []
+}

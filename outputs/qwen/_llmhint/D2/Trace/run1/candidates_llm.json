@@ -1,0 +1,93 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Trace",
+   "src": [
+    "R1",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Level",
+   "src": [
+    "R2",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Call",
+   "src": [
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "Index",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Trace",
+   "name": "name",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Call",
+   "name": "method_name",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Call",
+   "name": "database_rows",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Index",
+   "name": "value",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Trace",
+   "target": "Level",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Level",
+   "target": "Trace",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Call",
+   "target": "Level",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

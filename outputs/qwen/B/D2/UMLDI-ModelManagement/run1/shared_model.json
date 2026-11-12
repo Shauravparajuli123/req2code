@@ -1,0 +1,359 @@
+{
+ "case": "D2/UMLDI-ModelManagement",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Owner",
+   "src": []
+  },
+  {
+   "id": "A2",
+   "name": "Parent",
+   "src": []
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "CoreModel",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "isSpecification",
+     "type": "boolean",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R5",
+    "R11"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "isRoot",
+     "type": "boolean",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "isAbstract",
+     "type": "boolean",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "generalizations",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createElement",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Namespace",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "powerTypeRanges",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "createClassifier",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Feature",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "ownerScope",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "createFeature",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Generalization",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "discriminator",
+     "type": "boolean",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "parent",
+     "type": "String",
+     "src": [
+      "R14"
+     ]
+    },
+    {
+     "name": "child",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "createGeneralization",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R14",
+    "R15"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "GeneralizableElement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "isRoot",
+     "type": "boolean",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "isAbstract",
+     "type": "boolean",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "generalizations",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "createGeneralizableElement",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10",
+    "R15"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R2",
+    "R11"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R12",
+    "R14"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R4",
+    "R11"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "R2 (coordination, \"and+or\"): readings",
+   "assumption": "Assuming the second reading: Each model element contains a name and a boolean value that states whether the model element is a specification, and a boolean value that states whether the model element is a core model"
+  },
+  {
+   "tag": "R3 (referential, \"it\"): readings",
+   "assumption": "Assuming the second reading: In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract, and a boolean value that states whether the element is a core model"
+  },
+  {
+   "tag": "R3 (coordination, \"modifier scope: root (relative clause)\"): readings",
+   "assumption": "Assuming the second reading: In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract, and a boolean value that states whether the element is a core model"
+  },
+  {
+   "tag": "R10 (quantifier, \"zero or many\"): readings",
+   "assumption": "Assuming the first reading: Each element is linked to zero or many generalizations"
+  }
+ ],
+ "open_tags": [
+  "R2 (coordination, \"and+or\"): readings ['Each model element contains a name and a boolean value that states whether or not the model element is a specification.', 'Each model element contains a name and a boolean value that states whether or not the model element is a specification, and a boolean value that states whether or not the model element is a core model.']",
+  "R3 (referential, \"it\"): readings ['In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract.', 'In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract, and a boolean value that states whether the element is a core model.']",
+  "R3 (coordination, \"modifier scope: root (relative clause)\"): readings ['In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract.', 'In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract, and a boolean value that states whether the element is a core model.']",
+  "R10 (quantifier, \"zero or many\"): readings ['Each element is linked to zero or many generalizations.', 'Each element is linked to one or more generalizations.']"
+ ]
+}

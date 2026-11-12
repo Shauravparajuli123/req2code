@@ -1,0 +1,123 @@
+{
+ "classes": [
+  {
+   "name": "IUmlType",
+   "kind": "class"
+  },
+  {
+   "name": "ICdeComponentSpec",
+   "kind": "class"
+  },
+  {
+   "name": "IUmlClass",
+   "kind": "class"
+  },
+  {
+   "name": "IUmlComponent",
+   "kind": "class"
+  },
+  {
+   "name": "ICdeServer",
+   "kind": "class"
+  },
+  {
+   "name": "ICdeComponent",
+   "kind": "class"
+  },
+  {
+   "name": "IUmlMember",
+   "kind": "class"
+  },
+  {
+   "name": "ICdeMember",
+   "kind": "class"
+  },
+  {
+   "name": "ICdeMemberExe",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "IUmlType": [],
+  "ICdeComponentSpec": [],
+  "IUmlClass": [],
+  "IUmlComponent": [],
+  "ICdeServer": [],
+  "ICdeComponent": [],
+  "IUmlMember": [],
+  "ICdeMember": [],
+  "ICdeMemberExe": [
+   {
+    "name": "executionPerformance",
+    "type": "String"
+   },
+   {
+    "name": "resourceNeeded",
+    "type": "String"
+   },
+   {
+    "name": "executionDetails",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "association",
+   "from": "IUmlType",
+   "to": "IUmlMember",
+   "label": "members 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ICdeComponentSpec",
+   "to": "IUmlType",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "IUmlClass",
+   "to": "IUmlType",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "IUmlComponent",
+   "to": "IUmlClass",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ICdeServer",
+   "to": "IUmlComponent",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "ICdeServer",
+   "to": "ICdeComponent",
+   "label": "implements 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ICdeComponent",
+   "to": "IUmlComponent",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ICdeMember",
+   "to": "IUmlMember",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage CDE {\nclass IUmlType {\n}\nIUmlType \"members 0..*\" --> IUmlMember\nclass ICdeComponentSpec {\n}\nIUmlType <|-- ICdeComponentSpec\nclass IUmlClass {\n}\nIUmlType <|-- IUmlClass\nclass IUmlComponent {\n}\nIUmlClass <|-- IUmlComponent\nclass ICdeServer {\n}\nIUmlComponent <|-- ICdeServer\nICdeServer \"implements 0..*\" --> ICdeComponent\nclass ICdeComponent {\n}\nIUmlComponent <|-- ICdeComponent\nclass IUmlMember {\n}\nclass ICdeMember {\n}\nIUmlMember <|-- ICdeMember\nclass ICdeMemberExe {\n\t executionPerformance : String\n\t resourceNeeded : String\n\t executionDetails : String\n}\n}\n@enduml\n"
+}

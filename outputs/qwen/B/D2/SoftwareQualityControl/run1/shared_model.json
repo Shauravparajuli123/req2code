@@ -1,0 +1,282 @@
+{
+ "case": "D2/SoftwareQualityControl",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "day",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "year",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "ControlType",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "literals": [
+    "TYPE1",
+    "TYPE2",
+    "TYPE3",
+    "TYPE4"
+   ],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Control",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "setType",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8",
+    "R10"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ControlsSequence",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "addControl",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "ControlsObject",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "role",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "setRole",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Bug",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "number",
+     "type": "int",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "originator",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "comments",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "closeDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "setCloseDate",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R12"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "BugTracking",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "bugs",
+     "type": "String",
+     "src": [
+      "R12",
+      "R13"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "addBug",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "isPartOf",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C5",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": []
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C3",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "hasType",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C6",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "isTrackedBy",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "hasDate",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

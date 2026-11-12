@@ -1,0 +1,143 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Concept",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Network",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Network",
+   "target": "Concept",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PetriNet",
+   "target": "Concept",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PetriNet",
+   "target": "Net",
+   "multiplicity_target": "1",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Place",
+   "target": "Concept",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "Concept",
+   "multiplicity_target": "1",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "Destination",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "class Concept:\n    pass\n\nclass Net:\n    pass\n\nclass Network:\n    pass\n\nclass PetriNet:\n    pass\n\nclass Place:\n    pass\n\nclass Transition:\n    pass\n",
+ "java": {}
+}

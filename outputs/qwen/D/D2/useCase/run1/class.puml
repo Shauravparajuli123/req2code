@@ -1,0 +1,17 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Actor {
+  name : String
+}
+class UseCase {
+  name : String
+  containers : String
+  +include()
+  +extend()
+}
+class UseCaseContainer {
+  name : String
+}
+UseCase "0..*" -- "1" Actor : is performed by
+@enduml

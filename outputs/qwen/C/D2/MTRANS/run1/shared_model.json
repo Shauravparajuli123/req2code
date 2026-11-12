@@ -1,0 +1,391 @@
+{
+ "case": "D2/MTRANS",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "MtransModel",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "modules",
+     "type": "String",
+     "src": [
+      "R10",
+      "R11"
+     ]
+    },
+    {
+     "name": "rules",
+     "type": "String",
+     "src": [
+      "R4",
+      "R12",
+      "R13",
+      "R14",
+      "R15"
+     ]
+    },
+    {
+     "name": "inheritances",
+     "type": "String",
+     "src": [
+      "R5",
+      "R16"
+     ]
+    },
+    {
+     "name": "expressions",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "sections",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "variables",
+     "type": "String",
+     "src": [
+      "R9",
+      "R22"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addModule",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addRule",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "addInheritance",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M4",
+     "name": "addExpression",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M5",
+     "name": "addSection",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M6",
+     "name": "addVariable",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Module",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "module",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    },
+    {
+     "name": "source",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    },
+    {
+     "name": "sections",
+     "type": "String",
+     "src": [
+      "R14"
+     ]
+    },
+    {
+     "name": "inheritances",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M7",
+     "name": "addSection",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M8",
+     "name": "addInheritance",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R12",
+    "R13",
+    "R14",
+    "R15"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Section",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "kind",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Inheritance",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "rule",
+     "type": "String",
+     "src": [
+      "R16"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R16"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "instruction",
+     "type": "String",
+     "src": [
+      "R19"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R18",
+    "R19"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Instruction",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "Variable",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9",
+    "R22"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R10",
+    "R3"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R20",
+    "R14"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C3",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C6",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R18",
+    "R19"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C7",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R21"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

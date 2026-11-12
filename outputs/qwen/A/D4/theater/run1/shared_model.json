@@ -1,0 +1,220 @@
+{
+ "case": "D4/theater",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Theater",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "location",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R11"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Play",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "theaters",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createPlay",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R11"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Author",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "writePlay",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R7"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Participant",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "actInPlay",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R7",
+    "R12"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Session",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "beginTime",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "endTime",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "createGame",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "writtenBy",
+   "src": [
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C5",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "in",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

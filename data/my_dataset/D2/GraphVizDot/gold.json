@@ -1,0 +1,202 @@
+{
+ "classes": [
+  {
+   "name": "LocatedElement",
+   "kind": "class"
+  },
+  {
+   "name": "NamedElement",
+   "kind": "class"
+  },
+  {
+   "name": "Graph",
+   "kind": "class"
+  },
+  {
+   "name": "GraphElement",
+   "kind": "class"
+  },
+  {
+   "name": "Node",
+   "kind": "class"
+  },
+  {
+   "name": "DirectedArc",
+   "kind": "class"
+  },
+  {
+   "name": "Constraint",
+   "kind": "class"
+  },
+  {
+   "name": "SubGraph",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "LocatedElement": [
+   {
+    "name": "location",
+    "type": "String"
+   },
+   {
+    "name": "commentsBefore",
+    "type": "String"
+   },
+   {
+    "name": "commentsAfter",
+    "type": "String"
+   }
+  ],
+  "NamedElement": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Graph": [
+   {
+    "name": "type",
+    "type": "String"
+   },
+   {
+    "name": "rankDir",
+    "type": "String"
+   },
+   {
+    "name": "dim",
+    "type": "Integer"
+   }
+  ],
+  "GraphElement": [
+   {
+    "name": "label",
+    "type": "String"
+   },
+   {
+    "name": "color",
+    "type": "String"
+   },
+   {
+    "name": "z",
+    "type": "Integer"
+   }
+  ],
+  "Node": [
+   {
+    "name": "shape",
+    "type": "String"
+   },
+   {
+    "name": "style",
+    "type": "String"
+   }
+  ],
+  "DirectedArc": [
+   {
+    "name": "sourceNode",
+    "type": "String"
+   },
+   {
+    "name": "sourcePart",
+    "type": "String"
+   },
+   {
+    "name": "targetNode",
+    "type": "String"
+   },
+   {
+    "name": "targetPart",
+    "type": "String"
+   },
+   {
+    "name": "shape",
+    "type": "String"
+   }
+  ],
+  "Constraint": [
+   {
+    "name": "val",
+    "type": "String"
+   },
+   {
+    "name": "refers",
+    "type": "String"
+   }
+  ],
+  "SubGraph": []
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "NamedElement",
+   "to": "LocatedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Graph",
+   "to": "NamedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Graph",
+   "to": "GraphElement",
+   "label": "contents 0..*",
+   "label_to": "graph 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "GraphElement",
+   "to": "NamedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Node",
+   "to": "GraphElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Node",
+   "to": "NamedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "DirectedArc",
+   "to": "GraphElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Constraint",
+   "to": "GraphElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "SubGraph",
+   "to": "Graph",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "SubGraph",
+   "to": "GraphElement",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage DOT {\nclass LocatedElement {\n\t location : String\n\t commentsBefore : String\n\t commentsAfter : String\n}\nclass NamedElement {\n\t name : String\n}\nLocatedElement <|-- NamedElement\nclass Graph {\n\t type : String\n\t rankDir : String\n\t dim : Integer\n}\nNamedElement <|-- Graph\nGraph \"contents 0..*\" *-- \"graph 1..1\" GraphElement\nclass GraphElement {\n\t label : String\n\t color : String\n\t z : Integer\n}\nNamedElement <|-- GraphElement\nclass Node {\n\t shape : String\n\t style : String\n}\nGraphElement <|-- Node\nNamedElement <|-- Node\nclass DirectedArc {\n\t sourceNode : String\n\t sourcePart : String\n\t targetNode : String\n\t targetPart : String\n\t shape : String\n}\nGraphElement <|-- DirectedArc\nclass Constraint {\n\t val : String\n\t refers : String\n}\nGraphElement <|-- Constraint\nclass SubGraph {\n}\nGraph <|-- SubGraph\nGraphElement <|-- SubGraph\n}\n@enduml\n"
+}

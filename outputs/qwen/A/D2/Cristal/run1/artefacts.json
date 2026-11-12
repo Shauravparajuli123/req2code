@@ -1,0 +1,216 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Condition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CompositeParDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "ElementaryPartDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "ElementaryActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "CompositeActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "ActCompositeMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Cristal",
+   "kind": "class",
+   "attributes": [
+    "activityDefinitions",
+    "partDefinitions",
+    "partCompositeMembers",
+    "compositeActDefs",
+    "compositeParDefs"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "name": "ActivityDefinition",
+   "kind": "class",
+   "attributes": [
+    "actCompositeMember"
+   ],
+   "methods": [],
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "PartCompositeMember",
+   "kind": "class",
+   "attributes": [
+    "partDefinition"
+   ],
+   "methods": [],
+   "src": [
+    "R9",
+    "R10",
+    "R11",
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Cristal",
+   "target": "Condition",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "source": "Cristal",
+   "target": "CompositeParDef",
+   "src": [
+    "R2",
+    "R11"
+   ]
+  },
+  {
+   "source": "Cristal",
+   "target": "CompositeActDef",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "source": "Cristal",
+   "target": "ActCompositeMember",
+   "src": [
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "source": "Cristal",
+   "target": "ActivityDefinition",
+   "src": [
+    "R7",
+    "R13"
+   ]
+  },
+  {
+   "source": "Cristal",
+   "target": "ElementaryActDef",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "source": "Cristal",
+   "target": "ElementaryPartDef",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "Cristal",
+   "target": "PartCompositeMember",
+   "src": [
+    "R9",
+    "R10",
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "source": "ActivityDefinition",
+   "target": "ActCompositeMember",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "source": "CompositeParDef",
+   "target": "PartCompositeMember",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "source": "CompositeActDef",
+   "target": "ActCompositeMember",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/Cristal.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Condition:\n    \"\"\"Source: R1\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass CompositeParDef:\n    \"\"\"Source: R2\"\"\"\n    partCompositeMembers: _t.List[\"PartCompositeMember\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass ElementaryPartDef:\n    \"\"\"Source: R3\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass ElementaryActDef:\n    \"\"\"Source: R4\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass CompositeActDef:\n    \"\"\"Source: R5\"\"\"\n    actCompositeMembers: _t.List[\"ActCompositeMember\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass ActCompositeMember:\n    \"\"\"Source: R6\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Cristal:\n    \"\"\"Source: R7, R8, R9, R10, R11, R12, R13, R14, R15, R16\"\"\"\n    activityDefinitions: _t.Optional[str] = None\n    partDefinitions: _t.Optional[str] = None\n    partCompositeMembers: _t.Optional[str] = None\n    compositeActDefs: _t.Optional[str] = None\n    compositeParDefs: _t.Optional[str] = None\n    condition: _t.Optional[\"Condition\"] = None\n    actCompositeMembers: _t.List[\"ActCompositeMember\"] = _dc.field(default_factory=list)\n    elementaryActDefs: _t.List[\"ElementaryActDef\"] = _dc.field(default_factory=list)\n    elementaryPartDefs: _t.List[\"ElementaryPartDef\"] = _dc.field(default_factory=list)\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ActivityDefinition:\n    \"\"\"Source: R13, R14\"\"\"\n    actCompositeMember: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass PartCompositeMember:\n    \"\"\"Source: R9, R10, R11, R16\"\"\"\n    partDefinition: _t.Optional[str] = None\n",
+ "java": {
+  "Condition.java": "/** Generated from shared model D2/Cristal. Source: R1 */\npublic class Condition {\n}\n",
+  "CompositeParDef.java": "/** Generated from shared model D2/Cristal. Source: R2 */\npublic class CompositeParDef {\n    private java.util.List<PartCompositeMember> partCompositeMembers;\n}\n",
+  "ElementaryPartDef.java": "/** Generated from shared model D2/Cristal. Source: R3 */\npublic class ElementaryPartDef {\n}\n",
+  "ElementaryActDef.java": "/** Generated from shared model D2/Cristal. Source: R4 */\npublic class ElementaryActDef {\n}\n",
+  "CompositeActDef.java": "/** Generated from shared model D2/Cristal. Source: R5 */\npublic class CompositeActDef {\n    private java.util.List<ActCompositeMember> actCompositeMembers;\n}\n",
+  "ActCompositeMember.java": "/** Generated from shared model D2/Cristal. Source: R6 */\npublic class ActCompositeMember {\n}\n",
+  "Cristal.java": "/** Generated from shared model D2/Cristal. Source: R7, R8, R9, R10, R11, R12, R13, R14, R15, R16 */\npublic class Cristal {\n    private java.lang.String activityDefinitions;\n    private java.lang.String partDefinitions;\n    private java.lang.String partCompositeMembers;\n    private java.lang.String compositeActDefs;\n    private java.lang.String compositeParDefs;\n    private Condition condition;\n    private java.util.List<ActCompositeMember> actCompositeMembers;\n    private java.util.List<ElementaryActDef> elementaryActDefs;\n    private java.util.List<ElementaryPartDef> elementaryPartDefs;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ActivityDefinition.java": "/** Generated from shared model D2/Cristal. Source: R13, R14 */\npublic class ActivityDefinition {\n    private java.lang.String actCompositeMember;\n}\n",
+  "PartCompositeMember.java": "/** Generated from shared model D2/Cristal. Source: R9, R10, R11, R16 */\npublic class PartCompositeMember {\n    private java.lang.String partDefinition;\n}\n"
+ }
+}

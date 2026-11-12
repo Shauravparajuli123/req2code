@@ -1,0 +1,2455 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D1/ticket",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R49",
+     "R50",
+     "R51",
+     "R52",
+     "R54"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R49.s1",
+      "text": "As an artist, I want to find information about my events on the designated event page so that visitors can read about my event and consider buying tickets."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As an artist, I want to have a link to my website on the event page so that fans can find out more about me."
+     },
+     {
+      "sid": "R51.s1",
+      "text": "As an artist, I want to have a link to my social media on the event page, so that fans can follow me for regular updates."
+     }
+    ],
+    "name": "artist"
+   },
+   {
+    "id": "A2",
+    "src": [
+     "R27",
+     "R35",
+     "R36",
+     "R37",
+     "R38",
+     "R39",
+     "R40"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a company, I want to have the overall buying process as intuitive and quick as possible so that we can attract (and retain) visitors to use our platform."
+     },
+     {
+      "sid": "R35.s1",
+      "text": "As a company, I want to have the minimum price for reselling a ticket at 5 cents so that I can receive a service fee."
+     },
+     {
+      "sid": "R36.s1",
+      "text": "As a company, I want to have resellers sell only digital tickets, so that the tickets can be validated automatically."
+     }
+    ],
+    "name": "company"
+   },
+   {
+    "id": "A3",
+    "src": [
+     "R16",
+     "R17"
+    ],
+    "rule": [
+     "story_role",
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As a guest, I want to not fill in all my information to buy a ticket, so that I can avoid unnecessarily sharing my personal data."
+     },
+     {
+      "sid": "R17.s1",
+      "text": "As a guest, I can use the platform the same way as users looking to buy a ticket, so that I am not forced into registering."
+     }
+    ],
+    "name": "guest"
+   },
+   {
+    "id": "A4",
+    "src": [
+     "R15"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "As a guest (i.e., single-time user), I want to only fill in my name and email when buying a ticket so that the process is faster than creating an account."
+     }
+    ],
+    "name": "guest i e single time user"
+   },
+   {
+    "id": "A5",
+    "src": [
+     "R13",
+     "R41",
+     "R45"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As a reseller, I want to be able to sell my tickets directly from the event page, so that the reselling process is shortened."
+     },
+     {
+      "sid": "R41.s1",
+      "text": "As a reseller, I want to be able to resell tickets directly from the event page so that the reselling process is shortened."
+     },
+     {
+      "sid": "R45.s1",
+      "text": "As a reseller, I want to save my bank account (IBAN number) in my user profile, so that I can receive the money for the tickets directly to my bank account."
+     }
+    ],
+    "name": "reseller"
+   },
+   {
+    "id": "A6",
+    "src": [
+     "R14"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "As a (single-time) visitor, I want to buy a ticket as a guest, so that the overall purchase progress is shorter."
+     }
+    ],
+    "name": "single time visitor"
+   },
+   {
+    "id": "A7",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R17",
+     "R42",
+     "R44",
+     "R53"
+    ],
+    "rule": [
+     "story_role",
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a user, I want to save my personal information (i.e., name, date of birth, email, address, and preferences) so that I don't have to repeat this process with every ticket purchase."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "As a user, I want to save my payment details so that I don't have to fill these details in every time."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to fill out a short survey about my preferences in (music) genre and event types so that I can receive personalized content."
+     }
+    ],
+    "name": "user"
+   },
+   {
+    "id": "A8",
+    "src": [
+     "R11",
+     "R12",
+     "R18",
+     "R19",
+     "R20",
+     "R21",
+     "R22",
+     "R23",
+     "R24",
+     "R25",
+     "R26",
+     "R28",
+     "R29",
+     "R30",
+     "R31",
+     "R32",
+     "R33",
+     "R34",
+     "R46",
+     "R47",
+     "R48"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a visitor, I want to read about the event (e.g., location, date, and artist information), so that I can decide whether to buy a ticket."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As a visitor, I want to be able to buy tickets directly from the event page, so that the purchasing process is shortened."
+     },
+     {
+      "sid": "R18.s1",
+      "text": "As a visitor, I want to purchase a ticket in an easy and short process, so that I can avoid any complications during the process."
+     }
+    ],
+    "name": "visitor"
+   }
+  ],
+  "use_cases": [
+   {
+    "id": "UC1",
+    "src": [
+     "R24"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As a visitor, I want to add tickets to the shopping cart, so that I can buy tickets."
+     }
+    ],
+    "name": "Add Ticket",
+    "actor": "visitor",
+    "goal_text": "add tickets to the shopping cart"
+   },
+   {
+    "id": "UC2",
+    "src": [
+     "R39"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R39.s1",
+      "text": "As a company, I want to avoid fraudulent behavior on the reselling platform, so that visitors gain trust in the platform."
+     }
+    ],
+    "name": "Avoid Behavior",
+    "actor": "company",
+    "goal_text": "avoid fraudulent behavior on the reselling platform"
+   },
+   {
+    "id": "UC3",
+    "src": [
+     "R12",
+     "R14",
+     "R20"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R12.s1",
+      "text": "As a visitor, I want to be able to buy tickets directly from the event page, so that the purchasing process is shortened."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "As a (single-time) visitor, I want to buy a ticket as a guest, so that the overall purchase progress is shorter."
+     },
+     {
+      "sid": "R20.s1",
+      "text": "As a visitor, I want to be able to buy multiple tickets for one event in one purchase so that I can buy tickets for me and whomever I go with."
+     }
+    ],
+    "name": "Buy Ticket",
+    "actor": "visitor",
+    "goal_text": "buy tickets directly from the event page"
+   },
+   {
+    "id": "UC4",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As a user, I want to be able to change my password so that I can keep my account information safe."
+     }
+    ],
+    "name": "Change Password",
+    "actor": "user",
+    "goal_text": "change my password"
+   },
+   {
+    "id": "UC5",
+    "src": [
+     "R48"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R48.s1",
+      "text": "As a visitor, I want to click on an event shown on the homepage and be directed to the event page, so that I don't have to search for it."
+     }
+    ],
+    "name": "Click Event",
+    "actor": "visitor",
+    "goal_text": "click on an event shown on the homepage and be directed to the event page"
+   },
+   {
+    "id": "UC6",
+    "src": [
+     "R38"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R38.s1",
+      "text": "As a company, I want to deduct a service fee of 3% from the total price set by the reseller so that the reselling platform is a financially beneficial addition to the business."
+     }
+    ],
+    "name": "Deduct ServiceFee",
+    "actor": "company",
+    "goal_text": "deduct a service fee of 3% from the total price set by the reseller"
+   },
+   {
+    "id": "UC7",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As a user, I want to be able to edit my personal information (e.g., address) so that I can update it when needed."
+     }
+    ],
+    "name": "Edit Information",
+    "actor": "user",
+    "goal_text": "edit my personal information (e.g., address)"
+   },
+   {
+    "id": "UC8",
+    "src": [
+     "R53"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R53.s1",
+      "text": "As a user, I want to favorite events or artists on the related event page, so that I can easily find it back."
+     }
+    ],
+    "name": "Favorite Event",
+    "actor": "user",
+    "goal_text": "favorite events or artists on the related event page"
+   },
+   {
+    "id": "UC9",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As a guest, I want to not fill in all my information to buy a ticket, so that I can avoid unnecessarily sharing my personal data."
+     }
+    ],
+    "name": "Fill Information",
+    "actor": "guest",
+    "goal_text": "not fill in all my information to buy a ticket"
+   },
+   {
+    "id": "UC10",
+    "src": [
+     "R15"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "As a guest (i.e., single-time user), I want to only fill in my name and email when buying a ticket so that the process is faster than creating an account."
+     }
+    ],
+    "name": "Fill Name",
+    "actor": "guest i e single time user",
+    "goal_text": "only fill in my name and email when buying a ticket"
+   },
+   {
+    "id": "UC11",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to fill out a short survey about my preferences in (music) genre and event types so that I can receive personalized content."
+     }
+    ],
+    "name": "Fill Survey",
+    "actor": "user",
+    "goal_text": "fill out a short survey about my preferences in (music) genre and event types"
+   },
+   {
+    "id": "UC12",
+    "src": [
+     "R34"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R34.s1",
+      "text": "As a visitor, I want to be able to filter a list of events by genre, so that I don't have to see events I'm not interested in."
+     }
+    ],
+    "name": "Filter List",
+    "actor": "visitor",
+    "goal_text": "filter a list of events by genre"
+   },
+   {
+    "id": "UC13",
+    "src": [
+     "R32"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R32.s1",
+      "text": "As a visitor, I want to be able to filter my search by price so that I can only see tickets within my price range."
+     }
+    ],
+    "name": "Filter Search",
+    "actor": "visitor",
+    "goal_text": "filter my search by price"
+   },
+   {
+    "id": "UC14",
+    "src": [
+     "R33"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a visitor, I want to be able to filter my search results by venue, so that I can easily find the event I want to go to."
+     }
+    ],
+    "name": "Filter SearchResult",
+    "actor": "visitor",
+    "goal_text": "filter my search results by venue"
+   },
+   {
+    "id": "UC15",
+    "src": [
+     "R49"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R49.s1",
+      "text": "As an artist, I want to find information about my events on the designated event page so that visitors can read about my event and consider buying tickets."
+     }
+    ],
+    "name": "Find Information",
+    "actor": "artist",
+    "goal_text": "find information about my events on the designated event page"
+   },
+   {
+    "id": "UC16",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "As a user, I want to find my list of favorited artists and events under my profile, so that I can easily find them back."
+     }
+    ],
+    "name": "Find List",
+    "actor": "user",
+    "goal_text": "find my list of favorited artists and events under my profile"
+   },
+   {
+    "id": "UC17",
+    "src": [
+     "R28"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a visitor, I want to get a list of events as search results, so that I can select the desired event."
+     }
+    ],
+    "name": "Get List",
+    "actor": "visitor",
+    "goal_text": "get a list of events as search results"
+   },
+   {
+    "id": "UC18",
+    "src": [
+     "R27"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a company, I want to have the overall buying process as intuitive and quick as possible so that we can attract (and retain) visitors to use our platform."
+     }
+    ],
+    "name": "Have BuyingProcess",
+    "actor": "company",
+    "goal_text": "have the overall buying process as intuitive and quick as possible"
+   },
+   {
+    "id": "UC19",
+    "src": [
+     "R52"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R52.s1",
+      "text": "As an artist, I want to have a description of myself and my upcoming event (or tour) to be shown on my event page so that visitors can inform themselves about my show."
+     }
+    ],
+    "name": "Have Description",
+    "actor": "artist",
+    "goal_text": "have a description of myself and my upcoming event (or tour) to be shown on my event page"
+   },
+   {
+    "id": "UC20",
+    "src": [
+     "R50",
+     "R51",
+     "R54"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R50.s1",
+      "text": "As an artist, I want to have a link to my website on the event page so that fans can find out more about me."
+     },
+     {
+      "sid": "R51.s1",
+      "text": "As an artist, I want to have a link to my social media on the event page, so that fans can follow me for regular updates."
+     },
+     {
+      "sid": "R54.s1",
+      "text": "As an artist, I want to have a link to music platforms (e.g., YouTube, Spotify, Apple Music), so that visitors buying tickets for my show can stream my music."
+     }
+    ],
+    "name": "Have Link",
+    "actor": "artist",
+    "goal_text": "have a link to my website on the event page"
+   },
+   {
+    "id": "UC21",
+    "src": [
+     "R35"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a company, I want to have the minimum price for reselling a ticket at 5 cents so that I can receive a service fee."
+     }
+    ],
+    "name": "Have Price",
+    "actor": "company",
+    "goal_text": "have the minimum price for reselling a ticket at 5 cents"
+   },
+   {
+    "id": "UC22",
+    "src": [
+     "R36"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R36.s1",
+      "text": "As a company, I want to have resellers sell only digital tickets, so that the tickets can be validated automatically."
+     }
+    ],
+    "name": "Have Reseller",
+    "actor": "company",
+    "goal_text": "have resellers sell only digital tickets"
+   },
+   {
+    "id": "UC23",
+    "src": [
+     "R30"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R30.s1",
+      "text": "As a visitor, I want to have the search engine non-case sensitive and punctuation sensitive so that I can still find the desired event when I misspell the name."
+     }
+    ],
+    "name": "Have SearchEngine",
+    "actor": "visitor",
+    "goal_text": "have the search engine non-case sensitive and punctuation sensitive"
+   },
+   {
+    "id": "UC24",
+    "src": [
+     "R29"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R29.s1",
+      "text": "As a visitor, I want to be able to land on the event page when clicking on a search result so that I can visit the page I want."
+     }
+    ],
+    "name": "Land EventPage",
+    "actor": "visitor",
+    "goal_text": "land on the event page when clicking on a search result"
+   },
+   {
+    "id": "UC25",
+    "src": [
+     "R40"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R40.s1",
+      "text": "As a company, I want to protect users from online fraud, so that I can avoid the failure of the reselling platform."
+     }
+    ],
+    "name": "Protect User",
+    "actor": "company",
+    "goal_text": "protect users from online fraud"
+   },
+   {
+    "id": "UC26",
+    "src": [
+     "R18"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R18.s1",
+      "text": "As a visitor, I want to purchase a ticket in an easy and short process, so that I can avoid any complications during the process."
+     }
+    ],
+    "name": "Purchase Ticket",
+    "actor": "visitor",
+    "goal_text": "purchase a ticket in an easy and short process"
+   },
+   {
+    "id": "UC27",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a visitor, I want to read about the event (e.g., location, date, and artist information), so that I can decide whether to buy a ticket."
+     }
+    ],
+    "name": "Read Event",
+    "actor": "visitor",
+    "goal_text": "read about the event (e.g., location, date, and artist information)"
+   },
+   {
+    "id": "UC28",
+    "src": [
+     "R41"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R41.s1",
+      "text": "As a reseller, I want to be able to resell tickets directly from the event page so that the reselling process is shortened."
+     }
+    ],
+    "name": "Resell Ticket",
+    "actor": "reseller",
+    "goal_text": "resell tickets directly from the event page"
+   },
+   {
+    "id": "UC29",
+    "src": [
+     "R45"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R45.s1",
+      "text": "As a reseller, I want to save my bank account (IBAN number) in my user profile, so that I can receive the money for the tickets directly to my bank account."
+     }
+    ],
+    "name": "Save BankAccount",
+    "actor": "reseller",
+    "goal_text": "save my bank account (IBAN number) in my user profile"
+   },
+   {
+    "id": "UC30",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a user, I want to save my personal information (i.e., name, date of birth, email, address, and preferences) so that I don't have to repeat this process with every ticket purchase."
+     }
+    ],
+    "name": "Save Information",
+    "actor": "user",
+    "goal_text": "save my personal information (i.e., name, date of birth, email, address, and preferences)"
+   },
+   {
+    "id": "UC31",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a user, I want to save my payment details so that I don't have to fill these details in every time."
+     }
+    ],
+    "name": "Save PaymentDetail",
+    "actor": "user",
+    "goal_text": "save my payment details"
+   },
+   {
+    "id": "UC32",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a user, I want to see personalized content (e.g., recommended events) based on my user profile to quickly see events I am interested in."
+     }
+    ],
+    "name": "See Content",
+    "actor": "user",
+    "goal_text": "see personalized content (e.g., recommended events) based on my user profile to quickly see events I am interested in."
+   },
+   {
+    "id": "UC33",
+    "src": [
+     "R19",
+     "R46",
+     "R47"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R19.s1",
+      "text": "As a visitor, I want to see events with available tickets so that I can buy the tickets."
+     },
+     {
+      "sid": "R46.s1",
+      "text": "As a visitor, I want to see upcoming events in a calendar-type view so that I can compare it to my own planner."
+     },
+     {
+      "sid": "R47.s1",
+      "text": "As a visitor, I want to see popular, upcoming events so that I can stay updated about interesting events."
+     }
+    ],
+    "name": "See Event",
+    "actor": "visitor",
+    "goal_text": "see events with available tickets"
+   },
+   {
+    "id": "UC34",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a user, I want to see a history of previous ticket orders, so that I can easily retrieve tickets and additional information when needed."
+     }
+    ],
+    "name": "See History",
+    "actor": "user",
+    "goal_text": "see a history of previous ticket orders"
+   },
+   {
+    "id": "UC35",
+    "src": [
+     "R26"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R26.s1",
+      "text": "As a visitor, I want to see a list of payment methods. so that I can pay for my tickets."
+     }
+    ],
+    "name": "See List",
+    "actor": "visitor",
+    "goal_text": "see a list of payment methods."
+   },
+   {
+    "id": "UC36",
+    "src": [
+     "R25"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R25.s1",
+      "text": "As a visitor, I want to see my order summary, so that I can make sure that I buy the correct ticket(s)."
+     }
+    ],
+    "name": "See OrderSummary",
+    "actor": "visitor",
+    "goal_text": "see my order summary"
+   },
+   {
+    "id": "UC37",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a user, I want to see an overview of upcoming events for which I bought a ticket, so that I can easily find this information when needed."
+     }
+    ],
+    "name": "See Overview",
+    "actor": "user",
+    "goal_text": "see an overview of upcoming events for which I bought a ticket"
+   },
+   {
+    "id": "UC38",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a user, I want to see and edit my preferences so that my information does not become outdated."
+     }
+    ],
+    "name": "See Preference",
+    "actor": "user",
+    "goal_text": "see and edit my preferences"
+   },
+   {
+    "id": "UC39",
+    "src": [
+     "R21",
+     "R22"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R21.s1",
+      "text": "As a visitor, I want to see available seats at the event, so that I can decide which one to buy."
+     },
+     {
+      "sid": "R22.s1",
+      "text": "As a visitor, I want to see the available seats in a map of the venue so that I can pick the right seating place for during the event."
+     }
+    ],
+    "name": "See Seat",
+    "actor": "visitor",
+    "goal_text": "see available seats at the event"
+   },
+   {
+    "id": "UC40",
+    "src": [
+     "R23"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As a visitor, I want to see the types of tickets (e.g., normal, premium, gold tickets) once I select the event, so that I can choose which type I want to buy."
+     }
+    ],
+    "name": "See Type",
+    "actor": "visitor",
+    "goal_text": "see the types of tickets (e.g., normal, premium, gold tickets) once I select the event"
+   },
+   {
+    "id": "UC41",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As a reseller, I want to be able to sell my tickets directly from the event page, so that the reselling process is shortened."
+     }
+    ],
+    "name": "Sell Ticket",
+    "actor": "reseller",
+    "goal_text": "sell my tickets directly from the event page"
+   },
+   {
+    "id": "UC42",
+    "src": [
+     "R31"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R31.s1",
+      "text": "As a visitor, I want to be able to sort my search results by date so that I can see which events are up first."
+     }
+    ],
+    "name": "Sort SearchResult",
+    "actor": "visitor",
+    "goal_text": "sort my search results by date"
+   },
+   {
+    "id": "UC43",
+    "src": [
+     "R37"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a company, I want to validate tickets, so that I can ensure visitors a trustworthy platform."
+     }
+    ],
+    "name": "Validate Ticket",
+    "actor": "company",
+    "goal_text": "validate tickets"
+   }
+  ],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R1",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a user, I want to save my personal information (i.e., name, date of birth, email, address, and preferences) so that I don't have to repeat this process with every ticket purchase."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "As a user, I want to be able to edit my personal information (e.g., address) so that I can update it when needed."
+     }
+    ],
+    "name": "Address",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R10",
+     "R49",
+     "R50",
+     "R51",
+     "R52",
+     "R53",
+     "R54"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "As a user, I want to find my list of favorited artists and events under my profile, so that I can easily find them back."
+     },
+     {
+      "sid": "R49.s1",
+      "text": "As an artist, I want to find information about my events on the designated event page so that visitors can read about my event and consider buying tickets."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As an artist, I want to have a link to my website on the event page so that fans can find out more about me."
+     }
+    ],
+    "name": "Artist",
+    "freq": 7
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R45.s1",
+      "text": "As a reseller, I want to save my bank account (IBAN number) in my user profile, so that I can receive the money for the tickets directly to my bank account."
+     }
+    ],
+    "name": "BankAccount",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R35",
+     "R43"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a company, I want to have the minimum price for reselling a ticket at 5 cents so that I can receive a service fee."
+     },
+     {
+      "sid": "R43.s1",
+      "text": "As a reseller, I can set any price above 5 cents for the ticket I'm selling."
+     }
+    ],
+    "name": "Cent",
+    "freq": 2
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R27",
+     "R35",
+     "R36",
+     "R37",
+     "R38",
+     "R39",
+     "R40"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a company, I want to have the overall buying process as intuitive and quick as possible so that we can attract (and retain) visitors to use our platform."
+     },
+     {
+      "sid": "R35.s1",
+      "text": "As a company, I want to have the minimum price for reselling a ticket at 5 cents so that I can receive a service fee."
+     },
+     {
+      "sid": "R36.s1",
+      "text": "As a company, I want to have resellers sell only digital tickets, so that the tickets can be validated automatically."
+     }
+    ],
+    "name": "Company",
+    "freq": 7
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R3",
+     "R4"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to fill out a short survey about my preferences in (music) genre and event types so that I can receive personalized content."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "As a user, I want to see personalized content (e.g., recommended events) based on my user profile to quickly see events I am interested in."
+     }
+    ],
+    "name": "Content",
+    "freq": 2
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R1",
+     "R11",
+     "R31"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a user, I want to save my personal information (i.e., name, date of birth, email, address, and preferences) so that I don't have to repeat this process with every ticket purchase."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "As a visitor, I want to read about the event (e.g., location, date, and artist information), so that I can decide whether to buy a ticket."
+     },
+     {
+      "sid": "R31.s1",
+      "text": "As a visitor, I want to be able to sort my search results by date so that I can see which events are up first."
+     }
+    ],
+    "name": "Date",
+    "freq": 3
+   },
+   {
+    "id": "C8",
+    "src": [
+     "R3",
+     "R4",
+     "R9",
+     "R10",
+     "R11",
+     "R19",
+     "R20",
+     "R21",
+     "R22",
+     "R23",
+     "R28",
+     "R30",
+     "R31",
+     "R33",
+     "R34",
+     "R44",
+     "R46",
+     "R47",
+     "R48",
+     "R49",
+     "R52",
+     "R53"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to fill out a short survey about my preferences in (music) genre and event types so that I can receive personalized content."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "As a user, I want to see personalized content (e.g., recommended events) based on my user profile to quickly see events I am interested in."
+     },
+     {
+      "sid": "R9.s1",
+      "text": "As a user, I want to see an overview of upcoming events for which I bought a ticket, so that I can easily find this information when needed."
+     }
+    ],
+    "name": "Event",
+    "freq": 27
+   },
+   {
+    "id": "C9",
+    "src": [
+     "R12",
+     "R13",
+     "R29",
+     "R41",
+     "R48",
+     "R49",
+     "R50",
+     "R51",
+     "R52",
+     "R53"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R12.s1",
+      "text": "As a visitor, I want to be able to buy tickets directly from the event page, so that the purchasing process is shortened."
+     },
+     {
+      "sid": "R13.s1",
+      "text": "As a reseller, I want to be able to sell my tickets directly from the event page, so that the reselling process is shortened."
+     },
+     {
+      "sid": "R29.s1",
+      "text": "As a visitor, I want to be able to land on the event page when clicking on a search result so that I can visit the page I want."
+     }
+    ],
+    "name": "EventPage",
+    "freq": 10
+   },
+   {
+    "id": "C10",
+    "src": [
+     "R50",
+     "R51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R50.s1",
+      "text": "As an artist, I want to have a link to my website on the event page so that fans can find out more about me."
+     },
+     {
+      "sid": "R51.s1",
+      "text": "As an artist, I want to have a link to my social media on the event page, so that fans can follow me for regular updates."
+     }
+    ],
+    "name": "Fan",
+    "freq": 2
+   },
+   {
+    "id": "C11",
+    "src": [
+     "R14",
+     "R15",
+     "R16",
+     "R17"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "As a (single-time) visitor, I want to buy a ticket as a guest, so that the overall purchase progress is shorter."
+     },
+     {
+      "sid": "R15.s1",
+      "text": "As a guest (i.e., single-time user), I want to only fill in my name and email when buying a ticket so that the process is faster than creating an account."
+     },
+     {
+      "sid": "R16.s1",
+      "text": "As a guest, I want to not fill in all my information to buy a ticket, so that I can avoid unnecessarily sharing my personal data."
+     }
+    ],
+    "name": "Guest",
+    "freq": 4
+   },
+   {
+    "id": "C12",
+    "src": [],
+    "rule": [
+     "inferred"
+    ],
+    "evidence": [],
+    "name": "GuestIESingleTimeUser",
+    "freq": 0
+   },
+   {
+    "id": "C13",
+    "src": [
+     "R50",
+     "R51",
+     "R54"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R50.s1",
+      "text": "As an artist, I want to have a link to my website on the event page so that fans can find out more about me."
+     },
+     {
+      "sid": "R51.s1",
+      "text": "As an artist, I want to have a link to my social media on the event page, so that fans can follow me for regular updates."
+     },
+     {
+      "sid": "R54.s1",
+      "text": "As an artist, I want to have a link to music platforms (e.g., YouTube, Spotify, Apple Music), so that visitors buying tickets for my show can stream my music."
+     }
+    ],
+    "name": "Link",
+    "freq": 3
+   },
+   {
+    "id": "C14",
+    "src": [
+     "R17",
+     "R27",
+     "R37",
+     "R39",
+     "R40"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R17.s1",
+      "text": "As a guest, I can use the platform the same way as users looking to buy a ticket, so that I am not forced into registering."
+     },
+     {
+      "sid": "R27.s1",
+      "text": "As a company, I want to have the overall buying process as intuitive and quick as possible so that we can attract (and retain) visitors to use our platform."
+     },
+     {
+      "sid": "R37.s1",
+      "text": "As a company, I want to validate tickets, so that I can ensure visitors a trustworthy platform."
+     }
+    ],
+    "name": "Platform",
+    "freq": 6
+   },
+   {
+    "id": "C15",
+    "src": [
+     "R1",
+     "R3",
+     "R5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a user, I want to save my personal information (i.e., name, date of birth, email, address, and preferences) so that I don't have to repeat this process with every ticket purchase."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to fill out a short survey about my preferences in (music) genre and event types so that I can receive personalized content."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "As a user, I want to see and edit my preferences so that my information does not become outdated."
+     }
+    ],
+    "name": "Preference",
+    "freq": 3
+   },
+   {
+    "id": "C16",
+    "src": [
+     "R1",
+     "R15",
+     "R18"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a user, I want to save my personal information (i.e., name, date of birth, email, address, and preferences) so that I don't have to repeat this process with every ticket purchase."
+     },
+     {
+      "sid": "R15.s1",
+      "text": "As a guest (i.e., single-time user), I want to only fill in my name and email when buying a ticket so that the process is faster than creating an account."
+     },
+     {
+      "sid": "R18.s1",
+      "text": "As a visitor, I want to purchase a ticket in an easy and short process, so that I can avoid any complications during the process."
+     }
+    ],
+    "name": "Process",
+    "freq": 4
+   },
+   {
+    "id": "C17",
+    "src": [
+     "R13",
+     "R36",
+     "R38",
+     "R41",
+     "R42",
+     "R43",
+     "R44",
+     "R45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As a reseller, I want to be able to sell my tickets directly from the event page, so that the reselling process is shortened."
+     },
+     {
+      "sid": "R36.s1",
+      "text": "As a company, I want to have resellers sell only digital tickets, so that the tickets can be validated automatically."
+     },
+     {
+      "sid": "R38.s1",
+      "text": "As a company, I want to deduct a service fee of 3% from the total price set by the reseller so that the reselling platform is a financially beneficial addition to the business."
+     }
+    ],
+    "name": "Reseller",
+    "freq": 8
+   },
+   {
+    "id": "C18",
+    "src": [
+     "R13",
+     "R41"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As a reseller, I want to be able to sell my tickets directly from the event page, so that the reselling process is shortened."
+     },
+     {
+      "sid": "R41.s1",
+      "text": "As a reseller, I want to be able to resell tickets directly from the event page so that the reselling process is shortened."
+     }
+    ],
+    "name": "ResellingProcess",
+    "freq": 2
+   },
+   {
+    "id": "C19",
+    "src": [
+     "R28",
+     "R29",
+     "R31",
+     "R33"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a visitor, I want to get a list of events as search results, so that I can select the desired event."
+     },
+     {
+      "sid": "R29.s1",
+      "text": "As a visitor, I want to be able to land on the event page when clicking on a search result so that I can visit the page I want."
+     },
+     {
+      "sid": "R31.s1",
+      "text": "As a visitor, I want to be able to sort my search results by date so that I can see which events are up first."
+     }
+    ],
+    "name": "SearchResult",
+    "freq": 4
+   },
+   {
+    "id": "C20",
+    "src": [
+     "R21",
+     "R22"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R21.s1",
+      "text": "As a visitor, I want to see available seats at the event, so that I can decide which one to buy."
+     },
+     {
+      "sid": "R22.s1",
+      "text": "As a visitor, I want to see the available seats in a map of the venue so that I can pick the right seating place for during the event."
+     }
+    ],
+    "name": "Seat",
+    "freq": 2
+   },
+   {
+    "id": "C21",
+    "src": [
+     "R35",
+     "R38"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a company, I want to have the minimum price for reselling a ticket at 5 cents so that I can receive a service fee."
+     },
+     {
+      "sid": "R38.s1",
+      "text": "As a company, I want to deduct a service fee of 3% from the total price set by the reseller so that the reselling platform is a financially beneficial addition to the business."
+     }
+    ],
+    "name": "ServiceFee",
+    "freq": 2
+   },
+   {
+    "id": "C22",
+    "src": [
+     "R52",
+     "R54"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R52.s1",
+      "text": "As an artist, I want to have a description of myself and my upcoming event (or tour) to be shown on my event page so that visitors can inform themselves about my show."
+     },
+     {
+      "sid": "R54.s1",
+      "text": "As an artist, I want to have a link to music platforms (e.g., YouTube, Spotify, Apple Music), so that visitors buying tickets for my show can stream my music."
+     }
+    ],
+    "name": "Show",
+    "freq": 2
+   },
+   {
+    "id": "C23",
+    "src": [],
+    "rule": [
+     "inferred"
+    ],
+    "evidence": [],
+    "name": "SingleTimeVisitor",
+    "freq": 0
+   },
+   {
+    "id": "C24",
+    "src": [
+     "R8",
+     "R9",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R15",
+     "R16",
+     "R17",
+     "R18",
+     "R19",
+     "R20",
+     "R23",
+     "R24",
+     "R26",
+     "R32",
+     "R35",
+     "R36",
+     "R37",
+     "R41",
+     "R42",
+     "R43",
+     "R44",
+     "R45",
+     "R49",
+     "R54"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a user, I want to see a history of previous ticket orders, so that I can easily retrieve tickets and additional information when needed."
+     },
+     {
+      "sid": "R9.s1",
+      "text": "As a user, I want to see an overview of upcoming events for which I bought a ticket, so that I can easily find this information when needed."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "As a visitor, I want to read about the event (e.g., location, date, and artist information), so that I can decide whether to buy a ticket."
+     }
+    ],
+    "name": "Ticket",
+    "freq": 30
+   },
+   {
+    "id": "C25",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R17",
+     "R40",
+     "R42",
+     "R44",
+     "R53"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a user, I want to save my personal information (i.e., name, date of birth, email, address, and preferences) so that I don't have to repeat this process with every ticket purchase."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "As a user, I want to save my payment details so that I don't have to fill these details in every time."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to fill out a short survey about my preferences in (music) genre and event types so that I can receive personalized content."
+     }
+    ],
+    "name": "User",
+    "freq": 15
+   },
+   {
+    "id": "C26",
+    "src": [
+     "R4",
+     "R45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a user, I want to see personalized content (e.g., recommended events) based on my user profile to quickly see events I am interested in."
+     },
+     {
+      "sid": "R45.s1",
+      "text": "As a reseller, I want to save my bank account (IBAN number) in my user profile, so that I can receive the money for the tickets directly to my bank account."
+     }
+    ],
+    "name": "UserProfile",
+    "freq": 2
+   },
+   {
+    "id": "C27",
+    "src": [
+     "R22",
+     "R33"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R22.s1",
+      "text": "As a visitor, I want to see the available seats in a map of the venue so that I can pick the right seating place for during the event."
+     },
+     {
+      "sid": "R33.s1",
+      "text": "As a visitor, I want to be able to filter my search results by venue, so that I can easily find the event I want to go to."
+     }
+    ],
+    "name": "Venue",
+    "freq": 2
+   },
+   {
+    "id": "C28",
+    "src": [
+     "R11",
+     "R12",
+     "R14",
+     "R18",
+     "R19",
+     "R20",
+     "R21",
+     "R22",
+     "R23",
+     "R24",
+     "R25",
+     "R26",
+     "R27",
+     "R28",
+     "R29",
+     "R30",
+     "R31",
+     "R32",
+     "R33",
+     "R34",
+     "R37",
+     "R39",
+     "R46",
+     "R47",
+     "R48",
+     "R49",
+     "R52",
+     "R54"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a visitor, I want to read about the event (e.g., location, date, and artist information), so that I can decide whether to buy a ticket."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As a visitor, I want to be able to buy tickets directly from the event page, so that the purchasing process is shortened."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "As a (single-time) visitor, I want to buy a ticket as a guest, so that the overall purchase progress is shorter."
+     }
+    ],
+    "name": "Visitor",
+    "freq": 28
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R44"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R44.s1",
+      "text": "As a reseller, I can add a short description of the event so that the other (buying) users know what type of ticket, and for which event, I'm selling."
+     }
+    ],
+    "owner": "Event",
+    "name": "description",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R40"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R40.s1",
+      "text": "As a company, I want to protect users from online fraud, so that I can avoid the failure of the reselling platform."
+     }
+    ],
+    "owner": "Platform",
+    "name": "failure",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R22"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R22.s1",
+      "text": "As a visitor, I want to see the available seats in a map of the venue so that I can pick the right seating place for during the event."
+     }
+    ],
+    "owner": "Venue",
+    "name": "map",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R52"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R52.s1",
+      "text": "As an artist, I want to have a description of myself and my upcoming event (or tour) to be shown on my event page so that visitors can inform themselves about my show."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Artist",
+    "target": "Description",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R50",
+     "R51",
+     "R54"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R50.s1",
+      "text": "As an artist, I want to have a link to my website on the event page so that fans can find out more about me."
+     },
+     {
+      "sid": "R51.s1",
+      "text": "As an artist, I want to have a link to my social media on the event page, so that fans can follow me for regular updates."
+     },
+     {
+      "sid": "R54.s1",
+      "text": "As an artist, I want to have a link to music platforms (e.g., YouTube, Spotify, Apple Music), so that visitors buying tickets for my show can stream my music."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Artist",
+    "target": "Link",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R39"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R39.s1",
+      "text": "As a company, I want to avoid fraudulent behavior on the reselling platform, so that visitors gain trust in the platform."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Company",
+    "target": "Behavior",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R27"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a company, I want to have the overall buying process as intuitive and quick as possible so that we can attract (and retain) visitors to use our platform."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Company",
+    "target": "BuyingProcess",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R35"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a company, I want to have the minimum price for reselling a ticket at 5 cents so that I can receive a service fee."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Company",
+    "target": "Price",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R36"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R36.s1",
+      "text": "As a company, I want to have resellers sell only digital tickets, so that the tickets can be validated automatically."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Company",
+    "target": "Reseller",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL7",
+    "src": [
+     "R38"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R38.s1",
+      "text": "As a company, I want to deduct a service fee of 3% from the total price set by the reseller so that the reselling platform is a financially beneficial addition to the business."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Company",
+    "target": "ServiceFee",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL8",
+    "src": [
+     "R37"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a company, I want to validate tickets, so that I can ensure visitors a trustworthy platform."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Company",
+    "target": "Ticket",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL9",
+    "src": [
+     "R40"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R40.s1",
+      "text": "As a company, I want to protect users from online fraud, so that I can avoid the failure of the reselling platform."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Company",
+    "target": "User",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL10",
+    "src": [
+     "R15"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "As a guest (i.e., single-time user), I want to only fill in my name and email when buying a ticket so that the process is faster than creating an account."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "GuestIESingleTimeUser",
+    "target": "Name",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL11",
+    "src": [
+     "R45"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R45.s1",
+      "text": "As a reseller, I want to save my bank account (IBAN number) in my user profile, so that I can receive the money for the tickets directly to my bank account."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Reseller",
+    "target": "BankAccount",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL12",
+    "src": [
+     "R13",
+     "R41"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As a reseller, I want to be able to sell my tickets directly from the event page, so that the reselling process is shortened."
+     },
+     {
+      "sid": "R41.s1",
+      "text": "As a reseller, I want to be able to resell tickets directly from the event page so that the reselling process is shortened."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Reseller",
+    "target": "Ticket",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL13",
+    "src": [
+     "R14"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "As a (single-time) visitor, I want to buy a ticket as a guest, so that the overall purchase progress is shorter."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "SingleTimeVisitor",
+    "target": "Ticket",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL14",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a user, I want to see personalized content (e.g., recommended events) based on my user profile to quickly see events I am interested in."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Content",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL15",
+    "src": [
+     "R53"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R53.s1",
+      "text": "As a user, I want to favorite events or artists on the related event page, so that I can easily find it back."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Event",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL16",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a user, I want to see a history of previous ticket orders, so that I can easily retrieve tickets and additional information when needed."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "History",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL17",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As a user, I want to be able to change my password so that I can keep my account information safe."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Password",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL18",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a user, I want to save my payment details so that I don't have to fill these details in every time."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "PaymentDetail",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL19",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a user, I want to see and edit my preferences so that my information does not become outdated."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Preference",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL20",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to fill out a short survey about my preferences in (music) genre and event types so that I can receive personalized content."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Survey",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL21",
+    "src": [
+     "R29"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R29.s1",
+      "text": "As a visitor, I want to be able to land on the event page when clicking on a search result so that I can visit the page I want."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Visitor",
+    "target": "EventPage",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL22",
+    "src": [
+     "R11",
+     "R19",
+     "R46",
+     "R47",
+     "R48"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a visitor, I want to read about the event (e.g., location, date, and artist information), so that I can decide whether to buy a ticket."
+     },
+     {
+      "sid": "R19.s1",
+      "text": "As a visitor, I want to see events with available tickets so that I can buy the tickets."
+     },
+     {
+      "sid": "R46.s1",
+      "text": "As a visitor, I want to see upcoming events in a calendar-type view so that I can compare it to my own planner."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Visitor",
+    "target": "Event",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL23",
+    "src": [
+     "R25"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R25.s1",
+      "text": "As a visitor, I want to see my order summary, so that I can make sure that I buy the correct ticket(s)."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Visitor",
+    "target": "OrderSummary",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL24",
+    "src": [
+     "R30"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R30.s1",
+      "text": "As a visitor, I want to have the search engine non-case sensitive and punctuation sensitive so that I can still find the desired event when I misspell the name."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Visitor",
+    "target": "SearchEngine",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL25",
+    "src": [
+     "R31",
+     "R33"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R31.s1",
+      "text": "As a visitor, I want to be able to sort my search results by date so that I can see which events are up first."
+     },
+     {
+      "sid": "R33.s1",
+      "text": "As a visitor, I want to be able to filter my search results by venue, so that I can easily find the event I want to go to."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Visitor",
+    "target": "SearchResult",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL26",
+    "src": [
+     "R32"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R32.s1",
+      "text": "As a visitor, I want to be able to filter my search by price so that I can only see tickets within my price range."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Visitor",
+    "target": "Search",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL27",
+    "src": [
+     "R21",
+     "R22"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R21.s1",
+      "text": "As a visitor, I want to see available seats at the event, so that I can decide which one to buy."
+     },
+     {
+      "sid": "R22.s1",
+      "text": "As a visitor, I want to see the available seats in a map of the venue so that I can pick the right seating place for during the event."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Visitor",
+    "target": "Seat",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL28",
+    "src": [
+     "R12",
+     "R18",
+     "R20",
+     "R24"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R12.s1",
+      "text": "As a visitor, I want to be able to buy tickets directly from the event page, so that the purchasing process is shortened."
+     },
+     {
+      "sid": "R18.s1",
+      "text": "As a visitor, I want to purchase a ticket in an easy and short process, so that I can avoid any complications during the process."
+     },
+     {
+      "sid": "R20.s1",
+      "text": "As a visitor, I want to be able to buy multiple tickets for one event in one purchase so that I can buy tickets for me and whomever I go with."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Visitor",
+    "target": "Ticket",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

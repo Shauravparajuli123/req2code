@@ -1,0 +1,50 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The Camper class does not have an attribute for previous year records as it is not explicitly mentioned in the requirements."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class Camper is missing the attribute 'previousYearRecords'",
+   "fix": "Add 'previousYearRecords: String' to the Camper class."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case R37 is missing in the model.",
+   "fix": "Add a use case for 'Track Camper Activity and Schedule at Camp' for the Parent actor."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case R55 is missing in the model.",
+   "fix": "Add a use case for 'Take Attendance of Assigned Kids' for the CampWorker actor."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between CampAdministrator and Camper is missing the multiplicity on the Camper side.",
+   "fix": "Add multiplicity '0..*' to the association CampAdministrator -> Camper."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between CampAdministrator and Parent is missing the multiplicity on the Parent side.",
+   "fix": "Add multiplicity '0..*' to the association CampAdministrator -> Parent."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between CampAdministrator and Group is missing the multiplicity on the Group side.",
+   "fix": "Add multiplicity '0..*' to the association CampAdministrator -> Group."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between CampWorker and Camper is missing the multiplicity on the Camper side.",
+   "fix": "Add multiplicity '1..1' to the association CampWorker -> Camper."
+  }
+ ]
+}

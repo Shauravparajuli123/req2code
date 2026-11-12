@@ -1,0 +1,93 @@
+{
+ "classes": [
+  {
+   "name": "ModelElement",
+   "kind": "class"
+  },
+  {
+   "name": "Classifier",
+   "kind": "class"
+  },
+  {
+   "name": "StructuralFeature",
+   "kind": "class"
+  },
+  {
+   "name": "Class",
+   "kind": "class"
+  },
+  {
+   "name": "DataType",
+   "kind": "class"
+  },
+  {
+   "name": "Attribute",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "ModelElement": [],
+  "Classifier": [],
+  "StructuralFeature": [],
+  "Class": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "DataType": [],
+  "Attribute": []
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "Classifier",
+   "to": "ModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "StructuralFeature",
+   "to": "ModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Class",
+   "to": "Classifier",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Class",
+   "to": "Attribute",
+   "label": "attributes 1..*",
+   "label_to": "class 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "DataType",
+   "to": "Classifier",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "DataType",
+   "to": "Attribute",
+   "label": "attribute 1..1",
+   "label_to": "has 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "Attribute",
+   "to": "StructuralFeature",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage SimplfiedMiningMart {\nclass ModelElement {\n}\nclass Classifier {\n}\nModelElement <|-- Classifier\nclass StructuralFeature {\n}\nModelElement <|-- StructuralFeature\nclass Class {\n\t name : String\n}\nClassifier <|-- Class\nClass \"attributes 1..*\" *-- \"class 1..1\" Attribute\nclass DataType {\n}\nClassifier <|-- DataType\nDataType \"attribute 1..1\" -- \"has 1..1\" Attribute\nclass Attribute {\n}\nStructuralFeature <|-- Attribute\n}\n@enduml\n"
+}

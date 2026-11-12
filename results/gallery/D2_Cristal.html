@@ -1,0 +1,146 @@
+<html><head><meta charset='utf-8'><title>D2/Cristal</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D2/Cristal &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: A Cristal package has a class named Condition.
+R2: A Cristal package has one or more CompositeParDef.
+R3: The ElementaryPartDef class of a Cristal.
+R4: The ElementaryActDef of a Cristal
+R5: The CompositeActDef of a Cristal.
+R6: The ActCompositeMember of a Cristal.
+R7: The Cristal model has Activity Definitions.
+R8: The cristal model has Part Definitions.
+R9: The Cristal model has Part Composite Members
+R10: The Condition class of a Cristal may have one or more PartCompositeMember.
+R11: The CompositeParDef of a Cristal may be composed by one or more PartCompositeMember.
+R12: The CompositeActDef of a Cristal may may be composed by one or more ActCompositeMembers
+R13: The ActCompositeMember of a Cristal may have one or more ActivityDefinition.
+R14: The ActivityDefinition of a Cristal has exactly one ActCompositeMember.
+R15: The PartDefinition node has any number of PartCompositeMember nodes. Each such node has one PartDefinition node.
+R16: The PartCompositeMember is a member of a unique PartDefinition of the Cristal model.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (1 → 1)</th></tr><tr><td class="">part composite member</td></tr></table></div>
+<div><table><tr><th>classes (10 → 10)</th></tr><tr><td class="">Actcompositemember</td></tr><tr><td class="">ActivityDefinition</td></tr><tr><td class="">CompositeActDef</td></tr><tr><td class="">CompositeParDef</td></tr><tr><td class="">Condition</td></tr><tr><td class="">Cristal</td></tr><tr><td class="">Member</td></tr><tr><td class="">PartCompositeMember</td></tr><tr><td class="">PartDefinitionNode</td></tr><tr><td class="">Partcompositemember</td></tr></table></div>
+<div><table><tr><th>attributes (4 → 4)</th></tr><tr><td class="">Cristal.condition class</td></tr><tr><td class="">Cristal.elementary act def</td></tr><tr><td class="">Cristal.elementary part def class</td></tr><tr><td class="">PartDefinitionNode.part composite member node</td></tr></table></div>
+<div><table><tr><th>relations (7 → 7)</th></tr><tr><td class="">generalization: PartCompositeMember -&gt; Member</td></tr><tr><td class="">has: Actcompositemember -&gt; ActivityDefinition</td></tr><tr><td class="">has: ActivityDefinition -&gt; Actcompositemember</td></tr><tr><td class="">has: Cristal -&gt; Actcompositemember</td></tr><tr><td class="">has: Cristal -&gt; ActivityDefinition</td></tr><tr><td class="">has: Cristal -&gt; CompositeActDef</td></tr><tr><td class="">has: Cristal -&gt; CompositeParDef</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R2</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>one CompositeParDef; multiple CompositeParDefs<br><i>The phrase &#x27;one or more&#x27; could imply either a single CompositeParDef or multiple CompositeParDefs.</i></td></tr>
+<tr><td>A2</td><td>R10</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>one PartCompositeMember; multiple PartCompositeMembers<br><i>The phrase &#x27;one or more&#x27; could imply either a single PartCompositeMember or multiple PartCompositeMembers.</i></td></tr>
+<tr><td>A3</td><td>R11</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>one PartCompositeMember; multiple PartCompositeMembers<br><i>The phrase &#x27;one or more&#x27; could imply either a single PartCompositeMember or multiple PartCompositeMembers.</i></td></tr>
+<tr><td>A4</td><td>R12</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>one ActCompositeMember; multiple ActCompositeMembers<br><i>The phrase &#x27;one or more&#x27; could imply either a single ActCompositeMember or multiple ActCompositeMembers.</i></td></tr>
+<tr><td>A5</td><td>R13</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>one ActivityDefinition; multiple ActivityDefinitions<br><i>The phrase &#x27;one or more&#x27; could imply either a single ActivityDefinition or multiple ActivityDefinitions.</i></td></tr>
+<tr><td>A6</td><td>R15</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>any number of PartCompositeMember nodes; specific number of PartCompositeMember nodes<br><i>The phrase &#x27;any&#x27; could imply an unspecified number of PartCompositeMember nodes or a specific number.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D2_Cristal_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D2_Cristal_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D2/Cristal.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Cristal:
+    &quot;&quot;&quot;Source: -&quot;&quot;&quot;
+    elementaryActDef: _t.Optional[str] = None
+    elementaryPartDef: _t.Optional[str] = None
+    compositeActDef: _t.Optional[str] = None
+    compositeParDef: _t.Optional[str] = None
+    condition: _t.Optional[str] = None
+    activityDefinitions: _t.Optional[str] = None
+    partDefinitionNodes: _t.List[&quot;PartDefinitionNode&quot;] = _dc.field(default_factory=list)
+    partCompositeMembers: _t.List[&quot;PartCompositeMember&quot;] = _dc.field(default_factory=list)
+    compositeActDefs: _t.List[&quot;CompositeActDef&quot;] = _dc.field(default_factory=list)
+    compositeParDefs: _t.List[&quot;CompositeParDef&quot;] = _dc.field(default_factory=list)
+    conditions: _t.List[&quot;Condition&quot;] = _dc.field(default_factory=list)
+
+    def createGame(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Condition:
+    &quot;&quot;&quot;Source: R1&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class CompositeParDef:
+    &quot;&quot;&quot;Source: R2&quot;&quot;&quot;
+    partCompositeMembers: _t.List[&quot;PartCompositeMember&quot;] = _dc.field(default_factory=list)
+
+
+@_dc.dataclass
+class ElementaryActDef:
+    &quot;&quot;&quot;Source: R4&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class ElementaryPartDef:
+    &quot;&quot;&quot;Source: R3&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class CompositeActDef:
+    &quot;&quot;&quot;Source: R5&quot;&quot;&quot;
+    actCompositeMembers: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class ActCompositeMember:
+    &quot;&quot;&quot;Source: R6&quot;&quot;&quot;
+    activityDefinitions: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class ActivityDefinition:
+    &quot;&quot;&quot;Source: R14&quot;&quot;&quot;
+    actCompositeMember: _t.Optional[str] = None
+    actCompositeMembers: _t.List[&quot;ActCompositeMember&quot;] = _dc.field(default_factory=list)
+
+
+@_dc.dataclass
+class PartCompositeMember:
+    &quot;&quot;&quot;Source: R9&quot;&quot;&quot;
+    partDefinition: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class PartDefinitionNode:
+    &quot;&quot;&quot;Source: R16&quot;&quot;&quot;
+    partCompositeMember: _t.Optional[str] = None
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>0</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>0</td></tr>
+<tr><th>actors_without_use_case</th><td>1</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>1</td></tr>
+<tr><th>inconsistency_rate</th><td>0.0909</td></tr>
+<tr><th>requirement_coverage</th><td>0.8125</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;Requirement R15 is assumed to be a typo and should be R10, as it refers to PartCompositeMember.&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.8</td><td>0.889</td><td>0.842</td><td>8/2/1</td></tr>
+<tr><td>attributes</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0/11/0</td></tr>
+<tr><td>relations</td><td>0.333</td><td>0.3</td><td>0.316</td><td>3/6/7</td></tr>
+<tr><td>relations_strict</td><td>0.333</td><td>0.3</td><td>0.316</td><td>3/6/7</td></tr>
+</table></body></html>

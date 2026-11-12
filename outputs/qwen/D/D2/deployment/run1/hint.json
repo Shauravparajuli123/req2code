@@ -1,0 +1,97 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "Node",
+    "src": [
+     "R1",
+     "R6",
+     "R7"
+    ]
+   },
+   {
+    "name": "Deployment",
+    "src": [
+     "R6",
+     "R7"
+    ]
+   },
+   {
+    "name": "ExecutionEnvironment",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "name": "Specification",
+    "src": [
+     "R4",
+     "R7"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Node",
+    "name": "name",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "CommunicationLink",
+    "name": "name",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "owner": "CommunicationLink",
+    "name": "sourceNode",
+    "src": [
+     "R8"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Deployment",
+    "target": "Node",
+    "src": [
+     "R6",
+     "R7"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "Node",
+    "target": "Node",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "kind": "has",
+    "source": "Deployment",
+    "target": "ExecutionEnvironment",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "kind": "contains",
+    "source": "Specification",
+    "target": "Node",
+    "src": [
+     "R7"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

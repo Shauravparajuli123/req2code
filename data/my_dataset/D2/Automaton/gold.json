@@ -1,0 +1,88 @@
+{
+ "classes": [
+  {
+   "name": "FiniteAutomaton",
+   "kind": "class"
+  },
+  {
+   "name": "Transition",
+   "kind": "class"
+  },
+  {
+   "name": "State",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "FiniteAutomaton": [
+   {
+    "name": "alphabet",
+    "type": "String"
+   }
+  ],
+  "Transition": [
+   {
+    "name": "letter",
+    "type": "String"
+   }
+  ],
+  "State": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "association",
+   "from": "FiniteAutomaton",
+   "to": "Transition",
+   "label": "transitionSet 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "FiniteAutomaton",
+   "to": "State",
+   "label": "initialState 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "FiniteAutomaton",
+   "to": "State",
+   "label": "finalStateSet 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "FiniteAutomaton",
+   "to": "State",
+   "label": "StateSet 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Transition",
+   "to": "State",
+   "label": "source 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Transition",
+   "to": "State",
+   "label": "target 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "State",
+   "to": "State",
+   "label": "combination 1..1",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage Automatoon {\nclass FiniteAutomaton {\n\t alphabet : String\n}\nFiniteAutomaton \"transitionSet 0..*\" --> Transition\nFiniteAutomaton \"initialState 1..1\" --> State\nFiniteAutomaton \"finalStateSet 1..*\" --> State\nFiniteAutomaton \"StateSet 0..*\" --> State\nclass Transition {\n\t letter : String\n}\nTransition \"source 1..1\" --> State\nTransition \"target 1..1\" --> State\nclass State {\n\t name : String\n}\nState \"combination 1..1\" --> State\n}\n@enduml\n"
+}

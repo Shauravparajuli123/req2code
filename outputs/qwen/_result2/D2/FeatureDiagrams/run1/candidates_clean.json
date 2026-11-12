@@ -1,0 +1,158 @@
+{
+ "case": "D2/FeatureDiagrams",
+ "stage": "result2_after_ambiguity_removal",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "src": [
+    "R4",
+    "R10",
+    "R11"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "A feature diagrams (may) have children"
+    },
+    {
+     "sid": "R10.s1",
+     "text": "A child may have some nodes."
+    },
+    {
+     "sid": "R11.s1",
+     "text": "A child may have some ORGroup"
+    }
+   ],
+   "name": "Child",
+   "freq": 3
+  },
+  {
+   "id": "C2",
+   "src": [
+    "R1",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R12",
+    "R13"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "A node has a description and and object, both of type string"
+    },
+    {
+     "sid": "R7.s1",
+     "text": "A node is composed of any number of attributes"
+    },
+    {
+     "sid": "R8.s1",
+     "text": "A node may have/reference to one or many XORGroup"
+    }
+   ],
+   "name": "Node",
+   "freq": 7
+  }
+ ],
+ "attributes": [
+  {
+   "id": "AT1",
+   "src": [
+    "R1"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "A node has a description and and object, both of type string"
+    }
+   ],
+   "owner": "Node",
+   "name": "description",
+   "type_hint": null
+  },
+  {
+   "id": "AT2",
+   "src": [
+    "R8"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R8.s1",
+     "text": "A node may have/reference to one or many XORGroup"
+    }
+   ],
+   "owner": "Node",
+   "name": "reference",
+   "type_hint": null
+  }
+ ],
+ "relations": [
+  {
+   "id": "REL1",
+   "src": [
+    "R10"
+   ],
+   "rule": [
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R10.s1",
+     "text": "A child may have some nodes."
+    }
+   ],
+   "kind": "has",
+   "source": "Child",
+   "target": "Node",
+   "multiplicity_target": "0..1"
+  }
+ ],
+ "enums": [],
+ "applied_edits": {
+  "remove_classes": [
+   "Orgroup",
+   "Xorgroup"
+  ],
+  "merge_classes": [],
+  "merge_actors": [],
+  "enums": [],
+  "multiplicities": [
+   {
+    "source": "Child",
+    "target": "Node",
+    "multiplicity": "0..1"
+   },
+   {
+    "source": "Child",
+    "target": "Orgroup",
+    "multiplicity": "0..1"
+   },
+   {
+    "source": "Orgroup",
+    "target": "Node",
+    "multiplicity": "1..*"
+   },
+   {
+    "source": "Xorgroup",
+    "target": "Node",
+    "multiplicity": "1..*"
+   }
+  ],
+  "actor_assumptions": []
+ }
+}

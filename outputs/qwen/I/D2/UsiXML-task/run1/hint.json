@@ -1,0 +1,112 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D2/UsiXML-task",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "A task with an associate operator"
+     }
+    ],
+    "name": "operator"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C2",
+    "src": [
+     "R2",
+     "R3",
+     "R4",
+     "R8",
+     "R9",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "An operator in some expression language."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "A binary operator"
+     },
+     {
+      "sid": "R4.s1",
+      "text": "A unary operator"
+     }
+    ],
+    "name": "Operator",
+    "freq": 6
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT4",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s2",
+      "text": "This node also has integer attributes to describe the importance, complexity level and centrality of the task."
+     }
+    ],
+    "owner": "Operator",
+    "name": "importance",
+    "type_hint": null
+   }
+  ],
+  "relations": [],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [
+    "Node"
+   ],
+   "merge_classes": [
+    [
+     "Operator",
+     "Task"
+    ]
+   ],
+   "merge_actors": [
+    [
+     "operator",
+     "Node"
+    ]
+   ],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Operator",
+     "target": "Task",
+     "multiplicity": "1..*"
+    }
+   ],
+   "actor_assumptions": [
+    {
+     "use_case": "none",
+     "actor": "operator"
+    }
+   ]
+  }
+ },
+ "open_tags": []
+}

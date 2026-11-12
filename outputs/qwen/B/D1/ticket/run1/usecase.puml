@@ -1,0 +1,75 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "User" as A1
+actor "Visitor" as A2
+actor "Reseller" as A3
+actor "Artist" as A4
+actor "Company" as A5
+rectangle "ticket" {
+  usecase "Save Information" as UC1
+  usecase "Edit Information" as UC2
+  usecase "See Preference" as UC3
+  usecase "See Content" as UC4
+  usecase "See History" as UC5
+  usecase "See Overview" as UC6
+  usecase "See Event" as UC7
+  usecase "Purchase Ticket" as UC8
+  usecase "Read Event" as UC9
+  usecase "Land Event Page" as UC10
+  usecase "Click Event" as UC11
+  usecase "Filter Search" as UC12
+  usecase "Filter List" as UC13
+  usecase "Filter Search Result" as UC14
+  usecase "Sort Search Result" as UC15
+  usecase "Have Buying Process" as UC16
+  usecase "Have Search Engine" as UC17
+  usecase "Have Description" as UC18
+  usecase "Have Link" as UC19
+  usecase "Have Price" as UC20
+  usecase "Have Reseller" as UC21
+  usecase "Validate Ticket" as UC22
+  usecase "Deduct Service Fee" as UC23
+  usecase "Avoid Behavior" as UC24
+  usecase "Protect User" as UC25
+  usecase "Resell Ticket" as UC26
+  usecase "Save Bank Account" as UC27
+  usecase "Add Ticket" as UC28
+  usecase "See Seat" as UC29
+  usecase "See Type" as UC30
+  usecase "Change Password" as UC31
+  usecase "Favorite Event" as UC32
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+A2 --> UC7
+A2 --> UC8
+A2 --> UC9
+A2 --> UC10
+A2 --> UC11
+A2 --> UC12
+A2 --> UC13
+A2 --> UC14
+A2 --> UC15
+A5 --> UC16
+A2 --> UC17
+A4 --> UC18
+A4 --> UC19
+A5 --> UC20
+A5 --> UC21
+A5 --> UC22
+A5 --> UC23
+A5 --> UC24
+A5 --> UC25
+A3 --> UC26
+A3 --> UC27
+A2 --> UC28
+A2 --> UC29
+A2 --> UC30
+A1 --> UC31
+A1 --> UC32
+@enduml

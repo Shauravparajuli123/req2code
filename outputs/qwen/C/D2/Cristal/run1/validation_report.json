@@ -1,0 +1,50 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The Cristal class realizes the use cases ElementaryPartDef, ElementaryActDef, CompositeActDef, ActCompositeMember, and PartCompositeMember as per the requirements."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R13 is not supported by the model, as there is no class named ActivityDefinition that has a relationship with ActCompositeMember.",
+   "fix": "Add a class named ActivityDefinition with a relationship to ActCompositeMember."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R7 is not supported by the model, as there is no class named ActivityDefinition.",
+   "fix": "Add a class named ActivityDefinition."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R8 is not supported by the model, as there is no class named PartDefinition.",
+   "fix": "Add a class named PartDefinition."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R9 is not supported by the model, as there is no class named PartCompositeMember.",
+   "fix": "Add a class named PartCompositeMember."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R11 is not supported by the model, as there is no relationship between CompositeParDef and PartCompositeMember.",
+   "fix": "Add a relationship between CompositeParDef and PartCompositeMember."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R12 is not supported by the model, as there is no relationship between CompositeActDef and ActCompositeMember.",
+   "fix": "Add a relationship between CompositeActDef and ActCompositeMember."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R14 is not supported by the model, as there is no relationship between ActivityDefinition and ActCompositeMember.",
+   "fix": "Add a relationship between ActivityDefinition and ActCompositeMember."
+  }
+ ]
+}

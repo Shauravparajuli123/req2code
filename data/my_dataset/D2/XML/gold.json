@@ -1,0 +1,94 @@
+{
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class"
+  },
+  {
+   "name": "Attribute",
+   "kind": "class"
+  },
+  {
+   "name": "Text",
+   "kind": "class"
+  },
+  {
+   "name": "Element",
+   "kind": "class"
+  },
+  {
+   "name": "Root",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Node": [
+   {
+    "name": "startLine",
+    "type": "Integer"
+   },
+   {
+    "name": "startColumn",
+    "type": "Integer"
+   },
+   {
+    "name": "endLine",
+    "type": "Integer"
+   },
+   {
+    "name": "endColumn",
+    "type": "Integer"
+   },
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "value",
+    "type": "String"
+   }
+  ],
+  "Attribute": [],
+  "Text": [],
+  "Element": [],
+  "Root": []
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Node",
+   "to": "Element",
+   "label": "parent 0..1",
+   "label_to": "children 0..*"
+  },
+  {
+   "type": "generalization",
+   "from": "Attribute",
+   "to": "Node",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Text",
+   "to": "Node",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Element",
+   "to": "Node",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Root",
+   "to": "Element",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage XML {\nclass Node {\n\t startLine : Integer\n\t startColumn : Integer\n\t endLine : Integer\n\t endColumn : Integer\n\t name : String\n\t value : String\n}\nNode \"parent 0..1\" --* \"children 0..*\" Element\nclass Attribute {\n}\nNode <|-- Attribute\nclass Text {\n}\nNode <|-- Text\nclass Element {\n}\nNode <|-- Element\nclass Root {\n}\nElement <|-- Root\n}\n@enduml\n"
+}

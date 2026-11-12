@@ -1,0 +1,115 @@
+<html><head><meta charset='utf-8'><title>D4/uni</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D4/uni &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: This model represents some entities of a course.
+R2: We know that courses have a name and a specific number of credits.
+R3: Each course can have one or more professors, who have a name.
+R4: Professors could participate in any number of courses.
+R5: For a course to exist, it must aggregate, at least, five students, where each student has a name.
+R6: Students can be enrolled in any number of courses.
+R7: Finally, students can be accommodated in dormitories, where each dormitory can have from one to four students.
+R8: Besides, each dormitory has a price.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (1 → 1)</th></tr><tr><td class="">student</td></tr></table></div>
+<div><table><tr><th>classes (4 → 4)</th></tr><tr><td class="">Course</td></tr><tr><td class="">Dormitory</td></tr><tr><td class="">Professor</td></tr><tr><td class="">Student</td></tr></table></div>
+<div><table><tr><th>attributes (6 → 6)</th></tr><tr><td class="">Course.credit</td></tr><tr><td class="">Course.entity</td></tr><tr><td class="">Course.name</td></tr><tr><td class="">Dormitory.price</td></tr><tr><td class="">Professor.name</td></tr><tr><td class="">Student.name</td></tr></table></div>
+<div><table><tr><th>relations (2 → 2)</th></tr><tr><td class="">association: Course -&gt; Student</td></tr><tr><td class="">has: Course -&gt; Professor</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R1</td><td>quantifier</td><td>some</td><td><span class='tag resolved'>resolved</span></td><td>This model represents a single entity of a course.; This model represents multiple entities of a course.<br><i>The term &#x27;some&#x27; is ambiguous and could mean either a single or multiple courses.</i></td></tr>
+<tr><td>A2</td><td>R3</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>Each course can have one professor.; Each course can have one or more professors.<br><i>The term &#x27;one or more&#x27; is ambiguous and could mean either exactly one or multiple professors.</i></td></tr>
+<tr><td>A3</td><td>R4</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>Professors can participate in one course.; Professors can participate in any number of courses.<br><i>The term &#x27;any number of&#x27; is ambiguous and could mean either a single or multiple courses.</i></td></tr>
+<tr><td>A4</td><td>R6</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>Students can be enrolled in one course.; Students can be enrolled in any number of courses.<br><i>The term &#x27;any number of&#x27; is ambiguous and could mean either a single or multiple courses.</i></td></tr>
+<tr><td>A5</td><td>R6</td><td>actor</td><td>passive &#x27;enrolled&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>Students can enroll themselves in courses.; Students can be enrolled by a professor or administrator.<br><i>The passive form &#x27;enrolled&#x27; without an agent could imply either self-enrollment or enrollment by another actor.</i></td></tr>
+<tr><td>A6</td><td>R7</td><td>actor</td><td>passive &#x27;accommodated&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>Students can be accommodated in dormitories.; Dormitories can accommodate students.<br><i>The passive form &#x27;accommodated&#x27; without an agent could imply either students being accommodated or dormitories accommodating students.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D4_uni_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D4_uni_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D4/uni.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Course:
+    &quot;&quot;&quot;Source: R1, R2, R3, R5, R6&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    credits: _t.Optional[int] = None
+    professors: _t.Optional[str] = None
+    students: _t.Optional[str] = None
+
+    def addProfessor(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def removeProfessor(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def addStudent(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def removeStudent(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Dormitory:
+    &quot;&quot;&quot;Source: R7, R8&quot;&quot;&quot;
+    price: _t.Optional[float] = None
+    students: _t.Optional[str] = None
+
+    def addStudent(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def removeStudent(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Professor:
+    &quot;&quot;&quot;Source: R3&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class Student:
+    &quot;&quot;&quot;Source: R5, R6&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    dormitory: _t.Optional[&quot;Dormitory&quot;] = None
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>0</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>0</td></tr>
+<tr><th>actors_without_use_case</th><td>1</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>1</td></tr>
+<tr><th>inconsistency_rate</th><td>0.2</td></tr>
+<tr><th>requirement_coverage</th><td>0.875</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.75</td><td>0.75</td><td>0.75</td><td>3/1/1</td></tr>
+<tr><td>attributes</td><td>0.5</td><td>0.75</td><td>0.6</td><td>3/3/1</td></tr>
+<tr><td>relations</td><td>0.667</td><td>0.667</td><td>0.667</td><td>2/1/1</td></tr>
+</table></body></html>

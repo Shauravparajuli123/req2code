@@ -1,0 +1,19 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class TupleElement {
+  value : String
+}
+class Tuple {
+  +addTupleElement()
+}
+class RelationalDatabase {
+  +addTable()
+}
+class Table {
+  +addTuple()
+}
+RelationalDatabase "1" *-- "0..*" Table : contains
+Table "1" o-- "0..*" Tuple : has
+Tuple "1" -- "1" TupleElement : contains
+@enduml

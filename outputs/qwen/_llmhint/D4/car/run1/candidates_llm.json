@@ -1,0 +1,132 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Car",
+   "src": [
+    "R1",
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "Wheel",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Engine",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Seat",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Make",
+   "src": [
+    "R2",
+    "R4"
+   ]
+  },
+  {
+   "name": "Model",
+   "src": [
+    "R2",
+    "R4",
+    "R7"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Car",
+   "name": "numberPlate",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "owner": "Wheel",
+   "name": "diameter",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "Engine",
+   "name": "power",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "owner": "Seat",
+   "name": "size",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Car",
+   "target": "Make",
+   "src": [
+    "R2",
+    "R4"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Car",
+   "target": "Model",
+   "src": [
+    "R2",
+    "R4",
+    "R7"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Model",
+   "target": "Make",
+   "src": [
+    "R2",
+    "R4"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Wheel",
+   "target": "Car",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Engine",
+   "target": "Car",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Seat",
+   "target": "Car",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

@@ -1,0 +1,66 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Robot",
+   "kind": "class",
+   "attributes": [
+    "id"
+   ],
+   "methods": [],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "name": "Task",
+   "kind": "class",
+   "attributes": [
+    "id"
+   ],
+   "methods": [
+    {
+     "name": "performTask",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "TaskExecution",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "startTime",
+    "location"
+   ],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Location",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [],
+ "python": "\"\"\"Code skeleton generated from the shared model of D4/robots.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Robot:\n    \"\"\"Source: R1, R2\"\"\"\n    id: _t.Optional[int] = None\n\n\n@_dc.dataclass\nclass Task:\n    \"\"\"Source: R4, R5\"\"\"\n    id: _t.Optional[int] = None\n\n    def performTask(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass TaskExecution:\n    \"\"\"Source: R5\"\"\"\n    id: _t.Optional[int] = None\n    startTime: _t.Optional[str] = None\n    location: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Location:\n    \"\"\"Source: R6, R7\"\"\"\n    pass\n",
+ "java": {
+  "Robot.java": "/** Generated from shared model D4/robots. Source: R1, R2 */\npublic class Robot {\n    private int id;\n}\n",
+  "Task.java": "/** Generated from shared model D4/robots. Source: R4, R5 */\npublic class Task {\n    private int id;\n\n    /** Operation. */\n    public void performTask() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "TaskExecution.java": "/** Generated from shared model D4/robots. Source: R5 */\npublic class TaskExecution {\n    private int id;\n    private java.time.LocalDate startTime;\n    private java.lang.String location;\n}\n",
+  "Location.java": "/** Generated from shared model D4/robots. Source: R6, R7 */\npublic class Location {\n}\n"
+ }
+}

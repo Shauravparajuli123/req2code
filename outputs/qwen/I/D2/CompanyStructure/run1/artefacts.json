@@ -1,0 +1,145 @@
+{
+ "actors": [
+  "Company Structure Model"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "CompanyStructureModel",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R8"
+   ]
+  },
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R10"
+   ]
+  },
+  {
+   "name": "Hq",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Store",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "BackOffice",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "CashRegister",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "CompanyStructureModel",
+   "target": "Company",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CompanyStructureModel",
+   "target": "Hq",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CompanyStructureModel",
+   "target": "Store",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CompanyStructureModel",
+   "target": "BackOffice",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Company",
+   "target": "BackOffice",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Store",
+   "target": "BackOffice",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CompanyStructureModel",
+   "target": "CashRegister",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R11"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass CashRegister:\n    pass\n\nclass Company:\n    def __init__(self, office: Office):\n        self.office = office\n        self.employees = []\n\nclass CompanyStructureModel:\n    def __init__(self, hq: Hq, stores: List[Store], cash_registers: List[CashRegister]):\n        self.hq = hq\n        self.stores = stores\n        self.cash_registers = cash_registers\n\nclass Hq:\n    pass\n\nclass Office:\n    pass\n\nclass Store:\n    def __init__(self, office: Office):\n        self.office = office\n        self.cash_registers = []\n",
+ "java": {}
+}

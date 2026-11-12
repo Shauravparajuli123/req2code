@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R7 is not represented in the model.",
+   "fix": "Add a class for tokens or add an attribute to the Place class to represent tokens."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R8 is not represented in the model.",
+   "fix": "Add an association between Place and Net classes to represent the one-to-one relationship."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R10 is not represented in the model.",
+   "fix": "Add a constraint or association to ensure a Transition object belongs to at most one Net object."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R12 is not represented in the model.",
+   "fix": "Add a constraint or association to ensure a Net object has at least one Place object."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R13 is not represented in the model.",
+   "fix": "Add an association between PlaceTransitionArc and Transition classes to represent the destination relationship."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R14 is not represented in the model.",
+   "fix": "Add an association between TransitionPlaceArc and Transition classes to represent the source relationship."
+  }
+ ]
+}

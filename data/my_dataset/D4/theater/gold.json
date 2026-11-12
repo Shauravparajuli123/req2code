@@ -1,0 +1,4 @@
+{
+ "plantuml": "@startuml\n\nclass Person{\nname: String\n}\n\nclass Participant{\n}\n\nclass Author{\n}\n\nclass Theater{\nlocation: String\n}\n\nclass Session{\ntimeBegin: int\ntimeEnd: int\n}\n\nclass Play{\nname: String\ntime: Time \n}\n\nclass Musical\n\nclass Opera\n\nenum Time{\nDay\nNight\n}\n\nPerson <|-- Participant\nPerson <|-- Author\n\nTheater \"*\" -- \"*\" Play\nMusical --|> Play\nOpera --|> Play\n\nAuthor \"1...*\" --o \"*\" Play\nParticipant \"*\" --o \"*\" Play\n(Participant, Play) .. Session\n\n\n@enduml",
+ "scorer": "NOMAD src/eval_helpers.py evaluate_uml"
+}

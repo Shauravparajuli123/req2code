@@ -1,0 +1,90 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that the relationships between classes are bidirectional unless specified otherwise."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement FR-CM-02 is not supported by the model as Companies are not derived from a base class.",
+   "fix": "Introduce a base class Company and derive Customer, Vendor, and Shipper from it."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-CM-04 is not supported by the model as there is no attribute for company type.",
+   "fix": "Add a companyType attribute to the Company class."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-CM-05 is not supported by the model as there is no attribute for state.",
+   "fix": "Add a state attribute to the Company class."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-CM-06 is not supported by the model as there is no attribute for taxStatus.",
+   "fix": "Add a taxStatus attribute to the Company class."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-CM-07 is not supported by the model as there is no association between Company and Contact.",
+   "fix": "Add an association between Company and Contact in the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-EM-02 is not supported by the model as there is no association between Employee and JobTitle.",
+   "fix": "Add an association between Employee and JobTitle in the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-EM-03 is not supported by the model as there is no association between Employee and Employee.",
+   "fix": "Add a supervisor-employee association in the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-PM-02 is not supported by the model as there is no association between Product and ProductCategory.",
+   "fix": "Add an association between Product and ProductCategory in the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-PM-07 is not supported by the model as there is no association between Product and Vendor.",
+   "fix": "Add an association between Product and Vendor in the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-SOP-04 is not supported by the model as there is no attribute for orderStatus.",
+   "fix": "Add an orderStatus attribute to the Order class."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-SOP-09 is not supported by the model as there is no attribute for discount.",
+   "fix": "Add a discount attribute to the OrderDetailItem class."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-SOP-10 is not supported by the model as there is no attribute for status.",
+   "fix": "Add a status attribute to the OrderDetailItem class."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-POP-05 is not supported by the model as there is no attribute for status.",
+   "fix": "Add a status attribute to the PurchaseOrder class."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-DA-01 is not supported by the model as there is no attribute for addedBy or addedDate.",
+   "fix": "Add addedBy and addedDate attributes to the Company, Employee, Order, and PurchaseOrder classes."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-DA-02 is not supported by the model as there is no attribute for modifiedBy or modifiedDate.",
+   "fix": "Add modifiedBy and modifiedDate attributes to the Company, Employee, Order, and PurchaseOrder classes."
+  }
+ ]
+}

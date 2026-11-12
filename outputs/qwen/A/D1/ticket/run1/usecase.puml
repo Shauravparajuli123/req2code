@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "User" as A1
+actor "Visitor" as A2
+actor "Reseller" as A3
+actor "Artist" as A4
+actor "ArtistVisitor" as A5
+rectangle "ticket" {
+  usecase "Create Profile" as UC1
+  usecase "View Personal Information" as UC2
+  usecase "Edit Personal Information" as UC3
+  usecase "View Ticket History" as UC4
+  usecase "View Upcoming Events" as UC5
+  usecase "Favorite Events Or Artists" as UC6
+  usecase "Search For Events" as UC7
+  usecase "Buy Tickets" as UC8
+  usecase "Resell Tickets" as UC9
+  usecase "View Event Information" as UC10
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+A2 --> UC7
+A2 --> UC8
+A3 --> UC9
+A5 --> UC10
+@enduml

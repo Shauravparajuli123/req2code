@@ -1,0 +1,451 @@
+{
+ "classes": [
+  {
+   "name": "recipes",
+   "status": "mandatory"
+  },
+  {
+   "name": "newsletter",
+   "status": "mandatory"
+  },
+  {
+   "name": "order",
+   "status": "mandatory"
+  },
+  {
+   "name": "products",
+   "status": "mandatory"
+  },
+  {
+   "name": "customer",
+   "status": "mandatory"
+  },
+  {
+   "name": "delivery",
+   "status": "mandatory"
+  },
+  {
+   "name": "store",
+   "status": "mandatory"
+  },
+  {
+   "name": "personal discount",
+   "status": "mandatory"
+  },
+  {
+   "name": "loyalty card",
+   "status": "mandatory"
+  },
+  {
+   "name": "wishlist",
+   "status": "mandatory"
+  },
+  {
+   "name": "shopping list",
+   "status": "mandatory"
+  },
+  {
+   "name": "payment",
+   "status": "optional"
+  }
+ ],
+ "associations": [
+  {
+   "pair": [
+    "custom",
+    "newslett"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "custom",
+    "wishlist"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "custom",
+    "shopping list"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "order",
+    "product"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "custom",
+    "order"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "store",
+    "product"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "shopping list",
+    "product"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "wishlist",
+    "product"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "custom",
+    "store"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "recip",
+    "product"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "custom",
+    "delivery "
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "custom",
+    "personal discount"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "custom",
+    "loyalty card"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "order",
+    "delivery"
+   ],
+   "status": "optional"
+  },
+  {
+   "pair": [
+    "payment",
+    "order"
+   ],
+   "status": "optional"
+  },
+  {
+   "pair": [
+    "discount",
+    "prodcut"
+   ],
+   "status": "mandatory"
+  }
+ ],
+ "synonyms": {
+  "grocery delivery": "delivery",
+  "delivery service": "delivery",
+  "expressdelivery": "delivery",
+  "deliveryservice": "delivery",
+  "grocerydelivery": "delivery",
+  "recipe idea": "recipe",
+  "discount": "personal discount",
+  "special personal discount": "personal discount",
+  "personaldiscount": "personal discount",
+  "loyaltycard": "loyalty card",
+  "loyalty_card": "loyalty card",
+  "card": "loyalty card",
+  "news letter": "newsletter",
+  "shoppinglist": "shopping list",
+  "shopping_list": "shopping list",
+  "grocerylist": "shopping list",
+  "grocery order": "order",
+  "grocery": "order"
+ },
+ "use_case_draft": {
+  "status": "auto-extracted, not yet validated",
+  "actors": {
+   "customer": 44,
+   "employee": 7
+  },
+  "use_cases": [
+   {
+    "actor": "customer",
+    "goal": "create a personal account",
+    "src": "R1"
+   },
+   {
+    "actor": "customer",
+    "goal": "sign up for the newsletter",
+    "src": "R2"
+   },
+   {
+    "actor": "customer",
+    "goal": "unsubscribe from the newsletter",
+    "src": "R3"
+   },
+   {
+    "actor": "customer",
+    "goal": "activate push notifications",
+    "src": "R4"
+   },
+   {
+    "actor": "customer",
+    "goal": "deactivate push notifications",
+    "src": "R5"
+   },
+   {
+    "actor": "customer",
+    "goal": "reset my password",
+    "src": "R6"
+   },
+   {
+    "actor": "customer",
+    "goal": "change the font size of the text",
+    "src": "R7"
+   },
+   {
+    "actor": "customer",
+    "goal": "change the contrast between the text and the background",
+    "src": "R8"
+   },
+   {
+    "actor": "customer",
+    "goal": "change the application’s language to my native language",
+    "src": "R9"
+   },
+   {
+    "actor": "customer",
+    "goal": "receive suggestions on products that I might like",
+    "src": "R10"
+   },
+   {
+    "actor": "customer",
+    "goal": "receive a special personal discount on the products that I frequently buy",
+    "src": "R11"
+   },
+   {
+    "actor": "customer",
+    "goal": "be notified of special personal discounts",
+    "src": "R12"
+   },
+   {
+    "actor": "customer",
+    "goal": "have a subscription-based delivery service",
+    "src": "R13"
+   },
+   {
+    "actor": "customer",
+    "goal": "get recipes based on products I like",
+    "src": "R14"
+   },
+   {
+    "actor": "customer",
+    "goal": "contact customer service",
+    "src": "R15"
+   },
+   {
+    "actor": "customer",
+    "goal": "scan products in the store to build my shopping list",
+    "src": "R16"
+   },
+   {
+    "actor": "customer",
+    "goal": "add products to my wishlist",
+    "src": "R17"
+   },
+   {
+    "actor": "customer",
+    "goal": "search for a product",
+    "src": "R18"
+   },
+   {
+    "actor": "customer",
+    "goal": "filter products on dietary restrictions",
+    "src": "R19"
+   },
+   {
+    "actor": "customer",
+    "goal": "order products by price in ascending order",
+    "src": "R20"
+   },
+   {
+    "actor": "customer",
+    "goal": "order products by popularity",
+    "src": "R21"
+   },
+   {
+    "actor": "customer",
+    "goal": "be notified of what products are on sale",
+    "src": "R22"
+   },
+   {
+    "actor": "customer",
+    "goal": "scan the barcode of an item",
+    "src": "R23"
+   },
+   {
+    "actor": "customer",
+    "goal": "read the product information",
+    "src": "R24"
+   },
+   {
+    "actor": "customer",
+    "goal": "see if the product I need is in stock",
+    "src": "R25"
+   },
+   {
+    "actor": "customer",
+    "goal": "be notified when an item I need is back in stock",
+    "src": "R26"
+   },
+   {
+    "actor": "customer",
+    "goal": "see if a product that is sold out in my store is available in another store",
+    "src": "R27"
+   },
+   {
+    "actor": "customer",
+    "goal": "see the available quantity of a product in store",
+    "src": "R28"
+   },
+   {
+    "actor": "customer",
+    "goal": "see when a product will be available again when it is currently sold out",
+    "src": "R29"
+   },
+   {
+    "actor": "customer",
+    "goal": "be provided with recipe ideas",
+    "src": "R30"
+   },
+   {
+    "actor": "customer",
+    "goal": "see which products were used in a recipe",
+    "src": "R31"
+   },
+   {
+    "actor": "customer",
+    "goal": "purchase products online",
+    "src": "R32"
+   },
+   {
+    "actor": "customer",
+    "goal": "have my groceries delivered to me",
+    "src": "R33"
+   },
+   {
+    "actor": "customer",
+    "goal": "select the date on which my groceries will be delivered",
+    "src": "R34"
+   },
+   {
+    "actor": "customer",
+    "goal": "select a time slot for the delivery of my groceries",
+    "src": "R35"
+   },
+   {
+    "actor": "customer",
+    "goal": "have my groceries delivered using an express delivery service",
+    "src": "R36"
+   },
+   {
+    "actor": "customer",
+    "goal": "see my order history",
+    "src": "R37"
+   },
+   {
+    "actor": "customer",
+    "goal": "place a previous order again",
+    "src": "R38"
+   },
+   {
+    "actor": "customer",
+    "goal": "add products from the overview of my previous order to my new order",
+    "src": "R39"
+   },
+   {
+    "actor": "customer",
+    "goal": "digitally pay for my delivered groceries",
+    "src": "R40"
+   },
+   {
+    "actor": "customer",
+    "goal": "find the location of products in a specific store",
+    "src": "R41"
+   },
+   {
+    "actor": "customer",
+    "goal": "get recommendation regarding the nearest store",
+    "src": "R42"
+   },
+   {
+    "actor": "customer",
+    "goal": "change the selection of my default store",
+    "src": "R43"
+   },
+   {
+    "actor": "customer",
+    "goal": "link my existing loyalty card",
+    "src": "R44"
+   },
+   {
+    "actor": "employee",
+    "goal": "update the application with new recipes",
+    "src": "R45"
+   },
+   {
+    "actor": "employee",
+    "goal": "edit the discounts for a specific product",
+    "src": "R46"
+   },
+   {
+    "actor": "employee",
+    "goal": "confirm an established delivery time",
+    "src": "R47"
+   },
+   {
+    "actor": "employee",
+    "goal": "notify customers of suddenly unavailable products in their delivery",
+    "src": "R48"
+   },
+   {
+    "actor": "employee",
+    "goal": "notify customers in case of a delayed delivery",
+    "src": "R49"
+   },
+   {
+    "actor": "employee",
+    "goal": "contact the customer in case of a canceled delivery",
+    "src": "R50"
+   },
+   {
+    "actor": "employee",
+    "goal": "provide the customer with a new delivery time in case of a canceled delivery",
+    "src": "R51"
+   }
+  ],
+  "unparsed": 0
+ }
+}

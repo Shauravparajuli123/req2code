@@ -1,0 +1,131 @@
+{
+ "classes": [
+  {
+   "name": "LocatedElement",
+   "kind": "class"
+  },
+  {
+   "name": "Table",
+   "kind": "class"
+  },
+  {
+   "name": "Caption",
+   "kind": "class"
+  },
+  {
+   "name": "Row",
+   "kind": "class"
+  },
+  {
+   "name": "Cell",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "LocatedElement": [
+   {
+    "name": "location",
+    "type": "String"
+   },
+   {
+    "name": "commentsBefore",
+    "type": "String"
+   },
+   {
+    "name": "commentsAfter",
+    "type": "String"
+   }
+  ],
+  "Table": [
+   {
+    "name": "border",
+    "type": "Integer"
+   },
+   {
+    "name": "style",
+    "type": "String"
+   },
+   {
+    "name": "class",
+    "type": "String"
+   }
+  ],
+  "Caption": [
+   {
+    "name": "content",
+    "type": "String"
+   }
+  ],
+  "Row": [],
+  "Cell": [
+   {
+    "name": "isHeading",
+    "type": "Boolean"
+   },
+   {
+    "name": "align",
+    "type": "String"
+   },
+   {
+    "name": "style",
+    "type": "String"
+   },
+   {
+    "name": "content",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "Table",
+   "to": "LocatedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Table",
+   "to": "Caption",
+   "label": "caption 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Table",
+   "to": "Row",
+   "label": "rows 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Caption",
+   "to": "LocatedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Row",
+   "to": "LocatedElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Row",
+   "to": "Cell",
+   "label": "cells 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Cell",
+   "to": "LocatedElement",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage WikiTable {\nclass LocatedElement {\n\t location : String\n\t commentsBefore : String\n\t commentsAfter : String\n}\nclass Table {\n\t border : Integer\n\t style : String\n\t class : String\n}\nLocatedElement <|-- Table\nTable \"caption 0..1\" *--> Caption\nTable \"rows 0..*\" *--> Row\nclass Caption {\n\t content : String\n}\nLocatedElement <|-- Caption\nclass Row {\n}\nLocatedElement <|-- Row\nRow \"cells 0..*\" *--> Cell\nclass Cell {\n\t isHeading : Boolean\n\t align : String\n\t style : String\n\t content : String\n}\nLocatedElement <|-- Cell\n}\n@enduml\n"
+}

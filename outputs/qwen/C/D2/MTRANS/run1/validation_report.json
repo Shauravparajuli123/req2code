@@ -1,0 +1,55 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class MetaClass as per requirement R1.",
+   "fix": "Add class MetaClass to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class MtransModel should have an attribute named 'metamodels' as per requirement R2.",
+   "fix": "Add 'metamodels' attribute to class MtransModel."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Rule should have attributes 'abstract' and 'name' as per requirement R4.",
+   "fix": "Add attributes 'abstract' and 'name' to class Rule."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Module and MetaClass is missing as per requirement R10.",
+   "fix": "Add association Module -> MetaClass [0..*]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and MetaClass is missing as per requirement R13.",
+   "fix": "Add association Rule -> MetaClass [1]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Class Expression should have a cardinality of 1 for attribute 'instruction' as per requirement R19.",
+   "fix": "Ensure that the cardinality of attribute 'instruction' in class Expression is 1."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Class Instruction should have a cardinality of 1 for attribute 'expression' as per requirement R21.",
+   "fix": "Add attribute 'expression' to class Instruction with cardinality 1."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Section is missing as per requirement R14.",
+   "fix": "Add association Rule -> Section [1..*]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Variable is missing as per requirement R22.",
+   "fix": "Add association Rule -> Variable [1..*]."
+  }
+ ]
+}

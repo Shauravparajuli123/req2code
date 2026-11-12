@@ -1,0 +1,114 @@
+<html><head><meta charset='utf-8'><title>D2/CompanyStructure</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D2/CompanyStructure &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: A company structure model has companies
+R2: A company structure model has corporate HQ
+R3: A company structure model has stores
+R4: A company structure model has back offices
+R5: A company contains one back office for each store
+R6: The employees that are working in the company.
+R7: A company structure model has cash registers
+R8: A company is composed by one and only one corporate HQ
+R9: Each corporate HQs manages a certain number of stores
+R10: In a company structure model, stores have exactly one back office
+R11: A store is composed by zero or more cash registers</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (0 → 0)</th></tr></table></div>
+<div><table><tr><th>classes (6 → 6)</th></tr><tr><td class="">CashRegister</td></tr><tr><td class="">Company</td></tr><tr><td class="">CompanyStructureModel</td></tr><tr><td class="">Hq</td></tr><tr><td class="">Office</td></tr><tr><td class="">Store</td></tr></table></div>
+<div><table><tr><th>attributes (0 → 0)</th></tr></table></div>
+<div><table><tr><th>relations (7 → 7)</th></tr><tr><td class="">has: CompanyStructureModel -&gt; CashRegister</td></tr><tr><td class="">has: CompanyStructureModel -&gt; Company</td></tr><tr><td class="">has: CompanyStructureModel -&gt; Hq</td></tr><tr><td class="">has: CompanyStructureModel -&gt; Office</td></tr><tr><td class="">has: CompanyStructureModel -&gt; Store</td></tr><tr><td class="">has: Company -&gt; Office</td></tr><tr><td class="">has: Store -&gt; Office</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R9</td><td>incompleteness</td><td>certain</td><td><span class='tag resolved'>resolved</span></td><td>Each corporate HQ manages exactly one store; Each corporate HQ manages multiple stores<br><i>The phrase &#x27;a certain number of stores&#x27; is ambiguous and could mean either exactly one or multiple stores.</i></td></tr>
+<tr><td>A2</td><td>R11</td><td>quantifier</td><td>zero or more</td><td><span class='tag resolved'>resolved</span></td><td>A store is composed of zero cash registers; A store is composed of one or more cash registers<br><i>The phrase &#x27;zero or more cash registers&#x27; is ambiguous and could mean either zero or one or more cash registers.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D2_CompanyStructure_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D2_CompanyStructure_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D2/CompanyStructure.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class CompanyStructureModel:
+    &quot;&quot;&quot;Source: R1&quot;&quot;&quot;
+    company: _t.Optional[&quot;Company&quot;] = None
+    hq: _t.Optional[&quot;Hq&quot;] = None
+    stores: _t.List[&quot;Store&quot;] = _dc.field(default_factory=list)
+    cashRegisters: _t.List[&quot;CashRegister&quot;] = _dc.field(default_factory=list)
+
+
+@_dc.dataclass
+class Company:
+    &quot;&quot;&quot;Source: R1&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    hq: _t.Optional[str] = None
+    stores: _t.Optional[str] = None
+    backOffices: _t.Optional[str] = None
+    cashRegisters: _t.Optional[str] = None
+
+    def createCompany(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Hq:
+    &quot;&quot;&quot;Source: R8, R9&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class Store:
+    &quot;&quot;&quot;Source: R3&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    backOffice: _t.Optional[str] = None
+
+    def createStore(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Office:
+    &quot;&quot;&quot;Source: R4, R5, R10&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class CashRegister:
+    &quot;&quot;&quot;Source: R7, R11&quot;&quot;&quot;
+    pass
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>0</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>0</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>0</td></tr>
+<tr><th>inconsistency_rate</th><td>0.0</td></tr>
+<tr><th>requirement_coverage</th><td>0.8182</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;Requirement R4 is assumed to be satisfied through the association between CompanyStructureModel and Store, as stores are part of the company structure model.&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.5</td><td>0.429</td><td>0.462</td><td>3/3/4</td></tr>
+<tr><td>attributes</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0/7/0</td></tr>
+<tr><td>relations</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0/4/7</td></tr>
+<tr><td>relations_strict</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0/4/7</td></tr>
+</table></body></html>

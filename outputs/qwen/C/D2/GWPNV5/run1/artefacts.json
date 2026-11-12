@@ -1,0 +1,157 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "tokens"
+   ],
+   "methods": [],
+   "src": [
+    "R9",
+    "R12",
+    "R15"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "weight"
+   ],
+   "methods": [
+    {
+     "name": "createTransition",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "places",
+    "transitions"
+   ],
+   "methods": [
+    {
+     "name": "createNet",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    "source",
+    "destination"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "PlaceTransitionArc",
+   "kind": "class",
+   "attributes": [
+    "source",
+    "destination"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R13"
+   ]
+  },
+  {
+   "name": "TransitionPlaceArc",
+   "kind": "class",
+   "attributes": [
+    "source",
+    "destination"
+   ],
+   "methods": [],
+   "src": [
+    "R6",
+    "R14"
+   ]
+  },
+  {
+   "name": "Weight",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Place",
+   "target": "Net",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Arc",
+   "target": "Weight",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "source": "PlaceTransitionArc",
+   "target": "Transition",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "source": "Place",
+   "target": "Arc",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "Transition",
+   "target": "Net",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GWPNV5.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Place:\n    \"\"\"Source: R9, R12, R15\"\"\"\n    name: _t.Optional[str] = None\n    tokens: _t.Optional[int] = None\n    net: _t.Optional[\"Net\"] = None\n    arcs: _t.List[\"Arc\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: R2, R10, R11\"\"\"\n    name: _t.Optional[str] = None\n    weight: _t.Optional[str] = None\n    net: _t.Optional[\"Net\"] = None\n\n    def createTransition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Net:\n    \"\"\"Source: R3, R8, R12\"\"\"\n    name: _t.Optional[str] = None\n    places: _t.Optional[str] = None\n    transitions: _t.Optional[str] = None\n\n    def createNet(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Arc:\n    \"\"\"Source: R5, R6, R13, R14\"\"\"\n    source: _t.Optional[str] = None\n    destination: _t.Optional[str] = None\n    weight: _t.Optional[\"Weight\"] = None\n\n\n@_dc.dataclass\nclass PlaceTransitionArc:\n    \"\"\"Source: R5, R13\"\"\"\n    source: _t.Optional[str] = None\n    destination: _t.Optional[str] = None\n    transition: _t.Optional[\"Transition\"] = None\n\n\n@_dc.dataclass\nclass TransitionPlaceArc:\n    \"\"\"Source: R6, R14\"\"\"\n    source: _t.Optional[str] = None\n    destination: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Weight:\n    \"\"\"Source: R4\"\"\"\n    pass\n",
+ "java": {
+  "Place.java": "/** Generated from shared model D2/GWPNV5. Source: R9, R12, R15 */\npublic class Place {\n    private java.lang.String name;\n    private int tokens;\n    private Net net;\n    private java.util.List<Arc> arcs;\n}\n",
+  "Transition.java": "/** Generated from shared model D2/GWPNV5. Source: R2, R10, R11 */\npublic class Transition {\n    private java.lang.String name;\n    private java.lang.String weight;\n    private Net net;\n\n    /** Operation. */\n    public void createTransition() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Net.java": "/** Generated from shared model D2/GWPNV5. Source: R3, R8, R12 */\npublic class Net {\n    private java.lang.String name;\n    private java.lang.String places;\n    private java.lang.String transitions;\n\n    /** Operation. */\n    public void createNet() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Arc.java": "/** Generated from shared model D2/GWPNV5. Source: R5, R6, R13, R14 */\npublic class Arc {\n    private java.lang.String source;\n    private java.lang.String destination;\n    private Weight weight;\n}\n",
+  "PlaceTransitionArc.java": "/** Generated from shared model D2/GWPNV5. Source: R5, R13 */\npublic class PlaceTransitionArc {\n    private java.lang.String source;\n    private java.lang.String destination;\n    private Transition transition;\n}\n",
+  "TransitionPlaceArc.java": "/** Generated from shared model D2/GWPNV5. Source: R6, R14 */\npublic class TransitionPlaceArc {\n    private java.lang.String source;\n    private java.lang.String destination;\n}\n",
+  "Weight.java": "/** Generated from shared model D2/GWPNV5. Source: R4 */\npublic class Weight {\n}\n"
+ }
+}

@@ -1,0 +1,25 @@
+@startuml
+class BusinessEntity {
+  businessContact
+  identifiers
+}
+class Contact {
+}
+class IdentifierBag {
+}
+class Model {
+  overviewDocuments
+}
+class OverviewDocument {
+}
+class PifModel {
+  businessTemplates
+}
+class BusinessTemplate {
+}
+PifModel -- BusinessEntity
+Model -- OverviewDocument
+BusinessEntity -- Contact
+BusinessEntity -- BusinessTemplate
+BusinessEntity -- IdentifierBag
+@enduml

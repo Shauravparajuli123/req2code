@@ -1,0 +1,348 @@
+{
+ "case": "D2/UMLDI-ModelManagement",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "CoreModel",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "isSpecification",
+     "type": "boolean",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addNamespace",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addClassifier",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "addFeature",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M4",
+     "name": "addGeneralization",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Namespace",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "name": "modelElements",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9",
+    "R11"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "powerTypeRanges",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    },
+    {
+     "name": "owner",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Feature",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "ownerScope",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "owner",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R13"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "GeneralizableElement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "isRoot",
+     "type": "boolean",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "isAbstract",
+     "type": "boolean",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "generalizations",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "parentGeneralization",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10",
+    "R15"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Generalization",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "discriminator",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "parent",
+     "type": "String",
+     "src": [
+      "R14"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R14"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R6",
+    "R13"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R4",
+    "R11"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C1",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R8",
+    "R14"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "composition",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..1",
+   "label": "has",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "id": "R7",
+   "kind": "association",
+   "source": "C6",
+   "target": "C5",
+   "mult_source": "0..1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R14"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each GeneralizableElement has one and only one Generalization, as stated in R13 and R14, but the model enforces this through a composition relationship"
+  }
+ ],
+ "open_tags": []
+}

@@ -1,0 +1,4 @@
+{
+ "plantuml": "@startuml\n\nclass VideoStore {\n  - name: String\n}\n\nclass Client {\n  - name: String\n}\n\nclass Movie {\n  - name: String\n}\n\nVideoStore \"*\" -- \"*\" Client : clients\nVideoStore \"*\" o-- \"*\"  Movie : rents\n\n@enduml\n",
+ "scorer": "NOMAD src/eval_helpers.py evaluate_uml"
+}

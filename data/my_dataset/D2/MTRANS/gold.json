@@ -1,0 +1,182 @@
+{
+ "classes": [
+  {
+   "name": "MetaClass",
+   "kind": "class"
+  },
+  {
+   "name": "MetaModel",
+   "kind": "class"
+  },
+  {
+   "name": "Module",
+   "kind": "class"
+  },
+  {
+   "name": "Rule",
+   "kind": "class"
+  },
+  {
+   "name": "Inheritance",
+   "kind": "class"
+  },
+  {
+   "name": "Expression",
+   "kind": "class"
+  },
+  {
+   "name": "Section",
+   "kind": "class"
+  },
+  {
+   "name": "Instruction",
+   "kind": "class"
+  },
+  {
+   "name": "Variable",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "MetaClass": [],
+  "MetaModel": [],
+  "Module": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "mode",
+    "type": "String"
+   }
+  ],
+  "Rule": [
+   {
+    "name": "isAbstract",
+    "type": "Boolean"
+   },
+   {
+    "name": "isEntryPoint",
+    "type": "Boolean"
+   },
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Inheritance": [],
+  "Expression": [
+   {
+    "name": "operator",
+    "type": "String"
+   }
+  ],
+  "Section": [
+   {
+    "name": "kind",
+    "type": "String"
+   }
+  ],
+  "Instruction": [],
+  "Variable": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "association",
+   "from": "Module",
+   "to": "MetaModel",
+   "label": "metaDest 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Module",
+   "to": "MetaModel",
+   "label": "metaSource 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Module",
+   "to": "Rule",
+   "label": "rules 1..*",
+   "label_to": "module 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Rule",
+   "to": "MetaClass",
+   "label": "target 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Rule",
+   "to": "MetaClass",
+   "label": "source 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Rule",
+   "to": "Variable",
+   "label": "declaration 0..1",
+   "label_to": "rule 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Rule",
+   "to": "Section",
+   "label": "sections 1..*",
+   "label_to": "rule 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Rule",
+   "to": "Expression",
+   "label": "guard 0..1",
+   "label_to": "rule 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Rule",
+   "to": "Inheritance",
+   "label": "inheritances 0..*",
+   "label_to": "rule 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Inheritance",
+   "to": "Expression",
+   "label": "expressions 0..*",
+   "label_to": "inheritance 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Inheritance",
+   "to": "Rule",
+   "label": "inheritedRules 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Expression",
+   "to": "Instruction",
+   "label": "instruction 1..1",
+   "label_to": "body 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Section",
+   "to": "Instruction",
+   "label": "instructions 1..*",
+   "label_to": "section 1..1"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage MTRANS {\nclass MetaClass {\n}\nclass MetaModel {\n}\nclass Module {\n\t name : String\n\t mode : String\n}\nModule \"metaDest 0..*\" --> MetaModel\nModule \"metaSource 0..*\" --> MetaModel\nModule \"rules 1..*\" *-- \"module 1..1\" Rule\nclass Rule {\n\t isAbstract : Boolean\n\t isEntryPoint : Boolean\n\t name : String\n}\nRule \"target 0..1\" --> MetaClass\nRule \"source 0..1\" --> MetaClass\nRule \"declaration 0..1\" *-- \"rule 1..1\" Variable\nRule \"sections 1..*\" *-- \"rule 1..1\" Section\nRule \"guard 0..1\" *-- \"rule 1..1\" Expression\nRule \"inheritances 0..*\" *-- \"rule 1..1\" Inheritance\nclass Inheritance {\n}\nInheritance \"expressions 0..*\" *-- \"inheritance 1..1\" Expression\nInheritance \"inheritedRules 0..*\" --> Rule\nclass Expression {\n\t operator : String\n}\nExpression \"instruction 1..1\" --* \"body 1..1\" Instruction\nclass Section {\n\t kind : String\n}\nSection \"instructions 1..*\" *-- \"section 1..1\" Instruction\nclass Instruction {\n}\nclass Variable {\n\t name : String\n}\n}\n@enduml\n"
+}

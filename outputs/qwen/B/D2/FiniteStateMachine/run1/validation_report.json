@@ -1,0 +1,47 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [
+  "R11 (coordination, \"noun or noun\"): readings ['A state machine may have a transition', 'A state machine may have many transitions or none']"
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "A state machine may have a transition or many or none, as stated in the ambiguity decision."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Game' is missing. Requirement R1 is not supported by any model element.",
+   "fix": "Add a 'Game' class with a 'name' attribute."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'AssociationStateState' is missing. Requirement R6 is not supported by any model element.",
+   "fix": "Add a 'AssociationStateState' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'AssociationStateState' is missing. Requirement R13 is not supported by any model element.",
+   "fix": "Add a 'AssociationStateState' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'AssociationStateState' is missing. Requirement R14 is not supported by any model element.",
+   "fix": "Add a 'AssociationStateState' class."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'State' and 'StateMachine' is incorrect. Requirement R8 states that a state has one and only one StateMachine, but the model shows an aggregation relationship which is not necessarily one-to-one.",
+   "fix": "Change the relationship between 'State' and 'StateMachine' to a one-to-one relationship."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Transition' and 'StateMachine' is incorrect. Requirement R7 states that a transition has one and only one state machine, but the model shows an association relationship which is not necessarily one-to-one.",
+   "fix": "Change the relationship between 'Transition' and 'StateMachine' to a one-to-one relationship."
+  }
+ ]
+}

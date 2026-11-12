@@ -1,0 +1,70 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each module may have metamodels associated"
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class named MetaClass",
+   "fix": "Add a class named MetaClass"
+  },
+  {
+   "agent": "class",
+   "issue": "Expression class should have an attribute named instruction of type Instruction",
+   "fix": "Add an attribute named instruction of type Instruction to the class Expression"
+  },
+  {
+   "agent": "class",
+   "issue": "Instruction class should have no attributes",
+   "fix": "Remove any attributes from the class Instruction"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Expression and Instruction should be aggregation, not association",
+   "fix": "Change the relationship between Expression and Instruction to aggregation"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Variable and Inheritance should be association, not aggregation",
+   "fix": "Change the relationship between Variable and Inheritance to association"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between MtransModel and Expression should be aggregation, not association",
+   "fix": "Change the relationship between MtransModel and Expression to aggregation"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between MtransModel and Inheritance should be aggregation, not association",
+   "fix": "Change the relationship between MtransModel and Inheritance to aggregation"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between MtransModel and Instruction should be aggregation, not association",
+   "fix": "Change the relationship between MtransModel and Instruction to aggregation"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Module and Rule should be composition, not aggregation",
+   "fix": "Change the relationship between Module and Rule to composition"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Section should be aggregation, not composition",
+   "fix": "Change the relationship between Rule and Section to aggregation"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Inheritance should be aggregation, not composition",
+   "fix": "Change the relationship between Rule and Inheritance to aggregation"
+  }
+ ]
+}

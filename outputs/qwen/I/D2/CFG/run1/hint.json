@@ -1,0 +1,154 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D2/CFG",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R2",
+     "R3"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "In a CFG, there is a node."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "In CFG, there is a conditional node."
+     }
+    ],
+    "name": "Cfg",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R4",
+     "R5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "An expression has a name."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "One abstract node has exactly one expression."
+     }
+    ],
+    "name": "Expression",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R5",
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "There is an abstract node."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "In a CFG, there is a node."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "In CFG, there is a conditional node."
+     }
+    ],
+    "name": "Node",
+    "freq": 8
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "An expression has a name."
+     }
+    ],
+    "owner": "Expression",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A conditional node has exactly one true condition node."
+     }
+    ],
+    "owner": "Node",
+    "name": "condition node",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "One abstract node has exactly one expression."
+     }
+    ],
+    "kind": "has",
+    "source": "Node",
+    "target": "Expression",
+    "multiplicity_target": "one"
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

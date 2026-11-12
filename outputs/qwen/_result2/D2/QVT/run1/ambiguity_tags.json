@@ -1,0 +1,104 @@
+[
+ {
+  "id": "A1",
+  "type": "actor",
+  "sid": "R5.s1",
+  "req_id": "R5",
+  "cue": "passive 'bound' without agent",
+  "text": "A template expression can be bound to a variable",
+  "readings": [
+   "A template expression can be bound to a variable without specifying the variable's name.",
+   "A template expression can be bound to a variable by specifying the variable's name."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The phrase 'bound to a variable' is ambiguous regarding whether the variable's name is specified or not.",
+  "chosen": "A template expression can be bound to a variable by specifying the variable's name."
+ },
+ {
+  "id": "A2",
+  "type": "quantifier",
+  "sid": "R6.s1",
+  "req_id": "R6",
+  "cue": "multiple",
+  "text": "An object template expression may contain multiple property template items.",
+  "readings": [
+   "An object template expression may contain one or more property template items.",
+   "An object template expression may contain exactly one property template item."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The phrase 'multiple' is ambiguous regarding the exact number of property template items.",
+  "chosen": "An object template expression may contain one or more property template items."
+ },
+ {
+  "id": "A3",
+  "type": "quantifier",
+  "sid": "R7.s1",
+  "req_id": "R7",
+  "cue": "any",
+  "text": "A collection template expression may contain any number of OCL expressions",
+  "readings": [
+   "A collection template expression may contain zero or more OCL expressions.",
+   "A collection template expression may contain at least one OCL expression."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The phrase 'any number of' is ambiguous regarding whether the collection can be empty.",
+  "chosen": "A collection template expression may contain zero or more OCL expressions."
+ },
+ {
+  "id": "A4",
+  "type": "actor",
+  "sid": "R8.s1",
+  "req_id": "R8",
+  "cue": "passive 'matched' without agent",
+  "text": "A collection template expression may be matched to one OCL expression.",
+  "readings": [
+   "A collection template expression may be matched to one OCL expression without specifying the OCL expression's name.",
+   "A collection template expression may be matched to one OCL expression by specifying the OCL expression's name."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The phrase 'matched to one OCL expression' is ambiguous regarding whether the OCL expression's name is specified or not.",
+  "chosen": "A collection template expression may be matched to one OCL expression by specifying the OCL expression's name."
+ },
+ {
+  "id": "A5",
+  "type": "referential",
+  "sid": "R9.s1",
+  "req_id": "R9",
+  "cue": "its",
+  "text": "A property template item has exactly one Object Template Expression as its object container.",
+  "readings": [
+   "A property template item has exactly one Object Template Expression as its object container without specifying the object container's name.",
+   "A property template item has exactly one Object Template Expression as its object container by specifying the object container's name."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The phrase 'its object container' is ambiguous regarding whether the object container's name is specified or not.",
+  "chosen": "A property template item has exactly one Object Template Expression as its object container by specifying the object container's name."
+ },
+ {
+  "id": "A6",
+  "type": "referential",
+  "sid": "R10.s1",
+  "req_id": "R10",
+  "cue": "its",
+  "text": "A property template item has exactly one property as its referred property.",
+  "readings": [
+   "A property template item has exactly one property as its referred property without specifying the property's name.",
+   "A property template item has exactly one property as its referred property by specifying the property's name."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The phrase 'its referred property' is ambiguous regarding whether the property's name is specified or not.",
+  "chosen": "A property template item has exactly one property as its referred property by specifying the property's name."
+ }
+]

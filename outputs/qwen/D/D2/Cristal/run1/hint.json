@@ -1,0 +1,135 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "Condition",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "CompositeParDef",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "name": "ElementaryPartDef",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "name": "ElementaryActDef",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "CompositeActDef",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "name": "ActCompositeMember",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "name": "ActivityDefinition",
+    "src": [
+     "R13",
+     "R14"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Condition",
+    "name": "PartCompositeMember",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "owner": "CompositeParDef",
+    "name": "PartCompositeMember",
+    "src": [
+     "R11"
+    ]
+   },
+   {
+    "owner": "CompositeActDef",
+    "name": "ActCompositeMember",
+    "src": [
+     "R12"
+    ]
+   },
+   {
+    "owner": "ActCompositeMember",
+    "name": "ActivityDefinition",
+    "src": [
+     "R13"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "has",
+    "source": "Condition",
+    "target": "PartCompositeMember",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "kind": "composed_by",
+    "source": "CompositeParDef",
+    "target": "PartCompositeMember",
+    "src": [
+     "R11"
+    ]
+   },
+   {
+    "kind": "composed_by",
+    "source": "CompositeActDef",
+    "target": "ActCompositeMember",
+    "src": [
+     "R12"
+    ]
+   },
+   {
+    "kind": "has",
+    "source": "ActCompositeMember",
+    "target": "ActivityDefinition",
+    "src": [
+     "R13"
+    ]
+   },
+   {
+    "kind": "has",
+    "source": "ActivityDefinition",
+    "target": "ActCompositeMember",
+    "src": [
+     "R14"
+    ]
+   },
+   {
+    "kind": "has",
+    "source": "PartDefinition",
+    "target": "PartCompositeMember",
+    "src": [
+     "R15",
+     "R16"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

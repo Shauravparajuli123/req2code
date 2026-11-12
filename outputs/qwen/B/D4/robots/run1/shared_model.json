@@ -1,0 +1,102 @@
+{
+ "case": "D4/robots",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Robot",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "id",
+     "type": "int",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Task",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "id",
+     "type": "int",
+     "src": [
+      "R4",
+      "R5"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "performTask",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "TaskExecution",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "id",
+     "type": "int",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "startTime",
+     "type": "java.time.LocalDate",
+     "src": []
+    },
+    {
+     "name": "location",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Location",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [
+    "NAME____CORRIDORS____TYPE____ENUM____SRC_____R7",
+    "NAME____ROOMS____TYPE____ENUM____SRC_____R7"
+   ],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [],
+ "assumptions": [],
+ "open_tags": []
+}

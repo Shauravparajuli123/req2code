@@ -1,0 +1,57 @@
+{
+ "classes": [
+  {
+   "name": "Contact",
+   "kind": "class"
+  },
+  {
+   "name": "Num_fixe",
+   "kind": "class"
+  },
+  {
+   "name": "Num_portable",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Contact": [
+   {
+    "name": "nom",
+    "type": "String"
+   },
+   {
+    "name": "prenom",
+    "type": "String"
+   }
+  ],
+  "Num_fixe": [
+   {
+    "name": "numero",
+    "type": "String"
+   }
+  ],
+  "Num_portable": [
+   {
+    "name": "numero",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Contact",
+   "to": "Num_fixe",
+   "label": "num_fixes 0..*",
+   "label_to": "contact_fixe 1..1"
+  },
+  {
+   "type": "composition",
+   "from": "Contact",
+   "to": "Num_portable",
+   "label": "num_portables 0..*",
+   "label_to": "contact_portable 1..1"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage Contact {\nclass Contact {\n\t nom : String\n\t prenom : String\n}\nContact \"num_fixes 0..*\" *-- \"contact_fixe 1..1\" Num_fixe\nContact \"num_portables 0..*\" *-- \"contact_portable 1..1\" Num_portable\nclass Num_fixe {\n\t numero : String\n}\nclass Num_portable {\n\t numero : String\n}\n}\n@enduml\n"
+}

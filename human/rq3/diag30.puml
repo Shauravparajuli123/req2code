@@ -1,0 +1,15 @@
+@startuml
+class Airline {
+  name
+}
+class Airport {
+  code
+  city
+}
+class OperatingCost {
+  cost
+}
+Airline -- Airport
+Airline -- OperatingCost
+Airport -- OperatingCost
+@enduml

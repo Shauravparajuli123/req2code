@@ -1,0 +1,146 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "Airport",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "Flight",
+    "src": [
+     "R6",
+     "R7",
+     "R9",
+     "R10"
+    ]
+   },
+   {
+    "name": "Airplane",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "name": "Passenger",
+    "src": [
+     "R4",
+     "R11"
+    ]
+   },
+   {
+    "name": "Time",
+    "src": [
+     "R5"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Airport",
+    "name": "name",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "Flight",
+    "name": "maxNumberOfPassengers",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "owner": "Airplane",
+    "name": "name",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "owner": "Passenger",
+    "name": "name",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "owner": "Passenger",
+    "name": "gender",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "owner": "Time",
+    "name": "year",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "owner": "Time",
+    "name": "day",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "owner": "Time",
+    "name": "minute",
+    "src": [
+     "R5"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Flight",
+    "target": "Airport",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Flight",
+    "target": "Time",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Flight",
+    "target": "Airplane",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Flight",
+    "target": "Passenger",
+    "src": [
+     "R8",
+     "R11"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "Flight",
+    "target": "Airplane",
+    "src": [
+     "R10"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

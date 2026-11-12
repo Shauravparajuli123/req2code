@@ -1,0 +1,151 @@
+{
+ "classes": [
+  {
+   "name": "Makefile",
+   "kind": "class"
+  },
+  {
+   "name": "Element",
+   "kind": "class"
+  },
+  {
+   "name": "Rule",
+   "kind": "class"
+  },
+  {
+   "name": "Macro",
+   "kind": "class"
+  },
+  {
+   "name": "ShellLine",
+   "kind": "class"
+  },
+  {
+   "name": "Comment",
+   "kind": "class"
+  },
+  {
+   "name": "Dependency",
+   "kind": "class"
+  },
+  {
+   "name": "RuleDep",
+   "kind": "class"
+  },
+  {
+   "name": "FileDep",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Makefile": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Element": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Rule": [],
+  "Macro": [
+   {
+    "name": "value",
+    "type": "String"
+   }
+  ],
+  "ShellLine": [
+   {
+    "name": "command",
+    "type": "String"
+   },
+   {
+    "name": "display",
+    "type": "Boolean"
+   }
+  ],
+  "Comment": [
+   {
+    "name": "text",
+    "type": "String"
+   }
+  ],
+  "Dependency": [],
+  "RuleDep": [],
+  "FileDep": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Makefile",
+   "to": "Comment",
+   "label": "comment 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Makefile",
+   "to": "Element",
+   "label": "elements 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Rule",
+   "to": "Element",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Rule",
+   "to": "Dependency",
+   "label": "dependencies 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Rule",
+   "to": "ShellLine",
+   "label": "shellLines 1..*",
+   "label_to": "ruleShellLine 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "Macro",
+   "to": "Element",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "RuleDep",
+   "to": "Dependency",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "RuleDep",
+   "to": "Rule",
+   "label": "ruledep 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "FileDep",
+   "to": "Dependency",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage Make {\nclass Makefile {\n\t name : String\n}\nMakefile \"comment 0..1\" *--> Comment\nMakefile \"elements 1..*\" *--> Element\nclass Element {\n\t name : String\n}\nclass Rule {\n}\nElement <|-- Rule\nRule \"dependencies 0..*\" *--> Dependency\nRule \"shellLines 1..*\" *-- \"ruleShellLine 1..1\" ShellLine\nclass Macro {\n\t value : String\n}\nElement <|-- Macro\nclass ShellLine {\n\t command : String\n\t display : Boolean\n}\nclass Comment {\n\t text : String\n}\nclass Dependency {\n}\nclass RuleDep {\n}\nDependency <|-- RuleDep\nRuleDep \"ruledep 1..1\" --> Rule\nclass FileDep {\n\t name : String\n}\nDependency <|-- FileDep\n}\n@enduml\n"
+}

@@ -1,0 +1,4 @@
+{
+ "plantuml": "@startuml\n\nclass CleaningRobot\nclass TransportRobot\nenum Location{\nCorridors\nRooms\n}\n\nclass Robot{\nid: String\n}\n\nclass Task{\nid: String\n}\n\nRobot \"*\" -- \"*\" Task\n(Robot, Task) .. TaskExecution\n\nclass TaskExecution{\nid: String\nstartTime: int\nlocation: Location\n}\n\nCleaningRobot --|> Robot\nTransportRobot --|> Robot\n\n\n\n@enduml",
+ "scorer": "NOMAD src/eval_helpers.py evaluate_uml"
+}

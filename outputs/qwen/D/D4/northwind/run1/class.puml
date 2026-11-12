@@ -1,0 +1,103 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Company {
+  name : String
+  phoneNumber : String
+  addressDetails : String
+  state : String
+  zipCode : String
+  website : String
+  companyType : String
+  taxStatus : String
+  contacts : String
+  +addContact()
+  +removeContact()
+}
+class Contact {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  email : String
+  jobTitle : String
+  notes : String
+}
+class Employee {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  jobTitle : String
+  email : String
+  title : String
+  supervisor : String
+  +assignSupervisor()
+  +removeSupervisor()
+}
+class Product {
+  productCode : String
+  name : String
+  description : String
+  price : double
+  category : String
+  unitCost : double
+  retailPrice : double
+  inventoryLevel : int
+  reorderLevel : int
+  targetLevel : int
+  minimumReorderQuantity : int
+  discontinued : boolean
+}
+class ProductCategory {
+  name : String
+  code : String
+  description : String
+  image : String
+}
+class StockTake {
+  date : LocalDate
+  product : String
+  quantityOnHand : int
+  expectedQuantity : int
+}
+class Order {
+  orderDate : LocalDate
+  customer : String
+  employee : String
+  status : String
+  shipper : String
+  details : String
+  +addDetail()
+  +removeDetail()
+}
+class OrderDetail {
+  product : String
+  quantity : int
+  unitPrice : double
+  discount : double
+  status : String
+}
+class PurchaseOrder {
+  vendor : String
+  employeeSubmitted : String
+  employeeApproved : String
+  status : String
+  orderDate : LocalDate
+  details : String
+  +addDetail()
+  +removeDetail()
+}
+class PurchaseOrderDetail {
+  product : String
+  quantity : int
+  unitPrice : double
+}
+Company "1" -- "0..*" Contact : has
+Product "1" -- "1" ProductCategory : is a
+Order "1" -- "1..*" OrderDetail : contains
+PurchaseOrder "1" -- "1..*" PurchaseOrderDetail : contains
+Order "1" -- "1" Employee : processed by
+PurchaseOrder "1" -- "1" Employee : submitted by
+StockTake "1" -- "1..*" Product : records
+@enduml

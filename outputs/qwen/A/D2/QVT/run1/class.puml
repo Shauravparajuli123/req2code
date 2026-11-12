@@ -1,0 +1,12 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class TemplateExp {
+}
+class ObjectTemplateExp {
+  objectContainer : String
+  referredProperty : String
+  +createGame()
+}
+TemplateExp "0..*" *-- "1" ObjectTemplateExp : contains
+@enduml

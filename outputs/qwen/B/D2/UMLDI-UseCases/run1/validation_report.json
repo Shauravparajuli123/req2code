@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "R10: attributelink has zero or one instance of the Instance type, but there is no such relationship in the model.",
+   "fix": "Add a relationship between attributelink and instance with cardinality 0..1."
+  },
+  {
+   "agent": "class",
+   "issue": "R12: the link instance has an association attribute from the association type, but there is no such attribute in the Link class.",
+   "fix": "Add an attribute 'association' to the Link class."
+  },
+  {
+   "agent": "class",
+   "issue": "R13: linkend has one link attribute of the link type, but there is no such attribute in the Linkend class.",
+   "fix": "Add an attribute 'link' to the Linkend class."
+  },
+  {
+   "agent": "class",
+   "issue": "R14: linkend has one attribute of the instance type, but there is no such attribute in the Linkend class.",
+   "fix": "Add an attribute 'instance' to the Linkend class."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R15: componentinstance has zero or more residents, but the relationship between ComponentInstance and Resident is defined as aggregation with cardinality 0..*..1.",
+   "fix": "Change the relationship between ComponentInstance and Resident to composition with cardinality 0..*."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R16: nodeinstance has 0 or more componentinstance node that serves as resident, but the relationship between NodeInstance and ComponentInstance is defined as composition with cardinality 1..0..*.",
+   "fix": "Change the relationship between NodeInstance and ComponentInstance to aggregation with cardinality 0..*."
+  }
+ ]
+}

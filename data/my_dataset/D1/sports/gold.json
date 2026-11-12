@@ -1,0 +1,479 @@
+{
+ "classes": [
+  {
+   "name": "rooms",
+   "status": "mandatory"
+  },
+  {
+   "name": "subscription",
+   "status": "mandatory"
+  },
+  {
+   "name": "schedule",
+   "status": "mandatory"
+  },
+  {
+   "name": "lessons",
+   "status": "mandatory"
+  },
+  {
+   "name": "trainer",
+   "status": "mandatory"
+  },
+  {
+   "name": "training sessions",
+   "status": "mandatory"
+  },
+  {
+   "name": "Payment information",
+   "status": "mandatory"
+  },
+  {
+   "name": "family membership",
+   "status": "mandatory"
+  },
+  {
+   "name": "customer",
+   "status": "mandatory"
+  },
+  {
+   "name": "gym",
+   "status": "removed"
+  },
+  {
+   "name": "spot",
+   "status": "mandatory"
+  },
+  {
+   "name": "booking",
+   "status": "mandatory"
+  },
+  {
+   "name": "person",
+   "status": "mandatory"
+  },
+  {
+   "name": "timeslot",
+   "status": "optional"
+  }
+ ],
+ "associations": [
+  {
+   "pair": [
+    "room",
+    "lesson"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "schedul",
+    "lesson"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "custom",
+    "subscript"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "membership",
+    "person"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "custom",
+    "membership"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "custom",
+    "payment inform"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "schedul",
+    "trainer"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "training sess",
+    "schedul"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "custom",
+    "book"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "book",
+    "spot"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "book",
+    "lesson"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "book",
+    "training sess"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "gym",
+    "book"
+   ],
+   "status": "mandatory"
+  }
+ ],
+ "synonyms": {
+  "membership": "family membership",
+  "familymembership": "family membership",
+  "book": "booking",
+  "trainingsession": "training sessions",
+  "session": "training sessions",
+  "personaltrainingsession": "training sessions",
+  "personal training session": "training sessions",
+  "training": "training sessions",
+  "paymentinformation": "payment information",
+  "time slot": "timeslot",
+  "lessontimeslot": "timeslot",
+  "practicearea": "room",
+  "practice area": "room",
+  "free practice area": "room"
+ },
+ "use_case_draft": {
+  "status": "auto-extracted, not yet validated",
+  "actors": {
+   "new customer": 1,
+   "customer": 28,
+   "returning customer": 1,
+   "customer with a family membership": 3,
+   "admin": 10,
+   "trainer": 15,
+   "user": 1
+  },
+  "use_cases": [
+   {
+    "actor": "new Customer",
+    "goal": "open an account in the system",
+    "src": "R1"
+   },
+   {
+    "actor": "Customer",
+    "goal": "add my personal information",
+    "src": "R2"
+   },
+   {
+    "actor": "Customer",
+    "goal": "add my banking details",
+    "src": "R3"
+   },
+   {
+    "actor": "Customer",
+    "goal": "choose my membership type",
+    "src": "R4"
+   },
+   {
+    "actor": "Customer",
+    "goal": "extend my subscription for Daily Sports",
+    "src": "R5"
+   },
+   {
+    "actor": "Customer",
+    "goal": "know how long my subscription lasts",
+    "src": "R6"
+   },
+   {
+    "actor": "Returning Customer",
+    "goal": "use my previous information",
+    "src": "R7"
+   },
+   {
+    "actor": "Customer",
+    "goal": "unsubscribe",
+    "src": "R8"
+   },
+   {
+    "actor": "Customer",
+    "goal": "reset my password",
+    "src": "R9"
+   },
+   {
+    "actor": "Customer",
+    "goal": "update my payment information",
+    "src": "R11"
+   },
+   {
+    "actor": "Customer with a Family Membership",
+    "goal": "see who is using my membership",
+    "src": "R12"
+   },
+   {
+    "actor": "Customer with a Family Membership",
+    "goal": "add a person to my membership",
+    "src": "R13"
+   },
+   {
+    "actor": "Customer with a Family Membership",
+    "goal": "remove a person from my membership",
+    "src": "R14"
+   },
+   {
+    "actor": "Customer",
+    "goal": "see an overview of all available lessons",
+    "src": "R15"
+   },
+   {
+    "actor": "Customer",
+    "goal": "see what future lessons I have booked",
+    "src": "R16"
+   },
+   {
+    "actor": "Customer",
+    "goal": "see a record of previous lessons I have booked",
+    "src": "R17"
+   },
+   {
+    "actor": "Customer",
+    "goal": "call the gym to book a lesson",
+    "src": "R18"
+   },
+   {
+    "actor": "Customer",
+    "goal": "call the gym to cancel a lesson",
+    "src": "R19"
+   },
+   {
+    "actor": "Admin",
+    "goal": "edit all personal training sessions",
+    "src": "R20"
+   },
+   {
+    "actor": "Customer",
+    "goal": "call the gym to book a personal training session",
+    "src": "R21"
+   },
+   {
+    "actor": "Customer",
+    "goal": "call the gym to cancel a personal training session",
+    "src": "R22"
+   },
+   {
+    "actor": "Customer",
+    "goal": "book a spot for the free practice area",
+    "src": "R23"
+   },
+   {
+    "actor": "Customer",
+    "goal": "see how many spots have been booked for a given timeslot",
+    "src": "R24"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "see which rooms are free at a given timeslot",
+    "src": "R25"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "add a lesson to the schedule",
+    "src": "R26"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "set the time of the lesson",
+    "src": "R27"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "set the description of the lesson",
+    "src": "R28"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "set the room of the lesson",
+    "src": "R29"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "set the type of lesson",
+    "src": "R30"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "set the maximum number of people allowed in the lesson",
+    "src": "R31"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "see what my schedule is",
+    "src": "R32"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "be the only Trainer who can edit my lessons",
+    "src": "R33"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "edit the time of the lesson",
+    "src": "R34"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "change the room of the lesson",
+    "src": "R35"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "edit the description of the lesson",
+    "src": "R36"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "edit the maximum number of people allowed in the lesson",
+    "src": "R37"
+   },
+   {
+    "actor": "Admin",
+    "goal": "edit any lesson",
+    "src": "R38"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "cancel a lesson",
+    "src": "R39"
+   },
+   {
+    "actor": "Admin",
+    "goal": "cancel a lesson",
+    "src": "R40"
+   },
+   {
+    "actor": "Customer",
+    "goal": "receive a notification when my booked lesson is canceled",
+    "src": "R41"
+   },
+   {
+    "actor": "Customer",
+    "goal": "be notified if I didn’t go to a session I had booked",
+    "src": "R42"
+   },
+   {
+    "actor": "Admin",
+    "goal": "see if a customer did not show up for a session they had booked",
+    "src": "R43"
+   },
+   {
+    "actor": "Admin",
+    "goal": "see how many times a customer did not show up for a session",
+    "src": "R44"
+   },
+   {
+    "actor": "Admin",
+    "goal": "have the system to issue a fine if a customer does not show up more than 2 times",
+    "src": "R45"
+   },
+   {
+    "actor": "Admin",
+    "goal": "have the fines for repeat offenders to increase exponentially for each subsequent offense",
+    "src": "R46"
+   },
+   {
+    "actor": "User",
+    "goal": "log in to the system",
+    "src": "R50"
+   },
+   {
+    "actor": "Customer",
+    "goal": "receive notifications by the method which I prefer",
+    "src": "R51"
+   },
+   {
+    "actor": "Customer",
+    "goal": "receive notifications by email",
+    "src": "R52"
+   },
+   {
+    "actor": "Customer",
+    "goal": "receive push notifications from the system",
+    "src": "R53"
+   },
+   {
+    "actor": "Customer",
+    "goal": "choose what to receive notifications for",
+    "src": "R54"
+   },
+   {
+    "actor": "Customer",
+    "goal": "receive a notification when a training session is canceled",
+    "src": "R55"
+   },
+   {
+    "actor": "Customer",
+    "goal": "confirm that I am aware that my booking has been canceled",
+    "src": "R56"
+   },
+   {
+    "actor": "Admin",
+    "goal": "know which customers are aware that their booking has been canceled",
+    "src": "R57"
+   },
+   {
+    "actor": "Customer",
+    "goal": "see an overview of my personal information",
+    "src": "R58"
+   },
+   {
+    "actor": "Customer",
+    "goal": "see information about my membership",
+    "src": "R59"
+   },
+   {
+    "actor": "Trainer",
+    "goal": "see information about my past and future training sessions",
+    "src": "R60"
+   },
+   {
+    "actor": "Customer",
+    "goal": "have a method by which I can check-in",
+    "src": "R61"
+   },
+   {
+    "actor": "Admin",
+    "goal": "see if the Customer who is checking-in has a subscription",
+    "src": "R62"
+   },
+   {
+    "actor": "Admin",
+    "goal": "see if the Customer who is checking-in has any bookings",
+    "src": "R63"
+   }
+  ],
+  "unparsed": 4
+ }
+}

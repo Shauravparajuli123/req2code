@@ -1,0 +1,38 @@
+@startuml
+class Attribute {
+  key
+}
+class StringAttribute {
+  value
+}
+class BooleanAttribute {
+  value
+}
+class MapAttribute {
+  entries
+}
+class MapEntry {
+  key
+  value
+}
+class ListAttribute {
+  entries
+}
+class ListEntry {
+  value
+}
+class LaunchConfiguration {
+  attributes
+}
+LaunchConfiguration -- Attribute
+StringAttribute -- Attribute
+BooleanAttribute -- Attribute
+MapAttribute -- Attribute
+MapEntry -- MapAttribute
+ListAttribute -- Attribute
+ListEntry -- ListAttribute
+Attribute -- StringAttribute
+Attribute -- BooleanAttribute
+Attribute -- MapEntry
+Attribute -- ListEntry
+@enduml

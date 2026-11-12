@@ -1,0 +1,145 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "ModelBusinessTemplates",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "BusinessEntity",
+   "kind": "class",
+   "attributes": [
+    "businessContact",
+    "identifiers"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R10"
+   ]
+  },
+  {
+   "name": "OverviewDocument",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "PifModel",
+   "kind": "class",
+   "attributes": [
+    "businessTemplate"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "UtilityClass",
+   "kind": "class",
+   "attributes": [
+    "identifier"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "BusinessTemplate",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "BusinessEntity",
+   "target": "Contact",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Model",
+   "target": "OverviewDocument",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "UtilityClass",
+   "target": "Class",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "PifModel",
+   "target": "Contact",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PifModel",
+   "target": "BusinessTemplate",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "python": "from abc import ABC\n\nclass Class:\n    pass\n\nclass UtilityClass(Class):\n    def __init__(self, identifier: str):\n        self.identifier = identifier\n\nclass Contact(Class):\n    pass\n\nclass BusinessTemplate(Class):\n    pass\n\nclass Model(ABC):\n    def __init__(self):\n        self.overview_documents = []\n\nclass OverviewDocument(Class):\n    pass\n\nclass PifModel(Model):\n    def __init__(self, business_template: BusinessTemplate):\n        super().__init__()\n        self.business_template = business_template\n\nclass IdentifierBag(UtilityClass):\n    pass\n\nclass BusinessEntity(UtilityClass):\n    def __init__(self, business_contact: Contact, identifiers: IdentifierBag):\n        super().__init__(identifier=identifiers)\n        self.business_contact = business_contact\n        self.identifiers = identifiers\n\n    def __str__(self):\n        raise NotImplementedError",
+ "java": {}
+}

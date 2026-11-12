@@ -1,0 +1,87 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "PrimitiveDataType",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "SimpleClass",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "type"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R8"
+   ]
+  },
+  {
+   "name": "Association",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "src"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "PrimitiveDataType",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "Type",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": []
+  },
+  {
+   "type": "association",
+   "source": "SimpleClass",
+   "target": "Type",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "from typing import Type, TypeVar\n\nAssociation = TypeVar('Association')\nClassifier = TypeVar('Classifier')\nPrimitiveDataType = TypeVar('PrimitiveDataType')\nTypeString = TypeVar('TypeString')\nSimpleClass = TypeVar('SimpleClass')\nClass = TypeVar('Class')\n\n\nclass Classifier:\n    def __init__(self, name: str):\n        self.name = name\n\nclass PrimitiveDataType(Classifier):\n    def __init__(self, name: str):\n        super().__init__(name)\n\nclass TypeString(Classifier):\n    def __init__(self, name: str):\n        super().__init__(name)\n\nclass Association:\n    def __init__(self, name: str, src: Class):\n        self.name = name\n        self.src = src\n\nclass SimpleClass(Classifier):\n    def __init__(self, name: str, parent: Class = None):\n        super().__init__(name)\n        self.parent = parent\n\nclass Class(SimpleClass):\n    def __init__(self, name: str, parent: Class = None):\n        super().__init__(name, parent)\n        self.attributes = []\n        self.associations = []\n\nclass Attribute:\n    def __init__(self, name: str, type: Classifier):\n        self.name = name\n        self.type = type\n",
+ "java": {}
+}

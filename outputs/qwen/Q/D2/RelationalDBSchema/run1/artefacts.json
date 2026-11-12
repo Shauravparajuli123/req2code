@@ -1,0 +1,82 @@
+{
+ "actors": [
+  "owner"
+ ],
+ "use_cases": [
+  {
+   "name": "storeName",
+   "actor": "owner",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Database",
+   "kind": "class",
+   "attributes": [
+    "sgbdName",
+    "tables"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [
+    "columns"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "datatype",
+    "defaultValue",
+    "owner"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Database",
+   "target": "Table",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Table",
+   "target": "Column",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "class Database:\n    def __init__(self, sgbdName: str):\n        self.sgbdName = sgbdName\n        self.tables = []\n\n    def add_table(self, table: 'Table'):\n        raise NotImplementedError\n\n    def remove_table(self, table: 'Table'):\n        raise NotImplementedError\n\n    def get_table(self, table_name: str) -> 'Table':\n        raise NotImplementedError\n\n    src = ['R2', 'R5', 'R6']\n\nclass Table:\n    def __init__(self, columns: 'Column[]'):\n        self.columns = columns\n\n    def add_column(self, column: 'Column'):\n        raise NotImplementedError\n\n    def remove_column(self, column: 'Column'):\n        raise NotImplementedError\n\n    def get_column(self, column_name: str) -> 'Column':\n        raise NotImplementedError\n\n    src = ['R3', 'R7']\n\nclass Column:\n    def __init__(self, datatype: str, default_value: str, owner: 'Table'):\n        self.datatype = datatype\n        self.default_value = default_value\n        self.owner = owner\n\n    src = ['R4', 'R8']",
+ "java": {}
+}

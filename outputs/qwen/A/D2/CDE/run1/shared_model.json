@@ -1,0 +1,190 @@
+{
+ "case": "D2/CDE",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "ICdeServer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "ICdeComponent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "ICdeComponentSpec",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "IUmlType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "IUmlClass",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "IUmlComponent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "IUmlMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "ICdeMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "ICdeMemberExe",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "executionPerformance",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "name": "executionDetails",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "generalization",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is a",
+   "src": [
+    "R2",
+    "R1"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "generalization",
+   "source": "C5",
+   "target": "C4",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is a",
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "generalization",
+   "source": "C6",
+   "target": "C5",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is a",
+   "src": [
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C8",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is a",
+   "src": [
+    "R8",
+    "R7"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "0..*",
+   "mult_target": "*",
+   "label": "has",
+   "src": [
+    "R5",
+    "R11"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

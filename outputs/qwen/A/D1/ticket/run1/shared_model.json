@@ -1,0 +1,1145 @@
+{
+ "case": "D1/ticket",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "User",
+   "src": [
+    "R1",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R46",
+    "R47",
+    "R48",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "id": "A2",
+   "name": "Visitor",
+   "src": [
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "id": "A3",
+   "name": "Reseller",
+   "src": [
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R45"
+   ]
+  },
+  {
+   "id": "A4",
+   "name": "Artist",
+   "src": [
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "id": "A5",
+   "name": "ArtistVisitor",
+   "src": [
+    "R11",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Profile",
+   "actor": "A1",
+   "src": [
+    "R1",
+    "R5",
+    "R6",
+    "R7",
+    "R15",
+    "R16",
+    "R17"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC2",
+   "name": "View Personal Information",
+   "actor": "A1",
+   "src": [
+    "R5",
+    "R7",
+    "R17"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC3",
+   "name": "Edit Personal Information",
+   "actor": "A1",
+   "src": [
+    "R7",
+    "R17"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC4",
+   "name": "View Ticket History",
+   "actor": "A1",
+   "src": [
+    "R8",
+    "R17"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC5",
+   "name": "View Upcoming Events",
+   "actor": "A1",
+   "src": [
+    "R9",
+    "R17"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC6",
+   "name": "Favorite Events Or Artists",
+   "actor": "A1",
+   "src": [
+    "R10",
+    "R17",
+    "R53"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC7",
+   "name": "Search For Events",
+   "actor": "A2",
+   "src": [
+    "R11",
+    "R18",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R46",
+    "R47",
+    "R48",
+    "R53"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC8",
+   "name": "Buy Tickets",
+   "actor": "A2",
+   "src": [
+    "R12",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R17"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC9",
+   "name": "Resell Tickets",
+   "actor": "A3",
+   "src": [
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R45"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC10",
+   "name": "View Event Information",
+   "actor": "A5",
+   "src": [
+    "R11",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "dateOfBirth",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "email",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "address",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "preferences",
+     "type": "String",
+     "src": [
+      "R1",
+      "R3"
+     ]
+    },
+    {
+     "name": "paymentDetails",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "favoriteArtists",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "favoriteEvents",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "ticketHistory",
+     "type": "String",
+     "src": [
+      "R8",
+      "R9"
+     ]
+    },
+    {
+     "name": "profileSurvey",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createProfile",
+     "realizes": "UC1",
+     "src": [
+      "R1",
+      "R5",
+      "R6",
+      "R7",
+      "R15",
+      "R16",
+      "R17"
+     ]
+    },
+    {
+     "id": "M2",
+     "name": "viewPersonalInformation",
+     "realizes": "UC2",
+     "src": [
+      "R5",
+      "R7",
+      "R17"
+     ]
+    },
+    {
+     "id": "M3",
+     "name": "editPersonalInformation",
+     "realizes": "UC3",
+     "src": [
+      "R7",
+      "R17"
+     ]
+    },
+    {
+     "id": "M4",
+     "name": "viewTicketHistory",
+     "realizes": "UC4",
+     "src": [
+      "R8",
+      "R17"
+     ]
+    },
+    {
+     "id": "M5",
+     "name": "viewUpcomingEvents",
+     "realizes": "UC5",
+     "src": [
+      "R9",
+      "R17"
+     ]
+    },
+    {
+     "id": "M6",
+     "name": "favoriteEventsOrArtists",
+     "realizes": "UC6",
+     "src": [
+      "R10",
+      "R17",
+      "R53"
+     ]
+    },
+    {
+     "id": "M7",
+     "name": "searchForEvents",
+     "realizes": "UC7",
+     "src": [
+      "R11",
+      "R18",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R46",
+      "R47",
+      "R48",
+      "R53"
+     ]
+    },
+    {
+     "id": "M8",
+     "name": "buyTickets",
+     "realizes": "UC8",
+     "src": [
+      "R12",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R17"
+     ]
+    },
+    {
+     "id": "M9",
+     "name": "resellTickets",
+     "realizes": "UC9",
+     "src": [
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R45"
+     ]
+    },
+    {
+     "id": "M10",
+     "name": "viewEventInformation",
+     "realizes": "UC10",
+     "src": [
+      "R11",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Event",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R19",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "date",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R19",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "location",
+     "type": "String",
+     "src": [
+      "R19",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "artist",
+     "type": "String",
+     "src": [
+      "R19",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R19",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "price",
+     "type": "double",
+     "src": [
+      "R19",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "venue",
+     "type": "String",
+     "src": [
+      "R19",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "genre",
+     "type": "String",
+     "src": [
+      "R19",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "ticketType",
+     "type": "String",
+     "src": [
+      "R19",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "seats",
+     "type": "String",
+     "src": [
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R19",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M11",
+     "name": "viewEventInformation",
+     "realizes": "UC10",
+     "src": [
+      "R11",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "id": "M12",
+     "name": "searchForEvents",
+     "realizes": "UC7",
+     "src": [
+      "R11",
+      "R18",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R46",
+      "R47",
+      "R48",
+      "R53"
+     ]
+    },
+    {
+     "id": "M13",
+     "name": "buyTickets",
+     "realizes": "UC8",
+     "src": [
+      "R12",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R17"
+     ]
+    },
+    {
+     "id": "M14",
+     "name": "resellTickets",
+     "realizes": "UC9",
+     "src": [
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R45"
+     ]
+    },
+    {
+     "id": "M15",
+     "name": "viewEventPage",
+     "realizes": "UC10",
+     "src": [
+      "R11",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R46",
+    "R47",
+    "R48",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Ticket",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "price",
+     "type": "double",
+     "src": [
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "seat",
+     "type": "String",
+     "src": [
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "event",
+     "type": "String",
+     "src": [
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R46",
+      "R47",
+      "R48",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M16",
+     "name": "addTicketToCart",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M17",
+     "name": "viewOrderSummary",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M18",
+     "name": "viewPaymentMethods",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R46",
+    "R47",
+    "R48",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Reseller",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45"
+     ]
+    },
+    {
+     "name": "bankAccount",
+     "type": "String",
+     "src": [
+      "R45"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M19",
+     "name": "resellTickets",
+     "realizes": "UC9",
+     "src": [
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R45"
+     ]
+    },
+    {
+     "id": "M20",
+     "name": "uploadTicket",
+     "realizes": "UC9",
+     "src": [
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R45"
+     ]
+    },
+    {
+     "id": "M21",
+     "name": "setTicketPrice",
+     "realizes": "UC9",
+     "src": [
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R45"
+     ]
+    },
+    {
+     "id": "M22",
+     "name": "addDescription",
+     "realizes": "UC9",
+     "src": [
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R45"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "buys",
+   "src": [
+    "R8",
+    "R9",
+    "R10",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R46",
+    "R47",
+    "R48",
+    "R53"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R19",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R46",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "sells",
+   "src": [
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

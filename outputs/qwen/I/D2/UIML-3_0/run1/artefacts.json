@@ -1,0 +1,122 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "CreateUIML",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "uimls"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "name": "Uiml",
+   "kind": "class",
+   "attributes": [
+    "header",
+    "interfaces"
+   ],
+   "methods": [
+    {
+     "name": "addInterface",
+     "use_case": "R5"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Header",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "metas"
+   ],
+   "methods": [
+    {
+     "name": "addMetaData",
+     "use_case": "R6"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R6"
+   ]
+  },
+  {
+   "name": "MetaData",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Interface",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Uiml",
+   "target": "Header",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "aggregation",
+   "source": "Uiml",
+   "target": "Interface",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "aggregation",
+   "source": "Header",
+   "target": "MetaData",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass MetaData:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Header:\n    def __init__(self, metas: List[MetaData]):\n        self.metas = metas\n\nclass Uiml:\n    def __init__(self, header: Optional[Header] = None, interfaces: Optional[List[str]] = None):\n        self.header = header\n        self.interfaces = interfaces\n\nclass Model:\n    def __init__(self, uiml: Uiml):\n        self.uiml = uiml\n        raise NotImplementedError\n",
+ "java": {}
+}

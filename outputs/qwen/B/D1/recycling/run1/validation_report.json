@@ -1,0 +1,142 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [
+  "R16 (incompleteness, \"information\"): readings []",
+  "R29 (incompleteness, \"noun or noun\"): readings []"
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The 'information' in R16 is assumed to be related to the 'RecyclingFacility' class."
+  },
+  {
+   "tag": "R29",
+   "assumption": "The 'noun or noun' in R29 is assumed to be related to the 'User' class."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Company' is missing in the model.",
+   "fix": "Add 'Company' class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Executive' is missing in the model.",
+   "fix": "Add 'Executive' class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Pick' is missing in the model.",
+   "fix": "Add 'Pick' class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Material' is missing in the model.",
+   "fix": "Add 'Material' class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Schedule' is missing in the model.",
+   "fix": "Add 'Schedule' class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Location' is missing in the model.",
+   "fix": "Add 'Location' class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Feedback' is missing in the model.",
+   "fix": "Add 'Feedback' class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Hour' is missing in the model.",
+   "fix": "Add 'Hour' class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Notification' is missing in the model.",
+   "fix": "Add 'Notification' class to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Admin' and 'RecyclingFacility' is missing.",
+   "fix": "Add association Admin -> RecyclingFacility [1..0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Admin' and 'User' is missing.",
+   "fix": "Add association Admin -> User [1..0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'User' and 'Pick' is missing.",
+   "fix": "Add association User -> Pick [1..0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'User' and 'Material' is missing.",
+   "fix": "Add association User -> Material [1..0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'User' and 'Schedule' is missing.",
+   "fix": "Add association User -> Schedule [1..0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'RecyclingFacility' and 'Hour' is missing.",
+   "fix": "Add association RecyclingFacility -> Hour [1..1] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'RecyclingFacility' and 'Schedule' is missing.",
+   "fix": "Add association RecyclingFacility -> Schedule [1..1] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'RecyclingFacility' and 'Material' is missing.",
+   "fix": "Add association RecyclingFacility -> Material [1..0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'RecyclingfacilityRepresentative' and 'RecyclingFacility' is missing.",
+   "fix": "Add association RecyclingfacilityRepresentative -> RecyclingFacility [1..1] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'RecyclingfacilityRepresentative' and 'Schedule' is missing.",
+   "fix": "Add association RecyclingfacilityRepresentative -> Schedule [1..1] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'RecyclingfacilityRepresentative' and 'Feedback' is missing.",
+   "fix": "Add association RecyclingfacilityRepresentative -> Feedback [1..0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'RecyclingfacilityRepresentative' and 'Profile' is missing.",
+   "fix": "Add association RecyclingfacilityRepresentative -> Profile [1..1] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'RecyclingfacilityRepresentative' and 'Material' is missing.",
+   "fix": "Add association RecyclingfacilityRepresentative -> Material [1..1] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'RecyclingFacility' and 'Profile' is missing.",
+   "fix": "Add association RecyclingFacility -> Profile [1..1] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'RecyclingFacility' and 'Feedback' is missing.",
+   "fix": "Add association RecyclingFacility -> Feedback [1..0..*] to the model."
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "actors": [],
+ "use_cases": [
+  {
+   "name": "Define Abstract Node",
+   "actor": "",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "expression",
+    "conditionNode"
+   ],
+   "methods": [
+    {
+     "name": "hasExpression",
+     "use_case": "R5"
+    },
+    {
+     "name": "setConditionNode",
+     "use_case": "R7"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R7"
+   ]
+  },
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Expression",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Node",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import Optional, List\n\nclass Expression:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Node:\n    def __init__(self):\n        self.expression: Optional[Expression] = None\n        self.conditionNode: Optional[Node] = None\n        self.in_nodes: List[Node] = []\n\n    def has_expression(self) -> bool:\n        raise NotImplementedError()\n\n    def set_condition_node(self, node: Node) -> None:\n        raise NotImplementedError()",
+ "java": {}
+}

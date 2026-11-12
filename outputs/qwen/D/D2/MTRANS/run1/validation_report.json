@@ -1,0 +1,50 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each module may have metamodels associated, but this is not explicitly modeled."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class MetaClass in the model.",
+   "fix": "Add class MetaClass to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between MTRANSModel and Module should be 1..*..1 to reflect that a module is part of a model.",
+   "fix": "Change the association MTRANSModel -> Module to 1..*..1."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Section should be 1..*..1 to reflect that a section is part of a rule.",
+   "fix": "Change the association Rule -> Section to 1..*..1."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Section and Rule should be 1..1..* to reflect that a rule can have multiple sections.",
+   "fix": "Change the association Section -> Rule to 1..1..*."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Variable should be 1..*..1 to reflect that a rule can have multiple variables.",
+   "fix": "Change the association Rule -> Variable to 1..*..1."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class Instruction in the model.",
+   "fix": "Add class Instruction to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class Expression in the model.",
+   "fix": "Add class Expression to the model."
+  }
+ ]
+}

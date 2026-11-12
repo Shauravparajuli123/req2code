@@ -1,0 +1,124 @@
+<html><head><meta charset='utf-8'><title>D4/theater</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D4/theater &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: This is a model about theaters.
+R2: Theaters have a location, and they can play any play, which can be musicals or operas.
+R3: Plays have a name and can be played either at day or night.
+R4: Plays are written by one or more authors, who have a name.
+R5: There are many participants who act in a play, participants also have a name.
+R6: A particular participant acts in a particular session of a play, where each session begins and ends at a specific time.
+R7: Both authors and participants are persons.
+R8: Any play can have any number of participants, and any participant can act in any number of plays.
+R9: Furthermore, each participant acts in specific sessions of a play, where the session has a begin time and an end time.
+R10: Regarding authors, one can be the author of more than one play.
+R11: Besides, plays can take place in more than one theater.
+R12: Finally, participants can act in any number of plays.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (1 → 1)</th></tr><tr><td class="">participant</td></tr></table></div>
+<div><table><tr><th>classes (8 → 8)</th></tr><tr><td class="">Author</td></tr><tr><td class="">Musical</td></tr><tr><td class="">Opera</td></tr><tr><td class="">Participant</td></tr><tr><td class="">Person</td></tr><tr><td class="">Play</td></tr><tr><td class="">Session</td></tr><tr><td class="">Theater</td></tr></table></div>
+<div><table><tr><th>attributes (7 → 7)</th></tr><tr><td class="">Author.name</td></tr><tr><td class="">Participant.name</td></tr><tr><td class="">Play.day</td></tr><tr><td class="">Play.name</td></tr><tr><td class="">Play.night</td></tr><tr><td class="">Session.end time</td></tr><tr><td class="">Theater.location</td></tr></table></div>
+<div><table><tr><th>relations (11 → 11)</th></tr><tr><td class="">association: Participant -&gt; Session</td></tr><tr><td class="">association: Theater -&gt; Play</td></tr><tr><td class="">generalization: Author -&gt; Person</td></tr><tr><td class="">generalization: Musical -&gt; Play</td></tr><tr><td class="">generalization: Opera -&gt; Play</td></tr><tr><td class="">generalization: Participant -&gt; Person</td></tr><tr><td class="">has: Play -&gt; Author</td></tr><tr><td class="">has: Play -&gt; Participant</td></tr><tr><td class="">has: Play -&gt; Session</td></tr><tr><td class="">has: Theater -&gt; Musical</td></tr><tr><td class="">has: Theater -&gt; Opera</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R2</td><td>coordination</td><td>and+or</td><td><span class='tag resolved'>resolved</span></td><td>Theaters have a location and can play any play.; Theaters have a location, and they can play any play.<br><i>Both readings are supported by the text, but the second one is more explicit.</i></td></tr>
+<tr><td>A2</td><td>R2</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>Theaters can play any play.; Theaters can play any play, which can be musicals or operas.<br><i>Both readings are supported by the text, but the second one is more explicit.</i></td></tr>
+<tr><td>A3</td><td>R3</td><td>coordination</td><td>either/or</td><td><span class='tag resolved'>resolved</span></td><td>Plays have a name and can be played either at day or night.; Plays have a name, and can be played either at day or night.<br><i>Both readings are supported by the text, but the second one is more explicit.</i></td></tr>
+<tr><td>A4</td><td>R3</td><td>actor</td><td>passive &#x27;played&#x27; without agent</td><td><span class='tag open'>open</span></td><td>Plays have a name and can be played either at day or night.; Plays have a name, and can be played either at day or night.<br><i>The text does not specify an actor, so this is a terminological ambiguity.</i></td></tr>
+<tr><td>A5</td><td>R4</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>Plays are written by one or more authors.; Plays are written by one or more authors, who have a name.<br><i>Both readings are supported by the text, but the second one is more explicit.</i></td></tr>
+<tr><td>A6</td><td>R5</td><td>quantifier</td><td>many</td><td><span class='tag resolved'>resolved</span></td><td>There are many participants who act in a play.; There are many participants, who act in a play.<br><i>Both readings are supported by the text, but the second one is more explicit.</i></td></tr>
+<tr><td>A7</td><td>R8</td><td>quantifier</td><td>Any</td><td><span class='tag resolved'>resolved</span></td><td>Any play can have any number of participants, and any participant can act in any number of plays.; Any play can have any number of participants, and any participant can act in any number of plays.<br><i>Both readings are supported by the text, but the second one is more explicit.</i></td></tr>
+<tr><td>A8</td><td>R9</td><td>coordination</td><td>modifier scope: time</td><td><span class='tag resolved'>resolved</span></td><td>Each participant acts in specific sessions of a play, where the session has a begin time and an end time.; Each participant acts in specific sessions of a play, where the session has a begin time and an end time.<br><i>Both readings are supported by the text, but the second one is more explicit.</i></td></tr>
+<tr><td>A9</td><td>R12</td><td>quantifier</td><td>any</td><td><span class='tag resolved'>resolved</span></td><td>Participants can act in any number of plays.; Participants can act in any number of plays.<br><i>Both readings are supported by the text, but the second one is more explicit.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D4_theater_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D4_theater_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D4/theater.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Theater:
+    &quot;&quot;&quot;Source: R1&quot;&quot;&quot;
+    location: _t.Optional[str] = None
+    plays: _t.List[&quot;Play&quot;] = _dc.field(default_factory=list)
+
+
+@_dc.dataclass
+class Play:
+    &quot;&quot;&quot;Source: R3, R11&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    day: _t.Optional[bool] = None
+    night: _t.Optional[bool] = None
+    theaters: _t.Optional[str] = None
+    author: _t.Optional[&quot;Author&quot;] = None
+    participants: _t.List[&quot;Participant&quot;] = _dc.field(default_factory=list)
+    sessions: _t.List[&quot;Session&quot;] = _dc.field(default_factory=list)
+
+    def createPlay(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Author:
+    &quot;&quot;&quot;Source: R4, R10&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+
+    def writePlay(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Participant:
+    &quot;&quot;&quot;Source: R5, R12&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+
+    def actInPlay(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Session:
+    &quot;&quot;&quot;Source: R6, R9&quot;&quot;&quot;
+    beginTime: _t.Optional[str] = None
+    endTime: _t.Optional[str] = None
+    participants: _t.List[&quot;Participant&quot;] = _dc.field(default_factory=list)
+
+    def actInSession(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>0</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>0</td></tr>
+<tr><th>actors_without_use_case</th><td>3</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>3</td></tr>
+<tr><th>inconsistency_rate</th><td>0.375</td></tr>
+<tr><th>requirement_coverage</th><td>0.75</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;Plays can be played either at day or night, as stated in the requirement.&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>1.0</td><td>0.556</td><td>0.714</td><td>5/0/4</td></tr>
+<tr><td>attributes</td><td>0.222</td><td>0.4</td><td>0.286</td><td>2/7/3</td></tr>
+<tr><td>relations</td><td>0.4</td><td>0.25</td><td>0.308</td><td>2/3/6</td></tr>
+</table></body></html>

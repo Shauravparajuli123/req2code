@@ -1,0 +1,32 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [
+  "R4 (terminological, \"passive 'mapped' without agent\"): readings ['A Place is mapped to a single Network in a Petri Net.', 'A Network is mapped to a single Place in a Petri Net.']"
+ ],
+ "assumptions": [
+  {
+   "tag": "R4",
+   "assumption": "A Place is mapped to a single Net in a Petri Net, and a Net is mapped to a single Place in a Petri Net."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Net' is missing an attribute 'name'",
+   "fix": "Add 'name' attribute to class 'Net'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Association 'Net -> Place' is not bidirectional",
+   "fix": "Make association 'Net -> Place' bidirectional"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Association 'Place -> Transition' is not bidirectional",
+   "fix": "Make association 'Place -> Transition' bidirectional"
+  }
+ ]
+}

@@ -1,0 +1,296 @@
+<html><head><meta charset='utf-8'><title>D1/sports</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D1/sports &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: As a new Customer, I want to open an account in the system, so I can start training at Daily Sports.
+R2: As a Customer, I want to add my personal information, so I meet the requirements of the gym for signing up.
+R3: As a Customer, I want to add my banking details, so I can pay for my subscription.
+R4: As a Customer, I want to be able to choose my membership type, so I can pay according to my wishes.
+R5: As a Customer, I want to be able to extend my subscription for Daily Sports, so I can continue working out.
+R6: As a Customer, I want to know how long my subscription lasts, so I know when I need to extend it.
+R7: As a Returning Customer, I want to be able to use my previous information, so that sign-up is easier.
+R8: As a Customer, I want to be able to unsubscribe.
+R9: As a Customer, I want to be able to reset my password.
+R10: As a Customer, I want to be able to change my personal details.
+R11: As a Customer, I want to be able to update my payment information.
+R12: As a Customer with a Family Membership, I want to see who is using my membership.
+R13: As a Customer with a Family Membership, I want to add a person to my membership, so that I can utilize it effectively.
+R14: As a Customer with a Family Membership, I want to remove a person from my membership.
+R15: As a Customer, I want to see an overview of all available lessons, so that I can choose which one to book.
+R16: As a Customer, I want to see what future lessons I have booked, so that I can manage my time.
+R17: As a Customer, I want to see a record of previous lessons I have booked, so I can track my progress.
+R18: As a Customer, I want to be able to call the gym to book a lesson, so that I don&#x27;t have to use the application.
+R19: As a Customer, I want to be able to call the gym to cancel a lesson, so that I don&#x27;t have to use the application.
+R20: As an Admin, I want to be able to edit all personal training sessions.
+R21: As a Customer, I want to call the gym to book a personal training session, so that I don&#x27;t have to use the application.
+R22: As a Customer, I want to call the gym to cancel a personal training session, so that I don&#x27;t have to use the application.
+R23: As a Customer, I want to be able to book a spot for the free practice area, so that I know it will have capacity for me when I arrive.
+R24: As a Customer, I want to see how many spots have been booked for a given timeslot.
+R25: As a Trainer, I want to see which rooms are free at a given timeslot, so I can organize a lesson.
+R26: As a Trainer, I want to add a lesson to the schedule, so customers would be able to sign-up.
+R27: As a Trainer, I want to set the time of the lesson, so the customers know when they should be at Daily Sports.
+R28: As a Trainer, I want to set the description of the lesson, so the customers know what to expect from it.
+R29: As a Trainer, I want to set the room of the lesson, so the customers know where to go.
+R30: As a Trainer, I want to set the type of lesson.
+R31: As a Trainer, I want to set the maximum number of people allowed in the lesson, so that we don&#x27;t over-crowd a room.
+R32: As a Trainer, I want to be able to see what my schedule is.
+R33: As a Trainer, I want to be the only Trainer who can edit my lessons.
+R34: As a Trainer, I want to edit the time of the lesson, so a more suitable time can be set.
+R35: As a Trainer, I want to change the room of the lesson, so I can move the lesson to another place.
+R36: As a Trainer, I want to edit the description of the lesson, so the customers know what to expect.
+R37: As a Trainer, I want to edit the maximum number of people allowed in the lesson, so it is correct for this lesson.
+R38: As an Admin, I want to be able to edit any lesson.
+R39: As a Trainer, I want to cancel a lesson, so customers won&#x27;t show up in an empty room when I can&#x27;t make it.
+R40: As an Admin, I want to cancel a lesson, so customers won&#x27;t show up in an empty room when the Trainer can&#x27;t make it.
+R41: As a Customer, I want to receive a notification when my booked lesson is canceled, so I won&#x27;t go to Daily Sports for a canceled lesson.
+R42: As a Customer, I want to be notified if I didn&#x27;t go to a session I had booked, so that I know it happened.
+R43: As an Admin, I want to see if a customer did not show up for a session they had booked, so that I can take further action.
+R44: As an Admin, I want to see how many times a customer did not show up for a session.
+R45: As an Admin, I want to have the system to issue a fine if a customer does not show up more than 2 times, so that we can deter no-shows.
+R46: As an Admin, I want to have the fines for repeat offenders to increase exponentially for each subsequent offense, so we can deter no-shows.
+R47: As an Admin I want to add a new trainer to the system, so the new trainer can start working.
+R48: As an Admin I want to add a new admin to the system, so the new admin can start working.
+R49: As an Admin I want to remove a trainer from the system, so they cannot access the system anymore.
+R50: As a User, I want to log in to the system, so that I can use the system.
+R51: As a Customer, I want to receive notifications by the method which I prefer, so that I am able to see them and not be annoyed by them.
+R52: As a Customer, I want to receive notifications by email.
+R53: As a Customer, I want to receive push notifications from the system.
+R54: As a Customer, I want to choose what to receive notifications for.
+R55: As a Customer, I want to receive a notification when a training session is canceled.
+R56: As a Customer, I want to confirm that I am aware that my booking has been canceled.
+R57: As an Admin, I want to know which customers are aware that their booking has been canceled, so that I can call them if they aren&#x27;t.
+R58: As a Customer, I want to see an overview of my personal information.
+R59: As a Customer, I want to see information about my membership.
+R60: As a Trainer, I want to see information about my past and future training sessions.
+R61: As a Customer, I want to have a method by which I can check-in.
+R62: As an Admin, I want to see if the Customer who is checking-in has a subscription.
+R63: As an Admin, I want to see if the Customer who is checking-in has any bookings.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (5 → 4)</th></tr><tr><td class="">admin</td></tr><tr><td class="">customer</td></tr><tr><td class="">customer with a family membership</td></tr><tr><td class="">trainer</td></tr><tr><td class="del">user</td></tr></table></div>
+<div><table><tr><th>classes (24 → 22)</th></tr><tr><td class="">Admin</td></tr><tr><td class="">Booking</td></tr><tr><td class="">Customer</td></tr><tr><td class="del">CustomerWithAFamilyMembership</td></tr><tr><td class="">DailySports</td></tr><tr><td class="">FamilyMembership</td></tr><tr><td class="">Fine</td></tr><tr><td class="">Gym</td></tr><tr><td class="">Lesson</td></tr><tr><td class="">Membership</td></tr><tr><td class="">Method</td></tr><tr><td class="">Notification</td></tr><tr><td class="">People</td></tr><tr><td class="">Person</td></tr><tr><td class="">Room</td></tr><tr><td class="">Schedule</td></tr><tr><td class="">Session</td></tr><tr><td class="del">Show</td></tr><tr><td class="">Spot</td></tr><tr><td class="">Subscription</td></tr><tr><td class="">Timeslot</td></tr><tr><td class="">Trainer</td></tr><tr><td class="">TrainingSession</td></tr><tr><td class="">User</td></tr></table></div>
+<div><table><tr><th>attributes (3 → 3)</th></tr><tr><td class="">Gym.requirement</td></tr><tr><td class="">Lesson.description</td></tr><tr><td class="">Lesson.record</td></tr></table></div>
+<div><table><tr><th>relations (3 → 3)</th></tr><tr><td class="">has: Customer -&gt; Booking</td></tr><tr><td class="">has: Customer -&gt; Subscription</td></tr><tr><td class="">has: Lesson -&gt; Room</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A3</td><td>R6</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>subscription duration; personal information<br><i>The use of &#x27;it&#x27; could refer to either the subscription duration or the personal information.</i></td></tr>
+<tr><td>A7</td><td>R13</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>family membership; personal information<br><i>The use of &#x27;it&#x27; could refer to either the family membership or the personal information.</i></td></tr>
+<tr><td>A8</td><td>R23</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>free practice area; lesson<br><i>The use of &#x27;it&#x27; could refer to either the free practice area or the lesson.</i></td></tr>
+<tr><td>A10</td><td>R28</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>lesson description; lesson<br><i>The use of &#x27;it&#x27; could refer to either the lesson description or the lesson itself.</i></td></tr>
+<tr><td>A14</td><td>R39</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>lesson; training session<br><i>The use of &#x27;it&#x27; could refer to either the lesson or the training session.</i></td></tr>
+<tr><td>A15</td><td>R40</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>lesson; training session<br><i>The use of &#x27;it&#x27; could refer to either the lesson or the training session.</i></td></tr>
+<tr><td>A16</td><td>R42</td><td>quantifier</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>session; lesson<br><i>The use of &#x27;session&#x27; could refer to either a specific session or any session.</i></td></tr>
+<tr><td>A17</td><td>R44</td><td>quantifier</td><td>many</td><td><span class='tag resolved'>resolved</span></td><td>customer; lesson<br><i>The use of &#x27;any&#x27; could refer to any customer or any lesson.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D1_sports_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D1_sports_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D1/sports.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Customer:
+    &quot;&quot;&quot;Source: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R41, R42, R43, R44, R45, R46, R47, R48, R49, R50, R51, R52, R53, R54, R55, R56, R57, R58, R59, R60, R61, R62, R63&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    personalInformation: _t.Optional[str] = None
+    bankingDetails: _t.Optional[str] = None
+    membershipType: _t.Optional[str] = None
+    subscription: _t.Optional[str] = None
+    previousInformation: _t.Optional[str] = None
+    familyMembership: _t.Optional[bool] = None
+    notificationMethod: _t.Optional[str] = None
+    checkInStatus: _t.Optional[bool] = None
+    lesson: _t.Optional[&quot;Lesson&quot;] = None
+
+    def createAccount(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC1 &quot;Create Account&quot; (R1).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def addPersonalInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC2 &quot;Add Personal Information&quot; (R2).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def addBankingDetail(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC3 &quot;Add Banking Detail&quot; (R3).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def chooseMembershipType(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC4 &quot;Choose Membership Type&quot; (R4).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def extendSubscription(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC5 &quot;Extend Subscription&quot; (R5).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def knowSubscription(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC6 &quot;Know Subscription&quot; (R6).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def usePreviousInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC7 &quot;Use Previous Information&quot; (R7).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def unsubscribe(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC8 &quot;Unsubscribe&quot; (R8).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def resetPassword(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC9 &quot;Reset Password&quot; (R9).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def changeDetail(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC10 &quot;Change Detail&quot; (R10).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def updatePaymentInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC11 &quot;Update Payment Information&quot; (R11).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeOverview(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC14 &quot;See Overview&quot; (R15).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeRecord(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC15 &quot;See Record&quot; (R17).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeFutureLessons(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC16 &quot;See Future Lessons&quot; (R16).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def callGym(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC17 &quot;Call Gym&quot; (R18, R19, R21).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def bookSpot(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC18 &quot;Book Spot&quot; (R23).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeAvailableSpots(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC19 &quot;See Available Spots&quot; (R24).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeRoom(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC20 &quot;See Room&quot; (R25).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeMembership(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC42 &quot;See Membership&quot; (R12).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeInformation(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC43 &quot;See Information&quot; (R59, R60).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeNotification(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC44 &quot;See Notification&quot; (R51, R52, R53, R54).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def confirmBooking(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC45 &quot;Confirm Booking&quot; (R56).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def notifySession(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC46 &quot;Notify Session&quot; (R42).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Trainer:
+    &quot;&quot;&quot;Source: R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    lesson: _t.Optional[str] = None
+
+    def addLesson(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC21 &quot;Add Lesson&quot; (R26).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def setTime(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC22 &quot;Set Time&quot; (R27).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def setDescription(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC23 &quot;Set Description&quot; (R28).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def setRoom(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC24 &quot;Set Room&quot; (R29).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def setNumber(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC25 &quot;Set Number&quot; (R31).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def setType(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC26 &quot;Set Type&quot; (R30).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editLesson(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC27 &quot;Edit Lesson&quot; (R33, R38).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editTime(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC28 &quot;Edit Time&quot; (R34).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editRoom(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC29 &quot;Edit Room&quot; (R35).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editDescription(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC30 &quot;Edit Description&quot; (R36).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editNumber(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC31 &quot;Edit Number&quot; (R37).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Admin:
+    &quot;&quot;&quot;Source: R38, R39, R40, R41, R42, R43, R44, R45, R46, R47, R48, R49&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    trainer: _t.Optional[&quot;Trainer&quot;] = None
+    customer: _t.Optional[&quot;Customer&quot;] = None
+
+    def editLesson(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC27 &quot;Edit Lesson&quot; (R33, R38).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def cancelLesson(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC33 &quot;Cancel Lesson&quot; (R39, R40).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def seeCustomer(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC34 &quot;See Customer&quot; (R43, R62, R63).&quot;&quot;&quot;
+     </pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>47</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>5</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>5</td></tr>
+<tr><th>inconsistency_rate</th><td>0.0926</td></tr>
+<tr><th>requirement_coverage</th><td>1.0</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;The system will handle notifications through a Notification class or similar mechanism, which will be responsible for sending out emails, push notifications, and other methods as per the customer&#x27;s preference.&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.75</td><td>0.25</td><td>0.375</td><td>3/1/9</td></tr>
+<tr><td>relations</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0/4/13</td></tr>
+<tr><td>use_cases_provisional</td><td>0.83</td><td>0.75</td><td>0.788</td><td>39/8/13</td></tr>
+</table></body></html>

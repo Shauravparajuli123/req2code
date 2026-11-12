@@ -1,0 +1,509 @@
+{
+ "condition": "O",
+ "hint": {
+  "case": "D2/Cristal",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "The Cristal model has Part Composite Members"
+     }
+    ],
+    "name": "part composite member"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R6",
+     "R12",
+     "R13",
+     "R14"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "The ActCompositeMember of a Cristal."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "The CompositeActDef of a Cristal may may be composed by one or more ActCompositeMembers"
+     },
+     {
+      "sid": "R13.s1",
+      "text": "The ActCompositeMember of a Cristal may have one or more ActivityDefinition."
+     }
+    ],
+    "name": "Actcompositemember",
+    "freq": 4
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R13",
+     "R14"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "The ActCompositeMember of a Cristal may have one or more ActivityDefinition."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "The ActivityDefinition of a Cristal has exactly one ActCompositeMember."
+     }
+    ],
+    "name": "ActivityDefinition",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R5",
+     "R12"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "The CompositeActDef of a Cristal."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "The CompositeActDef of a Cristal may may be composed by one or more ActCompositeMembers"
+     }
+    ],
+    "name": "CompositeActDef",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R2",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A Cristal package has one or more CompositeParDef."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "The CompositeParDef of a Cristal may be composed by one or more PartCompositeMember."
+     }
+    ],
+    "name": "CompositeParDef",
+    "freq": 2
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A Cristal package has a class named Condition."
+     }
+    ],
+    "name": "Condition",
+    "freq": 0
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "The ElementaryPartDef class of a Cristal."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "The ElementaryActDef of a Cristal"
+     },
+     {
+      "sid": "R5.s1",
+      "text": "The CompositeActDef of a Cristal."
+     }
+    ],
+    "name": "Cristal",
+    "freq": 9
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "The PartCompositeMember is a member of a unique PartDefinition of the Cristal model."
+     }
+    ],
+    "name": "Member",
+    "freq": 1
+   },
+   {
+    "id": "C8",
+    "src": [
+     "R9",
+     "R16"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "The Cristal model has Part Composite Members"
+     },
+     {
+      "sid": "R16.s1",
+      "text": "The PartCompositeMember is a member of a unique PartDefinition of the Cristal model."
+     }
+    ],
+    "name": "PartCompositeMember",
+    "freq": 2
+   },
+   {
+    "id": "C9",
+    "src": [
+     "R15"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "The PartDefinition node has any number of PartCompositeMember nodes."
+     },
+     {
+      "sid": "R15.s2",
+      "text": "Each such node has one PartDefinition node."
+     }
+    ],
+    "name": "PartDefinitionNode",
+    "freq": 2
+   },
+   {
+    "id": "C10",
+    "src": [
+     "R10",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "The Condition class of a Cristal may have one or more PartCompositeMember."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "The CompositeParDef of a Cristal may be composed by one or more PartCompositeMember."
+     }
+    ],
+    "name": "Partcompositemember",
+    "freq": 2
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "The Condition class of a Cristal may have one or more PartCompositeMember."
+     }
+    ],
+    "owner": "Cristal",
+    "name": "condition class",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "The ElementaryActDef of a Cristal"
+     }
+    ],
+    "owner": "Cristal",
+    "name": "elementary act def",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "The ElementaryPartDef class of a Cristal."
+     }
+    ],
+    "owner": "Cristal",
+    "name": "elementary part def class",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R15"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "The PartDefinition node has any number of PartCompositeMember nodes."
+     }
+    ],
+    "owner": "PartDefinitionNode",
+    "name": "part composite member node",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "is_a"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "The PartCompositeMember is a member of a unique PartDefinition of the Cristal model."
+     }
+    ],
+    "kind": "generalization",
+    "source": "PartCompositeMember",
+    "target": "Member",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "The ActCompositeMember of a Cristal may have one or more ActivityDefinition."
+     }
+    ],
+    "kind": "has",
+    "source": "Actcompositemember",
+    "target": "ActivityDefinition",
+    "multiplicity_target": "1..*"
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R14"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "The ActivityDefinition of a Cristal has exactly one ActCompositeMember."
+     }
+    ],
+    "kind": "has",
+    "source": "ActivityDefinition",
+    "target": "Actcompositemember",
+    "multiplicity_target": "1..*"
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R6",
+     "R13"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "The ActCompositeMember of a Cristal."
+     },
+     {
+      "sid": "R13.s1",
+      "text": "The ActCompositeMember of a Cristal may have one or more ActivityDefinition."
+     }
+    ],
+    "kind": "has",
+    "source": "Cristal",
+    "target": "Actcompositemember",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R14"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "The ActivityDefinition of a Cristal has exactly one ActCompositeMember."
+     }
+    ],
+    "kind": "has",
+    "source": "Cristal",
+    "target": "ActivityDefinition",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R5",
+     "R12"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "The CompositeActDef of a Cristal."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "The CompositeActDef of a Cristal may may be composed by one or more ActCompositeMembers"
+     }
+    ],
+    "kind": "has",
+    "source": "Cristal",
+    "target": "CompositeActDef",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL7",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "The CompositeParDef of a Cristal may be composed by one or more PartCompositeMember."
+     }
+    ],
+    "kind": "has",
+    "source": "Cristal",
+    "target": "CompositeParDef",
+    "multiplicity_target": "1..*"
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "CompositeParDef",
+     "target": "Cristal",
+     "multiplicity": "1..*"
+    },
+    {
+     "source": "PartCompositeMember",
+     "target": "CompositeParDef",
+     "multiplicity": "1..*"
+    },
+    {
+     "source": "ActCompositeMember",
+     "target": "CompositeActDef",
+     "multiplicity": "1..*"
+    },
+    {
+     "source": "ActivityDefinition",
+     "target": "ActCompositeMember",
+     "multiplicity": "1..*"
+    },
+    {
+     "source": "PartCompositeMember",
+     "target": "PartDefinitionNode",
+     "multiplicity": "0..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

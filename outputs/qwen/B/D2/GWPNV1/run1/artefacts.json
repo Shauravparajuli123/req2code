@@ -1,0 +1,97 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "destination"
+   ],
+   "methods": [],
+   "src": [
+    "R1",
+    "R4",
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "net",
+    "destination"
+   ],
+   "methods": [
+    {
+     "name": "createTransition",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "place"
+   ],
+   "methods": [
+    {
+     "name": "createNet",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R4",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Net",
+   "target": "Place",
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "source": "Place",
+   "target": "Transition",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "Transition",
+   "target": "Net",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "source": "Transition",
+   "target": "Place",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GWPNV1.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Place:\n    \"\"\"Source: R1, R4, R5, R8\"\"\"\n    name: _t.Optional[str] = None\n    destination: _t.Optional[str] = None\n    transitions: _t.List[\"Transition\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: R2, R6, R7\"\"\"\n    name: _t.Optional[str] = None\n    net: _t.Optional[str] = None\n    destination: _t.Optional[str] = None\n    places: _t.List[\"Place\"] = _dc.field(default_factory=list)\n\n    def createTransition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Net:\n    \"\"\"Source: R3, R4, R8\"\"\"\n    name: _t.Optional[str] = None\n    place: _t.Optional[str] = None\n    places: _t.List[\"Place\"] = _dc.field(default_factory=list)\n\n    def createNet(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Place.java": "/** Generated from shared model D2/GWPNV1. Source: R1, R4, R5, R8 */\npublic class Place {\n    private java.lang.String name;\n    private java.lang.String destination;\n    private java.util.List<Transition> transitions;\n}\n",
+  "Transition.java": "/** Generated from shared model D2/GWPNV1. Source: R2, R6, R7 */\npublic class Transition {\n    private java.lang.String name;\n    private java.lang.String net;\n    private java.lang.String destination;\n    private java.util.List<Place> places;\n\n    /** Operation. */\n    public void createTransition() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Net.java": "/** Generated from shared model D2/GWPNV1. Source: R3, R4, R8 */\npublic class Net {\n    private java.lang.String name;\n    private java.lang.String place;\n    private java.util.List<Place> places;\n\n    /** Operation. */\n    public void createNet() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

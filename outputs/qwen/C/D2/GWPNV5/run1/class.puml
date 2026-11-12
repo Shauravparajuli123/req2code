@@ -1,0 +1,38 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Place {
+  name : String
+  tokens : int
+}
+class Transition {
+  name : String
+  weight : String
+  +createTransition()
+}
+class Net {
+  name : String
+  places : String
+  transitions : String
+  +createNet()
+}
+class Arc {
+  source : String
+  destination : String
+}
+class PlaceTransitionArc {
+  source : String
+  destination : String
+}
+class TransitionPlaceArc {
+  source : String
+  destination : String
+}
+class Weight {
+}
+Place "1" -- "1" Net : is part of
+Arc "1" -- "1" Weight : has
+PlaceTransitionArc "1" -- "1" Transition : has
+Place "1" -- "0..*" Arc : has
+Transition "1" -- "1" Net : is part of
+@enduml

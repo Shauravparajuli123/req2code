@@ -1,0 +1,27 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class EAIResource {
+}
+class EAIQueue {
+  maxLength : int
+}
+class EAISource {
+  resources : String
+  +createGame()
+}
+class EAISink {
+  resources : String
+  +createGame()
+}
+class FCMSource {
+  +createGame()
+}
+class FCMSink {
+  +createGame()
+}
+FCMSource --|> EAIResource
+EAISource "0..*" -- "1" EAIResource : has
+EAISink "0..*" -- "1" EAIResource : has
+EAISink --|> FCMSink
+@enduml

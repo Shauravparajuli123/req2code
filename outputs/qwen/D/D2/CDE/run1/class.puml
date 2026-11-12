@@ -1,0 +1,27 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class IUmlType {
+}
+class ICdeComponentSpec {
+}
+class IUmlClass {
+}
+class IUmlComponent {
+}
+class ICdeServer {
+}
+class ICdeComponent {
+}
+class IUmlMember {
+}
+class ICdeMember {
+}
+ICdeComponentSpec --|> IUmlType
+IUmlClass --|> IUmlType
+IUmlComponent --|> IUmlClass
+ICdeServer "0..*" -- "1" ICdeComponent : has
+IUmlType "1" o-- "0..*" IUmlMember : has
+IUmlClass "1" o-- "0..*" IUmlMember : has
+IUmlComponent "1" o-- "0..*" ICdeMember : has
+@enduml

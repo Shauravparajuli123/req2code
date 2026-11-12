@@ -1,0 +1,194 @@
+{
+ "case": "D2/UsiXML-task",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Game",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "TaskNode",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "identifier",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "category",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "taskType",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "importance",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "complexityLevel",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "centrality",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createTaskNode",
+     "realizes": "UC1",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Task",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "operand",
+     "type": "String",
+     "src": [
+      "R9",
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C3",
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Operator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R6",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "uses",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "uses",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is_a",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "composition",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "contains",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that 'Create Game' is a use case that is realized by 'TaskNode'."
+  }
+ ],
+ "open_tags": []
+}

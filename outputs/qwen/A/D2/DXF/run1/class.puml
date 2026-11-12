@@ -1,0 +1,18 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Game {
+  name : String
+  +createGame()
+}
+class Mesh {
+  name : String
+  points : String
+}
+class Point {
+  name : String
+  x : double
+  z : double
+}
+Mesh "0..*" -- "1" Point : has
+@enduml

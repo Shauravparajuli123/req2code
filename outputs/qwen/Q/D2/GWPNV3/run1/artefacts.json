@@ -1,0 +1,147 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R7",
+    "R11"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R7"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "PTArc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "TPArc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9",
+    "R10",
+    "R12",
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Model",
+   "target": "Net",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "TPArc",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "TPArc",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PTArc",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Net:\n    def __init__(self, name: str):\n        self.name = name\n        self.places: List[Place] = []\n        self.tpa Arcs: List[TPArc] = []\n        self.transition: Transition = None\n    def add_place(self, place: Place):\n        raise NotImplementedError\n    def add_tpa_arc(self, tpa_arc: TPArc):\n        raise NotImplementedError\n    def set_transition(self, transition: Transition):\n        raise NotImplementedError\n    src = ['R1', 'R2', 'R7', 'R11', 'R8', 'R9', 'R13']\n\nclass Place:\n    def __init__(self):\n        pass\n    src = ['R1', 'R2', 'R7']\n\nclass Model:\n    def __init__(self):\n        self.nets: List[Net] = []\n    def add_net(self, net: Net):\n        raise NotImplementedError\n    src = ['R3', 'R4']\n\nclass Arc:\n    def __init__(self):\n        pass\n    src = ['R4']\n\nclass PTArc(Arc):\n    def __init__(self):\n        super().__init__()\n    src = ['R5']\n\nclass TPArc(Arc):\n    def __init__(self):\n        super().__init__()\n    src = ['R6']\n\nclass Transition:\n    def __init__(self):\n        pass\n    src = ['R9', 'R10', 'R12', 'R13']",
+ "java": {}
+}

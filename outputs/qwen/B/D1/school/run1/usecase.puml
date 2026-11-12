@@ -1,0 +1,92 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Moderator" as A1
+actor "Guardian" as A2
+actor "Student" as A3
+actor "Teacher" as A4
+actor "Administrator" as A5
+actor "User" as A6
+rectangle "school" {
+  usecase "Create Game" as UC1
+  usecase "Direct Message" as UC2
+  usecase "Fill Absence" as UC3
+  usecase "View Information" as UC4
+  usecase "Access File" as UC5
+  usecase "Add Page" as UC6
+  usecase "Assign Date" as UC7
+  usecase "Assign DLM" as UC8
+  usecase "Assign Schedule" as UC9
+  usecase "Create Account" as UC10
+  usecase "Edit Data" as UC11
+  usecase "Edit Page" as UC12
+  usecase "Grade DLM Submission" as UC13
+  usecase "Hand Homework" as UC14
+  usecase "Have Access" as UC15
+  usecase "Make Submission Element" as UC16
+  usecase "Make Use" as UC17
+  usecase "Receive Confirmation" as UC18
+  usecase "Receive Notification" as UC19
+  usecase "Record Action" as UC20
+  usecase "Record Attendance" as UC21
+  usecase "Record Behavior" as UC22
+  usecase "Record Grade" as UC23
+  usecase "Register Absence" as UC24
+  usecase "Register Change" as UC25
+  usecase "Reset Password" as UC26
+  usecase "See Answer" as UC27
+  usecase "See Grade" as UC28
+  usecase "See Progress" as UC29
+  usecase "Set Appearance Date" as UC30
+  usecase "Set Date" as UC31
+  usecase "Upload File" as UC32
+  usecase "View Attendance" as UC33
+  usecase "View Class" as UC34
+  usecase "View Contact Information" as UC35
+  usecase "Send Broadcast Message" as UC36
+  usecase "Set Role" as UC37
+  usecase "Upload Schedule" as UC38
+  usecase "View Detail" as UC39
+  usecase "View Statistic" as UC40
+}
+A1 --> UC1
+A2 --> UC2
+A2 --> UC3
+A2 --> UC4
+A3 --> UC5
+A4 --> UC6
+A4 --> UC7
+A4 --> UC8
+A5 --> UC9
+A5 --> UC10
+A5 --> UC11
+A4 --> UC12
+A4 --> UC13
+A3 --> UC14
+A3 --> UC15
+A4 --> UC16
+A5 --> UC17
+A4 --> UC18
+A2 --> UC19
+A4 --> UC20
+A4 --> UC21
+A4 --> UC22
+A4 --> UC23
+A5 --> UC24
+A5 --> UC25
+A6 --> UC26
+A4 --> UC27
+A4 --> UC28
+A4 --> UC29
+A4 --> UC30
+A4 --> UC31
+A4 --> UC32
+A4 --> UC33
+A4 --> UC34
+A3 --> UC35
+A5 --> UC36
+A5 --> UC37
+A5 --> UC38
+A5 --> UC39
+A5 --> UC40
+@enduml

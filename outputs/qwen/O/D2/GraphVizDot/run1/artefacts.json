@@ -1,0 +1,75 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineGraphElement",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "label",
+    "parent",
+    "z_index"
+   ],
+   "methods": [
+    {
+     "name": "define",
+     "use_case": "DefineGraphElement"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Graph",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "dimension",
+    "location",
+    "elements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R9"
+   ]
+  },
+  {
+   "name": "Shape",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Graph",
+   "target": "Element",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "class Element:\n    def __init__(self, label: str, parent: Graph, z_index: int):\n        self.label = label\n        self.parent = parent\n        self.z_index = z_index\n\n    def define(self):\n        raise NotImplementedError\n\nclass Graph:\n    def __init__(self, type: str, dimension: int, location: str):\n        self.type = type\n        self.dimension = dimension\n        self.location = location\n        self.elements = []\n\nclass Shape:\n    pass",
+ "java": {}
+}

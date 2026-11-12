@@ -1,0 +1,196 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [
+   {
+    "name": "User",
+    "src": [
+     "R1"
+    ]
+   }
+  ],
+  "use_cases": [
+   {
+    "name": "realize the make",
+    "actor": "User",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "contains elements",
+    "actor": "Makefiles",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "name": "contains rules",
+    "actor": "Makefile",
+    "src": [
+     "R3",
+     "R11"
+    ]
+   },
+   {
+    "name": "has an attribute of type String named value",
+    "actor": "Macro",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "represents a command",
+    "actor": "Shell line",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "name": "characterized by a text string",
+    "actor": "Comment",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "name": "represents the dependencies of the files with the rule that is applied to it",
+    "actor": "Class",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "name": "relates Rule instances",
+    "actor": "RuleDep",
+    "src": [
+     "R13"
+    ]
+   }
+  ],
+  "classes": [
+   {
+    "name": "File",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "Makefile",
+    "src": [
+     "R2",
+     "R3",
+     "R9",
+     "R10",
+     "R11"
+    ]
+   },
+   {
+    "name": "Element",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "name": "Macro",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "Shell line",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "name": "Comment",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "name": "Dependency",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "name": "Rule",
+    "src": [
+     "R11",
+     "R12"
+    ]
+   },
+   {
+    "name": "RuleDep",
+    "src": [
+     "R13"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Macro",
+    "name": "value",
+    "src": [
+     "R4"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Makefile",
+    "target": "Element",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Makefile",
+    "target": "Rule",
+    "src": [
+     "R3",
+     "R11"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Makefile",
+    "target": "File",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Makefile",
+    "target": "Comment",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Rule",
+    "target": "RuleDep",
+    "src": [
+     "R11",
+     "R13"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "RuleDep",
+    "target": "Rule",
+    "src": [
+     "R13"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

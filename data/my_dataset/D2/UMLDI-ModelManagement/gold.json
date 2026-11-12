@@ -1,0 +1,176 @@
+{
+ "classes": [
+  {
+   "name": "Element",
+   "kind": "class"
+  },
+  {
+   "name": "ModelElement",
+   "kind": "class"
+  },
+  {
+   "name": "GeneralizableElement",
+   "kind": "class"
+  },
+  {
+   "name": "Namespace",
+   "kind": "class"
+  },
+  {
+   "name": "Classifier",
+   "kind": "class"
+  },
+  {
+   "name": "Feature",
+   "kind": "class"
+  },
+  {
+   "name": "Relationship",
+   "kind": "class"
+  },
+  {
+   "name": "Generalization",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Element": [],
+  "ModelElement": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "visibility",
+    "type": "VisibilityKind"
+   },
+   {
+    "name": "isSpecification",
+    "type": "Boolean"
+   }
+  ],
+  "GeneralizableElement": [
+   {
+    "name": "isRoot",
+    "type": "Boolean"
+   },
+   {
+    "name": "isLeaf",
+    "type": "Boolean"
+   },
+   {
+    "name": "isAbstract",
+    "type": "Boolean"
+   }
+  ],
+  "Namespace": [],
+  "Classifier": [],
+  "Feature": [
+   {
+    "name": "ownerScope",
+    "type": "ScopeKind"
+   }
+  ],
+  "Relationship": [],
+  "Generalization": [
+   {
+    "name": "discriminator",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "ModelElement",
+   "to": "Element",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "ModelElement",
+   "to": "Namespace",
+   "label": "namespace 0..1",
+   "label_to": "ownedElement 0..*"
+  },
+  {
+   "type": "generalization",
+   "from": "GeneralizableElement",
+   "to": "ModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "GeneralizableElement",
+   "to": "Generalization",
+   "label": "generalization 0..*",
+   "label_to": "child 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "Namespace",
+   "to": "ModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Classifier",
+   "to": "GeneralizableElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Classifier",
+   "to": "Namespace",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Classifier",
+   "to": "Generalization",
+   "label": "powertypeRange 0..*",
+   "label_to": "powertype 0..1"
+  },
+  {
+   "type": "composition",
+   "from": "Classifier",
+   "to": "Feature",
+   "label": "feature 0..*",
+   "label_to": "owner 0..1"
+  },
+  {
+   "type": "generalization",
+   "from": "Feature",
+   "to": "ModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Relationship",
+   "to": "ModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Generalization",
+   "to": "Relationship",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Generalization",
+   "to": "GeneralizableElement",
+   "label": "parent 1..1",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage Core {\nclass Element {\n}\nclass ModelElement {\n\t name : String\n\t visibility : VisibilityKind\n\t isSpecification : Boolean\n}\nElement <|-- ModelElement\nModelElement \"namespace 0..1\" --* \"ownedElement 0..*\" Namespace\nclass GeneralizableElement {\n\t isRoot : Boolean\n\t isLeaf : Boolean\n\t isAbstract : Boolean\n}\nModelElement <|-- GeneralizableElement\nGeneralizableElement \"generalization 0..*\" -- \"child 1..1\" Generalization\nclass Namespace {\n}\nModelElement <|-- Namespace\nclass Classifier {\n}\nGeneralizableElement <|-- Classifier\nNamespace <|-- Classifier\nClassifier \"powertypeRange 0..*\" -- \"powertype 0..1\" Generalization\nClassifier \"feature 0..*\" *-- \"owner 0..1\" Feature\nclass Feature {\n\t ownerScope : ScopeKind\n}\nModelElement <|-- Feature\nclass Relationship {\n}\nModelElement <|-- Relationship\nclass Generalization {\n\t discriminator : String\n}\nRelationship <|-- Generalization\nGeneralization \"parent 1..1\" --> GeneralizableElement\n}\n@enduml\n"
+}

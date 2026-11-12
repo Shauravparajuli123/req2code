@@ -1,0 +1,107 @@
+{
+ "classes": [
+  {
+   "name": "Classifier",
+   "kind": "class"
+  },
+  {
+   "name": "Class",
+   "kind": "class"
+  },
+  {
+   "name": "PrimitiveDataType",
+   "kind": "class"
+  },
+  {
+   "name": "Association",
+   "kind": "class"
+  },
+  {
+   "name": "Attribute",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Classifier": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Class": [
+   {
+    "name": "is_persistent",
+    "type": "Boolean"
+   }
+  ],
+  "PrimitiveDataType": [],
+  "Association": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Attribute": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "is_primary",
+    "type": "Boolean"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "Class",
+   "to": "Classifier",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Class",
+   "to": "Class",
+   "label": "parent 0..1",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Class",
+   "to": "Attribute",
+   "label": "attrs 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "PrimitiveDataType",
+   "to": "Classifier",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Association",
+   "to": "Class",
+   "label": "src 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Association",
+   "to": "Class",
+   "label": "dest 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Attribute",
+   "to": "Classifier",
+   "label": "type 1..1",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage SimpleClass {\nclass Classifier {\n\t name : String\n}\nclass Class {\n\t is_persistent : Boolean\n}\nClassifier <|-- Class\nClass \"parent 0..1\" --> Class\nClass \"attrs 0..*\" *--> Attribute\nclass PrimitiveDataType {\n}\nClassifier <|-- PrimitiveDataType\nclass Association {\n\t name : String\n}\nAssociation \"src 1..1\" --> Class\nAssociation \"dest 1..1\" --> Class\nclass Attribute {\n\t name : String\n\t is_primary : Boolean\n}\nAttribute \"type 1..1\" --> Classifier\n}\n@enduml\n"
+}

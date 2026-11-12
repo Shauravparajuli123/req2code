@@ -1,0 +1,32 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Instance {
+  name : String
+  +createInstance()
+}
+class AttributeLink {
+  link : String
+}
+class Linkend {
+  link : String
+  instance : String
+}
+class Link {
+  linkend : String
+  instance : String
+}
+class ComponentInstance {
+  name : String
+  residents : String
+}
+class NodeInstance {
+  name : String
+  componentinstances : String
+}
+AttributeLink "0..1" *-- "1" Instance : has
+AttributeLink "0..1" *-- "1" Linkend : has
+Linkend "1" -- "1" Link : has
+Linkend "1" -- "1" Instance : has
+NodeInstance "0..*" o-- "1" ComponentInstance : has
+@enduml

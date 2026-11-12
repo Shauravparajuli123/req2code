@@ -1,0 +1,17 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class TechnologyObject {
+}
+class ImplementableStandard {
+}
+class Implementation {
+  +createImplementation()
+}
+class IXIT {
+  +createIXIT()
+}
+IXIT "1" -- "0..*" Implementation : extends
+Implementation "0..*" -- "1" IXIT : extends
+ImplementableStandard --|> TechnologyObject
+@enduml

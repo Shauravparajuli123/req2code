@@ -1,0 +1,1128 @@
+{
+ "actors": [
+  "Guardian",
+  "Student",
+  "Teacher",
+  "Administrator"
+ ],
+ "use_cases": [
+  {
+   "name": "Direct Message",
+   "actor": "Guardian",
+   "src": [
+    "R1",
+    "R27",
+    "R28",
+    "R6"
+   ]
+  },
+  {
+   "name": "Fill Absence",
+   "actor": "Guardian",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Receive Notification",
+   "actor": "Guardian",
+   "src": [
+    "R3",
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "name": "View Information",
+   "actor": "Guardian",
+   "src": [
+    "R4",
+    "R15"
+   ]
+  },
+  {
+   "name": "Create Account",
+   "actor": "Administrator",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "name": "Edit Data",
+   "actor": "Administrator",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "name": "Assign Schedule",
+   "actor": "Administrator",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "name": "Register Absence",
+   "actor": "Administrator",
+   "src": [
+    "R56"
+   ]
+  },
+  {
+   "name": "Register Change",
+   "actor": "Administrator",
+   "src": [
+    "R55"
+   ]
+  },
+  {
+   "name": "View Class",
+   "actor": "Teacher",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "View Contact Information",
+   "actor": "Student",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "Send Broadcast Message",
+   "actor": "Administrator",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "name": "Set Role",
+   "actor": "Administrator",
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "name": "Upload Schedule",
+   "actor": "Administrator",
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "name": "View Detail",
+   "actor": "Administrator",
+   "src": [
+    "R60"
+   ]
+  },
+  {
+   "name": "View Statistic",
+   "actor": "Administrator",
+   "src": [
+    "R61"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Absence",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "AbsenceForm",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Account",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "name": "Administrator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "sendBroadcastMessage",
+     "use_case": "Send Broadcast Message"
+    },
+    {
+     "name": "setRole",
+     "use_case": "Set Role"
+    },
+    {
+     "name": "uploadSchedule",
+     "use_case": "Upload Schedule"
+    },
+    {
+     "name": "viewDetail",
+     "use_case": "View Detail"
+    },
+    {
+     "name": "viewStatistic",
+     "use_case": "View Statistic"
+    }
+   ],
+   "src": [
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  },
+  {
+   "name": "Answer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R26",
+    "R31"
+   ]
+  },
+  {
+   "name": "AppearanceDate",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R26",
+    "R42",
+    "R43"
+   ]
+  },
+  {
+   "name": "Assignment",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R26",
+    "R30"
+   ]
+  },
+  {
+   "name": "Attendance",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "Behavior",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R36",
+    "R37",
+    "R39",
+    "R40",
+    "R41"
+   ]
+  },
+  {
+   "name": "Child",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1",
+    "R5"
+   ]
+  },
+  {
+   "name": "Date",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2",
+    "R12",
+    "R13",
+    "R14",
+    "R18",
+    "R19",
+    "R23",
+    "R24",
+    "R26",
+    "R27",
+    "R28",
+    "R30",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R54",
+    "R55"
+   ]
+  },
+  {
+   "name": "Dlm",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "name": "File",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Grade",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R37",
+    "R40"
+   ]
+  },
+  {
+   "name": "Guardian",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1",
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Homework",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Insight",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R15",
+    "R16",
+    "R17",
+    "R25",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "name": "Lms",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R10",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "name": "Manner",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R26"
+   ]
+  },
+  {
+   "name": "Material",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R26",
+    "R20",
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "Mentor",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1",
+    "R27",
+    "R28",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "name": "Message",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R48"
+   ]
+  },
+  {
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  },
+  {
+   "name": "Participant",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "name": "Performance",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R15",
+    "R16",
+    "R17",
+    "R25",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "name": "Question",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R26",
+    "R20",
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "Schedule",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R19",
+    "R23",
+    "R24",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R49",
+    "R55"
+   ]
+  },
+  {
+   "name": "School",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  },
+  {
+   "name": "Staff",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1",
+    "R27",
+    "R28",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R49",
+    "R55"
+   ]
+  },
+  {
+   "name": "Student",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  },
+  {
+   "name": "Submission",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R26",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "name": "Teacher",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1",
+    "R27",
+    "R28",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  },
+  {
+   "name": "Timetable",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R19",
+    "R23",
+    "R24",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R49",
+    "R55"
+   ]
+  },
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  },
+  {
+   "name": "Work",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Year",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R52"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Administrator",
+   "target": "Message",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "source": "Administrator",
+   "target": "Account",
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "source": "Administrator",
+   "target": "Schedule",
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "source": "Administrator",
+   "target": "Performance",
+   "src": [
+    "R61"
+   ]
+  },
+  {
+   "source": "Student",
+   "target": "Schedule",
+   "src": [
+    "R59"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D1/school.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Absence:\n    \"\"\"Source: R2\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass AbsenceForm:\n    \"\"\"Source: R2\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Account:\n    \"\"\"Source: R50\"\"\"\n    role: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Administrator:\n    \"\"\"Source: R48, R49, R50, R51, R52, R53, R54, R55, R56\"\"\"\n    messages: _t.List[\"Message\"] = _dc.field(default_factory=list)\n    account: _t.Optional[\"Account\"] = None\n    schedules: _t.List[\"Schedule\"] = _dc.field(default_factory=list)\n    performances: _t.List[\"Performance\"] = _dc.field(default_factory=list)\n\n    def sendBroadcastMessage(self) -> None:\n        \"\"\"Realizes UC12 \"Send Broadcast Message\" (R57).\"\"\"\n        raise NotImplementedError\n\n    def setRole(self) -> None:\n        \"\"\"Realizes UC13 \"Set Role\" (R58).\"\"\"\n        raise NotImplementedError\n\n    def uploadSchedule(self) -> None:\n        \"\"\"Realizes UC14 \"Upload Schedule\" (R59).\"\"\"\n        raise NotImplementedError\n\n    def viewDetail(self) -> None:\n        \"\"\"Realizes UC15 \"View Detail\" (R60).\"\"\"\n        raise NotImplementedError\n\n    def viewStatistic(self) -> None:\n        \"\"\"Realizes UC16 \"View Statistic\" (R61).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Answer:\n    \"\"\"Source: R26, R31\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass AppearanceDate:\n    \"\"\"Source: R26, R42, R43\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Assignment:\n    \"\"\"Source: R26, R30\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Attendance:\n    \"\"\"Source: R38\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Behavior:\n    \"\"\"Source: R36, R37, R39, R40, R41\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Child:\n    \"\"\"Source: R1, R5\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Date:\n    \"\"\"Source: R2, R12, R13, R14, R18, R19, R23, R24, R26, R27, R28, R30, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R54, R55\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Dlm:\n    \"\"\"Source: R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass File:\n    \"\"\"Source: R44\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Grade:\n    \"\"\"Source: R37, R40\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Guardian:\n    \"\"\"Source: R1, R3, R4\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Homework:\n    \"\"\"Source: R8\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Insight:\n    \"\"\"Source: R15, R16, R17, R25, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Lms:\n    \"\"\"Source: R5, R6, R7, R8, R10, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Manner:\n    \"\"\"Source: R26\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Material:\n    \"\"\"Source: R26, R20, R21, R22\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Mentor:\n    \"\"\"Source: R1, R27, R28, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Message:\n    \"\"\"Source: R1, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R48\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Notification:\n    \"\"\"Source: R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R48, R49, R50, R51, R52, R53, R54, R55, R56\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Participant:\n    \"\"\"Source: R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Performance:\n    \"\"\"Source: R15, R16, R17, R25, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Question:\n    \"\"\"Source: R26, R20, R21, R22\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Schedule:\n    \"\"\"Source: R19, R23, R24, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R49, R55\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass School:\n    \"\"\"Source: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R48, R49, R50, R51, R52, R53, R54, R55, R56\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Staff:\n    \"\"\"Source: R1, R27, R28, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R49, R55\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Student:\n    \"\"\"Source: R1, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R48, R49, R50, R51, R52, R53, R54, R55, R56\"\"\"\n    schedule: _t.Optional[\"Schedule\"] = None\n\n\n@_dc.dataclass\nclass Submission:\n    \"\"\"Source: R26, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Teacher:\n    \"\"\"Source: R1, R27, R28, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R48, R49, R50, R51, R52, R53, R54, R55, R56\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Timetable:\n    \"\"\"Source: R19, R23, R24, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R49, R55\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass User:\n    \"\"\"Source: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R48, R49, R50, R51, R52, R53, R54, R55, R56\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Work:\n    \"\"\"Source: R8\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Year:\n    \"\"\"Source: R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R52\"\"\"\n    pass\n",
+ "java": {
+  "Game.java": "/** Generated from shared model D1/school. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Absence.java": "/** Generated from shared model D1/school. Source: R2 */\npublic class Absence {\n}\n",
+  "AbsenceForm.java": "/** Generated from shared model D1/school. Source: R2 */\npublic class AbsenceForm {\n}\n",
+  "Account.java": "/** Generated from shared model D1/school. Source: R50 */\npublic class Account {\n    private java.lang.String role;\n}\n",
+  "Administrator.java": "/** Generated from shared model D1/school. Source: R48, R49, R50, R51, R52, R53, R54, R55, R56 */\npublic class Administrator {\n    private java.util.List<Message> messages;\n    private Account account;\n    private java.util.List<Schedule> schedules;\n    private java.util.List<Performance> performances;\n\n    /** Realizes UC12 \"Send Broadcast Message\" (R57). */\n    public void sendBroadcastMessage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC13 \"Set Role\" (R58). */\n    public void setRole() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC14 \"Upload Schedule\" (R59). */\n    public void uploadSchedule() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"View Detail\" (R60). */\n    public void viewDetail() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC16 \"View Statistic\" (R61). */\n    public void viewStatistic() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Answer.java": "/** Generated from shared model D1/school. Source: R26, R31 */\npublic class Answer {\n}\n",
+  "AppearanceDate.java": "/** Generated from shared model D1/school. Source: R26, R42, R43 */\npublic class AppearanceDate {\n}\n",
+  "Assignment.java": "/** Generated from shared model D1/school. Source: R26, R30 */\npublic class Assignment {\n}\n",
+  "Attendance.java": "/** Generated from shared model D1/school. Source: R38 */\npublic class Attendance {\n}\n",
+  "Behavior.java": "/** Generated from shared model D1/school. Source: R36, R37, R39, R40, R41 */\npublic class Behavior {\n}\n",
+  "Child.java": "/** Generated from shared model D1/school. Source: R1, R5 */\npublic class Child {\n}\n",
+  "Date.java": "/** Generated from shared model D1/school. Source: R2, R12, R13, R14, R18, R19, R23, R24, R26, R27, R28, R30, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R54, R55 */\npublic class Date {\n}\n",
+  "Dlm.java": "/** Generated from shared model D1/school. Source: R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46 */\npublic class Dlm {\n}\n",
+  "File.java": "/** Generated from shared model D1/school. Source: R44 */\npublic class File {\n}\n",
+  "Grade.java": "/** Generated from shared model D1/school. Source: R37, R40 */\npublic class Grade {\n}\n",
+  "Guardian.java": "/** Generated from shared model D1/school. Source: R1, R3, R4 */\npublic class Guardian {\n}\n",
+  "Homework.java": "/** Generated from shared model D1/school. Source: R8 */\npublic class Homework {\n}\n",
+  "Insight.java": "/** Generated from shared model D1/school. Source: R15, R16, R17, R25, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46 */\npublic class Insight {\n}\n",
+  "Lms.java": "/** Generated from shared model D1/school. Source: R5, R6, R7, R8, R10, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46 */\npublic class Lms {\n}\n",
+  "Manner.java": "/** Generated from shared model D1/school. Source: R26 */\npublic class Manner {\n}\n",
+  "Material.java": "/** Generated from shared model D1/school. Source: R26, R20, R21, R22 */\npublic class Material {\n}\n",
+  "Mentor.java": "/** Generated from shared model D1/school. Source: R1, R27, R28, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46 */\npublic class Mentor {\n}\n",
+  "Message.java": "/** Generated from shared model D1/school. Source: R1, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R48 */\npublic class Message {\n}\n",
+  "Notification.java": "/** Generated from shared model D1/school. Source: R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R48, R49, R50, R51, R52, R53, R54, R55, R56 */\npublic class Notification {\n}\n",
+  "Participant.java": "/** Generated from shared model D1/school. Source: R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46 */\npublic class Participant {\n}\n",
+  "Performance.java": "/** Generated from shared model D1/school. Source: R15, R16, R17, R25, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46 */\npublic class Performance {\n}\n",
+  "Question.java": "/** Generated from shared model D1/school. Source: R26, R20, R21, R22 */\npublic class Question {\n}\n",
+  "Schedule.java": "/** Generated from shared model D1/school. Source: R19, R23, R24, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R49, R55 */\npublic class Schedule {\n}\n",
+  "School.java": "/** Generated from shared model D1/school. Source: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R48, R49, R50, R51, R52, R53, R54, R55, R56 */\npublic class School {\n}\n",
+  "Staff.java": "/** Generated from shared model D1/school. Source: R1, R27, R28, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R49, R55 */\npublic class Staff {\n}\n",
+  "Student.java": "/** Generated from shared model D1/school. Source: R1, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R48, R49, R50, R51, R52, R53, R54, R55, R56 */\npublic class Student {\n    private Schedule schedule;\n}\n",
+  "Submission.java": "/** Generated from shared model D1/school. Source: R26, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46 */\npublic class Submission {\n}\n",
+  "Teacher.java": "/** Generated from shared model D1/school. Source: R1, R27, R28, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R48, R49, R50, R51, R52, R53, R54, R55, R56 */\npublic class Teacher {\n}\n",
+  "Timetable.java": "/** Generated from shared model D1/school. Source: R19, R23, R24, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R49, R55 */\npublic class Timetable {\n}\n",
+  "User.java": "/** Generated from shared model D1/school. Source: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R48, R49, R50, R51, R52, R53, R54, R55, R56 */\npublic class User {\n}\n",
+  "Work.java": "/** Generated from shared model D1/school. Source: R8 */\npublic class Work {\n}\n",
+  "Year.java": "/** Generated from shared model D1/school. Source: R36, R37, R38, R39, R40, R41, R42, R43, R44, R45, R46, R52 */\npublic class Year {\n}\n"
+ }
+}

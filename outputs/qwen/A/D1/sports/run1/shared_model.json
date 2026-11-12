@@ -1,0 +1,932 @@
+{
+ "case": "D1/sports",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Customer",
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R23",
+    "R38",
+    "R41",
+    "R42",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56",
+    "R57",
+    "R58",
+    "R59",
+    "R61",
+    "R62",
+    "R63"
+   ]
+  },
+  {
+   "id": "A2",
+   "name": "ReturningCustomer",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "A3",
+   "name": "Admin",
+   "src": [
+    "R20",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R40",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49"
+   ]
+  },
+  {
+   "id": "A4",
+   "name": "Trainer",
+   "src": [
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R40",
+    "R49",
+    "R50"
+   ]
+  },
+  {
+   "id": "A5",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Account",
+   "actor": "A1",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC2",
+   "name": "Manage Personal Information",
+   "actor": "A1",
+   "src": [
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R58",
+    "R59"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC3",
+   "name": "Book Lessons",
+   "actor": "A1",
+   "src": [
+    "R15",
+    "R16",
+    "R17",
+    "R23",
+    "R24",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56",
+    "R57"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC4",
+   "name": "Call Gym To Book Lesson",
+   "actor": "A1",
+   "src": [
+    "R21",
+    "R22"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC5",
+   "name": "Book Personal Training Session",
+   "actor": "A1",
+   "src": [
+    "R21",
+    "R22"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC6",
+   "name": "Cancel Lesson",
+   "actor": "A4",
+   "src": [
+    "R39"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC7",
+   "name": "Admin Cancel Lesson",
+   "actor": "A3",
+   "src": [
+    "R40"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC8",
+   "name": "Edit Lesson",
+   "actor": "A4",
+   "src": [
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC9",
+   "name": "Admin Edit Lesson",
+   "actor": "A3",
+   "src": [
+    "R38"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC10",
+   "name": "View Schedule",
+   "actor": "A4",
+   "src": [
+    "R32"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC11",
+   "name": "Admin View Schedule",
+   "actor": "A3",
+   "src": [
+    "R32"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC12",
+   "name": "Admin Add Trainer",
+   "actor": "A3",
+   "src": [
+    "R47"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC13",
+   "name": "Admin Add Admin",
+   "actor": "A3",
+   "src": [
+    "R48"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC14",
+   "name": "Admin Remove Trainer",
+   "actor": "A3",
+   "src": [
+    "R49"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC15",
+   "name": "Admin View No Show Records",
+   "actor": "A3",
+   "src": [
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC16",
+   "name": "Customer Check In",
+   "actor": "A3",
+   "src": [
+    "R61",
+    "R62"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC17",
+   "name": "Trainer Check In",
+   "actor": "A4",
+   "src": [
+    "R60"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "personalInformation",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "bankingDetails",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "membershipType",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "subscriptionEndDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "previousInformation",
+     "type": "boolean",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "isSubscribed",
+     "type": "boolean",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "name": "personalDetails",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "paymentDetails",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    },
+    {
+     "name": "familyMembers",
+     "type": "String",
+     "src": [
+      "R12",
+      "R13",
+      "R14"
+     ]
+    },
+    {
+     "name": "familyMembership",
+     "type": "boolean",
+     "src": [
+      "R12",
+      "R13",
+      "R14"
+     ]
+    },
+    {
+     "name": "availableLessons",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    },
+    {
+     "name": "bookedLessons",
+     "type": "String",
+     "src": [
+      "R16"
+     ]
+    },
+    {
+     "name": "lessonHistory",
+     "type": "String",
+     "src": [
+      "R17"
+     ]
+    },
+    {
+     "name": "lessonBooked",
+     "type": "boolean",
+     "src": [
+      "R21",
+      "R22"
+     ]
+    },
+    {
+     "name": "lessonCanceled",
+     "type": "boolean",
+     "src": [
+      "R41"
+     ]
+    },
+    {
+     "name": "notificationMethod",
+     "type": "String",
+     "src": [
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "preferredNotifications",
+     "type": "String",
+     "src": [
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "lessonCanceledNotification",
+     "type": "boolean",
+     "src": [
+      "R55"
+     ]
+    },
+    {
+     "name": "checkInStatus",
+     "type": "boolean",
+     "src": [
+      "R61"
+     ]
+    },
+    {
+     "name": "subscriptionStatus",
+     "type": "boolean",
+     "src": [
+      "R57"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createAccount",
+     "realizes": "UC1",
+     "src": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6",
+      "R7"
+     ]
+    },
+    {
+     "id": "M2",
+     "name": "managePersonalInformation",
+     "realizes": "UC2",
+     "src": [
+      "R10",
+      "R11",
+      "R12",
+      "R13",
+      "R14",
+      "R58",
+      "R59"
+     ]
+    },
+    {
+     "id": "M3",
+     "name": "bookLessons",
+     "realizes": "UC3",
+     "src": [
+      "R15",
+      "R16",
+      "R17",
+      "R23",
+      "R24",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54",
+      "R55",
+      "R56",
+      "R57"
+     ]
+    },
+    {
+     "id": "M4",
+     "name": "callGymToBookLesson",
+     "realizes": "UC4",
+     "src": [
+      "R21",
+      "R22"
+     ]
+    },
+    {
+     "id": "M5",
+     "name": "callGymToCancelLesson",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M6",
+     "name": "bookPersonalTrainingSession",
+     "realizes": "UC5",
+     "src": [
+      "R21",
+      "R22"
+     ]
+    },
+    {
+     "id": "M7",
+     "name": "cancelLesson",
+     "realizes": "UC6",
+     "src": [
+      "R39"
+     ]
+    },
+    {
+     "id": "M8",
+     "name": "editLesson",
+     "realizes": "UC8",
+     "src": [
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37"
+     ]
+    },
+    {
+     "id": "M9",
+     "name": "viewSchedule",
+     "realizes": "UC10",
+     "src": [
+      "R32"
+     ]
+    },
+    {
+     "id": "M10",
+     "name": "checkIn",
+     "realizes": "UC16",
+     "src": [
+      "R61",
+      "R62"
+     ]
+    },
+    {
+     "id": "M11",
+     "name": "adminCheckIn",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56",
+    "R58",
+    "R59"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Trainer",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R25"
+     ]
+    },
+    {
+     "name": "lessonSchedule",
+     "type": "String",
+     "src": [
+      "R25"
+     ]
+    },
+    {
+     "name": "lessonTime",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R27"
+     ]
+    },
+    {
+     "name": "lessonDescription",
+     "type": "String",
+     "src": [
+      "R28"
+     ]
+    },
+    {
+     "name": "lessonRoom",
+     "type": "String",
+     "src": [
+      "R29"
+     ]
+    },
+    {
+     "name": "lessonType",
+     "type": "String",
+     "src": [
+      "R30"
+     ]
+    },
+    {
+     "name": "maxPeopleAllowed",
+     "type": "int",
+     "src": [
+      "R31"
+     ]
+    },
+    {
+     "name": "pastLessons",
+     "type": "String",
+     "src": [
+      "R32"
+     ]
+    },
+    {
+     "name": "canEditLessons",
+     "type": "boolean",
+     "src": [
+      "R33"
+     ]
+    },
+    {
+     "name": "lessonTimeEdited",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R34"
+     ]
+    },
+    {
+     "name": "lessonRoomEdited",
+     "type": "String",
+     "src": [
+      "R35"
+     ]
+    },
+    {
+     "name": "lessonDescriptionEdited",
+     "type": "String",
+     "src": [
+      "R36"
+     ]
+    },
+    {
+     "name": "lessonMaxPeopleEdited",
+     "type": "int",
+     "src": [
+      "R37"
+     ]
+    },
+    {
+     "name": "lessonCanceled",
+     "type": "boolean",
+     "src": [
+      "R40"
+     ]
+    },
+    {
+     "name": "checkInStatus",
+     "type": "boolean",
+     "src": [
+      "R60"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M12",
+     "name": "addLesson",
+     "realizes": "UC12",
+     "src": [
+      "R47"
+     ]
+    },
+    {
+     "id": "M13",
+     "name": "editLesson",
+     "realizes": "UC9",
+     "src": [
+      "R38"
+     ]
+    },
+    {
+     "id": "M14",
+     "name": "viewSchedule",
+     "realizes": "UC11",
+     "src": [
+      "R32"
+     ]
+    },
+    {
+     "id": "M15",
+     "name": "cancelLesson",
+     "realizes": "UC7",
+     "src": [
+      "R40"
+     ]
+    },
+    {
+     "id": "M16",
+     "name": "checkIn",
+     "realizes": "UC17",
+     "src": [
+      "R60"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R40",
+    "R49",
+    "R57",
+    "R60",
+    "R61"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Admin",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R20"
+     ]
+    },
+    {
+     "name": "canEditAnyLesson",
+     "type": "boolean",
+     "src": [
+      "R38"
+     ]
+    },
+    {
+     "name": "lessonCanceled",
+     "type": "boolean",
+     "src": [
+      "R40"
+     ]
+    },
+    {
+     "name": "checkInStatus",
+     "type": "boolean",
+     "src": [
+      "R60"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M17",
+     "name": "editLesson",
+     "realizes": "UC9",
+     "src": [
+      "R38"
+     ]
+    },
+    {
+     "id": "M18",
+     "name": "cancelLesson",
+     "realizes": "UC7",
+     "src": [
+      "R40"
+     ]
+    },
+    {
+     "id": "M19",
+     "name": "viewSchedule",
+     "realizes": "UC11",
+     "src": [
+      "R32"
+     ]
+    },
+    {
+     "id": "M20",
+     "name": "addTrainer",
+     "realizes": "UC12",
+     "src": [
+      "R47"
+     ]
+    },
+    {
+     "id": "M21",
+     "name": "addAdmin",
+     "realizes": "UC13",
+     "src": [
+      "R48"
+     ]
+    },
+    {
+     "id": "M22",
+     "name": "removeTrainer",
+     "realizes": "UC14",
+     "src": [
+      "R49"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R20",
+    "R38",
+    "R40",
+    "R47",
+    "R48",
+    "R49",
+    "R53",
+    "R57",
+    "R60"
+   ]
+  }
+ ],
+ "relations": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that the 'Customer' class includes all the attributes and methods related to personal information, banking details, and subscription management as mentioned in the requirements."
+  }
+ ],
+ "open_tags": []
+}

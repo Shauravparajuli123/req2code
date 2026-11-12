@@ -1,0 +1,64 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "TemplateExp",
+   "kind": "class",
+   "attributes": [
+    "collectionKind",
+    "variable"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ObjectTemplateExp",
+   "kind": "class",
+   "attributes": [
+    "propertyTemplateItems"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "CollectionTemplateExp",
+   "kind": "class",
+   "attributes": [
+    "oclExpressions",
+    "oclExpressionMatch"
+   ],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "TemplateExp",
+   "target": "ObjectTemplateExp",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "TemplateExp",
+   "target": "CollectionTemplateExp",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/QVT.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass TemplateExp:\n    \"\"\"Source: R1\"\"\"\n    collectionKind: _t.Optional[str] = None\n    variable: _t.Optional[str] = None\n    objectTemplateExp: _t.Optional[\"ObjectTemplateExp\"] = None\n    collectionTemplateExp: _t.Optional[\"CollectionTemplateExp\"] = None\n\n\n@_dc.dataclass\nclass ObjectTemplateExp:\n    \"\"\"Source: R2\"\"\"\n    propertyTemplateItems: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass CollectionTemplateExp:\n    \"\"\"Source: R3\"\"\"\n    oclExpressions: _t.Optional[str] = None\n    oclExpressionMatch: _t.Optional[str] = None\n",
+ "java": {
+  "TemplateExp.java": "/** Generated from shared model D2/QVT. Source: R1 */\npublic class TemplateExp {\n    private java.lang.String collectionKind;\n    private java.lang.String variable;\n    private ObjectTemplateExp objectTemplateExp;\n    private CollectionTemplateExp collectionTemplateExp;\n}\n",
+  "ObjectTemplateExp.java": "/** Generated from shared model D2/QVT. Source: R2 */\npublic class ObjectTemplateExp {\n    private java.lang.String propertyTemplateItems;\n}\n",
+  "CollectionTemplateExp.java": "/** Generated from shared model D2/QVT. Source: R3 */\npublic class CollectionTemplateExp {\n    private java.lang.String oclExpressions;\n    private java.lang.String oclExpressionMatch;\n}\n"
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "R2 requires EAISource to extend FCMSource, but EAISource does not extend any class.",
+   "fix": "EAISource should extend FCMSource."
+  },
+  {
+   "agent": "class",
+   "issue": "R4 requires EAISink to be a concrete class, but EAISink does not have any attributes or methods.",
+   "fix": "EAISink should have some attributes or methods to be a concrete class."
+  },
+  {
+   "agent": "class",
+   "issue": "R6 requires EAIQueue to have an integer attribute maxLength, but EAIQueue does not have any attributes.",
+   "fix": "EAIQueue should have an attribute maxLength of type int."
+  }
+ ]
+}

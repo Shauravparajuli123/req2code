@@ -1,0 +1,158 @@
+{
+ "actors": [
+  "Actor"
+ ],
+ "use_cases": [
+  {
+   "name": "Use Case",
+   "actor": "Actor",
+   "src": [
+    "R1",
+    "R2",
+    "R9",
+    "R10",
+    "R11",
+    "R13"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "UseCaseDiagram",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "has",
+     "use_case": "R1, R13"
+    },
+    {
+     "name": "has",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R13",
+    "R12"
+   ]
+  },
+  {
+   "name": "UseCase",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "includes",
+     "use_case": "R9"
+    },
+    {
+     "name": "extends",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Extend",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "extends",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "CaseContainer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "isOwnedBy",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Association",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "linksTo",
+     "use_case": "R13"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "Actor",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "UseCase",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCase",
+   "target": "Extend",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "CaseContainer",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "Association",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Actor:\n    pass\n\nclass UseCaseDiagram:\n    def __init__(self, name: str):\n        self.name = name\n        self.actors: List[Actor] = []\n        self.use_cases: List[UseCase] = []\n        self.extend_relations: List[Extend] = []\n        self.include_relations: List[UseCase] = []\n        self.case_containers: List[CaseContainer] = []\n        self.associations: List[Association] = []\n    def has(self, use_case: UseCase, use_case_id: str):\n        if use_case_id == 'R13':\n            self.actors.append(use_case)\n        elif use_case_id == 'R12':\n            self.use_cases.append(use_case)\n        raise NotImplementedError\n    def has(self, extend: Extend, use_case_id: str):\n        if use_case_id == 'R12':\n            self.extend_relations.append(extend)\n        raise NotImplementedError\n\nclass UseCase:\n    def __init__(self):\n        self.includes: List[UseCase] = []\n        self.extends: List[Extend] = []\n    def includes(self, use_case: UseCase, use_case_id: str):\n        if use_case_id == 'R9':\n            self.includes.append(use_case)\n        raise NotImplementedError\n    def extends(self, extend: Extend, use_case_id: str):\n        if use_case_id == 'R10':\n            self.extends.append(extend)\n        raise NotImplementedError\n\nclass Extend:\n    def __init__(self):\n        pass\n    def extends(self, use_case: UseCase, use_case_id: str):\n        if use_case_id == 'R10':\n            pass\n        raise NotImplementedError\n\nclass CaseContainer:\n    def __init__(self):\n        pass\n    def isOwnedBy(self, use_case: UseCase, use_case_id: str):\n        if use_case_id == 'R12':\n            pass\n        raise NotImplementedError\n\nclass Association:\n    def __init__(self):\n        pass\n    def linksTo(self, actor: Actor, use_case_id: str):\n        if use_case_id == 'R13':\n            pass\n        raise NotImplementedError",
+ "java": {}
+}

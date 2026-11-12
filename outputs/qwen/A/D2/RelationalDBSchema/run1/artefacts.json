@@ -1,0 +1,92 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Database",
+   "kind": "class",
+   "attributes": [
+    "sgbdName"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [
+    "database"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "dataType",
+    "defaultValue",
+    "table"
+   ],
+   "methods": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Table",
+   "target": "Database",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "source": "Database",
+   "target": "Table",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "Column",
+   "target": "Table",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/RelationalDBSchema.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Database:\n    \"\"\"Source: R2\"\"\"\n    sgbdName: _t.Optional[str] = None\n    tables: _t.List[\"Table\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Table:\n    \"\"\"Source: R3, R5, R6\"\"\"\n    database: _t.Optional[str] = None\n    databases: _t.List[\"Database\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Column:\n    \"\"\"Source: R4, R8\"\"\"\n    dataType: _t.Optional[str] = None\n    defaultValue: _t.Optional[str] = None\n    table: _t.Optional[str] = None\n    tables: _t.List[\"Table\"] = _dc.field(default_factory=list)\n",
+ "java": {
+  "Game.java": "/** Generated from shared model D2/RelationalDBSchema. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Database.java": "/** Generated from shared model D2/RelationalDBSchema. Source: R2 */\npublic class Database {\n    private java.lang.String sgbdName;\n    private java.util.List<Table> tables;\n}\n",
+  "Table.java": "/** Generated from shared model D2/RelationalDBSchema. Source: R3, R5, R6 */\npublic class Table {\n    private java.lang.String database;\n    private java.util.List<Database> databases;\n}\n",
+  "Column.java": "/** Generated from shared model D2/RelationalDBSchema. Source: R4, R8 */\npublic class Column {\n    private java.lang.String dataType;\n    private java.lang.String defaultValue;\n    private java.lang.String table;\n    private java.util.List<Table> tables;\n}\n"
+ }
+}

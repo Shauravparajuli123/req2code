@@ -1,0 +1,90 @@
+{
+ "actors": [
+  {
+   "name": "UIML",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "has",
+   "actor": "UIML",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "may have",
+   "actor": "UIML",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "has",
+   "actor": "Header",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "many have",
+   "actor": "Header",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "UIML",
+   "src": [
+    "R1",
+    "R4"
+   ]
+  },
+  {
+   "name": "Header",
+   "src": [
+    "R4",
+    "R6"
+   ]
+  },
+  {
+   "name": "MetaData",
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "MetaData",
+   "name": "name",
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "UIML",
+   "target": "Header",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Header",
+   "target": "MetaData",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

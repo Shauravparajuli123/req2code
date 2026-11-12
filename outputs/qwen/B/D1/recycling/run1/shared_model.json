@@ -1,0 +1,1923 @@
+{
+ "case": "D1/recycling",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "User",
+   "src": [
+    "R1",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R18",
+    "R19",
+    "R20",
+    "R28",
+    "R29",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R48"
+   ]
+  },
+  {
+   "id": "A2",
+   "name": "Admin",
+   "src": [
+    "R16",
+    "R17",
+    "R21",
+    "R22",
+    "R23",
+    "R30",
+    "R40",
+    "R41",
+    "R42",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "id": "A3",
+   "name": "Superuser",
+   "src": [
+    "R43",
+    "R44",
+    "R45"
+   ]
+  },
+  {
+   "id": "A4",
+   "name": "RecyclingfacilityRepresentative",
+   "src": [
+    "R49",
+    "R50"
+   ]
+  },
+  {
+   "id": "A5",
+   "name": "Company",
+   "src": [
+    "R24",
+    "R31"
+   ]
+  },
+  {
+   "id": "A6",
+   "name": "CompanyAccountant",
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "id": "A7",
+   "name": "Employee",
+   "src": [
+    "R25",
+    "R32"
+   ]
+  },
+  {
+   "id": "A8",
+   "name": "HRDepartmentEmployee",
+   "src": [
+    "R26"
+   ]
+  },
+  {
+   "id": "A9",
+   "name": "Developer",
+   "src": [
+    "R27",
+    "R34",
+    "R35"
+   ]
+  },
+  {
+   "id": "A10",
+   "name": "Recyclingfacility",
+   "src": [
+    "R51"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Click Address",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC2",
+   "name": "Enter Zip Code",
+   "actor": "A1",
+   "src": [
+    "R3"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC3",
+   "name": "Get Feedback",
+   "actor": "A1",
+   "src": [
+    "R14"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC4",
+   "name": "Get Hour",
+   "actor": "A1",
+   "src": [
+    "R4"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC5",
+   "name": "Get Notification",
+   "actor": "A7",
+   "src": [
+    "R32"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC6",
+   "name": "Give Email Id",
+   "actor": "A1",
+   "src": [
+    "R8"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC7",
+   "name": "Handle Activity",
+   "actor": "A2",
+   "src": [
+    "R30"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC8",
+   "name": "Browse List",
+   "actor": "A1",
+   "src": [
+    "R48"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC9",
+   "name": "Check Transaction History",
+   "actor": "A1",
+   "src": [
+    "R18"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC10",
+   "name": "Add Donation Center",
+   "actor": "A1",
+   "src": [
+    "R7"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC11",
+   "name": "Add Recycling Center Information",
+   "actor": "A2",
+   "src": [
+    "R40"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC12",
+   "name": "Add Recycling Facility",
+   "actor": "A2",
+   "src": [
+    "R16"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC13",
+   "name": "Communicate Facility",
+   "actor": "A2",
+   "src": [
+    "R47"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC14",
+   "name": "Communicate Site",
+   "actor": "A10",
+   "src": [
+    "R51"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC15",
+   "name": "Contact Administrator",
+   "actor": "A1",
+   "src": [
+    "R39"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC16",
+   "name": "Create Account",
+   "actor": "A1",
+   "src": [
+    "R15"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC17",
+   "name": "View Activity Fee",
+   "actor": "A6",
+   "src": [
+    "R33"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC18",
+   "name": "View Dashboard",
+   "actor": "A2",
+   "src": [
+    "R22",
+    "R46"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC19",
+   "name": "View Disposal Event",
+   "actor": "A1",
+   "src": [
+    "R11"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC20",
+   "name": "View Information",
+   "actor": "A1",
+   "src": [
+    "R29"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC21",
+   "name": "View Location",
+   "actor": "A1",
+   "src": [
+    "R9",
+    "R10"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC22",
+   "name": "View Map Display",
+   "actor": "A1",
+   "src": [
+    "R9",
+    "R10"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC23",
+   "name": "View Stat",
+   "actor": "A3",
+   "src": [
+    "R44"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC24",
+   "name": "View User Documentation",
+   "actor": "A1",
+   "src": [
+    "R13"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC25",
+   "name": "View User Error Log",
+   "actor": "A2",
+   "src": [
+    "R41"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC26",
+   "name": "Access Api",
+   "actor": "A9",
+   "src": [
+    "R27"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC27",
+   "name": "Access Route Planning System",
+   "actor": "A7",
+   "src": [
+    "R25"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC28",
+   "name": "Access Site",
+   "actor": "A1",
+   "src": [
+    "R20"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC29",
+   "name": "Link Email Account",
+   "actor": "A1",
+   "src": [
+    "R38"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC30",
+   "name": "Onboard Recycling Center",
+   "actor": "A2",
+   "src": [
+    "R42"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC31",
+   "name": "Read Feedback",
+   "actor": "A2",
+   "src": [
+    "R17"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC32",
+   "name": "Reply User Question",
+   "actor": "A3",
+   "src": [
+    "R45"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC33",
+   "name": "Select Type",
+   "actor": "A1",
+   "src": [
+    "R6"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC34",
+   "name": "Update Information",
+   "actor": "A4",
+   "src": [
+    "R49"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC35",
+   "name": "Update Recycling Center Information",
+   "actor": "A3",
+   "src": [
+    "R43"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC36",
+   "name": "Upload Schedule",
+   "actor": "A1",
+   "src": [
+    "R37"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC37",
+   "name": "Use Bootstrap",
+   "actor": "A9",
+   "src": [
+    "R34"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC38",
+   "name": "Attend Ux Lesson",
+   "actor": "A9",
+   "src": [
+    "R35"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    },
+    {
+     "name": "emailId",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "profile",
+     "type": "String",
+     "src": [
+      "R7",
+      "R38"
+     ]
+    },
+    {
+     "name": "activity",
+     "type": "String",
+     "src": [
+      "R18"
+     ]
+    },
+    {
+     "name": "stat",
+     "type": "String",
+     "src": [
+      "R44"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "clickAddress",
+     "realizes": "UC1",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "id": "M2",
+     "name": "enterZipCode",
+     "realizes": "UC2",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "id": "M3",
+     "name": "getFeedback",
+     "realizes": "UC3",
+     "src": [
+      "R14"
+     ]
+    },
+    {
+     "id": "M4",
+     "name": "getHour",
+     "realizes": "UC4",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "id": "M5",
+     "name": "addFavorite",
+     "realizes": "UC10",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "id": "M6",
+     "name": "giveEmailId",
+     "realizes": "UC6",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "id": "M7",
+     "name": "viewMapDisplay",
+     "realizes": "UC22",
+     "src": [
+      "R9",
+      "R10"
+     ]
+    },
+    {
+     "id": "M8",
+     "name": "viewLocation",
+     "realizes": "UC21",
+     "src": [
+      "R9",
+      "R10"
+     ]
+    },
+    {
+     "id": "M9",
+     "name": "viewDisposalEvent",
+     "realizes": "UC19",
+     "src": [
+      "R11"
+     ]
+    },
+    {
+     "id": "M10",
+     "name": "browseList",
+     "realizes": "UC8",
+     "src": [
+      "R48"
+     ]
+    },
+    {
+     "id": "M11",
+     "name": "createAccount",
+     "realizes": "UC16",
+     "src": [
+      "R15"
+     ]
+    },
+    {
+     "id": "M12",
+     "name": "viewUserDocumentation",
+     "realizes": "UC24",
+     "src": [
+      "R13"
+     ]
+    },
+    {
+     "id": "M13",
+     "name": "viewUserErrorLog",
+     "realizes": "UC25",
+     "src": [
+      "R41"
+     ]
+    },
+    {
+     "id": "M14",
+     "name": "linkEmailAccount",
+     "realizes": "UC29",
+     "src": [
+      "R38"
+     ]
+    },
+    {
+     "id": "M15",
+     "name": "contactAdministrator",
+     "realizes": "UC15",
+     "src": [
+      "R39"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R18",
+    "R19",
+    "R20",
+    "R28",
+    "R29",
+    "R38",
+    "R39"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "RecyclingFacility",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3",
+      "R10",
+      "R11",
+      "R16",
+      "R20",
+      "R22",
+      "R24",
+      "R30",
+      "R33",
+      "R36",
+      "R37",
+      "R40",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48"
+     ]
+    },
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R6",
+      "R36"
+     ]
+    },
+    {
+     "name": "openingHour",
+     "type": "String",
+     "src": [
+      "R4",
+      "R10",
+      "R11",
+      "R16",
+      "R20",
+      "R22",
+      "R24",
+      "R30",
+      "R33",
+      "R36",
+      "R37",
+      "R40",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48"
+     ]
+    },
+    {
+     "name": "location",
+     "type": "String",
+     "src": [
+      "R9",
+      "R10",
+      "R11",
+      "R16",
+      "R20",
+      "R22",
+      "R24",
+      "R30",
+      "R33",
+      "R36",
+      "R37",
+      "R40",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48"
+     ]
+    },
+    {
+     "name": "schedule",
+     "type": "String",
+     "src": [
+      "R37",
+      "R39",
+      "R40",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48"
+     ]
+    },
+    {
+     "name": "material",
+     "type": "String",
+     "src": [
+      "R6",
+      "R16",
+      "R20",
+      "R22",
+      "R24",
+      "R30",
+      "R33",
+      "R36",
+      "R37",
+      "R40",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M16",
+     "name": "addInformation",
+     "realizes": "UC11",
+     "src": [
+      "R40"
+     ]
+    },
+    {
+     "id": "M17",
+     "name": "onboardFacility",
+     "realizes": "UC30",
+     "src": [
+      "R42"
+     ]
+    },
+    {
+     "id": "M18",
+     "name": "communicateSite",
+     "realizes": "UC14",
+     "src": [
+      "R51"
+     ]
+    },
+    {
+     "id": "M19",
+     "name": "communicateFacility",
+     "realizes": "UC13",
+     "src": [
+      "R47"
+     ]
+    },
+    {
+     "id": "M20",
+     "name": "handleActivity",
+     "realizes": "UC7",
+     "src": [
+      "R30"
+     ]
+    },
+    {
+     "id": "M21",
+     "name": "viewDashboard",
+     "realizes": "UC18",
+     "src": [
+      "R22",
+      "R46"
+     ]
+    },
+    {
+     "id": "M22",
+     "name": "viewUserStats",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M23",
+     "name": "replyUserQuestion",
+     "realizes": "UC32",
+     "src": [
+      "R45"
+     ]
+    },
+    {
+     "id": "M24",
+     "name": "updateInformation",
+     "realizes": "UC34",
+     "src": [
+      "R49"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4",
+    "R6",
+    "R10",
+    "R11",
+    "R16",
+    "R17",
+    "R20",
+    "R22",
+    "R23",
+    "R24",
+    "R26",
+    "R30",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R50",
+    "R51"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Admin",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R21",
+      "R24",
+      "R26",
+      "R30",
+      "R41"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "R21",
+      "R24",
+      "R26",
+      "R30",
+      "R41"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M25",
+     "name": "addRecyclingCenterInformation",
+     "realizes": "UC11",
+     "src": [
+      "R40"
+     ]
+    },
+    {
+     "id": "M26",
+     "name": "readFeedback",
+     "realizes": "UC31",
+     "src": [
+      "R17"
+     ]
+    },
+    {
+     "id": "M27",
+     "name": "handleActivity",
+     "realizes": "UC7",
+     "src": [
+      "R30"
+     ]
+    },
+    {
+     "id": "M28",
+     "name": "viewDashboard",
+     "realizes": "UC18",
+     "src": [
+      "R22",
+      "R46"
+     ]
+    },
+    {
+     "id": "M29",
+     "name": "viewUserStats",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M30",
+     "name": "replyUserQuestion",
+     "realizes": "UC32",
+     "src": [
+      "R45"
+     ]
+    },
+    {
+     "id": "M31",
+     "name": "blockUser",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M32",
+     "name": "viewUserErrorLog",
+     "realizes": "UC25",
+     "src": [
+      "R41"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R16",
+    "R17",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R26",
+    "R30",
+    "R32",
+    "R34",
+    "R41",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Superuser",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R41",
+      "R44",
+      "R45",
+      "R46",
+      "R47"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "R41",
+      "R44",
+      "R45",
+      "R46",
+      "R47"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M33",
+     "name": "updateRecyclingCenterInformation",
+     "realizes": "UC35",
+     "src": [
+      "R43"
+     ]
+    },
+    {
+     "id": "M34",
+     "name": "viewUserStats",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M35",
+     "name": "replyUserQuestion",
+     "realizes": "UC32",
+     "src": [
+      "R45"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R41",
+    "R44",
+    "R45",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "RecyclingfacilityRepresentative",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R49",
+      "R50",
+      "R51"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "R49",
+      "R50",
+      "R51"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M36",
+     "name": "updateInformation",
+     "realizes": "UC34",
+     "src": [
+      "R49"
+     ]
+    },
+    {
+     "id": "M37",
+     "name": "viewUserStats",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R49",
+    "R50",
+    "R51"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Profile",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "favorites",
+     "type": "String",
+     "src": [
+      "R7",
+      "R38"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R38"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Pick",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "literals": [
+    "RECYCLINGCENTER",
+    "DONATIONCENTER"
+   ],
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "Material",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R6",
+      "R16",
+      "R20",
+      "R22",
+      "R24",
+      "R30",
+      "R33",
+      "R36",
+      "R37",
+      "R40",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R16",
+    "R20",
+    "R22",
+    "R24",
+    "R30",
+    "R33",
+    "R36",
+    "R37",
+    "R40",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "Schedule",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "week",
+     "type": "String",
+     "src": [
+      "R37",
+      "R39",
+      "R40",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R37",
+    "R39",
+    "R40",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "id": "C10",
+   "name": "Location",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "coordinates",
+     "type": "String",
+     "src": [
+      "R9",
+      "R10",
+      "R11",
+      "R16",
+      "R20",
+      "R22",
+      "R24",
+      "R30",
+      "R33",
+      "R36",
+      "R37",
+      "R40",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9",
+    "R10",
+    "R11",
+    "R16",
+    "R20",
+    "R22",
+    "R24",
+    "R30",
+    "R33",
+    "R36",
+    "R37",
+    "R40",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "id": "C11",
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "message",
+     "type": "String",
+     "src": [
+      "R14",
+      "R17",
+      "R41"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R14",
+    "R17",
+    "R41"
+   ]
+  },
+  {
+   "id": "C12",
+   "name": "Hour",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "time",
+     "type": "String",
+     "src": [
+      "R4",
+      "R10",
+      "R11",
+      "R16",
+      "R20",
+      "R22",
+      "R24",
+      "R30",
+      "R33",
+      "R36",
+      "R37",
+      "R40",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R10",
+    "R11",
+    "R16",
+    "R20",
+    "R22",
+    "R24",
+    "R30",
+    "R33",
+    "R36",
+    "R37",
+    "R40",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "id": "C13",
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "message",
+     "type": "String",
+     "src": [
+      "R8",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R26",
+      "R30",
+      "R32",
+      "R34",
+      "R41",
+      "R46",
+      "R47"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R26",
+    "R30",
+    "R32",
+    "R34",
+    "R41",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "id": "C14",
+   "name": "CompanyAccountant",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R24",
+      "R33"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "R24",
+      "R33"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M38",
+     "name": "viewActivityFee",
+     "realizes": "UC17",
+     "src": [
+      "R33"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R24",
+    "R33"
+   ]
+  },
+  {
+   "id": "C15",
+   "name": "Executive",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R24"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "R24"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M39",
+     "name": "viewActivityFee",
+     "realizes": "UC17",
+     "src": [
+      "R33"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "id": "C16",
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R25",
+      "R26",
+      "R32"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "R25",
+      "R26",
+      "R32"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M40",
+     "name": "accessRoutePlanningSystem",
+     "realizes": "UC27",
+     "src": [
+      "R25"
+     ]
+    },
+    {
+     "id": "M41",
+     "name": "viewEmployeeInfo",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R25",
+    "R26",
+    "R32"
+   ]
+  },
+  {
+   "id": "C17",
+   "name": "Developer",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R27",
+      "R34",
+      "R35"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "R27",
+      "R34",
+      "R35"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M42",
+     "name": "accessApi",
+     "realizes": "UC26",
+     "src": [
+      "R27"
+     ]
+    },
+    {
+     "id": "M43",
+     "name": "useBootstrap",
+     "realizes": "UC37",
+     "src": [
+      "R34"
+     ]
+    },
+    {
+     "id": "M44",
+     "name": "attendUxLesson",
+     "realizes": "UC38",
+     "src": [
+      "R35"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R27",
+    "R34",
+    "R35"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C13",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "receives",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C11",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "gives",
+   "src": [
+    "R14",
+    "R39"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C3",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "manages",
+   "src": [
+    "R16",
+    "R40",
+    "R42"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "monitors",
+   "src": [
+    "R30",
+    "R41"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "findsNearby",
+   "src": [
+    "R3",
+    "R4",
+    "R10",
+    "R36",
+    "R48"
+   ]
+  },
+  {
+   "id": "R7",
+   "kind": "association",
+   "source": "C1",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "chooses",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "id": "R8",
+   "kind": "association",
+   "source": "C1",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "selects",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "R9",
+   "kind": "association",
+   "source": "C1",
+   "target": "C9",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "uploads",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "id": "R10",
+   "kind": "association",
+   "source": "C2",
+   "target": "C12",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "R11",
+   "kind": "association",
+   "source": "C2",
+   "target": "C9",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R12",
+   "kind": "association",
+   "source": "C2",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "accepts",
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "id": "R13",
+   "kind": "association",
+   "source": "C5",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "manages",
+   "src": [
+    "R49",
+    "R50"
+   ]
+  },
+  {
+   "id": "R14",
+   "kind": "association",
+   "source": "C5",
+   "target": "C9",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "updates",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "id": "R15",
+   "kind": "association",
+   "source": "C5",
+   "target": "C11",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "receives",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "id": "R16",
+   "kind": "association",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "id": "R17",
+   "kind": "association",
+   "source": "C5",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "accepts",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "id": "R18",
+   "kind": "association",
+   "source": "C5",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "answers",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "id": "R19",
+   "kind": "association",
+   "source": "C2",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "id": "R20",
+   "kind": "association",
+   "source": "C2",
+   "target": "C11",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "receives",
+   "src": [
+    "R41"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The 'information' in R16 is assumed to be related to the 'RecyclingFacility' class."
+  },
+  {
+   "tag": "R29",
+   "assumption": "The 'noun or noun' in R29 is assumed to be related to the 'User' class."
+  }
+ ],
+ "open_tags": [
+  "R16 (incompleteness, \"information\"): readings []",
+  "R29 (incompleteness, \"noun or noun\"): readings []"
+ ]
+}

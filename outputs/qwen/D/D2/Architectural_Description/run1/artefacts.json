@@ -1,0 +1,121 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "ArchitectureDescription",
+   "kind": "class",
+   "attributes": [
+    "architectureViews"
+   ],
+   "methods": [
+    {
+     "name": "selectArchitectureView",
+     "use_case": null
+    },
+    {
+     "name": "selectArchitectureDescription",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "ArchitectureView",
+   "kind": "class",
+   "attributes": [
+    "architectureViewPoints",
+    "mainView"
+   ],
+   "methods": [
+    {
+     "name": "conformToArchitectureViewPoint",
+     "use_case": null
+    },
+    {
+     "name": "projectOntoMainView",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R7",
+    "R12"
+   ]
+  },
+  {
+   "name": "MainView",
+   "kind": "class",
+   "attributes": [
+    "architectureViews"
+   ],
+   "methods": [
+    {
+     "name": "projectOntoArchitectureView",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "name": "ArchitectureViewPoint",
+   "kind": "class",
+   "attributes": [
+    "architectureViews"
+   ],
+   "methods": [
+    {
+     "name": "conformToArchitectureView",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "ArchitectureDescription",
+   "target": "ArchitectureView",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "source": "ArchitectureView",
+   "target": "ArchitectureViewPoint",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "ArchitectureViewPoint",
+   "target": "MainView",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "source": "MainView",
+   "target": "ArchitectureView",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/Architectural_Description.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass ArchitectureDescription:\n    \"\"\"Source: R7, R8, R9\"\"\"\n    architectureViews: _t.Optional[str] = None\n\n    def selectArchitectureView(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def selectArchitectureDescription(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ArchitectureView:\n    \"\"\"Source: R7, R12\"\"\"\n    architectureViewPoints: _t.Optional[str] = None\n    mainView: _t.Optional[str] = None\n    architectureViewPoint: _t.Optional[\"ArchitectureViewPoint\"] = None\n\n    def conformToArchitectureViewPoint(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def projectOntoMainView(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass MainView:\n    \"\"\"Source: R11, R12\"\"\"\n    architectureViews: _t.Optional[str] = None\n    architectureView: _t.Optional[\"ArchitectureView\"] = None\n\n    def projectOntoArchitectureView(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ArchitectureViewPoint:\n    \"\"\"Source: R10\"\"\"\n    architectureViews: _t.Optional[str] = None\n    mainView: _t.Optional[\"MainView\"] = None\n\n    def conformToArchitectureView(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "ArchitectureDescription.java": "/** Generated from shared model D2/Architectural_Description. Source: R7, R8, R9 */\npublic class ArchitectureDescription {\n    private java.lang.String architectureViews;\n\n    /** Operation. */\n    public void selectArchitectureView() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void selectArchitectureDescription() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ArchitectureView.java": "/** Generated from shared model D2/Architectural_Description. Source: R7, R12 */\npublic class ArchitectureView {\n    private java.lang.String architectureViewPoints;\n    private java.lang.String mainView;\n    private ArchitectureViewPoint architectureViewPoint;\n\n    /** Operation. */\n    public void conformToArchitectureViewPoint() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void projectOntoMainView() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "MainView.java": "/** Generated from shared model D2/Architectural_Description. Source: R11, R12 */\npublic class MainView {\n    private java.lang.String architectureViews;\n    private ArchitectureView architectureView;\n\n    /** Operation. */\n    public void projectOntoArchitectureView() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ArchitectureViewPoint.java": "/** Generated from shared model D2/Architectural_Description. Source: R10 */\npublic class ArchitectureViewPoint {\n    private java.lang.String architectureViews;\n    private MainView mainView;\n\n    /** Operation. */\n    public void conformToArchitectureView() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

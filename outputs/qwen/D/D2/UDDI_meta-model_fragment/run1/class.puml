@@ -1,0 +1,33 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class BusinessEntity {
+  identifiers : String
+  businessContacts : String
+  services : String
+}
+class IdentifierBag {
+  identifiers : String
+}
+class BusinessContact {
+  contact : String
+}
+class Service {
+  service : String
+}
+class Model {
+  overviewDocuments : String
+}
+class OverviewDocument {
+  document : String
+}
+class Game {
+  name : String
+  +createGame()
+}
+BusinessEntity "1" -- "0..1" BusinessContact : has
+BusinessEntity "1" -- "0..*" Service : provides
+BusinessEntity "1" -- "1" IdentifierBag : uses
+Model "1" -- "0..*" OverviewDocument : contains
+BusinessEntity --|> Model
+@enduml

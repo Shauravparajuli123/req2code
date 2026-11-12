@@ -1,0 +1,169 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Cristal",
+   "kind": "class",
+   "attributes": [
+    "elementaryActDef",
+    "elementaryPartDef",
+    "compositeActDef",
+    "compositeParDef",
+    "condition",
+    "activityDefinitions"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "Condition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CompositeParDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "ElementaryActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "ElementaryPartDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "CompositeActDef",
+   "kind": "class",
+   "attributes": [
+    "actCompositeMembers"
+   ],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "ActCompositeMember",
+   "kind": "class",
+   "attributes": [
+    "activityDefinitions"
+   ],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "ActivityDefinition",
+   "kind": "class",
+   "attributes": [
+    "actCompositeMember"
+   ],
+   "methods": [],
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "PartCompositeMember",
+   "kind": "class",
+   "attributes": [
+    "partDefinition"
+   ],
+   "methods": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "PartDefinitionNode",
+   "kind": "class",
+   "attributes": [
+    "partCompositeMember"
+   ],
+   "methods": [],
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "CompositeActDef",
+   "target": "ActCompositeMember",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "source": "PartDefinitionNode",
+   "target": "PartCompositeMember",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "source": "Cristal",
+   "target": "PartCompositeMember",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "source": "Cristal",
+   "target": "CompositeParDef",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "source": "Cristal",
+   "target": "CompositeActDef",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/Cristal.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Cristal:\n    \"\"\"Source: -\"\"\"\n    elementaryActDef: _t.Optional[str] = None\n    elementaryPartDef: _t.Optional[str] = None\n    compositeActDef: _t.Optional[str] = None\n    compositeParDef: _t.Optional[str] = None\n    condition: _t.Optional[str] = None\n    activityDefinitions: _t.Optional[str] = None\n    partCompositeMember: _t.Optional[\"PartCompositeMember\"] = None\n    compositeParDefs: _t.List[\"CompositeParDef\"] = _dc.field(default_factory=list)\n    compositeActDefs: _t.List[\"CompositeActDef\"] = _dc.field(default_factory=list)\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Condition:\n    \"\"\"Source: R1\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass CompositeParDef:\n    \"\"\"Source: R2\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass ElementaryActDef:\n    \"\"\"Source: R4\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass ElementaryPartDef:\n    \"\"\"Source: R3\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass CompositeActDef:\n    \"\"\"Source: R5\"\"\"\n    actCompositeMembers: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass ActCompositeMember:\n    \"\"\"Source: R6\"\"\"\n    activityDefinitions: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass ActivityDefinition:\n    \"\"\"Source: R14\"\"\"\n    actCompositeMember: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass PartCompositeMember:\n    \"\"\"Source: R9\"\"\"\n    partDefinition: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass PartDefinitionNode:\n    \"\"\"Source: R16\"\"\"\n    partCompositeMember: _t.Optional[str] = None\n",
+ "java": {
+  "Cristal.java": "/** Generated from shared model D2/Cristal. Source: - */\npublic class Cristal {\n    private java.lang.String elementaryActDef;\n    private java.lang.String elementaryPartDef;\n    private java.lang.String compositeActDef;\n    private java.lang.String compositeParDef;\n    private java.lang.String condition;\n    private java.lang.String activityDefinitions;\n    private PartCompositeMember partCompositeMember;\n    private java.util.List<CompositeParDef> compositeParDefs;\n    private java.util.List<CompositeActDef> compositeActDefs;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Condition.java": "/** Generated from shared model D2/Cristal. Source: R1 */\npublic class Condition {\n}\n",
+  "CompositeParDef.java": "/** Generated from shared model D2/Cristal. Source: R2 */\npublic class CompositeParDef {\n}\n",
+  "ElementaryActDef.java": "/** Generated from shared model D2/Cristal. Source: R4 */\npublic class ElementaryActDef {\n}\n",
+  "ElementaryPartDef.java": "/** Generated from shared model D2/Cristal. Source: R3 */\npublic class ElementaryPartDef {\n}\n",
+  "CompositeActDef.java": "/** Generated from shared model D2/Cristal. Source: R5 */\npublic class CompositeActDef {\n    private java.lang.String actCompositeMembers;\n}\n",
+  "ActCompositeMember.java": "/** Generated from shared model D2/Cristal. Source: R6 */\npublic class ActCompositeMember {\n    private java.lang.String activityDefinitions;\n}\n",
+  "ActivityDefinition.java": "/** Generated from shared model D2/Cristal. Source: R14 */\npublic class ActivityDefinition {\n    private java.lang.String actCompositeMember;\n}\n",
+  "PartCompositeMember.java": "/** Generated from shared model D2/Cristal. Source: R9 */\npublic class PartCompositeMember {\n    private java.lang.String partDefinition;\n}\n",
+  "PartDefinitionNode.java": "/** Generated from shared model D2/Cristal. Source: R16 */\npublic class PartDefinitionNode {\n    private java.lang.String partCompositeMember;\n}\n"
+ }
+}

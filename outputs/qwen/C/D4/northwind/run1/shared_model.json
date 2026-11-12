@@ -1,0 +1,816 @@
+{
+ "case": "D4/northwind",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": []
+  },
+  {
+   "id": "A2",
+   "name": "Employee",
+   "src": []
+  },
+  {
+   "id": "A3",
+   "name": "Customer",
+   "src": []
+  },
+  {
+   "id": "A4",
+   "name": "Vendor",
+   "src": []
+  },
+  {
+   "id": "A5",
+   "name": "Shipper",
+   "src": []
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Game",
+   "actor": "A1",
+   "src": [],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "FR-CM-03"
+     ]
+    },
+    {
+     "name": "phoneNumber",
+     "type": "String",
+     "src": [
+      "FR-CM-03"
+     ]
+    },
+    {
+     "name": "addressDetails",
+     "type": "String",
+     "src": [
+      "FR-CM-03"
+     ]
+    },
+    {
+     "name": "state",
+     "type": "String",
+     "src": [
+      "FR-CM-05"
+     ]
+    },
+    {
+     "name": "zipCode",
+     "type": "String",
+     "src": [
+      "FR-CM-03"
+     ]
+    },
+    {
+     "name": "website",
+     "type": "String",
+     "src": [
+      "FR-CM-03"
+     ]
+    },
+    {
+     "name": "companyType",
+     "type": "String",
+     "src": [
+      "FR-CM-04"
+     ]
+    },
+    {
+     "name": "taxStatus",
+     "type": "String",
+     "src": [
+      "FR-CM-06"
+     ]
+    },
+    {
+     "name": "contacts",
+     "type": "String",
+     "src": [
+      "FR-CM-07"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addContact",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [
+    "NAME____COMPANYTYPE____LITERALS_____CUSTOMER____VENDOR____SHIPPER",
+    "NAME____TAXSTATUS____LITERALS_____EXEMPT____STANDARD"
+   ],
+   "src": [
+    "FR-CM-03"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "firstName",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    },
+    {
+     "name": "lastName",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    },
+    {
+     "name": "primaryPhoneNumber",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    },
+    {
+     "name": "secondaryPhoneNumber",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    },
+    {
+     "name": "emailAddress",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    },
+    {
+     "name": "jobTitle",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    },
+    {
+     "name": "notes",
+     "type": "String",
+     "src": [
+      "FR-CM-08"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-07"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "firstName",
+     "type": "String",
+     "src": [
+      "FR-EM-01"
+     ]
+    },
+    {
+     "name": "lastName",
+     "type": "String",
+     "src": [
+      "FR-EM-01"
+     ]
+    },
+    {
+     "name": "primaryPhoneNumber",
+     "type": "String",
+     "src": [
+      "FR-EM-01"
+     ]
+    },
+    {
+     "name": "secondaryPhoneNumber",
+     "type": "String",
+     "src": [
+      "FR-EM-01"
+     ]
+    },
+    {
+     "name": "jobTitle",
+     "type": "String",
+     "src": [
+      "FR-EM-02"
+     ]
+    },
+    {
+     "name": "email",
+     "type": "String",
+     "src": [
+      "FR-EM-01"
+     ]
+    },
+    {
+     "name": "title",
+     "type": "String",
+     "src": [
+      "FR-EM-02"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "assignTitle",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [
+    "NAME____TITLE____LITERALS_____MANAGER____SUPERVISOR____EMPLOYEE"
+   ],
+   "src": [
+    "FR-EM-01"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Order",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "customer",
+     "type": "String",
+     "src": [
+      "FR-SOP-02"
+     ]
+    },
+    {
+     "name": "employee",
+     "type": "String",
+     "src": [
+      "FR-SOP-03"
+     ]
+    },
+    {
+     "name": "orderStatus",
+     "type": "String",
+     "src": [
+      "FR-SOP-04"
+     ]
+    },
+    {
+     "name": "shipper",
+     "type": "String",
+     "src": [
+      "FR-SOP-05"
+     ]
+    },
+    {
+     "name": "taxRate",
+     "type": "double",
+     "src": [
+      "FR-SOP-06"
+     ]
+    },
+    {
+     "name": "taxStatus",
+     "type": "String",
+     "src": [
+      "FR-SOP-06"
+     ]
+    },
+    {
+     "name": "invoiceDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "FR-SOP-07"
+     ]
+    },
+    {
+     "name": "paymentMethod",
+     "type": "String",
+     "src": [
+      "FR-SOP-07"
+     ]
+    },
+    {
+     "name": "paymentDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "FR-SOP-07"
+     ]
+    },
+    {
+     "name": "orderDetails",
+     "type": "String",
+     "src": [
+      "FR-SOP-08"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addOrderDetail",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [
+    "NAME____ORDERSTATUS____LITERALS_____PENDING____PROCESSING____SHIPPED____DELIVERED____CANCELLED"
+   ],
+   "src": [
+    "FR-SOP-01"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "OrderDetailItem",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "product",
+     "type": "String",
+     "src": [
+      "FR-SOP-09"
+     ]
+    },
+    {
+     "name": "quantity",
+     "type": "int",
+     "src": [
+      "FR-SOP-09"
+     ]
+    },
+    {
+     "name": "unitPrice",
+     "type": "double",
+     "src": [
+      "FR-SOP-09"
+     ]
+    },
+    {
+     "name": "discount",
+     "type": "double",
+     "src": [
+      "FR-SOP-09"
+     ]
+    },
+    {
+     "name": "status",
+     "type": "String",
+     "src": [
+      "FR-SOP-10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "updateStatus",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [
+    "NAME____ORDERDETAILSTATUS____LITERALS_____PENDING____PROCESSING____SHIPPED____DELIVERED____CANCELLED"
+   ],
+   "src": [
+    "FR-SOP-09"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Product",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "code",
+     "type": "String",
+     "src": [
+      "FR-PM-01"
+     ]
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "FR-PM-01"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "FR-PM-01"
+     ]
+    },
+    {
+     "name": "unitCost",
+     "type": "double",
+     "src": [
+      "FR-PM-03"
+     ]
+    },
+    {
+     "name": "retailPrice",
+     "type": "double",
+     "src": [
+      "FR-PM-03"
+     ]
+    },
+    {
+     "name": "category",
+     "type": "String",
+     "src": [
+      "FR-PM-02"
+     ]
+    },
+    {
+     "name": "inventoryLevel",
+     "type": "int",
+     "src": [
+      "FR-PM-04"
+     ]
+    },
+    {
+     "name": "reorderLevel",
+     "type": "int",
+     "src": [
+      "FR-PM-04"
+     ]
+    },
+    {
+     "name": "targetLevel",
+     "type": "int",
+     "src": [
+      "FR-PM-04"
+     ]
+    },
+    {
+     "name": "minReorderQuantity",
+     "type": "int",
+     "src": [
+      "FR-PM-04"
+     ]
+    },
+    {
+     "name": "discontinued",
+     "type": "boolean",
+     "src": [
+      "FR-PM-05"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [
+    "NAME____PRODUCTCATEGORY____LITERALS_____ELECTRONICS____CLOTHING____HOME____OFFICE"
+   ],
+   "src": [
+    "FR-PM-01"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "PurchaseOrder",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "vendor",
+     "type": "String",
+     "src": [
+      "FR-POP-02"
+     ]
+    },
+    {
+     "name": "employeeSubmitted",
+     "type": "String",
+     "src": [
+      "FR-POP-03"
+     ]
+    },
+    {
+     "name": "employeeApproved",
+     "type": "String",
+     "src": [
+      "FR-POP-04"
+     ]
+    },
+    {
+     "name": "status",
+     "type": "String",
+     "src": [
+      "FR-POP-05"
+     ]
+    },
+    {
+     "name": "orderDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "FR-POP-06"
+     ]
+    },
+    {
+     "name": "purchaseOrderDetails",
+     "type": "String",
+     "src": [
+      "FR-POP-07"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "addPurchaseOrderDetail",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [
+    "NAME____PURCHASEORDERSTATUS____LITERALS_____PENDING____PROCESSING____SHIPPED____DELIVERED____CANCELLED"
+   ],
+   "src": [
+    "FR-POP-01"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "PurchaseOrderDetailItem",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "product",
+     "type": "String",
+     "src": [
+      "FR-POP-08"
+     ]
+    },
+    {
+     "name": "quantity",
+     "type": "int",
+     "src": [
+      "FR-POP-08"
+     ]
+    },
+    {
+     "name": "unitPrice",
+     "type": "double",
+     "src": [
+      "FR-POP-08"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-POP-08"
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "FR-SOP-02"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-SOP-02"
+   ]
+  },
+  {
+   "id": "C10",
+   "name": "Shipper",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "FR-SOP-05"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-SOP-05"
+   ]
+  },
+  {
+   "id": "C11",
+   "name": "Vendor",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "FR-POP-02"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-POP-02"
+   ]
+  },
+  {
+   "id": "C12",
+   "name": "PhoneNumber",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "number",
+     "type": "String",
+     "src": [
+      "FR-CM-08",
+      "FR-EM-01"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-08",
+    "FR-EM-01"
+   ]
+  },
+  {
+   "id": "C13",
+   "name": "JobTitle",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "title",
+     "type": "String",
+     "src": [
+      "FR-EM-02"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-EM-02"
+   ]
+  },
+  {
+   "id": "C14",
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "date",
+     "type": "String",
+     "src": [
+      "FR-SOP-07",
+      "FR-POP-06"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-SOP-07",
+    "FR-POP-06"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "FR-CM-07"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C3",
+   "target": "C13",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "FR-EM-02"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C4",
+   "target": "C9",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is associated with",
+   "src": [
+    "FR-SOP-02"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is processed by",
+   "src": [
+    "FR-SOP-03"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C7",
+   "target": "C11",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is associated with",
+   "src": [
+    "FR-POP-02"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C7",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is submitted by",
+   "src": [
+    "FR-POP-03"
+   ]
+  },
+  {
+   "id": "R7",
+   "kind": "association",
+   "source": "C4",
+   "target": "C5",
+   "mult_source": "1..*",
+   "mult_target": "1",
+   "label": "contains",
+   "src": [
+    "FR-SOP-08"
+   ]
+  },
+  {
+   "id": "R8",
+   "kind": "association",
+   "source": "C7",
+   "target": "C8",
+   "mult_source": "1..*",
+   "mult_target": "1",
+   "label": "contains",
+   "src": [
+    "FR-POP-07"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that the relationships between classes are bidirectional unless specified otherwise."
+  }
+ ],
+ "open_tags": []
+}

@@ -1,0 +1,573 @@
+{
+ "classes": [
+  {
+   "name": "submission",
+   "status": "mandatory"
+  },
+  {
+   "name": "assignment",
+   "status": "mandatory"
+  },
+  {
+   "name": "behavior",
+   "status": "mandatory"
+  },
+  {
+   "name": "disciplinary actions",
+   "status": "mandatory"
+  },
+  {
+   "name": "mentor",
+   "status": "mandatory"
+  },
+  {
+   "name": "administrator",
+   "status": "mandatory"
+  },
+  {
+   "name": "digital learning modules",
+   "status": "mandatory"
+  },
+  {
+   "name": "guardian",
+   "status": "mandatory"
+  },
+  {
+   "name": "message",
+   "status": "mandatory"
+  },
+  {
+   "name": "question",
+   "status": "mandatory"
+  },
+  {
+   "name": "answer",
+   "status": "mandatory"
+  },
+  {
+   "name": "material",
+   "status": "mandatory"
+  },
+  {
+   "name": "student",
+   "status": "mandatory"
+  },
+  {
+   "name": "grades",
+   "status": "mandatory"
+  },
+  {
+   "name": "teacher",
+   "status": "mandatory"
+  },
+  {
+   "name": "class",
+   "status": "mandatory"
+  },
+  {
+   "name": "timetable",
+   "status": "mandatory"
+  },
+  {
+   "name": "attendance",
+   "status": "mandatory"
+  }
+ ],
+ "associations": [
+  {
+   "pair": [
+    "question",
+    "answer"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "question",
+    "digital learning modules"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "digital learning modules",
+    "material"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "digital learning modules",
+    "class"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "class",
+    "assignment"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "class",
+    "student"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "student",
+    "timetable"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "timetable",
+    "teacher"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "teacher",
+    "disciplinary actions"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "teacher",
+    "behavior"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "teacher",
+    "message"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "behavior",
+    "student"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "student",
+    "disciplinary actions"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "student",
+    "message"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "student",
+    "mentor"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "student",
+    "guardian"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "guardian",
+    "behavior"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "student",
+    "submission"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "submission",
+    "grades"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "submission",
+    "assignment"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "message",
+    "administrator"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "message",
+    "guardian"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "message",
+    "mentor"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "class",
+    "teacher"
+   ],
+   "status": "mandatory"
+  }
+ ],
+ "synonyms": {
+  "subject": "class",
+  "course": "class",
+  "absence": "attendance",
+  "student absence": "attendance",
+  "student attendance": "attendance",
+  "academic attendance": "attendance",
+  "attendance record": "attendance",
+  "child": "student",
+  "homework": "assignment",
+  "submission element": "assignment",
+  "answer submission": "submission",
+  "homework submission": "submission",
+  "administrative staff": "administrator",
+  "schedule": "timetable",
+  "dlm": "digital learning module",
+  "digital learning modules (dlm)": "digital learning module",
+  "dlm (digital learning module)": "digital learning module",
+  "open question": "question",
+  "multiple-choice question": "question",
+  "disciplinary record": "disciplinary action",
+  "academic disciplinary action": "disciplinary action",
+  "disciplinaryaction": "disciplinary action",
+  "academic grade": "grade",
+  "academic behavior": "behavior",
+  "text": "material",
+  "video": "material",
+  "picture": "material"
+ },
+ "use_case_draft": {
+  "status": "auto-extracted, not yet validated",
+  "actors": {
+   "guardian": 4,
+   "student": 12,
+   "teacher": 27,
+   "user": 1,
+   "administrator": 13
+  },
+  "use_cases": [
+   {
+    "actor": "guardian",
+    "goal": "directly message any teacher of my child, the mentor assigned to my child, or an administrative staff member",
+    "src": "R1"
+   },
+   {
+    "actor": "guardian",
+    "goal": "fill in an absence of my child",
+    "src": "R2"
+   },
+   {
+    "actor": "guardian",
+    "goal": "receive a notification when I receive a message",
+    "src": "R3"
+   },
+   {
+    "actor": "guardian",
+    "goal": "view any information related to my children",
+    "src": "R4"
+   },
+   {
+    "actor": "student",
+    "goal": "access files and Digital Learning Module (DLM) in the Learning Management System (LMS) that have been assigned to the class that I participate in",
+    "src": "R5"
+   },
+   {
+    "actor": "student",
+    "goal": "directly message any of my teachers",
+    "src": "R6"
+   },
+   {
+    "actor": "student",
+    "goal": "directly message my mentor",
+    "src": "R7"
+   },
+   {
+    "actor": "student",
+    "goal": "hand my homework to the DLM when they are finished",
+    "src": "R8"
+   },
+   {
+    "actor": "student",
+    "goal": "have access to an up-to-date timetable",
+    "src": "R9"
+   },
+   {
+    "actor": "student",
+    "goal": "have access to DLM",
+    "src": "R10"
+   },
+   {
+    "actor": "student",
+    "goal": "receive a notification when an assignment is due soon and I have not completed it yet",
+    "src": "R11"
+   },
+   {
+    "actor": "student",
+    "goal": "receive a notification when I receive a message",
+    "src": "R12"
+   },
+   {
+    "actor": "student",
+    "goal": "receive a notification when new files have been made available through the LMS",
+    "src": "R13"
+   },
+   {
+    "actor": "student",
+    "goal": "receive a notification when something changes within my timetable",
+    "src": "R14"
+   },
+   {
+    "actor": "student",
+    "goal": "view any information related to my account",
+    "src": "R15"
+   },
+   {
+    "actor": "student",
+    "goal": "view the contact information of students attending my classes",
+    "src": "R16"
+   },
+   {
+    "actor": "teacher",
+    "goal": "add a page containing a video to a DLM",
+    "src": "R20"
+   },
+   {
+    "actor": "teacher",
+    "goal": "add a page containing text and pictures to a DLM",
+    "src": "R21"
+   },
+   {
+    "actor": "teacher",
+    "goal": "add a page that contains a multiple-choice question or an open question to a DLM",
+    "src": "R22"
+   },
+   {
+    "actor": "teacher",
+    "goal": "assign a DLM to a specific class or student(s)",
+    "src": "R23"
+   },
+   {
+    "actor": "teacher",
+    "goal": "assign a due date to a DLM",
+    "src": "R24"
+   },
+   {
+    "actor": "teacher",
+    "goal": "automatically grade DLM submissions, where possible, when I have submitted all the answers",
+    "src": "R25"
+   },
+   {
+    "actor": "teacher",
+    "goal": "create digital learning modules containing pages",
+    "src": "R26"
+   },
+   {
+    "actor": "teacher",
+    "goal": "directly message any student that is assigned to my class",
+    "src": "R27"
+   },
+   {
+    "actor": "teacher",
+    "goal": "directly message any student to which I am assigned mentor",
+    "src": "R28"
+   },
+   {
+    "actor": "teacher",
+    "goal": "edit any page contained within a DLM",
+    "src": "R29"
+   },
+   {
+    "actor": "teacher",
+    "goal": "make submission elements",
+    "src": "R30"
+   },
+   {
+    "actor": "teacher",
+    "goal": "optionally add the corresponding answer to a question page contained within a DLM",
+    "src": "R31"
+   },
+   {
+    "actor": "teacher",
+    "goal": "receive a confirmation from the LMS system once files have been fully uploaded",
+    "src": "R32"
+   },
+   {
+    "actor": "teacher",
+    "goal": "receive a notification when a student that I mentor is sent out of class",
+    "src": "R33"
+   },
+   {
+    "actor": "teacher",
+    "goal": "receive a notification when I receive a message",
+    "src": "R34"
+   },
+   {
+    "actor": "teacher",
+    "goal": "record disciplinary actions for a student such as: missed homework, no books, or sent out",
+    "src": "R35"
+   },
+   {
+    "actor": "teacher",
+    "goal": "record either a sufficient or insufficient a student’s behavior every single academic period",
+    "src": "R36"
+   },
+   {
+    "actor": "teacher",
+    "goal": "record grades for a student",
+    "src": "R37"
+   },
+   {
+    "actor": "teacher",
+    "goal": "record the attendance of students within my class",
+    "src": "R38"
+   },
+   {
+    "actor": "teacher",
+    "goal": "see the answers submitted by individual students within the corresponding DLM",
+    "src": "R39"
+   },
+   {
+    "actor": "teacher",
+    "goal": "see the average grade that students received last year, starting when they are in their second year",
+    "src": "R40"
+   },
+   {
+    "actor": "teacher",
+    "goal": "see the progress that an individual student has made within a DLM",
+    "src": "R41"
+   },
+   {
+    "actor": "teacher",
+    "goal": "set an appearance date to a DLM",
+    "src": "R42"
+   },
+   {
+    "actor": "teacher",
+    "goal": "set available dates and times either to instant or a specific date and time combination",
+    "src": "R43"
+   },
+   {
+    "actor": "teacher",
+    "goal": "upload files to the LMS page of one or multiple classes",
+    "src": "R44"
+   },
+   {
+    "actor": "teacher",
+    "goal": "view the attendance, grades that are obtained this year (including behavioral marks), personal details, and disciplinary actions of (any student in my class) or (any student that I am assigned to as mentor)",
+    "src": "R45"
+   },
+   {
+    "actor": "teacher",
+    "goal": "view who is in a specific class that is mentioned in my timetable",
+    "src": "R46"
+   },
+   {
+    "actor": "user",
+    "goal": "reset my password on request once I supply my previous password",
+    "src": "R47"
+   },
+   {
+    "actor": "administrator",
+    "goal": "assign schedules to groups of students (classes) or teachers",
+    "src": "R49"
+   },
+   {
+    "actor": "administrator",
+    "goal": "create an account",
+    "src": "R50"
+   },
+   {
+    "actor": "administrator",
+    "goal": "edit the personal data of an account",
+    "src": "R51"
+   },
+   {
+    "actor": "administrator",
+    "goal": "make use of various filters and viewpoints, change the view of the visual dashboard to a specific class, year, period, or subject",
+    "src": "R52"
+   },
+   {
+    "actor": "administrator",
+    "goal": "receive a notification when I receive a message",
+    "src": "R53"
+   },
+   {
+    "actor": "administrator",
+    "goal": "receive a notification when I receive an absence form",
+    "src": "R54"
+   },
+   {
+    "actor": "administrator",
+    "goal": "register any changes to the schedule",
+    "src": "R55"
+   },
+   {
+    "actor": "administrator",
+    "goal": "register the absence of a student, teacher, or administrator",
+    "src": "R56"
+   },
+   {
+    "actor": "administrator",
+    "goal": "send broadcast messages to multiple selected teachers, students, guardians, classes, or other administrators",
+    "src": "R57"
+   },
+   {
+    "actor": "administrator",
+    "goal": "set the role of an account either to student, teacher, administrator or guardian",
+    "src": "R58"
+   },
+   {
+    "actor": "administrator",
+    "goal": "upload schedules",
+    "src": "R59"
+   },
+   {
+    "actor": "administrator",
+    "goal": "view any details associated with any account",
+    "src": "R60"
+   },
+   {
+    "actor": "administrator",
+    "goal": "view statistics related to grades, attendance and disciplinary actions that can be mapped over the whole school",
+    "src": "R61"
+   }
+  ],
+  "unparsed": 4
+ }
+}

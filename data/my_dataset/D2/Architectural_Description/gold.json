@@ -1,0 +1,95 @@
+{
+ "classes": [
+  {
+   "name": "Architecture",
+   "kind": "class"
+  },
+  {
+   "name": "ArchitectureDescription",
+   "kind": "class"
+  },
+  {
+   "name": "ArchitectureView",
+   "kind": "class"
+  },
+  {
+   "name": "ArchitectureViewPoint",
+   "kind": "class"
+  },
+  {
+   "name": "MainView",
+   "kind": "class"
+  },
+  {
+   "name": "ModelElement",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Architecture": [],
+  "ArchitectureDescription": [],
+  "ArchitectureView": [],
+  "ArchitectureViewPoint": [],
+  "MainView": [],
+  "ModelElement": []
+ },
+ "relations": [
+  {
+   "type": "association",
+   "from": "Architecture",
+   "to": "ArchitectureDescription",
+   "label": "describedBy 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "ArchitectureDescription",
+   "to": "ArchitectureView",
+   "label": "selects 1..*",
+   "label_to": "selectedBy 1..*"
+  },
+  {
+   "type": "composition",
+   "from": "ArchitectureDescription",
+   "to": "ArchitectureView",
+   "label": "organizedBy 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "ArchitectureView",
+   "to": "ModelElement",
+   "label": "constituents 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "ArchitectureView",
+   "to": "ArchitectureViewPoint",
+   "label": "conformsTo 1..*",
+   "label_to": "views 1..*"
+  },
+  {
+   "type": "association",
+   "from": "ArchitectureViewPoint",
+   "to": "MainView",
+   "label": "defines 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "MainView",
+   "to": "ArchitectureView",
+   "label": "isProjectedOnto 1..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "MainView",
+   "to": "ModelElement",
+   "label": "consistsOf 1..*",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage ArchitecturalDescription {\nclass Architecture {\n}\nArchitecture \"describedBy 1..1\" --> ArchitectureDescription\nclass ArchitectureDescription {\n}\nArchitectureDescription \"selects 1..*\" -- \"selectedBy 1..*\" ArchitectureView\nArchitectureDescription \"organizedBy 1..*\" *--> ArchitectureView\nclass ArchitectureView {\n}\nArchitectureView \"constituents 1..*\" *--> ModelElement\nArchitectureView \"conformsTo 1..*\" -- \"views 1..*\" ArchitectureViewPoint\nclass ArchitectureViewPoint {\n}\nArchitectureViewPoint \"defines 1..1\" --> MainView\nclass MainView {\n}\nMainView \"isProjectedOnto 1..*\" --> ArchitectureView\nMainView \"consistsOf 1..*\" *--> ModelElement\nclass ModelElement {\n}\n}\n@enduml\n"
+}

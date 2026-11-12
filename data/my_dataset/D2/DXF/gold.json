@@ -1,0 +1,60 @@
+{
+ "classes": [
+  {
+   "name": "DXF",
+   "kind": "class"
+  },
+  {
+   "name": "Mesh",
+   "kind": "class"
+  },
+  {
+   "name": "Point",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "DXF": [],
+  "Mesh": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Point": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "x",
+    "type": "Double"
+   },
+   {
+    "name": "y",
+    "type": "Double"
+   },
+   {
+    "name": "z",
+    "type": "Double"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "DXF",
+   "to": "Mesh",
+   "label": "meshes 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Mesh",
+   "to": "Point",
+   "label": "points 0..*",
+   "label_to": "mesh 1..1"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage DXF {\nclass DXF {\n}\nDXF \"meshes 0..*\" *--> Mesh\nclass Mesh {\n\t name : String\n}\nMesh \"points 0..*\" *-- \"mesh 1..1\" Point\nclass Point {\n\t name : String\n\t x : Double\n\t y : Double\n\t z : Double\n}\n}\n@enduml\n"
+}

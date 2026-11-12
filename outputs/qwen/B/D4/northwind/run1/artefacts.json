@@ -1,0 +1,410 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "phoneNumber",
+    "address",
+    "state",
+    "zipCode",
+    "website",
+    "companyType",
+    "taxStatus",
+    "contacts"
+   ],
+   "methods": [
+    {
+     "name": "addContact",
+     "use_case": null
+    },
+    {
+     "name": "removeContact",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "FR-CM-01",
+    "FR-CM-02",
+    "FR-CM-03",
+    "FR-CM-04",
+    "FR-CM-05",
+    "FR-CM-06"
+   ]
+  },
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    "firstName",
+    "lastName",
+    "primaryPhoneNumber",
+    "secondaryPhoneNumber",
+    "email",
+    "jobTitle",
+    "notes"
+   ],
+   "methods": [],
+   "src": [
+    "FR-CM-07"
+   ]
+  },
+  {
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "FR-CM-01"
+   ]
+  },
+  {
+   "name": "Vendor",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "FR-CM-01"
+   ]
+  },
+  {
+   "name": "Shipper",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "FR-CM-01"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    "firstName",
+    "lastName",
+    "jobTitle",
+    "phoneNumbers",
+    "privileges"
+   ],
+   "methods": [
+    {
+     "name": "assignPrivilege",
+     "use_case": null
+    },
+    {
+     "name": "removePrivilege",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02",
+    "FR-EM-03",
+    "FR-EM-04",
+    "FR-EM-05"
+   ]
+  },
+  {
+   "name": "Order",
+   "kind": "class",
+   "attributes": [
+    "orderDate",
+    "customer",
+    "employee",
+    "status",
+    "shipper",
+    "taxRate",
+    "taxStatus",
+    "invoiceDate",
+    "paymentMethod",
+    "paymentDate",
+    "orderDetails"
+   ],
+   "methods": [
+    {
+     "name": "addOrderDetail",
+     "use_case": null
+    },
+    {
+     "name": "removeOrderDetail",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-02",
+    "FR-SOP-03",
+    "FR-SOP-04",
+    "FR-SOP-05",
+    "FR-SOP-06",
+    "FR-SOP-07",
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "name": "OrderDetailItem",
+   "kind": "class",
+   "attributes": [
+    "product",
+    "quantity",
+    "unitPrice",
+    "discount",
+    "status"
+   ],
+   "methods": [],
+   "src": [
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "name": "Product",
+   "kind": "class",
+   "attributes": [
+    "code",
+    "name",
+    "description",
+    "category",
+    "unitCost",
+    "retailPrice",
+    "inventoryLevel",
+    "reorderLevel",
+    "targetLevel",
+    "minReorderQuantity",
+    "discontinued"
+   ],
+   "methods": [],
+   "src": [
+    "FR-PM-01",
+    "FR-PM-02",
+    "FR-PM-03",
+    "FR-PM-04",
+    "FR-PM-05",
+    "FR-PM-06",
+    "FR-PM-07"
+   ]
+  },
+  {
+   "name": "PurchaseOrder",
+   "kind": "class",
+   "attributes": [
+    "orderDate",
+    "vendor",
+    "employee",
+    "approvedBy",
+    "status",
+    "purchaseOrderDetails"
+   ],
+   "methods": [
+    {
+     "name": "addPurchaseOrderDetail",
+     "use_case": null
+    },
+    {
+     "name": "removePurchaseOrderDetail",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "FR-POP-01",
+    "FR-POP-02",
+    "FR-POP-03",
+    "FR-POP-04",
+    "FR-POP-05",
+    "FR-POP-06",
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  },
+  {
+   "name": "PurchaseOrderDetailItem",
+   "kind": "class",
+   "attributes": [
+    "product",
+    "quantity",
+    "unitPrice"
+   ],
+   "methods": [],
+   "src": [
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  },
+  {
+   "name": "ProductCategory",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "code",
+    "description",
+    "image"
+   ],
+   "methods": [],
+   "src": [
+    "FR-PM-06"
+   ]
+  },
+  {
+   "name": "CompanyType",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "OrderStatus",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "PurchaseOrderStatus",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "OrderDetailStatus",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "source": "Customer",
+   "target": "Company",
+   "src": [
+    "FR-CM-02"
+   ]
+  },
+  {
+   "source": "Vendor",
+   "target": "Company",
+   "src": [
+    "FR-CM-02"
+   ]
+  },
+  {
+   "source": "Shipper",
+   "target": "Company",
+   "src": [
+    "FR-CM-02"
+   ]
+  },
+  {
+   "source": "Company",
+   "target": "CompanyType",
+   "src": [
+    "FR-CM-04"
+   ]
+  },
+  {
+   "source": "Company",
+   "target": "Contact",
+   "src": [
+    "FR-CM-07"
+   ]
+  },
+  {
+   "source": "Product",
+   "target": "ProductCategory",
+   "src": [
+    "FR-PM-02"
+   ]
+  },
+  {
+   "source": "Product",
+   "target": "Vendor",
+   "src": [
+    "FR-PM-07"
+   ]
+  },
+  {
+   "source": "Order",
+   "target": "Customer",
+   "src": [
+    "FR-SOP-02"
+   ]
+  },
+  {
+   "source": "Order",
+   "target": "Employee",
+   "src": [
+    "FR-SOP-03"
+   ]
+  },
+  {
+   "source": "Order",
+   "target": "OrderStatus",
+   "src": [
+    "FR-SOP-04"
+   ]
+  },
+  {
+   "source": "Order",
+   "target": "Shipper",
+   "src": [
+    "FR-SOP-05"
+   ]
+  },
+  {
+   "source": "OrderDetailItem",
+   "target": "Order",
+   "src": [
+    "FR-SOP-08"
+   ]
+  },
+  {
+   "source": "PurchaseOrder",
+   "target": "Vendor",
+   "src": [
+    "FR-POP-02"
+   ]
+  },
+  {
+   "source": "PurchaseOrder",
+   "target": "Employee",
+   "src": [
+    "FR-POP-03"
+   ]
+  },
+  {
+   "source": "PurchaseOrder",
+   "target": "PurchaseOrderStatus",
+   "src": [
+    "FR-POP-05"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D4/northwind.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Company:\n    \"\"\"Source: FR-CM-01, FR-CM-02, FR-CM-03, FR-CM-04, FR-CM-05, FR-CM-06\"\"\"\n    name: _t.Optional[str] = None\n    phoneNumber: _t.Optional[str] = None\n    address: _t.Optional[str] = None\n    state: _t.Optional[str] = None\n    zipCode: _t.Optional[str] = None\n    website: _t.Optional[str] = None\n    companyType: _t.Optional[str] = None\n    taxStatus: _t.Optional[str] = None\n    contacts: _t.Optional[str] = None\n    contact: _t.Optional[\"Contact\"] = None\n\n    def addContact(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removeContact(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Contact:\n    \"\"\"Source: FR-CM-07\"\"\"\n    firstName: _t.Optional[str] = None\n    lastName: _t.Optional[str] = None\n    primaryPhoneNumber: _t.Optional[str] = None\n    secondaryPhoneNumber: _t.Optional[str] = None\n    email: _t.Optional[str] = None\n    jobTitle: _t.Optional[str] = None\n    notes: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Customer(Company):\n    \"\"\"Source: FR-CM-01\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Vendor(Company):\n    \"\"\"Source: FR-CM-01\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Shipper(Company):\n    \"\"\"Source: FR-CM-01\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Employee:\n    \"\"\"Source: FR-EM-01, FR-EM-02, FR-EM-03, FR-EM-04, FR-EM-05\"\"\"\n    firstName: _t.Optional[str] = None\n    lastName: _t.Optional[str] = None\n    jobTitle: _t.Optional[str] = None\n    phoneNumbers: _t.Optional[str] = None\n    privileges: _t.Optional[str] = None\n\n    def assignPrivilege(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removePrivilege(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Order:\n    \"\"\"Source: FR-SOP-01, FR-SOP-02, FR-SOP-03, FR-SOP-04, FR-SOP-05, FR-SOP-06, FR-SOP-07, FR-SOP-08, FR-SOP-09, FR-SOP-10\"\"\"\n    orderDate: _t.Optional[str] = None\n    customer: _t.Optional[str] = None\n    employee: _t.Optional[str] = None\n    status: _t.Optional[str] = None\n    shipper: _t.Optional[str] = None\n    taxRate: _t.Optional[float] = None\n    taxStatus: _t.Optional[str] = None\n    invoiceDate: _t.Optional[str] = None\n    paymentMethod: _t.Optional[str] = None\n    paymentDate: _t.Optional[str] = None\n    orderDetails: _t.Optional[str] = None\n    orderStatus: _t.Optional[\"OrderStatus\"] = None\n\n    def addOrderDetail(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removeOrderDetail(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass OrderDetailItem:\n    \"\"\"Source: FR-SOP-08, FR-SOP-09, FR-SOP-10\"\"\"\n    product: _t.Optional[str] = None\n    quantity: _t.Optional[int] = None\n    unitPrice: _t.Optional[float] = None\n    discount: _t.Optional[float] = None\n    status: _t.Optional[str] = None\n    order: _t.Optional[\"Order\"] = None\n\n\n@_dc.dataclass\nclass Product:\n    \"\"\"Source: FR-PM-01, FR-PM-02, FR-PM-03, FR-PM-04, FR-PM-05, FR-PM-06, FR-PM-07\"\"\"\n    code: _t.Optional[str] = None\n    name: _t.Optional[str] = None\n    description: _t.Optional[str] = None\n    category: _t.Optional[str] = None\n    unitCost: _t.Optional[float] = None\n    retailPrice: _t.Optional[float] = None\n    inventoryLevel: _t.Optional[int] = None\n    reorderLevel: _t.Optional[int] = None\n    targetLevel: _t.Optional[int] = None\n    minReorderQuantity: _t.Optional[int] = None\n    discontinued: _t.Optional[bool] = None\n    productCategory: _t.Optional[\"ProductCategory\"] = None\n    vendors: _t.List[\"Vendor\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass PurchaseOrder:\n    \"\"\"Source: FR-POP-01, FR-POP-02, FR-POP-03, FR-POP-04, FR-POP-05, FR-POP-06, FR-POP-07, FR-POP-08\"\"\"\n    orderDate: _t.Optional[str] = None\n    vendor: _t.Optional[str] = None\n    employee: _t.Optional[str] = None\n    approvedBy: _t.Optional[str] = None\n    status: _t.Optional[str] = None\n    purchaseOrderDetails: _t.Optional[str] = None\n    purchaseOrderStatus: _t.Optional[\"PurchaseOrderStatus\"] = None\n\n    def addPurchaseOrderDetail(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removePurchaseOrderDetail(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass PurchaseOrderDetailItem:\n    \"\"\"Source: FR-POP-07, FR-POP-08\"\"\"\n    product: _t.Optional[str] = None\n    quantity: _t.Optional[int] = None\n    unitPrice: _t.Optional[float] = None\n\n\n@_dc.dataclass\nclass ProductCategory:\n    \"\"\"Source: FR-PM-06\"\"\"\n    name: _t.Optional[str] = None\n    code: _t.Optional[str] = None\n    description: _t.Optional[str] = None\n    image: _t.Optional[str] = None\n\n\nclass CompanyType(_enum.Enum):\n    \"\"\"Source: -\"\"\"\n    CUSTOMER = \"CUSTOMER\"\n    VENDOR = \"VENDOR\"\n    SHIPPER = \"SHIPPER\"\n\n\nclass OrderStatus(_enum.Enum):\n    \"\"\"Source: -\"\"\"\n    PENDING = \"PENDING\"\n    PROCESSING = \"PROCESSING\"\n    SHIPPED = \"SHIPPED\"\n    DELIVERED = \"DELIVERED\"\n    CANCELLED = \"CANCELLED\"\n\n\nclass PurchaseOrderStatus(_enum.Enum):\n    \"\"\"Source: -\"\"\"\n    PENDING = \"PENDING\"\n    APPROVED = \"APPROVED\"\n    REJECTED = \"REJECTED\"\n    PROCESSED = \"PROCESSED\"\n    CANCELLED = \"CANCELLED\"\n\n\nclass OrderDetailStatus(_enum.Enum):\n    \"\"\"Source: -\"\"\"\n    PENDING = \"PENDING\"\n    PROCESSED = \"PROCESSED\"\n    SHIPPED = \"SHIPPED\"\n    DELIVERED = \"DELIVERED\"\n    CANCELLED = \"CANCELLED\"\n",
+ "java": {
+  "Company.java": "/** Generated from shared model D4/northwind. Source: FR-CM-01, FR-CM-02, FR-CM-03, FR-CM-04, FR-CM-05, FR-CM-06 */\npublic class Company {\n    private java.lang.String name;\n    private java.lang.String phoneNumber;\n    private java.lang.String address;\n    private java.lang.String state;\n    private java.lang.String zipCode;\n    private java.lang.String website;\n    private java.lang.String companyType;\n    private java.lang.String taxStatus;\n    private java.lang.String contacts;\n    private Contact contact;\n\n    /** Operation. */\n    public void addContact() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removeContact() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Contact.java": "/** Generated from shared model D4/northwind. Source: FR-CM-07 */\npublic class Contact {\n    private java.lang.String firstName;\n    private java.lang.String lastName;\n    private java.lang.String primaryPhoneNumber;\n    private java.lang.String secondaryPhoneNumber;\n    private java.lang.String email;\n    private java.lang.String jobTitle;\n    private java.lang.String notes;\n}\n",
+  "Customer.java": "/** Generated from shared model D4/northwind. Source: FR-CM-01 */\npublic class Customer extends Company {\n}\n",
+  "Vendor.java": "/** Generated from shared model D4/northwind. Source: FR-CM-01 */\npublic class Vendor extends Company {\n}\n",
+  "Shipper.java": "/** Generated from shared model D4/northwind. Source: FR-CM-01 */\npublic class Shipper extends Company {\n}\n",
+  "Employee.java": "/** Generated from shared model D4/northwind. Source: FR-EM-01, FR-EM-02, FR-EM-03, FR-EM-04, FR-EM-05 */\npublic class Employee {\n    private java.lang.String firstName;\n    private java.lang.String lastName;\n    private java.lang.String jobTitle;\n    private java.lang.String phoneNumbers;\n    private java.lang.String privileges;\n\n    /** Operation. */\n    public void assignPrivilege() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removePrivilege() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Order.java": "/** Generated from shared model D4/northwind. Source: FR-SOP-01, FR-SOP-02, FR-SOP-03, FR-SOP-04, FR-SOP-05, FR-SOP-06, FR-SOP-07, FR-SOP-08, FR-SOP-09, FR-SOP-10 */\npublic class Order {\n    private java.time.LocalDate orderDate;\n    private java.lang.String customer;\n    private java.lang.String employee;\n    private java.lang.String status;\n    private java.lang.String shipper;\n    private double taxRate;\n    private java.lang.String taxStatus;\n    private java.time.LocalDate invoiceDate;\n    private java.lang.String paymentMethod;\n    private java.time.LocalDate paymentDate;\n    private java.lang.String orderDetails;\n    private OrderStatus orderStatus;\n\n    /** Operation. */\n    public void addOrderDetail() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removeOrderDetail() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "OrderDetailItem.java": "/** Generated from shared model D4/northwind. Source: FR-SOP-08, FR-SOP-09, FR-SOP-10 */\npublic class OrderDetailItem {\n    private java.lang.String product;\n    private int quantity;\n    private double unitPrice;\n    private double discount;\n    private java.lang.String status;\n    private Order order;\n}\n",
+  "Product.java": "/** Generated from shared model D4/northwind. Source: FR-PM-01, FR-PM-02, FR-PM-03, FR-PM-04, FR-PM-05, FR-PM-06, FR-PM-07 */\npublic class Product {\n    private java.lang.String code;\n    private java.lang.String name;\n    private java.lang.String description;\n    private java.lang.String category;\n    private double unitCost;\n    private double retailPrice;\n    private int inventoryLevel;\n    private int reorderLevel;\n    private int targetLevel;\n    private int minReorderQuantity;\n    private boolean discontinued;\n    private ProductCategory productCategory;\n    private java.util.List<Vendor> vendors;\n}\n",
+  "PurchaseOrder.java": "/** Generated from shared model D4/northwind. Source: FR-POP-01, FR-POP-02, FR-POP-03, FR-POP-04, FR-POP-05, FR-POP-06, FR-POP-07, FR-POP-08 */\npublic class PurchaseOrder {\n    private java.time.LocalDate orderDate;\n    private java.lang.String vendor;\n    private java.lang.String employee;\n    private java.lang.String approvedBy;\n    private java.lang.String status;\n    private java.lang.String purchaseOrderDetails;\n    private PurchaseOrderStatus purchaseOrderStatus;\n\n    /** Operation. */\n    public void addPurchaseOrderDetail() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removePurchaseOrderDetail() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "PurchaseOrderDetailItem.java": "/** Generated from shared model D4/northwind. Source: FR-POP-07, FR-POP-08 */\npublic class PurchaseOrderDetailItem {\n    private java.lang.String product;\n    private int quantity;\n    private double unitPrice;\n}\n",
+  "ProductCategory.java": "/** Generated from shared model D4/northwind. Source: FR-PM-06 */\npublic class ProductCategory {\n    private java.lang.String name;\n    private java.lang.String code;\n    private java.lang.String description;\n    private java.lang.String image;\n}\n",
+  "CompanyType.java": "/** Generated from shared model D4/northwind. Source: - */\npublic enum CompanyType {\n    CUSTOMER, VENDOR, SHIPPER\n}\n",
+  "OrderStatus.java": "/** Generated from shared model D4/northwind. Source: - */\npublic enum OrderStatus {\n    PENDING, PROCESSING, SHIPPED, DELIVERED, CANCELLED\n}\n",
+  "PurchaseOrderStatus.java": "/** Generated from shared model D4/northwind. Source: - */\npublic enum PurchaseOrderStatus {\n    PENDING, APPROVED, REJECTED, PROCESSED, CANCELLED\n}\n",
+  "OrderDetailStatus.java": "/** Generated from shared model D4/northwind. Source: - */\npublic enum OrderDetailStatus {\n    PENDING, PROCESSED, SHIPPED, DELIVERED, CANCELLED\n}\n"
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "actors": [
+  "parent"
+ ],
+ "use_cases": [
+  {
+   "name": "hasName",
+   "actor": "parent",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "startLine",
+    "endLine",
+    "parent"
+   ],
+   "methods": [
+    {
+     "name": "hasName",
+     "use_case": "hasName"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "children"
+   ],
+   "methods": [
+    {
+     "name": "addChild",
+     "use_case": "hasChildren"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "XmlFile",
+   "kind": "class",
+   "attributes": [
+    "root_element",
+    "text_elements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Element",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "python": "class Node:\n    def __init__(self, name, startLine, endLine, parent=None):\n        self.name = name\n        self.startLine = startLine\n        self.endLine = endLine\n        self.parent = parent\n    def hasName(self):\n        raise NotImplementedError\n\nclass Element:\n    def __init__(self):\n        self.children = []\n    def addChild(self, child):\n        self.children.append(child)\n\nclass XmlFile:\n    def __init__(self):\n        self.root_element = None\n        self.text_elements = []",
+ "java": {}
+}

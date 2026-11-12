@@ -1,0 +1,105 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Class",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "DataType",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasAttribute",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "ModelElement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "StructuralFeature",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Class",
+   "target": "Attribute",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "DataType",
+   "target": "Attribute",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Class",
+   "target": "StructuralFeature",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/MiningMart_ViewDataRepresentation.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Class:\n    \"\"\"Source: R4\"\"\"\n    name: _t.Optional[str] = None\n    attributes: _t.List[\"Attribute\"] = _dc.field(default_factory=list)\n    structuralFeature: _t.Optional[\"StructuralFeature\"] = None\n\n\n@_dc.dataclass\nclass Attribute:\n    \"\"\"Source: R6\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass DataType:\n    \"\"\"Source: R5\"\"\"\n    name: _t.Optional[str] = None\n    attribute: _t.Optional[\"Attribute\"] = None\n\n    def hasAttribute(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ModelElement:\n    \"\"\"Source: R1\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Classifier:\n    \"\"\"Source: R2\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass StructuralFeature:\n    \"\"\"Source: R3\"\"\"\n    pass\n",
+ "java": {
+  "Class.java": "/** Generated from shared model D2/MiningMart_ViewDataRepresentation. Source: R4 */\npublic class Class {\n    private java.lang.String name;\n    private java.util.List<Attribute> attributes;\n    private StructuralFeature structuralFeature;\n}\n",
+  "Attribute.java": "/** Generated from shared model D2/MiningMart_ViewDataRepresentation. Source: R6 */\npublic class Attribute {\n    private java.lang.String name;\n}\n",
+  "DataType.java": "/** Generated from shared model D2/MiningMart_ViewDataRepresentation. Source: R5 */\npublic class DataType {\n    private java.lang.String name;\n    private Attribute attribute;\n\n    /** Operation. */\n    public void hasAttribute() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ModelElement.java": "/** Generated from shared model D2/MiningMart_ViewDataRepresentation. Source: R1 */\npublic class ModelElement {\n}\n",
+  "Classifier.java": "/** Generated from shared model D2/MiningMart_ViewDataRepresentation. Source: R2 */\npublic class Classifier {\n    private java.lang.String name;\n}\n",
+  "StructuralFeature.java": "/** Generated from shared model D2/MiningMart_ViewDataRepresentation. Source: R3 */\npublic class StructuralFeature {\n}\n"
+ }
+}

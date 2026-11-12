@@ -1,0 +1,110 @@
+<html><head><meta charset='utf-8'><title>D2/Architectural_Description</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D2/Architectural_Description &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>R1: This model contains a package called &quot;Architectural description&quot; which contains a component called &quot;Architecture&quot;.
+R2: The package &quot;ArchitecturalDescription&quot; contain the component &quot;ArchitectureDescription&quot;
+R3: &quot;ArchitectureView&quot; is a component included in package &quot;ArchitecturalDescription&quot;
+R4: &quot;ArchitectureViewPoint&quot; is a component of the package &quot;ArchitecturalDescription&quot;
+R5: &quot;MainView&quot; is a component of the package &quot;ArchitecturalDescription&quot;
+R6: &quot;ArchitectureDescription&quot; package contains components called &quot;ModelElement&quot;.
+R7: The package &quot;Architectural Description&quot; includes a component named &quot;Architecture&quot; and a component called &quot;Architecture Description&quot;. An &quot;Architecture&quot; is described by exactly one &quot;Architecture Description&quot;. An &quot;Architecture Description&quot; does not know the &quot;Architecture&quot; it describes.
+R8: The packahe &quot;ArchitecturalDescription&quot; contains : component &quot;ArchitectureDescription&quot; and component &quot;ArchitectureView&quot;. An &quot;ArchitectureDescription&quot; selects one or more &quot;ArchitectureView&quot;.
+R9: Package &quot;ArchitecturalDescription&quot; contains component &quot;ArchitectureView&quot; which is selected by one or more &quot;ArchitectureDescription&quot; (another component).
+R10: The package &quot;Architecture Description&quot; contains two components. Component &quot;ArchitectureView&quot; conforms to one or more components &quot;ArchitectureViewPoint&quot;. An &quot;ArchitectureViewPoint&quot; does not know the &quot;ArchitectureView&quot; that conform to it.
+R11: In package &quot;ArchitecturalDescription&quot; there are several components, including &quot;ArchitectureViewPoint&quot; and &quot;MainView&quot;. The former defines exactly one latter.
+R12: a &quot;MainView&quot; is projected onto one or more &quot;ArchitectureView&quot;. Both components are in package &quot;ArchitecturalDescription&quot;</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (0 → 0)</th></tr></table></div>
+<div><table><tr><th>classes (8 → 6)</th></tr><tr><td class="">ArchitecturalDescription</td></tr><tr><td class="">Architecture</td></tr><tr><td class="">ArchitectureDescription</td></tr><tr><td class="">ArchitectureView</td></tr><tr><td class="">Architectureview</td></tr><tr><td class="del">Architectureviewpoint</td></tr><tr><td class="del">Component</td></tr><tr><td class="">MainView</td></tr></table></div>
+<div><table><tr><th>attributes (0 → 0)</th></tr></table></div>
+<div><table><tr><th>relations (8 → 3)</th></tr><tr><td class="">association: ArchitectureDescription -&gt; Architecture</td></tr><tr><td class="">association: ArchitectureDescription -&gt; Architectureview</td></tr><tr><td class="del">association: Architectureviewpoint -&gt; ArchitectureView</td></tr><tr><td class="del">generalization: ArchitectureView -&gt; Component</td></tr><tr><td class="del">generalization: Architectureviewpoint -&gt; Component</td></tr><tr><td class="del">generalization: MainView -&gt; Component</td></tr><tr><td class="">has: ArchitecturalDescription -&gt; ArchitectureView</td></tr><tr><td class="del">has: ArchitecturalDescription -&gt; Component</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>R7</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>An &#x27;Architecture Description&#x27; does not know the &#x27;Architecture&#x27; it describes.; An &#x27;Architecture Description&#x27; does not know the &#x27;Architecture View&#x27; it describes.<br><i>The sentence is ambiguous as it could refer to either an &#x27;Architecture&#x27; or an &#x27;Architecture View&#x27;.</i></td></tr>
+<tr><td>A2</td><td>R8</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>An &#x27;ArchitectureDescription&#x27; selects one &#x27;ArchitectureView&#x27;.; An &#x27;ArchitectureDescription&#x27; selects one or more &#x27;ArchitectureView&#x27;.<br><i>The sentence is ambiguous as it could mean selecting one or more &#x27;ArchitectureView&#x27;.</i></td></tr>
+<tr><td>A3</td><td>R9</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>Package &#x27;ArchitecturalDescription&#x27; contains one &#x27;ArchitectureView&#x27;.; Package &#x27;ArchitecturalDescription&#x27; contains one or more &#x27;ArchitectureView&#x27;.<br><i>The sentence is ambiguous as it could mean containing one or more &#x27;ArchitectureView&#x27;.</i></td></tr>
+<tr><td>A4</td><td>R10</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>Component &#x27;ArchitectureView&#x27; conforms to one &#x27;ArchitectureViewPoint&#x27;.; Component &#x27;ArchitectureView&#x27; conforms to one or more &#x27;ArchitectureViewPoint&#x27;.<br><i>The sentence is ambiguous as it could mean conforming to one or more &#x27;ArchitectureViewPoint&#x27;.</i></td></tr>
+<tr><td>A5</td><td>R10</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>An &#x27;ArchitectureViewPoint&#x27; does not know the &#x27;ArchitectureView&#x27; that conform to it.; An &#x27;ArchitectureViewPoint&#x27; does not know the &#x27;ArchitectureViewPoint&#x27; that conform to it.<br><i>The sentence is ambiguous as it could refer to either an &#x27;ArchitectureView&#x27; or an &#x27;ArchitectureViewPoint&#x27;.</i></td></tr>
+<tr><td>A6</td><td>R11</td><td>quantifier</td><td>several</td><td><span class='tag resolved'>resolved</span></td><td>In package &#x27;ArchitecturalDescription&#x27; there are several &#x27;ArchitectureViewPoint&#x27;.; In package &#x27;ArchitecturalDescription&#x27; there are several &#x27;Component&#x27;.; In package &#x27;ArchitecturalDescription&#x27; there are several &#x27;ArchitectureViewPoint&#x27; and &#x27;Component&#x27;.; In package &#x27;ArchitecturalDescription&#x27; there are several &#x27;ArchitectureView&#x27;.; In package &#x27;ArchitecturalDescription&#x27; there are several &#x27;MainView&#x27;.; In package &#x27;ArchitecturalDescription&#x27; there are several &#x27;ArchitectureViewPoint&#x27;, &#x27;Component&#x27;, &#x27;ArchitectureView&#x27;, and &#x27;MainView&#x27;.; In package &#x27;ArchitecturalDescription&#x27; there are several &#x27;ArchitectureViewPoint&#x27;, &#x27;Component&#x27;, and &#x27;MainView&#x27;.; In package &#x27;ArchitecturalDescription&#x27; there are several &#x27;ArchitectureView&#x27;, &#x27;MainView&#x27;.; In package &#x27;ArchitecturalDescription&#x27; there are several &#x27;ArchitectureViewPoint&#x27;, &#x27;Component&#x27;, &#x27;ArchitectureView&#x27;, &#x27;MainView&#x27;, and other components.<br><i>The sentence is ambiguous as it could refer to several &#x27;ArchitectureViewPoint&#x27;, &#x27;Component&#x27;, &#x27;ArchitectureView&#x27;, &#x27;MainView&#x27;, or a combination of these.</i></td></tr>
+<tr><td>A7</td><td>R12</td><td>actor</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>a &#x27;MainView&#x27; is projected onto one &#x27;ArchitectureView&#x27;.; a &#x27;MainView&#x27; is projected onto one or more &#x27;ArchitectureView&#x27;.; a &#x27;MainView&#x27; is projected onto several &#x27;ArchitectureView&#x27;.; a &#x27;MainView&#x27; is projected onto one or more &#x27;ArchitectureView&#x27; and &#x27;Component&#x27;.; a &#x27;MainView&#x27; is projected onto several &#x27;ArchitectureView&#x27; and &#x27;Component&#x27;.; a &#x27;MainView&#x27; is projected onto one or more &#x27;ArchitectureView&#x27; and &#x27;Component&#x27; and other views.; a &#x27;MainView&#x27; is projected onto several &#x27;ArchitectureView&#x27; and &#x27;Component&#x27; and other views.<br><i>The sentence is ambiguous as it could refer to one or more &#x27;ArchitectureView&#x27; and &#x27;Component&#x27;.</i></td></tr>
+<tr><td>A8</td><td>R12</td><td>actor</td><td>passive &#x27;projected&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>a &#x27;MainView&#x27; is projected onto one or more &#x27;ArchitectureView&#x27; by an actor.; a &#x27;MainView&#x27; is projected onto one or more &#x27;ArchitectureView&#x27; without an actor.; a &#x27;MainView&#x27; is projected onto one or more &#x27;ArchitectureView&#x27; by several actors.; a &#x27;MainView&#x27; is projected onto one or more &#x27;ArchitectureView&#x27; by an actor and other actors.; a &#x27;MainView&#x27; is projected onto one or more &#x27;ArchitectureView&#x27; by an actor and other actors and other views.; a &#x27;MainView&#x27; is projected onto one or more &#x27;ArchitectureView&#x27; by several actors and other actors.; a &#x27;MainView&#x27; is projected onto one or more &#x27;ArchitectureView&#x27; by several actors and other actors and other views.<br><i>The sentence is ambiguous as it could refer to the projection being done by an actor or without an actor.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D2_Architectural_Description_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D2_Architectural_Description_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D2/Architectural_Description.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class ArchitectureDescription:
+    &quot;&quot;&quot;Source: R7, R8, R9, R10, R11&quot;&quot;&quot;
+    architectureViews: _t.List[&quot;ArchitectureView&quot;] = _dc.field(default_factory=list)
+
+    def selectView(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def selectViewPoint(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def defineMainView(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class ArchitectureView:
+    &quot;&quot;&quot;Source: R7, R8, R9, R12&quot;&quot;&quot;
+
+    def conformToViewPoint(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def projectOntoMainView(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class MainView:
+    &quot;&quot;&quot;Source: R11, R12&quot;&quot;&quot;
+    architectureView: _t.Optional[&quot;ArchitectureView&quot;] = None
+
+    def defineViewPoint(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>0</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>0</td></tr>
+<tr><th>actors_without_use_case</th><td>0</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>0</td></tr>
+<tr><th>inconsistency_rate</th><td>0.0</td></tr>
+<tr><th>requirement_coverage</th><td>0.5</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;The class &#x27;ArchitectureView&#x27; is assumed to be part of the &#x27;ArchitecturalDescription&#x27; package, even though it is not explicitly mentioned in the requirements.&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>1.0</td><td>0.5</td><td>0.667</td><td>3/0/3</td></tr>
+<tr><td>attributes</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0/0/0</td></tr>
+<tr><td>relations</td><td>1.0</td><td>0.286</td><td>0.444</td><td>2/0/5</td></tr>
+<tr><td>relations_strict</td><td>1.0</td><td>0.286</td><td>0.444</td><td>2/0/5</td></tr>
+</table></body></html>

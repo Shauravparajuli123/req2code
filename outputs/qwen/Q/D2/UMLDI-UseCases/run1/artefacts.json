@@ -1,0 +1,179 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Instance",
+   "kind": "class",
+   "attributes": [
+    "classifiers",
+    "slots"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "AttributeLink",
+   "kind": "class",
+   "attributes": [
+    "instance",
+    "linkend"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Link",
+   "kind": "class",
+   "attributes": [
+    "association"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Linkend",
+   "kind": "class",
+   "attributes": [
+    "link",
+    "instance"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "ComponentInstance",
+   "kind": "class",
+   "attributes": [
+    "residents"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "NodeInstance",
+   "kind": "class",
+   "attributes": [
+    "componentinstances"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Instance",
+   "target": "Instance",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Instance",
+   "target": "Classifier",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Instance",
+   "target": "AttributeLink",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AttributeLink",
+   "target": "Instance",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AttributeLink",
+   "target": "Linkend",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Link",
+   "target": "Association",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Linkend",
+   "target": "Link",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Linkend",
+   "target": "Instance",
+   "multiplicity_target": "1",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ComponentInstance",
+   "target": "ComponentInstance",
+   "multiplicity_target": "1",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "NodeInstance",
+   "target": "ComponentInstance",
+   "multiplicity_target": "1",
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "python": "from typing import List, TypeVar, Generic\n\n# Define the types\nClassifier = TypeVar('Classifier')\nAssociation = TypeVar('Association')\nComponentInstance = TypeVar('ComponentInstance')\nLinkend = TypeVar('Linkend')\nNodeInstance = TypeVar('NodeInstance')\n\n# Define the classes\nclass Instance(Generic[Classifier, Linkend, Association, ComponentInstance, NodeInstance]):\n    def __init__(self):\n        self.classifiers: List[Classifier] = []\n        self.slots: List[AttributeLink] = []\n\n    def add_classifier(self, classifier: Classifier) -> None:\n        raise NotImplementedError\n\n    def add_slot(self, slot: AttributeLink) -> None:\n        raise NotImplementedError\n\n    def get_classifiers(self) -> List[Classifier]:\n        raise NotImplementedError\n\n    def get_slots(self) -> List[AttributeLink]:\n        raise NotImplementedError\n\nclass AttributeLink(Generic[Instance, Linkend]):\n    def __init__(self):\n        self.instance: Instance = None\n        self.linkend: Linkend = None\n\n    def set_instance(self, instance: Instance) -> None:\n        raise NotImplementedError\n\n    def set_linkend(self, linkend: Linkend) -> None:\n        raise NotImplementedError\n\n    def get_instance(self) -> Instance:\n        raise NotImplementedError\n\n    def get_linkend(self) -> Linkend:\n        raise NotImplementedError\n\nclass Link(Generic[Association]):\n    def __init__(self):\n        self.association: Association = None\n\n    def set_association(self, association: Association) -> None:\n        raise NotImplementedError\n\n    def get_association(self) -> Association:\n        raise NotImplementedError\n\nclass Linkend(Generic[Link, Instance]):\n    def __init__(self):\n        self.link: Link = None\n        self.instance: Instance = None\n\n    def set_link(self, link: Link) -> None:\n        raise NotImplementedError\n\n    def set_instance(self, instance: Instance) -> None:\n        raise NotImplementedError\n\n    def get_link(self) -> Link:\n        raise NotImplementedError\n\n    def get_instance(self) -> Instance:\n        raise NotImplementedError\n\nclass ComponentInstance(Generic[ComponentInstance]):\n    def __init__(self):\n        self.residents: List[ComponentInstance] = []\n\n    def add_resident(self, resident: ComponentInstance) -> None:\n        raise NotImplementedError\n\n    def get_residents(self) -> List[ComponentInstance]:\n        raise NotImplementedError\n\nclass NodeInstance(Generic[ComponentInstance]):\n    def __init__(self):\n        self.componentinstances: List[ComponentInstance] = []\n\n    def add_componentinstance(self, componentinstance: ComponentInstance) -> None:\n        raise NotImplementedError\n\n    def get_componentinstances(self) -> List[ComponentInstance]:\n        raise NotImplementedError",
+ "java": {}
+}

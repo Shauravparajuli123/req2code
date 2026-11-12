@@ -1,0 +1,57 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  name : String
+  email : String
+  password : String
+  language : String
+  pushNotifications : boolean
+  newsletterSubscription : boolean
+  defaultStore : String
+  loyaltyCard : String
+  +createAccount()
+  +signUpForNewsletter()
+  +unsubscribeFromNewsletter()
+  +activatePushNotification()
+  +deactivatePushNotification()
+  +resetPassword()
+  +changeFontSize()
+  +changeContrast()
+  +changeLanguage()
+  +receiveSuggestion()
+  +receiveDiscount()
+  +getRecipe()
+  +contactCustomerService()
+  +scanProduct()
+  +searchProduct()
+  +filterProduct()
+  +orderProduct()
+  +orderProductByPopularity()
+  +orderProductByPrice()
+  +notifyProduct()
+  +notifyItem()
+  +notifyDiscount()
+  +notifySale()
+  +readProductInformation()
+  +seeProduct()
+  +seeQuantity()
+  +seeOrderHistory()
+  +placeOrder()
+  +addProductToWishlist()
+  +addProductToOrder()
+  +payGrocery()
+  +findLocation()
+  +getRecommendation()
+  +changeSelection()
+  +linkLoyaltyCard()
+}
+class Employee {
+  +updateApplication()
+  +editDiscount()
+  +confirmDeliveryTime()
+  +notifyCustomerOfDelay()
+  +contactCustomer()
+  +provideNewDeliveryTime()
+}
+@enduml

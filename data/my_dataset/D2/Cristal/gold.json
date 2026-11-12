@@ -1,0 +1,124 @@
+{
+ "classes": [
+  {
+   "name": "Condition",
+   "kind": "class"
+  },
+  {
+   "name": "CompositeParDef",
+   "kind": "class"
+  },
+  {
+   "name": "ElementaryPartDef",
+   "kind": "class"
+  },
+  {
+   "name": "ElementaryActDef",
+   "kind": "class"
+  },
+  {
+   "name": "CompositeActDef",
+   "kind": "class"
+  },
+  {
+   "name": "ActCompositeMember",
+   "kind": "class"
+  },
+  {
+   "name": "ActivityDefinition",
+   "kind": "class"
+  },
+  {
+   "name": "PartDefinition",
+   "kind": "class"
+  },
+  {
+   "name": "PartCompositeMember",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Condition": [],
+  "CompositeParDef": [],
+  "ElementaryPartDef": [],
+  "ElementaryActDef": [],
+  "CompositeActDef": [],
+  "ActCompositeMember": [],
+  "ActivityDefinition": [],
+  "PartDefinition": [],
+  "PartCompositeMember": []
+ },
+ "relations": [
+  {
+   "type": "association",
+   "from": "Condition",
+   "to": "PartCompositeMember",
+   "label": "partCompositeMembers 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Condition",
+   "to": "ActCompositeMember",
+   "label": "actCompositeMembers 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "CompositeParDef",
+   "to": "PartDefinition",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "CompositeParDef",
+   "to": "PartCompositeMember",
+   "label": "partCompositeMember 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ElementaryPartDef",
+   "to": "PartDefinition",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "ElementaryActDef",
+   "to": "ActivityDefinition",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "CompositeActDef",
+   "to": "ActivityDefinition",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "CompositeActDef",
+   "to": "ActCompositeMember",
+   "label": "actCompositeMembers 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "ActCompositeMember",
+   "to": "ActivityDefinition",
+   "label": "activityDefinitions 0..*",
+   "label_to": "actCompositeMember 1..1"
+  },
+  {
+   "type": "association",
+   "from": "PartDefinition",
+   "to": "PartCompositeMember",
+   "label": "partCompositeMembers 0..*",
+   "label_to": "partDefinitions 1..1"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage Cristal {\nclass Condition {\n}\nCondition \"partCompositeMembers 0..*\" --> PartCompositeMember\nCondition \"actCompositeMembers 0..*\" --> ActCompositeMember\nclass CompositeParDef {\n}\nPartDefinition <|-- CompositeParDef\nCompositeParDef \"partCompositeMember 0..*\" *--> PartCompositeMember\nclass ElementaryPartDef {\n}\nPartDefinition <|-- ElementaryPartDef\nclass ElementaryActDef {\n}\nActivityDefinition <|-- ElementaryActDef\nclass CompositeActDef {\n}\nActivityDefinition <|-- CompositeActDef\nCompositeActDef \"actCompositeMembers 0..*\" *--> ActCompositeMember\nclass ActCompositeMember {\n}\nActCompositeMember \"activityDefinitions 0..*\" -- \"actCompositeMember 1..1\" ActivityDefinition\nclass ActivityDefinition {\n}\nclass PartDefinition {\n}\nPartDefinition \"partCompositeMembers 0..*\" -- \"partDefinitions 1..1\" PartCompositeMember\nclass PartCompositeMember {\n}\n}\n@enduml\n"
+}

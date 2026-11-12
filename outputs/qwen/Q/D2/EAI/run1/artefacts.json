@@ -1,0 +1,85 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "FCMSource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "EAISource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "EAIQueue",
+   "kind": "class",
+   "attributes": [
+    "maxLength"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "EAIResource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "FCMSink",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "EAISink",
+   "kind": "class",
+   "attributes": [
+    "resources"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "EAISink",
+   "target": "EAIResource",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass FCMSource:\n    def __init__(self):\n        pass\n    def method(self):\n        raise NotImplementedError\n\nclass EAISource(FCMSource):\n    def __init__(self):\n        super().__init__()\n    def method(self):\n        raise NotImplementedError\n\nclass EAIQueue:\n    def __init__(self, max_length: int):\n        self.max_length = max_length\n    def method(self):\n        raise NotImplementedError\n\nclass EAIResource:\n    def __init__(self):\n        pass\n    def method(self):\n        raise NotImplementedError\n\nclass FCMSink:\n    def __init__(self):\n        pass\n    def method(self):\n        raise NotImplementedError\n\nclass EAISink(FCMSink):\n    def __init__(self, resources: List[EAIResource] = None):\n        self.resources = resources if resources else []\n    def method(self):\n        raise NotImplementedError",
+ "java": {}
+}

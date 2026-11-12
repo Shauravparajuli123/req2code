@@ -1,0 +1,305 @@
+<html><head><meta charset='utf-8'><title>D4/northwind</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D4/northwind &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>FR-CM-01: The system shall maintain records of external organizations classified as either Customers, Vendors, or Shippers.
+FR-CM-02: The system shall maintain the hierarchical relationship where Customers, Vendors, and Shippers are separate entities inheriting from Companies.
+FR-CM-03: The system shall record Company information including name, phone number, address details, state, zip code and website.
+FR-CM-04: The system shall assign each Company to exactly one company type.
+FR-CM-05: The system shall associate each company with exactly one geographic state.
+FR-CM-06: The system shall assign a standard Tax Status to each company.
+FR-CM-07: The system shall allow multiple Contacts to be associated with a single company.
+FR-CM-08: The system shall maintain Contacts including first name, last name, primary and secondary phone numbers, email address, job title, and notes for each company contact.
+FR-EM-01: The system shall maintain Employee records with personal information (first and last name, primary/secondary phone numbers) and professional information (job title, email).
+FR-EM-02: The system shall assign exactly one Title to each employee.
+FR-EM-03: The system shall support a hierarchical reporting structure where employees may report to one supervisor.
+FR-EM-04: The system shall allow one supervisor to manage multiple Employees.
+FR-EM-05: The system shall allow Employees to be assigned multiple privileges.
+FR-PM-01: The system shall maintain a Product catalog with product codes, names, descriptions, and pricing information.
+FR-PM-02: The system shall assign each product to exactly one Product Category.
+FR-PM-03: The system shall track standard unit cost and retail unit price for each product.
+FR-PM-04: The system shall monitor inventory levels including reorder level, target level, and minimum reorder quantity for each product.
+FR-PM-05: The system shall support marking products as discontinued.
+FR-PM-06: The system shall maintain Product Categories with names, codes, descriptions, and optional images.
+FR-PM-07: The system shall allow multiple Products to be supplied by multiple Vendors.
+FR-IM-01: The system shall support periodic Stock Takes to record and verify product inventory.
+FR-IM-02: The system shall record Stock Take information including date, product, quantity on hand, and expected quantity.
+FR-IM-03: The system shall calculate inventory discrepancies between expected and actual counts.
+FR-SOP-01: The system shall record Customer Orders with dates, customer information, and shipping details.
+FR-SOP-02: The system shall enforce that each Order must be associated with exactly one Customer.
+FR-SOP-03: The system shall assign each Order to exactly one Employee who processes it.
+FR-SOP-04: The system shall track the Order Status using predefined order status values.
+FR-SOP-05: The system shall assign exactly one Shipper to each Order.
+FR-SOP-06: The system shall calculate and record tax information including tax rate and Tax Status for each order.
+FR-SOP-07: The system shall record invoice date, payment method, and payment date for financial reconciliation.
+FR-SOP-08: The system shall require each Order to contain one or more Order Detail items.
+FR-SOP-09: The system shall track product, quantity, unit price, and discount for each Order Detail item.
+FR-SOP-10: The system shall assign a Status to each Order Detail item using predefined status values.
+FR-POP-01: The system shall manage Purchase Orders for acquiring products from Vendors.
+FR-POP-02: The system shall enforce that each Purchase Order must be associated with exactly one Vendor.
+FR-POP-03: The system shall record which Employee submitted each Purchase Order.
+FR-POP-04: The system shall record which Employee approved each Purchase Order.
+FR-POP-05: The system shall track the status of each Purchase Order using predefined Purchase Order Status values.
+FR-POP-06: The system shall record the order date for each Purchase Order.
+FR-POP-07: The system shall require each Purchase Order to contain one or more Purchase Order Detail items.
+FR-POP-08: The system shall track product, quantity, and unit price for each Purchase Order Detail item.
+FR-DA-01: The system shall record which Employee added each record and when it was added.
+FR-DA-02: The system shall record which Employee last modified each record and when it was modified.</pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (2 → 1)</th></tr><tr><td class="">customer</td></tr><tr><td class="del">employee</td></tr></table></div>
+<div><table><tr><th>classes (23 → 17)</th></tr><tr><td class="">Company</td></tr><tr><td class="">Contact</td></tr><tr><td class="">Customer</td></tr><tr><td class="del">Customers</td></tr><tr><td class="">Date</td></tr><tr><td class="">Employee</td></tr><tr><td class="del">Entity</td></tr><tr><td class="">JobTitle</td></tr><tr><td class="">Order</td></tr><tr><td class="">OrderDetailItem</td></tr><tr><td class="">PhoneNumber</td></tr><tr><td class="">Product</td></tr><tr><td class="">PurchaseOrder</td></tr><tr><td class="">PurchaseOrderDetailItem</td></tr><tr><td class="">Quantity</td></tr><tr><td class="">Record</td></tr><tr><td class="del">Shippers</td></tr><tr><td class="">State</td></tr><tr><td class="del">Supervisor</td></tr><tr><td class="del">TaxStatus</td></tr><tr><td class="">UnitPrice</td></tr><tr><td class="del">Vendor</td></tr><tr><td class="">Vendors</td></tr></table></div>
+<div><table><tr><th>attributes (1 → 1)</th></tr><tr><td class="">PurchaseOrder.status</td></tr></table></div>
+<div><table><tr><th>relations (8 → 5)</th></tr><tr><td class="">association: Contact -&gt; Company</td></tr><tr><td class="">association: Employee -&gt; PurchaseOrder</td></tr><tr><td class="">association: Employee -&gt; Record</td></tr><tr><td class="del">association: Employee -&gt; Supervisor</td></tr><tr><td class="">association: Order -&gt; Customer</td></tr><tr><td class="del">association: PurchaseOrder -&gt; Vendor</td></tr><tr><td class="del">generalization: Customers -&gt; Entity</td></tr><tr><td class="del">generalization: Shippers -&gt; Entity</td></tr><tr><td class="add">association: PurchaseOrder -&gt; Company</td></tr></table></div>
+</div>
+<p>Enumerations added: Privilege {Read, Write, Admin}; TaxStatus {Exempt, Non-Exempt}</p>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>FR-CM-01</td><td>coordination</td><td>either/or</td><td><span class='tag resolved'>resolved</span></td><td>Customers, Vendors, or Shippers are mutually exclusive; Customers, Vendors, or Shippers are not mutually exclusive<br><i>The use of &#x27;either/or&#x27; suggests mutual exclusivity, but the context of the system might allow for overlap.</i></td></tr>
+<tr><td>A2</td><td>FR-CM-03</td><td>incompleteness</td><td>information</td><td><span class='tag resolved'>resolved</span></td><td>The system shall record Company information including name, phone number, address details, state, zip code and website; The system shall record Company information including name, phone number, address details, state, zip code, and website<br><i>The requirement is incomplete as it does not specify whether &#x27;website&#x27; is included or not.</i></td></tr>
+<tr><td>A3</td><td>FR-CM-07</td><td>quantifier</td><td>multiple</td><td><span class='tag resolved'>resolved</span></td><td>A single company can have multiple Contacts; A single company can have only one Contact<br><i>The use of &#x27;multiple&#x27; suggests that a company can have more than one contact, but the context might imply exclusivity.</i></td></tr>
+<tr><td>A4</td><td>FR-CM-08</td><td>coordination</td><td>modifier scope: name</td><td><span class='tag resolved'>resolved</span></td><td>The system shall maintain Contacts including first name, last name, primary and secondary phone numbers, email address, job title, and notes for each company contact; The system shall maintain Contacts including first name, last name, primary and secondary phone numbers, email address, job title, and notes for each company contact, but not for each company<br><i>The requirement is unclear whether the details are for each company contact or for each company.</i></td></tr>
+<tr><td>A5</td><td>FR-EM-01</td><td>coordination</td><td>modifier scope: name</td><td><span class='tag resolved'>resolved</span></td><td>The system shall maintain Employee records with personal information (first and last name, primary/secondary phone numbers) and professional information (job title, email); The system shall maintain Employee records with personal information (first and last name, primary/secondary phone numbers) and professional information (job title, email) for each company<br><i>The requirement is unclear whether the information is for each employee or for each company.</i></td></tr>
+<tr><td>A7</td><td>FR-EM-04</td><td>quantifier</td><td>multiple</td><td><span class='tag resolved'>resolved</span></td><td>One supervisor can manage multiple Employees; One supervisor can manage only one Employee<br><i>The use of &#x27;multiple&#x27; suggests that a supervisor can manage more than one employee, but the context might imply exclusivity.</i></td></tr>
+<tr><td>A8</td><td>FR-EM-05</td><td>quantifier</td><td>multiple</td><td><span class='tag resolved'>resolved</span></td><td>Employees can be assigned multiple privileges; Employees can be assigned only one privilege<br><i>The use of &#x27;multiple&#x27; suggests that an employee can have more than one privilege, but the context might imply exclusivity.</i></td></tr>
+<tr><td>A9</td><td>FR-PM-01</td><td>incompleteness</td><td>information</td><td><span class='tag resolved'>resolved</span></td><td>The system shall maintain a Product catalog with product codes, names, descriptions, and pricing information; The system shall maintain a Product catalog with product codes, names, descriptions, pricing information, and additional details<br><i>The requirement is incomplete as it does not specify whether additional details are included or not.</i></td></tr>
+<tr><td>A10</td><td>FR-PM-07</td><td>quantifier</td><td>multiple</td><td><span class='tag resolved'>resolved</span></td><td>Multiple Products can be supplied by multiple Vendors; Multiple Products can be supplied by only one Vendor<br><i>The use of &#x27;multiple&#x27; suggests that multiple products can be supplied by multiple vendors, but the context might imply exclusivity.</i></td></tr>
+<tr><td>A11</td><td>FR-IM-02</td><td>incompleteness</td><td>information</td><td><span class='tag resolved'>resolved</span></td><td>The system shall record Stock Take information including date, product, quantity on hand, and expected quantity; The system shall record Stock Take information including date, product, quantity on hand, expected quantity, and additional details<br><i>The requirement is incomplete as it does not specify whether additional details are included or not.</i></td></tr>
+<tr><td>A12</td><td>FR-SOP-01</td><td>incompleteness</td><td>information</td><td><span class='tag resolved'>resolved</span></td><td>The system shall record Customer Orders with dates, customer information, and shipping details; The system shall record Customer Orders with dates, customer information, shipping details, and additional details<br><i>The requirement is incomplete as it does not specify whether additional details are included or not.</i></td></tr>
+<tr><td>A13</td><td>FR-SOP-06</td><td>incompleteness</td><td>information</td><td><span class='tag resolved'>resolved</span></td><td>The system shall calculate and record tax information including tax rate and Tax Status for each order; The system shall calculate and record tax information including tax rate, Tax Status, and additional details for each order<br><i>The requirement is incomplete as it does not specify whether additional details are included or not.</i></td></tr>
+<tr><td>A14</td><td>FR-SOP-08</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>Each Order must contain one or more Order Detail items; Each Order can contain zero or more Order Detail items<br><i>The use of &#x27;one or more&#x27; suggests that an order must contain at least one detail item, but the context might imply that an order can be empty.</i></td></tr>
+<tr><td>A15</td><td>FR-POP-07</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>Each Purchase Order must contain one or more Purchase Order Detail items; Each Purchase Order can contain zero or more Purchase Order Detail items<br><i>The use of &#x27;one or more&#x27; suggests that a purchase order must contain at least one detail item, but the context might imply that a purchase order can be empty.</i></td></tr>
+<tr><td>A16</td><td>FR-DA-01</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>The system shall record which Employee added each record and when it was added; The system shall record which Employee last modified each record and when it was modified<br><i>The use of &#x27;added&#x27; and &#x27;modified&#x27; suggests that the system records the addition and modification of records, but the context might imply that only one of these actions is recorded.</i></td></tr>
+<tr><td>A17</td><td>FR-DA-01</td><td>actor</td><td>passive &#x27;added&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>The system shall record which Employee added each record and when it was added; The system shall record which Employee last modified each record and when it was modified<br><i>The use of &#x27;added&#x27; and &#x27;modified&#x27; suggests that the system records the addition and modification of records, but the context might imply that only one of these actions is recorded.</i></td></tr>
+<tr><td>A18</td><td>FR-DA-02</td><td>actor</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>The system shall record which Employee added each record and when it was added; The system shall record which Employee last modified each record and when it was modified<br><i>The use of &#x27;added&#x27; and &#x27;modified&#x27; suggests that the system records the addition and modification of records, but the context might imply that only one of these actions is recorded.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D4_northwind_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D4_northwind_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D4/northwind.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Company:
+    &quot;&quot;&quot;Source: FR-CM-01, FR-CM-02, FR-CM-03, FR-CM-04, FR-CM-05, FR-CM-06&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    phoneNumber: _t.Optional[str] = None
+    address: _t.Optional[str] = None
+    state: _t.Optional[str] = None
+    zipCode: _t.Optional[str] = None
+    website: _t.Optional[str] = None
+    companyType: _t.Optional[str] = None
+    taxStatus: _t.Optional[str] = None
+    contacts: _t.Optional[str] = None
+    contact: _t.Optional[&quot;Contact&quot;] = None
+
+    def addContact(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def removeContact(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Contact:
+    &quot;&quot;&quot;Source: FR-CM-07&quot;&quot;&quot;
+    firstName: _t.Optional[str] = None
+    lastName: _t.Optional[str] = None
+    primaryPhoneNumber: _t.Optional[str] = None
+    secondaryPhoneNumber: _t.Optional[str] = None
+    email: _t.Optional[str] = None
+    jobTitle: _t.Optional[str] = None
+    notes: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class Customer(Company):
+    &quot;&quot;&quot;Source: FR-CM-01&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class Vendor(Company):
+    &quot;&quot;&quot;Source: FR-CM-01&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class Shipper(Company):
+    &quot;&quot;&quot;Source: FR-CM-01&quot;&quot;&quot;
+    pass
+
+
+@_dc.dataclass
+class Employee:
+    &quot;&quot;&quot;Source: FR-EM-01, FR-EM-02, FR-EM-03, FR-EM-04, FR-EM-05&quot;&quot;&quot;
+    firstName: _t.Optional[str] = None
+    lastName: _t.Optional[str] = None
+    jobTitle: _t.Optional[str] = None
+    phoneNumbers: _t.Optional[str] = None
+    privileges: _t.Optional[str] = None
+
+    def assignPrivilege(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def removePrivilege(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Order:
+    &quot;&quot;&quot;Source: FR-SOP-01, FR-SOP-02, FR-SOP-03, FR-SOP-04, FR-SOP-05, FR-SOP-06, FR-SOP-07, FR-SOP-08, FR-SOP-09, FR-SOP-10&quot;&quot;&quot;
+    orderDate: _t.Optional[str] = None
+    customer: _t.Optional[str] = None
+    employee: _t.Optional[str] = None
+    status: _t.Optional[str] = None
+    shipper: _t.Optional[str] = None
+    taxRate: _t.Optional[float] = None
+    taxStatus: _t.Optional[str] = None
+    invoiceDate: _t.Optional[str] = None
+    paymentMethod: _t.Optional[str] = None
+    paymentDate: _t.Optional[str] = None
+    orderDetails: _t.Optional[str] = None
+    orderStatus: _t.Optional[&quot;OrderStatus&quot;] = None
+
+    def addOrderDetail(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def removeOrderDetail(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class OrderDetailItem:
+    &quot;&quot;&quot;Source: FR-SOP-08, FR-SOP-09, FR-SOP-10&quot;&quot;&quot;
+    product: _t.Optional[str] = None
+    quantity: _t.Optional[int] = None
+    unitPrice: _t.Optional[float] = None
+    discount: _t.Optional[float] = None
+    status: _t.Optional[str] = None
+    order: _t.Optional[&quot;Order&quot;] = None
+
+
+@_dc.dataclass
+class Product:
+    &quot;&quot;&quot;Source: FR-PM-01, FR-PM-02, FR-PM-03, FR-PM-04, FR-PM-05, FR-PM-06, FR-PM-07&quot;&quot;&quot;
+    code: _t.Optional[str] = None
+    name: _t.Optional[str] = None
+    description: _t.Optional[str] = None
+    category: _t.Optional[str] = None
+    unitCost: _t.Optional[float] = None
+    retailPrice: _t.Optional[float] = None
+    inventoryLevel: _t.Optional[int] = None
+    reorderLevel: _t.Optional[int] = None
+    targetLevel: _t.Optional[int] = None
+    minReorderQuantity: _t.Optional[int] = None
+    discontinued: _t.Optional[bool] = None
+    productCategory: _t.Optional[&quot;ProductCategory&quot;] = None
+    vendors: _t.List[&quot;Vendor&quot;] = _dc.field(default_factory=list)
+
+
+@_dc.dataclass
+class PurchaseOrder:
+    &quot;&quot;&quot;Source: FR-POP-01, FR-POP-02, FR-POP-03, FR-POP-04, FR-POP-05, FR-POP-06, FR-POP-07, FR-POP-08&quot;&quot;&quot;
+    orderDate: _t.Optional[str] = None
+    vendor: _t.Optional[str] = None
+    employee: _t.Optional[str] = None
+    approvedBy: _t.Optional[str] = None
+    status: _t.Optional[str] = None
+    purchaseOrderDetails: _t.Optional[str] = None
+    purchaseOrderStatus: _t.Optional[&quot;PurchaseOrderStatus&quot;] = None
+
+    def addPurchaseOrderDetail(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def removePurchaseOrderDetail(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class PurchaseOrderDetailItem:
+    &quot;&quot;&quot;Source: FR-POP-07, FR-POP-08&quot;&quot;&quot;
+    product: _t.Optional[str] = None
+    quantity: _t.Optional[int] = None
+    unitPrice: _t.Optional[float] = None
+
+
+@_dc.dataclass
+class ProductCategory:
+    &quot;&quot;&quot;Source: FR-PM-06&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    code: _t.Optional[str] = None
+    description: _t.Optional[str] = None
+    image: _t.Optional[str] = None
+
+
+class CompanyType(_enum.Enum):
+    &quot;&quot;&quot;Source: -&quot;&quot;&quot;
+    CUSTOMER = &quot;CUSTOMER&quot;
+    VENDOR = &quot;VENDOR&quot;
+    SHIPPER = &quot;SHIPPER&quot;
+
+
+class OrderStatus(_enum.Enum):
+    &quot;&quot;&quot;Source: -&quot;&quot;&quot;
+    PENDING = &quot;PENDING&quot;
+    PROCESSING = &quot;PROCESSING&quot;
+    SHIPPED = &quot;SHIPPED&quot;
+    DELIVERED = &quot;DELIVERED&quot;
+    CANCELLED = &quot;CANCELLED&quot;
+
+
+class PurchaseOrderStatus(_enum.Enum):
+    &quot;&quot;&quot;Source: -&quot;&quot;&quot;
+    PENDING = &quot;PENDING&quot;
+    APPROVED = &quot;APPROVED&quot;
+    REJECTED = &quot;REJECTED&quot;
+    PROCESSED = &quot;PROCESSED&quot;
+    CANCELLED = &quot;CANCELLED&quot;
+
+
+class OrderDetailStatus(_enum.Enum):
+    &quot;&quot;&quot;Source: -&quot;&quot;&quot;
+    PENDING = &quot;PENDING&quot;
+    PROCESSED = &quot;PROCESSED&quot;
+    SHIPPED = &quot;SHIPPED&quot;
+    DELIVERED = &quot;DELIVERED&quot;
+    CANCELLED = &quot;CANCELLED&quot;
+</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>0</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>0</td></tr>
+<tr><th>actors_without_use_case</th><td>1</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>1</td></tr>
+<tr><th>inconsistency_rate</th><td>0.0588</td></tr>
+<tr><th>requirement_coverage</th><td>0.8605</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;The model assumes that the Order class has an attribute for customer, employee, and shipper, and the PurchaseOrder class has an attribute for vendor, employee, and status, based on the use cases provided.&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>classes</td><td>0.5</td><td>0.381</td><td>0.432</td><td>8/8/13</td></tr>
+<tr><td>attributes</td><td>0.372</td><td>0.216</td><td>0.274</td><td>16/27/58</td></tr>
+<tr><td>relations</td><td>0.533</td><td>0.308</td><td>0.39</td><td>8/7/18</td></tr>
+</table></body></html>

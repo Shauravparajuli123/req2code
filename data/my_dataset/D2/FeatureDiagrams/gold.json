@@ -1,0 +1,147 @@
+{
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class"
+  },
+  {
+   "name": "Attribute",
+   "kind": "class"
+  },
+  {
+   "name": "Root",
+   "kind": "class"
+  },
+  {
+   "name": "Child",
+   "kind": "class"
+  },
+  {
+   "name": "XORGroup",
+   "kind": "class"
+  },
+  {
+   "name": "ORGroup",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Node": [
+   {
+    "name": "description",
+    "type": "String"
+   },
+   {
+    "name": "preliminary",
+    "type": "Boolean"
+   },
+   {
+    "name": "object",
+    "type": "String"
+   }
+  ],
+  "Attribute": [
+   {
+    "name": "description",
+    "type": "String"
+   },
+   {
+    "name": "editable",
+    "type": "Boolean"
+   },
+   {
+    "name": "key",
+    "type": "Boolean"
+   },
+   {
+    "name": "value",
+    "type": "String"
+   },
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Root": [],
+  "Child": [],
+  "XORGroup": [
+   {
+    "name": "preliminary",
+    "type": "Boolean"
+   },
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "ORGroup": [
+   {
+    "name": "preliminary",
+    "type": "Boolean"
+   },
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ]
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Node",
+   "to": "Attribute",
+   "label": "attributes 0..*",
+   "label_to": "node 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Node",
+   "to": "ORGroup",
+   "label": "no_dst 0..*",
+   "label_to": "no_src 0..*"
+  },
+  {
+   "type": "association",
+   "from": "Node",
+   "to": "XORGroup",
+   "label": "nx_dst 0..*",
+   "label_to": "nx_src 0..*"
+  },
+  {
+   "type": "association",
+   "from": "Node",
+   "to": "Child",
+   "label": "cn_dst 0..*",
+   "label_to": "cn_src 0..*"
+  },
+  {
+   "type": "generalization",
+   "from": "Root",
+   "to": "Node",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Child",
+   "to": "Node",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Child",
+   "to": "XORGroup",
+   "label": "cx_src 0..*",
+   "label_to": "cx_dst 0..*"
+  },
+  {
+   "type": "association",
+   "from": "Child",
+   "to": "ORGroup",
+   "label": "co_src 0..*",
+   "label_to": "co_dst 0..*"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage FeatureDiagrams {\nclass Node {\n\t description : String\n\t preliminary : Boolean\n\t object : String\n}\nNode \"attributes 0..*\" *-- \"node 1..1\" Attribute\nNode \"no_dst 0..*\" -- \"no_src 0..*\" ORGroup\nNode \"nx_dst 0..*\" -- \"nx_src 0..*\" XORGroup\nNode \"cn_dst 0..*\" -- \"cn_src 0..*\" Child\nclass Attribute {\n\t description : String\n\t editable : Boolean\n\t key : Boolean\n\t value : String\n\t name : String\n}\nclass Root {\n}\nNode <|-- Root\nclass Child {\n}\nNode <|-- Child\nChild \"cx_src 0..*\" -- \"cx_dst 0..*\" XORGroup\nChild \"co_src 0..*\" -- \"co_dst 0..*\" ORGroup\nclass XORGroup {\n\t preliminary : Boolean\n\t name : String\n}\nclass ORGroup {\n\t preliminary : Boolean\n\t name : String\n}\n}\n@enduml\n"
+}

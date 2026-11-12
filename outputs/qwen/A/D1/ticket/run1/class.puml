@@ -1,0 +1,65 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  dateOfBirth : LocalDate
+  email : String
+  address : String
+  preferences : String
+  paymentDetails : String
+  password : String
+  favoriteArtists : String
+  favoriteEvents : String
+  ticketHistory : String
+  profileSurvey : String
+  +createProfile()
+  +viewPersonalInformation()
+  +editPersonalInformation()
+  +viewTicketHistory()
+  +viewUpcomingEvents()
+  +favoriteEventsOrArtists()
+  +searchForEvents()
+  +buyTickets()
+  +resellTickets()
+  +viewEventInformation()
+}
+class Event {
+  name : String
+  date : LocalDate
+  location : String
+  artist : String
+  type : String
+  price : double
+  venue : String
+  genre : String
+  ticketType : String
+  seats : String
+  description : String
+  +viewEventInformation()
+  +searchForEvents()
+  +buyTickets()
+  +resellTickets()
+  +viewEventPage()
+}
+class Ticket {
+  type : String
+  price : double
+  seat : String
+  event : String
+  +addTicketToCart()
+  +viewOrderSummary()
+  +viewPaymentMethods()
+}
+class Reseller {
+  name : String
+  bankAccount : String
+  +resellTickets()
+  +uploadTicket()
+  +setTicketPrice()
+  +addDescription()
+}
+User "1" -- "0..*" Ticket : buys
+Event "1" -- "0..*" Ticket : has
+Reseller "1" -- "0..*" Ticket : sells
+@enduml

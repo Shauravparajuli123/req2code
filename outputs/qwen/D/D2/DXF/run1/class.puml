@@ -1,0 +1,20 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Mesh {
+  name : String
+  points : String
+  +addPoint()
+}
+class Point {
+  name : String
+  x : double
+  z : double
+  mesh : String
+}
+class DrawingInterchangeModel {
+  meshes : String
+}
+DrawingInterchangeModel "1" -- "0..*" Mesh : has
+Mesh "0..*" -- "1" Point : contains
+@enduml

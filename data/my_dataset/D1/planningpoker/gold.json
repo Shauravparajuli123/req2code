@@ -1,0 +1,360 @@
+{
+ "classes": [
+  {
+   "name": "estimators",
+   "status": "mandatory"
+  },
+  {
+   "name": "round",
+   "status": "mandatory"
+  },
+  {
+   "name": "game",
+   "status": "mandatory"
+  },
+  {
+   "name": "item",
+   "status": "mandatory"
+  },
+  {
+   "name": "card",
+   "status": "mandatory"
+  },
+  {
+   "name": "estimate",
+   "status": "mandatory"
+  }
+ ],
+ "associations": [
+  {
+   "pair": [
+    "game",
+    "round"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "estim",
+    "item"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "item",
+    "round"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "game",
+    "estim"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "estim",
+    "estim"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "game",
+    "card"
+   ],
+   "status": "mandatory"
+  }
+ ],
+ "synonyms": {
+  "participant": "estimators",
+  "gameestimator": "estimators",
+  "gameparticipant": "estimators",
+  "estimation": "estimate",
+  "gameround": "round",
+  "current round": "round"
+ },
+ "use_case_draft": {
+  "status": "auto-extracted, not yet validated",
+  "actors": {
+   "moderator": 28,
+   "estimator": 3,
+   "participant": 11,
+   "developer": 5,
+   "user": 4,
+   "researcher": 1,
+   "mike": 1
+  },
+  "use_cases": [
+   {
+    "actor": "moderator",
+    "goal": "create a new game by entering a name and an optional description",
+    "src": "R1"
+   },
+   {
+    "actor": "moderator",
+    "goal": "invite estimators by giving them a URL where they can access the game",
+    "src": "R2"
+   },
+   {
+    "actor": "moderator",
+    "goal": "start a round by entering an item in a single multi-line text field",
+    "src": "R3"
+   },
+   {
+    "actor": "moderator",
+    "goal": "see all items we try to estimate this round",
+    "src": "R4"
+   },
+   {
+    "actor": "moderator",
+    "goal": "select an item to be estimated or re-estimated",
+    "src": "R5"
+   },
+   {
+    "actor": "moderator",
+    "goal": "add an item to the list of items to be estimated",
+    "src": "R6"
+   },
+   {
+    "actor": "moderator",
+    "goal": "edit an item in the list of items to be estimated",
+    "src": "R7"
+   },
+   {
+    "actor": "moderator",
+    "goal": "delete an item from the list of items to be estimated",
+    "src": "R8"
+   },
+   {
+    "actor": "moderator",
+    "goal": "show all estimates immediately",
+    "src": "R9"
+   },
+   {
+    "actor": "moderator",
+    "goal": "accept the average of all estimates",
+    "src": "R10"
+   },
+   {
+    "actor": "moderator",
+    "goal": "have the \"estimate\" field filled in automatically if all estimators show the same card",
+    "src": "R11"
+   },
+   {
+    "actor": "moderator",
+    "goal": "enter the agreed-upon estimate",
+    "src": "R12"
+   },
+   {
+    "actor": "moderator",
+    "goal": "estimate a item we estimated earlier in the round again",
+    "src": "R13"
+   },
+   {
+    "actor": "moderator",
+    "goal": "import items from a spreadsheet",
+    "src": "R14"
+   },
+   {
+    "actor": "moderator",
+    "goal": "copy/paste items from a spreadsheet",
+    "src": "R15"
+   },
+   {
+    "actor": "moderator",
+    "goal": "browse through previous games",
+    "src": "R16"
+   },
+   {
+    "actor": "moderator",
+    "goal": "view a transcript of a game",
+    "src": "R17"
+   },
+   {
+    "actor": "moderator",
+    "goal": "export a transcript of a game as a HTML file",
+    "src": "R18"
+   },
+   {
+    "actor": "moderator",
+    "goal": "export a transcript of a game as a CSV file",
+    "src": "R19"
+   },
+   {
+    "actor": "moderator",
+    "goal": "delete a game",
+    "src": "R20"
+   },
+   {
+    "actor": "moderator",
+    "goal": "create an account for the application by entering my name, email address, a password and a username",
+    "src": "R21"
+   },
+   {
+    "actor": "moderator",
+    "goal": "log in using my account name and password",
+    "src": "R22"
+   },
+   {
+    "actor": "moderator",
+    "goal": "change my account details",
+    "src": "R23"
+   },
+   {
+    "actor": "moderator",
+    "goal": "delete my account",
+    "src": "R24"
+   },
+   {
+    "actor": "moderator",
+    "goal": "see dates and times in my local timezone",
+    "src": "R25"
+   },
+   {
+    "actor": "moderator",
+    "goal": "get a password reminder by email",
+    "src": "R26"
+   },
+   {
+    "actor": "moderator",
+    "goal": "select whether to have the team estimate with {0, 1/2, 1, 2, 3, 5, 8, etc.} or {0, 1, 2, 4, 8, 16, 32, etc.}",
+    "src": "R27"
+   },
+   {
+    "actor": "moderator",
+    "goal": "invite up to 15 estimators",
+    "src": "R28"
+   },
+   {
+    "actor": "estimator",
+    "goal": "join a game by entering my name on the page I received the URL for",
+    "src": "R29"
+   },
+   {
+    "actor": "estimator",
+    "goal": "see the item were estimating",
+    "src": "R30"
+   },
+   {
+    "actor": "estimator",
+    "goal": "see all items we will try to estimate this round",
+    "src": "R31"
+   },
+   {
+    "actor": "participant",
+    "goal": "immediately see that an estimate has been given by a specific estimator",
+    "src": "R32"
+   },
+   {
+    "actor": "participant",
+    "goal": "be shown all estimates at the same time after all estimators have given their estimate",
+    "src": "R33"
+   },
+   {
+    "actor": "participant",
+    "goal": "change my estimate up until the last person selects a card and all are shown",
+    "src": "R34"
+   },
+   {
+    "actor": "participant",
+    "goal": "see each estimator's prior estimates for the item being estimated",
+    "src": "R35"
+   },
+   {
+    "actor": "participant",
+    "goal": "see who gave what estimates during the current round",
+    "src": "R36"
+   },
+   {
+    "actor": "participant",
+    "goal": "be able start a two-minute countdown timer that all participants can see",
+    "src": "R37"
+   },
+   {
+    "actor": "participant",
+    "goal": "have the two-minute timer reset itself as soon as we all play an estimate",
+    "src": "R38"
+   },
+   {
+    "actor": "participant",
+    "goal": "scroll back through the items and estimates from prior rounds",
+    "src": "R39"
+   },
+   {
+    "actor": "participant",
+    "goal": "always have the cards in the same order across multiple draws",
+    "src": "R40"
+   },
+   {
+    "actor": "participant",
+    "goal": "change my estimate as long as the draw has not been completed",
+    "src": "R41"
+   },
+   {
+    "actor": "participant",
+    "goal": "have a small thumbnail photo displayed near where my cards are played",
+    "src": "R42"
+   },
+   {
+    "actor": "developer",
+    "goal": "have written a site which is compliant with XHTML and CSS standards",
+    "src": "R43"
+   },
+   {
+    "actor": "developer",
+    "goal": "have a list of definitions for commonly used terms",
+    "src": "R44"
+   },
+   {
+    "actor": "developer",
+    "goal": "have created database indexes",
+    "src": "R45"
+   },
+   {
+    "actor": "developer",
+    "goal": "have the application function correctly in Internet Explorer 6 and 7, Firefox 1.5 and 2, and Safari 2",
+    "src": "R46"
+   },
+   {
+    "actor": "developer",
+    "goal": "have the site comply with the W3C accessibility guidelines where possible",
+    "src": "R47"
+   },
+   {
+    "actor": "user",
+    "goal": "have the application respond quickly to my actions",
+    "src": "R48"
+   },
+   {
+    "actor": "user",
+    "goal": "use Unicode",
+    "src": "R49"
+   },
+   {
+    "actor": "user",
+    "goal": "see sensible and predictable URLs",
+    "src": "R50"
+   },
+   {
+    "actor": "user",
+    "goal": "have nice error pages when something goes wrong",
+    "src": "R51"
+   },
+   {
+    "actor": "Researcher",
+    "goal": "have results stored in a non-identifiable way",
+    "src": "R52"
+   },
+   {
+    "actor": "Mike",
+    "goal": "see some metrics on use of the game",
+    "src": "R53"
+   }
+  ],
+  "unparsed": 0
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "classes": [
+  {
+   "name": "Table",
+   "kind": "class"
+  },
+  {
+   "name": "Column",
+   "kind": "class"
+  },
+  {
+   "name": "FKey",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Table": [
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Column": [
+   {
+    "name": "name",
+    "type": "String"
+   },
+   {
+    "name": "type",
+    "type": "String"
+   }
+  ],
+  "FKey": []
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Table",
+   "to": "FKey",
+   "label": "fkeys 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Table",
+   "to": "Column",
+   "label": "pkey 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Table",
+   "to": "Column",
+   "label": "cols 0..*",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "FKey",
+   "to": "Table",
+   "label": "references 1..1",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "FKey",
+   "to": "Column",
+   "label": "cols 0..*",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage SimpleRDBMS {\nclass Table {\n\t name : String\n}\nTable \"fkeys 0..*\" *--> FKey\nTable \"pkey 0..*\" --> Column\nTable \"cols 0..*\" *--> Column\nclass Column {\n\t name : String\n\t type : String\n}\nclass FKey {\n}\nFKey \"references 1..1\" --> Table\nFKey \"cols 0..*\" --> Column\n}\n@enduml\n"
+}

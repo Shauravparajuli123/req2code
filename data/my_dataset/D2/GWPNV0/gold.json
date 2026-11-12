@@ -1,0 +1,52 @@
+{
+ "classes": [
+  {
+   "name": "Place",
+   "kind": "class"
+  },
+  {
+   "name": "Transition",
+   "kind": "class"
+  },
+  {
+   "name": "Net",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "Place": [],
+  "Transition": [],
+  "Net": []
+ },
+ "relations": [
+  {
+   "type": "composition",
+   "from": "Place",
+   "to": "Net",
+   "label": "net 1..1",
+   "label_to": "place 0..*"
+  },
+  {
+   "type": "association",
+   "from": "Place",
+   "to": "Transition",
+   "label": "src 0..*",
+   "label_to": "dst 1..*"
+  },
+  {
+   "type": "association",
+   "from": "Place",
+   "to": "Transition",
+   "label": "dst 0..*",
+   "label_to": "src 1..*"
+  },
+  {
+   "type": "composition",
+   "from": "Transition",
+   "to": "Net",
+   "label": "net 1..1",
+   "label_to": "transition 0..*"
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage PetriNet {\nclass Place {\n}\nPlace \"net 1..1\" --* \"place 0..*\" Net\nPlace \"src 0..*\" -- \"dst 1..*\" Transition\nPlace \"dst 0..*\" -- \"src 1..*\" Transition\nclass Transition {\n}\nTransition \"net 1..1\" --* \"transition 0..*\" Net\nclass Net {\n}\n}\n@enduml\n"
+}

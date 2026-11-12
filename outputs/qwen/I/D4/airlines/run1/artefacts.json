@@ -1,0 +1,101 @@
+{
+ "actors": [
+  "Airline",
+  "Airport"
+ ],
+ "use_cases": [
+  {
+   "name": "Start Operation",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Stop Operation",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Update Operating Cost",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airline",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "operations"
+   ],
+   "methods": [
+    {
+     "name": "startOperation",
+     "use_case": "R4"
+    },
+    {
+     "name": "stopOperation",
+     "use_case": "R4"
+    },
+    {
+     "name": "updateOperatingCost",
+     "use_case": "R4"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4"
+   ]
+  },
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "code",
+    "city"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "name": "OperatingCost",
+   "kind": "class",
+   "attributes": [
+    "cost",
+    "airline",
+    "airport"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Airline",
+   "target": "OperatingCost",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3",
+    "R5"
+   ]
+  }
+ ],
+ "python": "from typing import Optional\n\nclass OperatingCost:\n    def __init__(self, cost: float):\n        self.cost = cost\n\nclass Airline:\n    def __init__(self, name: str):\n        self.name = name\n        self.operation = {}  # type: dict[Airport, OperatingCost]\n\nclass Airport:\n    def __init__(self, code: str, city: str):\n        self.code = code\n        self.city = city\n\ndef start_operation(airline: Airline, airport: Airport):\n    raise NotImplementedError\n\ndef stop_operation(airline: Airline, airport: Airport):\n    raise NotImplementedError\n\ndef update_cost(airline: Airline, airport: Airport, new_cost: float):\n    raise NotImplementedError",
+ "java": {}
+}

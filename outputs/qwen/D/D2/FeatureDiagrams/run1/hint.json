@@ -1,0 +1,327 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [
+   {
+    "name": "User",
+    "src": [
+     "R1"
+    ]
+   }
+  ],
+  "use_cases": [
+   {
+    "name": "has description",
+    "actor": "User",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "has object",
+    "actor": "User",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "has description",
+    "actor": "Attribute",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "name": "has name",
+    "actor": "Attribute",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "name": "has key",
+    "actor": "Attribute",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "name": "has root",
+    "actor": "FeatureDiagram",
+    "src": [
+     "R3",
+     "R4"
+    ]
+   },
+   {
+    "name": "has children",
+    "actor": "FeatureDiagram",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "has preliminary",
+    "actor": "XORGroup",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "name": "has preliminary",
+    "actor": "ORGroup",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "name": "is composed of",
+    "actor": "Node",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "name": "may have",
+    "actor": "Node",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "name": "may have",
+    "actor": "Node",
+    "src": [
+     "R12"
+    ]
+   },
+   {
+    "name": "may have",
+    "actor": "Node",
+    "src": [
+     "R13"
+    ]
+   },
+   {
+    "name": "has",
+    "actor": "Attribute",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "name": "may have",
+    "actor": "Child",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "name": "may have",
+    "actor": "Child",
+    "src": [
+     "R11"
+    ]
+   }
+  ],
+  "classes": [
+   {
+    "name": "Node",
+    "src": [
+     "R1",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12",
+     "R13"
+    ]
+   },
+   {
+    "name": "Attribute",
+    "src": [
+     "R2",
+     "R9"
+    ]
+   },
+   {
+    "name": "FeatureDiagram",
+    "src": [
+     "R3",
+     "R4"
+    ]
+   },
+   {
+    "name": "XORGroup",
+    "src": [
+     "R5",
+     "R8",
+     "R12"
+    ]
+   },
+   {
+    "name": "ORGroup",
+    "src": [
+     "R6",
+     "R11",
+     "R13"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Node",
+    "name": "description",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "Node",
+    "name": "object",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "Attribute",
+    "name": "description",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "owner": "Attribute",
+    "name": "name",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "owner": "Attribute",
+    "name": "key",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "owner": "FeatureDiagram",
+    "name": "root",
+    "src": [
+     "R3",
+     "R4"
+    ]
+   },
+   {
+    "owner": "FeatureDiagram",
+    "name": "children",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "owner": "XORGroup",
+    "name": "preliminary",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "owner": "ORGroup",
+    "name": "preliminary",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "owner": "Node",
+    "name": "attribute",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "owner": "Node",
+    "name": "XORGroup",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "owner": "Node",
+    "name": "ORGroup",
+    "src": [
+     "R12",
+     "R13"
+    ]
+   },
+   {
+    "owner": "Attribute",
+    "name": "node",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "owner": "Child",
+    "name": "node",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "owner": "Child",
+    "name": "ORGroup",
+    "src": [
+     "R11"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Node",
+    "target": "Attribute",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Node",
+    "target": "XORGroup",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Node",
+    "target": "ORGroup",
+    "src": [
+     "R12",
+     "R13"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Child",
+    "target": "Node",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Child",
+    "target": "ORGroup",
+    "src": [
+     "R11"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

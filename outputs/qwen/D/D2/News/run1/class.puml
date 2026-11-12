@@ -1,0 +1,26 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class News {
+  title : String
+  link : String
+  author : String
+  date : LocalDate
+  newspaper : String
+  +publish()
+}
+class Newspaper {
+  language : String
+  publicationDate : LocalDate
+  news : String
+  +addNews()
+}
+class Date {
+  dayOfWeek : String
+  month : String
+  hours : int
+  seconds : int
+}
+Newspaper "1" -- "1..*" News : reports
+News "1" -- "1" Date : has
+@enduml

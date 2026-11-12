@@ -1,0 +1,16 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Mesh {
+  name : String
+  points : String
+}
+class Point {
+  name : String
+  coordinatesX : double
+  coordinatesZ : double
+  mesh : String
+}
+Mesh "0..*" -- "0..*" Point : has
+Mesh "1" *-- "1..*" Point : contains
+@enduml

@@ -1,0 +1,203 @@
+{
+ "case": "D2/WfMC",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createGame",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "WorkflowProcessDefinition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "workflowApplicationDeclarations",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "transitionDefinitions",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "WorkflowApplicationDeclaration",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "relevantData",
+     "type": "String",
+     "src": [
+      "R11",
+      "R13"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "TransitionDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "WorkflowProcessActivity",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "processDefinition",
+     "type": "String",
+     "src": [
+      "R17",
+      "R19"
+     ]
+    },
+    {
+     "name": "relevantData",
+     "type": "String",
+     "src": [
+      "R18"
+     ]
+    },
+    {
+     "name": "transitionInformation",
+     "type": "String",
+     "src": [
+      "R21"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R17",
+    "R18",
+    "R21"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "ProcessDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R15",
+    "R16",
+    "R19"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "TransitionInformation",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "targetProcessActivity",
+     "type": "String",
+     "src": [
+      "R21"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R20",
+    "R21"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C7",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R21"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

@@ -1,0 +1,149 @@
+{
+ "classes": [
+  {
+   "name": "UMLModelElement",
+   "kind": "class"
+  },
+  {
+   "name": "Attribute",
+   "kind": "class"
+  },
+  {
+   "name": "Package",
+   "kind": "class"
+  },
+  {
+   "name": "PackageElement",
+   "kind": "class"
+  },
+  {
+   "name": "Classifier",
+   "kind": "class"
+  },
+  {
+   "name": "Class",
+   "kind": "class"
+  },
+  {
+   "name": "PrimitiveDataType",
+   "kind": "class"
+  },
+  {
+   "name": "Association",
+   "kind": "class"
+  }
+ ],
+ "attributes": {
+  "UMLModelElement": [
+   {
+    "name": "kind",
+    "type": "String"
+   },
+   {
+    "name": "name",
+    "type": "String"
+   }
+  ],
+  "Attribute": [],
+  "Package": [],
+  "PackageElement": [],
+  "Classifier": [],
+  "Class": [],
+  "PrimitiveDataType": [],
+  "Association": []
+ },
+ "relations": [
+  {
+   "type": "generalization",
+   "from": "Attribute",
+   "to": "UMLModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Attribute",
+   "to": "Class",
+   "label": "owner 1..1",
+   "label_to": "attribute 0..*"
+  },
+  {
+   "type": "association",
+   "from": "Attribute",
+   "to": "Classifier",
+   "label": "type 1..1",
+   "label_to": "typeOpposite 0..*"
+  },
+  {
+   "type": "generalization",
+   "from": "Package",
+   "to": "UMLModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "composition",
+   "from": "Package",
+   "to": "PackageElement",
+   "label": "elements 0..*",
+   "label_to": "namespace 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "PackageElement",
+   "to": "UMLModelElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Classifier",
+   "to": "PackageElement",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Class",
+   "to": "Classifier",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "association",
+   "from": "Class",
+   "to": "Class",
+   "label": "general 0..*",
+   "label_to": "generalOpposite 0..*"
+  },
+  {
+   "type": "association",
+   "from": "Class",
+   "to": "Association",
+   "label": "reverse 0..*",
+   "label_to": "source 1..1"
+  },
+  {
+   "type": "association",
+   "from": "Class",
+   "to": "Association",
+   "label": "forward 0..*",
+   "label_to": "destination 1..1"
+  },
+  {
+   "type": "generalization",
+   "from": "PrimitiveDataType",
+   "to": "Classifier",
+   "label": "",
+   "label_to": ""
+  },
+  {
+   "type": "generalization",
+   "from": "Association",
+   "to": "PackageElement",
+   "label": "",
+   "label_to": ""
+  }
+ ],
+ "plantuml": "@startuml\n!theme plain\npackage SimpleUML {\nclass UMLModelElement {\n\t kind : String\n\t name : String\n}\nclass Attribute {\n}\nUMLModelElement <|-- Attribute\nAttribute \"owner 1..1\" --* \"attribute 0..*\" Class\nAttribute \"type 1..1\" -- \"typeOpposite 0..*\" Classifier\nclass Package {\n}\nUMLModelElement <|-- Package\nPackage \"elements 0..*\" *-- \"namespace 1..1\" PackageElement\nclass PackageElement {\n}\nUMLModelElement <|-- PackageElement\nclass Classifier {\n}\nPackageElement <|-- Classifier\nclass Class {\n}\nClassifier <|-- Class\nClass \"general 0..*\" -- \"generalOpposite 0..*\" Class\nClass \"reverse 0..*\" -- \"source 1..1\" Association\nClass \"forward 0..*\" -- \"destination 1..1\" Association\nclass PrimitiveDataType {\n}\nClassifier <|-- PrimitiveDataType\nclass Association {\n}\nPackageElement <|-- Association\n}\n@enduml\n"
+}

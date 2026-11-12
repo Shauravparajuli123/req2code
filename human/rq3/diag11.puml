@@ -1,0 +1,22 @@
+@startuml
+class Node {
+  name
+}
+class CommunicationLink {
+  name
+  source_node
+}
+class Deployment {
+  execution_environment
+  nodes
+}
+class Nodes {
+}
+class Specification {
+}
+class ExecutionEnvironment {
+}
+Deployment -- Nodes
+Nodes -- Node
+CommunicationLink -- Node
+@enduml

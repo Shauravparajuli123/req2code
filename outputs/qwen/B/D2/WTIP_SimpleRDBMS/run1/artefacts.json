@@ -1,0 +1,72 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "columns",
+    "fkeys"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Fkey",
+   "kind": "class",
+   "attributes": [
+    "referencedTable"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Table",
+   "target": "Column",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "Table",
+   "target": "Fkey",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "source": "Table",
+   "target": "Fkey",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/WTIP_SimpleRDBMS.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Table:\n    \"\"\"Source: R5, R6\"\"\"\n    name: _t.Optional[str] = None\n    columns: _t.Optional[str] = None\n    fkeys: _t.Optional[str] = None\n    column: _t.Optional[\"Column\"] = None\n    fkey: _t.Optional[\"Fkey\"] = None\n\n\n@_dc.dataclass\nclass Column:\n    \"\"\"Source: R2\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Fkey:\n    \"\"\"Source: R3, R6\"\"\"\n    referencedTable: _t.Optional[str] = None\n",
+ "java": {
+  "Table.java": "/** Generated from shared model D2/WTIP_SimpleRDBMS. Source: R5, R6 */\npublic class Table {\n    private java.lang.String name;\n    private java.lang.String columns;\n    private java.lang.String fkeys;\n    private Column column;\n    private Fkey fkey;\n}\n",
+  "Column.java": "/** Generated from shared model D2/WTIP_SimpleRDBMS. Source: R2 */\npublic class Column {\n    private java.lang.String name;\n}\n",
+  "Fkey.java": "/** Generated from shared model D2/WTIP_SimpleRDBMS. Source: R3, R6 */\npublic class Fkey {\n    private java.lang.String referencedTable;\n}\n"
+ }
+}

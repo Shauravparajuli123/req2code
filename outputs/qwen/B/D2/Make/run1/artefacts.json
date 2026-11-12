@@ -1,0 +1,72 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Makefile",
+   "kind": "class",
+   "attributes": [
+    "fileDependencies",
+    "comment"
+   ],
+   "methods": [
+    {
+     "name": "addRule",
+     "use_case": null
+    },
+    {
+     "name": "addFileDependency",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "addDependency",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "RuleDependency",
+   "kind": "class",
+   "attributes": [
+    "rule",
+    "dependency"
+   ],
+   "methods": [],
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Makefile",
+   "target": "Rule",
+   "src": [
+    "R11",
+    "R3"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/Make.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Makefile:\n    \"\"\"Source: R10, R11\"\"\"\n    fileDependencies: _t.Optional[str] = None\n    comment: _t.Optional[str] = None\n    rules: _t.List[\"Rule\"] = _dc.field(default_factory=list)\n\n    def addRule(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addFileDependency(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Rule:\n    \"\"\"Source: R11\"\"\"\n    name: _t.Optional[str] = None\n\n    def addDependency(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass RuleDependency:\n    \"\"\"Source: R13\"\"\"\n    rule: _t.Optional[str] = None\n    dependency: _t.Optional[str] = None\n",
+ "java": {
+  "Makefile.java": "/** Generated from shared model D2/Make. Source: R10, R11 */\npublic class Makefile {\n    private java.lang.String fileDependencies;\n    private java.lang.String comment;\n    private java.util.List<Rule> rules;\n\n    /** Operation. */\n    public void addRule() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addFileDependency() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Rule.java": "/** Generated from shared model D2/Make. Source: R11 */\npublic class Rule {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void addDependency() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "RuleDependency.java": "/** Generated from shared model D2/Make. Source: R13 */\npublic class RuleDependency {\n    private java.lang.String rule;\n    private java.lang.String dependency;\n}\n"
+ }
+}

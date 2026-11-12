@@ -1,0 +1,133 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "GraphElement",
+    "src": [
+     "R1",
+     "R4",
+     "R9",
+     "R10"
+    ]
+   },
+   {
+    "name": "Graph",
+    "src": [
+     "R1",
+     "R3",
+     "R9"
+    ]
+   },
+   {
+    "name": "Node",
+    "src": [
+     "R1",
+     "R5",
+     "R6"
+    ]
+   },
+   {
+    "name": "DirectedArc",
+    "src": [
+     "R1",
+     "R6"
+    ]
+   },
+   {
+    "name": "Constraint",
+    "src": [
+     "R1",
+     "R7"
+    ]
+   },
+   {
+    "name": "SubGraph",
+    "src": [
+     "R1",
+     "R8"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "GraphElement",
+    "name": "label",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "owner": "GraphElement",
+    "name": "z index",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "owner": "GraphElement",
+    "name": "parent Graph",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "owner": "Graph",
+    "name": "type",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "owner": "Graph",
+    "name": "dimension",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "owner": "Node",
+    "name": "shape",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "owner": "DirectedArc",
+    "name": "shape",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "owner": "Constraint",
+    "name": "value",
+    "src": [
+     "R7"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Graph",
+    "target": "GraphElement",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "kind": "has",
+    "source": "GraphElement",
+    "target": "Graph",
+    "src": [
+     "R10"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

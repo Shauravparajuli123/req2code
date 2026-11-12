@@ -1,0 +1,45 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Customer" as A1
+actor "ReturningCustomer" as A2
+actor "Admin" as A3
+actor "Trainer" as A4
+actor "Moderator" as A5
+rectangle "sports" {
+  usecase "Create Account" as UC1
+  usecase "Manage Personal Information" as UC2
+  usecase "Book Lessons" as UC3
+  usecase "Call Gym To Book Lesson" as UC4
+  usecase "Book Personal Training Session" as UC5
+  usecase "Cancel Lesson" as UC6
+  usecase "Admin Cancel Lesson" as UC7
+  usecase "Edit Lesson" as UC8
+  usecase "Admin Edit Lesson" as UC9
+  usecase "View Schedule" as UC10
+  usecase "Admin View Schedule" as UC11
+  usecase "Admin Add Trainer" as UC12
+  usecase "Admin Add Admin" as UC13
+  usecase "Admin Remove Trainer" as UC14
+  usecase "Admin View No Show Records" as UC15
+  usecase "Customer Check In" as UC16
+  usecase "Trainer Check In" as UC17
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A4 --> UC6
+A3 --> UC7
+A4 --> UC8
+A3 --> UC9
+A4 --> UC10
+A3 --> UC11
+A3 --> UC12
+A3 --> UC13
+A3 --> UC14
+A3 --> UC15
+A3 --> UC16
+A4 --> UC17
+@enduml

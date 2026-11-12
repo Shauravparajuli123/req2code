@@ -1,0 +1,174 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [
+   {
+    "name": "User",
+    "src": [
+     "R1"
+    ]
+   }
+  ],
+  "use_cases": [
+   {
+    "name": "DefineNodeAttributes",
+    "actor": "User",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "CompriseTextElements",
+    "actor": "User",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "name": "CompriseElement",
+    "actor": "User",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "CompriseRootElements",
+    "actor": "User",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "name": "HaveParent",
+    "actor": "User",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "name": "HaveChildren",
+    "actor": "User",
+    "src": [
+     "R6"
+    ]
+   }
+  ],
+  "classes": [
+   {
+    "name": "Node",
+    "src": [
+     "R1",
+     "R6"
+    ]
+   },
+   {
+    "name": "AttributeNode",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "name": "TextElement",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "name": "Element",
+    "src": [
+     "R4",
+     "R6"
+    ]
+   },
+   {
+    "name": "RootElement",
+    "src": [
+     "R5"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Node",
+    "name": "name",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "Node",
+    "name": "startLine",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "Node",
+    "name": "endLine",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "Element",
+    "name": "children",
+    "src": [
+     "R6",
+     "R7"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Node",
+    "target": "Element",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "kind": "has",
+    "source": "Element",
+    "target": "Node",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "AttributeNode",
+    "target": "Node",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "TextElement",
+    "target": "Node",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "Element",
+    "target": "Node",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "RootElement",
+    "target": "Element",
+    "src": [
+     "R5"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

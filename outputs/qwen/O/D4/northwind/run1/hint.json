@@ -1,0 +1,675 @@
+{
+ "condition": "O",
+ "hint": {
+  "case": "D4/northwind",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "FR-SOP-02"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-SOP-02.s1",
+      "text": "The system shall enforce that each Order must be associated with exactly one Customer."
+     }
+    ],
+    "name": "customer"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "FR-CM-02",
+     "FR-CM-04",
+     "FR-CM-05",
+     "FR-CM-06",
+     "FR-CM-07"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-CM-02.s1",
+      "text": "The system shall maintain the hierarchical relationship where Customers, Vendors, and Shippers are separate entities inheriting from Companies."
+     },
+     {
+      "sid": "FR-CM-04.s1",
+      "text": "The system shall assign each Company to exactly one company type."
+     },
+     {
+      "sid": "FR-CM-05.s1",
+      "text": "The system shall associate each company with exactly one geographic state."
+     }
+    ],
+    "name": "Company",
+    "freq": 5
+   },
+   {
+    "id": "C2",
+    "src": [
+     "FR-CM-07",
+     "FR-CM-08"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-CM-07.s1",
+      "text": "The system shall allow multiple Contacts to be associated with a single company."
+     },
+     {
+      "sid": "FR-CM-08.s1",
+      "text": "The system shall maintain Contacts including first name, last name, primary and secondary phone numbers, email address, job title, and notes for each company contact."
+     }
+    ],
+    "name": "Contact",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "FR-SOP-02"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-SOP-02.s1",
+      "text": "The system shall enforce that each Order must be associated with exactly one Customer."
+     }
+    ],
+    "name": "Customer",
+    "freq": 1
+   },
+   {
+    "id": "C5",
+    "src": [
+     "FR-IM-02",
+     "FR-SOP-01"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-IM-02.s1",
+      "text": "The system shall record Stock Take information including date, product, quantity on hand, and expected quantity."
+     },
+     {
+      "sid": "FR-SOP-01.s1",
+      "text": "The system shall record Customer Orders with dates, customer information, and shipping details."
+     }
+    ],
+    "name": "Date",
+    "freq": 2
+   },
+   {
+    "id": "C6",
+    "src": [
+     "FR-EM-02",
+     "FR-EM-03",
+     "FR-EM-04",
+     "FR-EM-05",
+     "FR-SOP-03",
+     "FR-POP-03",
+     "FR-POP-04",
+     "FR-DA-01",
+     "FR-DA-02"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-EM-02.s1",
+      "text": "The system shall assign exactly one Title to each employee."
+     },
+     {
+      "sid": "FR-EM-03.s1",
+      "text": "The system shall support a hierarchical reporting structure where employees may report to one supervisor."
+     },
+     {
+      "sid": "FR-EM-04.s1",
+      "text": "The system shall allow one supervisor to manage multiple Employees."
+     }
+    ],
+    "name": "Employee",
+    "freq": 9
+   },
+   {
+    "id": "C8",
+    "src": [
+     "FR-CM-08",
+     "FR-EM-01"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-CM-08.s1",
+      "text": "The system shall maintain Contacts including first name, last name, primary and secondary phone numbers, email address, job title, and notes for each company contact."
+     },
+     {
+      "sid": "FR-EM-01.s1",
+      "text": "The system shall maintain Employee records with personal information (first and last name, primary/secondary phone numbers) and professional information (job title, email)."
+     }
+    ],
+    "name": "JobTitle",
+    "freq": 2
+   },
+   {
+    "id": "C9",
+    "src": [
+     "FR-SOP-02",
+     "FR-SOP-03",
+     "FR-SOP-05",
+     "FR-SOP-06",
+     "FR-SOP-08"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-SOP-02.s1",
+      "text": "The system shall enforce that each Order must be associated with exactly one Customer."
+     },
+     {
+      "sid": "FR-SOP-03.s1",
+      "text": "The system shall assign each Order to exactly one Employee who processes it."
+     },
+     {
+      "sid": "FR-SOP-05.s1",
+      "text": "The system shall assign exactly one Shipper to each Order."
+     }
+    ],
+    "name": "Order",
+    "freq": 5
+   },
+   {
+    "id": "C10",
+    "src": [
+     "FR-SOP-08",
+     "FR-SOP-09",
+     "FR-SOP-10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-SOP-08.s1",
+      "text": "The system shall require each Order to contain one or more Order Detail items."
+     },
+     {
+      "sid": "FR-SOP-09.s1",
+      "text": "The system shall track product, quantity, unit price, and discount for each Order Detail item."
+     },
+     {
+      "sid": "FR-SOP-10.s1",
+      "text": "The system shall assign a Status to each Order Detail item using predefined status values."
+     }
+    ],
+    "name": "OrderDetailItem",
+    "freq": 3
+   },
+   {
+    "id": "C11",
+    "src": [
+     "FR-CM-03",
+     "FR-CM-08",
+     "FR-EM-01"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-CM-03.s1",
+      "text": "The system shall record Company information including name, phone number, address details, state, zip code and website."
+     },
+     {
+      "sid": "FR-CM-08.s1",
+      "text": "The system shall maintain Contacts including first name, last name, primary and secondary phone numbers, email address, job title, and notes for each company contact."
+     },
+     {
+      "sid": "FR-EM-01.s1",
+      "text": "The system shall maintain Employee records with personal information (first and last name, primary/secondary phone numbers) and professional information (job title, email)."
+     }
+    ],
+    "name": "PhoneNumber",
+    "freq": 3
+   },
+   {
+    "id": "C12",
+    "src": [
+     "FR-PM-02",
+     "FR-PM-03",
+     "FR-PM-04",
+     "FR-PM-05",
+     "FR-PM-07",
+     "FR-IM-02",
+     "FR-SOP-09",
+     "FR-POP-01",
+     "FR-POP-08"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-PM-02.s1",
+      "text": "The system shall assign each product to exactly one Product Category."
+     },
+     {
+      "sid": "FR-PM-03.s1",
+      "text": "The system shall track standard unit cost and retail unit price for each product."
+     },
+     {
+      "sid": "FR-PM-04.s1",
+      "text": "The system shall monitor inventory levels including reorder level, target level, and minimum reorder quantity for each product."
+     }
+    ],
+    "name": "Product",
+    "freq": 9
+   },
+   {
+    "id": "C13",
+    "src": [
+     "FR-POP-02",
+     "FR-POP-03",
+     "FR-POP-04",
+     "FR-POP-05",
+     "FR-POP-06",
+     "FR-POP-07"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-POP-02.s1",
+      "text": "The system shall enforce that each Purchase Order must be associated with exactly one Vendor."
+     },
+     {
+      "sid": "FR-POP-03.s1",
+      "text": "The system shall record which Employee submitted each Purchase Order."
+     },
+     {
+      "sid": "FR-POP-04.s1",
+      "text": "The system shall record which Employee approved each Purchase Order."
+     }
+    ],
+    "name": "PurchaseOrder",
+    "freq": 6
+   },
+   {
+    "id": "C14",
+    "src": [
+     "FR-POP-07",
+     "FR-POP-08"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-POP-07.s1",
+      "text": "The system shall require each Purchase Order to contain one or more Purchase Order Detail items."
+     },
+     {
+      "sid": "FR-POP-08.s1",
+      "text": "The system shall track product, quantity, and unit price for each Purchase Order Detail item."
+     }
+    ],
+    "name": "PurchaseOrderDetailItem",
+    "freq": 2
+   },
+   {
+    "id": "C15",
+    "src": [
+     "FR-IM-02",
+     "FR-SOP-09",
+     "FR-POP-08"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-IM-02.s1",
+      "text": "The system shall record Stock Take information including date, product, quantity on hand, and expected quantity."
+     },
+     {
+      "sid": "FR-SOP-09.s1",
+      "text": "The system shall track product, quantity, unit price, and discount for each Order Detail item."
+     },
+     {
+      "sid": "FR-POP-08.s1",
+      "text": "The system shall track product, quantity, and unit price for each Purchase Order Detail item."
+     }
+    ],
+    "name": "Quantity",
+    "freq": 4
+   },
+   {
+    "id": "C16",
+    "src": [
+     "FR-CM-01",
+     "FR-DA-01",
+     "FR-DA-02"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-CM-01.s1",
+      "text": "The system shall maintain records of external organizations classified as either Customers, Vendors, or Shippers."
+     },
+     {
+      "sid": "FR-DA-01.s1",
+      "text": "The system shall record which Employee added each record and when it was added."
+     },
+     {
+      "sid": "FR-DA-02.s1",
+      "text": "The system shall record which Employee last modified each record and when it was modified."
+     }
+    ],
+    "name": "Record",
+    "freq": 3
+   },
+   {
+    "id": "C18",
+    "src": [
+     "FR-CM-03",
+     "FR-CM-05"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-CM-03.s1",
+      "text": "The system shall record Company information including name, phone number, address details, state, zip code and website."
+     },
+     {
+      "sid": "FR-CM-05.s1",
+      "text": "The system shall associate each company with exactly one geographic state."
+     }
+    ],
+    "name": "State",
+    "freq": 2
+   },
+   {
+    "id": "C21",
+    "src": [
+     "FR-SOP-09",
+     "FR-POP-08"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-SOP-09.s1",
+      "text": "The system shall track product, quantity, unit price, and discount for each Order Detail item."
+     },
+     {
+      "sid": "FR-POP-08.s1",
+      "text": "The system shall track product, quantity, and unit price for each Purchase Order Detail item."
+     }
+    ],
+    "name": "UnitPrice",
+    "freq": 2
+   },
+   {
+    "id": "C23",
+    "src": [
+     "FR-CM-01",
+     "FR-CM-02",
+     "FR-PM-07",
+     "FR-POP-01"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-CM-01.s1",
+      "text": "The system shall maintain records of external organizations classified as either Customers, Vendors, or Shippers."
+     },
+     {
+      "sid": "FR-CM-02.s1",
+      "text": "The system shall maintain the hierarchical relationship where Customers, Vendors, and Shippers are separate entities inheriting from Companies."
+     },
+     {
+      "sid": "FR-PM-07.s1",
+      "text": "The system shall allow multiple Products to be supplied by multiple Vendors."
+     }
+    ],
+    "name": "Vendors",
+    "freq": 4
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "FR-POP-05"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-POP-05.s1",
+      "text": "The system shall track the status of each Purchase Order using predefined Purchase Order Status values."
+     }
+    ],
+    "owner": "PurchaseOrder",
+    "name": "status",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "FR-CM-07"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-CM-07.s1",
+      "text": "The system shall allow multiple Contacts to be associated with a single company."
+     }
+    ],
+    "kind": "association",
+    "source": "Contact",
+    "target": "Company",
+    "multiplicity_target": "1..*"
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "FR-POP-03"
+    ],
+    "rule": [
+     "verb:submit"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-POP-03.s1",
+      "text": "The system shall record which Employee submitted each Purchase Order."
+     }
+    ],
+    "kind": "association",
+    "source": "Employee",
+    "target": "PurchaseOrder",
+    "multiplicity_target": "each"
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "FR-DA-01"
+    ],
+    "rule": [
+     "verb:add"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-DA-01.s1",
+      "text": "The system shall record which Employee added each record and when it was added."
+     }
+    ],
+    "kind": "association",
+    "source": "Employee",
+    "target": "Record",
+    "multiplicity_target": "each"
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "FR-SOP-02"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-SOP-02.s1",
+      "text": "The system shall enforce that each Order must be associated with exactly one Customer."
+     }
+    ],
+    "kind": "association",
+    "source": "Order",
+    "target": "Customer",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "FR-POP-02"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "FR-POP-02.s1",
+      "text": "The system shall enforce that each Purchase Order must be associated with exactly one Vendor."
+     }
+    ],
+    "kind": "association",
+    "source": "PurchaseOrder",
+    "target": "Company",
+    "multiplicity_target": "one"
+   }
+  ],
+  "enums": [
+   {
+    "name": "Privilege",
+    "values": [
+     "Read",
+     "Write",
+     "Admin"
+    ]
+   },
+   {
+    "name": "TaxStatus",
+    "values": [
+     "Exempt",
+     "Non-Exempt"
+    ]
+   }
+  ],
+  "applied_edits": {
+   "remove_classes": [
+    "Entity"
+   ],
+   "merge_classes": [
+    [
+     "Company",
+     "Customers"
+    ],
+    [
+     "Company",
+     "Shippers"
+    ],
+    [
+     "Company",
+     "Vendor"
+    ],
+    [
+     "Employee",
+     "Supervisor"
+    ]
+   ],
+   "merge_actors": [
+    [
+     "customer",
+     "Employee"
+    ]
+   ],
+   "enums": [
+    {
+     "name": "Privilege",
+     "values": [
+      "Read",
+      "Write",
+      "Admin"
+     ]
+    },
+    {
+     "name": "TaxStatus",
+     "values": [
+      "Exempt",
+      "Non-Exempt"
+     ]
+    }
+   ],
+   "multiplicities": [
+    {
+     "source": "Contact",
+     "target": "Company",
+     "multiplicity": "1..*"
+    },
+    {
+     "source": "OrderDetailItem",
+     "target": "Order",
+     "multiplicity": "1..*"
+    },
+    {
+     "source": "PurchaseOrderDetailItem",
+     "target": "PurchaseOrder",
+     "multiplicity": "1..*"
+    }
+   ],
+   "actor_assumptions": [
+    {
+     "use_case": "MaintainRecords",
+     "actor": "Employee"
+    },
+    {
+     "use_case": "MaintainRecords",
+     "actor": "Supervisor"
+    }
+   ]
+  }
+ },
+ "open_tags": []
+}

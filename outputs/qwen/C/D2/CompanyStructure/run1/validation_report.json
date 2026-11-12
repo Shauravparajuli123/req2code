@@ -1,0 +1,50 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a company structure model can exist without any stores, back offices, or cash registers, which is not explicitly stated in the requirements."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R2 (A company structure model has corporate HQ) is not represented in the model.",
+   "fix": "Add a class for HQ and establish a composition relationship with CompanyStructureModel."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R5 (A company contains one back office for each store) is not represented in the model.",
+   "fix": "Add a relationship between Store and Office with a cardinality of 1..1."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R6 (The employees that are working in the company) is not represented in the model.",
+   "fix": "Add an appropriate class for employees and establish a relationship with the relevant classes."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R8 (A company is composed by one and only one corporate HQ) is not represented in the model.",
+   "fix": "Ensure the composition relationship between CompanyStructureModel and Hq has a cardinality of 1..1."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R9 (Each corporate HQs manages a certain number of stores) is not represented in the model.",
+   "fix": "Establish a relationship between Hq and Store with a cardinality indicating the number of stores managed by each HQ."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R10 (In a company structure model, stores have exactly one back office) is not represented in the model.",
+   "fix": "Ensure the association between Store and Office has a cardinality of 1..1."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R11 (A store is composed by zero or more cash registers) is not represented in the model.",
+   "fix": "Establish an association between Store and CashRegister with a cardinality of 0..*."
+  }
+ ]
+}

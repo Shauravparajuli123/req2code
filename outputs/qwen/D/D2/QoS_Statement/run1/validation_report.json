@@ -1,0 +1,35 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The assumption is that 'CompoundQoSStatement' is a subclass of 'QoSStatement'."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Parameter' is missing in the model.",
+   "fix": "Add class 'Parameter' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'QoSStatement' is missing attributes and methods.",
+   "fix": "Add appropriate attributes and methods to class 'QoSStatement'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between QoSStatement and CompoundQoSStatement is not clear. R8 states that each QoSStatement has a CompoundQoSStatement, but the model shows an association in the opposite direction.",
+   "fix": "Change the association from QoSStatement -> CompoundQoSStatement to CompoundQoSStatement -> QoSStatement."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'My domain defines the possible types of qualifications. They have a value, which is a string.' is not represented in the model.",
+   "fix": "Add a use case to represent the definition of qualifications."
+  }
+ ]
+}

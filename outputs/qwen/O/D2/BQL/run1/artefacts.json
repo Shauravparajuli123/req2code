@@ -1,0 +1,146 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineElements",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "BqlModel",
+   "kind": "class",
+   "attributes": [
+    "entries",
+    "predicates",
+    "queries"
+   ],
+   "methods": [
+    {
+     "name": "add_entry",
+     "use_case": "DefineElements"
+    },
+    {
+     "name": "add_query",
+     "use_case": "DefineElements"
+    },
+    {
+     "name": "add_predicate",
+     "use_case": "DefineElements"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "location",
+    "comments"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Entry",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "allFields"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Predicate",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "associate_with_entry",
+     "use_case": "DefineElements"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "Query",
+   "kind": "class",
+   "attributes": [
+    "predicates"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "BqlModel",
+   "target": "Entry",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BqlModel",
+   "target": "Predicate",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BqlModel",
+   "target": "Query",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Query",
+   "target": "Predicate",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "class BqlModel:\n    def __init__(self):\n        self.entries = []\n        self.predicates = []\n        self.queries = []\n\n    def add_entry(self, entry):\n        raise NotImplementedError\n\n    def add_query(self, query):\n        raise NotImplementedError\n\n    def add_predicate(self, predicate):\n        raise NotImplementedError\n\nclass Element:\n    def __init__(self, location, comments):\n        self.location = location\n        self.comments = comments\n\nclass Entry:\n    def __init__(self, name, allFields):\n        self.name = name\n        self.allFields = allFields\n\nclass Predicate:\n    def __init__(self):\n        pass\n    def associate_with_entry(self, entry):\n        raise NotImplementedError\n\nclass Query:\n    def __init__(self):\n        self.predicates = []",
+ "java": {}
+}

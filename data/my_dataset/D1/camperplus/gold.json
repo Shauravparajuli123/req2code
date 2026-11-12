@@ -1,0 +1,588 @@
+{
+ "classes": [
+  {
+   "name": "payments",
+   "status": "mandatory"
+  },
+  {
+   "name": "rules",
+   "status": "mandatory"
+  },
+  {
+   "name": "camp worker",
+   "status": "mandatory"
+  },
+  {
+   "name": "attendance",
+   "status": "mandatory"
+  },
+  {
+   "name": "facilities",
+   "status": "mandatory"
+  },
+  {
+   "name": "photos",
+   "status": "mandatory"
+  },
+  {
+   "name": "feedback",
+   "status": "mandatory"
+  },
+  {
+   "name": "camper",
+   "status": "mandatory"
+  },
+  {
+   "name": "guardians",
+   "status": "mandatory"
+  },
+  {
+   "name": "schedules",
+   "status": "mandatory"
+  },
+  {
+   "name": "activities",
+   "status": "mandatory"
+  },
+  {
+   "name": "camp",
+   "status": "mandatory"
+  },
+  {
+   "name": "forms",
+   "status": "mandatory"
+  },
+  {
+   "name": "groups",
+   "status": "mandatory"
+  },
+  {
+   "name": "counselor",
+   "status": "mandatory"
+  },
+  {
+   "name": "supplies",
+   "status": "mandatory"
+  },
+  {
+   "name": "positions",
+   "status": "mandatory"
+  },
+  {
+   "name": "behavior",
+   "status": "mandatory"
+  },
+  {
+   "name": "repair",
+   "status": "mandatory"
+  }
+ ],
+ "associations": [
+  {
+   "pair": [
+    "camper",
+    "guardian"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "camper",
+    "form"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "camper",
+    "attend"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "camp",
+    "group"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "camp",
+    "rule"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "feedback",
+    "guardian"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "group",
+    "schedul"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "camper",
+    "photo"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "camper",
+    "group"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "facil",
+    "activ"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "group",
+    "activ"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "camper",
+    "camp"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "camp",
+    "facil"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "suppli",
+    "camp"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "group",
+    "counselor"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "activ",
+    "schedul"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "posit",
+    "camp work"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "camp",
+    "camp work"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "camp",
+    "activ"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "camper",
+    "payment"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "feedback",
+    "camper"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "posit",
+    "activ"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "photo",
+    "camp"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "group",
+    "facility"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "camper",
+    "behavior"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "guardian",
+    "form"
+   ],
+   "status": "mandatory"
+  }
+ ],
+ "synonyms": {
+  "worker": "camp worker",
+  "staff": "camp worker",
+  "staff member": "camp worker",
+  "worker-camper": "camp worker",
+  "campworker": "camp worker",
+  "staffmember": "camp worker",
+  "camp staff member": "camp worker",
+  "camp staff": "camp worker",
+  "camp group": "group",
+  "campergroup": "group",
+  "campgroup": "group",
+  "camper group": "group",
+  "camp activity": "activity",
+  "task": "activity",
+  "event": "activity",
+  "campactivity": "activity",
+  "parentguardian": "guardian",
+  "parent": "guardian",
+  "parent/guardian": "guardian",
+  "camperparent": "guardian",
+  "registrationform": "form",
+  "consentform": "form",
+  "medical form": "form",
+  "medicalform": "form",
+  "registration form": "form",
+  "consent form": "form",
+  "camp facility": "facility",
+  "internal camp facility": "facility",
+  "campfacility": "facility",
+  "message": "feedback",
+  "enrolled camper": "camper",
+  "camp counselor": "counselor",
+  "behaviorrecord": "behavior",
+  "attendancelog": "attendance",
+  "attendancerecord": "attendance"
+ },
+ "use_case_draft": {
+  "status": "auto-extracted, not yet validated",
+  "actors": {
+   "camp administrator": 35,
+   "parent": 13,
+   "camp worker": 6,
+   "camp counselor": 1
+  },
+  "use_cases": [
+   {
+    "actor": "camp administrator",
+    "goal": "add campers",
+    "src": "R1"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "remove campers if they don't attend the camp anymore",
+    "src": "R2"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "keep camper records from previous years",
+    "src": "R3"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "upload consent forms",
+    "src": "R4"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "keep track of which camper submitted which forms",
+    "src": "R5"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "schedule activities for campers",
+    "src": "R6"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "automatically create nametags for campers",
+    "src": "R7"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "suspend a camper who had behavioral problems",
+    "src": "R8"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "set a reminders related to specific tasks that has to be done",
+    "src": "R9"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "assign different positions to the staff members",
+    "src": "R10"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "warn a camp worker who I think did his/her job inappropriate",
+    "src": "R11"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "create, modify rules that campers and camp workers has to follow",
+    "src": "R12"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "keep track of the usage of internal camp facilities",
+    "src": "R13"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "create an avenue",
+    "src": "R14"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "store campers' emergency information in a database",
+    "src": "R15"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "store camper's immediate parent/guardian's information",
+    "src": "R16"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "provide bi-weekly feedback to camper's parents",
+    "src": "R17"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "make nametags faster",
+    "src": "R18"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "create a registration form for both staff and kids",
+    "src": "R19"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "keep my information in one place",
+    "src": "R20"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "see medical forms",
+    "src": "R21"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "notify parents all at once",
+    "src": "R22"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "be quickly log attendance everyday",
+    "src": "R23"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "add parents",
+    "src": "R24"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "create groups and add campers to the groups",
+    "src": "R25"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "see all my camp groups and the events scheduled for each camp group",
+    "src": "R26"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "schedule tasks/activities for a specific camp group",
+    "src": "R27"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "delete tasks/activities I scheduled",
+    "src": "R28"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "modify tasks/events I scheduled in case there is a change",
+    "src": "R29"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "modify the information of enrolled campers",
+    "src": "R30"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "delete campers from the database",
+    "src": "R31"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "modify the information of added parents",
+    "src": "R32"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "delete parents from the database",
+    "src": "R33"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "modify a group's information",
+    "src": "R34"
+   },
+   {
+    "actor": "camp administrator",
+    "goal": "see only events for a specific group/groups on the event calendar",
+    "src": "R35"
+   },
+   {
+    "actor": "parent",
+    "goal": "see which consent forms I have submitted",
+    "src": "R36"
+   },
+   {
+    "actor": "parent",
+    "goal": "track my camper activity and schedule at camp",
+    "src": "R37"
+   },
+   {
+    "actor": "parent",
+    "goal": "submit various type of forms to the camp management",
+    "src": "R38"
+   },
+   {
+    "actor": "parent",
+    "goal": "create an account",
+    "src": "R39"
+   },
+   {
+    "actor": "parent",
+    "goal": "see which counselors are assigned to my kids",
+    "src": "R40"
+   },
+   {
+    "actor": "parent",
+    "goal": "message my camper counselors",
+    "src": "R41"
+   },
+   {
+    "actor": "parent",
+    "goal": "sign and submit consent forms online",
+    "src": "R42"
+   },
+   {
+    "actor": "parent",
+    "goal": "see if I made all the necessary payments",
+    "src": "R43"
+   },
+   {
+    "actor": "parent",
+    "goal": "share any photos the camp has taken of my camper",
+    "src": "R44"
+   },
+   {
+    "actor": "parent",
+    "goal": "connect with the staff in case of an emergency",
+    "src": "R45"
+   },
+   {
+    "actor": "parent",
+    "goal": "enroll my campers",
+    "src": "R46"
+   },
+   {
+    "actor": "parent",
+    "goal": "see and edit my enrolled campers to the camp year",
+    "src": "R47"
+   },
+   {
+    "actor": "parent",
+    "goal": "see a schedule of the activities my campers are involved in at camp",
+    "src": "R48"
+   },
+   {
+    "actor": "camp worker",
+    "goal": "see which campers I am in charge of and where",
+    "src": "R49"
+   },
+   {
+    "actor": "camp worker",
+    "goal": "submit a completion report for the tasks which was assigned to me",
+    "src": "R50"
+   },
+   {
+    "actor": "camp worker",
+    "goal": "report a camper to the manager with an inappropriate behavior",
+    "src": "R51"
+   },
+   {
+    "actor": "camp worker",
+    "goal": "report a list of supplies to the manager that the camp is short of",
+    "src": "R52"
+   },
+   {
+    "actor": "camp worker",
+    "goal": "report necessary repairs to the manager that the camp is needed of",
+    "src": "R53"
+   },
+   {
+    "actor": "camp worker",
+    "goal": "see which campers I am in charge of and where",
+    "src": "R54"
+   },
+   {
+    "actor": "camp counselor",
+    "goal": "take attendance of my assigned kids",
+    "src": "R55"
+   }
+  ],
+  "unparsed": 0
+ }
+}

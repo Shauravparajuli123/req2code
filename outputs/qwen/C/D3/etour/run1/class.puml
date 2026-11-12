@@ -1,0 +1,109 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Agency {
+}
+class AccountTourist {
+  name : String
+  +enableDisableAccount()
+  +modifyData()
+}
+class Cultural {
+  name : String
+  +deleteCultural()
+  +insertCultural()
+  +changeCulturalData()
+  +searchCultural()
+  +viewCulturalDetails()
+}
+class RefreshmentPoint {
+  name : String
+  +deleteRefreshmentPoint()
+  +activateConvention()
+  +changeRefreshmentData()
+  +searchRefreshmentPoint()
+  +viewRefreshmentDetails()
+  +viewRefreshmentHistory()
+}
+class Tourist {
+  id : int
+  authenticated : boolean
+  +viewTouristDetails()
+  +searchTourist()
+  +modifySearchPreferences()
+  +modifyAccountData()
+  +modifyGeneralPreferences()
+  +viewFavoritesList()
+  +viewVisitedSitesList()
+  +insertBookmark()
+  +removeBookmark()
+  +insertFeedback()
+}
+class BannerAd {
+  image : String
+  +changeImage()
+  +deleteBanner()
+  +insertBanner()
+}
+class News {
+  title : String
+  +insertNews()
+  +deleteNews()
+  +modifyNews()
+}
+class Feedback {
+  comment : String
+  touristId : int
+  siteId : int
+  +editComment()
+}
+class Location {
+  name : String
+  +viewStatisticalReport()
+}
+class Game {
+  name : String
+  +createGame()
+}
+class SearchTag {
+  +removeSearchTag()
+  +insertTagSearch()
+}
+class User {
+  +changePassword()
+  +requireCreation()
+  +supplyLogin()
+  +researchHeritage()
+  +searchSite()
+  +endSession()
+}
+class RestaurantOperator {
+  +insertBanner()
+  +changeImage()
+  +deleteBannerAd()
+  +activateEditingMenu()
+  +deleteMenuSelection()
+  +changeRefreshmentData()
+  +requestConvention()
+}
+class Comment {
+  text : String
+  siteId : int
+  +editComment()
+}
+class Gps {
+  position : String
+}
+class AdvancedSearch {
+  criteria : String
+}
+class Site {
+  id : int
+  name : String
+}
+Agency "1" -- "0..*" Tourist : has
+Agency "1" -- "0..*" RefreshmentPoint : has
+Agency "1" -- "0..*" Site : has
+Tourist "1" -- "1" Feedback : has
+Feedback "1" -- "1" Comment : has
+@enduml

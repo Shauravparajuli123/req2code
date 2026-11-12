@@ -1,0 +1,45 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that UC32 and UC58 are not relevant to the system and hence not included."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Cultural Object class is missing in the model.",
+   "fix": "Add a class named CulturalObject with appropriate attributes and methods."
+  },
+  {
+   "agent": "class",
+   "issue": "Use case UC32 and UC58 are not represented in the model.",
+   "fix": "Add corresponding classes or methods for UC32 and UC58 in the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Agency and Use cases is missing. Agency should realize the use cases.",
+   "fix": "Add realization relationships from Agency to the use cases it realizes."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Tourist and Use cases is missing. Tourist should participate in the use cases they perform.",
+   "fix": "Add participation relationships from Tourist to the use cases it performs."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Moderator and Use cases is missing. Moderator should participate in the use cases they perform.",
+   "fix": "Add participation relationships from Moderator to the use cases it performs."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between PointOfRestaurantOperator and Use cases is missing. PointOfRestaurantOperator should participate in the use cases they perform.",
+   "fix": "Add participation relationships from PointOfRestaurantOperator to the use cases it performs."
+  }
+ ]
+}

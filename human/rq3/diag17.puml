@@ -1,0 +1,19 @@
+@startuml
+class FCMSource {
+}
+class EAISource {
+}
+class FCMSink {
+}
+class EAISink {
+}
+class EAIResource {
+}
+class EAIQueue {
+  maxLength
+}
+EAISource -- FCMSource
+EAISource -- EAIResource
+EAISink -- EAIResource
+EAISink -- FCMSink
+@enduml

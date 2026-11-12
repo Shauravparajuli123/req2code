@@ -1,0 +1,100 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasColumn",
+     "use_case": "R5"
+    },
+    {
+     "name": "hasFkey",
+     "use_case": "R4"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R4"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Fkey",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "referencesTable",
+     "use_case": "R3"
+    },
+    {
+     "name": "getReferencedTable",
+     "use_case": "R6"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R6"
+   ]
+  },
+  {
+   "name": "NameString",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Table",
+   "target": "Column",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Table",
+   "target": "Fkey",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Fkey",
+   "target": "Table",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass NameString:\n    pass\n\nclass Column:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Fkey:\n    def __init__(self):\n        pass\n    def referencesTable(self) -> None:\n        raise NotImplementedError\n    def getReferencedTable(self) -> None:\n        raise NotImplementedError\n\nclass Table:\n    def __init__(self, name: str):\n        self.name = name\n        self.columns: List[Column] = []\n        self.fkeys: List[Fkey] = []\n    def hasColumn(self) -> None:\n        raise NotImplementedError\n    def hasFkey(self) -> None:\n        raise NotImplementedError",
+ "java": {}
+}

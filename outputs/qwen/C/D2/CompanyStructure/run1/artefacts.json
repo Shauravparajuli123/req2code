@@ -1,0 +1,133 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "CompanyStructureModel",
+   "kind": "class",
+   "attributes": [
+    "hq",
+    "stores",
+    "backOffices",
+    "cashRegisters"
+   ],
+   "methods": [
+    {
+     "name": "createHq",
+     "use_case": null
+    },
+    {
+     "name": "createStore",
+     "use_case": null
+    },
+    {
+     "name": "createBackOffice",
+     "use_case": null
+    },
+    {
+     "name": "createCashRegister",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Hq",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "manageStores",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Store",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "assignBackOffice",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "Office",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "CashRegister",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "CompanyStructureModel",
+   "target": "Hq",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "CompanyStructureModel",
+   "target": "Store",
+   "src": [
+    "R3",
+    "R9"
+   ]
+  },
+  {
+   "source": "Store",
+   "target": "Office",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "CompanyStructureModel",
+   "target": "CashRegister",
+   "src": [
+    "R7",
+    "R11"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/CompanyStructure.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass CompanyStructureModel:\n    \"\"\"Source: R1\"\"\"\n    hq: _t.Optional[str] = None\n    stores: _t.Optional[str] = None\n    backOffices: _t.Optional[str] = None\n    cashRegisters: _t.Optional[str] = None\n\n    def createHq(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def createStore(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def createBackOffice(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def createCashRegister(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Hq:\n    \"\"\"Source: R8, R9\"\"\"\n    name: _t.Optional[str] = None\n\n    def manageStores(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Store:\n    \"\"\"Source: R3, R10\"\"\"\n    name: _t.Optional[str] = None\n    office: _t.Optional[\"Office\"] = None\n\n    def assignBackOffice(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Office:\n    \"\"\"Source: R4\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass CashRegister:\n    \"\"\"Source: R7\"\"\"\n    name: _t.Optional[str] = None\n",
+ "java": {
+  "CompanyStructureModel.java": "/** Generated from shared model D2/CompanyStructure. Source: R1 */\npublic class CompanyStructureModel {\n    private java.lang.String hq;\n    private java.lang.String stores;\n    private java.lang.String backOffices;\n    private java.lang.String cashRegisters;\n\n    /** Operation. */\n    public void createHq() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void createStore() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void createBackOffice() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void createCashRegister() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Hq.java": "/** Generated from shared model D2/CompanyStructure. Source: R8, R9 */\npublic class Hq {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void manageStores() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Store.java": "/** Generated from shared model D2/CompanyStructure. Source: R3, R10 */\npublic class Store {\n    private java.lang.String name;\n    private Office office;\n\n    /** Operation. */\n    public void assignBackOffice() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Office.java": "/** Generated from shared model D2/CompanyStructure. Source: R4 */\npublic class Office {\n    private java.lang.String name;\n}\n",
+  "CashRegister.java": "/** Generated from shared model D2/CompanyStructure. Source: R7 */\npublic class CashRegister {\n    private java.lang.String name;\n}\n"
+ }
+}

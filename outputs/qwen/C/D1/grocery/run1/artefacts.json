@@ -1,0 +1,544 @@
+{
+ "actors": [
+  "Employee",
+  "Manager",
+  "OfficeEmployee",
+  "Applicant"
+ ],
+ "use_cases": [
+  {
+   "name": "Receive Salary Statement",
+   "actor": "Employee",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Send Salary Statement",
+   "actor": "Manager",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Enable Option",
+   "actor": "Manager",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Automate Payment System",
+   "actor": "Manager",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Outsource Part",
+   "actor": "Manager",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Receive Notification",
+   "actor": "Employee",
+   "src": [
+    "R12",
+    "R26",
+    "R6"
+   ]
+  },
+  {
+   "name": "Express Hour",
+   "actor": "Employee",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Semi Scheduling Process",
+   "actor": "Manager",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Manually Edit Schedule",
+   "actor": "Manager",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Notify Adjustment",
+   "actor": "Manager",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Notify Hiring Process",
+   "actor": "Manager",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Have Overview",
+   "actor": "Manager",
+   "src": [
+    "R29",
+    "R30"
+   ]
+  },
+  {
+   "name": "View Schedule",
+   "actor": "Employee",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "Verify Work Hour",
+   "actor": "Employee",
+   "src": [
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "name": "File Complaint",
+   "actor": "Employee",
+   "src": [
+    "R18"
+   ]
+  },
+  {
+   "name": "Respond Complaint",
+   "actor": "OfficeEmployee",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Categorize Complaint",
+   "actor": "OfficeEmployee",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "Prioritize Complaint",
+   "actor": "OfficeEmployee",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "View Complaint",
+   "actor": "OfficeEmployee",
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "Register Account",
+   "actor": "Applicant",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Have Application",
+   "actor": "Employee",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "Navigate Application",
+   "actor": "Employee",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Choose Email",
+   "actor": "Employee",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "Choose Payment",
+   "actor": "Employee",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "View Statement",
+   "actor": "Employee",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Share Payment Handler",
+   "actor": "Employee",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "Change Information",
+   "actor": "Employee",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "View Contract",
+   "actor": "Manager",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "View Certificate",
+   "actor": "Manager",
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "name": "Contact Management",
+   "actor": "Employee",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Contact Employee",
+   "actor": "Manager",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Forward Message",
+   "actor": "Manager",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Have System",
+   "actor": "Manager",
+   "src": [
+    "R39"
+   ]
+  },
+  {
+   "name": "Hire Employee",
+   "actor": "Manager",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "View Inbox",
+   "actor": "Employee",
+   "src": [
+    "R38"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "certificate",
+    "status",
+    "group",
+    "qualification",
+    "preferredWorkingHours",
+    "personalInformation",
+    "contract"
+   ],
+   "methods": [
+    {
+     "name": "expressHour",
+     "use_case": "Express Hour"
+    },
+    {
+     "name": "viewSchedule",
+     "use_case": "View Schedule"
+    },
+    {
+     "name": "verifyWorkHour",
+     "use_case": "Verify Work Hour"
+    },
+    {
+     "name": "changeInformation",
+     "use_case": "Change Information"
+    },
+    {
+     "name": "viewContract",
+     "use_case": "View Contract"
+    },
+    {
+     "name": "viewStatement",
+     "use_case": "View Statement"
+    },
+    {
+     "name": "viewComplaint",
+     "use_case": "View Complaint"
+    },
+    {
+     "name": "fileComplaint",
+     "use_case": "File Complaint"
+    },
+    {
+     "name": "chooseEmail",
+     "use_case": "Choose Email"
+    },
+    {
+     "name": "choosePayment",
+     "use_case": "Choose Payment"
+    }
+   ],
+   "src": [
+    "R1",
+    "R13",
+    "R15",
+    "R16",
+    "R26",
+    "R34",
+    "R47",
+    "R48",
+    "R49"
+   ]
+  },
+  {
+   "name": "Manager",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "sendSalaryStatement",
+     "use_case": "Send Salary Statement"
+    },
+    {
+     "name": "enableOption",
+     "use_case": "Enable Option"
+    },
+    {
+     "name": "automatePaymentSystem",
+     "use_case": "Automate Payment System"
+    },
+    {
+     "name": "outsourcePart",
+     "use_case": "Outsource Part"
+    },
+    {
+     "name": "semiSchedulingProcess",
+     "use_case": "Semi Scheduling Process"
+    },
+    {
+     "name": "manuallyEditSchedule",
+     "use_case": "Manually Edit Schedule"
+    },
+    {
+     "name": "notifyAdjustment",
+     "use_case": "Notify Adjustment"
+    },
+    {
+     "name": "notifyHiringProcess",
+     "use_case": "Notify Hiring Process"
+    },
+    {
+     "name": "viewSchedule",
+     "use_case": "View Schedule"
+    },
+    {
+     "name": "viewComplaint",
+     "use_case": "View Complaint"
+    },
+    {
+     "name": "respondComplaint",
+     "use_case": "Respond Complaint"
+    },
+    {
+     "name": "hireEmployee",
+     "use_case": "Hire Employee"
+    },
+    {
+     "name": "viewContract",
+     "use_case": "View Contract"
+    },
+    {
+     "name": "viewCertificate",
+     "use_case": "View Certificate"
+    },
+    {
+     "name": "contactManagement",
+     "use_case": "Contact Management"
+    },
+    {
+     "name": "forwardMessage",
+     "use_case": "Forward Message"
+    }
+   ],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R14",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R39"
+   ]
+  },
+  {
+   "name": "Complaint",
+   "kind": "class",
+   "attributes": [
+    "status",
+    "category",
+    "priority"
+   ],
+   "methods": [
+    {
+     "name": "categorizeComplaint",
+     "use_case": "Categorize Complaint"
+    },
+    {
+     "name": "prioritizeComplaint",
+     "use_case": "Prioritize Complaint"
+    }
+   ],
+   "src": [
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25"
+   ]
+  },
+  {
+   "name": "SalaryStatement",
+   "kind": "class",
+   "attributes": [
+    "employee",
+    "date",
+    "amount"
+   ],
+   "methods": [
+    {
+     "name": "receiveSalaryStatement",
+     "use_case": "Receive Salary Statement"
+    },
+    {
+     "name": "sendSalaryStatement",
+     "use_case": "Send Salary Statement"
+    }
+   ],
+   "src": [
+    "R1",
+    "R26"
+   ]
+  },
+  {
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [
+    "message"
+   ],
+   "methods": [
+    {
+     "name": "receiveNotification",
+     "use_case": "Receive Notification"
+    },
+    {
+     "name": "notifyAdjustment",
+     "use_case": "Notify Adjustment"
+    }
+   ],
+   "src": [
+    "R6",
+    "R11",
+    "R12",
+    "R26"
+   ]
+  },
+  {
+   "name": "Schedule",
+   "kind": "class",
+   "attributes": [
+    "date",
+    "hours"
+   ],
+   "methods": [
+    {
+     "name": "semiSchedulingProcess",
+     "use_case": "Semi Scheduling Process"
+    },
+    {
+     "name": "manuallyEditSchedule",
+     "use_case": "Manually Edit Schedule"
+    },
+    {
+     "name": "notifyAdjustment",
+     "use_case": "Notify Adjustment"
+    }
+   ],
+   "src": [
+    "R8",
+    "R9",
+    "R10",
+    "R12",
+    "R14"
+   ]
+  }
+ ],
+ "relations": [],
+ "python": "\"\"\"Code skeleton generated from the shared model of D1/grocery.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Employee:\n    \"\"\"Source: R1, R13, R15, R16, R26, R34, R47, R48, R49\"\"\"\n    name: _t.Optional[str] = None\n    certificate: _t.Optional[str] = None\n    status: _t.Optional[str] = None\n    group: _t.Optional[str] = None\n    qualification: _t.Optional[str] = None\n    preferredWorkingHours: _t.Optional[str] = None\n    personalInformation: _t.Optional[str] = None\n    contract: _t.Optional[str] = None\n\n    def expressHour(self) -> None:\n        \"\"\"Realizes UC7 \"Express Hour\" (R7).\"\"\"\n        raise NotImplementedError\n\n    def viewSchedule(self) -> None:\n        \"\"\"Realizes UC13 \"View Schedule\" (R13, R14).\"\"\"\n        raise NotImplementedError\n\n    def verifyWorkHour(self) -> None:\n        \"\"\"Realizes UC14 \"Verify Work Hour\" (R15, R16).\"\"\"\n        raise NotImplementedError\n\n    def changeInformation(self) -> None:\n        \"\"\"Realizes UC27 \"Change Information\" (R47).\"\"\"\n        raise NotImplementedError\n\n    def viewContract(self) -> None:\n        \"\"\"Realizes UC28 \"View Contract\" (R32).\"\"\"\n        raise NotImplementedError\n\n    def viewStatement(self) -> None:\n        \"\"\"Realizes UC25 \"View Statement\" (R45).\"\"\"\n        raise NotImplementedError\n\n    def viewComplaint(self) -> None:\n        \"\"\"Realizes UC19 \"View Complaint\" (R21, R22).\"\"\"\n        raise NotImplementedError\n\n    def fileComplaint(self) -> None:\n        \"\"\"Realizes UC15 \"File Complaint\" (R18).\"\"\"\n        raise NotImplementedError\n\n    def chooseEmail(self) -> None:\n        \"\"\"Realizes UC23 \"Choose Email\" (R43).\"\"\"\n        raise NotImplementedError\n\n    def choosePayment(self) -> None:\n        \"\"\"Realizes UC24 \"Choose Payment\" (R44).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Manager:\n    \"\"\"Source: R2, R3, R4, R5, R8, R9, R10, R11, R12, R14, R18, R19, R20, R21, R22, R23, R24, R25, R27, R28, R29, R30, R39\"\"\"\n    name: _t.Optional[str] = None\n    status: _t.Optional[str] = None\n\n    def sendSalaryStatement(self) -> None:\n        \"\"\"Realizes UC2 \"Send Salary Statement\" (R2).\"\"\"\n        raise NotImplementedError\n\n    def enableOption(self) -> None:\n        \"\"\"Realizes UC3 \"Enable Option\" (R3).\"\"\"\n        raise NotImplementedError\n\n    def automatePaymentSystem(self) -> None:\n        \"\"\"Realizes UC4 \"Automate Payment System\" (R4).\"\"\"\n        raise NotImplementedError\n\n    def outsourcePart(self) -> None:\n        \"\"\"Realizes UC5 \"Outsource Part\" (R5).\"\"\"\n        raise NotImplementedError\n\n    def semiSchedulingProcess(self) -> None:\n        \"\"\"Realizes UC8 \"Semi Scheduling Process\" (R8).\"\"\"\n        raise NotImplementedError\n\n    def manuallyEditSchedule(self) -> None:\n        \"\"\"Realizes UC9 \"Manually Edit Schedule\" (R9).\"\"\"\n        raise NotImplementedError\n\n    def notifyAdjustment(self) -> None:\n        \"\"\"Realizes UC10 \"Notify Adjustment\" (R11).\"\"\"\n        raise NotImplementedError\n\n    def notifyHiringProcess(self) -> None:\n        \"\"\"Realizes UC11 \"Notify Hiring Process\" (R28).\"\"\"\n        raise NotImplementedError\n\n    def viewSchedule(self) -> None:\n        \"\"\"Realizes UC13 \"View Schedule\" (R13, R14).\"\"\"\n        raise NotImplementedError\n\n    def viewComplaint(self) -> None:\n        \"\"\"Realizes UC19 \"View Complaint\" (R21, R22).\"\"\"\n        raise NotImplementedError\n\n    def respondComplaint(self) -> None:\n        \"\"\"Realizes UC16 \"Respond Complaint\" (R23).\"\"\"\n        raise NotImplementedError\n\n    def hireEmployee(self) -> None:\n        \"\"\"Realizes UC34 \"Hire Employee\" (R27).\"\"\"\n        raise NotImplementedError\n\n    def viewContract(self) -> None:\n        \"\"\"Realizes UC28 \"View Contract\" (R32).\"\"\"\n        raise NotImplementedError\n\n    def viewCertificate(self) -> None:\n        \"\"\"Realizes UC29 \"View Certificate\" (R33).\"\"\"\n        raise NotImplementedError\n\n    def contactManagement(self) -> None:\n        \"\"\"Realizes UC30 \"Contact Management\" (R34).\"\"\"\n        raise NotImplementedError\n\n    def forwardMessage(self) -> None:\n        \"\"\"Realizes UC32 \"Forward Message\" (R37).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Complaint:\n    \"\"\"Source: R17, R18, R19, R20, R21, R22, R23, R24, R25\"\"\"\n    status: _t.Optional[str] = None\n    category: _t.Optional[str] = None\n    priority: _t.Optional[str] = None\n\n    def categorizeComplaint(self) -> None:\n        \"\"\"Realizes UC17 \"Categorize Complaint\" (R24).\"\"\"\n        raise NotImplementedError\n\n    def prioritizeComplaint(self) -> None:\n        \"\"\"Realizes UC18 \"Prioritize Complaint\" (R25).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass SalaryStatement:\n    \"\"\"Source: R1, R26\"\"\"\n    employee: _t.Optional[str] = None\n    date: _t.Optional[str] = None\n    amount: _t.Optional[float] = None\n\n    def receiveSalaryStatement(self) -> None:\n        \"\"\"Realizes UC1 \"Receive Salary Statement\" (R1).\"\"\"\n        raise NotImplementedError\n\n    def sendSalaryStatement(self) -> None:\n        \"\"\"Realizes UC2 \"Send Salary Statement\" (R2).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Notification:\n    \"\"\"Source: R6, R11, R12, R26\"\"\"\n    message: _t.Optional[str] = None\n\n    def receiveNotification(self) -> None:\n        \"\"\"Realizes UC6 \"Receive Notification\" (R12, R26, R6).\"\"\"\n        raise NotImplementedError\n\n    def notifyAdjustment(self) -> None:\n        \"\"\"Realizes UC10 \"Notify Adjustment\" (R11).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Schedule:\n    \"\"\"Source: R8, R9, R10, R12, R14\"\"\"\n    date: _t.Optional[str] = None\n    hours: _t.Optional[int] = None\n\n    def semiSchedulingProcess(self) -> None:\n        \"\"\"Realizes UC8 \"Semi Scheduling Process\" (R8).\"\"\"\n        raise NotImplementedError\n\n    def manuallyEditSchedule(self) -> None:\n        \"\"\"Realizes UC9 \"Manually Edit Schedule\" (R9).\"\"\"\n        raise NotImplementedError\n\n    def notifyAdjustment(self) -> None:\n        \"\"\"Realizes UC10 \"Notify Adjustment\" (R11).\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Employee.java": "/** Generated from shared model D1/grocery. Source: R1, R13, R15, R16, R26, R34, R47, R48, R49 */\npublic class Employee {\n    private java.lang.String name;\n    private java.lang.String certificate;\n    private java.lang.String status;\n    private java.lang.String group;\n    private java.lang.String qualification;\n    private java.lang.String preferredWorkingHours;\n    private java.lang.String personalInformation;\n    private java.lang.String contract;\n\n    /** Realizes UC7 \"Express Hour\" (R7). */\n    public void expressHour() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC13 \"View Schedule\" (R13, R14). */\n    public void viewSchedule() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC14 \"Verify Work Hour\" (R15, R16). */\n    public void verifyWorkHour() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC27 \"Change Information\" (R47). */\n    public void changeInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC28 \"View Contract\" (R32). */\n    public void viewContract() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC25 \"View Statement\" (R45). */\n    public void viewStatement() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC19 \"View Complaint\" (R21, R22). */\n    public void viewComplaint() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"File Complaint\" (R18). */\n    public void fileComplaint() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC23 \"Choose Email\" (R43). */\n    public void chooseEmail() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC24 \"Choose Payment\" (R44). */\n    public void choosePayment() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Manager.java": "/** Generated from shared model D1/grocery. Source: R2, R3, R4, R5, R8, R9, R10, R11, R12, R14, R18, R19, R20, R21, R22, R23, R24, R25, R27, R28, R29, R30, R39 */\npublic class Manager {\n    private java.lang.String name;\n    private java.lang.String status;\n\n    /** Realizes UC2 \"Send Salary Statement\" (R2). */\n    public void sendSalaryStatement() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Enable Option\" (R3). */\n    public void enableOption() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC4 \"Automate Payment System\" (R4). */\n    public void automatePaymentSystem() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC5 \"Outsource Part\" (R5). */\n    public void outsourcePart() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC8 \"Semi Scheduling Process\" (R8). */\n    public void semiSchedulingProcess() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"Manually Edit Schedule\" (R9). */\n    public void manuallyEditSchedule() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"Notify Adjustment\" (R11). */\n    public void notifyAdjustment() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC11 \"Notify Hiring Process\" (R28). */\n    public void notifyHiringProcess() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC13 \"View Schedule\" (R13, R14). */\n    public void viewSchedule() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC19 \"View Complaint\" (R21, R22). */\n    public void viewComplaint() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC16 \"Respond Complaint\" (R23). */\n    public void respondComplaint() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC34 \"Hire Employee\" (R27). */\n    public void hireEmployee() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC28 \"View Contract\" (R32). */\n    public void viewContract() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC29 \"View Certificate\" (R33). */\n    public void viewCertificate() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC30 \"Contact Management\" (R34). */\n    public void contactManagement() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC32 \"Forward Message\" (R37). */\n    public void forwardMessage() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Complaint.java": "/** Generated from shared model D1/grocery. Source: R17, R18, R19, R20, R21, R22, R23, R24, R25 */\npublic class Complaint {\n    private java.lang.String status;\n    private java.lang.String category;\n    private java.lang.String priority;\n\n    /** Realizes UC17 \"Categorize Complaint\" (R24). */\n    public void categorizeComplaint() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC18 \"Prioritize Complaint\" (R25). */\n    public void prioritizeComplaint() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "SalaryStatement.java": "/** Generated from shared model D1/grocery. Source: R1, R26 */\npublic class SalaryStatement {\n    private java.lang.String employee;\n    private java.time.LocalDate date;\n    private double amount;\n\n    /** Realizes UC1 \"Receive Salary Statement\" (R1). */\n    public void receiveSalaryStatement() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Send Salary Statement\" (R2). */\n    public void sendSalaryStatement() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Notification.java": "/** Generated from shared model D1/grocery. Source: R6, R11, R12, R26 */\npublic class Notification {\n    private java.lang.String message;\n\n    /** Realizes UC6 \"Receive Notification\" (R12, R26, R6). */\n    public void receiveNotification() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"Notify Adjustment\" (R11). */\n    public void notifyAdjustment() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Schedule.java": "/** Generated from shared model D1/grocery. Source: R8, R9, R10, R12, R14 */\npublic class Schedule {\n    private java.time.LocalDate date;\n    private int hours;\n\n    /** Realizes UC8 \"Semi Scheduling Process\" (R8). */\n    public void semiSchedulingProcess() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"Manually Edit Schedule\" (R9). */\n    public void manuallyEditSchedule() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"Notify Adjustment\" (R11). */\n    public void notifyAdjustment() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

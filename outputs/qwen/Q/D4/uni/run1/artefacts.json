@@ -1,0 +1,136 @@
+{
+ "actors": [
+  "student"
+ ],
+ "use_cases": [
+  {
+   "name": "EnrollInCourse",
+   "actor": "student",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "BeAccommodatedInDormitory",
+   "actor": "student",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Exist",
+   "actor": "course",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Course",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "credits",
+    "professors",
+    "students"
+   ],
+   "methods": [
+    {
+     "name": "enrollStudent",
+     "use_case": "EnrollInCourse"
+    },
+    {
+     "name": "addProfessor",
+     "use_case": "none"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Dormitory",
+   "kind": "class",
+   "attributes": [
+    "price",
+    "students"
+   ],
+   "methods": [
+    {
+     "name": "accommodateStudent",
+     "use_case": "BeAccommodatedInDormitory"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Professor",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Student",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "enrollInCourse",
+     "use_case": "EnrollInCourse"
+    },
+    {
+     "name": "accommodateInDormitory",
+     "use_case": "BeAccommodatedInDormitory"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Course",
+   "target": "Student",
+   "multiplicity_target": "1..*",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Course",
+   "target": "Professor",
+   "multiplicity_target": "1..*",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Course:\n    def __init__(self, name: str, credits: int):\n        self.name = name\n        self.credits = credits\n        self.professors: List[Professor] = []\n        self.students: List[Student] = []\n\n    def enrollStudent(self, student: Student):\n        self.students.append(student)\n        raise NotImplementedError\n\n    def addProfessor(self, professor: Professor):\n        self.professors.append(professor)\n        raise NotImplementedError\n\nclass Dormitory:\n    def __init__(self, price: float):\n        self.price = price\n        self.students: List[Student] = []\n\n    def accommodateStudent(self, student: Student):\n        self.students.append(student)\n        raise NotImplementedError\n\nclass Professor:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Student:\n    def __init__(self, name: str):\n        self.name = name\n\n    def enrollInCourse(self, course: Course):\n        course.students.append(self)\n        raise NotImplementedError\n\n    def accommodateInDormitory(self, dormitory: Dormitory):\n        dormitory.accommodateStudent(self)\n        raise NotImplementedError",
+ "java": {}
+}

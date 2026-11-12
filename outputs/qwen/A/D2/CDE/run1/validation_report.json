@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class ICdeComponentSpec is not a subclass of IUmlType as per R2.",
+   "fix": "Make ICdeComponentSpec inherit from IUmlType."
+  },
+  {
+   "agent": "class",
+   "issue": "Class IUmlComponent is not defined as a subclass of IUmlClass as per R4.",
+   "fix": "Define IUmlComponent as a subclass of IUmlClass."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The association between ICdeMember and IUmlMember is not bidirectional as per R10.",
+   "fix": "Add a reverse association from IUmlMember to ICdeMember."
+  },
+  {
+   "agent": "class",
+   "issue": "Class ICdeMemberExe is not defined as a class, but its attributes are present in ICdeMember as per R9.",
+   "fix": "Define ICdeMemberExe as a class with the specified attributes."
+  }
+ ]
+}

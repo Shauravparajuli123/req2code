@@ -1,0 +1,131 @@
+{
+ "actors": [
+  "Actor"
+ ],
+ "use_cases": [
+  {
+   "name": "UseCase",
+   "actor": "Actor",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "UseCaseDiagram",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "addUseCase",
+     "use_case": "UseCase"
+    },
+    {
+     "name": "addActor",
+     "use_case": "Actor"
+    },
+    {
+     "name": "addAssociation",
+     "use_case": "Association"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CaseContainer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Extend",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "extend",
+     "use_case": "UseCase"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "UseCase",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "include",
+     "use_case": "UseCase"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Association",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "CaseContainer",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Extend",
+   "target": "UseCase",
+   "multiplicity_target": "1..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "Actor",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "Association",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "python": "class UseCaseDiagram:\n    def __init__(self, name):\n        self.name = name\n        self.use_cases = []\n        self.actors = []\n        self.associations = []\n        self.containers = []\n\n    def addUseCase(self, use_case):\n        raise NotImplementedError\n\n    def addActor(self, actor):\n        raise NotImplementedError\n\n    def addAssociation(self, association):\n        raise NotImplementedError\n\nclass CaseContainer:\n    pass\nclass Extend:\n    def extend(self, use_case):\n        raise NotImplementedError\nclass UseCase:\n    def include(self, use_case):\n        raise NotImplementedError\nclass Association:\n    pass",
+ "java": {}
+}

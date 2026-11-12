@@ -1,0 +1,22 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Vehicle {
+  position : String
+  speed : int
+  maximumSpeed : int
+  environment : String
+  +move()
+}
+class LandVehicle {
+}
+class MarineVehicle {
+}
+class AmphibiousVehicle {
+}
+LandVehicle --|> Vehicle
+MarineVehicle --|> Vehicle
+AmphibiousVehicle --|> Vehicle
+AmphibiousVehicle "1" -- "1" LandVehicle : has
+AmphibiousVehicle "1" -- "1" MarineVehicle : has
+@enduml

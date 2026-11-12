@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "No use case is realized by any class.",
+   "fix": "Add use cases to the model and ensure they are realized by the appropriate classes."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Place' has no methods.",
+   "fix": "Add methods to the 'Place' class as required by the requirements."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Net' has no attributes 'transitions' and 'places'.",
+   "fix": "Add the attributes 'transitions' and 'places' to the 'Net' class."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The association between 'Net' and 'Place' should be [0..*..1] instead of [1..1..*].",
+   "fix": "Adjust the multiplicity of the association between 'Net' and 'Place'."
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Classifier' is missing attributes 'isRoot' and 'isAbstract'",
+   "fix": "Add attributes 'isRoot' and 'isAbstract' to class 'Classifier'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Feature' is missing attribute 'ownerScope'",
+   "fix": "Add attribute 'ownerScope' to class 'Feature'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Generalization' is missing attribute 'discriminator'",
+   "fix": "Add attribute 'discriminator' to class 'Generalization'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'CoreModel' and 'GeneralizableElement' is missing",
+   "fix": "Add association CoreModel -> GeneralizableElement [1..0..*]"
+  }
+ ]
+}

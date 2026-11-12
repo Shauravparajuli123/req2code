@@ -1,0 +1,136 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "places",
+    "arcs"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "net"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    "src",
+    "dst"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "PTArc",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "src",
+    "dst"
+   ],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "TPArc",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "src",
+    "dst"
+   ],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "net",
+    "outgoingArcs"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "nets"
+   ],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Net",
+   "target": "Place",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "Net",
+   "target": "TPArc",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Model",
+   "target": "Net",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "Net",
+   "target": "Transition",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "PTArc",
+   "target": "Arc",
+   "src": []
+  },
+  {
+   "source": "TPArc",
+   "target": "Arc",
+   "src": []
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GWPNV3.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Net:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    places: _t.Optional[str] = None\n    arcs: _t.Optional[str] = None\n    tPArcs: _t.List[\"TPArc\"] = _dc.field(default_factory=list)\n    transition: _t.Optional[\"Transition\"] = None\n\n\n@_dc.dataclass\nclass Place:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    net: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Arc:\n    \"\"\"Source: -\"\"\"\n    src: _t.Optional[str] = None\n    dst: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass PTArc(Arc):\n    \"\"\"Source: R5\"\"\"\n    name: _t.Optional[str] = None\n    src: _t.Optional[str] = None\n    dst: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass TPArc(Arc):\n    \"\"\"Source: R6\"\"\"\n    name: _t.Optional[str] = None\n    src: _t.Optional[str] = None\n    dst: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    net: _t.Optional[str] = None\n    outgoingArcs: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Model:\n    \"\"\"Source: R3\"\"\"\n    name: _t.Optional[str] = None\n    nets: _t.Optional[str] = None\n",
+ "java": {
+  "Net.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class Net {\n    private java.lang.String name;\n    private java.lang.String places;\n    private java.lang.String arcs;\n    private java.util.List<TPArc> tPArcs;\n    private Transition transition;\n}\n",
+  "Place.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class Place {\n    private java.lang.String name;\n    private java.lang.String net;\n}\n",
+  "Arc.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class Arc {\n    private java.lang.String src;\n    private java.lang.String dst;\n}\n",
+  "PTArc.java": "/** Generated from shared model D2/GWPNV3. Source: R5 */\npublic class PTArc extends Arc {\n    private java.lang.String name;\n    private java.lang.String src;\n    private java.lang.String dst;\n}\n",
+  "TPArc.java": "/** Generated from shared model D2/GWPNV3. Source: R6 */\npublic class TPArc extends Arc {\n    private java.lang.String name;\n    private java.lang.String src;\n    private java.lang.String dst;\n}\n",
+  "Transition.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class Transition {\n    private java.lang.String name;\n    private java.lang.String net;\n    private java.lang.String outgoingArcs;\n}\n",
+  "Model.java": "/** Generated from shared model D2/GWPNV3. Source: R3 */\npublic class Model {\n    private java.lang.String name;\n    private java.lang.String nets;\n}\n"
+ }
+}

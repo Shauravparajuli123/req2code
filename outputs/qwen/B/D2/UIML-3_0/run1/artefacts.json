@@ -1,0 +1,67 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Uiml",
+   "kind": "class",
+   "attributes": [
+    "head",
+    "interfaces"
+   ],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Header",
+   "kind": "class",
+   "attributes": [
+    "metas"
+   ],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "MetaData",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Uiml",
+   "target": "Header",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "source": "Uiml",
+   "target": "MetaData",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "source": "MetaData",
+   "target": "Uiml",
+   "src": []
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/UIML-3_0.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Uiml:\n    \"\"\"Source: R4\"\"\"\n    head: _t.Optional[str] = None\n    interfaces: _t.Optional[str] = None\n    header: _t.Optional[\"Header\"] = None\n    metaDatas: _t.List[\"MetaData\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Header:\n    \"\"\"Source: R6\"\"\"\n    metas: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass MetaData:\n    \"\"\"Source: R3\"\"\"\n    name: _t.Optional[str] = None\n    uiml: _t.Optional[\"Uiml\"] = None\n",
+ "java": {
+  "Uiml.java": "/** Generated from shared model D2/UIML-3_0. Source: R4 */\npublic class Uiml {\n    private java.lang.String head;\n    private java.lang.String interfaces;\n    private Header header;\n    private java.util.List<MetaData> metaDatas;\n}\n",
+  "Header.java": "/** Generated from shared model D2/UIML-3_0. Source: R6 */\npublic class Header {\n    private java.lang.String metas;\n}\n",
+  "MetaData.java": "/** Generated from shared model D2/UIML-3_0. Source: R3 */\npublic class MetaData {\n    private java.lang.String name;\n    private Uiml uiml;\n}\n"
+ }
+}

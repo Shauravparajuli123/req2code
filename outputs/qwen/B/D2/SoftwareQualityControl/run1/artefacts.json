@@ -1,0 +1,173 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    "day",
+    "year"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ControlType",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Control",
+   "kind": "class",
+   "attributes": [
+    "type"
+   ],
+   "methods": [
+    {
+     "name": "setType",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R8",
+    "R10"
+   ]
+  },
+  {
+   "name": "ControlsSequence",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addControl",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "ControlsObject",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [
+    {
+     "name": "setRole",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Bug",
+   "kind": "class",
+   "attributes": [
+    "number",
+    "description",
+    "originator",
+    "comments",
+    "closeDate"
+   ],
+   "methods": [
+    {
+     "name": "setCloseDate",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R6",
+    "R12"
+   ]
+  },
+  {
+   "name": "BugTracking",
+   "kind": "class",
+   "attributes": [
+    "bugs"
+   ],
+   "methods": [
+    {
+     "name": "addBug",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Control",
+   "target": "ControlsSequence",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "source": "ControlsObject",
+   "target": "ControlsSequence",
+   "src": []
+  },
+  {
+   "source": "Control",
+   "target": "ControlType",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "Bug",
+   "target": "BugTracking",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "source": "Control",
+   "target": "Date",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/SoftwareQualityControl.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Date:\n    \"\"\"Source: R1\"\"\"\n    day: _t.Optional[int] = None\n    year: _t.Optional[int] = None\n\n\nclass ControlType(_enum.Enum):\n    \"\"\"Source: R4\"\"\"\n    TYPE1 = \"TYPE1\"\n    TYPE2 = \"TYPE2\"\n    TYPE3 = \"TYPE3\"\n    TYPE4 = \"TYPE4\"\n\n\n@_dc.dataclass\nclass Control:\n    \"\"\"Source: R8, R10\"\"\"\n    type: _t.Optional[str] = None\n    controlsSequences: _t.List[\"ControlsSequence\"] = _dc.field(default_factory=list)\n    controlType: _t.Optional[\"ControlType\"] = None\n    date: _t.Optional[\"Date\"] = None\n\n    def setType(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ControlsSequence:\n    \"\"\"Source: R2, R7, R8\"\"\"\n\n    def addControl(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ControlsObject:\n    \"\"\"Source: R3, R7, R8\"\"\"\n    role: _t.Optional[str] = None\n    controlsSequences: _t.List[\"ControlsSequence\"] = _dc.field(default_factory=list)\n\n    def setRole(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Bug:\n    \"\"\"Source: R6, R12\"\"\"\n    number: _t.Optional[int] = None\n    description: _t.Optional[str] = None\n    originator: _t.Optional[str] = None\n    comments: _t.Optional[str] = None\n    closeDate: _t.Optional[str] = None\n    bugTracking: _t.Optional[\"BugTracking\"] = None\n\n    def setCloseDate(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass BugTracking:\n    \"\"\"Source: R5, R12, R13\"\"\"\n    bugs: _t.Optional[str] = None\n\n    def addBug(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Architecture:\n    \"\"\"Source: R11\"\"\"\n    pass\n",
+ "java": {
+  "Date.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R1 */\npublic class Date {\n    private int day;\n    private int year;\n}\n",
+  "ControlType.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R4 */\npublic enum ControlType {\n    TYPE1, TYPE2, TYPE3, TYPE4\n}\n",
+  "Control.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R8, R10 */\npublic class Control {\n    private java.lang.String type;\n    private java.util.List<ControlsSequence> controlsSequences;\n    private ControlType controlType;\n    private Date date;\n\n    /** Operation. */\n    public void setType() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ControlsSequence.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R2, R7, R8 */\npublic class ControlsSequence {\n\n    /** Operation. */\n    public void addControl() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ControlsObject.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R3, R7, R8 */\npublic class ControlsObject {\n    private java.lang.String role;\n    private java.util.List<ControlsSequence> controlsSequences;\n\n    /** Operation. */\n    public void setRole() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Bug.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R6, R12 */\npublic class Bug {\n    private int number;\n    private java.lang.String description;\n    private java.lang.String originator;\n    private java.lang.String comments;\n    private java.time.LocalDate closeDate;\n    private BugTracking bugTracking;\n\n    /** Operation. */\n    public void setCloseDate() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "BugTracking.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R5, R12, R13 */\npublic class BugTracking {\n    private java.lang.String bugs;\n\n    /** Operation. */\n    public void addBug() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Architecture.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R11 */\npublic class Architecture {\n}\n"
+ }
+}

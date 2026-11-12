@@ -1,0 +1,93 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  name : String
+  personalInformation : String
+  bankingDetails : String
+  membershipType : String
+  subscription : String
+  familyMembers : String
+  lessonsBooked : String
+  contactMethod : String
+  notifications : String
+  +addPersonalInformation()
+  +addBankingDetails()
+  +chooseMembershipType()
+  +extendSubscription()
+  +unsubscribe()
+  +resetPassword()
+  +changeDetail()
+  +updatePaymentInformation()
+  +addPerson()
+  +removePerson()
+  +bookSpot()
+  +callGym()
+  +cancelLesson()
+  +confirmBooking()
+}
+class Admin {
+  name : String
+  trainers : String
+  +editLesson()
+  +editTrainingSession()
+  +addTrainer()
+  +addAdmin()
+  +removeTrainer()
+  +seeCustomer()
+  +seeSubscription()
+  +seeTime()
+  +notifySession()
+}
+class Trainer {
+  name : String
+  lessons : String
+  +addLesson()
+  +setTime()
+  +setDescription()
+  +setRoom()
+  +setNumber()
+  +setType()
+  +editLesson()
+  +editTime()
+  +editRoom()
+  +cancelLesson()
+}
+class Lesson {
+  description : String
+  room : String
+  time : LocalDate
+  number : int
+  type : String
+  record_ : String
+  +addLesson()
+  +setTime()
+  +setDescription()
+  +setRoom()
+  +setNumber()
+  +setType()
+  +editTime()
+  +editRoom()
+  +editDescription()
+  +editNumber()
+  +editType()
+}
+class Notification {
+  method : String
+  content : String
+  +receiveNotification()
+  +receivePushNotification()
+}
+class User {
+  name : String
+  +logSystem()
+}
+Customer "0..*" -- "1" Lesson : attends
+Admin "1" -- "0..*" Lesson : manages
+Admin "1" -- "0..*" Customer : manages
+Customer "0..*" -- "1" Notification : receives
+Admin "1" -- "0..*" Notification : sends
+Lesson "1" -- "1" Trainer : taughtBy
+Admin "1" -- "0..*" Trainer : manages
+Customer "1" -- "1" User : is
+@enduml

@@ -1,0 +1,94 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "MoveVehicle",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Vehicle",
+   "kind": "class",
+   "attributes": [
+    "position",
+    "speed",
+    "maxSpeed",
+    "environment"
+   ],
+   "methods": [
+    {
+     "name": "move",
+     "use_case": "MoveVehicle"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "name": "LandVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "MarineVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Speed",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "LandVehicle",
+   "target": "Vehicle",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "MarineVehicle",
+   "target": "Vehicle",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "from enum import Enum\n\nclass Speed:\n    pass\n\nclass Environment(Enum):\n    LAND = 'land'\n    WATER = 'water'\n    AIR = 'air'\n\nclass Vehicle:\n    def __init__(self, position: str, speed: Speed, maxSpeed: Speed, environment: Environment):\n        self.position = position\n        self.speed = speed\n        self.maxSpeed = maxSpeed\n        self.environment = environment\n\n    def move(self, time: float):\n        raise NotImplementedError('Move method not implemented')\n\nclass LandVehicle(Vehicle):\n    pass\n\nclass MarineVehicle(Vehicle):\n    pass",
+ "java": {}
+}

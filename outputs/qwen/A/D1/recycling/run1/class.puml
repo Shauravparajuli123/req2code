@@ -1,0 +1,105 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  email : String
+  favorites : String
+  zipCode : String
+  password : String
+  feedback : String
+  device : String
+  activityLogs : String
+  stats : String
+  schedules : String
+  environmentFriendly : boolean
+  +viewPublicInformation()
+  +getNearbyFacilities()
+  +getFacilityHours()
+  +selectRecyclableWasteTypes()
+  +addFavorite()
+  +giveEmailID()
+  +viewMapOfRecyclingBins()
+  +viewMapOfSpecialWasteSites()
+  +viewSafeDisposalEvents()
+  +viewUserDocumentation()
+  +viewFeedbackForInvalidZipCode()
+  +createAccount()
+  +blockUser()
+  +viewDashboard()
+  +encryptData()
+  +accessDataRelatedToCompany()
+  +accessRoutePlanningSystem()
+  +accessFullEmployeeInformation()
+  +accessAPI()
+  +useBootstrap()
+  +attendUIUXLessons()
+  +viewRecyclingCenterLocations()
+  +uploadWeeklySchedule()
+  +linkEmailAccount()
+  +contactAdministrators()
+  +addRecyclingCenterInformation()
+  +viewUserErrorLogs()
+  +onboardRecyclingCenters()
+  +updateRecyclingCenterInformation()
+  +viewUsersStats()
+  +replyToUserQuestions()
+  +communicateWithFacilities()
+  +viewEnvironmentFriendlyFacilities()
+  +updateInformationAndMaterialTypes()
+  +accessUserStatsAndSchedules()
+}
+class Admin {
+  blockedUsers : String
+  userFeedback : String
+  dashboardStats : String
+  encryptionKey : String
+  +addOrRemoveFacilityInfo()
+  +readUserFeedbackAndComplaints()
+  +blockUser()
+  +viewDashboard()
+  +encryptData()
+}
+class Executive {
+  companyStats : String
+  +accessDataRelatedToCompany()
+}
+class Employee {
+  device : String
+  +accessRoutePlanningSystem()
+  +accessFullEmployeeInformation()
+}
+class HREmployee {
+  employeeStats : String
+  +accessFullEmployeeInformation()
+}
+class Developer {
+  apiAccess : boolean
+  uiUXLessons : boolean
+  +accessAPI()
+  +useBootstrap()
+  +attendUIUXLessons()
+}
+class Superuser {
+  userStats : String
+  +updateRecyclingCenterInformation()
+  +viewUsersStats()
+  +replyToUserQuestions()
+}
+class RecyclingFacility {
+  facilityInfo : String
+  environmentFriendly : boolean
+  stats : String
+  materialTypes : String
+  +addRecyclingCenterInformation()
+  +viewUserErrorLogs()
+  +onboardRecyclingCenters()
+  +updateInformationAndMaterialTypes()
+  +viewUsersStats()
+  +communicateWithSiteAdmin()
+}
+User "0..*" -- "1" RecyclingFacility : has
+Admin "1" -- "0..*" RecyclingFacility : manages
+Employee "0..*" -- "1" RecyclingFacility : worksAt
+Superuser "1" -- "0..*" RecyclingFacility : manages
+Admin "1" -- "0..*" User : manages
+@enduml

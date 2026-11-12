@@ -1,0 +1,414 @@
+{
+ "classes": [
+  {
+   "name": "user",
+   "status": "mandatory"
+  },
+  {
+   "name": "event types",
+   "status": "mandatory"
+  },
+  {
+   "name": "events",
+   "status": "mandatory"
+  },
+  {
+   "name": "artists",
+   "status": "mandatory"
+  },
+  {
+   "name": "ticket",
+   "status": "mandatory"
+  },
+  {
+   "name": "payment",
+   "status": "mandatory"
+  },
+  {
+   "name": "reseller",
+   "status": "mandatory"
+  },
+  {
+   "name": "venue",
+   "status": "mandatory"
+  },
+  {
+   "name": "order",
+   "status": "mandatory"
+  },
+  {
+   "name": "genre",
+   "status": "mandatory"
+  }
+ ],
+ "associations": [
+  {
+   "pair": [
+    "user",
+    "genr"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "user",
+    "event typ"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "order",
+    "user"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "ticket",
+    "order"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "order",
+    "payment"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "event",
+    "event typ"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "event",
+    "venu"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "event",
+    "artist"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "genr",
+    "event"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "artist",
+    "user"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "resel",
+    "ticket"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "event",
+    "ticket"
+   ],
+   "status": "mandatory"
+  },
+  {
+   "pair": [
+    "event",
+    "user"
+   ],
+   "status": "mandatory"
+  }
+ ],
+ "synonyms": {
+  "ticket order": "order",
+  "ticketorder": "order",
+  "eventtype": "event type",
+  "type": "event type",
+  "attendance": "user",
+  "show": "event",
+  "seating place": "seat",
+  "genre preference": "genre",
+  "artist preference": "artist"
+ },
+ "use_case_draft": {
+  "status": "auto-extracted, not yet validated",
+  "actors": {
+   "user": 11,
+   "visitor": 21,
+   "reseller": 3,
+   "(single-time) visitor": 1,
+   "guest (i.e., single-time user)": 1,
+   "guest": 1,
+   "company": 7,
+   "artist": 5
+  },
+  "use_cases": [
+   {
+    "actor": "user",
+    "goal": "save my personal information (i.e., name, date of birth, email, address, and preferences)",
+    "src": "R1"
+   },
+   {
+    "actor": "user",
+    "goal": "save my payment details",
+    "src": "R2"
+   },
+   {
+    "actor": "user",
+    "goal": "fill out a short survey about my preferences in (music) genre and event types",
+    "src": "R3"
+   },
+   {
+    "actor": "user",
+    "goal": "see personalized content (e.g., recommended events) based on my user profile to quickly see events I am interested in",
+    "src": "R4"
+   },
+   {
+    "actor": "user",
+    "goal": "see and edit my preferences",
+    "src": "R5"
+   },
+   {
+    "actor": "user",
+    "goal": "change my password",
+    "src": "R6"
+   },
+   {
+    "actor": "user",
+    "goal": "edit my personal information (e.g., address)",
+    "src": "R7"
+   },
+   {
+    "actor": "user",
+    "goal": "see a history of previous ticket orders",
+    "src": "R8"
+   },
+   {
+    "actor": "user",
+    "goal": "see an overview of upcoming events for which I bought a ticket",
+    "src": "R9"
+   },
+   {
+    "actor": "user",
+    "goal": "find my list of favorited artists and events under my profile",
+    "src": "R10"
+   },
+   {
+    "actor": "visitor",
+    "goal": "read about the event (e.g., location, date, and artist information)",
+    "src": "R11"
+   },
+   {
+    "actor": "visitor",
+    "goal": "buy tickets directly from the event page",
+    "src": "R12"
+   },
+   {
+    "actor": "reseller",
+    "goal": "sell my tickets directly from the event page",
+    "src": "R13"
+   },
+   {
+    "actor": "(single-time) visitor",
+    "goal": "buy a ticket as a guest",
+    "src": "R14"
+   },
+   {
+    "actor": "guest (i.e., single-time user)",
+    "goal": "only fill in my name and email when buying a ticket",
+    "src": "R15"
+   },
+   {
+    "actor": "guest",
+    "goal": "not fill in all my information to buy a ticket",
+    "src": "R16"
+   },
+   {
+    "actor": "visitor",
+    "goal": "purchase a ticket in an easy and short process",
+    "src": "R18"
+   },
+   {
+    "actor": "visitor",
+    "goal": "see events with available tickets",
+    "src": "R19"
+   },
+   {
+    "actor": "visitor",
+    "goal": "buy multiple tickets for one event in one purchase",
+    "src": "R20"
+   },
+   {
+    "actor": "visitor",
+    "goal": "see available seats at the event",
+    "src": "R21"
+   },
+   {
+    "actor": "visitor",
+    "goal": "see the available seats in a map of the venue",
+    "src": "R22"
+   },
+   {
+    "actor": "visitor",
+    "goal": "see the types of tickets (e.g., normal, premium, gold tickets) once I select the event",
+    "src": "R23"
+   },
+   {
+    "actor": "visitor",
+    "goal": "add tickets to the shopping cart",
+    "src": "R24"
+   },
+   {
+    "actor": "visitor",
+    "goal": "see my order summary",
+    "src": "R25"
+   },
+   {
+    "actor": "visitor",
+    "goal": "see a list of payment methods",
+    "src": "R26"
+   },
+   {
+    "actor": "company",
+    "goal": "have the overall buying process as intuitive and quick as possible",
+    "src": "R27"
+   },
+   {
+    "actor": "visitor",
+    "goal": "get a list of events as search results",
+    "src": "R28"
+   },
+   {
+    "actor": "visitor",
+    "goal": "land on the event page when clicking on a search result",
+    "src": "R29"
+   },
+   {
+    "actor": "visitor",
+    "goal": "have the search engine non-case sensitive and punctuation sensitive",
+    "src": "R30"
+   },
+   {
+    "actor": "visitor",
+    "goal": "sort my search results by date",
+    "src": "R31"
+   },
+   {
+    "actor": "visitor",
+    "goal": "filter my search by price",
+    "src": "R32"
+   },
+   {
+    "actor": "visitor",
+    "goal": "filter my search results by venue",
+    "src": "R33"
+   },
+   {
+    "actor": "visitor",
+    "goal": "filter a list of events by genre",
+    "src": "R34"
+   },
+   {
+    "actor": "company",
+    "goal": "have the minimum price for reselling a ticket at 5 cents",
+    "src": "R35"
+   },
+   {
+    "actor": "company",
+    "goal": "have resellers sell only digital tickets",
+    "src": "R36"
+   },
+   {
+    "actor": "company",
+    "goal": "validate tickets",
+    "src": "R37"
+   },
+   {
+    "actor": "company",
+    "goal": "deduct a service fee of 3% from the total price set by the reseller",
+    "src": "R38"
+   },
+   {
+    "actor": "company",
+    "goal": "avoid fraudulent behavior on the reselling platform",
+    "src": "R39"
+   },
+   {
+    "actor": "company",
+    "goal": "protect users from online fraud",
+    "src": "R40"
+   },
+   {
+    "actor": "reseller",
+    "goal": "resell tickets directly from the event page",
+    "src": "R41"
+   },
+   {
+    "actor": "reseller",
+    "goal": "save my bank account (IBAN number) in my user profile",
+    "src": "R45"
+   },
+   {
+    "actor": "visitor",
+    "goal": "see upcoming events in a calendar-type view",
+    "src": "R46"
+   },
+   {
+    "actor": "visitor",
+    "goal": "see popular, upcoming events",
+    "src": "R47"
+   },
+   {
+    "actor": "visitor",
+    "goal": "click on an event shown on the homepage and be directed to the event page",
+    "src": "R48"
+   },
+   {
+    "actor": "artist",
+    "goal": "find information about my events on the designated event page",
+    "src": "R49"
+   },
+   {
+    "actor": "artist",
+    "goal": "have a link to my website on the event page",
+    "src": "R50"
+   },
+   {
+    "actor": "artist",
+    "goal": "have a link to my social media on the event page",
+    "src": "R51"
+   },
+   {
+    "actor": "artist",
+    "goal": "have a description of myself and my upcoming event (or tour) to be shown on my event page",
+    "src": "R52"
+   },
+   {
+    "actor": "user",
+    "goal": "favorite events or artists on the related event page",
+    "src": "R53"
+   },
+   {
+    "actor": "artist",
+    "goal": "have a link to music platforms (e.g., YouTube, Spotify, Apple Music)",
+    "src": "R54"
+   }
+  ],
+  "unparsed": 4
+ }
+}

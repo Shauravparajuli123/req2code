@@ -1,0 +1,75 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "R2: AttributeLink is a class which belongs to Common_Behavior package",
+   "fix": "Add AttributeLink to the class list and ensure it belongs to the Common_Behavior package."
+  },
+  {
+   "agent": "class",
+   "issue": "R5: the componentinstance class",
+   "fix": "Add ComponentInstance to the class list."
+  },
+  {
+   "agent": "class",
+   "issue": "R6: the nodeinstance class",
+   "fix": "Add NodeInstance to the class list."
+  },
+  {
+   "agent": "use_case",
+   "issue": "R7: An Instance is owned by 0 or several instances",
+   "fix": "Add a use case or relationship to represent the ownership relationship between instances."
+  },
+  {
+   "agent": "use_case",
+   "issue": "R8: The instance has one or more classifiers.",
+   "fix": "Add a use case or relationship to represent the classifier relationship."
+  },
+  {
+   "agent": "use_case",
+   "issue": "R9: The instance has zero or more slots from the attributelink type.",
+   "fix": "Add a use case or relationship to represent the slot relationship."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R10: attributelink has zero or one instance of the Instance type.",
+   "fix": "Ensure the relationship between AttributeLink and Instance is correctly defined."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R11: attributelink has zero or one linkend attributes from the linkend type",
+   "fix": "Ensure the relationship between AttributeLink and Linkend is correctly defined."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R12: the link instance has an association attribute from the association type",
+   "fix": "Ensure the relationship between Link and association is correctly defined."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R13: linkend has one link attribute of the link type",
+   "fix": "Ensure the relationship between Linkend and Link is correctly defined."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R14: linkend has one attribute of the instance type",
+   "fix": "Ensure the relationship between Linkend and Instance is correctly defined."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R15: componentinstance has zero or more residents",
+   "fix": "Ensure the relationship between ComponentInstance and residents is correctly defined."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R16: nodeinstance has 0 or more componentinstance node that serves as resident",
+   "fix": "Ensure the relationship between NodeInstance and ComponentInstance is correctly defined."
+  }
+ ]
+}

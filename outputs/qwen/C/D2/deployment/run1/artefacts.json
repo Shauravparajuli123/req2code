@@ -1,0 +1,112 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CommunicationLink",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "sourceNode"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Deployment",
+   "kind": "class",
+   "attributes": [
+    "nodes",
+    "executionEnvironment"
+   ],
+   "methods": [],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Nodes",
+   "kind": "class",
+   "attributes": [
+    "hierarchy"
+   ],
+   "methods": [],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "ExecutionEnvironment",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Specification",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Deployment",
+   "target": "CommunicationLink",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "Deployment",
+   "target": "Node",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "source": "Specification",
+   "target": "Node",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/deployment.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass CommunicationLink:\n    \"\"\"Source: R5, R8\"\"\"\n    name: _t.Optional[str] = None\n    sourceNode: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Deployment:\n    \"\"\"Source: R6, R7\"\"\"\n    nodes: _t.Optional[str] = None\n    executionEnvironment: _t.Optional[str] = None\n    communicationLink: _t.Optional[\"CommunicationLink\"] = None\n\n\n@_dc.dataclass\nclass Nodes:\n    \"\"\"Source: R6, R7\"\"\"\n    hierarchy: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass ExecutionEnvironment:\n    \"\"\"Source: R3\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Specification:\n    \"\"\"Source: R4, R7\"\"\"\n    nodes: _t.List[\"Node\"] = _dc.field(default_factory=list)\n\n    def addNode(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Node.java": "/** Generated from shared model D2/deployment. Source: R1 */\npublic class Node {\n    private java.lang.String name;\n}\n",
+  "CommunicationLink.java": "/** Generated from shared model D2/deployment. Source: R5, R8 */\npublic class CommunicationLink {\n    private java.lang.String name;\n    private java.lang.String sourceNode;\n}\n",
+  "Deployment.java": "/** Generated from shared model D2/deployment. Source: R6, R7 */\npublic class Deployment {\n    private java.lang.String nodes;\n    private java.lang.String executionEnvironment;\n    private CommunicationLink communicationLink;\n}\n",
+  "Nodes.java": "/** Generated from shared model D2/deployment. Source: R6, R7 */\npublic class Nodes {\n    private java.lang.String hierarchy;\n}\n",
+  "ExecutionEnvironment.java": "/** Generated from shared model D2/deployment. Source: R3 */\npublic class ExecutionEnvironment {\n}\n",
+  "Specification.java": "/** Generated from shared model D2/deployment. Source: R4, R7 */\npublic class Specification {\n    private java.util.List<Node> nodes;\n\n    /** Operation. */\n    public void addNode() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

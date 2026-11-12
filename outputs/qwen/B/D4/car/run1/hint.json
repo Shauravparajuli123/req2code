@@ -1,0 +1,409 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D4/car",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R5",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "This system represents a car."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "Cars belong to models, which in turn belong to makes."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "Each car has four wheels, one engine and a set of seats."
+     }
+    ],
+    "name": "Car",
+    "freq": 6
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R3",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Each car has four wheels, one engine and a set of seats."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "Each engine has a certain power."
+     }
+    ],
+    "name": "Engine",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R2",
+     "R4"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Cars belong to models, which in turn belong to makes."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "Every make and model have a unique name."
+     }
+    ],
+    "name": "Make",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R2",
+     "R4",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Cars belong to models, which in turn belong to makes."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "Every make and model have a unique name."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "Likewise, the seats have a size, which must be the same for all the seats of the cars of the same model.Each car has a number plate that identifies it."
+     }
+    ],
+    "name": "Model",
+    "freq": 3
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R3",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Each car has four wheels, one engine and a set of seats."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "Likewise, the seats have a size, which must be the same for all the seats of the cars of the same model.Each car has a number plate that identifies it."
+     }
+    ],
+    "name": "Seat",
+    "freq": 3
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R3",
+     "R5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Each car has four wheels, one engine and a set of seats."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "Each wheel has a diameter, which must be the same for all wheels of the same car."
+     }
+    ],
+    "name": "Wheel",
+    "freq": 3
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Likewise, the seats have a size, which must be the same for all the seats of the cars of the same model.Each car has a number plate that identifies it."
+     }
+    ],
+    "owner": "Car",
+    "name": "number plate",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "Each engine has a certain power."
+     }
+    ],
+    "owner": "Engine",
+    "name": "power",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "Every make and model have a unique name."
+     }
+    ],
+    "owner": "Make",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "Every make and model have a unique name."
+     }
+    ],
+    "owner": "Model",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Likewise, the seats have a size, which must be the same for all the seats of the cars of the same model.Each car has a number plate that identifies it."
+     }
+    ],
+    "owner": "Seat",
+    "name": "size",
+    "type_hint": null
+   },
+   {
+    "id": "AT6",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "Each wheel has a diameter, which must be the same for all wheels of the same car."
+     }
+    ],
+    "owner": "Wheel",
+    "name": "diameter",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Cars belong to models, which in turn belong to makes."
+     }
+    ],
+    "kind": "association",
+    "source": "Car",
+    "target": "Model",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Cars belong to models, which in turn belong to makes."
+     }
+    ],
+    "kind": "association",
+    "source": "Model",
+    "target": "Make",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Each car has four wheels, one engine and a set of seats."
+     }
+    ],
+    "kind": "has",
+    "source": "Car",
+    "target": "Engine",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R3",
+     "R7"
+    ],
+    "rule": [
+     "has_verb",
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Each car has four wheels, one engine and a set of seats."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "Likewise, the seats have a size, which must be the same for all the seats of the cars of the same model.Each car has a number plate that identifies it."
+     }
+    ],
+    "kind": "has",
+    "source": "Car",
+    "target": "Seat",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R3",
+     "R5"
+    ],
+    "rule": [
+     "has_verb",
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Each car has four wheels, one engine and a set of seats."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "Each wheel has a diameter, which must be the same for all wheels of the same car."
+     }
+    ],
+    "kind": "has",
+    "source": "Car",
+    "target": "Wheel",
+    "multiplicity_target": "four"
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Likewise, the seats have a size, which must be the same for all the seats of the cars of the same model.Each car has a number plate that identifies it."
+     }
+    ],
+    "kind": "has",
+    "source": "Model",
+    "target": "Car",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Car",
+     "target": "NumberPlate",
+     "multiplicity": "1"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

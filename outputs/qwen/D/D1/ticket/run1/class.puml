@@ -1,0 +1,80 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  personalInformation : String
+  paymentDetails : String
+  preferences : String
+  password : String
+  ticketOrderHistory : String
+  upcomingEvents : String
+  favoriteArtistsAndEvents : String
+  +savePersonalInformation()
+  +savePaymentDetails()
+  +fillOutSurvey()
+  +seePersonalizedContent()
+  +editPreferences()
+  +changePassword()
+  +editPersonalInformation()
+  +seeTicketOrderHistory()
+  +seeUpcomingEvents()
+  +findFavoriteArtistsAndEvents()
+}
+class Visitor {
+  +readEventDetails()
+  +buyTicketsDirectly()
+  +purchaseTicket()
+  +searchEvents()
+  +clickEventOnHomepage()
+  +seeUpcomingEventsCalendar()
+  +seePopularEvents()
+}
+class Reseller {
+  ticket : String
+  serviceFee : double
+  bankAccount : String
+  +resellTicketsDirectly()
+  +uploadTicket()
+  +setPrice()
+  +addDescription()
+}
+class Company {
+  serviceFee : double
+  fraudDetection : String
+  +validateTickets()
+  +deductServiceFee()
+}
+class Event {
+  artist : String
+  venue : String
+  price : double
+  type : String
+  availability : String
+  +seeEventInformation()
+}
+class Ticket {
+  price : double
+  availability : String
+  +addTicketToCart()
+  +seeOrderSummary()
+}
+class PaymentMethod {
+  type : String
+}
+class SearchResult {
+  event : String
+  +searchEvents()
+}
+class CalendarView {
+  +seeUpcomingEventsCalendar()
+}
+class SocialMedia {
+  link : String
+}
+class MusicPlatform {
+  link : String
+}
+Visitor "1" -- "1" CalendarView : has
+Reseller "1" -- "1" Ticket : sells
+SearchResult "1" -- "1" Event : contains
+@enduml

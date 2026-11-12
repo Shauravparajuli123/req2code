@@ -1,0 +1,412 @@
+{
+ "actors": [
+  "User",
+  "Visitor",
+  "Reseller",
+  "Artist",
+  "ArtistVisitor"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Profile",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R5",
+    "R6",
+    "R7",
+    "R15",
+    "R16",
+    "R17"
+   ]
+  },
+  {
+   "name": "View Personal Information",
+   "actor": "User",
+   "src": [
+    "R5",
+    "R7",
+    "R17"
+   ]
+  },
+  {
+   "name": "Edit Personal Information",
+   "actor": "User",
+   "src": [
+    "R7",
+    "R17"
+   ]
+  },
+  {
+   "name": "View Ticket History",
+   "actor": "User",
+   "src": [
+    "R8",
+    "R17"
+   ]
+  },
+  {
+   "name": "View Upcoming Events",
+   "actor": "User",
+   "src": [
+    "R9",
+    "R17"
+   ]
+  },
+  {
+   "name": "Favorite Events Or Artists",
+   "actor": "User",
+   "src": [
+    "R10",
+    "R17",
+    "R53"
+   ]
+  },
+  {
+   "name": "Search For Events",
+   "actor": "Visitor",
+   "src": [
+    "R11",
+    "R18",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R46",
+    "R47",
+    "R48",
+    "R53"
+   ]
+  },
+  {
+   "name": "Buy Tickets",
+   "actor": "Visitor",
+   "src": [
+    "R12",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R17"
+   ]
+  },
+  {
+   "name": "Resell Tickets",
+   "actor": "Reseller",
+   "src": [
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R45"
+   ]
+  },
+  {
+   "name": "View Event Information",
+   "actor": "ArtistVisitor",
+   "src": [
+    "R11",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "dateOfBirth",
+    "email",
+    "address",
+    "preferences",
+    "paymentDetails",
+    "password",
+    "favoriteArtists",
+    "favoriteEvents",
+    "ticketHistory",
+    "profileSurvey"
+   ],
+   "methods": [
+    {
+     "name": "createProfile",
+     "use_case": "Create Profile"
+    },
+    {
+     "name": "viewPersonalInformation",
+     "use_case": "View Personal Information"
+    },
+    {
+     "name": "editPersonalInformation",
+     "use_case": "Edit Personal Information"
+    },
+    {
+     "name": "viewTicketHistory",
+     "use_case": "View Ticket History"
+    },
+    {
+     "name": "viewUpcomingEvents",
+     "use_case": "View Upcoming Events"
+    },
+    {
+     "name": "favoriteEventsOrArtists",
+     "use_case": "Favorite Events Or Artists"
+    },
+    {
+     "name": "searchForEvents",
+     "use_case": "Search For Events"
+    },
+    {
+     "name": "buyTickets",
+     "use_case": "Buy Tickets"
+    },
+    {
+     "name": "resellTickets",
+     "use_case": "Resell Tickets"
+    },
+    {
+     "name": "viewEventInformation",
+     "use_case": "View Event Information"
+    }
+   ],
+   "src": [
+    "R1",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "name": "Event",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "date",
+    "location",
+    "artist",
+    "type",
+    "price",
+    "venue",
+    "genre",
+    "ticketType",
+    "seats",
+    "description"
+   ],
+   "methods": [
+    {
+     "name": "viewEventInformation",
+     "use_case": "View Event Information"
+    },
+    {
+     "name": "searchForEvents",
+     "use_case": "Search For Events"
+    },
+    {
+     "name": "buyTickets",
+     "use_case": "Buy Tickets"
+    },
+    {
+     "name": "resellTickets",
+     "use_case": "Resell Tickets"
+    },
+    {
+     "name": "viewEventPage",
+     "use_case": "View Event Information"
+    }
+   ],
+   "src": [
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R46",
+    "R47",
+    "R48",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Ticket",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "price",
+    "seat",
+    "event"
+   ],
+   "methods": [
+    {
+     "name": "addTicketToCart",
+     "use_case": null
+    },
+    {
+     "name": "viewOrderSummary",
+     "use_case": null
+    },
+    {
+     "name": "viewPaymentMethods",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R46",
+    "R47",
+    "R48",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Reseller",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "bankAccount"
+   ],
+   "methods": [
+    {
+     "name": "resellTickets",
+     "use_case": "Resell Tickets"
+    },
+    {
+     "name": "uploadTicket",
+     "use_case": "Resell Tickets"
+    },
+    {
+     "name": "setTicketPrice",
+     "use_case": "Resell Tickets"
+    },
+    {
+     "name": "addDescription",
+     "use_case": "Resell Tickets"
+    }
+   ],
+   "src": [
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "User",
+   "target": "Ticket",
+   "src": [
+    "R8",
+    "R9",
+    "R10",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R46",
+    "R47",
+    "R48",
+    "R53"
+   ]
+  },
+  {
+   "source": "Event",
+   "target": "Ticket",
+   "src": [
+    "R19",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R46",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "source": "Reseller",
+   "target": "Ticket",
+   "src": [
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D1/ticket.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass User:\n    \"\"\"Source: R1, R5, R6, R7, R8, R9, R35, R36, R37, R38, R39, R40\"\"\"\n    name: _t.Optional[str] = None\n    dateOfBirth: _t.Optional[str] = None\n    email: _t.Optional[str] = None\n    address: _t.Optional[str] = None\n    preferences: _t.Optional[str] = None\n    paymentDetails: _t.Optional[str] = None\n    password: _t.Optional[str] = None\n    favoriteArtists: _t.Optional[str] = None\n    favoriteEvents: _t.Optional[str] = None\n    ticketHistory: _t.Optional[str] = None\n    profileSurvey: _t.Optional[str] = None\n    tickets: _t.List[\"Ticket\"] = _dc.field(default_factory=list)\n\n    def createProfile(self) -> None:\n        \"\"\"Realizes UC1 \"Create Profile\" (R1, R5, R6, R7, R15, R16, R17).\"\"\"\n        raise NotImplementedError\n\n    def viewPersonalInformation(self) -> None:\n        \"\"\"Realizes UC2 \"View Personal Information\" (R5, R7, R17).\"\"\"\n        raise NotImplementedError\n\n    def editPersonalInformation(self) -> None:\n        \"\"\"Realizes UC3 \"Edit Personal Information\" (R7, R17).\"\"\"\n        raise NotImplementedError\n\n    def viewTicketHistory(self) -> None:\n        \"\"\"Realizes UC4 \"View Ticket History\" (R8, R17).\"\"\"\n        raise NotImplementedError\n\n    def viewUpcomingEvents(self) -> None:\n        \"\"\"Realizes UC5 \"View Upcoming Events\" (R9, R17).\"\"\"\n        raise NotImplementedError\n\n    def favoriteEventsOrArtists(self) -> None:\n        \"\"\"Realizes UC6 \"Favorite Events Or Artists\" (R10, R17, R53).\"\"\"\n        raise NotImplementedError\n\n    def searchForEvents(self) -> None:\n        \"\"\"Realizes UC7 \"Search For Events\" (R11, R18, R28, R29, R30, R31, R32, R33, R46, R47, R48, R53).\"\"\"\n        raise NotImplementedError\n\n    def buyTickets(self) -> None:\n        \"\"\"Realizes UC8 \"Buy Tickets\" (R12, R18, R19, R20, R21, R22, R23, R24, R25, R26, R17).\"\"\"\n        raise NotImplementedError\n\n    def resellTickets(self) -> None:\n        \"\"\"Realizes UC9 \"Resell Tickets\" (R35, R36, R37, R38, R39, R40, R41, R42, R43, R45).\"\"\"\n        raise NotImplementedError\n\n    def viewEventInformation(self) -> None:\n        \"\"\"Realizes UC10 \"View Event Information\" (R11, R49, R50, R51, R52, R53, R54).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Event:\n    \"\"\"Source: R19, R20, R21, R22, R23, R24, R25, R26, R46, R47, R48, R52, R53, R54\"\"\"\n    name: _t.Optional[str] = None\n    date: _t.Optional[str] = None\n    location: _t.Optional[str] = None\n    artist: _t.Optional[str] = None\n    type: _t.Optional[str] = None\n    price: _t.Optional[float] = None\n    venue: _t.Optional[str] = None\n    genre: _t.Optional[str] = None\n    ticketType: _t.Optional[str] = None\n    seats: _t.Optional[str] = None\n    description: _t.Optional[str] = None\n    tickets: _t.List[\"Ticket\"] = _dc.field(default_factory=list)\n\n    def viewEventInformation(self) -> None:\n        \"\"\"Realizes UC10 \"View Event Information\" (R11, R49, R50, R51, R52, R53, R54).\"\"\"\n        raise NotImplementedError\n\n    def searchForEvents(self) -> None:\n        \"\"\"Realizes UC7 \"Search For Events\" (R11, R18, R28, R29, R30, R31, R32, R33, R46, R47, R48, R53).\"\"\"\n        raise NotImplementedError\n\n    def buyTickets(self) -> None:\n        \"\"\"Realizes UC8 \"Buy Tickets\" (R12, R18, R19, R20, R21, R22, R23, R24, R25, R26, R17).\"\"\"\n        raise NotImplementedError\n\n    def resellTickets(self) -> None:\n        \"\"\"Realizes UC9 \"Resell Tickets\" (R35, R36, R37, R38, R39, R40, R41, R42, R43, R45).\"\"\"\n        raise NotImplementedError\n\n    def viewEventPage(self) -> None:\n        \"\"\"Realizes UC10 \"View Event Information\" (R11, R49, R50, R51, R52, R53, R54).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Ticket:\n    \"\"\"Source: R19, R20, R21, R22, R23, R24, R25, R26, R46, R47, R48, R52, R53, R54\"\"\"\n    type: _t.Optional[str] = None\n    price: _t.Optional[float] = None\n    seat: _t.Optional[str] = None\n    event: _t.Optional[str] = None\n\n    def addTicketToCart(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def viewOrderSummary(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def viewPaymentMethods(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Reseller:\n    \"\"\"Source: R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45\"\"\"\n    name: _t.Optional[str] = None\n    bankAccount: _t.Optional[str] = None\n    tickets: _t.List[\"Ticket\"] = _dc.field(default_factory=list)\n\n    def resellTickets(self) -> None:\n        \"\"\"Realizes UC9 \"Resell Tickets\" (R35, R36, R37, R38, R39, R40, R41, R42, R43, R45).\"\"\"\n        raise NotImplementedError\n\n    def uploadTicket(self) -> None:\n        \"\"\"Realizes UC9 \"Resell Tickets\" (R35, R36, R37, R38, R39, R40, R41, R42, R43, R45).\"\"\"\n        raise NotImplementedError\n\n    def setTicketPrice(self) -> None:\n        \"\"\"Realizes UC9 \"Resell Tickets\" (R35, R36, R37, R38, R39, R40, R41, R42, R43, R45).\"\"\"\n        raise NotImplementedError\n\n    def addDescription(self) -> None:\n        \"\"\"Realizes UC9 \"Resell Tickets\" (R35, R36, R37, R38, R39, R40, R41, R42, R43, R45).\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "User.java": "/** Generated from shared model D1/ticket. Source: R1, R5, R6, R7, R8, R9, R35, R36, R37, R38, R39, R40 */\npublic class User {\n    private java.lang.String name;\n    private java.time.LocalDate dateOfBirth;\n    private java.lang.String email;\n    private java.lang.String address;\n    private java.lang.String preferences;\n    private java.lang.String paymentDetails;\n    private java.lang.String password;\n    private java.lang.String favoriteArtists;\n    private java.lang.String favoriteEvents;\n    private java.lang.String ticketHistory;\n    private java.lang.String profileSurvey;\n    private java.util.List<Ticket> tickets;\n\n    /** Realizes UC1 \"Create Profile\" (R1, R5, R6, R7, R15, R16, R17). */\n    public void createProfile() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"View Personal Information\" (R5, R7, R17). */\n    public void viewPersonalInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Edit Personal Information\" (R7, R17). */\n    public void editPersonalInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC4 \"View Ticket History\" (R8, R17). */\n    public void viewTicketHistory() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC5 \"View Upcoming Events\" (R9, R17). */\n    public void viewUpcomingEvents() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC6 \"Favorite Events Or Artists\" (R10, R17, R53). */\n    public void favoriteEventsOrArtists() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC7 \"Search For Events\" (R11, R18, R28, R29, R30, R31, R32, R33, R46, R47, R48, R53). */\n    public void searchForEvents() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC8 \"Buy Tickets\" (R12, R18, R19, R20, R21, R22, R23, R24, R25, R26, R17). */\n    public void buyTickets() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"Resell Tickets\" (R35, R36, R37, R38, R39, R40, R41, R42, R43, R45). */\n    public void resellTickets() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"View Event Information\" (R11, R49, R50, R51, R52, R53, R54). */\n    public void viewEventInformation() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Event.java": "/** Generated from shared model D1/ticket. Source: R19, R20, R21, R22, R23, R24, R25, R26, R46, R47, R48, R52, R53, R54 */\npublic class Event {\n    private java.lang.String name;\n    private java.time.LocalDate date;\n    private java.lang.String location;\n    private java.lang.String artist;\n    private java.lang.String type;\n    private double price;\n    private java.lang.String venue;\n    private java.lang.String genre;\n    private java.lang.String ticketType;\n    private java.lang.String seats;\n    private java.lang.String description;\n    private java.util.List<Ticket> tickets;\n\n    /** Realizes UC10 \"View Event Information\" (R11, R49, R50, R51, R52, R53, R54). */\n    public void viewEventInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC7 \"Search For Events\" (R11, R18, R28, R29, R30, R31, R32, R33, R46, R47, R48, R53). */\n    public void searchForEvents() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC8 \"Buy Tickets\" (R12, R18, R19, R20, R21, R22, R23, R24, R25, R26, R17). */\n    public void buyTickets() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"Resell Tickets\" (R35, R36, R37, R38, R39, R40, R41, R42, R43, R45). */\n    public void resellTickets() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"View Event Information\" (R11, R49, R50, R51, R52, R53, R54). */\n    public void viewEventPage() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Ticket.java": "/** Generated from shared model D1/ticket. Source: R19, R20, R21, R22, R23, R24, R25, R26, R46, R47, R48, R52, R53, R54 */\npublic class Ticket {\n    private java.lang.String type;\n    private double price;\n    private java.lang.String seat;\n    private java.lang.String event;\n\n    /** Operation. */\n    public void addTicketToCart() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewOrderSummary() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewPaymentMethods() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Reseller.java": "/** Generated from shared model D1/ticket. Source: R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R45 */\npublic class Reseller {\n    private java.lang.String name;\n    private java.lang.String bankAccount;\n    private java.util.List<Ticket> tickets;\n\n    /** Realizes UC9 \"Resell Tickets\" (R35, R36, R37, R38, R39, R40, R41, R42, R43, R45). */\n    public void resellTickets() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"Resell Tickets\" (R35, R36, R37, R38, R39, R40, R41, R42, R43, R45). */\n    public void uploadTicket() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"Resell Tickets\" (R35, R36, R37, R38, R39, R40, R41, R42, R43, R45). */\n    public void setTicketPrice() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"Resell Tickets\" (R35, R36, R37, R38, R39, R40, R41, R42, R43, R45). */\n    public void addDescription() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

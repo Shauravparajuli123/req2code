@@ -1,0 +1,29 @@
+@startuml
+class Car {
+  numberPlate
+}
+class Make {
+  name
+}
+class Model {
+  name
+}
+class Engine {
+  power
+}
+class Seat {
+  size
+}
+class Wheel {
+  diameter
+}
+Car -- Engine
+Car -- Seat
+Car -- Wheel
+Model -- Make
+Make -- Model
+Model -- Car
+Car -- Wheel
+Car -- Seat
+Model -- Make
+@enduml

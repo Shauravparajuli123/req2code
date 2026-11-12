@@ -1,0 +1,208 @@
+{
+ "case": "D4/theater",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Participant",
+   "src": [
+    "R5",
+    "R9",
+    "R12"
+   ]
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Play",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "location",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    },
+    {
+     "name": "day",
+     "type": "boolean",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "night",
+     "type": "boolean",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R11"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Author",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4",
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Participant",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R5",
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R7",
+    "R12"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Session",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "beginTime",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R6",
+      "R9"
+     ]
+    },
+    {
+     "name": "endTime",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R6",
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Theater",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "location",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R5",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C5",
+   "target": "C1",
+   "mult_source": "0..*",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

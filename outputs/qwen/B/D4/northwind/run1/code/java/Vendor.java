@@ -1,0 +1,3 @@
+/** Generated from shared model D4/northwind. Source: FR-CM-01 */
+public class Vendor extends Company {
+}

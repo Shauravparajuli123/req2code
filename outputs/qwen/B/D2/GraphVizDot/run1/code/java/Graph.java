@@ -1,0 +1,7 @@
+/** Generated from shared model D2/GraphVizDot. Source: R3, R9 */
+public class Graph {
+    private java.lang.String type;
+    private java.lang.String dimension;
+    private java.lang.String elements;
+    private java.util.List<GraphElement> graphElements;
+}

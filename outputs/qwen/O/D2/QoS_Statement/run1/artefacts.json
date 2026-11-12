@@ -1,0 +1,77 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "verbObject",
+     "use_case": "Verb Object"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7"
+   ]
+  },
+  {
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "QoSConstraint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "QualificationKind",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "CompoundQoSStatement",
+   "target": "QoSStatement",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "class QoSStatement:\n    def __init__(self):\n        pass\n    def verbObject(self):\n        raise NotImplementedError\n\nclass SingleQoSStatement(QoSStatement):\n    def __init__(self):\n        super().__init__()\n\nclass CompoundQoSStatement(QoSStatement):\n    def __init__(self):\n        super().__init__()\n\nclass QoSConstraint:\n    def __init__(self):\n        pass\n\nclass QualificationKind:\n    def __init__(self):\n        pass",
+ "java": {}
+}

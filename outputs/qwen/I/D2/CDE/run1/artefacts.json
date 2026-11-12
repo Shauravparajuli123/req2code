@@ -1,0 +1,157 @@
+{
+ "actors": [
+  "member"
+ ],
+ "use_cases": [
+  {
+   "name": "Implements Zero or More",
+   "actor": "member",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "IumlType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ICdeComponentSpec",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "IUmlClass",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "IUmlComponent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "ICdeServer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "ICdeComponent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "IUmlMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "ICdeMember",
+   "kind": "class",
+   "attributes": [
+    "executionPerformance",
+    "executionDetails"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "IUmlClass",
+   "target": "IumlType",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "IUmlComponent",
+   "target": "IUmlClass",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "ICdeComponentSpec",
+   "target": "IumlType",
+   "multiplicity_target": "1",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "ICdeServer",
+   "target": "ICdeComponent",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "IumlType",
+   "target": "IUmlMember",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ICdeComponent",
+   "target": "ICdeMember",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "from abc import ABC, abstractmethod\n\nclass IUmlType(ABC):\n    @abstractmethod\ndefinition: str\n    @abstractmethod\ndef members(self) -> list[IUmlMember]:\n        pass\n\nclass ICdeComponentSpec(IUmlType):\n    pass\n\nclass IUmlClass(IUmlType):\n    pass\n\nclass IUmlComponent(IUmlClass):\n    pass\n\nclass ICdeServer:\n    def __init__(self):\n        self.components: list[ICdeComponent] = []\n\nclass ICdeComponent:\n    pass\n\nclass IUmlMember(ABC):\n    @abstractmethod\ndefinition: str\n    pass\n\nclass ICdeMember(IUmlMember):\n    execution_performance: str\n    execution_details: str\n    def __init__(self, execution_performance: str, execution_details: str):\n        self.execution_performance = execution_performance\n        self.execution_details = execution_details\n",
+ "java": {}
+}

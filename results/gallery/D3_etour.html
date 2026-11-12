@@ -1,0 +1,347 @@
+<html><head><meta charset='utf-8'><title>D3/etour</title><style>body{font-family:Georgia,serif;max-width:1150px;margin:24px auto;padding:0 16px;color:#222}
+h1{font-size:22px}h2{font-size:17px;border-bottom:1px solid #ddd;padding-bottom:3px;margin-top:28px}
+table{border-collapse:collapse;font-size:13px;margin:6px 0}td,th{border:1px solid #ccc;padding:3px 7px;vertical-align:top}
+th{background:#f3f3f3}.add{background:#e8f5e9}.del{background:#ffebee;text-decoration:line-through}.cols{display:flex;gap:18px}
+.cols>div{flex:1;min-width:0}pre{background:#f7f7f7;padding:8px;overflow:auto;font-size:12px;max-height:420px}
+img{max-width:100%;border:1px solid #ddd}.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;color:#fff}
+.resolved{background:#2e7d32}.open{background:#e57373}.rejected{background:#9e9e9e}</style></head><body>
+<p><a href='index.html'>&larr; all cases</a></p><h1>D3/etour &mdash; model qwen, condition B, run 1</h1>
+<h2>1. Requirements (input)</h2><pre>UC1: Description: Delete a cultural object in the system. Entry Operator conditions: The agency has logged. Flow of events User System: 1. View the list of CulturalHeritage as a result of the use case SearchCulturalHeritage, it selects and activates a function of elimination. 2 Asks confirmation. 3 Confirm the operation. 4 Delete the cultural choice. Exit conditions: The system shall notify the successful elimination of the cultural. Operator Agency cancels the operation. Interruption of connection to the server ETOUR. Quality requirements: The system requirements blocks of input controls on receipt of confirmation of cancellation to avoid multiple submissions before the end of the operation.
+UC2: Description: Inserts a new cultural object in the system. Entry Operator conditions: The agency has logged. Flow of events User System: 1. Activate the feature for the insertion of a new cultural good. 2 Displays the corresponding form. 3 Fill out the form with the data of the cultural and submit. 4 Verify the data entered and asks for confirmation of the transaction. Where the data is invalid or insufficient, the system activates the use case Errored. 5 Confirm the operation. 6. Memorize your new cultural good. Exit conditions: The system shall notify the proper inclusion of the cultural. Operator Agency cancels the operation. Interruption of the connection to the server ETOUR. Quality requirements: The system requirements will not accept duplicates cultural heritage.
+UC3: Description: Change data of a cultural object in the system. Entry Operator conditions: The agency has logged. Flow of events User System: 1. View the list of cultural goods as a result of the use case SearchCulturalHeritage, it selects and activates a function of change. 2 Load the data of the cultural and displays the form for editing. 3 Change data in the form and submit. 4 Verify the data entered and asks for confirmation of the transaction. Where the data is invalid or insufficient, the system activates the use case Errored. 5 Confirm the operation. 6. Stores the modified data of the cultural. Exit conditions: The notification system has been changing the data of the cultural. Operator Agency cancels the operation. Interruption of the connection to the server ETOUR. Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation.
+UC4: Description: Returns the list of cultural objects in the system according to certain parameters. Entry conditions: Flow of events User System: 1. Activate the search functionality of a cultural object. 2 Show the form for research. 3 Fill in the search form and submit. 4 Processing the request. Exit conditions: The system returns a list of cultural goods that meet the search criteria. Interruption of the connection to the server ETOUR. Quality requirements: The system requirements should return the results within a set time.
+UC5: Description: View the details of the selected cultural. Entry Operator conditions: The agency has logged. Flow of events User System: 1. View the list of cultural goods as a result of the use case SearchCulturalHeritage, it selects and activates a function to view the card. 2 Loads the data for the selected cultural. Exit conditions: The system displays the details of the selected cultural. Interruption of the connection to the server ETOUR. Quality requirements:
+UC6: Description: Delete a refreshment from the system. Entry Operator conditions: The agency has logged. Flow of events User System: 1. View a list of points of rest as a result of the use case SearchCulturalHeritage, it selects and activates a function of elimination. 2 Asks for confirmation of the transaction. 3 Confirm the deletion. 4 Deletes the selected point of rest. Exit conditions: The system shall notify the successful elimination of the point of rest. Operator Agency cancels the operation. Interruption ETOUR connection to the server. Quality requirements:
+UC7: Description: Convention active request by a refreshment point. Entry Operator conditions: The Agency is in the form of a designated point of rest. Flow of events User System: 1. Enable the activation function of the Convention. 2 Load the data request of the Convention from the point of rest and displays the corresponding form. 3 Check the data of the agreement and decide for activation. 4 Asks for confirmation of the activation. 5 Confirm the operation. 6. Processing the request. Exit conditions: The system shall notify the activation of the convention. Interruption of the connection to the server ETOUR. Quality requirements:
+UC8: Description: Edit the data pertaining to a designated point of rest. Entry Operator conditions: The agency has logged. Flow of events User System: 1. View a list of points of rest as a result of the use case SearchRefreshmentPoint, it selects an active and functional data changes. 2 Upload data from the point of rest and displays the form of change. 3 Change data in the form and submit. 4 Verify the data entered in form and asks for confirmation of the transaction. Where the data is invalid or insufficient, the system activates the use case Errored. 5 Confirm the operation. 6. Stores the modified data of the point of rest. Exit conditions: The system has been reporting the information required by the point of rest. Operator Agency cancels the operation. Interruption of the connection to the server ETOUR. Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation.
+UC9: Description: Returns the list of points of rest in the system according to certain parameters. Entry conditions: Flow of events User System: 1. Activate the search functionality of a point of rest. 2 Show the form for research. 3 Fill in the search form and submit. 4 Processing the request. Exit conditions: The system returns a list of points of rest which meet your search criteria. Interruption of the connection to the server ETOUR. Quality requirements: The system performs the operation in 15 seconds maximum
+UC10: Description: View the details of a selected point of rest. Entry Operator conditions: The agency has logged. Flow of events User System: 1. View the list of points of rest as a result of the use case SearchRefreshmentPoint, it selects and activates a function to view the card. 2 Upload data to a selected restaurant. Exit conditions: The system displays the details of the selected point of rest. Interruption of the connection to the server ETOUR. Quality requirements:
+UC11: Description: View the history of conventions derived from a selected point of rest. Entry Operator conditions: The Agency is in the form of a designated point of rest. Flow of events User System: 1. Access the features on the display of historical conventions. 2 Upload data on conventions from the restaurant selected. Exit conditions: The system displays the history of conventions concerning the point of eating selected. Interruption of the connection to the server ETOUR. Quality requirements:
+UC12: Description: View the details of a selected account Tourist. Entry Operator conditions: The agency has logged. Flow of events User System: 1. Tourists from the list obtained by activating the use case SearchTourist will select and activate a function for displaying the card. 2 Upload data to the selected account. Exit conditions: The system displays the card&#x27;s Tourist selected. Interruption of the connection to the server ETOUR. Quality requirements:
+UC13: Description: Enable or disable the account of a tourist. Entry Operator conditions: The Agency is in the form of a tourist. Flow of events User System: 1. Activate the feature for the activation / deactivation by a given sheet tourist. 2 Asks for confirmation of activation / deactivation. 3 Confirm the operation. 4 Enable / disable </pre>
+<h2>2. Result 1 &rarr; Result 2 (ambiguity removal)</h2><p>Red, struck-through: removed by ambiguity removal; green: added.</p><div class='cols'>
+<div><table><tr><th>actors (12 → 11)</th></tr><tr><td class="">account tourist</td></tr><tr><td class="">agency operator</td></tr><tr><td class="">guest</td></tr><tr><td class="">guest user</td></tr><tr><td class="">operator</td></tr><tr><td class="">point restaurant operator</td></tr><tr><td class="">registered user</td></tr><tr><td class="">restaurant operator</td></tr><tr><td class="">sheet tourist</td></tr><tr><td class="">tourist</td></tr><tr><td class="del">user</td></tr><tr><td class="del">visitor</td></tr><tr><td class="add">Visitor</td></tr></table></div>
+<div><table><tr><th>classes (129 → 109)</th></tr><tr><td class="">Access</td></tr><tr><td class="">Account</td></tr><tr><td class="del">AccountTourist</td></tr><tr><td class="">Activation</td></tr><tr><td class="">Agency</td></tr><tr><td class="">Agreement</td></tr><tr><td class="">Area</td></tr><tr><td class="">Banner</td></tr><tr><td class="">BannerAd</td></tr><tr><td class="">Block</td></tr><tr><td class="">Bookmark</td></tr><tr><td class="">Call</td></tr><tr><td class="del">Card</td></tr><tr><td class="del">Change</td></tr><tr><td class="del">ChangeData</td></tr><tr><td class="">Characteristic</td></tr><tr><td class="">Choice</td></tr><tr><td class="">Comment</td></tr><tr><td class="">Computer</td></tr><tr><td class="del">Confirmation</td></tr><tr><td class="">Connection</td></tr><tr><td class="">Convention</td></tr><tr><td class="del">Cultural</td></tr><tr><td class="">DataNews</td></tr><tr><td class="">Day</td></tr><tr><td class="">Deactivation</td></tr><tr><td class="">Delete</td></tr><tr><td class="">Deletion</td></tr><tr><td class="">Disconnection</td></tr><tr><td class="">Display</td></tr><tr><td class="">Displays</td></tr><tr><td class="">Eating</td></tr><tr><td class="">EditMenu</td></tr><tr><td class="del">Elimination</td></tr><tr><td class="">EntryCondition</td></tr><tr><td class="">ErrorMessage</td></tr><tr><td class="">Etour</td></tr><tr><td class="">Event</td></tr><tr><td class="">EventsUserSystem</td></tr><tr><td class="">ExitCondition</td></tr><tr><td class="">Favorite</td></tr><tr><td class="">Feedback</td></tr><tr><td class="">FeedbackExitCondition</td></tr><tr><td class="">Fill</td></tr><tr><td class="">Flow</td></tr><tr><td class="del">Form</td></tr><tr><td class="del">Function</td></tr><tr><td class="del">Good</td></tr><tr><td class="">Gps</td></tr><tr><td class="">GuestUser</td></tr><tr><td class="">Heritage</td></tr><tr><td class="">History</td></tr><tr><td class="">Image</td></tr><tr><td class="">Inclusion</td></tr><tr><td class="">InputControl</td></tr><tr><td class="">Insert</td></tr><tr><td class="del">Insertion</td></tr><tr><td class="">Inserts</td></tr><tr><td class="">Interruption</td></tr><tr><td class="">Issue</td></tr><tr><td class="">Load</td></tr><tr><td class="">Location</td></tr><tr><td class="">Login</td></tr><tr><td class="">Menu</td></tr><tr><td class="">MenuSelection</td></tr><tr><td class="">Message</td></tr><tr><td class="del">Modification</td></tr><tr><td class="">News</td></tr><tr><td class="">Notification</td></tr><tr><td class="">NotificationSystem</td></tr><tr><td class="">Object</td></tr><tr><td class="">Operation</td></tr><tr><td class="">Operator</td></tr><tr><td class="">OperatorAgency</td></tr><tr><td class="del">OperatorRestaurant</td></tr><tr><td class="">Parameter</td></tr><tr><td class="">Picture</td></tr><tr><td class="del">Point</td></tr><tr><td class="">Position</td></tr><tr><td class="">Preference</td></tr><tr><td class="">QualityRequirement</td></tr><tr><td class="">Reading</td></tr><tr><td class="">Recovers</td></tr><tr><td class="del">RefreshmentPoint</td></tr><tr><td class="del">Refreshments</td></tr><tr><td class="del">Removal</td></tr><tr><td class="">Report</td></tr><tr><td class="">Request</td></tr><tr><td class="">Research</td></tr><tr><td class="">Rest</td></tr><tr><td class="">RestUseCaseSearchrefreshmentpoint</td></tr><tr><td class="">Restaurant</td></tr><tr><td class="">RestaurantOperator</td></tr><tr><td class="del">RestaurantPoint</td></tr><tr><td class="">Result</td></tr><tr><td class="">Return</td></tr><tr><td class="">Search</td></tr><tr><td class="">SearchCriterion</td></tr><tr><td class="">SearchForm</td></tr><tr><td class="">SearchPreference</td></tr><tr><td class="">SearchSite</td></tr><tr><td class="">SearchTag</td></tr><tr><td class="">SearchTourist</td></tr><tr><td class="">Second</td></tr><tr><td class="">Select</td></tr><tr><td class="">Selection</td></tr><tr><td class="">Server</td></tr><tr><td class="">Sites</td></tr><tr><td class="">State</td></tr><tr><td class="">Statistic</td></tr><tr><td class="">Store</td></tr><tr><td class="">Submission</td></tr><tr><td class="">SystemRequirement</td></tr><tr><td class="">Tag</td></tr><tr><td class="">TagSearch</td></tr><tr><td class="">Tourism</td></tr><tr><td class="del">Tourist</td></tr><tr><td class="del">TouristCard</td></tr><tr><td class="">Transaction</td></tr><tr><td class="">TransactionChange</td></tr><tr><td class="">UploadData</td></tr><tr><td class="">UseCase</td></tr><tr><td class="">UseCaseSearchculturalheritage</td></tr><tr><td class="">UseCaseSearchrefreshmentpoint</td></tr><tr><td class="">User</td></tr><tr><td class="">UserInteraction</td></tr><tr><td class="">View</td></tr><tr><td class="">Visitor</td></tr><tr><td class="">Week</td></tr></table></div>
+<div><table><tr><th>attributes (16 → 13)</th></tr><tr><td class="">Banner.editing functionality</td></tr><tr><td class="">Comment.alteration</td></tr><tr><td class="del">Confirmation.receipt</td></tr><tr><td class="">Connection.operation interruption</td></tr><tr><td class="">Convention.activation function</td></tr><tr><td class="">Convention.data request</td></tr><tr><td class="">EventsUserSystem.banner flow</td></tr><tr><td class="">EventsUserSystem.favorites flow</td></tr><tr><td class="">Feedback.combination</td></tr><tr><td class="">Menu.editing functionality</td></tr><tr><td class="">News.amendment</td></tr><tr><td class="">News.editing functionality</td></tr><tr><td class="">News.placement</td></tr><tr><td class="">Object.search functionality</td></tr><tr><td class="del">Point.search functionality</td></tr><tr><td class="del">Tourist.search functionality</td></tr></table></div>
+<div><table><tr><th>relations (94 → 34)</th></tr><tr><td class="del">association: EditMenu -&gt; Form</td></tr><tr><td class="del">association: Good -&gt; SearchCriterion</td></tr><tr><td class="">association: Gps -&gt; Position</td></tr><tr><td class="">association: GuestUser -&gt; Operation</td></tr><tr><td class="">association: NotificationSystem -&gt; Restaurant</td></tr><tr><td class="">association: OperatorAgency -&gt; Operation</td></tr><tr><td class="del">association: Point -&gt; Operation</td></tr><tr><td class="del">association: Point -&gt; SearchCriterion</td></tr><tr><td class="del">association: RestaurantPoint -&gt; Operation</td></tr><tr><td class="">association: Store -&gt; Account</td></tr><tr><td class="">association: SystemRequirement -&gt; Result</td></tr><tr><td class="del">association: Tourist -&gt; FeedbackExitCondition</td></tr><tr><td class="del">association: Tourist -&gt; Function</td></tr><tr><td class="del">association: Tourist -&gt; Operation</td></tr><tr><td class="">association: User -&gt; Feedback</td></tr><tr><td class="">association: User -&gt; Login</td></tr><tr><td class="">association: User -&gt; Operation</td></tr><tr><td class="">association: Visitor -&gt; Feedback</td></tr><tr><td class="del">generalization: NotificationSystem -&gt; Elimination</td></tr><tr><td class="del">has: Account -&gt; Elimination</td></tr><tr><td class="del">has: Activation -&gt; Confirmation</td></tr><tr><td class="del">has: Agreement -&gt; Form</td></tr><tr><td class="">has: BannerAd -&gt; Image</td></tr><tr><td class="del">has: Banner -&gt; Change</td></tr><tr><td class="del">has: Banner -&gt; Elimination</td></tr><tr><td class="del">has: Banner -&gt; Insertion</td></tr><tr><td class="del">has: Banner -&gt; Modification</td></tr><tr><td class="del">has: Banner -&gt; Removal</td></tr><tr><td class="del">has: Card -&gt; Tourist</td></tr><tr><td class="del">has: Change -&gt; Confirmation</td></tr><tr><td class="del">has: Change -&gt; Form</td></tr><tr><td class="del">has: Change -&gt; Function</td></tr><tr><td class="del">has: Comment -&gt; Change</td></tr><tr><td class="del">has: Confirmation -&gt; Reading</td></tr><tr><td class="">has: Connection -&gt; Favorite</td></tr><tr><td class="">has: Connection -&gt; Interruption</td></tr><tr><td class="">has: Convention -&gt; Activation</td></tr><tr><td class="">has: Convention -&gt; Display</td></tr><tr><td class="">has: Convention -&gt; History</td></tr><tr><td class="del">has: Cultural -&gt; Elimination</td></tr><tr><td class="del">has: Cultural -&gt; Inclusion</td></tr><tr><td class="">has: Day -&gt; EditMenu</td></tr><tr><td class="del">has: Deactivation -&gt; Confirmation</td></tr><tr><td class="del">has: Eating -&gt; Point</td></tr><tr><td class="del">has: EditMenu -&gt; Confirmation</td></tr><tr><td class="del">has: Elimination -&gt; Function</td></tr><tr><td class="">has: EventsUserSystem -&gt; Flow</td></tr><tr><td class="">has: Feedback -&gt; Comment</td></tr><tr><td class="">has: Feedback -&gt; Issue</td></tr><tr><td class="del">has: Good -&gt; Insertion</td></tr><tr><td class="">has: GuestUser -&gt; Access</td></tr><tr><td class="">has: Guest -&gt; Position</td></tr><tr><td class="">has: Image -&gt; Selection</td></tr><tr><td class="">has: InputControl -&gt; Block</td></tr><tr><td class="del">has: Insertion -&gt; Confirmation</td></tr><tr><td class="del">has: Insertion -&gt; Operation</td></tr><tr><td class="del">has: MenuSelection -&gt; Elimination</td></tr><tr><td class="del">has: Menu -&gt; Modification</td></tr><tr><td class="">has: News -&gt; Deletion</td></tr><tr><td class="del">has: News -&gt; Elimination</td></tr><tr><td class="">has: Notification -&gt; Reading</td></tr><tr><td class="del">has: OperatorRestaurant -&gt; Point</td></tr><tr><td class="del">has: Operator -&gt; RestaurantPoint</td></tr><tr><td class="del">has: Point -&gt; Banner</td></tr><tr><td class="del">has: Point -&gt; Elimination</td></tr><tr><td class="del">has: Point -&gt; Form</td></tr><tr><td class="del">has: Preference -&gt; Modification</td></tr><tr><td class="del">has: Reading -&gt; Confirmation</td></tr><tr><td class="del">has: RefreshmentPoint -&gt; Convention</td></tr><tr><td class="del">has: Refreshments -&gt; Banner</td></tr><tr><td class="del">has: Removal -&gt; Function</td></tr><tr><td class="del">has: Request -&gt; Confirmation</td></tr><tr><td class="del">has: Research -&gt; Form</td></tr><tr><td class="del">has: RestUseCaseSearchrefreshmentpoint -&gt; Point</td></tr><tr><td class="del">has: Rest -&gt; Point</td></tr><tr><td class="del">has: RestaurantOperator -&gt; Point</td></tr><tr><td class="">has: Restaurant -&gt; Menu</td></tr><tr><td class="del">has: Restaurant -&gt; Point</td></tr><tr><td class="del">has: SearchPreference -&gt; Modification</td></tr><tr><td class="del">has: Search -&gt; Form</td></tr><tr><td class="del">has: Tag -&gt; Elimination</td></tr><tr><td class="">has: Tag -&gt; Inclusion</td></tr><tr><td class="del">has: Tourist -&gt; Account</td></tr><tr><td class="del">has: Tourist -&gt; Elimination</td></tr><tr><td class="del">has: Tourist -&gt; Form</td></tr><tr><td class="del">has: Tourist -&gt; Position</td></tr><tr><td class="del">has: TransactionChange -&gt; Confirmation</td></tr><tr><td class="del">has: Transaction -&gt; Confirmation</td></tr><tr><td class="">has: UseCaseSearchculturalheritage -&gt; Result</td></tr><tr><td class="">has: UseCaseSearchrefreshmentpoint -&gt; Result</td></tr><tr><td class="">has: UseCase -&gt; Result</td></tr><tr><td class="">has: User -&gt; Access</td></tr><tr><td class="">has: Visitor -&gt; Account</td></tr><tr><td class="">has: Week -&gt; Day</td></tr></table></div>
+</div>
+<h2>3. Ambiguity tags</h2><table><tr><th>id</th><th>req</th><th>type</th><th>cue</th><th>status</th><th>readings / explanation</th></tr>
+<tr><td>A1</td><td>UC1</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the use case SearchCulturalHeritage; it refers to the use case SearchRefreshmentPoint<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to either use case.</i></td></tr>
+<tr><td>A2</td><td>UC1</td><td>quantifier</td><td>multiple</td><td><span class='tag resolved'>resolved</span></td><td>multiple submissions; single submission<br><i>The term &#x27;multiple&#x27; is ambiguous as it could refer to multiple submissions or a single submission.</i></td></tr>
+<tr><td>A3</td><td>UC2</td><td>incompleteness</td><td>data</td><td><span class='tag resolved'>resolved</span></td><td>invalid or insufficient data; valid data<br><i>The term &#x27;invalid or insufficient&#x27; is ambiguous as it could refer to invalid or insufficient data or valid data.</i></td></tr>
+<tr><td>A4</td><td>UC2</td><td>incompleteness</td><td>proper</td><td><span class='tag resolved'>resolved</span></td><td>proper inclusion; inclusion<br><i>The term &#x27;proper&#x27; is ambiguous as it could refer to proper inclusion or inclusion.</i></td></tr>
+<tr><td>A5</td><td>UC3</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the use case SearchCulturalHeritage; it refers to the use case SearchRefreshmentPoint<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to either use case.</i></td></tr>
+<tr><td>A6</td><td>UC3</td><td>incompleteness</td><td>data</td><td><span class='tag resolved'>resolved</span></td><td>invalid or insufficient data; valid data<br><i>The term &#x27;invalid or insufficient&#x27; is ambiguous as it could refer to invalid or insufficient data or valid data.</i></td></tr>
+<tr><td>A7</td><td>UC3</td><td>quantifier</td><td>multiple</td><td><span class='tag resolved'>resolved</span></td><td>multiple submissions; single submission<br><i>The term &#x27;multiple&#x27; is ambiguous as it could refer to multiple submissions or a single submission.</i></td></tr>
+<tr><td>A8</td><td>UC4</td><td>incompleteness</td><td>certain</td><td><span class='tag resolved'>resolved</span></td><td>certain parameters; any parameters<br><i>The term &#x27;certain&#x27; is ambiguous as it could refer to certain parameters or any parameters.</i></td></tr>
+<tr><td>A9</td><td>UC5</td><td>incompleteness</td><td>details</td><td><span class='tag resolved'>resolved</span></td><td>details of the selected cultural; details of the selected point of rest<br><i>The term &#x27;details&#x27; is ambiguous as it could refer to the details of the selected cultural or the selected point of rest.</i></td></tr>
+<tr><td>A10</td><td>UC5</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the use case SearchCulturalHeritage; it refers to the use case SearchRefreshmentPoint<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to either use case.</i></td></tr>
+<tr><td>A11</td><td>UC5</td><td>incompleteness</td><td>details</td><td><span class='tag resolved'>resolved</span></td><td>details of the selected cultural; details of the selected point of rest<br><i>The term &#x27;details&#x27; is ambiguous as it could refer to the details of the selected cultural or the selected point of rest.</i></td></tr>
+<tr><td>A12</td><td>UC6</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the use case SearchCulturalHeritage; it refers to the use case SearchRefreshmentPoint<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to either use case.</i></td></tr>
+<tr><td>A13</td><td>UC8</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>active and functional data changes; active and functional data changes<br><i>The term &#x27;active and functional&#x27; is consistent and not ambiguous.</i></td></tr>
+<tr><td>A14</td><td>UC8</td><td>incompleteness</td><td>data</td><td><span class='tag resolved'>resolved</span></td><td>invalid or insufficient data; valid data<br><i>The term &#x27;invalid or insufficient&#x27; is ambiguous as it could refer to invalid or insufficient data or valid data.</i></td></tr>
+<tr><td>A15</td><td>UC8</td><td>incompleteness</td><td>information</td><td><span class='tag resolved'>resolved</span></td><td>information required by the point of rest; information required by the selected account Tourist<br><i>The term &#x27;information&#x27; is ambiguous as it could refer to the information required by the point of rest or the selected account Tourist.</i></td></tr>
+<tr><td>A16</td><td>UC8</td><td>quantifier</td><td>multiple</td><td><span class='tag resolved'>resolved</span></td><td>multiple submissions; single submission<br><i>The term &#x27;multiple&#x27; is ambiguous as it could refer to multiple submissions or a single submission.</i></td></tr>
+<tr><td>A17</td><td>UC9</td><td>incompleteness</td><td>certain</td><td><span class='tag resolved'>resolved</span></td><td>certain parameters; any parameters<br><i>The term &#x27;certain&#x27; is ambiguous as it could refer to certain parameters or any parameters.</i></td></tr>
+<tr><td>A18</td><td>UC10</td><td>incompleteness</td><td>details</td><td><span class='tag resolved'>resolved</span></td><td>details of a selected point of rest; details of a selected account Tourist<br><i>The term &#x27;details&#x27; is ambiguous as it could refer to the details of a selected point of rest or a selected account Tourist.</i></td></tr>
+<tr><td>A19</td><td>UC10</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the use case SearchRefreshmentPoint; it refers to the use case SearchTourist<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to either use case.</i></td></tr>
+<tr><td>A20</td><td>UC10</td><td>incompleteness</td><td>details</td><td><span class='tag resolved'>resolved</span></td><td>details of the selected point of rest; details of the selected account Tourist<br><i>The term &#x27;details&#x27; is ambiguous as it could refer to the details of a selected point of rest or a selected account Tourist.</i></td></tr>
+<tr><td>A21</td><td>UC12</td><td>incompleteness</td><td>details</td><td><span class='tag resolved'>resolved</span></td><td>details of a selected account Tourist; details of a selected point of rest<br><i>The term &#x27;details&#x27; is ambiguous as it could refer to the details of a selected account Tourist or a selected point of rest.</i></td></tr>
+<tr><td>A22</td><td>UC14</td><td>incompleteness</td><td>certain</td><td><span class='tag resolved'>resolved</span></td><td>certain parameters; any parameters<br><i>The term &#x27;certain&#x27; is ambiguous as it could refer to certain parameters or any parameters.</i></td></tr>
+<tr><td>A23</td><td>UC15</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>it refers to the use case SearchTourist; it refers to the use case SearchRefreshmentPoint<br><i>The use of &#x27;it&#x27; is ambiguous as it could refer to either use case.</i></td></tr>
+<tr><td>A24</td><td>UC15</td><td>referential</td><td>them</td><td><span class='tag resolved'>resolved</span></td><td>them refers to the selected data; them refers to the selected account Tourist<br><i>The term &#x27;them&#x27; is ambiguous as it could refer to the selected data or the selected account Tourist.</i></td></tr>
+<tr><td>A25</td><td>UC15</td><td>incompleteness</td><td>information</td><td><span class='tag resolved'>resolved</span></td><td>information required by the selected account Tourist; information required by the point of rest<br><i>The term &#x27;information&#x27; is ambiguous as it could refer to the information required by the selected account Tourist or the point of rest.</i></td></tr>
+<tr><td>A26</td><td>UC15</td><td>incompleteness</td><td>data</td><td><span class='tag resolved'>resolved</span></td><td>invalid or insufficient data; valid data<br><i>The term &#x27;invalid or insufficient&#x27; is ambiguous as it could refer to invalid or insufficient data or valid data.</i></td></tr>
+<tr><td>A27</td><td>UC15</td><td>incompleteness</td><td>information</td><td><span class='tag resolved'>resolved</span></td><td>information required by the selected account Tourist; information required by the point of rest<br><i>The term &#x27;information&#x27; is ambiguous as it could refer to the information required by the selected account Tourist or the point of rest.</i></td></tr>
+<tr><td>A28</td><td>UC18</td><td>incompleteness</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>certain parameters; any parameters<br><i>The term &#x27;certain&#x27; is ambiguous as it could refer to certain parameters or any parameters.</i></td></tr>
+<tr><td>A29</td><td>UC21</td><td>incompleteness</td><td>data</td><td><span class='tag resolved'>resolved</span></td><td>invalid or insufficient data; valid data<br><i>The term &#x27;invalid or insufficient&#x27; is ambiguous as it could refer to invalid or insufficient data or valid data.</i></td></tr>
+<tr><td>A30</td><td>UC21</td><td>incompleteness</td><td>proper</td><td><span class='tag resolved'>resolved</span></td><td>proper placement of the news; placement of the news<br><i>The term &#x27;proper&#x27; is ambiguous as it could refer to proper placement or placement.</i></td></tr>
+<tr><td>A31</td><td>UC22</td><td>incompleteness</td><td>data</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A32</td><td>UC23</td><td>incompleteness</td><td>information</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A33</td><td>UC23</td><td>incompleteness</td><td>data</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A34</td><td>UC23</td><td>incompleteness</td><td>data</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A35</td><td>UC24</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>View the list of sites as a result of the use case SearchSite, it selects and activates a function to view the feedback.; View the list of sites as a result of the use case SearchSite, it selects and activates a function of change in the selected comment.<br><i>The use of &#x27;it&#x27; is ambiguous, as it could refer to the system or the user.</i></td></tr>
+<tr><td>A36</td><td>UC26</td><td>referential</td><td>it</td><td><span class='tag resolved'>resolved</span></td><td>View the list of sites as a result of the use case SearchSite, it selects and activates a function to view the feedback.; View the list of sites as a result of the use case SearchSite, it selects and activates a function of change in the selected comment.<br><i>The use of &#x27;it&#x27; is ambiguous, as it could refer to the system or the user.</i></td></tr>
+<tr><td>A37</td><td>UC26</td><td>incompleteness</td><td>data</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A38</td><td>UC26</td><td>actor</td><td>passive &#x27;modified&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>Exit conditions: The notification system has been modified for the comment feedback selected.; Exit conditions: The notification system has been modified for the comment selected.<br><i>The actor is passive and does not specify who is modifying the notification system.</i></td></tr>
+<tr><td>A39</td><td>UC28</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>Description: Removes one or more search tags in the system.; Description: Removes one or more tags from the list and sends the request for deletion.<br><i>The use of &#x27;one or more&#x27; is ambiguous, as it could refer to search tags or tags from the list.</i></td></tr>
+<tr><td>A40</td><td>UC28</td><td>coordination</td><td>and+or</td><td><span class='tag resolved'>resolved</span></td><td>3 Select one or more tags from the list and sends the request for deletion.; 3 Select one or more tags from the list and sends the request for deletion.<br><i>The use of &#x27;and/or&#x27; is redundant and does not add clarity.</i></td></tr>
+<tr><td>A41</td><td>UC28</td><td>quantifier</td><td>one or more</td><td><span class='tag resolved'>resolved</span></td><td>3 Select one or more tags from the list and sends the request for deletion.; 3 Select one or more tags from the list and sends the request for deletion.<br><i>The use of &#x27;one or more&#x27; is ambiguous, as it could refer to search tags or tags from the list.</i></td></tr>
+<tr><td>A42</td><td>UC29</td><td>actor</td><td>passive &#x27;asked&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>Entry conditions: He was asked to enter a search tags already in the system.; Entry conditions: He was asked to enter a search tag already in the system.<br><i>The actor is passive and does not specify who is asking the user to enter a search tag.</i></td></tr>
+<tr><td>A43</td><td>UC29</td><td>actor</td><td>passive &#x27;asked&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>Entry conditions: He was asked to enter a search tags already in the system.; Entry conditions: He was asked to enter a search tag already in the system.<br><i>The actor is passive and does not specify who is asking the user to enter a search tag.</i></td></tr>
+<tr><td>A44</td><td>UC29</td><td>referential</td><td>its</td><td><span class='tag resolved'>resolved</span></td><td>Notice the error message and asks for confirmation of its reading.; Notice the error message and asks for confirmation of its deletion.<br><i>The use of &#x27;its&#x27; is ambiguous, as it could refer to the reading or the deletion.</i></td></tr>
+<tr><td>A45</td><td>UC30</td><td>incompleteness</td><td>information</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A46</td><td>UC30</td><td>incompleteness</td><td>data</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A47</td><td>UC31</td><td>incompleteness</td><td>appropriate</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A48</td><td>UC32</td><td>actor</td><td>passive &#x27;asked&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>Description: He was asked to enter a password but is not confirmed in a correct way.; Description: He was asked to enter a password but is not confirmed in a correct way.<br><i>The actor is passive and does not specify who is asking the user to enter a password.</i></td></tr>
+<tr><td>A49</td><td>UC32</td><td>referential</td><td>It</td><td><span class='tag resolved'>resolved</span></td><td>Entry conditions: It has been pressed the button to confirm the password change Flow of events User System: 4 Notify an error message.; Entry conditions: It has been pressed the button to confirm the password change Flow of events User System: 4 Notify an error message.<br><i>The use of &#x27;It&#x27; is ambiguous, as it could refer to the system or the user.</i></td></tr>
+<tr><td>A50</td><td>UC32</td><td>actor</td><td>passive &#x27;pressed&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>Entry conditions: It has been pressed the button to confirm the password change Flow of events User System: 4 Notify an error message.; Entry conditions: It has been pressed the button to confirm the password change Flow of events User System: 4 Notify an error message.<br><i>The actor is passive and does not specify who is pressing the button to confirm the password change.</i></td></tr>
+<tr><td>A51</td><td>UC33</td><td>incompleteness</td><td>data</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A52</td><td>UC35</td><td>incompleteness</td><td>information</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A53</td><td>UC41</td><td>incompleteness</td><td>data</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A54</td><td>UC43</td><td>incompleteness</td><td>information</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A55</td><td>UC43</td><td>incompleteness</td><td>data</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A56</td><td>UC44</td><td>incompleteness</td><td>data</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A57</td><td>UC47</td><td>referential</td><td>them</td><td><span class='tag resolved'>resolved</span></td><td>2 Loads the data and displays them in a form.; 2 Loads the data and displays them in a form.<br><i>The use of &#x27;them&#x27; is ambiguous, as it could refer to the data or the form.</i></td></tr>
+<tr><td>A58</td><td>UC47</td><td>incompleteness</td><td>information</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A59</td><td>UC47</td><td>incompleteness</td><td>data</td><td><span class='tag open'>open</span></td><td><br><i>The requirement is incomplete and does not provide enough context to determine its meaning.</i></td></tr>
+<tr><td>A60</td><td>UC52</td><td>actor</td><td>passive &#x27;removed&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>Exit conditions: The notification system has been removed from the site bookmarks.; Exit conditions: The notification system has been removed from the site bookmarks.<br><i>The actor is passive and does not specify who is removing the notification system from the site bookmarks.</i></td></tr>
+<tr><td>A61</td><td>UC53</td><td>incompleteness</td><td>data</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The sentence is incomplete and does not provide enough information to determine its meaning.</i></td></tr>
+<tr><td>A62</td><td>UC54</td><td>incompleteness</td><td>details</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The sentence is incomplete and does not provide enough information to determine its meaning.</i></td></tr>
+<tr><td>A63</td><td>UC54</td><td>incompleteness</td><td>appropriate</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The sentence is incomplete and does not provide enough information to determine its meaning.</i></td></tr>
+<tr><td>A64</td><td>UC54</td><td>incompleteness</td><td>data</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The sentence is incomplete and does not provide enough information to determine its meaning.</i></td></tr>
+<tr><td>A65</td><td>UC55</td><td>actor</td><td>passive &#x27;issued&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>He has already been issued with a feedback for the selected site.; He has already issued a feedback for the selected site.<br><i>The actor is either the tourist who has already received a feedback or the tourist who has issued a feedback.</i></td></tr>
+<tr><td>A66</td><td>UC56</td><td>coordination</td><td>noun or noun</td><td><span class='tag resolved'>resolved</span></td><td>He began a search.; He began an advanced search.<br><i>The sentence is ambiguous between a general search and an advanced search.</i></td></tr>
+<tr><td>A67</td><td>UC58</td><td>incompleteness</td><td>details</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The sentence is incomplete and does not provide enough information to determine its meaning.</i></td></tr>
+<tr><td>A68</td><td>UC58</td><td>actor</td><td>passive &#x27;located&#x27; without agent</td><td><span class='tag resolved'>resolved</span></td><td>The tourist has successfully authenticated to the system and is located in one of the following areas: Research Results, List of Sites Visited, Sites and List of Favorites.; The tourist has successfully authenticated to the system and is located in one of the following areas: Research Results, List of Sites Visited, and List of Favorites.<br><i>The sentence is ambiguous between including a comma before &#x27;and&#x27; or not.</i></td></tr>
+<tr><td>A69</td><td>UC58</td><td>incompleteness</td><td>details</td><td><span class='tag rejected'>rejected</span></td><td><br><i>The sentence is incomplete and does not provide enough information to determine its meaning.</i></td></tr>
+<tr><td>A70</td><td>UC32</td><td>actor</td><td>use case &#x27;Ask Password&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>He was asked to enter a password but is not confirmed in a correct way.; He was asked to enter a password but is not confirmed in a correct manner.<br><i>The sentence is ambiguous between &#x27;way&#x27; and &#x27;manner&#x27;.</i></td></tr>
+<tr><td>A71</td><td>UC29</td><td>actor</td><td>use case &#x27;Ask SearchTag&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>He was asked to enter a search tag already in the system.; He was asked to enter a search tag that is already in the system.<br><i>The sentence is ambiguous between &#x27;already in the system&#x27; and &#x27;that is already in the system&#x27;.</i></td></tr>
+<tr><td>A72</td><td>UC23</td><td>actor</td><td>use case &#x27;Change Data&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Change data of a news on the computer.; Change data of a news in the system.<br><i>The sentence is ambiguous between &#x27;on the computer&#x27; and &#x27;in the system&#x27;.</i></td></tr>
+<tr><td>A73</td><td>UC3</td><td>actor</td><td>use case &#x27;Change Data&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Change data of a cultural object in the system.; Change data of a cultural object on the computer.<br><i>The sentence is ambiguous between &#x27;in the system&#x27; and &#x27;on the computer&#x27;.</i></td></tr>
+<tr><td>A74</td><td>UC17</td><td>actor</td><td>use case &#x27;Change Image&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Changing the image of a banner ad.; Changing the image of a banner ad on the computer.<br><i>The sentence is ambiguous between &#x27;of a banner ad&#x27; and &#x27;of a banner ad on the computer&#x27;.</i></td></tr>
+<tr><td>A75</td><td>UC18</td><td>actor</td><td>use case &#x27;Check Point&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Check if a point Refreshments included the maximum number of allowed banners to it.; Check if a point Refreshments has the maximum number of allowed banners.<br><i>The sentence is ambiguous between &#x27;included the maximum number of allowed banners&#x27; and &#x27;has the maximum number of allowed banners&#x27;.</i></td></tr>
+<tr><td>A76</td><td>UC7</td><td>actor</td><td>use case &#x27;Convention Request&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Convention active request by a refreshment point.; Convention active request by a refreshment point operator.<br><i>The sentence is ambiguous between &#x27;by a refreshment point&#x27; and &#x27;by a refreshment point operator&#x27;.</i></td></tr>
+<tr><td>A77</td><td>UC19</td><td>actor</td><td>use case &#x27;Delete BannerAd&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Delete a banner ad associated with a refreshment bar on the computer.; Delete a banner ad associated with a refreshment bar in the system.<br><i>The sentence is ambiguous between &#x27;on the computer&#x27; and &#x27;in the system&#x27;.</i></td></tr>
+<tr><td>A78</td><td>UC22</td><td>actor</td><td>use case &#x27;Delete News&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Delete a news in the system.; Delete a news on the computer.<br><i>The sentence is ambiguous between &#x27;in the system&#x27; and &#x27;on the computer&#x27;.</i></td></tr>
+<tr><td>A79</td><td>UC1</td><td>actor</td><td>use case &#x27;Delete Object&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Delete a cultural object in the system.; Delete a cultural object on the computer.<br><i>The sentence is ambiguous between &#x27;in the system&#x27; and &#x27;on the computer&#x27;.</i></td></tr>
+<tr><td>A80</td><td>UC6</td><td>actor</td><td>use case &#x27;Delete Refreshment&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Delete a refreshment from the system.; Delete a refreshment on the computer.<br><i>The sentence is ambiguous between &#x27;from the system&#x27; and &#x27;on the computer&#x27;.</i></td></tr>
+<tr><td>A81</td><td>UC26</td><td>actor</td><td>use case &#x27;Edit Comment&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Editing a comment by a feedback selected.; Editing a comment on a feedback selected.<br><i>The sentence is ambiguous between &#x27;by a feedback selected&#x27; and &#x27;on a feedback selected&#x27;.</i></td></tr>
+<tr><td>A82</td><td>UC54</td><td>actor</td><td>use case &#x27;Edit Comment&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Edit the comment previously issued.; Edit the comment previously issued by the system.<br><i>The sentence is ambiguous between &#x27;previously issued&#x27; and &#x27;previously issued by the system&#x27;.</i></td></tr>
+<tr><td>A83</td><td>UC8</td><td>actor</td><td>use case &#x27;Edit Data&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Edit the data pertaining to a designated point of rest.; Edit the data of a designated point of rest.<br><i>The sentence is ambiguous between &#x27;pertaining to&#x27; and &#x27;of&#x27;.</i></td></tr>
+<tr><td>A84</td><td>UC20</td><td>actor</td><td>use case &#x27;Insert Banner&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Inserting a new banner associated with a point of rest.; Inserting a new banner for a point of rest.<br><i>The sentence is ambiguous between &#x27;associated with&#x27; and &#x27;for&#x27;.</i></td></tr>
+<tr><td>A85</td><td>UC21</td><td>actor</td><td>use case &#x27;Insert News&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Inserts a new news in the system.; Inserts a new news on the computer.<br><i>The sentence is ambiguous between &#x27;in the system&#x27; and &#x27;on the computer&#x27;.</i></td></tr>
+<tr><td>A86</td><td>UC2</td><td>actor</td><td>use case &#x27;Insert Object&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Inserts a new cultural object in the system.; Inserts a new cultural object on the computer.<br><i>The sentence is ambiguous between &#x27;in the system&#x27; and &#x27;on the computer&#x27;.</i></td></tr>
+<tr><td>A87</td><td>UC51</td><td>actor</td><td>use case &#x27;Insert Site&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Inserts a site selected in the list of bookmarks.; Inserts a site in the list of bookmarks.<br><i>The sentence is ambiguous between &#x27;selected in the list of bookmarks&#x27; and &#x27;in the list of bookmarks&#x27;.</i></td></tr>
+<tr><td>A88</td><td>UC30</td><td>actor</td><td>use case &#x27;Insert TagSearch&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Inserts a new tag search.; Inserts a new tag search in the system.<br><i>The sentence is ambiguous between &#x27;a new tag search&#x27; and &#x27;a new tag search in the system&#x27;.</i></td></tr>
+<tr><td>A89</td><td>UC28</td><td>actor</td><td>use case &#x27;Remove SearchTag&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Removes one or more search tags in the system.; Removes one or more search tags from the system.<br><i>The sentence is ambiguous between &#x27;in the system&#x27; and &#x27;from the system&#x27;.</i></td></tr>
+<tr><td>A90</td><td>UC4</td><td>actor</td><td>use case &#x27;Return List&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>Returns the list of cultural objects in the system according to certain parameters.; Returns the list of cultural objects on the computer according to certain parameters.<br><i>The sentence is ambiguous between &#x27;in the system&#x27; and &#x27;on the computer&#x27;.</i></td></tr>
+<tr><td>A91</td><td>UC9</td><td>actor</td><td>use case &#x27;Return List&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>tourist; guest user<br><i>The actor for &#x27;Return List&#x27; is ambiguous as it could be either a tourist or a guest user.</i></td></tr>
+<tr><td>A94</td><td>UC10</td><td>actor</td><td>use case &#x27;View Detail&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>tourist; guest user<br><i>The actor for &#x27;View Detail&#x27; is ambiguous as it could be either a tourist or a guest user.</i></td></tr>
+<tr><td>A95</td><td>UC5</td><td>actor</td><td>use case &#x27;View Detail&#x27; without actor</td><td><span class='tag resolved'>resolved</span></td><td>tourist; guest user<br><i>The actor for &#x27;View Detail&#x27; is ambiguous as it could be either a tourist or a guest user.</i></td></tr>
+</table>
+<h2>4. Diagrams generated from the shared model</h2><div class='cols'>
+<div><b>usecase diagram</b><br><img src='img/D3_etour_usecase.png'></div>
+<div><b>class diagram</b><br><img src='img/D3_etour_class.png'></div>
+</div>
+<h2>5. Code skeleton (Python; Java in code/java/)</h2><pre>&quot;&quot;&quot;Code skeleton generated from the shared model of D3/etour.
+Every class and method records the requirement(s) it traces to.&quot;&quot;&quot;
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class Agency:
+    &quot;&quot;&quot;Source: -&quot;&quot;&quot;
+    culturalHeritages: _t.List[&quot;CulturalHeritage&quot;] = _dc.field(default_factory=list)
+    refreshmentPoints: _t.List[&quot;RefreshmentPoint&quot;] = _dc.field(default_factory=list)
+    touristAccounts: _t.List[&quot;TouristAccount&quot;] = _dc.field(default_factory=list)
+    sites: _t.List[&quot;Site&quot;] = _dc.field(default_factory=list)
+    newses: _t.List[&quot;News&quot;] = _dc.field(default_factory=list)
+    feedbacks: _t.List[&quot;Feedback&quot;] = _dc.field(default_factory=list)
+
+    def logIn(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def logOut(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class CulturalHeritage:
+    &quot;&quot;&quot;Source: UC4, UC10, UC12&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    description: _t.Optional[str] = None
+    location: _t.Optional[str] = None
+
+    def searchCulturalHeritage(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC4 &quot;Search Cultural Heritage&quot; (UC4).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewDetails(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC5 &quot;View Cultural Object Details&quot; (UC5).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewHistory(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC11 &quot;View Refreshment Point History&quot; (UC11).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class RefreshmentPoint:
+    &quot;&quot;&quot;Source: UC6, UC8, UC9, UC11&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    location: _t.Optional[str] = None
+    type: _t.Optional[str] = None
+
+    def searchRefreshmentPoint(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC9 &quot;Search Refreshment Point&quot; (UC9).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewDetails(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC10 &quot;View Refreshment Point Details&quot; (UC10).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewHistory(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC11 &quot;View Refreshment Point History&quot; (UC11).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def deleteRefreshmentPoint(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC6 &quot;Delete Refreshment Point&quot; (UC6).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def activateConvention(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC7 &quot;Activate Convention At Refreshment Point&quot; (UC7).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editData(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC8 &quot;Edit Refreshment Point Data&quot; (UC8).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def checkBanners(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC18 &quot;Check Point&quot; (UC18).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def insertBanner(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC20 &quot;Insert Banner&quot; (UC20, UC38).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def deleteBanner(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC19 &quot;Delete Banner Ad&quot; (UC19, UC40).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class TouristAccount:
+    &quot;&quot;&quot;Source: UC12, UC13, UC14&quot;&quot;&quot;
+    username: _t.Optional[str] = None
+    status: _t.Optional[str] = None
+    email: _t.Optional[str] = None
+
+    def searchTouristAccount(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC14 &quot;Search Tourist Account&quot; (UC14).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewDetails(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC12 &quot;View Tourist Account Details&quot; (UC12).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def enableDisableAccount(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC13 &quot;Enable Disable Tourist Account&quot; (UC13).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewHistory(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC12 &quot;View Tourist Account Details&quot; (UC12).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Tourist:
+    &quot;&quot;&quot;Source: UC15, UC16&quot;&quot;&quot;
+    name: _t.Optional[str] = None
+    site: _t.Optional[&quot;Site&quot;] = None
+    feedback: _t.Optional[&quot;Feedback&quot;] = None
+    advancedSearch: _t.Optional[&quot;AdvancedSearch&quot;] = None
+
+    def searchTourist(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def modifyData(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def deleteAccount(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editSearchPreference(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC40 &quot;Edit Search Preference&quot; (UC46).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editPersonalData(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC41 &quot;Edit Personal Data&quot; (UC47).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def editPreferences(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC42 &quot;Edit Preferences&quot; (UC48).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewListFavorites(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC43 &quot;View List Of Favorites&quot; (UC49).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def viewListSites(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC44 &quot;View List Of Sites&quot; (UC50).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def insertSite(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC45 &quot;Insert Site&quot; (UC51).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def deleteSite(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC46 &quot;Delete Site&quot; (UC52).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def insertFeedback(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC47 &quot;Insert Feedback&quot; (UC53).&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class BannerAd:
+    &quot;&quot;&quot;Source: UC17, UC19, UC20&quot;&quot;&quot;
+    image: _t.Optional[str] = None
+
+
+@_dc.dataclass
+class News:
+    &quot;&quot;&quot;Source: UC21, UC22, UC23&quot;&quot;&quot;
+    title: _t.Optional[str] = None
+    content: _t.Optional[str] = None
+
+    def insertNews(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC21 &quot;Insert News&quot; (UC21).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def deleteNews(self) -&gt; None:
+        &quot;&quot;&quot;Realizes UC22 &quot;Delete News&quot; (UC22).&quot;&quot;&quot;
+        raise NotImplementedError
+
+    def modifyNews(self) -&gt; None:
+        &quot;&quot;&quot;Operation.&quot;&quot;&quot;
+        raise NotImplementedError
+
+
+@_dc.dataclass
+class Feedback:
+    &quot;&quot;&quot;Source: UC24, UC25, UC26&quot;&quot;&quot;
+    site: _t.Optional[str] = None
+    comments: _t.Optional[str] = None
+    text: _t.Optional[str] = None
+    siteId: _t.Optional[int] = No</pre>
+<h2>6. Validation, checks and traceability</h2><table>
+<tr><th>python_compiles</th><td>True</td></tr>
+<tr><th>java_compiles</th><td>True</td></tr>
+<tr><th>attribute_mismatches</th><td>0</td></tr>
+<tr><th>method_mismatches</th><td>0</td></tr>
+<tr><th>use_cases</th><td>51</td></tr>
+<tr><th>use_cases_without_actor</th><td>0</td></tr>
+<tr><th>use_cases_without_method</th><td>8</td></tr>
+<tr><th>actors_without_use_case</th><td>1</td></tr>
+<tr><th>relations_to_unknown_class</th><td>0</td></tr>
+<tr><th>inconsistencies</th><td>9</td></tr>
+<tr><th>inconsistency_rate</th><td>0.1139</td></tr>
+<tr><th>requirement_coverage</th><td>0.9828</td></tr>
+<tr><th>validator fixes</th><td></td></tr>
+<tr><th>assumptions for open ambiguities</th><td>[{&quot;tag&quot;: &quot;A3&quot;, &quot;assumption&quot;: &quot;The &#x27;Agency&#x27; class will handle the deletion and insertion of cultural objects, refreshment points, and news, as well as the management of feedback and site data. The &#x27;Tourist&#x27; class will handle the viewing and modification of personal data, preferences, and site details. The &#x27;RestaurantOperator&#x27; class will handle the management of menus and data points.&quot;}]</td></tr></table>
+<h2>7. Scores against the reference</h2><table><tr><th>element</th><th>P</th><th>R</th><th>F1</th><th>TP/FP/FN</th></tr>
+<tr><td>use_cases</td><td>0.451</td><td>0.397</td><td>0.422</td><td>23/28/35</td></tr>
+<tr><td>actors_of_use_cases</td><td>1.0</td><td>1.0</td><td>1.0</td><td>20/0/0</td></tr>
+<tr><td>trace_links</td><td>0.716</td><td>0.344</td><td>0.465</td><td>106/42/202</td></tr>
+</table></body></html>

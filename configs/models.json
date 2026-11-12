@@ -1,0 +1,35 @@
+{
+  "qwen": {
+    "backend": "ollama",
+    "model": "qwen2.5:7b-instruct",
+    "base_url": "http://localhost:11434",
+    "num_ctx": 16384,
+    "max_tokens": 6144
+  },
+  "qwen-vllm": {
+    "backend": "openai",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "base_url": "http://localhost:8000/v1",
+    "max_tokens": 6144
+  },
+  "mistral": {
+    "backend": "ollama",
+    "model": "mistral:7b-instruct",
+    "base_url": "http://localhost:11434",
+    "num_ctx": 16384,
+    "max_tokens": 6144
+  },
+  "gpt4o": {
+    "backend": "openai",
+    "model": "gpt-4o-2024-08-06",
+    "base_url": "https://api.openai.com/v1",
+    "api_key_env": "OPENAI_API_KEY",
+    "max_tokens": 4096
+  },
+  "mock": {
+    "backend": "openai",
+    "model": "mock",
+    "base_url": "http://127.0.0.1:8765/v1",
+    "max_tokens": 4096
+  }
+}

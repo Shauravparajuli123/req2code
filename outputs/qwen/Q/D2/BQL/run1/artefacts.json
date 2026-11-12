@@ -1,0 +1,199 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineElements",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CreateBQLModel",
+   "actor": "User",
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "BqlModel",
+   "kind": "class",
+   "attributes": [
+    "queries",
+    "entries",
+    "fields",
+    "predicates"
+   ],
+   "methods": [
+    {
+     "name": "createEntry",
+     "use_case": "CreateBQLModel"
+    },
+    {
+     "name": "addField",
+     "use_case": "CreateBQLModel"
+    },
+    {
+     "name": "createPredicate",
+     "use_case": "CreateBQLModel"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "location",
+    "comments"
+   ],
+   "methods": [
+    {
+     "name": "defineElement",
+     "use_case": "DefineElements"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Entry",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "allFields"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Predicate",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "associateWithEntry",
+     "use_case": "CreateBQLModel"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "Query",
+   "kind": "class",
+   "attributes": [
+    "predicates"
+   ],
+   "methods": [
+    {
+     "name": "addPredicate",
+     "use_case": "CreateBQLModel"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Field",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "associateWithEntry",
+     "use_case": "CreateBQLModel"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "BqlModel",
+   "target": "Entry",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "BqlModel",
+   "target": "Predicate",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "BqlModel",
+   "target": "Query",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Query",
+   "target": "Predicate",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "BqlModel",
+   "target": "Field",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Element:\n    def __init__(self, location: str, comments: str):\n        self.location = location\n        self.comments = comments\n    def defineElement(self):\n        raise NotImplementedError('Define elements method not implemented')\n\nclass Entry:\n    def __init__(self, name: str, allFields: bool):\n        self.name = name\n        self.allFields = allFields\n\nclass Predicate:\n    def __init__(self):\n        pass\n    def associateWithEntry(self, entry: Entry):\n        raise NotImplementedError('Associate with entry method not implemented')\n\nclass Query:\n    def __init__(self):\n        self.predicates: List[Predicate] = []\n    def addPredicate(self, predicate: Predicate):\n        raise NotImplementedError('Add predicate method not implemented')\n\nclass Field:\n    def __init__(self, name: str):\n        self.name = name\n    def associateWithEntry(self, entry: Entry):\n        raise NotImplementedError('Associate with entry method not implemented')\n\nclass BqlModel:\n    def __init__(self):\n        self.queries: List[Query] = []\n        self.entries: List[Entry] = []\n        self.fields: List[Field] = []\n        self.predicates: List[Predicate] = []\n    def createEntry(self):\n        raise NotImplementedError('Create entry method not implemented')\n    def addField(self):\n        raise NotImplementedError('Add field method not implemented')\n    def createPredicate(self):\n        raise NotImplementedError('Create predicate method not implemented')",
+ "java": {}
+}

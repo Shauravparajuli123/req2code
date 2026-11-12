@@ -1,0 +1,26 @@
+@startuml
+class Theater {
+  location
+}
+class Play {
+  name
+  type
+  theaters
+}
+class Author {
+  name
+}
+class Participant {
+  name
+}
+class Session {
+  beginTime
+  endTime
+}
+class Game {
+  name
+}
+Play -- Author
+Play -- Participant
+Session -- Participant
+@enduml

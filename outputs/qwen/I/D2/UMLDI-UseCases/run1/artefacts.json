@@ -1,0 +1,202 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Instance",
+   "kind": "class",
+   "attributes": [
+    "classifiers"
+   ],
+   "methods": [
+    {
+     "name": "addClassifier",
+     "use_case": "R8"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R8"
+   ]
+  },
+  {
+   "name": "AttributeLink",
+   "kind": "class",
+   "attributes": [
+    "instance",
+    "linkend"
+   ],
+   "methods": [
+    {
+     "name": "setInstance",
+     "use_case": "R10"
+    },
+    {
+     "name": "setLinkend",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Link",
+   "kind": "class",
+   "attributes": [
+    "linkend"
+   ],
+   "methods": [
+    {
+     "name": "setLinkend",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R12"
+   ]
+  },
+  {
+   "name": "Linkend",
+   "kind": "class",
+   "attributes": [
+    "link",
+    "instance"
+   ],
+   "methods": [
+    {
+     "name": "setLink",
+     "use_case": "R13"
+    },
+    {
+     "name": "setInstance",
+     "use_case": "R14"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "ComponentInstance",
+   "kind": "class",
+   "attributes": [
+    "residents"
+   ],
+   "methods": [
+    {
+     "name": "addResident",
+     "use_case": "R15"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R15"
+   ]
+  },
+  {
+   "name": "NodeInstance",
+   "kind": "class",
+   "attributes": [
+    "componentInstances"
+   ],
+   "methods": [
+    {
+     "name": "addComponentInstance",
+     "use_case": "R16"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Instance",
+   "target": "Instance",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AttributeLink",
+   "target": "Instance",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AttributeLink",
+   "target": "Linkend",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Link",
+   "target": "Linkend",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Linkend",
+   "target": "Link",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Linkend",
+   "target": "Instance",
+   "multiplicity_target": "1",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ComponentInstance",
+   "target": "ComponentInstance",
+   "multiplicity_target": "1",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "NodeInstance",
+   "target": "ComponentInstance",
+   "multiplicity_target": "1",
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Instance:\n    def __init__(self, classifiers: List[str] = None):\n        self.classifiers: List[str] = classifiers if classifiers else []\n        self.slots: List[AttributeLink] = []\n        self.owned_instances: List[Instance] = []\n\n    def add_owned_instance(self, instance: 'Instance') -> None:\n        raise NotImplementedError\n\n    def add_classifier(self, classifier: str) -> None:\n        raise NotImplementedError\n\n    def add_slot(self, slot: AttributeLink) -> None:\n        raise NotImplementedError\n\n    def get_classifiers(self) -> List[str]:\n        raise NotImplementedError\n\n    def get_slots(self) -> List[AttributeLink]:\n        raise NotImplementedError\n\n    def get_owned_instances(self) -> List[Instance]:\n        raise NotImplementedError\n\nclass AttributeLink:\n    def __init__(self, instance: Optional[Instance] = None, linkend: Optional['Linkend'] = None):\n        self.instance: Optional[Instance] = instance\n        self.linkend: Optional[Linkend] = linkend\n\n    def get_instance(self) -> Optional[Instance]:\n        raise NotImplementedError\n\n    def get_linkend(self) -> Optional[Linkend]:\n        raise NotImplementedError\n\n    def set_instance(self, instance: Instance) -> None:\n        raise NotImplementedError\n\n    def set_linkend(self, linkend: Linkend) -> None:\n        raise NotImplementedError\n\nclass Linkend:\n    def __init__(self, link: Optional['Link'] = None, instance: Optional[Instance] = None):\n        self.link: Optional['Link'] = link\n        self.instance: Optional[Instance] = instance\n\n    def get_link(self) -> Optional['Link']:\n        raise NotImplementedError\n\n    def get_instance(self) -> Optional[Instance]:\n        raise NotImplementedError\n\n    def set_link(self, link: 'Link') -> None:\n        raise NotImplementedError\n\n    def set_instance(self, instance: Instance) -> None:\n        raise NotImplementedError\n\nclass Link:\n    def __init__(self, association: str):\n        self.association: str = association\n        self.linkends: List[Linkend] = []\n\n    def add_linkend(self, linkend: Linkend) -> None:\n        raise NotImplementedError\n\n    def get_linkends(self) -> List[Linkend]:\n        raise NotImplementedError\n\n    def get_association(self) -> str:\n        raise NotImplementedError\n\n    def set_association(self, association: str) -> None:\n        raise NotImplementedError\n\nclass ComponentInstance:\n    def __init__(self, residents: List[Instance] = None):\n        self.residents: List[Instance] = residents if residents else []\n\n    def add_resident(self, resident: Instance) -> None:\n        raise NotImplementedError\n\n    def get_residents(self) -> List[Instance]:\n        raise NotImplementedError\n\n    def remove_resident(self, resident: Instance) -> None:\n        raise NotImplementedError\n\nclass NodeInstance:\n    def __init__(self, componentinstances: List[ComponentInstance] = None):\n        self.componentinstances: List[ComponentInstance] = componentinstances if componentinstances else []\n\n    def add_componentinstance(self, componentinstance: ComponentInstance) -> None:\n        raise NotImplementedError\n\n    def get_componentinstances(self) -> List[ComponentInstance]:\n        raise NotImplementedError\n\n    def remove_componentinstance(self, componentinstance: ComponentInstance) -> None:\n        raise NotImplementedError",
+ "java": {}
+}

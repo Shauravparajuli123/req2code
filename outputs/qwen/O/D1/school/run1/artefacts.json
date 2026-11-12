@@ -1,0 +1,192 @@
+{
+ "actors": [
+  "administrator"
+ ],
+ "use_cases": [
+  {
+   "name": "Send BroadcastMessage",
+   "actor": "administrator",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "name": "Set Role",
+   "actor": "administrator",
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "name": "Upload Schedule",
+   "actor": "administrator",
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "name": "View Detail",
+   "actor": "administrator",
+   "src": [
+    "R60"
+   ]
+  },
+  {
+   "name": "View Statistic",
+   "actor": "administrator",
+   "src": [
+    "R61"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Administrator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "sendBroadcastMessage",
+     "use_case": "Send BroadcastMessage"
+    },
+    {
+     "name": "setRole",
+     "use_case": "Set Role"
+    },
+    {
+     "name": "uploadSchedule",
+     "use_case": "Upload Schedule"
+    },
+    {
+     "name": "viewDetail",
+     "use_case": "View Detail"
+    },
+    {
+     "name": "viewStatistic",
+     "use_case": "View Statistic"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R57",
+    "R58",
+    "R59",
+    "R60",
+    "R61"
+   ]
+  },
+  {
+   "name": "Account",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "name": "Message",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "name": "Participant",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "name": "Schedule",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "name": "Insight",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R60",
+    "R61"
+   ]
+  },
+  {
+   "name": "Statistic",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R61"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Account",
+   "multiplicity_target": "1",
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Message",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Participant",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Schedule",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Insight",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R60",
+    "R61"
+   ]
+  }
+ ],
+ "python": "class Administrator:\n    def sendBroadcastMessage(self):\n        raise NotImplementedError\n    def setRole(self):\n        raise NotImplementedError\n    def uploadSchedule(self):\n        raise NotImplementedError\n    def viewDetail(self):\n        raise NotImplementedError\n    def viewStatistic(self):\n        raise NotImplementedError\nclass Account:\n    def __init__(self, role):\n        self.role = role\nclass Message:\n    pass\nclass Participant:\n    pass\nclass Schedule:\n    pass\nclass Insight:\n    pass\nclass Statistic:\n    pass",
+ "java": {}
+}

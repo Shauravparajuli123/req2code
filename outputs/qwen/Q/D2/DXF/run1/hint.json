@@ -1,0 +1,222 @@
+{
+ "condition": "Q",
+ "hint": {
+  "case": "D2/DXF",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R2",
+     "R4",
+     "R5",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "a Mesh has a name of type String"
+     },
+     {
+      "sid": "R4.s1",
+      "text": "a Drawing Interchange model may have multiple meshes"
+     },
+     {
+      "sid": "R5.s1",
+      "text": "a Mesh may have any number of points"
+     }
+    ],
+    "name": "Mesh",
+    "freq": 4
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R3",
+     "R5",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "a point has a name of type String and coordinates X and Z of type Double"
+     },
+     {
+      "sid": "R5.s1",
+      "text": "a Mesh may have any number of points"
+     },
+     {
+      "sid": "R6.s1",
+      "text": "a point maps to only one Mesh"
+     }
+    ],
+    "name": "Point",
+    "freq": 3
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R2",
+     "R3"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "a Mesh has a name of type String"
+     },
+     {
+      "sid": "R3.s1",
+      "text": "a point has a name of type String and coordinates X and Z of type Double"
+     }
+    ],
+    "name": "TypeString",
+    "freq": 2
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "a Mesh has a name of type String"
+     }
+    ],
+    "owner": "Mesh",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "a point has a name of type String and coordinates X and Z of type Double"
+     }
+    ],
+    "owner": "Point",
+    "name": "coordinates x",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "a point has a name of type String and coordinates X and Z of type Double"
+     }
+    ],
+    "owner": "Point",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "a point has a name of type String and coordinates X and Z of type Double"
+     }
+    ],
+    "owner": "Point",
+    "name": "z",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "a Mesh has a name of type String"
+     }
+    ],
+    "owner": "TypeString",
+    "name": "name",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "a Mesh may have any number of points"
+     }
+    ],
+    "kind": "has",
+    "source": "Mesh",
+    "target": "Point",
+    "multiplicity_target": "0..*"
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "DrawingInterchangeModel",
+     "target": "Mesh",
+     "multiplicity": "0..*"
+    },
+    {
+     "source": "Mesh",
+     "target": "Point",
+     "multiplicity": "0..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

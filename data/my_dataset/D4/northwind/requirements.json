@@ -1,0 +1,178 @@
+{
+ "case": "D4/northwind",
+ "domain": "northwind",
+ "requirements": [
+  {
+   "id": "FR-CM-01",
+   "text": "The system shall maintain records of external organizations classified as either Customers, Vendors, or Shippers."
+  },
+  {
+   "id": "FR-CM-02",
+   "text": "The system shall maintain the hierarchical relationship where Customers, Vendors, and Shippers are separate entities inheriting from Companies."
+  },
+  {
+   "id": "FR-CM-03",
+   "text": "The system shall record Company information including name, phone number, address details, state, zip code and website."
+  },
+  {
+   "id": "FR-CM-04",
+   "text": "The system shall assign each Company to exactly one company type."
+  },
+  {
+   "id": "FR-CM-05",
+   "text": "The system shall associate each company with exactly one geographic state."
+  },
+  {
+   "id": "FR-CM-06",
+   "text": "The system shall assign a standard Tax Status to each company."
+  },
+  {
+   "id": "FR-CM-07",
+   "text": "The system shall allow multiple Contacts to be associated with a single company."
+  },
+  {
+   "id": "FR-CM-08",
+   "text": "The system shall maintain Contacts including first name, last name, primary and secondary phone numbers, email address, job title, and notes for each company contact."
+  },
+  {
+   "id": "FR-EM-01",
+   "text": "The system shall maintain Employee records with personal information (first and last name, primary/secondary phone numbers) and professional information (job title, email)."
+  },
+  {
+   "id": "FR-EM-02",
+   "text": "The system shall assign exactly one Title to each employee."
+  },
+  {
+   "id": "FR-EM-03",
+   "text": "The system shall support a hierarchical reporting structure where employees may report to one supervisor."
+  },
+  {
+   "id": "FR-EM-04",
+   "text": "The system shall allow one supervisor to manage multiple Employees."
+  },
+  {
+   "id": "FR-EM-05",
+   "text": "The system shall allow Employees to be assigned multiple privileges."
+  },
+  {
+   "id": "FR-PM-01",
+   "text": "The system shall maintain a Product catalog with product codes, names, descriptions, and pricing information."
+  },
+  {
+   "id": "FR-PM-02",
+   "text": "The system shall assign each product to exactly one Product Category."
+  },
+  {
+   "id": "FR-PM-03",
+   "text": "The system shall track standard unit cost and retail unit price for each product."
+  },
+  {
+   "id": "FR-PM-04",
+   "text": "The system shall monitor inventory levels including reorder level, target level, and minimum reorder quantity for each product."
+  },
+  {
+   "id": "FR-PM-05",
+   "text": "The system shall support marking products as discontinued."
+  },
+  {
+   "id": "FR-PM-06",
+   "text": "The system shall maintain Product Categories with names, codes, descriptions, and optional images."
+  },
+  {
+   "id": "FR-PM-07",
+   "text": "The system shall allow multiple Products to be supplied by multiple Vendors."
+  },
+  {
+   "id": "FR-IM-01",
+   "text": "The system shall support periodic Stock Takes to record and verify product inventory."
+  },
+  {
+   "id": "FR-IM-02",
+   "text": "The system shall record Stock Take information including date, product, quantity on hand, and expected quantity."
+  },
+  {
+   "id": "FR-IM-03",
+   "text": "The system shall calculate inventory discrepancies between expected and actual counts."
+  },
+  {
+   "id": "FR-SOP-01",
+   "text": "The system shall record Customer Orders with dates, customer information, and shipping details."
+  },
+  {
+   "id": "FR-SOP-02",
+   "text": "The system shall enforce that each Order must be associated with exactly one Customer."
+  },
+  {
+   "id": "FR-SOP-03",
+   "text": "The system shall assign each Order to exactly one Employee who processes it."
+  },
+  {
+   "id": "FR-SOP-04",
+   "text": "The system shall track the Order Status using predefined order status values."
+  },
+  {
+   "id": "FR-SOP-05",
+   "text": "The system shall assign exactly one Shipper to each Order."
+  },
+  {
+   "id": "FR-SOP-06",
+   "text": "The system shall calculate and record tax information including tax rate and Tax Status for each order."
+  },
+  {
+   "id": "FR-SOP-07",
+   "text": "The system shall record invoice date, payment method, and payment date for financial reconciliation."
+  },
+  {
+   "id": "FR-SOP-08",
+   "text": "The system shall require each Order to contain one or more Order Detail items."
+  },
+  {
+   "id": "FR-SOP-09",
+   "text": "The system shall track product, quantity, unit price, and discount for each Order Detail item."
+  },
+  {
+   "id": "FR-SOP-10",
+   "text": "The system shall assign a Status to each Order Detail item using predefined status values."
+  },
+  {
+   "id": "FR-POP-01",
+   "text": "The system shall manage Purchase Orders for acquiring products from Vendors."
+  },
+  {
+   "id": "FR-POP-02",
+   "text": "The system shall enforce that each Purchase Order must be associated with exactly one Vendor."
+  },
+  {
+   "id": "FR-POP-03",
+   "text": "The system shall record which Employee submitted each Purchase Order."
+  },
+  {
+   "id": "FR-POP-04",
+   "text": "The system shall record which Employee approved each Purchase Order."
+  },
+  {
+   "id": "FR-POP-05",
+   "text": "The system shall track the status of each Purchase Order using predefined Purchase Order Status values."
+  },
+  {
+   "id": "FR-POP-06",
+   "text": "The system shall record the order date for each Purchase Order."
+  },
+  {
+   "id": "FR-POP-07",
+   "text": "The system shall require each Purchase Order to contain one or more Purchase Order Detail items."
+  },
+  {
+   "id": "FR-POP-08",
+   "text": "The system shall track product, quantity, and unit price for each Purchase Order Detail item."
+  },
+  {
+   "id": "FR-DA-01",
+   "text": "The system shall record which Employee added each record and when it was added."
+  },
+  {
+   "id": "FR-DA-02",
+   "text": "The system shall record which Employee last modified each record and when it was modified."
+  }
+ ]
+}

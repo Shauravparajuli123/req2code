@@ -1,0 +1,35 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Game {
+  name : String
+  +createGame()
+}
+class WorkflowProcessDefinition {
+  workflowParticipants : String
+  workflowApplicationDeclarations : String
+  transitionDefinitions : String
+}
+class ParticipantSpecification {
+  processDefinition : String
+}
+class WorkflowApplicationDeclaration {
+  relevantData : String
+}
+class TransitionInformation {
+  targetProcessActivity : String
+}
+class WorkflowProcessActivity {
+  processDefinition : String
+  relevantData : String
+}
+class ProcessDefinition {
+}
+class WfMc {
+}
+WorkflowProcessDefinition "1" *-- "0..1" ParticipantSpecification : has
+WorkflowProcessDefinition "1" *-- "1..*" WorkflowApplicationDeclaration : has
+WorkflowProcessDefinition "1" *-- "0..*" TransitionInformation : has
+TransitionInformation "1" -- "1" WorkflowProcessActivity : has
+WorkflowProcessActivity "1" -- "1" ProcessDefinition : has
+@enduml

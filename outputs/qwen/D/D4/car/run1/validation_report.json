@@ -1,0 +1,20 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "No class representing 'Model' and 'Make' exists in the model.",
+   "fix": "Add a class 'Model' with attributes [name:String] and methods [createModel] and a class 'Make' with attributes [name:String] and methods [createMake]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between 'Model' and 'Make' is missing.",
+   "fix": "Add an association 'Model' -> 'Make' [1..1]."
+  }
+ ]
+}

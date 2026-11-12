@@ -1,0 +1,98 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "TupleElement",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Tuple",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Database",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "RelationalDBcontent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "RelationalDBcontent",
+   "target": "Table",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "RelationalDBcontent",
+   "target": "Tuple",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "source": "Database",
+   "target": "Table",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "source": "Table",
+   "target": "Tuple",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Tuple",
+   "target": "TupleElement",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/RelationalDBContent.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass TupleElement:\n    \"\"\"Source: R5\"\"\"\n    value: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Tuple:\n    \"\"\"Source: R9\"\"\"\n    tupleElement: _t.Optional[\"TupleElement\"] = None\n\n\n@_dc.dataclass\nclass Database:\n    \"\"\"Source: -\"\"\"\n    tables: _t.List[\"Table\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Table:\n    \"\"\"Source: -\"\"\"\n    tuple: _t.Optional[\"Tuple\"] = None\n\n\n@_dc.dataclass\nclass RelationalDBcontent:\n    \"\"\"Source: R3, R4\"\"\"\n    tables: _t.List[\"Table\"] = _dc.field(default_factory=list)\n    tuples: _t.List[\"Tuple\"] = _dc.field(default_factory=list)\n",
+ "java": {
+  "TupleElement.java": "/** Generated from shared model D2/RelationalDBContent. Source: R5 */\npublic class TupleElement {\n    private java.lang.String value;\n}\n",
+  "Tuple.java": "/** Generated from shared model D2/RelationalDBContent. Source: R9 */\npublic class Tuple {\n    private TupleElement tupleElement;\n}\n",
+  "Database.java": "/** Generated from shared model D2/RelationalDBContent. Source: - */\npublic class Database {\n    private java.util.List<Table> tables;\n}\n",
+  "Table.java": "/** Generated from shared model D2/RelationalDBContent. Source: - */\npublic class Table {\n    private Tuple tuple;\n}\n",
+  "RelationalDBcontent.java": "/** Generated from shared model D2/RelationalDBContent. Source: R3, R4 */\npublic class RelationalDBcontent {\n    private java.util.List<Table> tables;\n    private java.util.List<Tuple> tuples;\n}\n"
+ }
+}

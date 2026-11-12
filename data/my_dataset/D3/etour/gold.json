@@ -1,0 +1,836 @@
+{
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "DeleteCulturalHeritage",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC2",
+   "name": "InsertCulturalHeritage",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC3",
+   "name": "ModifyCulturalHeritage",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC4",
+   "name": "SearchCulturalHeritage",
+   "actor": null
+  },
+  {
+   "id": "UC5",
+   "name": "ViewCulturalHeritageCard",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC6",
+   "name": "DeleteRefreshmentPoint",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC7",
+   "name": "ActiveConvention",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC8",
+   "name": "ModifyDataRefreshmentPointAgency",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC9",
+   "name": "SearchRefreshmentPoint",
+   "actor": null
+  },
+  {
+   "id": "UC10",
+   "name": "ViewRefreshmentPointCard",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC11",
+   "name": "ViewConventionHistory",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC12",
+   "name": "ViewTouristCard",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC13",
+   "name": "Active / InactiveTouristAccount",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC14",
+   "name": "SearchTourist",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC15",
+   "name": "ModifyTouristAccountData",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC16",
+   "name": "DeleteTouristAccount",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC17",
+   "name": "ModifyBanner",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC18",
+   "name": "CheckBannerNumber",
+   "actor": null
+  },
+  {
+   "id": "UC19",
+   "name": "DeleteBanner",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC20",
+   "name": "InsertBanner",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC21",
+   "name": "InsertNews",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC22",
+   "name": "DeleteNews",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC23",
+   "name": "ModifyNews",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC24",
+   "name": "ViewFeedback",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC25",
+   "name": "ViewReportStatistic",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC26",
+   "name": "ModifyComment",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC27",
+   "name": "SearchSite",
+   "actor": null
+  },
+  {
+   "id": "UC28",
+   "name": "DeleteTag",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC29",
+   "name": "ExistingErrorTag",
+   "actor": null
+  },
+  {
+   "id": "UC30",
+   "name": "InsertTag",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC31",
+   "name": "ModifyPassword",
+   "actor": "Agency Operator"
+  },
+  {
+   "id": "UC32",
+   "name": "ModifyPasswordError",
+   "actor": null
+  },
+  {
+   "id": "UC33",
+   "name": "Registration",
+   "actor": "Guest User"
+  },
+  {
+   "id": "UC34",
+   "name": "SEARCH",
+   "actor": "Guest User"
+  },
+  {
+   "id": "UC35",
+   "name": "LOGIN",
+   "actor": "Registered User"
+  },
+  {
+   "id": "UC36",
+   "name": "LoginError",
+   "actor": null
+  },
+  {
+   "id": "UC37",
+   "name": "Logout",
+   "actor": "Registered User"
+  },
+  {
+   "id": "UC38",
+   "name": "InsertBanner",
+   "actor": "Operator Point Of Restaurants"
+  },
+  {
+   "id": "UC39",
+   "name": "ModifyBanner",
+   "actor": "Operator Point Of Restaurants"
+  },
+  {
+   "id": "UC40",
+   "name": "DeleteBanner",
+   "actor": "Operator Point Of Restaurants"
+  },
+  {
+   "id": "UC41",
+   "name": "ModifyMenu",
+   "actor": "Operator Point Of Restaurants"
+  },
+  {
+   "id": "UC42",
+   "name": "DeleteMenu",
+   "actor": "Operator Point Of Restaurants"
+  },
+  {
+   "id": "UC43",
+   "name": "ModifyRefreshmentPoint",
+   "actor": "Operator Point Of Restaurants"
+  },
+  {
+   "id": "UC44",
+   "name": "ConventionRequest",
+   "actor": "Operator Point Of Restaurants"
+  },
+  {
+   "id": "UC45",
+   "name": "ViewPersonalStatistic",
+   "actor": "Operator Point Of Restaurants"
+  },
+  {
+   "id": "UC46",
+   "name": "ModifySearchPreference",
+   "actor": "Tourist"
+  },
+  {
+   "id": "UC47",
+   "name": "ModifyTouristData",
+   "actor": "Tourist"
+  },
+  {
+   "id": "UC48",
+   "name": "ModifyGenericPreference",
+   "actor": "Tourist"
+  },
+  {
+   "id": "UC49",
+   "name": "ViewPreferredSite",
+   "actor": "Tourist"
+  },
+  {
+   "id": "UC50",
+   "name": "ViewVisitedSites",
+   "actor": "Tourist"
+  },
+  {
+   "id": "UC51",
+   "name": "InsertPreferenceSite",
+   "actor": "Tourist"
+  },
+  {
+   "id": "UC52",
+   "name": "DeleteSiteFromPreferences",
+   "actor": "Tourist"
+  },
+  {
+   "id": "UC53",
+   "name": "InsertFeedback",
+   "actor": "Tourist"
+  },
+  {
+   "id": "UC54",
+   "name": "ModifyComment",
+   "actor": "Tourist"
+  },
+  {
+   "id": "UC55",
+   "name": "FeedbackAlreadyReleased",
+   "actor": null
+  },
+  {
+   "id": "UC56",
+   "name": "Localization",
+   "actor": null
+  },
+  {
+   "id": "UC57",
+   "name": "AdvancedSearch",
+   "actor": "Tourist"
+  },
+  {
+   "id": "UC58",
+   "name": "ViewSiteCard",
+   "actor": "Tourist"
+  }
+ ],
+ "code_classes": [
+  "AdvertisementAgencyManager",
+  "AdvertisementManager",
+  "AdvertisementRefreshmentPointManager",
+  "Authentication",
+  "AverageRatingRenderer",
+  "Banner",
+  "BannerDialog",
+  "BannerNode",
+  "BannerRenderer",
+  "BeanBanner",
+  "BeanConvention",
+  "BeanCulturalHeritage",
+  "BeanDish",
+  "BeanGenericPreference",
+  "BeanMenu",
+  "BeanNews",
+  "BeanOperatorAgency",
+  "BeanOperatorRefreshmentPoint",
+  "BeanRefreshmentPoint",
+  "BeanSearchPreference",
+  "BeanTag",
+  "BeanTourist",
+  "BeanVisitBC",
+  "BeanVisitPR",
+  "CardBC",
+  "CardPR",
+  "Category",
+  "ControlData",
+  "ControlServerLauncher",
+  "ControllDataAdvertisement",
+  "CulturalHeritage",
+  "CulturalHeritageAgencyManager",
+  "CulturalHeritageChecker",
+  "CulturalHeritageCommonManager",
+  "CulturalHeritageVisitChecker",
+  "DBAgencyOperator",
+  "DBBanner",
+  "DBConnectionPool",
+  "DBConvention",
+  "DBCulturalHeritage",
+  "DBDish",
+  "DBGenericPreference",
+  "DBLocationStatistic",
+  "DBMenu",
+  "DBNews",
+  "DBRefreshmentPoint",
+  "DBRefreshmentPointOperator",
+  "DBSearchPreference",
+  "DBTag",
+  "DBTourist",
+  "DBVisitBC",
+  "DBVisitPR",
+  "DeskManager",
+  "ErrorMessage",
+  "FeedBackTableModel",
+  "Fuzzy",
+  "GlobalConstants",
+  "HelpManager",
+  "IAdvertisementAgencyManager",
+  "IAdvertisementManager",
+  "IAdvertisementRefreshmentPointManager",
+  "IAuthentication",
+  "ICulturalHeritageAgencyManager",
+  "ICulturalHeritageCommonManager",
+  "IDBAgencyOperator",
+  "IDBBanner",
+  "IDBConvention",
+  "IDBCulturalHeritage",
+  "IDBDish",
+  "IDBGenericPreference",
+  "IDBMenu",
+  "IDBNews",
+  "IDBRefreshmentPoint",
+  "IDBRefreshmentPointOperator",
+  "IDBSearchPreference",
+  "IDBTag",
+  "IDBTourist",
+  "IDBVisitBC",
+  "IDBVisitPR",
+  "IRefreshmentPointAgencyManager",
+  "IRefreshmentPointCommonManager",
+  "ISearch",
+  "ITagAgencyOperatorManager",
+  "ITagCommonManager",
+  "ITouristAgencyManager",
+  "ITouristClientManager",
+  "LimitedDocument",
+  "ListCategory",
+  "News",
+  "NewsTableModelTest",
+  "OperatorAgency",
+  "PRNode",
+  "Point3D",
+  "Point3DRenderer",
+  "PriorityRenderer",
+  "RefreshmentPoint",
+  "RefreshmentPointAgencyManager",
+  "RefreshmentPointCommonManager",
+  "ReportStatistic",
+  "ReportTableModel",
+  "RicercaAvanzata",
+  "ScrollableTable",
+  "Search",
+  "SiteTableModel",
+  "StandardSearch",
+  "Tag",
+  "TagAgencyOperatorManager",
+  "TagCommonManager",
+  "TagTableModel",
+  "TestoNewsRendererTest",
+  "Tourist",
+  "TouristAgencyManager",
+  "TouristCard",
+  "TouristClientManager",
+  "TouristCommonManager",
+  "TouristTableModel"
+ ],
+ "uc_to_code_links": {
+  "UC1": [
+   "CulturalHeritageAgencyManager",
+   "DBCulturalHeritage",
+   "IDBCulturalHeritage",
+   "CulturalHeritage"
+  ],
+  "UC10": [
+   "BeanRefreshmentPoint",
+   "IRefreshmentPointCommonManager",
+   "RefreshmentPointCommonManager",
+   "IDBRefreshmentPoint",
+   "DBRefreshmentPoint",
+   "RefreshmentPointAgencyManager",
+   "IRefreshmentPointAgencyManager"
+  ],
+  "UC11": [
+   "IDBConvention",
+   "BeanConvention"
+  ],
+  "UC12": [
+   "Tourist",
+   "TouristTableModel",
+   "BeanTourist",
+   "TouristCommonManager"
+  ],
+  "UC13": [
+   "ITouristAgencyManager",
+   "Tourist",
+   "DBTourist",
+   "IDBTourist",
+   "BeanTourist"
+  ],
+  "UC14": [
+   "IDBTourist",
+   "TouristAgencyManager",
+   "ITouristAgencyManager",
+   "RicercaAvanzata",
+   "BeanTourist"
+  ],
+  "UC15": [
+   "IDBTourist",
+   "TouristAgencyManager",
+   "ITouristAgencyManager",
+   "ControlData",
+   "BeanTourist",
+   "TouristCommonManager"
+  ],
+  "UC16": [
+   "IDBTourist",
+   "TouristAgencyManager",
+   "ITouristAgencyManager",
+   "BeanTourist"
+  ],
+  "UC17": [
+   "BannerNode",
+   "ControlData",
+   "IDBBanner",
+   "DBBanner",
+   "BeanBanner",
+   "IAdvertisementManager",
+   "AdvertisementManager",
+   "AdvertisementAgencyManager",
+   "IAdvertisementAgencyManager",
+   "ControllDataAdvertisement",
+   "GlobalConstants",
+   "Banner"
+  ],
+  "UC18": [
+   "IAdvertisementManager",
+   "IDBBanner",
+   "DBBanner",
+   "BeanBanner",
+   "ErrorMessage"
+  ],
+  "UC19": [
+   "DBBanner",
+   "AdvertisementManager",
+   "IAdvertisementManager",
+   "BeanBanner",
+   "AdvertisementAgencyManager",
+   "IAdvertisementAgencyManager",
+   "ControllDataAdvertisement",
+   "GlobalConstants",
+   "Banner"
+  ],
+  "UC2": [
+   "DBCulturalHeritage",
+   "ICulturalHeritageAgencyManager",
+   "CulturalHeritageAgencyManager",
+   "CulturalHeritageChecker",
+   "BeanCulturalHeritage",
+   "CulturalHeritage"
+  ],
+  "UC20": [
+   "BannerNode",
+   "ControlData",
+   "IDBBanner",
+   "DBBanner",
+   "AdvertisementManager",
+   "IAdvertisementManager",
+   "BeanBanner",
+   "AdvertisementAgencyManager",
+   "IAdvertisementAgencyManager",
+   "ControllDataAdvertisement",
+   "GlobalConstants",
+   "Banner"
+  ],
+  "UC21": [
+   "IDBNews",
+   "AdvertisementAgencyManager",
+   "IAdvertisementAgencyManager",
+   "News",
+   "ControlData",
+   "BeanNews",
+   "ControllDataAdvertisement"
+  ],
+  "UC22": [
+   "IDBNews",
+   "AdvertisementAgencyManager",
+   "IAdvertisementAgencyManager",
+   "BeanNews",
+   "ControllDataAdvertisement"
+  ],
+  "UC23": [
+   "IDBNews",
+   "AdvertisementAgencyManager",
+   "IAdvertisementAgencyManager",
+   "News",
+   "ControlData",
+   "BeanNews",
+   "ControllDataAdvertisement"
+  ],
+  "UC24": [
+   "ICulturalHeritageAgencyManager",
+   "RefreshmentPointAgencyManager",
+   "IRefreshmentPointAgencyManager",
+   "CulturalHeritageCommonManager",
+   "RefreshmentPointCommonManager",
+   "IRefreshmentPointCommonManager",
+   "ICulturalHeritageCommonManager",
+   "FeedBackTableModel",
+   "TouristAgencyManager",
+   "ITouristAgencyManager"
+  ],
+  "UC25": [
+   "RefreshmentPointCommonManager",
+   "CulturalHeritageAgencyManager",
+   "ICulturalHeritageCommonManager"
+  ],
+  "UC26": [
+   "BeanVisitPR",
+   "FeedBackTableModel"
+  ],
+  "UC27": [
+   "ISearch"
+  ],
+  "UC28": [
+   "IDBTag",
+   "TagAgencyOperatorManager",
+   "ITagAgencyOperatorManager",
+   "TagTableModel",
+   "BeanTag"
+  ],
+  "UC29": [
+   "TagAgencyOperatorManager"
+  ],
+  "UC3": [
+   "DBCulturalHeritage",
+   "ICulturalHeritageAgencyManager",
+   "CulturalHeritageAgencyManager",
+   "CulturalHeritageChecker",
+   "BeanCulturalHeritage",
+   "CulturalHeritage"
+  ],
+  "UC30": [
+   "TagAgencyOperatorManager",
+   "DBTag",
+   "IDBTag",
+   "BeanTag"
+  ],
+  "UC31": [
+   "DBAgencyOperator",
+   "OperatorAgency",
+   "IDBAgencyOperator"
+  ],
+  "UC32": [
+   "DBAgencyOperator",
+   "OperatorAgency"
+  ],
+  "UC33": [
+   "ControlData",
+   "IDBTourist",
+   "DBTourist",
+   "ITouristClientManager",
+   "TouristClientManager",
+   "TouristCard"
+  ],
+  "UC34": [
+   "ISearch",
+   "CulturalHeritageCommonManager",
+   "ICulturalHeritageCommonManager",
+   "IRefreshmentPointCommonManager",
+   "RefreshmentPointCommonManager"
+  ],
+  "UC35": [
+   "IAuthentication",
+   "ControlData",
+   "BeanTourist",
+   "BeanOperatorRefreshmentPoint"
+  ],
+  "UC36": [
+   "IAuthentication",
+   "ControlData"
+  ],
+  "UC38": [
+   "IDBBanner",
+   "AdvertisementRefreshmentPointManager",
+   "IAdvertisementRefreshmentPointManager",
+   "ControlData",
+   "BannerDialog",
+   "BannerNode",
+   "BeanBanner",
+   "IAdvertisementManager",
+   "AdvertisementManager",
+   "ControllDataAdvertisement"
+  ],
+  "UC39": [
+   "IDBBanner",
+   "AdvertisementRefreshmentPointManager",
+   "IAdvertisementRefreshmentPointManager",
+   "ControlData",
+   "BannerDialog",
+   "BannerNode",
+   "BeanBanner",
+   "IAdvertisementManager",
+   "AdvertisementManager",
+   "ControllDataAdvertisement"
+  ],
+  "UC4": [
+   "DBCulturalHeritage",
+   "ICulturalHeritageAgencyManager",
+   "CulturalHeritageAgencyManager",
+   "Search",
+   "StandardSearch",
+   "RicercaAvanzata",
+   "BeanCulturalHeritage",
+   "ISearch",
+   "CulturalHeritage"
+  ],
+  "UC40": [
+   "IDBBanner",
+   "AdvertisementRefreshmentPointManager",
+   "IAdvertisementRefreshmentPointManager",
+   "BeanBanner",
+   "IAdvertisementManager",
+   "AdvertisementManager",
+   "ControllDataAdvertisement"
+  ],
+  "UC41": [
+   "DBMenu",
+   "IDBMenu",
+   "DBDish",
+   "IDBDish",
+   "BeanMenu",
+   "BeanDish"
+  ],
+  "UC42": [
+   "DBMenu",
+   "IDBMenu",
+   "DBDish",
+   "IDBDish",
+   "BeanMenu",
+   "BeanDish"
+  ],
+  "UC43": [
+   "IDBRefreshmentPoint",
+   "ControlData",
+   "RefreshmentPoint",
+   "BeanRefreshmentPoint",
+   "IRefreshmentPointCommonManager",
+   "RefreshmentPointCommonManager",
+   "PRNode"
+  ],
+  "UC44": [
+   "ControlData",
+   "IDBConvention",
+   "BeanConvention"
+  ],
+  "UC45": [
+   "RefreshmentPointCommonManager",
+   "IRefreshmentPointCommonManager",
+   "BeanRefreshmentPoint",
+   "BeanCulturalHeritage"
+  ],
+  "UC46": [
+   "DBSearchPreference",
+   "IDBSearchPreference",
+   "TouristCommonManager",
+   "BeanSearchPreference",
+   "IDBGenericPreference",
+   "DBGenericPreference"
+  ],
+  "UC47": [
+   "DBTourist",
+   "IDBTourist",
+   "TouristClientManager",
+   "ITouristClientManager",
+   "TouristCommonManager",
+   "TouristCard",
+   "BeanTourist"
+  ],
+  "UC48": [
+   "DBGenericPreference",
+   "IDBGenericPreference",
+   "TouristClientManager",
+   "BeanGenericPreference",
+   "ITouristClientManager"
+  ],
+  "UC49": [
+   "TouristClientManager",
+   "ITouristClientManager",
+   "CulturalHeritageCommonManager",
+   "ICulturalHeritageCommonManager",
+   "RefreshmentPointCommonManager",
+   "IRefreshmentPointCommonManager"
+  ],
+  "UC5": [
+   "BeanCulturalHeritage",
+   "ICulturalHeritageCommonManager",
+   "CulturalHeritageCommonManager",
+   "CulturalHeritage"
+  ],
+  "UC50": [
+   "IDBVisitBC",
+   "DBVisitPR",
+   "IDBVisitPR",
+   "CulturalHeritageVisitChecker",
+   "SiteTableModel",
+   "ControlData",
+   "BeanVisitBC"
+  ],
+  "UC51": [
+   "IDBGenericPreference",
+   "TouristCommonManager",
+   "ITouristClientManager",
+   "ControlData",
+   "BeanGenericPreference"
+  ],
+  "UC52": [
+   "IDBGenericPreference",
+   "TouristCommonManager",
+   "ITouristClientManager",
+   "BeanGenericPreference",
+   "IDBTourist",
+   "DBTourist"
+  ],
+  "UC53": [
+   "IDBVisitBC",
+   "DBVisitPR",
+   "IDBVisitPR",
+   "CulturalHeritageVisitChecker",
+   "SiteTableModel",
+   "ControlData"
+  ],
+  "UC54": [
+   "BeanVisitPR",
+   "DBVisitBC",
+   "IDBVisitBC",
+   "DBVisitPR",
+   "IDBVisitPR",
+   "CulturalHeritageVisitChecker",
+   "SiteTableModel",
+   "ControlData"
+  ],
+  "UC55": [
+   "ControlData",
+   "BeanVisitBC",
+   "BeanVisitPR"
+  ],
+  "UC56": [
+   "Point3DRenderer",
+   "Search",
+   "ISearch",
+   "StandardSearch"
+  ],
+  "UC57": [
+   "ISearch"
+  ],
+  "UC58": [
+   "CardBC",
+   "CardPR",
+   "BeanRefreshmentPoint",
+   "BeanCulturalHeritage"
+  ],
+  "UC6": [
+   "DBRefreshmentPoint",
+   "RefreshmentPointAgencyManager",
+   "IRefreshmentPointAgencyManager"
+  ],
+  "UC7": [
+   "IDBConvention",
+   "RefreshmentPointAgencyManager",
+   "IRefreshmentPointAgencyManager",
+   "BeanConvention"
+  ],
+  "UC8": [
+   "DBRefreshmentPoint",
+   "RefreshmentPointAgencyManager",
+   "IRefreshmentPointAgencyManager",
+   "ControlData",
+   "BeanRefreshmentPoint"
+  ],
+  "UC9": [
+   "DBRefreshmentPoint",
+   "RefreshmentPointAgencyManager",
+   "IRefreshmentPointAgencyManager",
+   "Search",
+   "StandardSearch",
+   "RicercaAvanzata",
+   "BeanRefreshmentPoint",
+   "ISearch"
+  ]
+ }
+}

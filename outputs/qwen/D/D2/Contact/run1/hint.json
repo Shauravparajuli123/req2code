@@ -1,0 +1,62 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "Contact",
+    "src": [
+     "R1",
+     "R5",
+     "R6"
+    ]
+   },
+   {
+    "name": "PhoneNumber",
+    "src": [
+     "R2",
+     "R3"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Contact",
+    "name": "name",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "PhoneNumber",
+    "name": "number",
+    "src": [
+     "R2",
+     "R3"
+    ]
+   },
+   {
+    "owner": "PhoneNumber",
+    "name": "type",
+    "src": [
+     "R2",
+     "R3"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Contact",
+    "target": "PhoneNumber",
+    "src": [
+     "R5",
+     "R6"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

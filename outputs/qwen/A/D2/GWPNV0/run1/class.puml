@@ -1,0 +1,15 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Place {
+}
+class Transition {
+}
+class Network {
+}
+class PetriNet {
+}
+PetriNet "0..*" -- "1" Place : has
+PetriNet "1" -- "0..*" Transition : has
+PetriNet "1" *-- "1" Network : contains
+@enduml

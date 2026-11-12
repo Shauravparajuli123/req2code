@@ -1,0 +1,75 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Assuming R11 is not directly related to the current model elements"
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for R1: Implementation of WorkflowApplicationDeclaration",
+   "fix": "Add class for WorkflowApplicationDeclaration"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for R2: Interface for workflow",
+   "fix": "Add class for WorkflowInterface"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for R3: Class that has the data related to workflow",
+   "fix": "Add class for WorkflowData"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for R5: Workflow State class",
+   "fix": "Add class for WorkflowState"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for R6: Workflow State Class, collaborates with WorkflowProcessActivity",
+   "fix": "Add class for WorkflowState"
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'Create Game' does not have an actor",
+   "fix": "Add actor 'Moderator' to use case 'Create Game'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship for R7: workflowprocessdefinition has zero or more participantspecifications",
+   "fix": "Add association WorkflowProcessDefinition -> ParticipantSpecification [0..*..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship for R9: A workflow process definition is composed of a set of transition definitions",
+   "fix": "Add association WorkflowProcessDefinition -> TransitionInformation [0..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship for R13: In WfMC, the workflow's relevant data has 0 or more WorkflowProcessActivity as process activities",
+   "fix": "Add association WorkflowData -> WorkflowProcessActivity [0..*..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship for R14: In WfMC, the workflow's relevant data has 0 or more transition informations",
+   "fix": "Add association WorkflowData -> TransitionInformation [0..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship for R16: A workflow process activity has 0 more process activities",
+   "fix": "Add association WorkflowProcessActivity -> WorkflowProcessActivity [0..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship for R20: Workflow Transition information is part of the Workflow Definition",
+   "fix": "Add association TransitionInformation -> WorkflowProcessDefinition [1..1]"
+  }
+ ]
+}

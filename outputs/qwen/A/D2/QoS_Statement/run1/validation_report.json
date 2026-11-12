@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "CompoundQoSStatement is a class which belongs to QoSStatement package"
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "R4: Parameter is a class which belongs to QoSStatement package",
+   "fix": "Add a 'Parameter' class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "R4: Parameter is a class which belongs to QoSStatement package",
+   "fix": "Ensure 'Parameter' class is included in the QoSStatement package."
+  },
+  {
+   "agent": "use_case",
+   "issue": "R8: The QoSStatement package has a QoSStatement class. Each QoSStatement class has a CompoundQoSStatement to which it is related.",
+   "fix": "Add a relationship from QoSStatement to CompoundQoSStatement."
+  },
+  {
+   "agent": "use_case",
+   "issue": "R9: The QoSStatement package has a SingleQoSStatement class. Each SingleQoSStatement class is composed of a QoSContraint.",
+   "fix": "Add a relationship from SingleQoSStatement to QoSConstraint."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R10: A CoumpoundQoSStatement is composed of 2 or more QoSStatements",
+   "fix": "Change the relationship from QoSStatement to CompoundQoSStatement to a composition or aggregation."
+  }
+ ]
+}

@@ -1,0 +1,153 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "WorkflowProcessDefinition",
+   "kind": "class",
+   "attributes": [
+    "workflowParticipants",
+    "workflowApplicationDeclarations",
+    "transitionDefinitions"
+   ],
+   "methods": [],
+   "src": [
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "ParticipantSpecification",
+   "kind": "class",
+   "attributes": [
+    "processDefinition"
+   ],
+   "methods": [],
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "WorkflowApplicationDeclaration",
+   "kind": "class",
+   "attributes": [
+    "relevantData"
+   ],
+   "methods": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "TransitionInformation",
+   "kind": "class",
+   "attributes": [
+    "targetProcessActivity"
+   ],
+   "methods": [],
+   "src": [
+    "R20",
+    "R21"
+   ]
+  },
+  {
+   "name": "WorkflowProcessActivity",
+   "kind": "class",
+   "attributes": [
+    "processDefinition",
+    "relevantData"
+   ],
+   "methods": [],
+   "src": [
+    "R13",
+    "R16",
+    "R17",
+    "R18"
+   ]
+  },
+  {
+   "name": "ProcessDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R10",
+    "R17"
+   ]
+  },
+  {
+   "name": "WfMc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "WorkflowProcessDefinition",
+   "target": "ParticipantSpecification",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "WorkflowProcessDefinition",
+   "target": "WorkflowApplicationDeclaration",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "WorkflowProcessDefinition",
+   "target": "TransitionInformation",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "source": "TransitionInformation",
+   "target": "WorkflowProcessActivity",
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "source": "WorkflowProcessActivity",
+   "target": "ProcessDefinition",
+   "src": [
+    "R17"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/WfMC.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass WorkflowProcessDefinition:\n    \"\"\"Source: R8, R9, R10\"\"\"\n    workflowParticipants: _t.Optional[str] = None\n    workflowApplicationDeclarations: _t.Optional[str] = None\n    transitionDefinitions: _t.Optional[str] = None\n    participantSpecification: _t.Optional[\"ParticipantSpecification\"] = None\n    transitionInformations: _t.List[\"TransitionInformation\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass ParticipantSpecification:\n    \"\"\"Source: R15\"\"\"\n    processDefinition: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass WorkflowApplicationDeclaration:\n    \"\"\"Source: R11\"\"\"\n    relevantData: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass TransitionInformation:\n    \"\"\"Source: R20, R21\"\"\"\n    targetProcessActivity: _t.Optional[str] = None\n    workflowProcessActivity: _t.Optional[\"WorkflowProcessActivity\"] = None\n\n\n@_dc.dataclass\nclass WorkflowProcessActivity:\n    \"\"\"Source: R13, R16, R17, R18\"\"\"\n    processDefinition: _t.Optional[str] = None\n    relevantData: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass ProcessDefinition:\n    \"\"\"Source: R10, R17\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass WfMc:\n    \"\"\"Source: R4\"\"\"\n    pass\n",
+ "java": {
+  "Game.java": "/** Generated from shared model D2/WfMC. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "WorkflowProcessDefinition.java": "/** Generated from shared model D2/WfMC. Source: R8, R9, R10 */\npublic class WorkflowProcessDefinition {\n    private java.lang.String workflowParticipants;\n    private java.lang.String workflowApplicationDeclarations;\n    private java.lang.String transitionDefinitions;\n    private ParticipantSpecification participantSpecification;\n    private java.util.List<TransitionInformation> transitionInformations;\n}\n",
+  "ParticipantSpecification.java": "/** Generated from shared model D2/WfMC. Source: R15 */\npublic class ParticipantSpecification {\n    private java.lang.String processDefinition;\n}\n",
+  "WorkflowApplicationDeclaration.java": "/** Generated from shared model D2/WfMC. Source: R11 */\npublic class WorkflowApplicationDeclaration {\n    private java.lang.String relevantData;\n}\n",
+  "TransitionInformation.java": "/** Generated from shared model D2/WfMC. Source: R20, R21 */\npublic class TransitionInformation {\n    private java.lang.String targetProcessActivity;\n    private WorkflowProcessActivity workflowProcessActivity;\n}\n",
+  "WorkflowProcessActivity.java": "/** Generated from shared model D2/WfMC. Source: R13, R16, R17, R18 */\npublic class WorkflowProcessActivity {\n    private java.lang.String processDefinition;\n    private java.lang.String relevantData;\n}\n",
+  "ProcessDefinition.java": "/** Generated from shared model D2/WfMC. Source: R10, R17 */\npublic class ProcessDefinition {\n}\n",
+  "WfMc.java": "/** Generated from shared model D2/WfMC. Source: R4 */\npublic class WfMc {\n}\n"
+ }
+}

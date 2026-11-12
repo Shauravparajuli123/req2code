@@ -1,0 +1,104 @@
+{
+ "case": "D2/deployment",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Deployment",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "nodes",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "specification",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addNode",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Specification",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "contains",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "generalization",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is a",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a deployment can contain multiple nodes, which is represented by the association between Deployment and Node."
+  }
+ ],
+ "open_tags": []
+}

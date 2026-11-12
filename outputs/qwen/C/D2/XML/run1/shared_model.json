@@ -1,0 +1,136 @@
+{
+ "case": "D2/XML",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "startLine",
+     "type": "int",
+     "src": []
+    },
+    {
+     "name": "endLine",
+     "type": "int",
+     "src": []
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "children",
+     "type": "String",
+     "src": [
+      "R6",
+      "R7"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addChild",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C3",
+   "name": "XmlFile",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "rootElement",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "createGame",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C3",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "0..1",
+   "label": "contains",
+   "src": []
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that the XmlFile class is the central class representing an XML file, and all other classes are its components."
+  }
+ ],
+ "open_tags": []
+}

@@ -1,0 +1,159 @@
+{
+ "case": "D2/News",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Game",
+   "actor": "A1",
+   "src": [],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "News",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "title",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "link",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "author",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "date",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "newspaper",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "publishOn",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Newspaper",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "language",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "publicationDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "news",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "publish",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7",
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "reports",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "includes",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The 'News' class in the model is assumed to have an attribute 'author' of type 'String' as stated in Requirement R3."
+  }
+ ],
+ "open_tags": []
+}

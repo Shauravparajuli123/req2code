@@ -1,0 +1,152 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "reference"
+   ],
+   "methods": [
+    {
+     "name": "addAttribute",
+     "use_case": "R7"
+    },
+    {
+     "name": "addXORGroup",
+     "use_case": "R8"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "name",
+    "key"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "name": "XORGroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "name": "ORGroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": "R13"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R13"
+   ]
+  },
+  {
+   "name": "Child",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": "R10"
+    },
+    {
+     "name": "addORGroup",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Node",
+   "target": "Attribute",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "Node",
+   "target": "XORGroup",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "Node",
+   "target": "ORGroup",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "Child",
+   "target": "Node",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "Child",
+   "target": "ORGroup",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Attribute:\n    def __init__(self, description: str, name: str, key: bool):\n        self.description = description\n        self.name = name\n        self.key = key\n\nclass XORGroup:\n    def __init__(self, preliminary: bool):\n        self.preliminary = preliminary\n\nclass ORGroup:\n    def __init__(self, preliminary: bool):\n        self.preliminary = preliminary\n\nclass Node:\n    def __init__(self, description: str, attributes: List[Attribute], xor_groups: List[XORGroup], or_groups: List[ORGroup]):\n        self.description = description\n        self.attributes = attributes\n        self.xor_groups = xor_groups\n        self.or_groups = or_groups\n        self.reference = None\n\nclass Child:\n    def __init__(self, nodes: Optional[List[Node]] = None, or_groups: Optional[List[ORGroup]] = None):\n        self.nodes = nodes if nodes else []\n        self.or_groups = or_groups if or_groups else []\n",
+ "java": {}
+}

@@ -1,0 +1,150 @@
+from typing import List, Optional, Union
+
+class String:
+    pass
+class Date:
+    pass
+class Cent:
+    pass
+class Address:
+    street: String
+city: String
+state: String
+zipCode: String
+class Preference:
+    genre: String
+eventTypes: List[String]
+class PaymentDetail:
+    cardNumber: String
+expiryDate: Date
+cvv: String
+class OrderSummary:
+    tickets: List[Ticket]
+totalPrice: Cent
+class UserProfile:
+    name: String
+dateOfBirth: Date
+eMail: String
+address: Address
+preferences: Preference
+paymentDetails: PaymentDetail
+history: List[OrderSummary]
+profile: UserProfile
+class User:
+    name: String
+dateOfBirth: Date
+eMail: String
+address: Address
+preferences: Preference
+personalInformation: String
+paymentDetails: PaymentDetail
+history: OrderSummary
+profile: UserProfile
+    def fillInformation(self):
+        raise NotImplementedError
+    def saveInformation(self):
+        raise NotImplementedError
+    def editInformation(self):
+        raise NotImplementedError
+    def changePassword(self):
+        raise NotImplementedError
+    def seeContent(self):
+        raise NotImplementedError
+    def seePreference(self):
+        raise NotImplementedError
+    def seeHistory(self):
+        raise NotImplementedError
+    def seeOverview(self):
+        raise NotImplementedError
+class Visitor:
+    name: String
+eMail: String
+tickets: List[Ticket]
+events: List[Event]
+    def seeEvent(self):
+        raise NotImplementedError
+    def purchaseTicket(self):
+        raise NotImplementedError
+    def seeSeat(self):
+        raise NotImplementedError
+    def seeType(self):
+        raise NotImplementedError
+    def clickEvent(self):
+        raise NotImplementedError
+    def landEventPage(self):
+        raise NotImplementedError
+    def seeOrderSummary(self):
+        raise NotImplementedError
+    def seeHistory(self):
+        raise NotImplementedError
+    def seeOverview(self):
+        raise NotImplementedError
+    def seeContent(self):
+        raise NotImplementedError
+class Artist:
+    name: String
+events: List[Event]
+description: String
+links: List[Link]
+    def findInformation(self):
+        raise NotImplementedError
+    def haveDescription(self):
+        raise NotImplementedError
+    def haveLink(self):
+        raise NotImplementedError
+class Event:
+    name: String
+date: Date
+location: Venue
+artist: Artist
+type: String
+price: Cent
+tickets: List[Ticket]
+    def seeEvent(self):
+        raise NotImplementedError
+    def seeType(self):
+        raise NotImplementedError
+    def seeSeat(self):
+        raise NotImplementedError
+class Ticket:
+    event: Event
+price: Cent
+type: String
+seat: String
+    def addTicket(self):
+        raise NotImplementedError
+    def sellTicket(self):
+        raise NotImplementedError
+    def resellTicket(self):
+        raise NotImplementedError
+class Company:
+    buyingProcess: Process
+resellers: List[Reseller]
+serviceFee: Cent
+    def haveBuyingProcess(self):
+        raise NotImplementedError
+    def avoidBehavior(self):
+        raise NotImplementedError
+    def deductServiceFee(self):
+        raise NotImplementedError
+    def validateTicket(self):
+        raise NotImplementedError
+class Reseller:
+    name: String
+bankAccount: BankAccount
+tickets: List[Ticket]
+    def sellTicket(self):
+        raise NotImplementedError
+    def resellTicket(self):
+        raise NotImplementedError
+    def saveBankAccount(self):
+        raise NotImplementedError
+class Venue:
+    name: String
+map: String
+class Link:
+    url: String
+class Process:
+    pass
+class BankAccount:
+    iban: String

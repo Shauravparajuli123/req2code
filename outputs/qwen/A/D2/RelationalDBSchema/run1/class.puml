@@ -1,0 +1,22 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Game {
+  name : String
+  +createGame()
+}
+class Database {
+  sgbdName : String
+}
+class Table {
+  database : String
+}
+class Column {
+  dataType : String
+  defaultValue : String
+  table : String
+}
+Table "1" -- "1..*" Database : is in
+Database "1" *-- "1..*" Table : contains
+Column "1" -- "0..*" Table : is in
+@enduml

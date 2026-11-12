@@ -1,0 +1,44 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Date {
+  day : int
+  year : int
+}
+enum ControlType {
+  TYPE1
+  TYPE2
+  TYPE3
+  TYPE4
+}
+class Control {
+  type : String
+  +setType()
+}
+class ControlsSequence {
+  +addControl()
+}
+class ControlsObject {
+  role : String
+  +setRole()
+}
+class Bug {
+  number : int
+  description : String
+  originator : String
+  comments : String
+  closeDate : LocalDate
+  +setCloseDate()
+}
+class BugTracking {
+  bugs : String
+  +addBug()
+}
+class Architecture {
+}
+Control "1" -- "1..*" ControlsSequence : isPartOf
+ControlsObject "1" -- "1..*" ControlsSequence : has
+Control "1" -- "1" ControlType : hasType
+Bug "1" -- "1" BugTracking : isTrackedBy
+Control "1" -- "1" Date : hasDate
+@enduml

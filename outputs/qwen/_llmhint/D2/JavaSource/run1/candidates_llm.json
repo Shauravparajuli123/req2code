@@ -1,0 +1,69 @@
+{
+ "actors": [
+  {
+   "name": "Java developer",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "invoking a class",
+   "actor": "Java developer",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "invoking a method",
+   "actor": "Java developer",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "MethodDefinition",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Class",
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Class",
+   "name": "name",
+   "src": [
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "owner": "MethodDefinition",
+   "name": "method",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Class",
+   "target": "Class",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

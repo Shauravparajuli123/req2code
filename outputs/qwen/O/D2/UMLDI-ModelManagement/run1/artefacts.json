@@ -1,0 +1,144 @@
+{
+ "actors": [
+  "owner"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "CoreModel",
+   "kind": "class",
+   "attributes": [
+    "namespaces",
+    "elements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R11"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "isSpecification",
+    "root",
+    "abstract"
+   ],
+   "methods": [
+    {
+     "name": "verbObject",
+     "use_case": "Verb Object"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3"
+   ]
+  },
+  {
+   "name": "Namespace",
+   "kind": "class",
+   "attributes": [
+    "modelElements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11",
+    "R10"
+   ]
+  },
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    "powerTypeRanges"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Generalization",
+   "kind": "class",
+   "attributes": [
+    "discriminator",
+    "parent"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R14"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Classifier",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Element",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Generalization",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R8",
+    "R14"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Namespace",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11",
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Element",
+   "target": "Namespace",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11",
+    "R10"
+   ]
+  }
+ ],
+ "python": "class CoreModel:\n    def __init__(self):\n        self.namespaces = []\n        self.elements = []\n\nclass Element:\n    def __init__(self, name, isSpecification, root, abstract):\n        self.name = name\n        self.isSpecification = isSpecification\n        self.root = root\n        self.abstract = abstract\n\nclass Namespace:\n    def __init__(self):\n        self.modelElements = []\n\nclass Classifier:\n    def __init__(self):\n        self.powerTypeRanges = []\n\nclass Generalization:\n    def __init__(self, discriminator, parent):\n        self.discriminator = discriminator\n        self.parent = parent\n\n# Method stubs\n\nclass CoreModel:\n    def verbObject(self):\n        raise NotImplementedError\n\nclass Element:\n    def verbObject(self):\n        raise NotImplementedError\n\nclass Namespace:\n    def verbObject(self):\n        raise NotImplementedError\n\nclass Classifier:\n    def verbObject(self):\n        raise NotImplementedError\n\nclass Generalization:\n    def verbObject(self):\n        raise NotImplementedError",
+ "java": {}
+}

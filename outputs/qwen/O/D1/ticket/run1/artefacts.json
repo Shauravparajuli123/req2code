@@ -1,0 +1,305 @@
+{
+ "actors": [
+  "User",
+  "Visitor"
+ ],
+ "use_cases": [
+  {
+   "name": "SavePersonalInformation",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "SavePaymentDetails",
+   "actor": "User",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "FillSurvey",
+   "actor": "User",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "SeePersonalizedContent",
+   "actor": "User",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "EditPreferences",
+   "actor": "User",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "ChangePassword",
+   "actor": "User",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "EditPersonalInformation",
+   "actor": "User",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "SeeTicketHistory",
+   "actor": "User",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "SeeUpcomingEvents",
+   "actor": "User",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "SeeFavoriteArtistsAndEvents",
+   "actor": "User",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "ReadEventDetails",
+   "actor": "Visitor",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "BuyTicket",
+   "actor": "Visitor",
+   "src": [
+    "R12",
+    "R14",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "ResellTicket",
+   "actor": "Reseller",
+   "src": [
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "dateOfBirth",
+    "email",
+    "address",
+    "preferences"
+   ],
+   "methods": [
+    {
+     "name": "savePersonalInformation",
+     "use_case": "SavePersonalInformation"
+    },
+    {
+     "name": "savePaymentDetails",
+     "use_case": "SavePaymentDetails"
+    },
+    {
+     "name": "fillSurvey",
+     "use_case": "FillSurvey"
+    },
+    {
+     "name": "seePersonalizedContent",
+     "use_case": "SeePersonalizedContent"
+    },
+    {
+     "name": "editPreferences",
+     "use_case": "EditPreferences"
+    },
+    {
+     "name": "changePassword",
+     "use_case": "ChangePassword"
+    },
+    {
+     "name": "editPersonalInformation",
+     "use_case": "EditPersonalInformation"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R5",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Visitor",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "email"
+   ],
+   "methods": [
+    {
+     "name": "buyTicket",
+     "use_case": "BuyTicket"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R12",
+    "R14",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Reseller",
+   "kind": "class",
+   "attributes": [
+    "bankAccount"
+   ],
+   "methods": [
+    {
+     "name": "resellTicket",
+     "use_case": "ResellTicket"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Address",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Preference",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R34"
+   ]
+  }
+ ],
+ "python": "class User:\n    def __init__(self, name, dateOfBirth, email, address, preferences):\n        self.name = name\n        self.dateOfBirth = dateOfBirth\n        self.email = email\n        self.address = address\n        self.preferences = preferences\n\n    def savePersonalInformation(self):\n        raise NotImplementedError\n\n    def savePaymentDetails(self):\n        raise NotImplementedError\n\n    def fillSurvey(self):\n        raise NotImplementedError\n\n    def seePersonalizedContent(self):\n        raise NotImplementedError\n\n    def editPreferences(self):\n        raise NotImplementedError\n\n    def changePassword(self):\n        raise NotImplementedError\n\n    def editPersonalInformation(self):\n        raise NotImplementedError\n\nclass Visitor:\n    def __init__(self, name, email):\n        self.name = name\n        self.email = email\n\n    def buyTicket(self):\n        raise NotImplementedError\n\nclass Reseller:\n    def __init__(self, bankAccount):\n        self.bankAccount = bankAccount\n\n    def resellTicket(self):\n        raise NotImplementedError\n\nclass Address:\n    pass\n\nclass Preference:\n    pass\n\nclass BankAccount:\n    pass",
+ "java": {}
+}

@@ -1,0 +1,50 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "A makefile contains rules, and each rule may have dependencies as per R3 and R11."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for R1",
+   "fix": "Add a class for the file that we want to execute to realize the make."
+  },
+  {
+   "agent": "use_case",
+   "issue": "No use cases defined in the model",
+   "fix": "Define use cases that correspond to the requirements."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Macro' is not defined in the model",
+   "fix": "Add a class named 'Macro' with an attribute 'value' of type String."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'RuleDependency' is not defined in the model",
+   "fix": "Add a class named 'RuleDependency' as per R7 and R13."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'ShellLine' is missing",
+   "fix": "Add a class named 'ShellLine' as per R4 and R12."
+  },
+  {
+   "agent": "relationship",
+   "issue": "No relationship between 'Makefile' and 'ShellLine'",
+   "fix": "Add a relationship between 'Makefile' and 'ShellLine' as per R12."
+  },
+  {
+   "agent": "relationship",
+   "issue": "No relationship between 'Rule' and 'RuleDependency'",
+   "fix": "Add a relationship between 'Rule' and 'RuleDependency' as per R11 and R13."
+  }
+ ]
+}

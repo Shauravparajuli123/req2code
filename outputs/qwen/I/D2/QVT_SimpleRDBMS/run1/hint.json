@@ -1,0 +1,279 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D2/QVT_SimpleRDBMS",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R4",
+     "R10",
+     "R11"
+    ],
+    "rule": [
+     "noun_role",
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "Column is a class in SimpleRDBMS package."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "A Column is owned by one and only one Table in an RDBMS"
+     },
+     {
+      "sid": "R11.s1",
+      "text": "A Column is associated to 0 or several foreign keys"
+     }
+    ],
+    "name": "Column",
+    "freq": 3
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "noun_role",
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "ForeignKey is a class in SimpleRDBMS package"
+     }
+    ],
+    "name": "ForeignKey",
+    "freq": 1
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R5",
+     "R9",
+     "R12",
+     "R13",
+     "R15"
+    ],
+    "rule": [
+     "noun_role",
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "Key is a class in SimpleRDBMS package"
+     },
+     {
+      "sid": "R9.s1",
+      "text": "A Table is composed of 0 or several keys in an RDBMS"
+     },
+     {
+      "sid": "R12.s1",
+      "text": "A Key is owned by one and only one Table in an RDBMS"
+     }
+    ],
+    "name": "Key",
+    "freq": 7
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R12",
+     "R13",
+     "R14",
+     "R15"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A Schema is composed of 0 or several Tables in an RDBMS"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A Table is associated to one and only one Schema in an RDBMS"
+     },
+     {
+      "sid": "R9.s1",
+      "text": "A Table is composed of 0 or several keys in an RDBMS"
+     }
+    ],
+    "name": "Rdbms",
+    "freq": 8
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "noun_role",
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "RModelElement is a class that belongs to SimpleRDBMS package."
+     }
+    ],
+    "name": "RmodelElement",
+    "freq": 1
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R7",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A Schema is composed of 0 or several Tables in an RDBMS"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A Table is associated to one and only one Schema in an RDBMS"
+     }
+    ],
+    "name": "Schema",
+    "freq": 2
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R3",
+     "R8",
+     "R9",
+     "R10",
+     "R12"
+    ],
+    "rule": [
+     "noun_role",
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Table is a class in the SimpleRDBMS package"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A Table is associated to one and only one Schema in an RDBMS"
+     },
+     {
+      "sid": "R9.s1",
+      "text": "A Table is composed of 0 or several keys in an RDBMS"
+     }
+    ],
+    "name": "Table",
+    "freq": 5
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "explicit_attribute"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s2",
+      "text": "It has an attribute named \"type\" of type \"String\""
+     }
+    ],
+    "owner": "Column",
+    "name": "type",
+    "type_hint": "String"
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "explicit_attribute"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s2",
+      "text": "It has an attribute named \"kind\" of type \"String\""
+     }
+    ],
+    "owner": "RmodelElement",
+    "name": "kind",
+    "type_hint": "String"
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "A Table is associated to one and only one Schema in an RDBMS"
+     }
+    ],
+    "kind": "association",
+    "source": "Table",
+    "target": "Schema",
+    "multiplicity_target": "1..*"
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Schema",
+     "target": "Table",
+     "multiplicity": "1..*"
+    },
+    {
+     "source": "Table",
+     "target": "Key",
+     "multiplicity": "1..*"
+    },
+    {
+     "source": "Column",
+     "target": "ForeignKey",
+     "multiplicity": "1..*"
+    },
+    {
+     "source": "Key",
+     "target": "ForeignKey",
+     "multiplicity": "0..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

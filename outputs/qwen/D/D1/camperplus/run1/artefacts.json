@@ -1,0 +1,609 @@
+{
+ "actors": [
+  "CampAdministrator"
+ ],
+ "use_cases": [
+  {
+   "name": "Add Campers",
+   "actor": "CampAdministrator",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Remove Campers",
+   "actor": "CampAdministrator",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Keep Records From Previous Years",
+   "actor": "CampAdministrator",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Upload Consent Forms",
+   "actor": "CampAdministrator",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Keep Track Of Form Submissions",
+   "actor": "CampAdministrator",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Schedule Activities",
+   "actor": "CampAdministrator",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Create Nametags",
+   "actor": "CampAdministrator",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Suspend Campers",
+   "actor": "CampAdministrator",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Set Reminders",
+   "actor": "CampAdministrator",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Assign Positions To Staff",
+   "actor": "CampAdministrator",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Warn Staff",
+   "actor": "CampAdministrator",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Create Rules",
+   "actor": "CampAdministrator",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Track Facility Usage",
+   "actor": "CampAdministrator",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Store Emergency Information",
+   "actor": "CampAdministrator",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "Store Parent Information",
+   "actor": "CampAdministrator",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "Provide Feedback",
+   "actor": "CampAdministrator",
+   "src": [
+    "R17"
+   ]
+  },
+  {
+   "name": "Create Registration Forms",
+   "actor": "CampAdministrator",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Keep Information Organized",
+   "actor": "CampAdministrator",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "name": "View Medical Forms",
+   "actor": "CampAdministrator",
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "name": "Notify Parents",
+   "actor": "CampAdministrator",
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "name": "Log Attendance",
+   "actor": "CampAdministrator",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Add Parents",
+   "actor": "CampAdministrator",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "Create Groups",
+   "actor": "CampAdministrator",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "View Group Events",
+   "actor": "CampAdministrator",
+   "src": [
+    "R26"
+   ]
+  },
+  {
+   "name": "Schedule Tasks",
+   "actor": "CampAdministrator",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "Delete Tasks",
+   "actor": "CampAdministrator",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Modify Tasks",
+   "actor": "CampAdministrator",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "Modify Camper Information",
+   "actor": "CampAdministrator",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Delete Campers",
+   "actor": "CampAdministrator",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Modify Parent Information",
+   "actor": "CampAdministrator",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "Delete Parents",
+   "actor": "CampAdministrator",
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "name": "Modify Group Information",
+   "actor": "CampAdministrator",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "View Specific Group Events",
+   "actor": "CampAdministrator",
+   "src": [
+    "R35"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Camper",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "group",
+    "attendance"
+   ],
+   "methods": [
+    {
+     "name": "addCamper",
+     "use_case": "Add Campers"
+    },
+    {
+     "name": "removeCamper",
+     "use_case": "Remove Campers"
+    },
+    {
+     "name": "modifyCamperInfo",
+     "use_case": "Modify Camper Information"
+    },
+    {
+     "name": "deleteCamper",
+     "use_case": "Delete Campers"
+    }
+   ],
+   "src": [
+    "R1",
+    "R2",
+    "R30",
+    "R31"
+   ]
+  },
+  {
+   "name": "Parent",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "camper",
+    "payment",
+    "consentForms",
+    "photos",
+    "messages"
+   ],
+   "methods": [
+    {
+     "name": "createAccount",
+     "use_case": "Create Registration Forms"
+    },
+    {
+     "name": "enrollCamper",
+     "use_case": null
+    },
+    {
+     "name": "modifyParentInfo",
+     "use_case": "Modify Parent Information"
+    },
+    {
+     "name": "deleteParent",
+     "use_case": "Delete Parents"
+    },
+    {
+     "name": "viewCamperSchedule",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R14",
+    "R16",
+    "R17",
+    "R36",
+    "R39",
+    "R40",
+    "R43",
+    "R44",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "name": "CampWorker",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "assignedCampers"
+   ],
+   "methods": [
+    {
+     "name": "takeAttendance",
+     "use_case": "Log Attendance"
+    },
+    {
+     "name": "reportBehavior",
+     "use_case": null
+    },
+    {
+     "name": "reportSupplies",
+     "use_case": null
+    },
+    {
+     "name": "reportRepairs",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R49",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Group",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "events"
+   ],
+   "methods": [
+    {
+     "name": "createGroup",
+     "use_case": "Create Groups"
+    },
+    {
+     "name": "modifyGroupInfo",
+     "use_case": "Modify Group Information"
+    },
+    {
+     "name": "deleteGroup",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R25",
+    "R26",
+    "R34",
+    "R35"
+   ]
+  },
+  {
+   "name": "Event",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "date",
+    "assignedCampers",
+    "tasks"
+   ],
+   "methods": [
+    {
+     "name": "scheduleEvent",
+     "use_case": "Schedule Tasks"
+    },
+    {
+     "name": "modifyEvent",
+     "use_case": "Modify Tasks"
+    },
+    {
+     "name": "deleteEvent",
+     "use_case": "Delete Tasks"
+    }
+   ],
+   "src": [
+    "R6",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R35"
+   ]
+  },
+  {
+   "name": "ConsentForm",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "submittedBy"
+   ],
+   "methods": [
+    {
+     "name": "uploadConsentForm",
+     "use_case": "Upload Consent Forms"
+    },
+    {
+     "name": "trackSubmission",
+     "use_case": "Keep Track Of Form Submissions"
+    }
+   ],
+   "src": [
+    "R4",
+    "R5",
+    "R36"
+   ]
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "description"
+   ],
+   "methods": [
+    {
+     "name": "createRule",
+     "use_case": "Create Rules"
+    },
+    {
+     "name": "modifyRule",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Facility",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "usage"
+   ],
+   "methods": [
+    {
+     "name": "trackUsage",
+     "use_case": "Track Facility Usage"
+    }
+   ],
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Payment",
+   "kind": "class",
+   "attributes": [
+    "amount"
+   ],
+   "methods": [
+    {
+     "name": "makePayment",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R16",
+    "R43"
+   ]
+  },
+  {
+   "name": "Photo",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "camper"
+   ],
+   "methods": [
+    {
+     "name": "sharePhoto",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Task",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "completeTask",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R27",
+    "R28",
+    "R29"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Camper",
+   "target": "Parent",
+   "src": [
+    "R24",
+    "R49"
+   ]
+  },
+  {
+   "source": "Camper",
+   "target": "Group",
+   "src": [
+    "R25",
+    "R46"
+   ]
+  },
+  {
+   "source": "Camper",
+   "target": "Event",
+   "src": [
+    "R27",
+    "R35"
+   ]
+  },
+  {
+   "source": "Parent",
+   "target": "Camper",
+   "src": [
+    "R24",
+    "R46"
+   ]
+  },
+  {
+   "source": "Parent",
+   "target": "ConsentForm",
+   "src": [
+    "R4",
+    "R5",
+    "R31",
+    "R42"
+   ]
+  },
+  {
+   "source": "CampWorker",
+   "target": "Group",
+   "src": [
+    "R49",
+    "R54"
+   ]
+  },
+  {
+   "source": "Group",
+   "target": "Event",
+   "src": [
+    "R27",
+    "R35"
+   ]
+  },
+  {
+   "source": "Event",
+   "target": "Camper",
+   "src": [
+    "R27",
+    "R35"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D1/camperplus.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Camper:\n    \"\"\"Source: R1, R2, R30, R31\"\"\"\n    name: _t.Optional[str] = None\n    group: _t.Optional[str] = None\n    attendance: _t.Optional[bool] = None\n    parent: _t.Optional[\"Parent\"] = None\n    event: _t.Optional[\"Event\"] = None\n\n    def addCamper(self) -> None:\n        \"\"\"Realizes UC1 \"Add Campers\" (R1).\"\"\"\n        raise NotImplementedError\n\n    def removeCamper(self) -> None:\n        \"\"\"Realizes UC2 \"Remove Campers\" (R2).\"\"\"\n        raise NotImplementedError\n\n    def modifyCamperInfo(self) -> None:\n        \"\"\"Realizes UC28 \"Modify Camper Information\" (R30).\"\"\"\n        raise NotImplementedError\n\n    def deleteCamper(self) -> None:\n        \"\"\"Realizes UC29 \"Delete Campers\" (R31).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Parent:\n    \"\"\"Source: R14, R16, R17, R36, R39, R40, R43, R44, R46, R47, R48\"\"\"\n    name: _t.Optional[str] = None\n    camper: _t.Optional[str] = None\n    payment: _t.Optional[str] = None\n    consentForms: _t.Optional[str] = None\n    photos: _t.Optional[str] = None\n    messages: _t.Optional[str] = None\n    consentForm: _t.Optional[\"ConsentForm\"] = None\n\n    def createAccount(self) -> None:\n        \"\"\"Realizes UC17 \"Create Registration Forms\" (R19).\"\"\"\n        raise NotImplementedError\n\n    def enrollCamper(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def modifyParentInfo(self) -> None:\n        \"\"\"Realizes UC30 \"Modify Parent Information\" (R32).\"\"\"\n        raise NotImplementedError\n\n    def deleteParent(self) -> None:\n        \"\"\"Realizes UC31 \"Delete Parents\" (R33).\"\"\"\n        raise NotImplementedError\n\n    def viewCamperSchedule(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass CampWorker:\n    \"\"\"Source: R49, R51, R52, R53, R54\"\"\"\n    name: _t.Optional[str] = None\n    assignedCampers: _t.Optional[str] = None\n    group: _t.Optional[\"Group\"] = None\n\n    def takeAttendance(self) -> None:\n        \"\"\"Realizes UC21 \"Log Attendance\" (R23).\"\"\"\n        raise NotImplementedError\n\n    def reportBehavior(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def reportSupplies(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def reportRepairs(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Group:\n    \"\"\"Source: R25, R26, R34, R35\"\"\"\n    name: _t.Optional[str] = None\n    events: _t.Optional[str] = None\n    event: _t.Optional[\"Event\"] = None\n\n    def createGroup(self) -> None:\n        \"\"\"Realizes UC23 \"Create Groups\" (R25).\"\"\"\n        raise NotImplementedError\n\n    def modifyGroupInfo(self) -> None:\n        \"\"\"Realizes UC32 \"Modify Group Information\" (R34).\"\"\"\n        raise NotImplementedError\n\n    def deleteGroup(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Event:\n    \"\"\"Source: R6, R26, R27, R28, R29, R35\"\"\"\n    name: _t.Optional[str] = None\n    date: _t.Optional[str] = None\n    assignedCampers: _t.Optional[str] = None\n    tasks: _t.Optional[str] = None\n    camper: _t.Optional[\"Camper\"] = None\n\n    def scheduleEvent(self) -> None:\n        \"\"\"Realizes UC25 \"Schedule Tasks\" (R27).\"\"\"\n        raise NotImplementedError\n\n    def modifyEvent(self) -> None:\n        \"\"\"Realizes UC27 \"Modify Tasks\" (R29).\"\"\"\n        raise NotImplementedError\n\n    def deleteEvent(self) -> None:\n        \"\"\"Realizes UC26 \"Delete Tasks\" (R28).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ConsentForm:\n    \"\"\"Source: R4, R5, R36\"\"\"\n    name: _t.Optional[str] = None\n    submittedBy: _t.Optional[str] = None\n\n    def uploadConsentForm(self) -> None:\n        \"\"\"Realizes UC4 \"Upload Consent Forms\" (R4).\"\"\"\n        raise NotImplementedError\n\n    def trackSubmission(self) -> None:\n        \"\"\"Realizes UC5 \"Keep Track Of Form Submissions\" (R5).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Rule:\n    \"\"\"Source: R12\"\"\"\n    name: _t.Optional[str] = None\n    description: _t.Optional[str] = None\n\n    def createRule(self) -> None:\n        \"\"\"Realizes UC12 \"Create Rules\" (R12).\"\"\"\n        raise NotImplementedError\n\n    def modifyRule(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Facility:\n    \"\"\"Source: R13\"\"\"\n    name: _t.Optional[str] = None\n    usage: _t.Optional[int] = None\n\n    def trackUsage(self) -> None:\n        \"\"\"Realizes UC13 \"Track Facility Usage\" (R13).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Payment:\n    \"\"\"Source: R16, R43\"\"\"\n    amount: _t.Optional[float] = None\n\n    def makePayment(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Photo:\n    \"\"\"Source: R44\"\"\"\n    name: _t.Optional[str] = None\n    camper: _t.Optional[str] = None\n\n    def sharePhoto(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Task:\n    \"\"\"Source: R27, R28, R29\"\"\"\n    name: _t.Optional[str] = None\n    status: _t.Optional[str] = None\n\n    def completeTask(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Camper.java": "/** Generated from shared model D1/camperplus. Source: R1, R2, R30, R31 */\npublic class Camper {\n    private java.lang.String name;\n    private java.lang.String group;\n    private boolean attendance;\n    private Parent parent;\n    private Event event;\n\n    /** Realizes UC1 \"Add Campers\" (R1). */\n    public void addCamper() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Remove Campers\" (R2). */\n    public void removeCamper() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC28 \"Modify Camper Information\" (R30). */\n    public void modifyCamperInfo() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC29 \"Delete Campers\" (R31). */\n    public void deleteCamper() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Parent.java": "/** Generated from shared model D1/camperplus. Source: R14, R16, R17, R36, R39, R40, R43, R44, R46, R47, R48 */\npublic class Parent {\n    private java.lang.String name;\n    private java.lang.String camper;\n    private java.lang.String payment;\n    private java.lang.String consentForms;\n    private java.lang.String photos;\n    private java.lang.String messages;\n    private ConsentForm consentForm;\n\n    /** Realizes UC17 \"Create Registration Forms\" (R19). */\n    public void createAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void enrollCamper() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC30 \"Modify Parent Information\" (R32). */\n    public void modifyParentInfo() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC31 \"Delete Parents\" (R33). */\n    public void deleteParent() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewCamperSchedule() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "CampWorker.java": "/** Generated from shared model D1/camperplus. Source: R49, R51, R52, R53, R54 */\npublic class CampWorker {\n    private java.lang.String name;\n    private java.lang.String assignedCampers;\n    private Group group;\n\n    /** Realizes UC21 \"Log Attendance\" (R23). */\n    public void takeAttendance() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void reportBehavior() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void reportSupplies() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void reportRepairs() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Group.java": "/** Generated from shared model D1/camperplus. Source: R25, R26, R34, R35 */\npublic class Group {\n    private java.lang.String name;\n    private java.lang.String events;\n    private Event event;\n\n    /** Realizes UC23 \"Create Groups\" (R25). */\n    public void createGroup() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC32 \"Modify Group Information\" (R34). */\n    public void modifyGroupInfo() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void deleteGroup() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Event.java": "/** Generated from shared model D1/camperplus. Source: R6, R26, R27, R28, R29, R35 */\npublic class Event {\n    private java.lang.String name;\n    private java.time.LocalDate date;\n    private java.lang.String assignedCampers;\n    private java.lang.String tasks;\n    private Camper camper;\n\n    /** Realizes UC25 \"Schedule Tasks\" (R27). */\n    public void scheduleEvent() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC27 \"Modify Tasks\" (R29). */\n    public void modifyEvent() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC26 \"Delete Tasks\" (R28). */\n    public void deleteEvent() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ConsentForm.java": "/** Generated from shared model D1/camperplus. Source: R4, R5, R36 */\npublic class ConsentForm {\n    private java.lang.String name;\n    private java.lang.String submittedBy;\n\n    /** Realizes UC4 \"Upload Consent Forms\" (R4). */\n    public void uploadConsentForm() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC5 \"Keep Track Of Form Submissions\" (R5). */\n    public void trackSubmission() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Rule.java": "/** Generated from shared model D1/camperplus. Source: R12 */\npublic class Rule {\n    private java.lang.String name;\n    private java.lang.String description;\n\n    /** Realizes UC12 \"Create Rules\" (R12). */\n    public void createRule() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void modifyRule() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Facility.java": "/** Generated from shared model D1/camperplus. Source: R13 */\npublic class Facility {\n    private java.lang.String name;\n    private int usage;\n\n    /** Realizes UC13 \"Track Facility Usage\" (R13). */\n    public void trackUsage() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Payment.java": "/** Generated from shared model D1/camperplus. Source: R16, R43 */\npublic class Payment {\n    private double amount;\n\n    /** Operation. */\n    public void makePayment() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Photo.java": "/** Generated from shared model D1/camperplus. Source: R44 */\npublic class Photo {\n    private java.lang.String name;\n    private java.lang.String camper;\n\n    /** Operation. */\n    public void sharePhoto() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Task.java": "/** Generated from shared model D1/camperplus. Source: R27, R28, R29 */\npublic class Task {\n    private java.lang.String name;\n    private java.lang.String status;\n\n    /** Operation. */\n    public void completeTask() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}
