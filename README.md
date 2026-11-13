@@ -1,6 +1,5 @@
 # Requirements → Use-Case Diagram, Class Diagram and Code Skeleton
 
-Anonymous replication package for a paper submitted to REFSQ 2027 (double-blind review).
 
 This package contains the code, the 78-case benchmark, all prompts, per-run outputs and the results of the paper:
 
