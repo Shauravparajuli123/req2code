@@ -1,0 +1,66 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class CampAdministrator {
+  +addCamper()
+  +removeCamper()
+  +keepCamperRecords()
+  +uploadConsentForms()
+  +trackConsentFormSubmissions()
+  +scheduleActivities()
+  +createNametags()
+  +suspendCamper()
+  +setReminders()
+  +assignStaffPositions()
+  +warnStaff()
+  +createRules()
+  +trackFacilityUsage()
+  +createFeedbackAvenue()
+  +storeEmergencyInformation()
+  +storeParentInformation()
+  +provideWeeklyFeedback()
+  +createRegistrationForm()
+  +keepInformationOrganized()
+  +seeMedicalForms()
+  +notifyParents()
+  +logAttendance()
+  +addParents()
+  +createGroups()
+  +seeCampGroupsAndEvents()
+  +scheduleTasks()
+  +deleteTasks()
+  +modifyTasks()
+  +modifyCamperInformation()
+  +deleteCampers()
+  +modifyParentInformation()
+  +deleteParents()
+  +modifyGroupInformation()
+  +seeSpecificGroupEvents()
+}
+class Parent {
+  +seeConsentForms()
+  +seeCamperActivity()
+  +seeCamperSchedule()
+  +enrollCampers()
+  +seeEnrolledCampers()
+  +seeAssignedKids()
+  +submitForms()
+  +createAccount()
+  +seeCounselors()
+  +messageCounselors()
+  +signAndSubmitForms()
+  +checkPayments()
+  +sharePhotos()
+  +emergencyContact()
+}
+class CampWorker {
+  +seeAssignedKids()
+  +submitCompletionReport()
+  +reportInappropriateBehavior()
+  +reportSupplies()
+  +reportRepairs()
+}
+CampAdministrator "1" -- "1..*" Parent : manages
+CampAdministrator "1" -- "1..*" CampWorker : manages
+CampWorker "1" -- "1" CampAdministrator : reportsTo
+@enduml

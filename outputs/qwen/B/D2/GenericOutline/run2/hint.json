@@ -1,0 +1,263 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D2/GenericOutline",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R4",
+     "R5",
+     "R8",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A label has a label"
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A label suite has a label"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A node is composed of a label"
+     }
+    ],
+    "name": "Label",
+    "freq": 5
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R5",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A label suite has a label"
+     },
+     {
+      "sid": "R10.s1",
+      "text": "A label may have label suites"
+     }
+    ],
+    "name": "LabelSuite",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R6",
+     "R9"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A map has a map string"
+     },
+     {
+      "sid": "R9.s1",
+      "text": "A node is composed of maps, which are the mapping."
+     }
+    ],
+    "name": "Map",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R3",
+     "R7",
+     "R8",
+     "R9"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A node has a name and an icon."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "An outline is composed of nodes, potentially many."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A node is composed of a label"
+     }
+    ],
+    "name": "Node",
+    "freq": 4
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R2",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "An outline has an extension (String)"
+     },
+     {
+      "sid": "R7.s1",
+      "text": "An outline is composed of nodes, potentially many."
+     }
+    ],
+    "name": "Outline",
+    "freq": 2
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A map has a map string"
+     }
+    ],
+    "owner": "Map",
+    "name": "map string",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A node has a name and an icon."
+     }
+    ],
+    "owner": "Node",
+    "name": "icon",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A node has a name and an icon."
+     }
+    ],
+    "owner": "Node",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "An outline has an extension (String)"
+     }
+    ],
+    "owner": "Outline",
+    "name": "extension",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A label suite has a label"
+     }
+    ],
+    "kind": "has",
+    "source": "LabelSuite",
+    "target": "Label",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "A label may have label suites"
+     }
+    ],
+    "kind": "has",
+    "source": "Label",
+    "target": "LabelSuite",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Outline",
+     "target": "Node",
+     "multiplicity": "0..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

@@ -1,0 +1,748 @@
+{
+ "actors": [
+  "Customer",
+  "ReturningCustomer",
+  "Admin",
+  "Trainer",
+  "Moderator",
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Account",
+   "actor": "Customer",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Add Personal Information",
+   "actor": "Customer",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Add Banking Details",
+   "actor": "Customer",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Choose Membership Type",
+   "actor": "Customer",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Extend Subscription",
+   "actor": "Customer",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Know Subscription Duration",
+   "actor": "Customer",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Unsubscribe",
+   "actor": "Customer",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Reset Password",
+   "actor": "Customer",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Change Personal Details",
+   "actor": "Customer",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Update Payment Information",
+   "actor": "Customer",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "See Family Membership Users",
+   "actor": "Customer",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Add Person To Family Membership",
+   "actor": "Customer",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Remove Person From Family Membership",
+   "actor": "Customer",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "See Available Lessons",
+   "actor": "Customer",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "See Future Lessons",
+   "actor": "Customer",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "See Past Lessons",
+   "actor": "Customer",
+   "src": [
+    "R17"
+   ]
+  },
+  {
+   "name": "Call Gym To Book Lesson",
+   "actor": "Customer",
+   "src": [
+    "R18"
+   ]
+  },
+  {
+   "name": "Call Gym To Cancel Lesson",
+   "actor": "Customer",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Book Free Practice Area",
+   "actor": "Customer",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "See Booked Spots",
+   "actor": "Customer",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "See Free Rooms",
+   "actor": "Trainer",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "Add Lesson",
+   "actor": "Trainer",
+   "src": [
+    "R26"
+   ]
+  },
+  {
+   "name": "Set Lesson Time",
+   "actor": "Trainer",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "Set Lesson Description",
+   "actor": "Trainer",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Set Lesson Room",
+   "actor": "Trainer",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "Set Lesson Type",
+   "actor": "Trainer",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Set Lesson Capacity",
+   "actor": "Trainer",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "See Schedule",
+   "actor": "Trainer",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "Edit Own Lesson Time",
+   "actor": "Trainer",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Edit Own Lesson Room",
+   "actor": "Trainer",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Edit Own Lesson Description",
+   "actor": "Trainer",
+   "src": [
+    "R36"
+   ]
+  },
+  {
+   "name": "Edit Own Lesson Capacity",
+   "actor": "Trainer",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Edit Any Lesson",
+   "actor": "Admin",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "Cancel Lesson",
+   "actor": "Trainer",
+   "src": [
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "name": "Notify Customer Of Cancellation",
+   "actor": "Admin",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "Notify Customer Of No Show",
+   "actor": "Admin",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Admin See No Show",
+   "actor": "Admin",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "Admin See No Show Count",
+   "actor": "Admin",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Admin Issue Fine",
+   "actor": "Admin",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Admin Increase Fine",
+   "actor": "Admin",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "Add Trainer",
+   "actor": "Admin",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Add Admin",
+   "actor": "Admin",
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "name": "Remove Trainer",
+   "actor": "Admin",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "name": "Login",
+   "actor": "User",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "name": "Choose Notification Method",
+   "actor": "Customer",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "name": "Receive Email Notifications",
+   "actor": "Customer",
+   "src": [
+    "R52"
+   ]
+  },
+  {
+   "name": "Receive Push Notifications",
+   "actor": "Customer",
+   "src": [
+    "R53"
+   ]
+  },
+  {
+   "name": "Choose Notifications",
+   "actor": "Customer",
+   "src": [
+    "R54"
+   ]
+  },
+  {
+   "name": "Receive Cancellation Notification",
+   "actor": "Customer",
+   "src": [
+    "R55"
+   ]
+  },
+  {
+   "name": "Confirm Cancellation",
+   "actor": "Customer",
+   "src": [
+    "R56"
+   ]
+  },
+  {
+   "name": "Admin See Aware Customers",
+   "actor": "Admin",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "name": "See Personal Information",
+   "actor": "Customer",
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "name": "See Membership Information",
+   "actor": "Customer",
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "name": "See Past And Future Training Sessions",
+   "actor": "Trainer",
+   "src": [
+    "R60"
+   ]
+  },
+  {
+   "name": "Check In",
+   "actor": "Customer",
+   "src": [
+    "R61"
+   ]
+  },
+  {
+   "name": "Admin See Subscription",
+   "actor": "Admin",
+   "src": [
+    "R62"
+   ]
+  },
+  {
+   "name": "Admin See Bookings",
+   "actor": "Admin",
+   "src": [
+    "R63"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "personalInformation",
+    "bankingDetails",
+    "membershipType",
+    "subscriptionDuration",
+    "familyMembers",
+    "availableLessons",
+    "futureLessons",
+    "pastLessons",
+    "notificationMethod",
+    "subscription",
+    "bookedSpots",
+    "freeRooms"
+   ],
+   "methods": [
+    {
+     "name": "createAccount",
+     "use_case": "Create Account"
+    },
+    {
+     "name": "addPersonalInformation",
+     "use_case": "Add Personal Information"
+    },
+    {
+     "name": "addBankingDetails",
+     "use_case": "Add Banking Details"
+    },
+    {
+     "name": "chooseMembershipType",
+     "use_case": "Choose Membership Type"
+    },
+    {
+     "name": "extendSubscription",
+     "use_case": "Extend Subscription"
+    },
+    {
+     "name": "knowSubscriptionDuration",
+     "use_case": "Know Subscription Duration"
+    },
+    {
+     "name": "unsubscribe",
+     "use_case": "Unsubscribe"
+    },
+    {
+     "name": "resetPassword",
+     "use_case": "Reset Password"
+    },
+    {
+     "name": "changePersonalDetails",
+     "use_case": "Change Personal Details"
+    },
+    {
+     "name": "updatePaymentInformation",
+     "use_case": "Update Payment Information"
+    },
+    {
+     "name": "seeFamilyMembershipUsers",
+     "use_case": "See Family Membership Users"
+    },
+    {
+     "name": "addPersonToFamilyMembership",
+     "use_case": "Add Person To Family Membership"
+    },
+    {
+     "name": "removePersonFromFamilyMembership",
+     "use_case": "Remove Person From Family Membership"
+    },
+    {
+     "name": "seeAvailableLessons",
+     "use_case": "See Available Lessons"
+    },
+    {
+     "name": "seeFutureLessons",
+     "use_case": "See Future Lessons"
+    },
+    {
+     "name": "seePastLessons",
+     "use_case": "See Past Lessons"
+    },
+    {
+     "name": "callGymToBookLesson",
+     "use_case": "Call Gym To Book Lesson"
+    },
+    {
+     "name": "callGymToCancelLesson",
+     "use_case": "Call Gym To Cancel Lesson"
+    },
+    {
+     "name": "bookFreePracticeArea",
+     "use_case": "Book Free Practice Area"
+    },
+    {
+     "name": "seeBookedSpots",
+     "use_case": "See Booked Spots"
+    },
+    {
+     "name": "seeFreeRooms",
+     "use_case": "See Free Rooms"
+    },
+    {
+     "name": "login",
+     "use_case": "Login"
+    },
+    {
+     "name": "chooseNotificationMethod",
+     "use_case": "Choose Notification Method"
+    },
+    {
+     "name": "receiveEmailNotifications",
+     "use_case": "Receive Email Notifications"
+    },
+    {
+     "name": "receivePushNotifications",
+     "use_case": "Receive Push Notifications"
+    },
+    {
+     "name": "chooseNotifications",
+     "use_case": "Choose Notifications"
+    },
+    {
+     "name": "receiveCancellationNotification",
+     "use_case": "Receive Cancellation Notification"
+    },
+    {
+     "name": "confirmCancellation",
+     "use_case": "Confirm Cancellation"
+    },
+    {
+     "name": "seePersonalInformation",
+     "use_case": "See Personal Information"
+    },
+    {
+     "name": "seeMembershipInformation",
+     "use_case": "See Membership Information"
+    },
+    {
+     "name": "seePastAndFutureTrainingSessions",
+     "use_case": "See Past And Future Training Sessions"
+    },
+    {
+     "name": "checkIn",
+     "use_case": "Check In"
+    },
+    {
+     "name": "seeSubscription",
+     "use_case": "Admin See Subscription"
+    },
+    {
+     "name": "seeBookings",
+     "use_case": "Admin See Bookings"
+    }
+   ],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R21",
+    "R22",
+    "R23",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56",
+    "R57",
+    "R58",
+    "R59"
+   ]
+  },
+  {
+   "name": "Trainer",
+   "kind": "class",
+   "attributes": [
+    "lessonTime",
+    "lessonDescription",
+    "lessonRoom",
+    "lessonType",
+    "lessonCapacity"
+   ],
+   "methods": [
+    {
+     "name": "addLesson",
+     "use_case": "Add Lesson"
+    },
+    {
+     "name": "setLessonTime",
+     "use_case": "Set Lesson Time"
+    },
+    {
+     "name": "setLessonDescription",
+     "use_case": "Set Lesson Description"
+    },
+    {
+     "name": "setLessonRoom",
+     "use_case": "Set Lesson Room"
+    },
+    {
+     "name": "setLessonType",
+     "use_case": "Set Lesson Type"
+    },
+    {
+     "name": "setLessonCapacity",
+     "use_case": "Set Lesson Capacity"
+    },
+    {
+     "name": "seeSchedule",
+     "use_case": "See Schedule"
+    },
+    {
+     "name": "editOwnLessonTime",
+     "use_case": "Edit Own Lesson Time"
+    },
+    {
+     "name": "editOwnLessonRoom",
+     "use_case": "Edit Own Lesson Room"
+    },
+    {
+     "name": "editOwnLessonDescription",
+     "use_case": "Edit Own Lesson Description"
+    },
+    {
+     "name": "editOwnLessonCapacity",
+     "use_case": "Edit Own Lesson Capacity"
+    }
+   ],
+   "src": [
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37"
+   ]
+  },
+  {
+   "name": "Admin",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "editAnyLesson",
+     "use_case": "Edit Any Lesson"
+    },
+    {
+     "name": "cancelLesson",
+     "use_case": "Cancel Lesson"
+    },
+    {
+     "name": "notifyCustomerOfCancellation",
+     "use_case": "Notify Customer Of Cancellation"
+    },
+    {
+     "name": "notifyCustomerOfNoShow",
+     "use_case": "Notify Customer Of No Show"
+    },
+    {
+     "name": "adminSeeNoShow",
+     "use_case": "Admin See No Show"
+    },
+    {
+     "name": "adminSeeNoShowCount",
+     "use_case": "Admin See No Show Count"
+    },
+    {
+     "name": "adminIssueFine",
+     "use_case": "Admin Issue Fine"
+    },
+    {
+     "name": "adminIncreaseFine",
+     "use_case": "Admin Increase Fine"
+    },
+    {
+     "name": "addTrainer",
+     "use_case": "Add Trainer"
+    },
+    {
+     "name": "addAdmin",
+     "use_case": "Add Admin"
+    },
+    {
+     "name": "removeTrainer",
+     "use_case": "Remove Trainer"
+    }
+   ],
+   "src": [
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49"
+   ]
+  }
+ ],
+ "relations": [],
+ "python": "\"\"\"Code skeleton generated from the shared model of D1/sports.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Customer:\n    \"\"\"Source: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R21, R22, R23, R50, R51, R52, R53, R54, R55, R56, R57, R58, R59\"\"\"\n    name: _t.Optional[str] = None\n    personalInformation: _t.Optional[str] = None\n    bankingDetails: _t.Optional[str] = None\n    membershipType: _t.Optional[str] = None\n    subscriptionDuration: _t.Optional[int] = None\n    familyMembers: _t.Optional[str] = None\n    availableLessons: _t.Optional[str] = None\n    futureLessons: _t.Optional[str] = None\n    pastLessons: _t.Optional[str] = None\n    notificationMethod: _t.Optional[str] = None\n    subscription: _t.Optional[bool] = None\n    bookedSpots: _t.Optional[str] = None\n    freeRooms: _t.Optional[str] = None\n\n    def createAccount(self) -> None:\n        \"\"\"Realizes UC1 \"Create Account\" (R1).\"\"\"\n        raise NotImplementedError\n\n    def addPersonalInformation(self) -> None:\n        \"\"\"Realizes UC2 \"Add Personal Information\" (R2).\"\"\"\n        raise NotImplementedError\n\n    def addBankingDetails(self) -> None:\n        \"\"\"Realizes UC3 \"Add Banking Details\" (R3).\"\"\"\n        raise NotImplementedError\n\n    def chooseMembershipType(self) -> None:\n        \"\"\"Realizes UC4 \"Choose Membership Type\" (R4).\"\"\"\n        raise NotImplementedError\n\n    def extendSubscription(self) -> None:\n        \"\"\"Realizes UC5 \"Extend Subscription\" (R5).\"\"\"\n        raise NotImplementedError\n\n    def knowSubscriptionDuration(self) -> None:\n        \"\"\"Realizes UC6 \"Know Subscription Duration\" (R6).\"\"\"\n        raise NotImplementedError\n\n    def unsubscribe(self) -> None:\n        \"\"\"Realizes UC7 \"Unsubscribe\" (R8).\"\"\"\n        raise NotImplementedError\n\n    def resetPassword(self) -> None:\n        \"\"\"Realizes UC8 \"Reset Password\" (R9).\"\"\"\n        raise NotImplementedError\n\n    def changePersonalDetails(self) -> None:\n        \"\"\"Realizes UC9 \"Change Personal Details\" (R10).\"\"\"\n        raise NotImplementedError\n\n    def updatePaymentInformation(self) -> None:\n        \"\"\"Realizes UC10 \"Update Payment Information\" (R11).\"\"\"\n        raise NotImplementedError\n\n    def seeFamilyMembershipUsers(self) -> None:\n        \"\"\"Realizes UC11 \"See Family Membership Users\" (R12).\"\"\"\n        raise NotImplementedError\n\n    def addPersonToFamilyMembership(self) -> None:\n        \"\"\"Realizes UC12 \"Add Person To Family Membership\" (R13).\"\"\"\n        raise NotImplementedError\n\n    def removePersonFromFamilyMembership(self) -> None:\n        \"\"\"Realizes UC13 \"Remove Person From Family Membership\" (R14).\"\"\"\n        raise NotImplementedError\n\n    def seeAvailableLessons(self) -> None:\n        \"\"\"Realizes UC14 \"See Available Lessons\" (R15).\"\"\"\n        raise NotImplementedError\n\n    def seeFutureLessons(self) -> None:\n        \"\"\"Realizes UC15 \"See Future Lessons\" (R16).\"\"\"\n        raise NotImplementedError\n\n    def seePastLessons(self) -> None:\n        \"\"\"Realizes UC16 \"See Past Lessons\" (R17).\"\"\"\n        raise NotImplementedError\n\n    def callGymToBookLesson(self) -> None:\n        \"\"\"Realizes UC17 \"Call Gym To Book Lesson\" (R18).\"\"\"\n        raise NotImplementedError\n\n    def callGymToCancelLesson(self) -> None:\n        \"\"\"Realizes UC18 \"Call Gym To Cancel Lesson\" (R19).\"\"\"\n        raise NotImplementedError\n\n    def bookFreePracticeArea(self) -> None:\n        \"\"\"Realizes UC19 \"Book Free Practice Area\" (R23).\"\"\"\n        raise NotImplementedError\n\n    def seeBookedSpots(self) -> None:\n        \"\"\"Realizes UC20 \"See Booked Spots\" (R24).\"\"\"\n        raise NotImplementedError\n\n    def seeFreeRooms(self) -> None:\n        \"\"\"Realizes UC21 \"See Free Rooms\" (R25).\"\"\"\n        raise NotImplementedError\n\n    def login(self) -> None:\n        \"\"\"Realizes UC44 \"Login\" (R50).\"\"\"\n        raise NotImplementedError\n\n    def chooseNotificationMethod(self) -> None:\n        \"\"\"Realizes UC45 \"Choose Notification Method\" (R51).\"\"\"\n        raise NotImplementedError\n\n    def receiveEmailNotifications(self) -> None:\n        \"\"\"Realizes UC46 \"Receive Email Notifications\" (R52).\"\"\"\n        raise NotImplementedError\n\n    def receivePushNotifications(self) -> None:\n        \"\"\"Realizes UC47 \"Receive Push Notifications\" (R53).\"\"\"\n        raise NotImplementedError\n\n    def chooseNotifications(self) -> None:\n        \"\"\"Realizes UC48 \"Choose Notifications\" (R54).\"\"\"\n        raise NotImplementedError\n\n    def receiveCancellationNotification(self) -> None:\n        \"\"\"Realizes UC49 \"Receive Cancellation Notification\" (R55).\"\"\"\n        raise NotImplementedError\n\n    def confirmCancellation(self) -> None:\n        \"\"\"Realizes UC50 \"Confirm Cancellation\" (R56).\"\"\"\n        raise NotImplementedError\n\n    def seePersonalInformation(self) -> None:\n        \"\"\"Realizes UC52 \"See Personal Information\" (R58).\"\"\"\n        raise NotImplementedError\n\n    def seeMembershipInformation(self) -> None:\n        \"\"\"Realizes UC53 \"See Membership Information\" (R59).\"\"\"\n        raise NotImplementedError\n\n    def seePastAndFutureTrainingSessions(self) -> None:\n        \"\"\"Realizes UC54 \"See Past And Future Training Sessions\" (R60).\"\"\"\n        raise NotImplementedError\n\n    def checkIn(self) -> None:\n        \"\"\"Realizes UC55 \"Check In\" (R61).\"\"\"\n        raise NotImplementedError\n\n    def seeSubscription(self) -> None:\n        \"\"\"Realizes UC56 \"Admin See Subscription\" (R62).\"\"\"\n        raise NotImplementedError\n\n    def seeBookings(self) -> None:\n        \"\"\"Realizes UC57 \"Admin See Bookings\" (R63).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Trainer:\n    \"\"\"Source: R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37\"\"\"\n    lessonTime: _t.Optional[str] = None\n    lessonDescription: _t.Optional[str] = None\n    lessonRoom: _t.Optional[str] = None\n    lessonType: _t.Optional[str] = None\n    lessonCapacity: _t.Optional[int] = None\n\n    def addLesson(self) -> None:\n        \"\"\"Realizes UC22 \"Add Lesson\" (R26).\"\"\"\n        raise NotImplementedError\n\n    def setLessonTime(self) -> None:\n        \"\"\"Realizes UC23 \"Set Lesson Time\" (R27).\"\"\"\n        raise NotImplementedError\n\n    def setLessonDescription(self) -> None:\n        \"\"\"Realizes UC24 \"Set Lesson Description\" (R28).\"\"\"\n        raise NotImplementedError\n\n    def setLessonRoom(self) -> None:\n        \"\"\"Realizes UC25 \"Set Lesson Room\" (R29).\"\"\"\n        raise NotImplementedError\n\n    def setLessonType(self) -> None:\n        \"\"\"Realizes UC26 \"Set Lesson Type\" (R30).\"\"\"\n        raise NotImplementedError\n\n    def setLessonCapacity(self) -> None:\n        \"\"\"Realizes UC27 \"Set Lesson Capacity\" (R31).\"\"\"\n        raise NotImplementedError\n\n    def seeSchedule(self) -> None:\n        \"\"\"Realizes UC28 \"See Schedule\" (R32).\"\"\"\n        raise NotImplementedError\n\n    def editOwnLessonTime(self) -> None:\n        \"\"\"Realizes UC29 \"Edit Own Lesson Time\" (R34).\"\"\"\n        raise NotImplementedError\n\n    def editOwnLessonRoom(self) -> None:\n        \"\"\"Realizes UC30 \"Edit Own Lesson Room\" (R35).\"\"\"\n        raise NotImplementedError\n\n    def editOwnLessonDescription(self) -> None:\n        \"\"\"Realizes UC31 \"Edit Own Lesson Description\" (R36).\"\"\"\n        raise NotImplementedError\n\n    def editOwnLessonCapacity(self) -> None:\n        \"\"\"Realizes UC32 \"Edit Own Lesson Capacity\" (R37).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Admin:\n    \"\"\"Source: R38, R39, R40, R41, R42, R43, R44, R45, R46, R47, R48, R49\"\"\"\n\n    def editAnyLesson(self) -> None:\n        \"\"\"Realizes UC33 \"Edit Any Lesson\" (R38).\"\"\"\n        raise NotImplementedError\n\n    def cancelLesson(self) -> None:\n        \"\"\"Realizes UC34 \"Cancel Lesson\" (R39, R40).\"\"\"\n        raise NotImplementedError\n\n    def notifyCustomerOfCancellation(self) -> None:\n        \"\"\"Realizes UC35 \"Notify Customer Of Cancellation\" (R41).\"\"\"\n        raise NotImplementedError\n\n    def notifyCustomerOfNoShow(self) -> None:\n        \"\"\"Realizes UC36 \"Notify Customer Of No Show\" (R42).\"\"\"\n        raise NotImplementedError\n\n    def adminSeeNoShow(self) -> None:\n        \"\"\"Realizes UC37 \"Admin See No Show\" (R43).\"\"\"\n        raise NotImplementedError\n\n    def adminSeeNoShowCount(self) -> None:\n        \"\"\"Realizes UC38 \"Admin See No Show Count\" (R44).\"\"\"\n        raise NotImplementedError\n\n    def adminIssueFine(self) -> None:\n        \"\"\"Realizes UC39 \"Admin Issue Fine\" (R45).\"\"\"\n        raise NotImplementedError\n\n    def adminIncreaseFine(self) -> None:\n        \"\"\"Realizes UC40 \"Admin Increase Fine\" (R46).\"\"\"\n        raise NotImplementedError\n\n    def addTrainer(self) -> None:\n        \"\"\"Realizes UC41 \"Add Trainer\" (R47).\"\"\"\n        raise NotImplementedError\n\n    def addAdmin(self) -> None:\n        \"\"\"Realizes UC42 \"Add Admin\" (R48).\"\"\"\n        raise NotImplementedError\n\n    def removeTrainer(self) -> None:\n        \"\"\"Realizes UC43 \"Remove Trainer\" (R49).\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Customer.java": "/** Generated from shared model D1/sports. Source: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R21, R22, R23, R50, R51, R52, R53, R54, R55, R56, R57, R58, R59 */\npublic class Customer {\n    private java.lang.String name;\n    private java.lang.String personalInformation;\n    private java.lang.String bankingDetails;\n    private java.lang.String membershipType;\n    private int subscriptionDuration;\n    private java.lang.String familyMembers;\n    private java.lang.String availableLessons;\n    private java.lang.String futureLessons;\n    private java.lang.String pastLessons;\n    private java.lang.String notificationMethod;\n    private boolean subscription;\n    private java.lang.String bookedSpots;\n    private java.lang.String freeRooms;\n\n    /** Realizes UC1 \"Create Account\" (R1). */\n    public void createAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Add Personal Information\" (R2). */\n    public void addPersonalInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Add Banking Details\" (R3). */\n    public void addBankingDetails() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC4 \"Choose Membership Type\" (R4). */\n    public void chooseMembershipType() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC5 \"Extend Subscription\" (R5). */\n    public void extendSubscription() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC6 \"Know Subscription Duration\" (R6). */\n    public void knowSubscriptionDuration() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC7 \"Unsubscribe\" (R8). */\n    public void unsubscribe() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC8 \"Reset Password\" (R9). */\n    public void resetPassword() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"Change Personal Details\" (R10). */\n    public void changePersonalDetails() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"Update Payment Information\" (R11). */\n    public void updatePaymentInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC11 \"See Family Membership Users\" (R12). */\n    public void seeFamilyMembershipUsers() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC12 \"Add Person To Family Membership\" (R13). */\n    public void addPersonToFamilyMembership() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC13 \"Remove Person From Family Membership\" (R14). */\n    public void removePersonFromFamilyMembership() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC14 \"See Available Lessons\" (R15). */\n    public void seeAvailableLessons() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"See Future Lessons\" (R16). */\n    public void seeFutureLessons() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC16 \"See Past Lessons\" (R17). */\n    public void seePastLessons() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC17 \"Call Gym To Book Lesson\" (R18). */\n    public void callGymToBookLesson() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC18 \"Call Gym To Cancel Lesson\" (R19). */\n    public void callGymToCancelLesson() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC19 \"Book Free Practice Area\" (R23). */\n    public void bookFreePracticeArea() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC20 \"See Booked Spots\" (R24). */\n    public void seeBookedSpots() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC21 \"See Free Rooms\" (R25). */\n    public void seeFreeRooms() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC44 \"Login\" (R50). */\n    public void login() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC45 \"Choose Notification Method\" (R51). */\n    public void chooseNotificationMethod() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC46 \"Receive Email Notifications\" (R52). */\n    public void receiveEmailNotifications() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC47 \"Receive Push Notifications\" (R53). */\n    public void receivePushNotifications() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC48 \"Choose Notifications\" (R54). */\n    public void chooseNotifications() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC49 \"Receive Cancellation Notification\" (R55). */\n    public void receiveCancellationNotification() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC50 \"Confirm Cancellation\" (R56). */\n    public void confirmCancellation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC52 \"See Personal Information\" (R58). */\n    public void seePersonalInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC53 \"See Membership Information\" (R59). */\n    public void seeMembershipInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC54 \"See Past And Future Training Sessions\" (R60). */\n    public void seePastAndFutureTrainingSessions() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC55 \"Check In\" (R61). */\n    public void checkIn() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC56 \"Admin See Subscription\" (R62). */\n    public void seeSubscription() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC57 \"Admin See Bookings\" (R63). */\n    public void seeBookings() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Trainer.java": "/** Generated from shared model D1/sports. Source: R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37 */\npublic class Trainer {\n    private java.lang.String lessonTime;\n    private java.lang.String lessonDescription;\n    private java.lang.String lessonRoom;\n    private java.lang.String lessonType;\n    private int lessonCapacity;\n\n    /** Realizes UC22 \"Add Lesson\" (R26). */\n    public void addLesson() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC23 \"Set Lesson Time\" (R27). */\n    public void setLessonTime() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC24 \"Set Lesson Description\" (R28). */\n    public void setLessonDescription() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC25 \"Set Lesson Room\" (R29). */\n    public void setLessonRoom() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC26 \"Set Lesson Type\" (R30). */\n    public void setLessonType() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC27 \"Set Lesson Capacity\" (R31). */\n    public void setLessonCapacity() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC28 \"See Schedule\" (R32). */\n    public void seeSchedule() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC29 \"Edit Own Lesson Time\" (R34). */\n    public void editOwnLessonTime() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC30 \"Edit Own Lesson Room\" (R35). */\n    public void editOwnLessonRoom() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC31 \"Edit Own Lesson Description\" (R36). */\n    public void editOwnLessonDescription() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC32 \"Edit Own Lesson Capacity\" (R37). */\n    public void editOwnLessonCapacity() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Admin.java": "/** Generated from shared model D1/sports. Source: R38, R39, R40, R41, R42, R43, R44, R45, R46, R47, R48, R49 */\npublic class Admin {\n\n    /** Realizes UC33 \"Edit Any Lesson\" (R38). */\n    public void editAnyLesson() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC34 \"Cancel Lesson\" (R39, R40). */\n    public void cancelLesson() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC35 \"Notify Customer Of Cancellation\" (R41). */\n    public void notifyCustomerOfCancellation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC36 \"Notify Customer Of No Show\" (R42). */\n    public void notifyCustomerOfNoShow() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC37 \"Admin See No Show\" (R43). */\n    public void adminSeeNoShow() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC38 \"Admin See No Show Count\" (R44). */\n    public void adminSeeNoShowCount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC39 \"Admin Issue Fine\" (R45). */\n    public void adminIssueFine() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC40 \"Admin Increase Fine\" (R46). */\n    public void adminIncreaseFine() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC41 \"Add Trainer\" (R47). */\n    public void addTrainer() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC42 \"Add Admin\" (R48). */\n    public void addAdmin() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC43 \"Remove Trainer\" (R49). */\n    public void removeTrainer() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

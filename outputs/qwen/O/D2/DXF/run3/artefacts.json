@@ -1,0 +1,60 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "LoadDrawingInterchangeFormat",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Mesh",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "addPoint",
+     "use_case": "LoadDrawingInterchangeFormat"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Point",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "coordinatesX",
+    "coordinatesZ"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Mesh",
+   "target": "Point",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "python": "class Mesh:\n    def __init__(self, name):\n        self.name = name\n        self.points = []\n\n    def addPoint(self, point):\n        if point not in self.points:\n            self.points.append(point)\n\n    def __str__(self):\n        return f'Mesh: {self.name} with {len(self.points)} points'\n\nclass Point:\n    def __init__(self, name, coordinatesX, coordinatesZ):\n        self.name = name\n        self.coordinatesX = coordinatesX\n        self.coordinatesZ = coordinatesZ\n\n    def __str__(self):\n        return f'Point: {self.name} with coordinates X={self.coordinatesX} and Z={self.coordinatesZ}'",
+ "java": {}
+}

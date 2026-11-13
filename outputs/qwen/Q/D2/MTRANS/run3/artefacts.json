@@ -1,0 +1,328 @@
+{
+ "actors": [
+  "MetaClass"
+ ],
+ "use_cases": [
+  {
+   "name": "Verb Object",
+   "actor": "MetaClass",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "MetaClass",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "verbObject",
+     "use_case": "Verb Object"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "MtransModel",
+   "kind": "class",
+   "attributes": [
+    "modules",
+    "metamodels",
+    "rules",
+    "inheritances",
+    "expressions",
+    "sections",
+    "instructions",
+    "variables"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15"
+   ]
+  },
+  {
+   "name": "Module",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R11",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "property",
+    "source",
+    "module",
+    "sections",
+    "inheritances"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R20"
+   ]
+  },
+  {
+   "name": "Inheritance",
+   "kind": "class",
+   "attributes": [
+    "rule"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R16",
+    "R17",
+    "R18"
+   ]
+  },
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    "instruction"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Instruction",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Variable",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "rule"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9",
+    "R22"
+   ]
+  },
+  {
+   "name": "Section",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R20"
+   ]
+  },
+  {
+   "name": "Metamodel",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "MtransModel",
+   "target": "Module",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3",
+    "R11",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "MtransModel",
+   "target": "Metamodel",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R2",
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "MtransModel",
+   "target": "Rule",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R20"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "MtransModel",
+   "target": "Inheritance",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R16",
+    "R17",
+    "R18"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "MtransModel",
+   "target": "Expression",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6",
+    "R19"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "MtransModel",
+   "target": "Instruction",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8",
+    "R21"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "MtransModel",
+   "target": "Section",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R20"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "MtransModel",
+   "target": "Variable",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9",
+    "R22"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Rule",
+   "target": "Module",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Rule",
+   "target": "MetaClass",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Rule",
+   "target": "Section",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Rule",
+   "target": "Inheritance",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Expression",
+   "target": "Instruction",
+   "multiplicity_target": "1",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Instruction",
+   "target": "Expression",
+   "multiplicity_target": "1",
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Variable",
+   "target": "Rule",
+   "multiplicity_target": "1",
+   "src": [
+    "R22"
+   ]
+  }
+ ],
+ "python": "from typing import List, Dict, Union\n\nclass MetaClass:\n    def verbObject(self):\n        raise NotImplementedError\n\nclass Module:\n    def __init__(self, name: str):\n        self.name: str = name\n\nclass Rule:\n    def __init__(self, name: str, property: str, source: MetaClass, module: Module, sections: List[Section], inheritances: List[Inheritance]):\n        self.name: str = name\n        self.property: str = property\n        self.source: MetaClass = source\n        self.module: Module = module\n        self.sections: List[Section] = sections\n        self.inheritances: List[Inheritance] = inheritances\n\nclass Inheritance:\n    def __init__(self, rule: Rule):\n        self.rule: Rule = rule\n\nclass Expression:\n    def __init__(self, instruction: 'Instruction'):\n        self.instruction: Instruction = instruction\n\nclass Instruction:\n    pass\n\nclass Variable:\n    def __init__(self, name: str, rule: Rule):\n        self.name: str = name\n        self.rule: Rule = rule\n\nclass Section:\n    pass\n\nclass Metamodel:\n    pass\n\nclass MtransModel:\n    def __init__(self, modules: List[Module], metamodels: List[Metamodel], rules: List[Rule], inheritances: List[Inheritance], expressions: List[Expression], sections: List[Section], instructions: List[Instruction], variables: List[Variable]):\n        self.modules: List[Module] = modules\n        self.metamodels: List[Metamodel] = metamodels\n        self.rules: List[Rule] = rules\n        self.inheritances: List[Inheritance] = inheritances\n        self.expressions: List[Expression] = expressions\n        self.sections: List[Section] = sections\n        self.instructions: List[Instruction] = instructions\n        self.variables: List[Variable] = variables",
+ "java": {}
+}

@@ -1,0 +1,2276 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D1/grocery",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R31"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R31.s1",
+      "text": "As an applicant, I want to be able to register an account, so that I can finalize my hiring process and start working at the organization."
+     }
+    ],
+    "name": "applicant"
+   },
+   {
+    "id": "A2",
+    "src": [
+     "R1",
+     "R6",
+     "R7",
+     "R12",
+     "R13",
+     "R15",
+     "R18",
+     "R26",
+     "R34",
+     "R36",
+     "R38",
+     "R40",
+     "R41",
+     "R42",
+     "R43",
+     "R44",
+     "R45",
+     "R46",
+     "R47",
+     "R48",
+     "R49"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As an employee, I want to receive my salary statement, so that I have a clear overview."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "As an employee, I want to receive a notification when my salary payment is handled, so that I stay up to date with my financial status."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "As an employee, I want to express my preferred working hours, so that I am most likely to work on hours that best suit me."
+     }
+    ],
+    "name": "employee"
+   },
+   {
+    "id": "A3",
+    "src": [
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R14",
+     "R16",
+     "R19",
+     "R20",
+     "R22",
+     "R27",
+     "R28",
+     "R29",
+     "R30",
+     "R32",
+     "R33",
+     "R35",
+     "R37",
+     "R39"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a manager, I want to send salary statements, so that my employees have a clear overview."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a manager, I want to enable the option for weekly and monthly payments for my employees, so that employee satisfaction rises."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "As a manager, I want to automate the payment system, so that all payments are handled correctly and on time."
+     }
+    ],
+    "name": "manager"
+   },
+   {
+    "id": "A4",
+    "src": [
+     "R17",
+     "R21",
+     "R23",
+     "R24",
+     "R25"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R17.s1",
+      "text": "As an office employee, I want a separate complaint system with tickets, so that I don't have to filter through my email for complaints anymore."
+     },
+     {
+      "sid": "R21.s1",
+      "text": "As an office employee, I want to be able to view all complaints, so that I can have an overview of the problems other employees face."
+     },
+     {
+      "sid": "R23.s1",
+      "text": "As an office employee, I want to be able to respond to unsolved complaints, so that I can help the employees with their problems."
+     }
+    ],
+    "name": "office employee"
+   }
+  ],
+  "use_cases": [
+   {
+    "id": "UC1",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "As a manager, I want to manually authorize the schedule before it goes live, so that I can ensure a correct schedule is being shared."
+     }
+    ],
+    "name": "Authorize Schedule",
+    "actor": "manager",
+    "goal_text": "manually authorize the schedule before it goes live"
+   },
+   {
+    "id": "UC2",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a manager, I want to automate the payment system, so that all payments are handled correctly and on time."
+     }
+    ],
+    "name": "Automate PaymentSystem",
+    "actor": "manager",
+    "goal_text": "automate the payment system"
+   },
+   {
+    "id": "UC3",
+    "src": [
+     "R24"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As an office employee, I want to be able to categorize complaints, so that there is an overview of the extent of problem areas."
+     }
+    ],
+    "name": "Categorize Complaint",
+    "actor": "office employee",
+    "goal_text": "categorize complaints"
+   },
+   {
+    "id": "UC4",
+    "src": [
+     "R47"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R47.s1",
+      "text": "As an employee, I want to be able to change my personal information, so that the information my employer has is always up to date."
+     }
+    ],
+    "name": "Change Information",
+    "actor": "employee",
+    "goal_text": "change my personal information"
+   },
+   {
+    "id": "UC5",
+    "src": [
+     "R43"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R43.s1",
+      "text": "As an employee, I want to be able to choose between email or application notifications, so that I can adjust my administration in the way that I prefer."
+     }
+    ],
+    "name": "Choose Email",
+    "actor": "employee",
+    "goal_text": "choose between email or application notifications"
+   },
+   {
+    "id": "UC6",
+    "src": [
+     "R44"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R44.s1",
+      "text": "As an employee, I want to be able to choose between weekly or monthly payments, so that I can adjust my payment routine to my lifestyle."
+     }
+    ],
+    "name": "Choose Payment",
+    "actor": "employee",
+    "goal_text": "choose between weekly or monthly payments"
+   },
+   {
+    "id": "UC7",
+    "src": [
+     "R35"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a manager, I want to be able to contact an employee easily, so I can reach them when needed."
+     }
+    ],
+    "name": "Contact Employee",
+    "actor": "manager",
+    "goal_text": "contact an employee easily"
+   },
+   {
+    "id": "UC8",
+    "src": [
+     "R34"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R34.s1",
+      "text": "As an employee, I want to be able to contact the management when needed, so that I can discuss important topics regarding my employment with them."
+     }
+    ],
+    "name": "Contact Management",
+    "actor": "employee",
+    "goal_text": "contact the management when needed"
+   },
+   {
+    "id": "UC9",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a manager, I want to enable the option for weekly and monthly payments for my employees, so that employee satisfaction rises."
+     }
+    ],
+    "name": "Enable Option",
+    "actor": "manager",
+    "goal_text": "enable the option for weekly and monthly payments for my employees"
+   },
+   {
+    "id": "UC10",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As an employee, I want to express my preferred working hours, so that I am most likely to work on hours that best suit me."
+     }
+    ],
+    "name": "Express Hour",
+    "actor": "employee",
+    "goal_text": "express my preferred working hours"
+   },
+   {
+    "id": "UC11",
+    "src": [
+     "R18",
+     "R19",
+     "R20"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R18.s1",
+      "text": "As an employee, I want to be able to file a complaint regarding my workplace, so that my problems can be solved."
+     },
+     {
+      "sid": "R19.s1",
+      "text": "As a manager, I want to be able to file a complaint regarding my workplace, so that my problems can be solved."
+     },
+     {
+      "sid": "R20.s1",
+      "text": "As a manager, I want my employees to be able to file complaints regarding their workplace, so that employee satisfaction rises."
+     }
+    ],
+    "name": "File Complaint",
+    "actor": "employee",
+    "goal_text": "file a complaint regarding my workplace"
+   },
+   {
+    "id": "UC12",
+    "src": [
+     "R37"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a manager, I want to be able to forward formal messages to employees in bulk, so that I can communicate with a big group of employees when needed."
+     }
+    ],
+    "name": "Forward Message",
+    "actor": "manager",
+    "goal_text": "forward formal messages to employees in bulk"
+   },
+   {
+    "id": "UC13",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a manager, I want to have the ability to manually edit the automatically-generated schedule, so that I can keep the operations running on busy days."
+     }
+    ],
+    "name": "Have Ability",
+    "actor": "manager",
+    "goal_text": "have the ability to manually edit the automatically-generated schedule"
+   },
+   {
+    "id": "UC14",
+    "src": [
+     "R41"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R41.s1",
+      "text": "As an employee, I want to have a user-friendly application, so that I can access all functionalities easily."
+     }
+    ],
+    "name": "Have Application",
+    "actor": "employee",
+    "goal_text": "have a user-friendly application"
+   },
+   {
+    "id": "UC15",
+    "src": [
+     "R29",
+     "R30"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R29.s1",
+      "text": "As a manager, I want to be able to have an overview of all our active employees, so that I can easily evaluate our employees."
+     },
+     {
+      "sid": "R30.s1",
+      "text": "As a manager, I want to be able to have an overview of all our absent employees, so that I can manually verify these absences."
+     }
+    ],
+    "name": "Have Overview",
+    "actor": "manager",
+    "goal_text": "have an overview of all our active employees"
+   },
+   {
+    "id": "UC16",
+    "src": [
+     "R39"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R39.s1",
+      "text": "As a manager, I want to have one system with one login, so that I don't lose track of my account information."
+     }
+    ],
+    "name": "Have System",
+    "actor": "manager",
+    "goal_text": "have one system with one login"
+   },
+   {
+    "id": "UC17",
+    "src": [
+     "R27"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a manager, I want to be able to quickly and effectively hire new employees, so that I can easily scale up our operations."
+     }
+    ],
+    "name": "Hire Employee",
+    "actor": "manager",
+    "goal_text": "quickly and effectively hire new employees"
+   },
+   {
+    "id": "UC18",
+    "src": [
+     "R42"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R42.s1",
+      "text": "As an employee, I want to be able to navigate through the application easily, so that I can quickly see my schedule while riding."
+     }
+    ],
+    "name": "Navigate Application",
+    "actor": "employee",
+    "goal_text": "navigate through the application easily"
+   },
+   {
+    "id": "UC19",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a manager, I want to be notified as soon as manual adjustments need to be made, so that I can swiftly handle these adjustments and keep a clear overview."
+     }
+    ],
+    "name": "Notify Adjustment",
+    "actor": "manager",
+    "goal_text": "be notified as soon as manual adjustments need to be made"
+   },
+   {
+    "id": "UC20",
+    "src": [
+     "R28"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a manager, I want to be notified when the hiring process of an employee is finished, so that I am up to date regarding the status of our new employees."
+     }
+    ],
+    "name": "Notify HiringProcess",
+    "actor": "manager",
+    "goal_text": "be notified when the hiring process of an employee is finished"
+   },
+   {
+    "id": "UC21",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a manager, I want to outsource part of the payment process, so that I do not have to worry about local payment regulations for each country."
+     }
+    ],
+    "name": "Outsource Part",
+    "actor": "manager",
+    "goal_text": "outsource part of the payment process"
+   },
+   {
+    "id": "UC22",
+    "src": [
+     "R25"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R25.s1",
+      "text": "As an office employee, I want to be able to prioritize complaints that require high management intervention to solve, so that important complaints will be solved swiftly."
+     }
+    ],
+    "name": "Prioritize Complaint",
+    "actor": "office employee",
+    "goal_text": "prioritize complaints that require high management intervention to solve"
+   },
+   {
+    "id": "UC23",
+    "src": [
+     "R6",
+     "R12",
+     "R26"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As an employee, I want to receive a notification when my salary payment is handled, so that I stay up to date with my financial status."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As an employee, I want to receive notification when the new schedule is available, so that I can keep the scheduled hours free from other activities."
+     },
+     {
+      "sid": "R26.s1",
+      "text": "As an employee, I want to receive a notification when my filed complaint is handled, so that I can stay up to date with the status of my complaint."
+     }
+    ],
+    "name": "Receive Notification",
+    "actor": "employee",
+    "goal_text": "receive a notification when my salary payment is handled"
+   },
+   {
+    "id": "UC24",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As an employee, I want to receive my salary statement, so that I have a clear overview."
+     }
+    ],
+    "name": "Receive SalaryStatement",
+    "actor": "employee",
+    "goal_text": "receive my salary statement"
+   },
+   {
+    "id": "UC25",
+    "src": [
+     "R31"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R31.s1",
+      "text": "As an applicant, I want to be able to register an account, so that I can finalize my hiring process and start working at the organization."
+     }
+    ],
+    "name": "Register Account",
+    "actor": "applicant",
+    "goal_text": "register an account"
+   },
+   {
+    "id": "UC26",
+    "src": [
+     "R40"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R40.s1",
+      "text": "As an employee, I want to be able to reset my password, so that I can always access my account."
+     }
+    ],
+    "name": "Reset Password",
+    "actor": "employee",
+    "goal_text": "reset my password"
+   },
+   {
+    "id": "UC27",
+    "src": [
+     "R23"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As an office employee, I want to be able to respond to unsolved complaints, so that I can help the employees with their problems."
+     }
+    ],
+    "name": "Respond Complaint",
+    "actor": "office employee",
+    "goal_text": "respond to unsolved complaints"
+   },
+   {
+    "id": "UC28",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a manager, I want to semi-automate the scheduling process, so that the scheduling process is more efficient."
+     }
+    ],
+    "name": "Semi SchedulingProcess",
+    "actor": "manager",
+    "goal_text": "semi-automate the scheduling process"
+   },
+   {
+    "id": "UC29",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a manager, I want to send salary statements, so that my employees have a clear overview."
+     }
+    ],
+    "name": "Send SalaryStatement",
+    "actor": "manager",
+    "goal_text": "send salary statements"
+   },
+   {
+    "id": "UC30",
+    "src": [
+     "R46"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R46.s1",
+      "text": "As an employee, I want the information that is shared with the payment handler to be encrypted, so that my privacy is ensured."
+     }
+    ],
+    "name": "Share PaymentHandler",
+    "actor": "employee",
+    "goal_text": "the information that is shared with the payment handler to be encrypted"
+   },
+   {
+    "id": "UC31",
+    "src": [
+     "R36"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R36.s1",
+      "text": "As an employee, I want to be able to use the messaging system to message other employees when needed, so that I can keep in touch with my colleagues."
+     }
+    ],
+    "name": "Use System",
+    "actor": "employee",
+    "goal_text": "use the messaging system to message other employees when needed"
+   },
+   {
+    "id": "UC32",
+    "src": [
+     "R15",
+     "R16"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "As an employee, I want the system to automatically verify my work hours, so that my salary statements are calculated accurately."
+     },
+     {
+      "sid": "R16.s1",
+      "text": "As a manager, I want the system to automatically verify employees' work hours, so that employees' salary statements are calculated accurately."
+     }
+    ],
+    "name": "Verify WorkHour",
+    "actor": "employee",
+    "goal_text": "the system to automatically verify my work hours"
+   },
+   {
+    "id": "UC33",
+    "src": [
+     "R33"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a manager, I want to be able to view my employee's certificates at any given time, so that I have a clear overview of the qualifications of my employees."
+     }
+    ],
+    "name": "View Certificate",
+    "actor": "manager",
+    "goal_text": "view my employee's certificates at any given time"
+   },
+   {
+    "id": "UC34",
+    "src": [
+     "R21",
+     "R22"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R21.s1",
+      "text": "As an office employee, I want to be able to view all complaints, so that I can have an overview of the problems other employees face."
+     },
+     {
+      "sid": "R22.s1",
+      "text": "As a manager, I want to be able to view all complaints, so that I can have an overview of the problems my employees face."
+     }
+    ],
+    "name": "View Complaint",
+    "actor": "office employee",
+    "goal_text": "view all complaints"
+   },
+   {
+    "id": "UC35",
+    "src": [
+     "R32",
+     "R48"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R32.s1",
+      "text": "As a manager, I want to be able to view my employee's contracts at any given time, so that I have a clear overview of when extensions are due."
+     },
+     {
+      "sid": "R48.s1",
+      "text": "As an employee, I want to be able to view my contract, so that I have a clear overview of important work-related information."
+     }
+    ],
+    "name": "View Contract",
+    "actor": "manager",
+    "goal_text": "view my employee's contracts at any given time"
+   },
+   {
+    "id": "UC36",
+    "src": [
+     "R38"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R38.s1",
+      "text": "As an employee, I want to view my personal inbox easily, so that I have a clear overview of important work-related information."
+     }
+    ],
+    "name": "View Inbox",
+    "actor": "employee",
+    "goal_text": "view my personal inbox easily"
+   },
+   {
+    "id": "UC37",
+    "src": [
+     "R13",
+     "R14"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As an employee, I want to view the schedule at any given time, so that I can effectively keep track of my personal time."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "As a manager, I want to view the schedule at any given time, so that I can effectively manage the employee presence on the work floor."
+     }
+    ],
+    "name": "View Schedule",
+    "actor": "employee",
+    "goal_text": "view the schedule at any given time"
+   },
+   {
+    "id": "UC38",
+    "src": [
+     "R45"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R45.s1",
+      "text": "As an employee, I want to be able to view my financial annual statements, so that I can easily find my financial information for filing taxes, etc."
+     }
+    ],
+    "name": "View Statement",
+    "actor": "employee",
+    "goal_text": "view my financial annual statements"
+   }
+  ],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R31",
+     "R40"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R31.s1",
+      "text": "As an applicant, I want to be able to register an account, so that I can finalize my hiring process and start working at the organization."
+     },
+     {
+      "sid": "R40.s1",
+      "text": "As an employee, I want to be able to reset my password, so that I can always access my account."
+     }
+    ],
+    "name": "Account",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a manager, I want to be notified as soon as manual adjustments need to be made, so that I can swiftly handle these adjustments and keep a clear overview."
+     }
+    ],
+    "name": "Adjustment",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R31"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R31.s1",
+      "text": "As an applicant, I want to be able to register an account, so that I can finalize my hiring process and start working at the organization."
+     }
+    ],
+    "name": "Applicant",
+    "freq": 1
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R17",
+     "R18",
+     "R19",
+     "R20",
+     "R21",
+     "R22",
+     "R23",
+     "R24",
+     "R25",
+     "R26"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R17.s1",
+      "text": "As an office employee, I want a separate complaint system with tickets, so that I don't have to filter through my email for complaints anymore."
+     },
+     {
+      "sid": "R18.s1",
+      "text": "As an employee, I want to be able to file a complaint regarding my workplace, so that my problems can be solved."
+     },
+     {
+      "sid": "R19.s1",
+      "text": "As a manager, I want to be able to file a complaint regarding my workplace, so that my problems can be solved."
+     }
+    ],
+    "name": "Complaint",
+    "freq": 12
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R32",
+     "R48"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R32.s1",
+      "text": "As a manager, I want to be able to view my employee's contracts at any given time, so that I have a clear overview of when extensions are due."
+     },
+     {
+      "sid": "R48.s1",
+      "text": "As an employee, I want to be able to view my contract, so that I have a clear overview of important work-related information."
+     }
+    ],
+    "name": "Contract",
+    "freq": 2
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R6",
+     "R26",
+     "R28",
+     "R47"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As an employee, I want to receive a notification when my salary payment is handled, so that I stay up to date with my financial status."
+     },
+     {
+      "sid": "R26.s1",
+      "text": "As an employee, I want to receive a notification when my filed complaint is handled, so that I can stay up to date with the status of my complaint."
+     },
+     {
+      "sid": "R28.s1",
+      "text": "As a manager, I want to be notified when the hiring process of an employee is finished, so that I am up to date regarding the status of our new employees."
+     }
+    ],
+    "name": "Date",
+    "freq": 4
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R6",
+     "R7",
+     "R12",
+     "R13",
+     "R15",
+     "R18",
+     "R20",
+     "R21",
+     "R22",
+     "R23",
+     "R26",
+     "R27",
+     "R28",
+     "R29",
+     "R30",
+     "R33",
+     "R34",
+     "R35",
+     "R36",
+     "R37",
+     "R38",
+     "R40",
+     "R41",
+     "R42",
+     "R43",
+     "R44",
+     "R45",
+     "R46",
+     "R47",
+     "R48",
+     "R49"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As an employee, I want to receive my salary statement, so that I have a clear overview."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "As a manager, I want to send salary statements, so that my employees have a clear overview."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a manager, I want to enable the option for weekly and monthly payments for my employees, so that employee satisfaction rises."
+     }
+    ],
+    "name": "Employee",
+    "freq": 38
+   },
+   {
+    "id": "C8",
+    "src": [
+     "R3",
+     "R20"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a manager, I want to enable the option for weekly and monthly payments for my employees, so that employee satisfaction rises."
+     },
+     {
+      "sid": "R20.s1",
+      "text": "As a manager, I want my employees to be able to file complaints regarding their workplace, so that employee satisfaction rises."
+     }
+    ],
+    "name": "EmployeeSatisfaction",
+    "freq": 2
+   },
+   {
+    "id": "C9",
+    "src": [
+     "R28",
+     "R31"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a manager, I want to be notified when the hiring process of an employee is finished, so that I am up to date regarding the status of our new employees."
+     },
+     {
+      "sid": "R31.s1",
+      "text": "As an applicant, I want to be able to register an account, so that I can finalize my hiring process and start working at the organization."
+     }
+    ],
+    "name": "HiringProcess",
+    "freq": 2
+   },
+   {
+    "id": "C10",
+    "src": [
+     "R7",
+     "R12"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As an employee, I want to express my preferred working hours, so that I am most likely to work on hours that best suit me."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As an employee, I want to receive notification when the new schedule is available, so that I can keep the scheduled hours free from other activities."
+     }
+    ],
+    "name": "Hour",
+    "freq": 3
+   },
+   {
+    "id": "C11",
+    "src": [
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R14",
+     "R16",
+     "R19",
+     "R20",
+     "R22",
+     "R27",
+     "R28",
+     "R29",
+     "R30",
+     "R32",
+     "R33",
+     "R35",
+     "R37",
+     "R39"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a manager, I want to send salary statements, so that my employees have a clear overview."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a manager, I want to enable the option for weekly and monthly payments for my employees, so that employee satisfaction rises."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "As a manager, I want to automate the payment system, so that all payments are handled correctly and on time."
+     }
+    ],
+    "name": "Manager",
+    "freq": 22
+   },
+   {
+    "id": "C12",
+    "src": [
+     "R6",
+     "R12",
+     "R26",
+     "R43"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As an employee, I want to receive a notification when my salary payment is handled, so that I stay up to date with my financial status."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As an employee, I want to receive notification when the new schedule is available, so that I can keep the scheduled hours free from other activities."
+     },
+     {
+      "sid": "R26.s1",
+      "text": "As an employee, I want to receive a notification when my filed complaint is handled, so that I can stay up to date with the status of my complaint."
+     }
+    ],
+    "name": "Notification",
+    "freq": 4
+   },
+   {
+    "id": "C13",
+    "src": [
+     "R17",
+     "R21",
+     "R23",
+     "R24",
+     "R25"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R17.s1",
+      "text": "As an office employee, I want a separate complaint system with tickets, so that I don't have to filter through my email for complaints anymore."
+     },
+     {
+      "sid": "R21.s1",
+      "text": "As an office employee, I want to be able to view all complaints, so that I can have an overview of the problems other employees face."
+     },
+     {
+      "sid": "R23.s1",
+      "text": "As an office employee, I want to be able to respond to unsolved complaints, so that I can help the employees with their problems."
+     }
+    ],
+    "name": "OfficeEmployee",
+    "freq": 5
+   },
+   {
+    "id": "C14",
+    "src": [
+     "R9",
+     "R27"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a manager, I want to have the ability to manually edit the automatically-generated schedule, so that I can keep the operations running on busy days."
+     },
+     {
+      "sid": "R27.s1",
+      "text": "As a manager, I want to be able to quickly and effectively hire new employees, so that I can easily scale up our operations."
+     }
+    ],
+    "name": "Operation",
+    "freq": 2
+   },
+   {
+    "id": "C15",
+    "src": [
+     "R3",
+     "R4",
+     "R44"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a manager, I want to enable the option for weekly and monthly payments for my employees, so that employee satisfaction rises."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "As a manager, I want to automate the payment system, so that all payments are handled correctly and on time."
+     },
+     {
+      "sid": "R44.s1",
+      "text": "As an employee, I want to be able to choose between weekly or monthly payments, so that I can adjust my payment routine to my lifestyle."
+     }
+    ],
+    "name": "Payment",
+    "freq": 3
+   },
+   {
+    "id": "C16",
+    "src": [
+     "R18",
+     "R19",
+     "R21",
+     "R22",
+     "R23"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R18.s1",
+      "text": "As an employee, I want to be able to file a complaint regarding my workplace, so that my problems can be solved."
+     },
+     {
+      "sid": "R19.s1",
+      "text": "As a manager, I want to be able to file a complaint regarding my workplace, so that my problems can be solved."
+     },
+     {
+      "sid": "R21.s1",
+      "text": "As an office employee, I want to be able to view all complaints, so that I can have an overview of the problems other employees face."
+     }
+    ],
+    "name": "Problem",
+    "freq": 5
+   },
+   {
+    "id": "C17",
+    "src": [
+     "R1",
+     "R2",
+     "R15",
+     "R16"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As an employee, I want to receive my salary statement, so that I have a clear overview."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "As a manager, I want to send salary statements, so that my employees have a clear overview."
+     },
+     {
+      "sid": "R15.s1",
+      "text": "As an employee, I want the system to automatically verify my work hours, so that my salary statements are calculated accurately."
+     }
+    ],
+    "name": "SalaryStatement",
+    "freq": 4
+   },
+   {
+    "id": "C18",
+    "src": [
+     "R9",
+     "R10",
+     "R12",
+     "R13",
+     "R14",
+     "R42"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a manager, I want to have the ability to manually edit the automatically-generated schedule, so that I can keep the operations running on busy days."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "As a manager, I want to manually authorize the schedule before it goes live, so that I can ensure a correct schedule is being shared."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As an employee, I want to receive notification when the new schedule is available, so that I can keep the scheduled hours free from other activities."
+     }
+    ],
+    "name": "Schedule",
+    "freq": 7
+   },
+   {
+    "id": "C19",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a manager, I want to semi-automate the scheduling process, so that the scheduling process is more efficient."
+     }
+    ],
+    "name": "SchedulingProcess",
+    "freq": 2
+   },
+   {
+    "id": "C20",
+    "src": [
+     "R13",
+     "R39"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As an employee, I want to view the schedule at any given time, so that I can effectively keep track of my personal time."
+     },
+     {
+      "sid": "R39.s1",
+      "text": "As a manager, I want to have one system with one login, so that I don't lose track of my account information."
+     }
+    ],
+    "name": "Track",
+    "freq": 2
+   },
+   {
+    "id": "C21",
+    "src": [
+     "R15",
+     "R16"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "As an employee, I want the system to automatically verify my work hours, so that my salary statements are calculated accurately."
+     },
+     {
+      "sid": "R16.s1",
+      "text": "As a manager, I want the system to automatically verify employees' work hours, so that employees' salary statements are calculated accurately."
+     }
+    ],
+    "name": "WorkHour",
+    "freq": 2
+   },
+   {
+    "id": "C22",
+    "src": [
+     "R18",
+     "R19",
+     "R20"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R18.s1",
+      "text": "As an employee, I want to be able to file a complaint regarding my workplace, so that my problems can be solved."
+     },
+     {
+      "sid": "R19.s1",
+      "text": "As a manager, I want to be able to file a complaint regarding my workplace, so that my problems can be solved."
+     },
+     {
+      "sid": "R20.s1",
+      "text": "As a manager, I want my employees to be able to file complaints regarding their workplace, so that employee satisfaction rises."
+     }
+    ],
+    "name": "Workplace",
+    "freq": 3
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R26"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R26.s1",
+      "text": "As an employee, I want to receive a notification when my filed complaint is handled, so that I can stay up to date with the status of my complaint."
+     }
+    ],
+    "owner": "Complaint",
+    "name": "status",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R33"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a manager, I want to be able to view my employee's certificates at any given time, so that I have a clear overview of the qualifications of my employees."
+     }
+    ],
+    "owner": "Employee",
+    "name": "certificate",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R37"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a manager, I want to be able to forward formal messages to employees in bulk, so that I can communicate with a big group of employees when needed."
+     }
+    ],
+    "owner": "Employee",
+    "name": "group",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R33"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a manager, I want to be able to view my employee's certificates at any given time, so that I have a clear overview of the qualifications of my employees."
+     }
+    ],
+    "owner": "Employee",
+    "name": "qualification",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R28"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a manager, I want to be notified when the hiring process of an employee is finished, so that I am up to date regarding the status of our new employees."
+     }
+    ],
+    "owner": "Employee",
+    "name": "status",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R31"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R31.s1",
+      "text": "As an applicant, I want to be able to register an account, so that I can finalize my hiring process and start working at the organization."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Applicant",
+    "target": "Account",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R18"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R18.s1",
+      "text": "As an employee, I want to be able to file a complaint regarding my workplace, so that my problems can be solved."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Complaint",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R48"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R48.s1",
+      "text": "As an employee, I want to be able to view my contract, so that I have a clear overview of important work-related information."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Contract",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R43"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R43.s1",
+      "text": "As an employee, I want to be able to choose between email or application notifications, so that I can adjust my administration in the way that I prefer."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Email",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As an employee, I want to express my preferred working hours, so that I am most likely to work on hours that best suit me."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Hour",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R38"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R38.s1",
+      "text": "As an employee, I want to view my personal inbox easily, so that I have a clear overview of important work-related information."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Inbox",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL7",
+    "src": [
+     "R34"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R34.s1",
+      "text": "As an employee, I want to be able to contact the management when needed, so that I can discuss important topics regarding my employment with them."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Management",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL8",
+    "src": [
+     "R6",
+     "R12",
+     "R26"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As an employee, I want to receive a notification when my salary payment is handled, so that I stay up to date with my financial status."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As an employee, I want to receive notification when the new schedule is available, so that I can keep the scheduled hours free from other activities."
+     },
+     {
+      "sid": "R26.s1",
+      "text": "As an employee, I want to receive a notification when my filed complaint is handled, so that I can stay up to date with the status of my complaint."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Notification",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL9",
+    "src": [
+     "R40"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R40.s1",
+      "text": "As an employee, I want to be able to reset my password, so that I can always access my account."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Password",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL10",
+    "src": [
+     "R46"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R46.s1",
+      "text": "As an employee, I want the information that is shared with the payment handler to be encrypted, so that my privacy is ensured."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "PaymentHandler",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL11",
+    "src": [
+     "R44"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R44.s1",
+      "text": "As an employee, I want to be able to choose between weekly or monthly payments, so that I can adjust my payment routine to my lifestyle."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Payment",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL12",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As an employee, I want to receive my salary statement, so that I have a clear overview."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "SalaryStatement",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL13",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As an employee, I want to view the schedule at any given time, so that I can effectively keep track of my personal time."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Schedule",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL14",
+    "src": [
+     "R45"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R45.s1",
+      "text": "As an employee, I want to be able to view my financial annual statements, so that I can easily find my financial information for filing taxes, etc."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Statement",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL15",
+    "src": [
+     "R15"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "As an employee, I want the system to automatically verify my work hours, so that my salary statements are calculated accurately."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "WorkHour",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL16",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a manager, I want to have the ability to manually edit the automatically-generated schedule, so that I can keep the operations running on busy days."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "Ability",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL17",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a manager, I want to be notified as soon as manual adjustments need to be made, so that I can swiftly handle these adjustments and keep a clear overview."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "Adjustment",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL18",
+    "src": [
+     "R33"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a manager, I want to be able to view my employee's certificates at any given time, so that I have a clear overview of the qualifications of my employees."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "Certificate",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL19",
+    "src": [
+     "R19",
+     "R20",
+     "R22"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R19.s1",
+      "text": "As a manager, I want to be able to file a complaint regarding my workplace, so that my problems can be solved."
+     },
+     {
+      "sid": "R20.s1",
+      "text": "As a manager, I want my employees to be able to file complaints regarding their workplace, so that employee satisfaction rises."
+     },
+     {
+      "sid": "R22.s1",
+      "text": "As a manager, I want to be able to view all complaints, so that I can have an overview of the problems my employees face."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "Complaint",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL20",
+    "src": [
+     "R32"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R32.s1",
+      "text": "As a manager, I want to be able to view my employee's contracts at any given time, so that I have a clear overview of when extensions are due."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "Contract",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL21",
+    "src": [
+     "R27",
+     "R35"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a manager, I want to be able to quickly and effectively hire new employees, so that I can easily scale up our operations."
+     },
+     {
+      "sid": "R35.s1",
+      "text": "As a manager, I want to be able to contact an employee easily, so I can reach them when needed."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "Employee",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL22",
+    "src": [
+     "R28"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a manager, I want to be notified when the hiring process of an employee is finished, so that I am up to date regarding the status of our new employees."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "HiringProcess",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL23",
+    "src": [
+     "R37"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a manager, I want to be able to forward formal messages to employees in bulk, so that I can communicate with a big group of employees when needed."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "Message",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL24",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a manager, I want to automate the payment system, so that all payments are handled correctly and on time."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "PaymentSystem",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL25",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a manager, I want to send salary statements, so that my employees have a clear overview."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "SalaryStatement",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL26",
+    "src": [
+     "R10",
+     "R14"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "As a manager, I want to manually authorize the schedule before it goes live, so that I can ensure a correct schedule is being shared."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "As a manager, I want to view the schedule at any given time, so that I can effectively manage the employee presence on the work floor."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "Schedule",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL27",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a manager, I want to semi-automate the scheduling process, so that the scheduling process is more efficient."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "SchedulingProcess",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL28",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As a manager, I want the system to automatically verify employees' work hours, so that employees' salary statements are calculated accurately."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Manager",
+    "target": "WorkHour",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL29",
+    "src": [
+     "R21",
+     "R23",
+     "R24",
+     "R25"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R21.s1",
+      "text": "As an office employee, I want to be able to view all complaints, so that I can have an overview of the problems other employees face."
+     },
+     {
+      "sid": "R23.s1",
+      "text": "As an office employee, I want to be able to respond to unsolved complaints, so that I can help the employees with their problems."
+     },
+     {
+      "sid": "R24.s1",
+      "text": "As an office employee, I want to be able to categorize complaints, so that there is an overview of the extent of problem areas."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "OfficeEmployee",
+    "target": "Complaint",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL30",
+    "src": [
+     "R32"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R32.s1",
+      "text": "As a manager, I want to be able to view my employee's contracts at any given time, so that I have a clear overview of when extensions are due."
+     }
+    ],
+    "kind": "has",
+    "source": "Employee",
+    "target": "Contract",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL31",
+    "src": [
+     "R28"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a manager, I want to be notified when the hiring process of an employee is finished, so that I am up to date regarding the status of our new employees."
+     }
+    ],
+    "kind": "has",
+    "source": "Employee",
+    "target": "HiringProcess",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL32",
+    "src": [
+     "R23"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As an office employee, I want to be able to respond to unsolved complaints, so that I can help the employees with their problems."
+     }
+    ],
+    "kind": "has",
+    "source": "Employee",
+    "target": "Problem",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL33",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As a manager, I want the system to automatically verify employees' work hours, so that employees' salary statements are calculated accurately."
+     }
+    ],
+    "kind": "has",
+    "source": "Employee",
+    "target": "SalaryStatement",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL34",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As a manager, I want the system to automatically verify employees' work hours, so that employees' salary statements are calculated accurately."
+     }
+    ],
+    "kind": "has",
+    "source": "Employee",
+    "target": "WorkHour",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL35",
+    "src": [
+     "R20"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R20.s1",
+      "text": "As a manager, I want my employees to be able to file complaints regarding their workplace, so that employee satisfaction rises."
+     }
+    ],
+    "kind": "has",
+    "source": "Employee",
+    "target": "Workplace",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

@@ -1,0 +1,88 @@
+{
+ "actors": [
+  "parent"
+ ],
+ "use_cases": [
+  {
+   "name": "hasParent",
+   "actor": "parent",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "hasChildren",
+   "actor": "Element",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "startLine",
+    "endLine"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "XmlFile",
+   "kind": "class",
+   "attributes": [
+    "rootElement",
+    "textElements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "XmlFile",
+   "target": "Element",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "XmlFile",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Node:\n    def __init__(self, name: str, start_line: int, end_line: int, parent: Optional['Element'] = None):\n        self.name = name\n        self.start_line = start_line\n        self.end_line = end_line\n        self.parent = parent\n\nclass Element(Node):\n    def __init__(self, name: str, start_line: int, end_line: int, parent: Optional['Element'] = None):\n        super().__init__(name, start_line, end_line, parent)\n        self.children: List[Node] = []\n\nclass XmlFile:\n    def __init__(self):\n        self.root_element: Optional[Element] = None\n        self.text_elements: List[str] = []\n\n    def add_text_element(self, text: str) -> None:\n        raise NotImplementedError\n\n    def add_element(self, element: Element) -> None:\n        raise NotImplementedError",
+ "java": {}
+}

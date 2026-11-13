@@ -1,0 +1,108 @@
+{
+ "actors": [
+  "owner"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "RelationalDBContent",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Database",
+   "kind": "class",
+   "attributes": [
+    "sgbdName"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Tuple",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "TupleElement",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "RelationalDBContent",
+   "target": "Table",
+   "multiplicity_target": "1",
+   "src": [
+    "R3",
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "RelationalDBContent",
+   "target": "Tuple",
+   "multiplicity_target": "1",
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Table",
+   "target": "Database",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tuple",
+   "target": "TupleElement",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass RelationalDBContent:\n    def __init__(self, name: str):\n        self.name = name\n    \n    def __str__(self):\n        return self.name\n    \n    def add_table(self, table: 'Table') -> None:\n        raise NotImplementedError\n    \n    def add_tuple(self, tuple: 'Tuple') -> None:\n        raise NotImplementedError\n    \n    src = ['R1', 'R4', 'R6', 'R8']\n\nclass Database:\n    def __init__(self, sgbdName: str):\n        self.sgbdName = sgbdName\n    \n    def __str__(self):\n        return self.sgbdName\n    \n    src = ['R2']\n\nclass Table:\n    def __init__(self, database: Database):\n        self.database = database\n    \n    def __str__(self):\n        return f'Table in {self.database}'\n    \n    src = ['R7']\n\nclass Tuple:\n    def __init__(self, table: Table):\n        self.table = table\n    \n    def __str__(self):\n        return f'Tuple in {self.table}'\n    \n    src = ['R6', 'R8']\n\nclass TupleElement:\n    def __init__(self, value: str):\n        self.value = value\n    \n    def __str__(self):\n        return self.value\n    \n    src = ['R5']",
+ "java": {}
+}

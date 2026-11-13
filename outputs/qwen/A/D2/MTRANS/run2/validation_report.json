@@ -1,0 +1,60 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class MetaClass is missing in the model.",
+   "fix": "Add a class named MetaClass to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Expression is missing an attribute named instruction of type Instruction.",
+   "fix": "Add an attribute named instruction of type Instruction to the class Expression."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Instruction is missing in the model.",
+   "fix": "Add a class named Instruction to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Expression and Instruction is missing.",
+   "fix": "Add a relationship between Expression and Instruction where Expression has a cardinality 1..1 and Instruction has a cardinality 1..1."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Instruction and Expression is missing.",
+   "fix": "Add a relationship between Instruction and Expression where Instruction has a cardinality 1..1 and Expression has a cardinality 1..1."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Variable and Rule is missing.",
+   "fix": "Add a relationship between Variable and Rule where Variable has a cardinality 1..1..* and Rule has a cardinality 1..1..*."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case R10 is not supported by any element in the model.",
+   "fix": "Add a use case or a relationship that supports R10 in the model."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case R6 is not supported by any element in the model.",
+   "fix": "Add a use case or a relationship that supports R6 in the model."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case R8 is not supported by any element in the model.",
+   "fix": "Add a use case or a relationship that supports R8 in the model."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case R9 is not supported by any element in the model.",
+   "fix": "Add a use case or a relationship that supports R9 in the model."
+  }
+ ]
+}

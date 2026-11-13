@@ -1,0 +1,2064 @@
+{
+ "case": "D1/ticket",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "User",
+   "src": [
+    "R1",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R15",
+    "R16",
+    "R17",
+    "R25",
+    "R26",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R38",
+    "R39",
+    "R40",
+    "R45",
+    "R46",
+    "R47",
+    "R53"
+   ]
+  },
+  {
+   "id": "A2",
+   "name": "Visitor",
+   "src": [
+    "R11",
+    "R12",
+    "R14",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "id": "A3",
+   "name": "Reseller",
+   "src": [
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R45"
+   ]
+  },
+  {
+   "id": "A4",
+   "name": "Artist",
+   "src": [
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "id": "A5",
+   "name": "Company",
+   "src": [
+    "R27"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Save Information",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC2",
+   "name": "Edit Information",
+   "actor": "A1",
+   "src": [
+    "R7"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC3",
+   "name": "See Preference",
+   "actor": "A1",
+   "src": [
+    "R5"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC4",
+   "name": "See Content",
+   "actor": "A1",
+   "src": [
+    "R4"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC5",
+   "name": "See History",
+   "actor": "A1",
+   "src": [
+    "R8"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC6",
+   "name": "See Overview",
+   "actor": "A1",
+   "src": [
+    "R9"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC7",
+   "name": "See Event",
+   "actor": "A2",
+   "src": [
+    "R11",
+    "R19",
+    "R46",
+    "R47"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC8",
+   "name": "Purchase Ticket",
+   "actor": "A2",
+   "src": [
+    "R12",
+    "R14",
+    "R18",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC9",
+   "name": "Read Event",
+   "actor": "A2",
+   "src": [
+    "R11"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC10",
+   "name": "Land Event Page",
+   "actor": "A2",
+   "src": [
+    "R29"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC11",
+   "name": "Click Event",
+   "actor": "A2",
+   "src": [
+    "R48"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC12",
+   "name": "Filter List",
+   "actor": "A2",
+   "src": [
+    "R34"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC13",
+   "name": "Filter Search",
+   "actor": "A2",
+   "src": [
+    "R32"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC14",
+   "name": "Filter Search Result",
+   "actor": "A2",
+   "src": [
+    "R33"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC15",
+   "name": "Sort Search Result",
+   "actor": "A2",
+   "src": [
+    "R31"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC16",
+   "name": "Have Buying Process",
+   "actor": "A5",
+   "src": [
+    "R27"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC17",
+   "name": "Have Description",
+   "actor": "A4",
+   "src": [
+    "R52"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC18",
+   "name": "Have Link",
+   "actor": "A4",
+   "src": [
+    "R50",
+    "R51",
+    "R54"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC19",
+   "name": "Have Price",
+   "actor": "A5",
+   "src": [
+    "R35"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC20",
+   "name": "Have Reseller",
+   "actor": "A5",
+   "src": [
+    "R36"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC21",
+   "name": "Validate Ticket",
+   "actor": "A5",
+   "src": [
+    "R37"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC22",
+   "name": "Deduct Service Fee",
+   "actor": "A5",
+   "src": [
+    "R38"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC23",
+   "name": "Avoid Behavior",
+   "actor": "A5",
+   "src": [
+    "R39"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC24",
+   "name": "Protect User",
+   "actor": "A5",
+   "src": [
+    "R40"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC25",
+   "name": "Resell Ticket",
+   "actor": "A3",
+   "src": [
+    "R41"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC26",
+   "name": "Save Bank Account",
+   "actor": "A3",
+   "src": [
+    "R45"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC27",
+   "name": "Add Ticket",
+   "actor": "A2",
+   "src": [
+    "R24"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC28",
+   "name": "See Order Summary",
+   "actor": "A2",
+   "src": [
+    "R25"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC29",
+   "name": "See Seat",
+   "actor": "A2",
+   "src": [
+    "R21",
+    "R22"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC30",
+   "name": "See Type",
+   "actor": "A2",
+   "src": [
+    "R23"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC31",
+   "name": "Change Password",
+   "actor": "A1",
+   "src": [
+    "R6"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC32",
+   "name": "Favorite Event",
+   "actor": "A1",
+   "src": [
+    "R53"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "dateOfBirth",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "email",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "address",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "preferences",
+     "type": "String",
+     "src": [
+      "R3",
+      "R5"
+     ]
+    },
+    {
+     "name": "bankAccount",
+     "type": "String",
+     "src": [
+      "R45"
+     ]
+    },
+    {
+     "name": "favoriteEvents",
+     "type": "String",
+     "src": [
+      "R10",
+      "R53"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "saveInformation",
+     "realizes": "UC1",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "id": "M2",
+     "name": "editInformation",
+     "realizes": "UC2",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "id": "M3",
+     "name": "seePreference",
+     "realizes": "UC3",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "id": "M4",
+     "name": "seeHistory",
+     "realizes": "UC5",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "id": "M5",
+     "name": "changePassword",
+     "realizes": "UC31",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "id": "M6",
+     "name": "favoriteEvent",
+     "realizes": "UC32",
+     "src": [
+      "R53"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R10",
+    "R49",
+    "R53"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Visitor",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    },
+    {
+     "name": "email",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    },
+    {
+     "name": "searchResults",
+     "type": "String",
+     "src": [
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M7",
+     "name": "readEvent",
+     "realizes": "UC9",
+     "src": [
+      "R11"
+     ]
+    },
+    {
+     "id": "M8",
+     "name": "purchaseTicket",
+     "realizes": "UC8",
+     "src": [
+      "R12",
+      "R14",
+      "R18",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25"
+     ]
+    },
+    {
+     "id": "M9",
+     "name": "seeAvailableSeats",
+     "realizes": "UC29",
+     "src": [
+      "R21",
+      "R22"
+     ]
+    },
+    {
+     "id": "M10",
+     "name": "seeTicketTypes",
+     "realizes": "UC30",
+     "src": [
+      "R23"
+     ]
+    },
+    {
+     "id": "M11",
+     "name": "addTicketToCart",
+     "realizes": "UC27",
+     "src": [
+      "R24"
+     ]
+    },
+    {
+     "id": "M12",
+     "name": "seeOrderSummary",
+     "realizes": "UC28",
+     "src": [
+      "R25"
+     ]
+    },
+    {
+     "id": "M13",
+     "name": "sortSearchResults",
+     "realizes": "UC15",
+     "src": [
+      "R31"
+     ]
+    },
+    {
+     "id": "M14",
+     "name": "filterSearchResults",
+     "realizes": "UC14",
+     "src": [
+      "R33"
+     ]
+    },
+    {
+     "id": "M15",
+     "name": "seeUpcomingEvents",
+     "realizes": "UC6",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R12",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "serviceFee",
+     "type": "String",
+     "src": [
+      "R35",
+      "R38"
+     ]
+    },
+    {
+     "name": "resellers",
+     "type": "String",
+     "src": [
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M16",
+     "name": "haveBuyingProcess",
+     "realizes": "UC16",
+     "src": [
+      "R27"
+     ]
+    },
+    {
+     "id": "M17",
+     "name": "validateTicket",
+     "realizes": "UC21",
+     "src": [
+      "R37"
+     ]
+    },
+    {
+     "id": "M18",
+     "name": "deductServiceFee",
+     "realizes": "UC22",
+     "src": [
+      "R38"
+     ]
+    },
+    {
+     "id": "M19",
+     "name": "avoidBehavior",
+     "realizes": "UC23",
+     "src": [
+      "R39"
+     ]
+    },
+    {
+     "id": "M20",
+     "name": "protectUser",
+     "realizes": "UC24",
+     "src": [
+      "R40"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R27",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Reseller",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "bankAccount",
+     "type": "String",
+     "src": [
+      "R45"
+     ]
+    },
+    {
+     "name": "ticket",
+     "type": "String",
+     "src": [
+      "R42",
+      "R43"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M21",
+     "name": "resellTicket",
+     "realizes": "UC25",
+     "src": [
+      "R41"
+     ]
+    },
+    {
+     "id": "M22",
+     "name": "uploadTicket",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M23",
+     "name": "setTicketPrice",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M24",
+     "name": "addDescription",
+     "realizes": "UC17",
+     "src": [
+      "R52"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Event",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R11",
+      "R12",
+      "R13",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "date",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R11",
+      "R12",
+      "R13",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "artist",
+     "type": "String",
+     "src": [
+      "R11",
+      "R12",
+      "R13",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "venue",
+     "type": "String",
+     "src": [
+      "R11",
+      "R12",
+      "R13",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R11",
+      "R12",
+      "R13",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "price",
+     "type": "double",
+     "src": [
+      "R11",
+      "R12",
+      "R13",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R11",
+      "R12",
+      "R13",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M25",
+     "name": "seeEvent",
+     "realizes": "UC7",
+     "src": [
+      "R11",
+      "R19",
+      "R46",
+      "R47"
+     ]
+    },
+    {
+     "id": "M26",
+     "name": "clickEvent",
+     "realizes": "UC11",
+     "src": [
+      "R48"
+     ]
+    },
+    {
+     "id": "M27",
+     "name": "seeAvailableSeats",
+     "realizes": "UC29",
+     "src": [
+      "R21",
+      "R22"
+     ]
+    },
+    {
+     "id": "M28",
+     "name": "seeType",
+     "realizes": "UC30",
+     "src": [
+      "R23"
+     ]
+    },
+    {
+     "id": "M29",
+     "name": "addTicketToCart",
+     "realizes": "UC27",
+     "src": [
+      "R24"
+     ]
+    },
+    {
+     "id": "M30",
+     "name": "seeOrderSummary",
+     "realizes": "UC28",
+     "src": [
+      "R25"
+     ]
+    },
+    {
+     "id": "M31",
+     "name": "sortSearchResults",
+     "realizes": "UC15",
+     "src": [
+      "R31"
+     ]
+    },
+    {
+     "id": "M32",
+     "name": "filterSearchResults",
+     "realizes": "UC14",
+     "src": [
+      "R33"
+     ]
+    },
+    {
+     "id": "M33",
+     "name": "seeUpcomingEvents",
+     "realizes": "UC6",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R12",
+    "R13",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Ticket",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R12",
+      "R13",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "price",
+     "type": "double",
+     "src": [
+      "R12",
+      "R13",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M34",
+     "name": "seeTicketTypes",
+     "realizes": "UC30",
+     "src": [
+      "R23"
+     ]
+    },
+    {
+     "id": "M35",
+     "name": "addTicketToCart",
+     "realizes": "UC27",
+     "src": [
+      "R24"
+     ]
+    },
+    {
+     "id": "M36",
+     "name": "seeOrderSummary",
+     "realizes": "UC28",
+     "src": [
+      "R25"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12",
+    "R13",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Address",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "street",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "city",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "state",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "zipCode",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "Preference",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "genre",
+     "type": "String",
+     "src": [
+      "R3",
+      "R5"
+     ]
+    },
+    {
+     "name": "eventTypes",
+     "type": "String",
+     "src": [
+      "R3",
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "BankAccount",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "iban",
+     "type": "String",
+     "src": [
+      "R45"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "id": "C10",
+   "name": "ServiceFee",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "percentage",
+     "type": "double",
+     "src": [
+      "R35",
+      "R38"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R35",
+    "R38"
+   ]
+  },
+  {
+   "id": "C11",
+   "name": "SearchResult",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "events",
+     "type": "String",
+     "src": [
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M37",
+     "name": "sortResults",
+     "realizes": "UC15",
+     "src": [
+      "R31"
+     ]
+    },
+    {
+     "id": "M38",
+     "name": "filterResults",
+     "realizes": "UC14",
+     "src": [
+      "R33"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34"
+   ]
+  },
+  {
+   "id": "C12",
+   "name": "Artist",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "linkToWebsite",
+     "type": "String",
+     "src": [
+      "R50",
+      "R51",
+      "R54"
+     ]
+    },
+    {
+     "name": "linkToSocialMedia",
+     "type": "String",
+     "src": [
+      "R51",
+      "R54"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R52",
+      "R53",
+      "R54"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M39",
+     "name": "seeDescription",
+     "realizes": "UC17",
+     "src": [
+      "R52"
+     ]
+    },
+    {
+     "id": "M40",
+     "name": "seeLinkToWebsite",
+     "realizes": "UC18",
+     "src": [
+      "R50",
+      "R51",
+      "R54"
+     ]
+    },
+    {
+     "id": "M41",
+     "name": "seeLinkToSocialMedia",
+     "realizes": "UC18",
+     "src": [
+      "R50",
+      "R51",
+      "R54"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "id": "C13",
+   "name": "Link",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "url",
+     "type": "String",
+     "src": [
+      "R50",
+      "R51",
+      "R54"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R50",
+    "R51",
+    "R54"
+   ]
+  },
+  {
+   "id": "C14",
+   "name": "Venue",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R11",
+      "R12",
+      "R13",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "name": "map",
+     "type": "String",
+     "src": [
+      "R11",
+      "R12",
+      "R13",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R46",
+      "R47",
+      "R48",
+      "R49",
+      "R50",
+      "R51",
+      "R52",
+      "R53",
+      "R54"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M42",
+     "name": "seeMap",
+     "realizes": "UC29",
+     "src": [
+      "R21",
+      "R22"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R12",
+    "R13",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R3",
+    "R5",
+    "R7"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R1",
+    "R7"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "buys",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C5",
+   "target": "C14",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is held at",
+   "src": [
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C4",
+   "target": "C9",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "id": "R7",
+   "kind": "association",
+   "source": "C4",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "sells",
+   "src": [
+    "R41",
+    "R42",
+    "R43",
+    "R44"
+   ]
+  },
+  {
+   "id": "R8",
+   "kind": "association",
+   "source": "C3",
+   "target": "C10",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "charges",
+   "src": [
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "id": "R9",
+   "kind": "association",
+   "source": "C5",
+   "target": "C12",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "features",
+   "src": [
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

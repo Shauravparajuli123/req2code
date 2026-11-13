@@ -1,0 +1,203 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "WorkflowApplicationDeclaration",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "WfMc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Specification",
+   "kind": "class",
+   "attributes": [
+    "processDefinition",
+    "processActivities"
+   ],
+   "methods": [
+    {
+     "name": "addProcessActivity",
+     "use_case": "WorkflowApplicationDeclaration"
+    },
+    {
+     "name": "addProcessDefinition",
+     "use_case": "WorkflowApplicationDeclaration"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R11",
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "name": "ProcessDefinition",
+   "kind": "class",
+   "attributes": [
+    "workflowProcessDefinition"
+   ],
+   "methods": [
+    {
+     "name": "getWorkflowProcessDefinition",
+     "use_case": "WorkflowApplicationDeclaration"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R15"
+   ]
+  },
+  {
+   "name": "WorkflowProcessDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "ProcessActivity",
+   "kind": "class",
+   "attributes": [
+    "transitionInformation",
+    "processDefinition",
+    "relevantData"
+   ],
+   "methods": [
+    {
+     "name": "addTransitionInformation",
+     "use_case": "WorkflowApplicationDeclaration"
+    },
+    {
+     "name": "addRelevantData",
+     "use_case": "WorkflowApplicationDeclaration"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R13",
+    "R14",
+    "R17",
+    "R18",
+    "R20"
+   ]
+  },
+  {
+   "name": "TransitionInformation",
+   "kind": "class",
+   "attributes": [
+    "workflowProcessActivity"
+   ],
+   "methods": [
+    {
+     "name": "getWorkflowProcessActivity",
+     "use_case": "WorkflowApplicationDeclaration"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R20",
+    "R21"
+   ]
+  },
+  {
+   "name": "Workflow",
+   "kind": "class",
+   "attributes": [
+    "specification"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12",
+    "R19"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Specification",
+   "target": "ProcessDefinition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Specification",
+   "target": "ProcessActivity",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11",
+    "R16"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Specification",
+   "target": "ProcessDefinition",
+   "multiplicity_target": "1",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ProcessActivity",
+   "target": "ProcessDefinition",
+   "multiplicity_target": "1",
+   "src": [
+    "R17"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ProcessActivity",
+   "target": "TransitionInformation",
+   "multiplicity_target": "1",
+   "src": [
+    "R13",
+    "R14",
+    "R20",
+    "R21"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Workflow",
+   "target": "Specification",
+   "multiplicity_target": "1",
+   "src": [
+    "R12",
+    "R19"
+   ]
+  }
+ ],
+ "python": "class WfMc:\n    pass\n\nclass Specification:\n    def __init__(self):\n        self.processDefinition = None\n        self.processActivities = []\n    def addProcessActivity(self, processActivity):\n        raise NotImplementedError\n    def addProcessDefinition(self, processDefinition):\n        raise NotImplementedError\n\nclass ProcessDefinition:\n    def __init__(self):\n        self.workflowProcessDefinition = None\n    def getWorkflowProcessDefinition(self):\n        raise NotImplementedError\n\nclass WorkflowProcessDefinition:\n    pass\n\nclass ProcessActivity:\n    def __init__(self):\n        self.transitionInformation = None\n        self.processDefinition = None\n        self.relevantData = []\n    def addTransitionInformation(self, transitionInformation):\n        raise NotImplementedError\n    def addRelevantData(self, relevantData):\n        raise NotImplementedError\n\nclass TransitionInformation:\n    def __init__(self):\n        self.workflowProcessActivity = None\n    def getWorkflowProcessActivity(self):\n        raise NotImplementedError\n\nclass Workflow:\n    def __init__(self):\n        self.specification = None",
+ "java": {}
+}

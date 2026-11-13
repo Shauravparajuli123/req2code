@@ -1,0 +1,103 @@
+{
+ "actors": [
+  "parent"
+ ],
+ "use_cases": [
+  {
+   "name": "hasParent",
+   "actor": "parent",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "hasChildren",
+   "actor": "Element",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "startLine",
+    "endLine",
+    "parent"
+   ],
+   "methods": [
+    {
+     "name": "hasParent",
+     "use_case": "hasParent"
+    },
+    {
+     "name": "verbObject",
+     "use_case": "hasParent"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasChildren",
+     "use_case": "hasChildren"
+    },
+    {
+     "name": "verbObject",
+     "use_case": "hasChildren"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5",
+    "R7"
+   ]
+  },
+  {
+   "name": "XmlFile",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4",
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "XmlFile",
+   "target": "Element",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "XmlFile",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Node:\n    def __init__(self, name: str, startLine: int, endLine: int, parent: 'Element' = None):\n        self.name = name\n        self.startLine = startLine\n        self.endLine = endLine\n        self.parent = parent\n\n    def hasParent(self) -> bool:\n        raise NotImplementedError()\n\n    def verbObject(self) -> str:\n        raise NotImplementedError()\n\nclass Element:\n    def __init__(self):\n        pass\n\n    def hasChildren(self) -> bool:\n        raise NotImplementedError()\n\n    def verbObject(self) -> str:\n        raise NotImplementedError()\n\nclass XmlFile:\n    def __init__(self):\n        pass",
+ "java": {}
+}

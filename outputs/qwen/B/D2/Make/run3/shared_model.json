@@ -1,0 +1,231 @@
+{
+ "case": "D2/Make",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Makefile",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "fileDependencies",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "name": "comment",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addRule",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addFileDependency",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "shellLines",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addShellLine",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "File",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "text",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "ShellLine",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "command",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Dependency",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "rule",
+     "type": "String",
+     "src": [
+      "R11",
+      "R13"
+     ]
+    },
+    {
+     "name": "file",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "RuleDep",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "literals": [
+    "RULE",
+    "FILE"
+   ],
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..1",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C2",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C3",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

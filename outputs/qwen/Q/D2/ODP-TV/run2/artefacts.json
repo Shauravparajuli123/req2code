@@ -1,0 +1,86 @@
+{
+ "actors": [],
+ "use_cases": [
+  {
+   "name": "Create Technology Object",
+   "actor": "",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TechnologyObject",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "CreateTechnologyObject",
+     "use_case": "Create Technology Object"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ImplementableStandard",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Implementation",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "IXIT",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "TechnologyObject",
+   "target": "ImplementableStandard",
+   "multiplicity_target": "1..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Implementation",
+   "target": "IXIT",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "python": "from abc import ABC, abstractmethod\n\nclass TechnologyObject:\n    def __init__(self):\n        pass\n    @abstractmethod\ndef CreateTechnologyObject(self):\n        raise NotImplementedError\n\nclass ImplementableStandard(ABC):\n    pass\n\nclass Implementation:\n    pass\n\nclass IXIT:\n    pass\n",
+ "java": {}
+}

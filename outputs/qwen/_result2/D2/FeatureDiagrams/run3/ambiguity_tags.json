@@ -1,0 +1,70 @@
+[
+ {
+  "id": "A1",
+  "type": "quantifier",
+  "sid": "R7.s1",
+  "req_id": "R7",
+  "cue": "any",
+  "text": "A node is composed of any number of attributes",
+  "readings": [
+   "0..*",
+   "1..*"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The term 'any number' is ambiguous and could mean 0 or more attributes.",
+  "chosen": "0..*"
+ },
+ {
+  "id": "A2",
+  "type": "quantifier",
+  "sid": "R8.s1",
+  "req_id": "R8",
+  "cue": "one or many",
+  "text": "A node may have/reference to one or many XORGroup",
+  "readings": [
+   "1..1",
+   "1..*"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The term 'one or many' is ambiguous and could mean either exactly one or one or more references.",
+  "chosen": "1..*"
+ },
+ {
+  "id": "A3",
+  "type": "quantifier",
+  "sid": "R10.s1",
+  "req_id": "R10",
+  "cue": "some",
+  "text": "A child may have some nodes.",
+  "readings": [
+   "0..*",
+   "1..*"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The term 'some' is ambiguous and could mean 1 or more nodes.",
+  "chosen": "1..*"
+ },
+ {
+  "id": "A4",
+  "type": "quantifier",
+  "sid": "R11.s1",
+  "req_id": "R11",
+  "cue": "some",
+  "text": "A child may have some ORGroup",
+  "readings": [
+   "0..*",
+   "1..*"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The term 'some' is ambiguous and could mean 1 or more ORGroup nodes.",
+  "chosen": "1..*"
+ }
+]

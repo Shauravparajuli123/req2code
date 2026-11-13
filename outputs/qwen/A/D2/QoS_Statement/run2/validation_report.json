@@ -1,0 +1,35 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "CompoundQoSStatement is a class which belongs to QoSStatement package, as stated in R3."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R4 is not supported by the model.",
+   "fix": "Add a class named 'Parameter' to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R8 is not fully supported. The relationship between QoSStatement and CompoundQoSStatement is missing.",
+   "fix": "Add an association between QoSStatement and CompoundQoSStatement."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R10 is not supported by the model.",
+   "fix": "Add a class named 'Parameter' and define the relationship between CompoundQoSStatement and QoSStatement to represent the composition of 2 or more QoSStatements."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R11 is not supported by the model.",
+   "fix": "Add a relationship between QoSConstraint and QualificationKind to represent the qualification of QoSConstraint."
+  }
+ ]
+}

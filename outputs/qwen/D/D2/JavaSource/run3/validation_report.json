@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "R4",
+   "assumption": "The 'MethodDefinition' class is assumed to be in a package called 'JavaSource'."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class 'MethodDefinition' in the model.",
+   "fix": "Add class 'MethodDefinition' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Class' should have an attribute 'method'",
+   "fix": "Add attribute 'method' to class 'Class'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between 'Class' and 'MethodDefinition' should be 'has'",
+   "fix": "Change the relationship to 'has' from 'invokeMethod->Invoke A Method'."
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Game",
+   "actor": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "children",
+    "parent"
+   ],
+   "methods": [
+    {
+     "name": "addChildren",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "startLine",
+    "endLine",
+    "parent"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": "Create Game"
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "XmlFile",
+   "kind": "class",
+   "attributes": [
+    "rootElement"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "XmlFile",
+   "target": "Element",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "source": "XmlFile",
+   "target": "Node",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "source": "Element",
+   "target": "Node",
+   "src": []
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/XML.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Element:\n    \"\"\"Source: R4, R5\"\"\"\n    name: _t.Optional[str] = None\n    children: _t.Optional[str] = None\n    parent: _t.Optional[str] = None\n    node: _t.Optional[\"Node\"] = None\n\n    def addChildren(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n    startLine: _t.Optional[int] = None\n    endLine: _t.Optional[int] = None\n    parent: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Realizes UC1 \"Create Game\" (R1).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass XmlFile:\n    \"\"\"Source: R3, R5\"\"\"\n    rootElement: _t.Optional[str] = None\n    elements: _t.List[\"Element\"] = _dc.field(default_factory=list)\n    nodes: _t.List[\"Node\"] = _dc.field(default_factory=list)\n",
+ "java": {
+  "Element.java": "/** Generated from shared model D2/XML. Source: R4, R5 */\npublic class Element {\n    private java.lang.String name;\n    private java.lang.String children;\n    private java.lang.String parent;\n    private Node node;\n\n    /** Operation. */\n    public void addChildren() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Node.java": "/** Generated from shared model D2/XML. Source: R1 */\npublic class Node {\n    private java.lang.String name;\n    private int startLine;\n    private int endLine;\n    private java.lang.String parent;\n\n    /** Realizes UC1 \"Create Game\" (R1). */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "XmlFile.java": "/** Generated from shared model D2/XML. Source: R3, R5 */\npublic class XmlFile {\n    private java.lang.String rootElement;\n    private java.util.List<Element> elements;\n    private java.util.List<Node> nodes;\n}\n"
+ }
+}

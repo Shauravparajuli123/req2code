@@ -1,0 +1,201 @@
+{
+ "case": "D2/WTIP_SimpleClass",
+ "stage": "result2_after_ambiguity_removal",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "src": [
+    "R4",
+    "R7"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "In a simple class, an association has a name of type string."
+    },
+    {
+     "sid": "R7.s1",
+     "text": "An Association of a SimpleClass has one src that is a Class."
+    }
+   ],
+   "name": "Association",
+   "freq": 2
+  },
+  {
+   "id": "C2",
+   "src": [
+    "R1",
+    "R3",
+    "R8"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "A classifier"
+    },
+    {
+     "sid": "R3.s1",
+     "text": "PrimitiveDataType is a Classifier and has a name"
+    },
+    {
+     "sid": "R8.s2",
+     "text": "The type is a Classifier"
+    }
+   ],
+   "name": "Classifier",
+   "freq": 3
+  },
+  {
+   "id": "C3",
+   "src": [
+    "R3"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "PrimitiveDataType is a Classifier and has a name"
+    }
+   ],
+   "name": "PrimitiveDataType",
+   "freq": 1
+  },
+  {
+   "id": "C4",
+   "src": [
+    "R4",
+    "R5"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "In a simple class, an association has a name of type string."
+    },
+    {
+     "sid": "R5.s1",
+     "text": "The attribute of a simple class has a name of type string."
+    }
+   ],
+   "name": "TypeString",
+   "freq": 2
+  }
+ ],
+ "attributes": [
+  {
+   "id": "AT1",
+   "src": [
+    "R4"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "In a simple class, an association has a name of type string."
+    }
+   ],
+   "owner": "Association",
+   "name": "name",
+   "type_hint": null
+  },
+  {
+   "id": "AT2",
+   "src": [
+    "R7"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R7.s1",
+     "text": "An Association of a SimpleClass has one src that is a Class."
+    }
+   ],
+   "owner": "Association",
+   "name": "src",
+   "type_hint": null
+  },
+  {
+   "id": "AT3",
+   "src": [
+    "R4"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "In a simple class, an association has a name of type string."
+    }
+   ],
+   "owner": "TypeString",
+   "name": "name",
+   "type_hint": null
+  }
+ ],
+ "relations": [
+  {
+   "id": "REL1",
+   "src": [
+    "R3"
+   ],
+   "rule": [
+    "is_a"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "PrimitiveDataType is a Classifier and has a name"
+    }
+   ],
+   "kind": "generalization",
+   "source": "PrimitiveDataType",
+   "target": "Classifier",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL2",
+   "src": [
+    "R8"
+   ],
+   "rule": [
+    "is_a"
+   ],
+   "evidence": [
+    {
+     "sid": "R8.s2",
+     "text": "The type is a Classifier"
+    }
+   ],
+   "kind": "generalization",
+   "source": "Type",
+   "target": "Classifier",
+   "multiplicity_target": null
+  }
+ ],
+ "enums": [],
+ "applied_edits": {
+  "remove_classes": [],
+  "merge_classes": [],
+  "merge_actors": [],
+  "enums": [],
+  "multiplicities": [],
+  "actor_assumptions": []
+ }
+}

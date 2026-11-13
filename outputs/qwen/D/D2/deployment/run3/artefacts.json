@@ -1,0 +1,89 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CommunicationLink",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "sourceNode"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Deployment",
+   "kind": "class",
+   "attributes": [
+    "nodes"
+   ],
+   "methods": [],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "ExecutionEnvironment",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Specification",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Deployment",
+   "target": "Node",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "Deployment",
+   "target": "ExecutionEnvironment",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "CommunicationLink",
+   "target": "Deployment",
+   "src": [
+    "R5",
+    "R8"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/deployment.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Deployment:\n    \"\"\"Source: R6, R7\"\"\"\n    nodes: _t.Optional[str] = None\n    executionEnvironment: _t.Optional[\"ExecutionEnvironment\"] = None\n\n\n@_dc.dataclass\nclass CommunicationLink(Deployment):\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    sourceNode: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass ExecutionEnvironment:\n    \"\"\"Source: R3\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Specification:\n    \"\"\"Source: R4\"\"\"\n    pass\n",
+ "java": {
+  "Node.java": "/** Generated from shared model D2/deployment. Source: R1 */\npublic class Node {\n    private java.lang.String name;\n}\n",
+  "Deployment.java": "/** Generated from shared model D2/deployment. Source: R6, R7 */\npublic class Deployment {\n    private java.lang.String nodes;\n    private ExecutionEnvironment executionEnvironment;\n}\n",
+  "CommunicationLink.java": "/** Generated from shared model D2/deployment. Source: - */\npublic class CommunicationLink extends Deployment {\n    private java.lang.String name;\n    private java.lang.String sourceNode;\n}\n",
+  "ExecutionEnvironment.java": "/** Generated from shared model D2/deployment. Source: R3 */\npublic class ExecutionEnvironment {\n}\n",
+  "Specification.java": "/** Generated from shared model D2/deployment. Source: R4 */\npublic class Specification {\n}\n"
+ }
+}

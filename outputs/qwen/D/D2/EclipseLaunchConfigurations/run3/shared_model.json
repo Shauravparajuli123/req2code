@@ -1,0 +1,225 @@
+{
+ "case": "D2/EclipseLaunchConfigurations",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "LaunchConfiguration",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "attributes",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "key",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "StringAttribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "value",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "BooleanAttribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "value",
+     "type": "boolean",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "MapAttribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "entries",
+     "type": "String",
+     "src": [
+      "R5",
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "MapEntry",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "key",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    },
+    {
+     "name": "value",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "ListAttribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "entries",
+     "type": "String",
+     "src": [
+      "R7",
+      "R12"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "A map attribute is a class, and it has a relationship with MapEntry."
+  },
+  {
+   "tag": "A6",
+   "assumption": "A map entry is a class and is connected to one map attribute."
+  },
+  {
+   "tag": "A7",
+   "assumption": "A list attribute is a class, and it has a relationship with ListAttributeEntry."
+  }
+ ],
+ "open_tags": []
+}

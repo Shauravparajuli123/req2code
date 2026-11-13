@@ -1,0 +1,99 @@
+{
+ "case": "D2/ODP-TV",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "ImplementableStandard",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "TechnologyObject",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Implementation",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createImplementation",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "IXIT",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "createIXIT",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "generalization",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "extends",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "generalization",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1..*",
+   "mult_target": "1",
+   "label": "extends",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

@@ -1,0 +1,36 @@
+[
+ {
+  "id": "A1",
+  "type": "quantifier",
+  "sid": "R6.s1",
+  "req_id": "R6",
+  "cue": "multiple",
+  "text": "Each airport has multiple flights that depart from it.",
+  "readings": [
+   "Each airport has multiple flights that depart from it.",
+   "Each airport has at least one flight that departs from it."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The phrase 'multiple' can be interpreted as 'at least one' or 'more than one'.",
+  "chosen": "Each airport has at least one flight that departs from it."
+ },
+ {
+  "id": "A2",
+  "type": "coordination",
+  "sid": "R8.s3",
+  "req_id": "R8",
+  "cue": "and+or",
+  "text": "One end of the association is labeled 'passenger' and also carries the multiplicity constraint '0..*', meaning that a 'Passenger' object can be associated with 0 or more 'Flight' objects.",
+  "readings": [
+   "One end of the association is labeled 'passenger' and also carries the multiplicity constraint '0..*', meaning that a 'Passenger' object can be associated with 0 or more 'Flight' objects.",
+   "One end of the association is labeled 'flight' and also carries the multiplicity constraint '0..*', meaning that a 'Flight' object can be associated with 0 or more 'Passenger' objects."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "coordination",
+  "explanation": "The sentence is ambiguous as it does not specify which end of the association is labeled 'passenger' and which carries the multiplicity constraint.",
+  "chosen": "One end of the association is labeled 'flight' and also carries the multiplicity constraint '0..*', meaning that a 'Flight' object can be associated with 0 or more 'Passenger' objects."
+ }
+]

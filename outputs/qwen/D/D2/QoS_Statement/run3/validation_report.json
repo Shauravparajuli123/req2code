@@ -1,0 +1,35 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "CompoundQoSStatement is a subclass of QoSStatement."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Parameter' is missing in the model.",
+   "fix": "Add a 'Parameter' class to the model."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'R8' is not represented in the model.",
+   "fix": "Add a use case for 'R8'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between QoSStatement and CompoundQoSStatement is missing in the model.",
+   "fix": "Add a generalization relationship from QoSStatement to CompoundQoSStatement."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'QoSConstraint' is missing in the model.",
+   "fix": "Add a 'QoSConstraint' class to the model."
+  }
+ ]
+}

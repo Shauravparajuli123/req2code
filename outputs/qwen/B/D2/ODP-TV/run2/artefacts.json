@@ -1,0 +1,81 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "ImplementableStandard",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "TechnologyObject",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1",
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Implementation",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "createImplementation",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "IXIT",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "createIXIT",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "IXIT",
+   "target": "Implementation",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "source": "ImplementableStandard",
+   "target": "TechnologyObject",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/ODP-TV.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass TechnologyObject:\n    \"\"\"Source: R1, R5, R8\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass ImplementableStandard(TechnologyObject):\n    \"\"\"Source: R5, R8\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Implementation:\n    \"\"\"Source: R2, R5, R6\"\"\"\n\n    def createImplementation(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass IXIT(Implementation):\n    \"\"\"Source: R3, R7\"\"\"\n\n    def createIXIT(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "TechnologyObject.java": "/** Generated from shared model D2/ODP-TV. Source: R1, R5, R8 */\npublic class TechnologyObject {\n}\n",
+  "ImplementableStandard.java": "/** Generated from shared model D2/ODP-TV. Source: R5, R8 */\npublic class ImplementableStandard extends TechnologyObject {\n}\n",
+  "Implementation.java": "/** Generated from shared model D2/ODP-TV. Source: R2, R5, R6 */\npublic class Implementation {\n\n    /** Operation. */\n    public void createImplementation() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "IXIT.java": "/** Generated from shared model D2/ODP-TV. Source: R3, R7 */\npublic class IXIT extends Implementation {\n\n    /** Operation. */\n    public void createIXIT() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

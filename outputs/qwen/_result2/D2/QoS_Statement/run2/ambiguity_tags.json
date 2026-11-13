@@ -1,0 +1,70 @@
+[
+ {
+  "id": "A1",
+  "type": "coordination",
+  "sid": "R7.s1",
+  "req_id": "R7",
+  "cue": "either/or",
+  "text": "QoSStatement is a superclass of all classes that describe various kind of objets, either simple or compound, that representing quality of services.",
+  "readings": [
+   "QoSStatement is a superclass of all classes that describe simple objects representing quality of services.",
+   "QoSStatement is a superclass of all classes that describe compound objects representing quality of services."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "coordination",
+  "explanation": "The sentence suggests that QoSStatement can be a superclass for either simple or compound objects, but not both.",
+  "chosen": "QoSStatement is a superclass of all classes that describe simple objects representing quality of services."
+ },
+ {
+  "id": "A2",
+  "type": "quantifier",
+  "sid": "R7.s1",
+  "req_id": "R7",
+  "cue": "various",
+  "text": "QoSStatement is a superclass of all classes that describe various kind of objets, either simple or compound, that representing quality of services.",
+  "readings": [
+   "QoSStatement is a superclass of all classes that describe various kinds of objects, including both simple and compound objects, representing quality of services.",
+   "QoSStatement is a superclass of all classes that describe various kinds of objects, but only simple objects, representing quality of services."
+  ],
+  "status": "rejected",
+  "confirmed": false,
+  "llm_type": "quantifier",
+  "explanation": "The sentence is ambiguous regarding whether QoSStatement can be a superclass for both simple and compound objects or only simple objects.",
+  "chosen": ""
+ },
+ {
+  "id": "A3",
+  "type": "incompleteness",
+  "sid": "R7.s1",
+  "req_id": "R7",
+  "cue": "various",
+  "text": "QoSStatement is a superclass of all classes that describe various kind of objets, either simple or compound, that representing quality of services.",
+  "readings": [
+   "QoSStatement is a superclass of all classes that describe simple objects representing quality of services.",
+   "QoSStatement is a superclass of all classes that describe compound objects representing quality of services."
+  ],
+  "status": "rejected",
+  "confirmed": false,
+  "llm_type": "incompleteness",
+  "explanation": "The sentence is incomplete and does not specify whether QoSStatement can be a superclass for both simple and compound objects or only one of them.",
+  "chosen": ""
+ },
+ {
+  "id": "A4",
+  "type": "quantifier",
+  "sid": "R10.s1",
+  "req_id": "R10",
+  "cue": "2 or more",
+  "text": "A CoumpoundQoSStatement is composed of 2 or more QoSStatements",
+  "readings": [
+   "A CompoundQoSStatement is composed of 2 or more QoSStatements.",
+   "A CompoundQoSStatement is composed of 1 or more QoSStatements."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The sentence specifies that a CompoundQoSStatement is composed of 2 or more QoSStatements, not 1 or more.",
+  "chosen": "A CompoundQoSStatement is composed of 2 or more QoSStatements."
+ }
+]

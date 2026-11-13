@@ -1,0 +1,1829 @@
+{
+ "actors": [
+  "Agency",
+  "Visitor",
+  "Tourist",
+  "Tourist",
+  "Agency",
+  "Guest User",
+  "Registered User",
+  "Agency Operator",
+  "Restaurant Operator",
+  "Guest",
+  "Restaurant Operator",
+  "Tourist",
+  "tourist",
+  "system"
+ ],
+ "use_cases": [
+  {
+   "name": "Search Cultural Heritage",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "R4"
+   ]
+  },
+  {
+   "name": "Search Refreshment Point",
+   "actor": "Agency",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "name": "Search Tourist",
+   "actor": "Agency",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "Delete Cultural Object",
+   "actor": "Agency",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Insert Cultural Object",
+   "actor": "Agency",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Change Cultural Object",
+   "actor": "Agency",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Delete Refreshment Point",
+   "actor": "Agency",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Edit Refreshment Point",
+   "actor": "Agency",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Activate Convention",
+   "actor": "Agency",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "View Cultural Object Detail",
+   "actor": "Agency",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "View Refreshment Point Detail",
+   "actor": "Agency",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "View Tourist Account Detail",
+   "actor": "Agency",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Enable/Disable Tourist Account",
+   "actor": "Agency",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "View Refreshment Point History",
+   "actor": "Agency",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "SearchTourist",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC15",
+    "UC23",
+    "UC24"
+   ]
+  },
+  {
+   "name": "SearchRefreshmentPoint",
+   "actor": "Agency",
+   "src": [
+    "UC17",
+    "UC18",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "name": "SearchSite",
+   "actor": "Agency",
+   "src": [
+    "UC24",
+    "UC25"
+   ]
+  },
+  {
+   "name": "ChangeData",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC15",
+    "UC23"
+   ]
+  },
+  {
+   "name": "ChangeImage",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC17"
+   ]
+  },
+  {
+   "name": "CheckPoint",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC18"
+   ]
+  },
+  {
+   "name": "DeleteAccount",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC16"
+   ]
+  },
+  {
+   "name": "DeleteBannerAd",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC19"
+   ]
+  },
+  {
+   "name": "DeleteNews",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC22"
+   ]
+  },
+  {
+   "name": "EditComment",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC26"
+   ]
+  },
+  {
+   "name": "InsertBanner",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC20"
+   ]
+  },
+  {
+   "name": "InsertNews",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC21"
+   ]
+  },
+  {
+   "name": "ViewFeedback",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC24"
+   ]
+  },
+  {
+   "name": "ViewReport",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC25"
+   ]
+  },
+  {
+   "name": "Search Site",
+   "actor": "Guest",
+   "src": [
+    "UC27"
+   ]
+  },
+  {
+   "name": "Remove SearchTag",
+   "actor": "Registered User",
+   "src": [
+    "UC28"
+   ]
+  },
+  {
+   "name": "Insert TagSearch",
+   "actor": "Registered User",
+   "src": [
+    "UC30"
+   ]
+  },
+  {
+   "name": "Ensure User",
+   "actor": "Guest User",
+   "src": [
+    "UC35"
+   ]
+  },
+  {
+   "name": "Require Creation",
+   "actor": "Guest User",
+   "src": [
+    "UC33"
+   ]
+  },
+  {
+   "name": "Research Heritage",
+   "actor": "Guest User",
+   "src": [
+    "UC34"
+   ]
+  },
+  {
+   "name": "Supply Login",
+   "actor": "Guest User",
+   "src": [
+    "UC36"
+   ]
+  },
+  {
+   "name": "End Session",
+   "actor": "Registered User",
+   "src": [
+    "UC37"
+   ]
+  },
+  {
+   "name": "Insert Banner",
+   "actor": "Restaurant Operator",
+   "src": [
+    "UC38"
+   ]
+  },
+  {
+   "name": "Change Image",
+   "actor": "Restaurant Operator",
+   "src": [
+    "UC39"
+   ]
+  },
+  {
+   "name": "Delete BannerAd",
+   "actor": "Restaurant Operator",
+   "src": [
+    "UC40"
+   ]
+  },
+  {
+   "name": "Change Menu",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC41"
+   ]
+  },
+  {
+   "name": "Delete Menu",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC42"
+   ]
+  },
+  {
+   "name": "Change DataPoint",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC43"
+   ]
+  },
+  {
+   "name": "Require Convention",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC44"
+   ]
+  },
+  {
+   "name": "View Statistic",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC45"
+   ]
+  },
+  {
+   "name": "Edit SearchPreference",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC46"
+   ]
+  },
+  {
+   "name": "Edit EditPreferences",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC48"
+   ]
+  },
+  {
+   "name": "Insert Feedback",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC53"
+   ]
+  },
+  {
+   "name": "Delete Site",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC52"
+   ]
+  },
+  {
+   "name": "Insert Site",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC51"
+   ]
+  },
+  {
+   "name": "View List",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC49",
+    "UC50"
+   ]
+  },
+  {
+   "name": "Edit Comment",
+   "actor": "tourist",
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "Entry EntryCondition",
+   "actor": "tourist",
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  },
+  {
+   "name": "Return Position",
+   "actor": "tourist",
+   "src": [
+    "R1",
+    "UC56"
+   ]
+  },
+  {
+   "name": "Search Site",
+   "actor": "tourist",
+   "src": [
+    "R1",
+    "UC57"
+   ]
+  },
+  {
+   "name": "View Detail",
+   "actor": "tourist",
+   "src": [
+    "R1",
+    "UC58"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Agency",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "logIn",
+     "use_case": "UC1"
+    },
+    {
+     "name": "logOut",
+     "use_case": "UC1"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "AccountTourist",
+   "kind": "class",
+   "attributes": [
+    "touristID",
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "viewDetails",
+     "use_case": "UC12"
+    },
+    {
+     "name": "enableDisable",
+     "use_case": "UC13"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CulturalHeritage",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name",
+    "description"
+   ],
+   "methods": [
+    {
+     "name": "search",
+     "use_case": "UC4"
+    },
+    {
+     "name": "viewDetails",
+     "use_case": "UC5"
+    },
+    {
+     "name": "changeData",
+     "use_case": "UC3"
+    },
+    {
+     "name": "delete",
+     "use_case": "UC1"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "RefreshmentPoint",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name",
+    "address"
+   ],
+   "methods": [
+    {
+     "name": "search",
+     "use_case": "UC9"
+    },
+    {
+     "name": "viewDetails",
+     "use_case": "UC10"
+    },
+    {
+     "name": "changeData",
+     "use_case": "UC8"
+    },
+    {
+     "name": "delete",
+     "use_case": "UC6"
+    },
+    {
+     "name": "viewHistory",
+     "use_case": "UC11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Tourist",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name",
+    "email"
+   ],
+   "methods": [
+    {
+     "name": "search",
+     "use_case": "UC14"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "SystemRequirement",
+   "kind": "class",
+   "attributes": [
+    "timeLimit"
+   ],
+   "methods": [
+    {
+     "name": "checkTime",
+     "use_case": "UC4"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "UseCase",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "UseCaseSearchCulturalHeritage",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "UseCaseSearchRefreshmentPoint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "UseCaseSearchTourist",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "AccountTourist",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "modifyData",
+     "use_case": "Change Data (account tourist; UC15)"
+    },
+    {
+     "name": "deleteAccount",
+     "use_case": "Delete Account (tourist; UC16)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC15",
+    "UC16"
+   ]
+  },
+  {
+   "name": "BannerAd",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "image",
+    "refreshmentPoint"
+   ],
+   "methods": [
+    {
+     "name": "changeImage",
+     "use_case": "Change Image (?; UC17)"
+    },
+    {
+     "name": "deleteBannerAd",
+     "use_case": "Delete BannerAd (?; UC19)"
+    },
+    {
+     "name": "insertBannerAd",
+     "use_case": "Insert Banner (?; UC20)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC17",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "name": "News",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "title",
+    "content"
+   ],
+   "methods": [
+    {
+     "name": "insertNews",
+     "use_case": "Insert News (?; UC21)"
+    },
+    {
+     "name": "deleteNews",
+     "use_case": "Delete News (?; UC22)"
+    },
+    {
+     "name": "changeNews",
+     "use_case": "Change Data (?; UC23)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC21",
+    "UC22",
+    "UC23"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "site",
+    "comment"
+   ],
+   "methods": [
+    {
+     "name": "viewFeedback",
+     "use_case": "View Feedback (?; UC24)"
+    },
+    {
+     "name": "editComment",
+     "use_case": "Edit Comment (?; UC26)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC24",
+    "UC26"
+   ]
+  },
+  {
+   "name": "RefreshmentPoint",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "checkBanners",
+     "use_case": "Check Point (?; UC18)"
+    },
+    {
+     "name": "deleteBanner",
+     "use_case": "Delete BannerAd (?; UC19)"
+    },
+    {
+     "name": "insertBanner",
+     "use_case": "Insert Banner (?; UC20)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC18",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "name": "Report",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "location"
+   ],
+   "methods": [
+    {
+     "name": "viewReport",
+     "use_case": "View Report (?; UC25)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC25"
+   ]
+  },
+  {
+   "name": "Location",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Image",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "path"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Connection",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Agency",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "username",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "login",
+     "use_case": "Supply Login"
+    },
+    {
+     "name": "logout",
+     "use_case": "End Session"
+    },
+    {
+     "name": "searchSite",
+     "use_case": "Search Site"
+    },
+    {
+     "name": "createAccount",
+     "use_case": "Require Creation"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC36",
+    "UC37",
+    "UC33",
+    "UC34"
+   ]
+  },
+  {
+   "name": "AgencyOperator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "changePassword",
+     "use_case": "Change Password"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC31"
+   ]
+  },
+  {
+   "name": "RestaurantOperator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "insertBanner",
+     "use_case": "Insert Banner"
+    },
+    {
+     "name": "changeBannerImage",
+     "use_case": "Change Image"
+    },
+    {
+     "name": "removeBanner",
+     "use_case": "Delete BannerAd"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "name": "SearchTag",
+   "kind": "class",
+   "attributes": [
+    "tag"
+   ],
+   "methods": [
+    {
+     "name": "insertTag",
+     "use_case": "Insert TagSearch"
+    },
+    {
+     "name": "removeTag",
+     "use_case": "Remove SearchTag"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC30",
+    "UC28",
+    "UC29"
+   ]
+  },
+  {
+   "name": "BannerAd",
+   "kind": "class",
+   "attributes": [
+    "image"
+   ],
+   "methods": [
+    {
+     "name": "insert",
+     "use_case": "Insert Banner"
+    },
+    {
+     "name": "changeImage",
+     "use_case": "Change Image"
+    },
+    {
+     "name": "remove",
+     "use_case": "Delete BannerAd"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "name": "Image",
+   "kind": "class",
+   "attributes": [
+    "path"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "Connection",
+   "kind": "class",
+   "attributes": [
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "checkConnection",
+     "use_case": "Connection operation interruption"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC27",
+    "UC28",
+    "UC29",
+    "UC30",
+    "UC31",
+    "UC32",
+    "UC33",
+    "UC34",
+    "UC35",
+    "UC36",
+    "UC37",
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "name": "RestaurantOperator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "activateEditingFunctionality",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "displayDaysForm",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "selectDayAndSubmit",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "uploadAndEditMenu",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "verifyAndConfirmEdit",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "deleteMenu",
+     "use_case": "Delete Menu"
+    },
+    {
+     "name": "displayDaysForDeletion",
+     "use_case": "Delete Menu"
+    },
+    {
+     "name": "confirmDeletion",
+     "use_case": "Delete Menu"
+    },
+    {
+     "name": "requestConvention",
+     "use_case": "Require Convention"
+    },
+    {
+     "name": "displayConventionForm",
+     "use_case": "Require Convention"
+    },
+    {
+     "name": "insertConventionData",
+     "use_case": "Require Convention"
+    },
+    {
+     "name": "verifyConventionData",
+     "use_case": "Require Convention"
+    },
+    {
+     "name": "confirmConventionRequest",
+     "use_case": "Require Convention"
+    },
+    {
+     "name": "viewStatistics",
+     "use_case": "View Statistic"
+    },
+    {
+     "name": "displayStatisticsForm",
+     "use_case": "View Statistic"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC41",
+    "UC42",
+    "UC44",
+    "UC45"
+   ]
+  },
+  {
+   "name": "Tourist",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "editSearchPreferences",
+     "use_case": "Edit SearchPreference"
+    },
+    {
+     "name": "editAccountData",
+     "use_case": "Change Data"
+    },
+    {
+     "name": "viewFavoriteList",
+     "use_case": "View List"
+    },
+    {
+     "name": "viewVisitedSitesList",
+     "use_case": "View List"
+    },
+    {
+     "name": "insertSiteToFavorites",
+     "use_case": "Insert Site"
+    },
+    {
+     "name": "removeSiteFromFavorites",
+     "use_case": "Delete Site"
+    },
+    {
+     "name": "insertFeedback",
+     "use_case": "Insert Feedback"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC46",
+    "UC47",
+    "UC49",
+    "UC50",
+    "UC51",
+    "UC52",
+    "UC53"
+   ]
+  },
+  {
+   "name": "PointRestaurantOperator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "activateMenuEditing",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "displayDaysForMenu",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "selectDayForMenu",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "uploadMenuData",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "editMenuData",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "confirmMenuEdit",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "deleteMenuSelection",
+     "use_case": "Delete Menu"
+    },
+    {
+     "name": "displayDaysForDeletion",
+     "use_case": "Delete Menu"
+    },
+    {
+     "name": "confirmDeletion",
+     "use_case": "Delete Menu"
+    },
+    {
+     "name": "requestConvention",
+     "use_case": "Require Convention"
+    },
+    {
+     "name": "displayConventionForm",
+     "use_case": "Require Convention"
+    },
+    {
+     "name": "insertConventionData",
+     "use_case": "Require Convention"
+    },
+    {
+     "name": "verifyConventionData",
+     "use_case": "Require Convention"
+    },
+    {
+     "name": "confirmConventionRequest",
+     "use_case": "Require Convention"
+    },
+    {
+     "name": "viewStatistics",
+     "use_case": "View Statistic"
+    },
+    {
+     "name": "displayStatisticsForm",
+     "use_case": "View Statistic"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC41",
+    "UC42",
+    "UC44",
+    "UC45"
+   ]
+  },
+  {
+   "name": "Menu",
+   "kind": "class",
+   "attributes": [
+    "day"
+   ],
+   "methods": [
+    {
+     "name": "edit",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "delete",
+     "use_case": "Delete Menu"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC41",
+    "UC42"
+   ]
+  },
+  {
+   "name": "Day",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC41",
+    "UC42"
+   ]
+  },
+  {
+   "name": "Convention",
+   "kind": "class",
+   "attributes": [
+    "form"
+   ],
+   "methods": [
+    {
+     "name": "request",
+     "use_case": "Require Convention"
+    },
+    {
+     "name": "confirmRequest",
+     "use_case": "Require Convention"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC44"
+   ]
+  },
+  {
+   "name": "Statistic",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "display",
+     "use_case": "View Statistic"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC45"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [
+    "site",
+    "comment"
+   ],
+   "methods": [
+    {
+     "name": "insert",
+     "use_case": "Insert Feedback"
+    },
+    {
+     "name": "confirmInsertion",
+     "use_case": "Insert Feedback"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC53"
+   ]
+  },
+  {
+   "name": "Site",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC53"
+   ]
+  },
+  {
+   "name": "Bookmark",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "insert",
+     "use_case": "Insert Site"
+    },
+    {
+     "name": "remove",
+     "use_case": "Delete Site"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC51",
+    "UC52"
+   ]
+  },
+  {
+   "name": "Tourist",
+   "kind": "class",
+   "attributes": [
+    "position",
+    "authenticationStatus"
+   ],
+   "methods": [
+    {
+     "name": "editComment",
+     "use_case": "Edit Comment (UC54)"
+    },
+    {
+     "name": "viewDetails",
+     "use_case": "View Detail (UC58)"
+    },
+    {
+     "name": "searchSite",
+     "use_case": "Search Site (UC57)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC54",
+    "UC57",
+    "UC58"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [
+    "site",
+    "comment"
+   ],
+   "methods": [
+    {
+     "name": "verifyData",
+     "use_case": "Edit Comment (UC54)"
+    },
+    {
+     "name": "confirmChange",
+     "use_case": "Edit Comment (UC54)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC54"
+   ]
+  },
+  {
+   "name": "Position",
+   "kind": "class",
+   "attributes": [
+    "latitude",
+    "longitude"
+   ],
+   "methods": [
+    {
+     "name": "calculatePosition",
+     "use_case": "Return Position (UC56)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC56"
+   ]
+  },
+  {
+   "name": "Gps",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "requestPositionData",
+     "use_case": "Return Position (UC56)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC56"
+   ]
+  },
+  {
+   "name": "Connection",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "checkConnection",
+     "use_case": "Edit Comment (UC54)"
+    },
+    {
+     "name": "notifyConnectionError",
+     "use_case": "Edit Comment (UC54)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC54"
+   ]
+  },
+  {
+   "name": "EventsUserSystem",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "handleEvents",
+     "use_case": "Edit Comment (UC54)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC54"
+   ]
+  },
+  {
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [
+    "message"
+   ],
+   "methods": [
+    {
+     "name": "displayNotification",
+     "use_case": "Entry EntryCondition (UC55)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC55"
+   ]
+  },
+  {
+   "name": "SearchForm",
+   "kind": "class",
+   "attributes": [
+    "searchCriteria"
+   ],
+   "methods": [
+    {
+     "name": "submitSearch",
+     "use_case": "Search Site (UC57)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC57"
+   ]
+  },
+  {
+   "name": "Area",
+   "kind": "class",
+   "attributes": [
+    "type"
+   ],
+   "methods": [
+    {
+     "name": "displayArea",
+     "use_case": "View Detail (UC58)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC58"
+   ]
+  },
+  {
+   "name": "Card",
+   "kind": "class",
+   "attributes": [
+    "siteDetails"
+   ],
+   "methods": [
+    {
+     "name": "displayCard",
+     "use_case": "View Detail (UC58)"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC58"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Agency",
+   "target": "AccountTourist",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Agency",
+   "target": "CulturalHeritage",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Agency",
+   "target": "RefreshmentPoint",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Agency",
+   "target": "Tourist",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SystemRequirement",
+   "target": "UseCase",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SystemRequirement",
+   "target": "UseCaseSearchCulturalHeritage",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SystemRequirement",
+   "target": "UseCaseSearchRefreshmentPoint",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SystemRequirement",
+   "target": "UseCaseSearchTourist",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AccountTourist",
+   "target": "RefreshmentPoint",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BannerAd",
+   "target": "RefreshmentPoint",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "News",
+   "target": "Agency",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Feedback",
+   "target": "Location",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RefreshmentPoint",
+   "target": "Location",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Image",
+   "target": "BannerAd",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Operation",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC36",
+    "UC37",
+    "UC33",
+    "UC34"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RestaurantOperator",
+   "target": "Point",
+   "multiplicity_target": "1",
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BannerAd",
+   "target": "Image",
+   "multiplicity_target": "1",
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SearchTag",
+   "target": "Tag",
+   "multiplicity_target": "1",
+   "src": [
+    "UC30",
+    "UC28",
+    "UC29"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Connection",
+   "target": "Interruption",
+   "multiplicity_target": "1",
+   "src": [
+    "UC27",
+    "UC28",
+    "UC29",
+    "UC30",
+    "UC31",
+    "UC32",
+    "UC33",
+    "UC34",
+    "UC35",
+    "UC36",
+    "UC37",
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RestaurantOperator",
+   "target": "Menu",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC41",
+    "UC42"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PointRestaurantOperator",
+   "target": "Menu",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC41",
+    "UC42"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Feedback",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC53"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Bookmark",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC51",
+    "UC52"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Convention",
+   "target": "Form",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC44"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Position",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC56"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Gps",
+   "target": "Position",
+   "multiplicity_target": "1",
+   "src": [
+    "UC56"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Feedback",
+   "multiplicity_target": "1",
+   "src": [
+    "UC55"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Connection",
+   "multiplicity_target": "1",
+   "src": [
+    "UC54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "EventsUserSystem",
+   "multiplicity_target": "1",
+   "src": [
+    "UC54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Notification",
+   "multiplicity_target": "1",
+   "src": [
+    "UC55"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "SearchForm",
+   "multiplicity_target": "1",
+   "src": [
+    "UC57"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Area",
+   "target": "Card",
+   "multiplicity_target": "1",
+   "src": [
+    "UC58"
+   ]
+  }
+ ],
+ "python": "from abc import ABC, abstractmethod\n\nclass Actor:\n    pass\n\nclass UseCase(ABC):\n    @abstractmethod\ndefinition(self):\n        pass\n\nclass CulturalHeritage:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass RefreshmentPoint:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass Tourist:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass Agency:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass Operation:\n    def __init__(self, id: int, name: str):\n        self.id = id\n        self.name = name\n\nclass Confirmation:\n    def __init__(self, id: int, status: str):\n        self.id = id\n        self.status = status\n\nclass Interruption:\n    def __init__(self, id: int, status: str):\n        self.id = id\n        self.status = status\n\nclass QualityRequirement:\n    def __init__(self, id: int, description: str):\n        self.id = id\n        self.description = description\n\nclass SystemRequirement:\n    def __init__(self, id: int, description: str):\n        self.id = id\n        self.description = description\n\nclass UseCaseSearchCulturalHeritage(UseCase):\n    def definition(self):\n        pass\n\nclass UseCaseSearchRefreshmentPoint(UseCase):\n    def definition(self):\n        pass\n\nclass UseCaseSearchTourist(UseCase):\n    def definition(self):\n        pass\n\nclass UseCaseErrored(UseCase):\n    def definition(self):\n        pass\n\nclass UseCaseConventionRequest(UseCase):\n    def definition(self):\n        pass\n\nclass UseCaseChangeData(UseCase):\n    def definition(self):\n        pass\n\nclass UseCaseInsertObject(UseCase):\n    def definition(self):\n        pass\n\nclass UseCaseReturnList(UseCase):\n    def definition(self):\n        pass\n\nclass UseCaseViewDetail(UseCase):\n    def definition(self):\n        pass\n\nfrom abc import ABC, abstractmethod\n\nclass Actor:\n    pass\n\nclass UseCase:\n    pass\n\nclass Attribute:\n    pass\n\nclass Relation:\n    pass\n\nclass Class:\n    def __init__(self, name, attributes=None, relations=None):\n        self.name = name\n        self.attributes = attributes if attributes else []\n        self.relations = relations if relations else []\n\n    def __repr__(self):\n        return self.name\n\nclass Attribute:\n    def __init__(self, name, type_):\n        self.name = name\n        self.type = type_\n\nclass Relation:\n    def __init__(self, from_class, to_class, type_):\n        self.from_class = from_class\n        self.to_class = to_class\n        self.type = type_\n\n# Define classes\nAccount = Class('Account')\nAccountTourist = Class('AccountTourist', [Attribute('id', 'int')], [Relation('AccountTourist', 'Account', 'has')])\nAgency = Class('Agency')\nBanner = Class('Banner')\nBannerAd = Class('BannerAd', [Attribute('image', 'str')], [Relation('BannerAd', 'Image', 'has')])\nBookmark = Class('Bookmark')\nChange = Class('Change')\nCharacteristic = Class('Characteristic')\nComment = Class('Comment')\nComputer = Class('Computer')\nConfirmation = Class('Confirmation')\nConnection = Class('Connection')\nConvention = Class('Convention')\nDataNews = Class('DataNews')\nDelete = Class('Delete')\nDeletion = Class('Deletion')\nDisplay = Class('Display')\nDisplays = Class('Displays')\nEating = Class('Eating')\nElimination = Class('Elimination')\nEtour = Class('Etour')\nEvent = Class('Event')\nEventsUserSystem = Class('EventsUserSystem', [Attribute('flow', 'Event')])\nFeedback = Class('Feedback')\nImage = Class('Image')\nInsert = Class('Insert')\nInsertion = Class('Insertion')\nInterruption = Class('Interruption')\nLocation = Class('Location')\nMessage = Class('Message')\nNews = Class('News', [Attribute('amendment', 'str'), Attribute('editing_functionality', 'str'), Attribute('placement', 'str')], [Relation('News', 'Deletion', 'has'), Relation('News', 'Elimination', 'has')])\nNotification = Class('Notification')\nNotificationSystem = Class('NotificationSystem', [Relation('NotificationSystem', 'Elimination', 'generalization')])\nOperation = Class('Operation')\nOperatorAgency = Class('OperatorAgency')\nPoint = Class('Point')\nQualityRequirement = Class('QualityRequirement')\nRefreshmentPoint = Class('RefreshmentPoint', [Relation('RefreshmentPoint', 'Convention', 'has')])\nRest = Class('Rest')\nRestUseCaseSearchrefreshmentpoint = Class('RestUseCaseSearchrefreshmentpoint', [Relation('RestUseCaseSearchrefreshmentpoint', 'Point', 'has')])\nRestaurant = Class('Restaurant', [Relation('Restaurant', 'Point', 'has')])\nTourist = Class('Tourist', [Relation('Tourist', 'Account', 'has')])\nTransaction = Class('Transaction')\nTransactionChange = Class('TransactionChange', [Relation('TransactionChange', 'Confirmation', 'has')])\nUseCase = Class('UseCase', [Relation('UseCase', 'Result', 'has')])\nUserInteraction = Class('UserInteraction')\n\n# Define relations\nEventsUserSystem.flow = Relation('EventsUserSystem', 'Event', 'has')\nNews.amendment = Attribute('amendment', 'str')\nNews.editing_functionality = Attribute('editing_functionality', 'str')\nNews.placement = Attribute('placement', 'str')\nBannerAd.image = Attribute('image', 'str')\nBanner.change = Relation('Banner', 'Change', 'has')\nBanner.elimination = Relation('Banner', 'Elimination', 'has')\nBanner.insertion = Relation('Banner', 'Insertion', 'has')\nChange.confirmation = Relation('Change', 'Confirmation', 'has')\nConnection.interruption = Relation('Connection', 'Interruption', 'has')\nEating.point = Relation('Eating', 'Point', 'has')\nEventsUserSystem.flow = Relation('EventsUserSystem', 'Event', 'has')\nFeedback.comment = Relation('Feedback', 'Comment', 'has')\nImage.selection = Relation('Image', 'Selection', 'has')\nInsertion.confirmation = Relation('Insertion', 'Confirmation', 'has')\nInsertion.operation = Relation('Insertion', 'Operation', 'has')\nNews.deletion = Relation('News', 'Deletion', 'has')\nNews.elimination = Relation('News', 'Elimination', 'has')\nNotification.reading = Relation('Notification', 'Reading', 'has')\nPoint.banner = Relation('Point', 'Banner', 'has')\nReading.confirmation = Relation('Reading', 'Confirmation', 'has')\nRefreshmentPoint.convention = Relation('RefreshmentPoint', 'Convention', 'has')\nRefreshmentPoint.banner = Relation('RefreshmentPoint', 'Banner', 'has')\nRest.point = Relation('Rest', 'Point', 'has')\nRestaurant.point = Relation('Restaurant', 'Point', 'has')\nTourist.account = Relation('Tourist', 'Account', 'has')\nTourist.elimination = Relation('Tourist', 'Elimination', 'has')\nTransactionChange.confirmation = Relation('TransactionChange', 'Confirmation', 'has')\nTransaction.confirmation = Relation('Transaction', 'Confirmation', 'has')\nUseCase.result = Relation('UseCase', 'Result', 'has')\n\n\nfrom abc import ABC, abstractmethod\n\nclass UseCase(ABC):\n    @abstractmethod\ndefine_requirements(self):\n        pass\n\nclass GuestUser:\n    def __init__(self):\n        self.access = None\n        self.position = None\n\nclass RegisteredUser:\n    def __init__(self):\n        self.login = None\n\nclass AgencyOperator:\n    def __init__(self):\n        self.password = None\n\nclass RestaurantOperator:\n    def __init__(self):\n        self.point = None\n\nclass Operation:\n    def __init__(self, user):\n        self.user = user\n\nclass Login:\n    def __init__(self, user):\n        self.user = user\n\nclass Disconnection:\n    def __init__(self, user):\n        self.user = user\n\nclass SearchTag:\n    def __init__(self, user):\n        self.user = user\n\nclass DeleteTag:\n    def __init__(self, user):\n        self.user = user\n\nclass InsertTag:\n    def __init__(self, user):\n        self.user = user\n\nclass ChangePassword:\n    def __init__(self, user):\n        self.user = user\n\nclass CreateAccount:\n    def __init__(self, user):\n        self.user = user\n\nclass ResearchHeritage:\n    def __init__(self, user):\n        self.user = user\n\nclass InsertBanner:\n    def __init__(self, user):\n        self.user = user\n\nclass ChangeBannerImage:\n    def __init__(self, user):\n        self.user = user\n\nclass DeleteBanner:\n    def __init__(self, user):\n        self.user = user\n\nclass UseCase27(SearchTag):\n    def define_requirements(self):\n        pass\n\nclass UseCase28(DeleteTag):\n    def define_requirements(self):\n        pass\n\nclass UseCase29(InsertTag):\n    def define_requirements(self):\n        pass\n\nclass UseCase30(InsertTag):\n    def define_requirements(self):\n        pass\n\nclass UseCase31(ChangePassword):\n    def define_requirements(self):\n        pass\n\nclass UseCase33(CreateAccount):\n    def define_requirements(self):\n        pass\n\nclass UseCase34(ResearchHeritage):\n    def define_requirements(self):\n        pass\n\nclass UseCase35(Login):\n    def define_requirements(self):\n        pass\n\nclass UseCase36(Login):\n    def define_requirements(self):\n        pass\n\nclass UseCase37(Disconnection):\n    def define_requirements(self):\n        pass\n\nclass UseCase38(InsertBanner):\n    def define_requirements(self):\n        pass\n\nclass UseCase39(ChangeBannerImage):\n    def define_requirements(self):\n        pass\n\nclass UseCase40(DeleteBanner):\n    def define_requirements(self):\n        pass\n\nfrom abc import ABC, abstractmethod\n\nclass Actor(ABC):\n    pass\n\nclass Operator(Actor):\n    pass\n\nclass PointRestaurantOperator(Operator):\n    pass\n\nclass RestaurantOperator(Operator):\n    pass\n\nclass Tourist(Actor):\n    pass\n\nclass UseCase(ABC):\n    pass\n\nclass UC41(UseCase):\n    pass\n\nclass UC42(UseCase):\n    pass\n\nclass UC43(UseCase):\n    pass\n\nclass UC44(UseCase):\n    pass\n\nclass UC45(UseCase):\n    pass\n\nclass UC46(UseCase):\n    pass\n\nclass UC47(UseCase):\n    pass\n\nclass UC48(UseCase):\n    pass\n\nclass UC49(UseCase):\n    pass\n\nclass UC50(UseCase):\n    pass\n\nclass UC51(UseCase):\n    pass\n\nclass UC52(UseCase):\n    pass\n\nclass UC53(UseCase):\n    pass\n\nclass Restaurant:\n    def __init__(self):\n        self.menu = {day: None for day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']}\n        self.refreshment_point = None\n        self.statistic = None\n\n    def change_menu(self, day, menu):\n        raise NotImplementedError\n\nclass Menu:\n    def __init__(self):\n        self.days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\n        self.editing_functionality = False\n\n    def activate_editing_functionality(self):\n        self.editing_functionality = True\n\n    def deactivate_editing_functionality(self):\n        self.editing_functionality = False\n\n    def upload_menu(self, day, menu):\n        raise NotImplementedError\n\n    def edit_menu(self, day, menu):\n        raise NotImplementedError\n\n    def verify_menu(self, day, menu):\n        raise NotImplementedError\n\n    def confirm_menu(self, day, menu):\n        raise NotImplementedError\n\n    def save_menu(self, day, menu):\n        raise NotImplementedError\n\n    def delete_menu(self, day):\n        raise NotImplementedError\n\n    def display_menu(self, day):\n        raise NotImplementedError\n\n    def display_days(self):\n        return self.days\n\n    def display_menu_for_day(self, day):\n        return self.menu[day]\n\n    def display_refreshment_point(self):\n        return self.refreshment_point\n\n    def display_statistic(self):\n        return self.statistic\n\n    def display_favorites(self):\n        raise NotImplementedError\n\n    def display_visited_sites(self):\n        raise NotImplementedError\n\n    def insert_favorites(self, site):\n        raise NotImplementedError\n\n    def remove_favorites(self, site):\n        raise NotImplementedError\n\n    def insert_feedback(self, site, feedback):\n        raise NotImplementedError\n\n    def display_agreement(self):\n        raise NotImplementedError\n\n    def request_agreement(self, form):\n        raise NotImplementedError\n\n    def confirm_agreement(self, form):\n        raise NotImplementedError\n\n    def save_agreement(self, form):\n        raise NotImplementedError\n\n\nfrom typing import Optional\n\nclass Area:\n    pass\n\nclass Card:\n    pass\n\nclass Change:\n    pass\n\nclass Comment:\n    def __init__(self, alteration: Optional[str] = None):\n        self.alteration = alteration\n\nclass Confirmation:\n    pass\n\nclass Connection:\n    pass\n\nclass Etour:\n    pass\n\nclass EventsUserSystem:\n    def __init__(self, favorites: list, flow: list):\n        self.favorites = favorites\n        self.flow = flow\n\nclass Feedback:\n    pass\n\nclass Gps:\n    def calculate_position(self) -> Optional[str]:\n        pass\n\nclass Interruption:\n    pass\n\nclass Notification:\n    def __init__(self, reading: bool):\n        self.reading = reading\n\nclass Operation:\n    pass\n\nclass Position:\n    pass\n\nclass QualityRequirement:\n    pass\n\nclass Reading:\n    pass\n\nclass Recovers:\n    pass\n\nclass Request:\n    pass\n\nclass Result:\n    pass\n\nclass Search:\n    def __init__(self, form: Optional[object] = None):\n        self.form = form\n\nclass SearchForm:\n    pass\n\nclass Tourist:\n    def __init__(self, position: Optional[str] = None):\n        self.position = position\n\nclass Transaction:\n    pass\n\nclass User:\n    pass\n\nclass UserInteraction:\n    pass\n\nclass UseCase:\n    pass\n\nclass Area:\n    pass\n\nclass Card:\n    pass\n\nclass Change:\n    pass\n\nclass Comment:\n    def __init__(self, alteration: Optional[str] = None):\n        self.alteration = alteration\n\nclass Confirmation:\n    pass\n\nclass Connection:\n    pass\n\nclass Etour:\n    pass\n\nclass EventsUserSystem:\n    def __init__(self, favorites: list, flow: list):\n        self.favorites = favorites\n        self.flow = flow\n\nclass Feedback:\n    pass\n\nclass Gps:\n    def calculate_position(self) -> Optional[str]:\n        pass\n\nclass Interruption:\n    pass\n\nclass Notification:\n    def __init__(self, reading: bool):\n        self.reading = reading\n\nclass Operation:\n    pass\n\nclass Position:\n    pass\n\nclass QualityRequirement:\n    pass\n\nclass Reading:\n    pass\n\nclass Recovers:\n    pass\n\nclass Request:\n    pass\n\nclass Result:\n    pass\n\nclass Search:\n    def __init__(self, form: Optional[object] = None):\n        self.form = form\n\nclass SearchForm:\n    pass\n\nclass Tourist:\n    def __init__(self, position: Optional[str] = None):\n        self.position = position\n\nclass Transaction:\n    pass\n\nclass User:\n    pass\n\nclass UserInteraction:\n    pass\n\nclass UseCase:\n    pass\n",
+ "java": {}
+}

@@ -1,0 +1,164 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Net",
+   "src": [
+    "R3",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "Place",
+   "src": [
+    "R1",
+    "R7",
+    "R9",
+    "R11",
+    "R14"
+   ]
+  },
+  {
+   "name": "Transition",
+   "src": [
+    "R2",
+    "R5",
+    "R6",
+    "R10",
+    "R13"
+   ]
+  },
+  {
+   "name": "Arc",
+   "src": [
+    "R4",
+    "R5",
+    "R6",
+    "R11"
+   ]
+  },
+  {
+   "name": "Token",
+   "src": [
+    "R7",
+    "R15"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Place",
+   "name": "net",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "owner": "Place",
+   "name": "inputArcs",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "owner": "Transition",
+   "name": "outputArcs",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "owner": "Arc",
+   "name": "weight",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "owner": "Arc",
+   "name": "transition",
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "owner": "Arc",
+   "name": "place",
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "owner": "Token",
+   "name": "place",
+   "src": [
+    "R15"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Place",
+   "target": "Net",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Place",
+   "target": "Arc",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Transition",
+   "target": "Arc",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Net",
+   "target": "Place",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Arc",
+   "target": "Transition",
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Arc",
+   "target": "Place",
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

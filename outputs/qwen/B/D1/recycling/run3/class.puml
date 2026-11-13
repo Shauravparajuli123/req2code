@@ -1,0 +1,98 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Game {
+  name : String
+  +createGame()
+}
+class User {
+  profile : String
+  email : String
+  zipCode : String
+  favoriteRecyclingCenters : String
+  transactionHistory : String
+  uiExperience : String
+  deviceAccess : boolean
+  reward : String
+  personalInformation : String
+  +enterZipCode()
+  +getRecyclingFacilityHours()
+  +choosePick()
+  +viewUserDocumentation()
+  +viewMapDisplay()
+  +viewDisposalEvent()
+  +viewInformation()
+  +viewActivityFee()
+  +viewDashboard()
+  +viewStat()
+  +browseList()
+  +uploadSchedule()
+  +linkEmailAccount()
+  +contactAdministrator()
+}
+class Admin {
+  dataAccess : boolean
+  dashboard : String
+  userActivity : String
+  facilityInformation : String
+  userStats : String
+  +addRecyclingCenterInformation()
+  +readFeedback()
+  +blockUser()
+  +viewUserErrorLog()
+  +onboardRecyclingCenter()
+  +handleActivity()
+  +communicateFacility()
+  +communicateSite()
+  +viewUserStats()
+  +viewFacilityInformation()
+  +viewUserActivity()
+}
+class RecyclingCenter {
+  name : String
+  openingHours : String
+  location : String
+  specialWasteDropOff : boolean
+  safeDisposalEvents : String
+  +getHours()
+  +viewMapDisplay()
+  +viewDisposalEvent()
+}
+class RecyclingFacility {
+  name : String
+  acceptedMaterials : String
+  userStats : String
+  schedule : String
+  +updateInformation()
+  +communicateAdmin()
+  +viewUserStats()
+}
+class RecyclingfacilityRepresentative {
+  name : String
+  acceptedMaterials : String
+  userStats : String
+  +updateInformation()
+  +viewUserStats()
+}
+class Profile {
+  favoriteRecyclingCenters : String
+}
+class Transaction {
+}
+class Hour {
+}
+class DisposalEvent {
+}
+class Location {
+}
+class Material {
+}
+class Schedule {
+}
+class UserActivity {
+}
+class UserStat {
+}
+class Dashboard {
+}
+@enduml

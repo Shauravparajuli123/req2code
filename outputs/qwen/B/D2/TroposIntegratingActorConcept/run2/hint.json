@@ -1,0 +1,132 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D2/TroposIntegratingActorConcept",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s2",
+      "text": "Every instance of the Agent class occupies exactly one position; and every position is occupied by exactly one agent."
+     }
+    ],
+    "name": "agent"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A class named \"Actor\"."
+     }
+    ],
+    "name": "Actor",
+    "freq": 0
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R2",
+     "R5"
+    ],
+    "rule": [
+     "explicit_class",
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A class named \"Agent\"."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A class named \"Agent\" that occupies a position, represented by the \"Position\" class."
+     },
+     {
+      "sid": "R5.s2",
+      "text": "Every instance of the Agent class occupies exactly one position; and every position is occupied by exactly one agent."
+     }
+    ],
+    "name": "Agent",
+    "freq": 1
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R5",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A class named \"Agent\" that occupies a position, represented by the \"Position\" class."
+     },
+     {
+      "sid": "R5.s2",
+      "text": "Every instance of the Agent class occupies exactly one position; and every position is occupied by exactly one agent."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "The instances of the class \"Position\" can cover roles, represented by the \"Role\" class."
+     }
+    ],
+    "name": "Position",
+    "freq": 5
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R4",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "An IntegratedTroposActorConcept has roles"
+     },
+     {
+      "sid": "R6.s1",
+      "text": "The instances of the class \"Position\" can cover roles, represented by the \"Role\" class."
+     }
+    ],
+    "name": "Role",
+    "freq": 2
+   }
+  ],
+  "attributes": [],
+  "relations": [],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

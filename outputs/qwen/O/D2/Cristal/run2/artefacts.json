@@ -1,0 +1,227 @@
+{
+ "actors": [
+  "part composite member"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Cristal",
+   "kind": "class",
+   "attributes": [
+    "condition",
+    "elementaryActDef",
+    "elementaryPartDef",
+    "compositeActDef",
+    "compositeParDef"
+   ],
+   "methods": [
+    {
+     "name": "addCompositeParDef",
+     "use_case": null
+    },
+    {
+     "name": "addActCompositeMember",
+     "use_case": null
+    },
+    {
+     "name": "addActivityDefinition",
+     "use_case": null
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Condition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ElementaryActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "ElementaryPartDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "CompositeActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "CompositeParDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "ActCompositeMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addActivityDefinition",
+     "use_case": null
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "ActivityDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "PartCompositeMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10",
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "name": "PartDefinitionNode",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "Condition",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "ElementaryActDef",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "ElementaryPartDef",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "CompositeActDef",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "CompositeParDef",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R2",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "ActCompositeMember",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Cristal",
+   "target": "ActivityDefinition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ActCompositeMember",
+   "target": "ActivityDefinition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PartCompositeMember",
+   "target": "PartDefinitionNode",
+   "multiplicity_target": "1",
+   "src": [
+    "R15",
+    "R16"
+   ]
+  }
+ ],
+ "python": "class Cristal:\n    def __init__(self):\n        self.condition = None\n        self.elementaryActDef = None\n        self.elementaryPartDef = None\n        self.compositeActDef = None\n        self.compositeParDef = []\n        self.actCompositeMembers = []\n        self.activityDefinitions = []\n\n    def addCompositeParDef(self, compositeParDef):\n        raise NotImplementedError\n\n    def addActCompositeMember(self, actCompositeMember):\n        raise NotImplementedError\n\n    def addActivityDefinition(self, activityDefinition):\n        raise NotImplementedError\n\nclass Condition:\n    pass\n\nclass ElementaryActDef:\n    pass\n\nclass ElementaryPartDef:\n    pass\n\nclass CompositeActDef:\n    pass\n\nclass CompositeParDef:\n    pass\n\nclass ActCompositeMember:\n    def addActivityDefinition(self, activityDefinition):\n        raise NotImplementedError\n\nclass ActivityDefinition:\n    pass\n\nclass PartCompositeMember:\n    pass\n\nclass PartDefinitionNode:\n    pass",
+ "java": {}
+}

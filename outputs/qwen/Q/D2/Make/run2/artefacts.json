@@ -1,0 +1,131 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "ExecuteFile",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "File",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "execute",
+     "use_case": "ExecuteFile"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Makefile",
+   "kind": "class",
+   "attributes": [
+    "fileDependencies",
+    "comment",
+    "rules"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addDependency",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R12"
+   ]
+  },
+  {
+   "name": "Dependency",
+   "kind": "class",
+   "attributes": [
+    "rule"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [
+    "text"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "File",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "Comment",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "Rule",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Rule",
+   "target": "Dependency",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass File:\n    def __init__(self, name: str):\n        self.name = name\n    def execute(self):\n        raise NotImplementedError('execute method not implemented')\n\nclass Dependency:\n    def __init__(self, rule: Rule):\n        self.rule = rule\n\nclass Comment:\n    def __init__(self, text: str):\n        self.text = text\n\nclass Rule:\n    def __init__(self):\n        pass\n    def addDependency(self, dependency: Dependency):\n        raise NotImplementedError('addDependency method not implemented')\n\nclass Makefile:\n    def __init__(self, fileDependencies: List[File], comment: Optional[Comment] = None, rules: List[Rule] = None):\n        self.fileDependencies = fileDependencies\n        self.comment = comment\n        self.rules = rules if rules else []\n",
+ "java": {}
+}

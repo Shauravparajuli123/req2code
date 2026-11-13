@@ -1,0 +1,151 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineLaunchConfiguration",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "LaunchConfiguration",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "attributes"
+   ],
+   "methods": [
+    {
+     "name": "addAttribute",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "key",
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "MapEntry",
+   "kind": "class",
+   "attributes": [
+    "key",
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Map",
+   "kind": "class",
+   "attributes": [
+    "entries"
+   ],
+   "methods": [
+    {
+     "name": "addEntry",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "List",
+   "kind": "class",
+   "attributes": [
+    "entries"
+   ],
+   "methods": [
+    {
+     "name": "addEntry",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "ListEntry",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "LaunchConfiguration",
+   "target": "Attribute",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Attribute",
+   "target": "Map",
+   "multiplicity_target": "1",
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Attribute",
+   "target": "List",
+   "multiplicity_target": "1",
+   "src": [
+    "R12",
+    "R13"
+   ]
+  }
+ ],
+ "python": "from typing import List, Dict, Optional\n\nclass MapEntry:\n    def __init__(self, key: str, value: str):\n        self.key = key\n        self.value = value\n\nclass ListEntry:\n    def __init__(self, value: str):\n        self.value = value\n\nclass Attribute:\n    def __init__(self, key: str):\n        self.key = key\n\nclass StringAttribute(Attribute):\n    def __init__(self, key: str, value: str):\n        super().__init__(key)\n        self.value = value\n\nclass BooleanAttribute(Attribute):\n    def __init__(self, key: str, value: bool):\n        super().__init__(key)\n        self.value = value\n\nclass MapAttribute(Attribute):\n    def __init__(self, key: str):\n        super().__init__(key)\n        self.entries: List[MapEntry] = []\n\nclass ListAttribute(Attribute):\n    def __init__(self, key: str):\n        super().__init__(key)\n        self.entries: List[ListEntry] = []\n\nclass LaunchConfiguration:\n    def __init__(self, type: str):\n        self.type = type\n        self.attributes: List[Attribute] = []\n        self.map_attribute: Optional[MapAttribute] = None\n        self.list_attribute: Optional[ListAttribute] = None\n",
+ "java": {}
+}

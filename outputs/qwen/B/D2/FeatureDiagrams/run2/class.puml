@@ -1,0 +1,30 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Node {
+  description : String
+  reference : String
+  attributes : String
+  xorGroups : String
+  orgroups : String
+  +addAttribute()
+  +addXorGroup()
+  +addOrgroup()
+}
+class Attribute {
+  description : String
+  name : String
+  key : boolean
+}
+class Orgroup {
+  preliminary : boolean
+}
+class Xorgroup {
+  preliminary : boolean
+}
+Node "1" -- "0..*" Attribute : has
+Node "1" *-- "1..*" Attribute : is composed of
+Node "0..*" -- "1" Xorgroup : has
+Orgroup "1" -- "1..*" Node : has
+Xorgroup "1" -- "1..*" Node : has
+@enduml

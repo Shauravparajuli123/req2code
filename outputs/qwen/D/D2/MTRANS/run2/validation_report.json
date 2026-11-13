@@ -1,0 +1,35 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a module can have multiple rules, which is implied by the many-to-many relationship between Module and Rule."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class MetaClass as required by R1",
+   "fix": "Add class MetaClass to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Instruction is missing an attribute instruction as required by R19",
+   "fix": "Add attribute instruction to class Instruction."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Module is incorrect. Rule should have a many-to-many relationship with Module as required by R11 and R12.",
+   "fix": "Change the relationship between Rule and Module to be many-to-many."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Expression is missing a relationship with Inheritance as required by R18",
+   "fix": "Add relationship between Expression and Inheritance."
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class TaskNode {
+  identifier : String
+  category : String
+  taskType : String
+  importance : int
+  complexityLevel : int
+  centrality : int
+  +createTaskNode()
+}
+class Task {
+  expression : String
+  operator : String
+  +associateOperator()
+  +associateExpression()
+}
+class Expression {
+}
+class Operator {
+  +operateOnTask()
+}
+TaskNode "1" -- "1" Task : is
+Expression "0..*" -- "1" Operator : has
+Task "0..*" -- "1" Operator : has
+@enduml

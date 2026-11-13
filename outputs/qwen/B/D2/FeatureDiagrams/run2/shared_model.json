@@ -1,0 +1,222 @@
+{
+ "case": "D2/FeatureDiagrams",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "reference",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "attributes",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "xorGroups",
+     "type": "String",
+     "src": [
+      "R8",
+      "R12"
+     ]
+    },
+    {
+     "name": "orgroups",
+     "type": "String",
+     "src": [
+      "R11",
+      "R13"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addAttribute",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addXorGroup",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "addOrgroup",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "key",
+     "type": "boolean",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Orgroup",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "preliminary",
+     "type": "boolean",
+     "src": [
+      "R5",
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4",
+    "R6"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Xorgroup",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "preliminary",
+     "type": "boolean",
+     "src": [
+      "R5",
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R8",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "is composed of",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C4",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

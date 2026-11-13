@@ -1,0 +1,80 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "FCMSource",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "EAISource",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "FCMSink",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "EAISink",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "EAIResource",
+   "src": [
+    "R5",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "EAIQueue",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "EAIQueue",
+   "name": "maxLength",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "generalization",
+   "source": "EAISource",
+   "target": "FCMSource",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "EAISource",
+   "target": "EAIResource",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "EAISink",
+   "target": "EAIResource",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

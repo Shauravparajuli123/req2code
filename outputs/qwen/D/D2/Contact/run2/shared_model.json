@@ -1,0 +1,69 @@
+{
+ "case": "D2/Contact",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "PhoneNumber",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "number",
+     "type": "String",
+     "src": [
+      "R2",
+      "R3"
+     ]
+    },
+    {
+     "name": "type",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

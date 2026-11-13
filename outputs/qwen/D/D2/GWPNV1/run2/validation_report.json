@@ -1,0 +1,25 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Net' should have an attribute 'places' to represent the relationship with 'Place' as stated in R4 and R8.",
+   "fix": "Add 'places: Place' to class 'Net'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Place' should have an attribute 'net' to represent the relationship with 'Net' as stated in R4 and R8.",
+   "fix": "Add 'net: Net' to class 'Place'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The association between 'Net' and 'Place' should be '0..*..1' to reflect R4 and R8.",
+   "fix": "Change the association between 'Net' and 'Place' to '0..*..1'."
+  }
+ ]
+}

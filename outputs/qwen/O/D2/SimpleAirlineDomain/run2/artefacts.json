@@ -1,0 +1,86 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "AssignPassengerToFlight",
+   "actor": "User",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Flight",
+   "kind": "class",
+   "attributes": [
+    "departureTime",
+    "originAirport",
+    "passengers"
+   ],
+   "methods": [
+    {
+     "name": "addPassenger",
+     "use_case": "AssignPassengerToFlight"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R9",
+    "R11"
+   ]
+  },
+  {
+   "name": "Passenger",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "gender"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Flight",
+   "target": "Passenger",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8",
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Airport",
+   "target": "Flight",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "class Airport:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Flight:\n    def __init__(self, originAirport: Airport, departureTime: Time):\n        self.originAirport = originAirport\n        self.departureTime = departureTime\n        self.passengers = []\n    def addPassenger(self, passenger: Passenger):\n        self.passengers.append(passenger)\n\nclass Passenger:\n    def __init__(self, name: str, gender: str):\n        self.name = name\n        self.gender = gender\n\nclass Time:\n    def __init__(self, year: int, day: int, minute: int):\n        self.year = year\n        self.day = day\n        self.minute = minute\n",
+ "java": {}
+}

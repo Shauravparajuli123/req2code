@@ -1,0 +1,134 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineLaunchConfiguration",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "LaunchConfiguration",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "attributes"
+   ],
+   "methods": [
+    {
+     "name": "DefineLaunchConfiguration",
+     "use_case": "DefineLaunchConfiguration"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "key",
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R3"
+   ]
+  },
+  {
+   "name": "MapEntry",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Map",
+   "kind": "class",
+   "attributes": [
+    "entries"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "List",
+   "kind": "class",
+   "attributes": [
+    "entries"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "ListEntry",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "LaunchConfiguration",
+   "target": "Attribute",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Attribute",
+   "target": "Map",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Attribute",
+   "target": "List",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R12",
+    "R13"
+   ]
+  }
+ ],
+ "python": "from typing import List, Union, Mapping, TypeVar, Generic, Optional\n\nString = str\nBoolean = bool\nMapEntry = TypeVar('MapEntry')\nListEntry = TypeVar('ListEntry')\n\nclass Attribute:\n    def __init__(self, key: str, value: Union[str, Boolean, Mapping[str, str], List[str]]):\n        self.key = key\n        self.value = value\n\n    def __str__(self):\n        return f'Attribute(key={self.key}, value={self.value})'\n\nclass MapEntry:\n    def __init__(self, key: str, value: Union[str, Boolean, Mapping[str, str]]):\n        self.key = key\n        self.value = value\n\n    def __str__(self):\n        return f'MapEntry(key={self.key}, value={self.value})'\n\nclass Map(Generic[MapEntry]):\n    def __init__(self, entries: List[MapEntry] = []) -> None:\n        self.entries = entries\n\n    def __str__(self):\n        return f'Map(entries={self.entries})'\n\nclass ListEntry:\n    def __init__(self, value: str):\n        self.value = value\n\n    def __str__(self):\n        return f'ListEntry(value={self.value})'\n\n    class List(Generic[ListEntry]):\n        def __init__(self, entries: List[ListEntry] = []) -> None:\n            self.entries = entries\n\n        def __str__(self):\n            return f'List(entries={self.entries})'\n\n    class LaunchConfiguration:\n        def __init__(self, type: str, attributes: List[Attribute] = []) -> None:\n            self.type = type\n            self.attributes = attributes\n\n        def DefineLaunchConfiguration(self):\n            raise NotImplementedError\n\n        def __str__(self):\n            return f'LaunchConfiguration(type={self.type}, attributes={self.attributes})'",
+ "java": {}
+}

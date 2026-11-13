@@ -1,0 +1,198 @@
+{
+ "case": "D2/CompanyStructure",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "CompanyStructureModel",
+   "src": []
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "corporateHQ",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "stores",
+     "type": "String",
+     "src": [
+      "R3",
+      "R10"
+     ]
+    },
+    {
+     "name": "backOffices",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "CorporateHQ",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "managedStores",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Store",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "backOffice",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "cashRegisters",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "BackOffice",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "CashRegister",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "aggregation",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "aggregation",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "aggregation",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "manages",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "aggregation",
+   "source": "C3",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

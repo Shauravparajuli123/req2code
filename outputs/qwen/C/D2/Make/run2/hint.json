@@ -1,0 +1,313 @@
+{
+ "condition": "C",
+ "hint": {
+  "case": "D2/Make",
+  "stage": "result1_before_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R6",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A comment is characterized by a text string."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "A makefile is composed by zero or one comment"
+     }
+    ],
+    "name": "Comment",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R7",
+     "R11",
+     "R13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Class that represents the dependencies of the files with the rule that is applied to it"
+     },
+     {
+      "sid": "R11.s2",
+      "text": "Each rule may have dependencies"
+     },
+     {
+      "sid": "R13.s1",
+      "text": "A RuleDep instance is a dependency that relates Rule instances."
+     }
+    ],
+    "name": "Dependency",
+    "freq": 3
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Makefiles contains elements."
+     },
+     {
+      "sid": "R2.s2",
+      "text": "Each element has a name"
+     }
+    ],
+    "name": "Element",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R1",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "Class with the name of the file that we want to execute to realize the make"
+     },
+     {
+      "sid": "R7.s1",
+      "text": "Class that represents the dependencies of the files with the rule that is applied to it"
+     }
+    ],
+    "name": "File",
+    "freq": 2
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R2",
+     "R3",
+     "R9",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Makefiles contains elements."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "A makefile contains rules"
+     },
+     {
+      "sid": "R9.s1",
+      "text": "A makefile contains file dependencies, each one having a name"
+     }
+    ],
+    "name": "Makefile",
+    "freq": 4
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R3",
+     "R7",
+     "R11",
+     "R12"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A makefile contains rules"
+     },
+     {
+      "sid": "R7.s1",
+      "text": "Class that represents the dependencies of the files with the rule that is applied to it"
+     },
+     {
+      "sid": "R11.s1",
+      "text": "A make file contains rules."
+     }
+    ],
+    "name": "Rule",
+    "freq": 5
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s2",
+      "text": "Each element has a name"
+     }
+    ],
+    "owner": "Element",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "Class with the name of the file that we want to execute to realize the make"
+     }
+    ],
+    "owner": "File",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "A makefile contains file dependencies, each one having a name"
+     }
+    ],
+    "owner": "Makefile",
+    "name": "file dependency",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "is_a"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "A RuleDep instance is a dependency that relates Rule instances."
+     }
+    ],
+    "kind": "generalization",
+    "source": "RuleDepInstance",
+    "target": "Dependency",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Class that represents the dependencies of the files with the rule that is applied to it"
+     }
+    ],
+    "kind": "has",
+    "source": "File",
+    "target": "Dependency",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Makefiles contains elements."
+     }
+    ],
+    "kind": "has",
+    "source": "Makefile",
+    "target": "Element",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A makefile contains rules"
+     }
+    ],
+    "kind": "has",
+    "source": "Makefile",
+    "target": "Rule",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s2",
+      "text": "Each rule may have dependencies"
+     }
+    ],
+    "kind": "has",
+    "source": "Rule",
+    "target": "Dependency",
+    "multiplicity_target": null
+   }
+  ]
+ },
+ "open_tags": []
+}

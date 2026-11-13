@@ -1,0 +1,109 @@
+{
+ "actors": [
+  "owner"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "RelationalDBContent",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Database",
+   "kind": "class",
+   "attributes": [
+    "sgbdName"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Tuple",
+   "kind": "class",
+   "attributes": [
+    "table"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "TupleElement",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "RelationalDBContent",
+   "target": "Table",
+   "multiplicity_target": "1",
+   "src": [
+    "R3",
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "RelationalDBContent",
+   "target": "Tuple",
+   "multiplicity_target": "1",
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Table",
+   "target": "Database",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tuple",
+   "target": "TupleElement",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "class RelationalDBContent:\n    def __init__(self, name: str):\n        self.name = name\n\n\nclass Database:\n    def __init__(self, sgbdName: str):\n        self.sgbdName = sgbdName\n\n\nclass Table:\n    def __init__(self, database: Database):\n        self.database = database\n\n\nclass Tuple:\n    def __init__(self, table: Table):\n        self.table = table\n\n\nclass TupleElement:\n    def __init__(self, value: str):\n        self.value = value",
+ "java": {}
+}

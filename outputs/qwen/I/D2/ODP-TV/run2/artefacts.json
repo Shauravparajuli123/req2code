@@ -1,0 +1,84 @@
+{
+ "actors": [],
+ "use_cases": [
+  {
+   "name": "Create Technology Object",
+   "actor": "",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TechnologyObject",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5"
+   ]
+  },
+  {
+   "name": "ImplementableStandard",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Implementation",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "IXIT",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "ImplementableStandard",
+   "target": "TechnologyObject",
+   "multiplicity_target": "1..*",
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Implementation",
+   "target": "IXIT",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "python": "from abc import ABC\n\nclass ImplementableStandard(ABC):\n    pass\n\nclass Implementation(IXIT):\n    def __init__(self):\n        self.xit_list = []\n\nclass IXIT(Implementation):\n    pass\n\nclass TechnologyObject(ImplementableStandard):\n    def __init__(self):\n        self.implementable_standard_list = []\n\n    def add_implementable_standard(self, standard: ImplementableStandard):\n        raise NotImplementedError\n\n    def remove_implementable_standard(self, standard: ImplementableStandard):\n        raise NotImplementedError\n",
+ "java": {}
+}

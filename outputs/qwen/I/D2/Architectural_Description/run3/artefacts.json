@@ -1,0 +1,111 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "ArchitectureDescription",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "ArchitectureView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "name": "ArchitectureViewPoint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "MainView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "ArchitectureView",
+   "target": "Component",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "ArchitectureViewPoint",
+   "target": "Component",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "MainView",
+   "target": "Component",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ArchitectureDescription",
+   "target": "ArchitectureView",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ArchitectureViewPoint",
+   "target": "ArchitectureView",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ArchitectureDescription",
+   "target": "MainView",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "python": "from abc import ABC\n\n\nclass Component:\n    pass\n\n\nclass ArchitectureView(Component):\n    def __init__(self, main_view: MainView):\n        self.main_view = main_view\n\n\nclass ArchitectureViewPoint(Component):\n    def __init__(self, architecture_view: ArchitectureView):\n        self.architecture_view = architecture_view\n\n\nclass MainView(Component):\n    def __init__(self, architecture_view: ArchitectureView):\n        self.architecture_view = architecture_view\n\n\nclass ArchitectureDescription(Component):\n    def __init__(self, architecture_views: list[ArchitectureView]):\n        self.architecture_views = architecture_views\n\n\nclass ArchitecturalDescription:\n    def __init__(self, architecture_description: ArchitectureDescription, architecture_views: list[ArchitectureView], architecture_view_points: list[ArchitectureViewPoint], main_views: list[MainView]):\n        self.architecture_description = architecture_description\n        self.architecture_views = architecture_views\n        self.architecture_view_points = architecture_view_points\n        self.main_views = main_views\n\n    def select_architecture_view(self, architecture_view: ArchitectureView):\n        raise NotImplementedError\n\n    def conform_to_architecture_view_point(self, architecture_view_point: ArchitectureViewPoint):\n        raise NotImplementedError\n\n    def project_main_view(self, main_view: MainView):\n        raise NotImplementedError",
+ "java": {}
+}

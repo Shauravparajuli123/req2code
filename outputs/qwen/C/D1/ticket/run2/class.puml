@@ -1,0 +1,122 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  dateOfBirth : LocalDate
+  email : String
+  address : String
+  preferences : String
+  bankAccount : String
+  favoriteEvents : String
+  +saveInformation()
+  +editInformation()
+  +seePreference()
+  +seeHistory()
+  +changePassword()
+  +favoriteEvent()
+}
+class Visitor {
+  name : String
+  email : String
+  searchResults : String
+  +readEvent()
+  +purchaseTicket()
+  +seeAvailableSeats()
+  +seeTicketTypes()
+  +addTicketToCart()
+  +seeOrderSummary()
+  +sortSearchResults()
+  +filterSearchResults()
+  +seeUpcomingEvents()
+}
+class Company {
+  serviceFee : String
+  resellers : String
+  +haveBuyingProcess()
+  +validateTicket()
+  +deductServiceFee()
+  +avoidBehavior()
+  +protectUser()
+}
+class Reseller {
+  bankAccount : String
+  ticket : String
+  +resellTicket()
+  +uploadTicket()
+  +setTicketPrice()
+  +addDescription()
+}
+class Event {
+  name : String
+  date : LocalDate
+  artist : String
+  venue : String
+  type : String
+  price : double
+  description : String
+  +seeEvent()
+  +clickEvent()
+  +seeAvailableSeats()
+  +seeType()
+  +addTicketToCart()
+  +seeOrderSummary()
+  +sortSearchResults()
+  +filterSearchResults()
+  +seeUpcomingEvents()
+}
+class Ticket {
+  type : String
+  price : double
+  +seeTicketTypes()
+  +addTicketToCart()
+  +seeOrderSummary()
+}
+class Address {
+  street : String
+  city : String
+  state : String
+  zipCode : String
+}
+class Preference {
+  genre : String
+  eventTypes : String
+}
+class BankAccount {
+  iban : String
+}
+class ServiceFee {
+  percentage : double
+}
+class SearchResult {
+  events : String
+  +sortResults()
+  +filterResults()
+}
+class Artist {
+  name : String
+  linkToWebsite : String
+  linkToSocialMedia : String
+  description : String
+  +seeDescription()
+  +seeLinkToWebsite()
+  +seeLinkToSocialMedia()
+}
+class Link {
+  url : String
+}
+class Venue {
+  name : String
+  map : String
+  +seeMap()
+}
+User "1" -- "1" Preference : has
+User "1" -- "1" Address : has
+User "1" -- "0..*" Ticket : buys
+Event "1" -- "0..*" Ticket : has
+Event "1" -- "1" Venue : is held at
+Reseller "1" -- "1" BankAccount : has
+Reseller "1" -- "0..*" Ticket : sells
+Company "1" -- "1" ServiceFee : charges
+Event "1" -- "1" Artist : features
+@enduml

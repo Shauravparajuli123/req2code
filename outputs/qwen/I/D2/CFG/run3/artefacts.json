@@ -1,0 +1,97 @@
+{
+ "actors": [
+  "Node"
+ ],
+ "use_cases": [
+  {
+   "name": "HasExpression",
+   "actor": "Node",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "SetInNode",
+   "actor": "Node",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "ConditionalNodeHasTrueNode",
+   "actor": "ConditionalNode",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "expression",
+    "inNode"
+   ],
+   "methods": [
+    {
+     "name": "setInNode",
+     "use_case": "R6"
+    },
+    {
+     "name": "getExpression",
+     "use_case": "R5"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R6"
+   ]
+  },
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "ConditionalNode",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "setTrueConditionNode",
+     "use_case": "R7"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Expression",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "python": "from abc import ABC\n\nclass Node(ABC):\n    def __init__(self, in_node: 'Node' = None):\n        self.in_node = in_node\n\n    def set_in_node(self, node: 'Node'):\n        self.in_node = node\n\n    def get_in_node(self) -> 'Node':\n        return self.in_node\n\n    def __str__(self):\n        return f'Node(in_node={self.in_node})'\n\n    def __repr__(self):\n        return self.__str__()\n\nclass Expression:\n    def __init__(self, name: str):\n        self.name = name\n\n    def __str__(self):\n        return f'Expression(name={self.name})'\n\n    def __repr__(self):\n        return self.__str__()\n\nclass Cfg(Node):\n    def __init__(self, expression: Expression, true_condition_node: 'Node'):\n        super().__init__()\n        self.expression = expression\n        self.true_condition_node = true_condition_node\n\n    def get_expression(self) -> Expression:\n        return self.expression\n\n    def set_true_condition_node(self, node: 'Node'):\n        self.true_condition_node = node\n\n    def get_true_condition_node(self) -> 'Node':\n        return self.true_condition_node\n\n    def __str__(self):\n        return f'Cfg(expression={self.expression}, true_condition_node={self.true_condition_node})'\n\n    def __repr__(self):\n        return self.__str__()\n\n    def __bool__(self):\n        raise NotImplementedError\n\n    def evaluate(self):\n        raise NotImplementedError\n\n    def __eq__(self, other):\n        raise NotImplementedError\n\n    def __ne__(self, other):\n        raise NotImplementedError\n\n    def __lt__(self, other):\n        raise NotImplementedError\n\n    def __le__(self, other):\n        raise NotImplementedError\n\n    def __gt__(self, other):\n        raise NotImplementedError\n\n    def __ge__(self, other):\n        raise NotImplementedError\n\n    def __hash__(self):\n        raise NotImplementedError\n\n    def __add__(self, other):\n        raise NotImplementedError\n\n    def __sub__(self, other):\n        raise NotImplementedError",
+ "java": {}
+}

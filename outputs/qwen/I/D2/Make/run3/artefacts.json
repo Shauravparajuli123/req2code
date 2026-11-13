@@ -1,0 +1,174 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Makefile",
+   "kind": "class",
+   "attributes": [
+    "fileDependencies",
+    "comment"
+   ],
+   "methods": [
+    {
+     "name": "addFileDependency",
+     "use_case": "R9"
+    },
+    {
+     "name": "addComment",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    "dependencies"
+   ],
+   "methods": [
+    {
+     "name": "addDependency",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R11"
+   ]
+  },
+  {
+   "name": "RuleDep",
+   "kind": "class",
+   "attributes": [
+    "targetRule"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R12"
+   ]
+  },
+  {
+   "name": "Dependency",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R7"
+   ]
+  },
+  {
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [
+    "text"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "File",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Macro",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "ShellLine",
+   "kind": "class",
+   "attributes": [
+    "rule"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "File",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "Rule",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Rule",
+   "target": "RuleDep",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "RuleDep",
+   "target": "Dependency",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Macro:\n    def __init__(self, value: str):\n        self.value = value\n\nclass Comment:\n    def __init__(self, text: str):\n        self.text = text\n\nclass Element:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Dependency:\n    pass\n\nclass File:\n    def __init__(self, name: str):\n        self.name = name\n\nclass RuleDep:\n    def __init__(self, rule: 'Rule'):\n        self.rule = rule\n\n    def __eq__(self, other: 'RuleDep') -> bool:\n        return self.rule == other.rule\n\n    def __hash__(self) -> int:\n        return hash(self.rule)\n\nclass Rule:\n    def __init__(self, dependencies: List[RuleDep]):\n        self.dependencies = dependencies\n\n    def add_dependency(self, dep: RuleDep):\n        self.dependencies.append(dep)\n\n    def remove_dependency(self, dep: RuleDep):\n        self.dependencies.remove(dep)\n\n    def has_dependency(self, dep: RuleDep) -> bool:\n        return dep in self.dependencies\n\n    def __eq__(self, other: 'Rule') -> bool:\n        return self.dependencies == other.dependencies\n\n    def __hash__(self) -> int:\n        return hash(tuple(self.dependencies))\n\n    def __str__(self) -> str:\n        return f'Rule({self.dependencies})'\n\n    def __repr__(self) -> str:\n        return str(self)\n\nclass Makefile:\n    def __init__(self, file_dependencies: List[File], comment: Optional[Comment] = None):\n        self.file_dependencies = file_dependencies\n        self.comment = comment\n\n    def add_file_dependency(self, file: File):\n        self.file_dependencies.append(file)\n\n    def remove_file_dependency(self, file: File):\n        self.file_dependencies.remove(file)\n\n    def has_file_dependency(self, file: File) -> bool:\n        return file in self.file_dependencies\n\n    def __eq__(self) -> bool:\n        return self.file_dependencies == self.file_dependencies\n\n    def __hash__(self) -> int:\n        return hash(tuple(self.file_dependencies))\n",
+ "java": {}
+}

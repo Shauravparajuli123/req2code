@@ -1,0 +1,202 @@
+{
+ "case": "D2/UDDI_meta-model_fragment",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "IdentifierBag",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "identifiers",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "BusinessEntity",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "identifiers",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "name": "businessContacts",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addBusinessContact",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "BusinessTemplate",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "createTemplate",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Service",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "serviceDescription",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "BusinessEntityModel",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "businessEntities",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addBusinessEntity",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "overviewDocuments",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "addOverviewDocument",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "uses",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "provides",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "generalization",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is-a",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

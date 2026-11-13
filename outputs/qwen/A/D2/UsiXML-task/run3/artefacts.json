@@ -1,0 +1,42 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Game",
+   "actor": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Task",
+   "kind": "class",
+   "attributes": [
+    "identifier",
+    "category",
+    "taskType",
+    "importance",
+    "complexityLevel",
+    "centrality"
+   ],
+   "methods": [
+    {
+     "name": "createTask",
+     "use_case": "Create Game"
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/UsiXML-task.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Task:\n    \"\"\"Source: R1\"\"\"\n    identifier: _t.Optional[str] = None\n    category: _t.Optional[str] = None\n    taskType: _t.Optional[str] = None\n    importance: _t.Optional[int] = None\n    complexityLevel: _t.Optional[int] = None\n    centrality: _t.Optional[int] = None\n\n    def createTask(self) -> None:\n        \"\"\"Realizes UC1 \"Create Game\" (R1).\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Task.java": "/** Generated from shared model D2/UsiXML-task. Source: R1 */\npublic class Task {\n    private java.lang.String identifier;\n    private java.lang.String category;\n    private java.lang.String taskType;\n    private int importance;\n    private int complexityLevel;\n    private int centrality;\n\n    /** Realizes UC1 \"Create Game\" (R1). */\n    public void createTask() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

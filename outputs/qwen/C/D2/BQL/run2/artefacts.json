@@ -1,0 +1,112 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "location",
+    "comments"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Entry",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "allFields"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "BqlModel",
+   "kind": "class",
+   "attributes": [
+    "queries",
+    "entries",
+    "fields"
+   ],
+   "methods": [],
+   "src": [
+    "R2",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Query",
+   "kind": "class",
+   "attributes": [
+    "entries"
+   ],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Field",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R4",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "BqlModel",
+   "target": "Entry",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "BqlModel",
+   "target": "Query",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "BqlModel",
+   "target": "Field",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Entry",
+   "target": "Field",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/BQL.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Element:\n    \"\"\"Source: R1\"\"\"\n    location: _t.Optional[str] = None\n    comments: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Entry:\n    \"\"\"Source: R3, R9, R10\"\"\"\n    name: _t.Optional[str] = None\n    allFields: _t.Optional[bool] = None\n    field: _t.Optional[\"Field\"] = None\n\n\n@_dc.dataclass\nclass BqlModel:\n    \"\"\"Source: R2, R7, R8, R9, R10\"\"\"\n    queries: _t.Optional[str] = None\n    entries: _t.Optional[str] = None\n    fields: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Query:\n    \"\"\"Source: R7\"\"\"\n    entries: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Field:\n    \"\"\"Source: R4, R8, R9, R10\"\"\"\n    name: _t.Optional[str] = None\n",
+ "java": {
+  "Element.java": "/** Generated from shared model D2/BQL. Source: R1 */\npublic class Element {\n    private java.lang.String location;\n    private java.lang.String comments;\n}\n",
+  "Entry.java": "/** Generated from shared model D2/BQL. Source: R3, R9, R10 */\npublic class Entry {\n    private java.lang.String name;\n    private boolean allFields;\n    private Field field;\n}\n",
+  "BqlModel.java": "/** Generated from shared model D2/BQL. Source: R2, R7, R8, R9, R10 */\npublic class BqlModel {\n    private java.lang.String queries;\n    private java.lang.String entries;\n    private java.lang.String fields;\n}\n",
+  "Query.java": "/** Generated from shared model D2/BQL. Source: R7 */\npublic class Query {\n    private java.lang.String entries;\n}\n",
+  "Field.java": "/** Generated from shared model D2/BQL. Source: R4, R8, R9, R10 */\npublic class Field {\n    private java.lang.String name;\n}\n"
+ }
+}

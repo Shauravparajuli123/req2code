@@ -1,0 +1,29 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class WorkflowProcessDefinition {
+  name : String
+  participantSpecifications : String
+  +addSpecification()
+}
+class Specification {
+  processDefinition : String
+}
+class ProcessDefinition {
+  name : String
+  processActivities : String
+  +addProcessActivity()
+}
+class ProcessActivity {
+  name : String
+  processDefinition : String
+  relevantData : String
+  +addRelevantData()
+}
+class TransitionInformation {
+  targetProcessActivity : String
+  +setTargetProcessActivity()
+}
+WorkflowProcessDefinition "1" *-- "1" TransitionInformation : is composed of
+ProcessActivity "1" -- "1" ProcessDefinition : has
+@enduml

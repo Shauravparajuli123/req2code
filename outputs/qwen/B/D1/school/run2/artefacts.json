@@ -1,0 +1,918 @@
+{
+ "actors": [
+  "Moderator",
+  "Student",
+  "Teacher",
+  "Administrator",
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Direct Message",
+   "actor": "Student",
+   "src": [
+    "R1",
+    "R6",
+    "R7",
+    "R18",
+    "R19",
+    "R27",
+    "R28"
+   ]
+  },
+  {
+   "name": "Fill Absence",
+   "actor": "Student",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Receive Notification",
+   "actor": "Student",
+   "src": [
+    "R3",
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "name": "View Information",
+   "actor": "Student",
+   "src": [
+    "R4",
+    "R15",
+    "R45"
+   ]
+  },
+  {
+   "name": "Upload File",
+   "actor": "Teacher",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Create Account",
+   "actor": "Administrator",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "name": "Edit Data",
+   "actor": "Administrator",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "name": "Assign Schedule",
+   "actor": "Administrator",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "name": "Register Absence",
+   "actor": "Administrator",
+   "src": [
+    "R56"
+   ]
+  },
+  {
+   "name": "Register Change",
+   "actor": "Administrator",
+   "src": [
+    "R55"
+   ]
+  },
+  {
+   "name": "Receive Confirmation",
+   "actor": "Teacher",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "Record Behavior",
+   "actor": "Teacher",
+   "src": [
+    "R36"
+   ]
+  },
+  {
+   "name": "Record Grade",
+   "actor": "Teacher",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Record Attendance",
+   "actor": "Teacher",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "See Answer",
+   "actor": "Teacher",
+   "src": [
+    "R39"
+   ]
+  },
+  {
+   "name": "See Grade",
+   "actor": "Teacher",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "See Progress",
+   "actor": "Teacher",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "Set Appearance Date",
+   "actor": "Teacher",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Set Date",
+   "actor": "Teacher",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "View Attendance",
+   "actor": "Teacher",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "View Class",
+   "actor": "Teacher",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "View Contact Information",
+   "actor": "Student",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "Reset Password",
+   "actor": "User",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Set Role",
+   "actor": "Administrator",
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "name": "View Detail",
+   "actor": "Administrator",
+   "src": [
+    "R60"
+   ]
+  },
+  {
+   "name": "View Statistic",
+   "actor": "Administrator",
+   "src": [
+    "R61"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Student",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "contactInformation",
+    "knowledge",
+    "homework",
+    "timetable",
+    "grade",
+    "attendance"
+   ],
+   "methods": [
+    {
+     "name": "directMessage",
+     "use_case": "Direct Message"
+    },
+    {
+     "name": "fillAbsence",
+     "use_case": "Fill Absence"
+    },
+    {
+     "name": "receiveNotification",
+     "use_case": "Receive Notification"
+    },
+    {
+     "name": "viewInformation",
+     "use_case": "View Information"
+    },
+    {
+     "name": "viewClass",
+     "use_case": "View Class"
+    },
+    {
+     "name": "viewContactInformation",
+     "use_case": "View Contact Information"
+    },
+    {
+     "name": "receiveConfirmation",
+     "use_case": "Receive Confirmation"
+    },
+    {
+     "name": "recordBehavior",
+     "use_case": "Record Behavior"
+    },
+    {
+     "name": "recordGrade",
+     "use_case": "Record Grade"
+    },
+    {
+     "name": "recordAttendance",
+     "use_case": "Record Attendance"
+    },
+    {
+     "name": "seeAnswer",
+     "use_case": "See Answer"
+    },
+    {
+     "name": "seeProgress",
+     "use_case": "See Progress"
+    }
+   ],
+   "src": [
+    "R6",
+    "R7",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R27",
+    "R28",
+    "R34",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "name": "Teacher",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "class_",
+    "mentor",
+    "timetable"
+   ],
+   "methods": [
+    {
+     "name": "directMessage",
+     "use_case": "Direct Message"
+    },
+    {
+     "name": "assignSchedule",
+     "use_case": "Assign Schedule"
+    },
+    {
+     "name": "createDlm",
+     "use_case": null
+    },
+    {
+     "name": "addPage",
+     "use_case": null
+    },
+    {
+     "name": "assignDueDate",
+     "use_case": null
+    },
+    {
+     "name": "autoGrade",
+     "use_case": null
+    },
+    {
+     "name": "editPage",
+     "use_case": null
+    },
+    {
+     "name": "makeSubmissionElements",
+     "use_case": null
+    },
+    {
+     "name": "addAnswer",
+     "use_case": null
+    },
+    {
+     "name": "receiveConfirmation",
+     "use_case": "Receive Confirmation"
+    },
+    {
+     "name": "recordBehavior",
+     "use_case": "Record Behavior"
+    },
+    {
+     "name": "recordGrade",
+     "use_case": "Record Grade"
+    },
+    {
+     "name": "recordAttendance",
+     "use_case": "Record Attendance"
+    },
+    {
+     "name": "seeAnswer",
+     "use_case": "See Answer"
+    },
+    {
+     "name": "seeProgress",
+     "use_case": "See Progress"
+    },
+    {
+     "name": "setAppearanceDate",
+     "use_case": "Set Appearance Date"
+    },
+    {
+     "name": "setAvailableDates",
+     "use_case": null
+    },
+    {
+     "name": "uploadFiles",
+     "use_case": null
+    },
+    {
+     "name": "viewAttendance",
+     "use_case": "View Attendance"
+    }
+   ],
+   "src": [
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R46"
+   ]
+  },
+  {
+   "name": "Administrator",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "schedule"
+   ],
+   "methods": [
+    {
+     "name": "directMessage",
+     "use_case": "Direct Message"
+    },
+    {
+     "name": "assignSchedule",
+     "use_case": "Assign Schedule"
+    },
+    {
+     "name": "createAccount",
+     "use_case": "Create Account"
+    },
+    {
+     "name": "editAccount",
+     "use_case": null
+    },
+    {
+     "name": "useFilters",
+     "use_case": null
+    },
+    {
+     "name": "receiveNotification",
+     "use_case": "Receive Notification"
+    },
+    {
+     "name": "registerAbsence",
+     "use_case": "Register Absence"
+    },
+    {
+     "name": "registerChange",
+     "use_case": "Register Change"
+    },
+    {
+     "name": "setRole",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  },
+  {
+   "name": "Guardian",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "child",
+    "mentor",
+    "timetable"
+   ],
+   "methods": [
+    {
+     "name": "directMessage",
+     "use_case": "Direct Message"
+    },
+    {
+     "name": "fillAbsence",
+     "use_case": "Fill Absence"
+    },
+    {
+     "name": "receiveNotification",
+     "use_case": "Receive Notification"
+    },
+    {
+     "name": "viewInformation",
+     "use_case": "View Information"
+    },
+    {
+     "name": "viewClass",
+     "use_case": "View Class"
+    },
+    {
+     "name": "viewContactInformation",
+     "use_case": "View Contact Information"
+    },
+    {
+     "name": "receiveConfirmation",
+     "use_case": "Receive Confirmation"
+    },
+    {
+     "name": "recordBehavior",
+     "use_case": "Record Behavior"
+    },
+    {
+     "name": "recordGrade",
+     "use_case": "Record Grade"
+    },
+    {
+     "name": "recordAttendance",
+     "use_case": "Record Attendance"
+    },
+    {
+     "name": "seeAnswer",
+     "use_case": "See Answer"
+    },
+    {
+     "name": "seeProgress",
+     "use_case": "See Progress"
+    },
+    {
+     "name": "setAppearanceDate",
+     "use_case": "Set Appearance Date"
+    },
+    {
+     "name": "setAvailableDates",
+     "use_case": null
+    },
+    {
+     "name": "uploadFiles",
+     "use_case": null
+    },
+    {
+     "name": "viewAttendance",
+     "use_case": "View Attendance"
+    }
+   ],
+   "src": [
+    "R1",
+    "R3",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R46"
+   ]
+  },
+  {
+   "name": "Message",
+   "kind": "class",
+   "attributes": [
+    "sender",
+    "receiver",
+    "content"
+   ],
+   "methods": [
+    {
+     "name": "send",
+     "use_case": "Direct Message"
+    },
+    {
+     "name": "receive",
+     "use_case": "Receive Notification"
+    },
+    {
+     "name": "sendBroadcastMessage",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1",
+    "R6",
+    "R7",
+    "R18",
+    "R27",
+    "R28",
+    "R33",
+    "R34",
+    "R48"
+   ]
+  },
+  {
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [
+    "sender",
+    "receiver",
+    "content"
+   ],
+   "methods": [
+    {
+     "name": "send",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R12",
+    "R13",
+    "R14",
+    "R18",
+    "R19",
+    "R27",
+    "R28",
+    "R33",
+    "R34",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  },
+  {
+   "name": "Absence",
+   "kind": "class",
+   "attributes": [
+    "student",
+    "date"
+   ],
+   "methods": [
+    {
+     "name": "register",
+     "use_case": "Register Absence"
+    }
+   ],
+   "src": [
+    "R2",
+    "R12",
+    "R13",
+    "R14",
+    "R18",
+    "R19",
+    "R27",
+    "R28",
+    "R33",
+    "R34",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  },
+  {
+   "name": "Dlm",
+   "kind": "class",
+   "attributes": [
+    "title",
+    "pages",
+    "dueDate",
+    "appearanceDate",
+    "submissionElements",
+    "answers",
+    "grade",
+    "attendance"
+   ],
+   "methods": [
+    {
+     "name": "addPage",
+     "use_case": null
+    },
+    {
+     "name": "assignDueDate",
+     "use_case": null
+    },
+    {
+     "name": "autoGrade",
+     "use_case": null
+    },
+    {
+     "name": "editPage",
+     "use_case": null
+    },
+    {
+     "name": "makeSubmissionElements",
+     "use_case": null
+    },
+    {
+     "name": "addAnswer",
+     "use_case": null
+    },
+    {
+     "name": "receiveConfirmation",
+     "use_case": "Receive Confirmation"
+    },
+    {
+     "name": "recordBehavior",
+     "use_case": "Record Behavior"
+    },
+    {
+     "name": "recordGrade",
+     "use_case": "Record Grade"
+    },
+    {
+     "name": "recordAttendance",
+     "use_case": "Record Attendance"
+    },
+    {
+     "name": "seeAnswer",
+     "use_case": "See Answer"
+    },
+    {
+     "name": "seeProgress",
+     "use_case": "See Progress"
+    },
+    {
+     "name": "setAppearanceDate",
+     "use_case": "Set Appearance Date"
+    },
+    {
+     "name": "setAvailableDates",
+     "use_case": null
+    },
+    {
+     "name": "uploadFiles",
+     "use_case": null
+    },
+    {
+     "name": "viewAttendance",
+     "use_case": "View Attendance"
+    }
+   ],
+   "src": [
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R46"
+   ]
+  },
+  {
+   "name": "File",
+   "kind": "class",
+   "attributes": [
+    "title",
+    "content"
+   ],
+   "methods": [
+    {
+     "name": "upload",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5",
+    "R10",
+    "R13",
+    "R14",
+    "R18",
+    "R19",
+    "R27",
+    "R28",
+    "R33",
+    "R34",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  },
+  {
+   "name": "Account",
+   "kind": "class",
+   "attributes": [
+    "username",
+    "password",
+    "data",
+    "role"
+   ],
+   "methods": [
+    {
+     "name": "resetPassword",
+     "use_case": "Reset Password"
+    },
+    {
+     "name": "createAccount",
+     "use_case": "Create Account"
+    },
+    {
+     "name": "editAccount",
+     "use_case": null
+    },
+    {
+     "name": "useFilters",
+     "use_case": null
+    },
+    {
+     "name": "viewDetails",
+     "use_case": null
+    },
+    {
+     "name": "viewStatistics",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R47",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Administrator",
+   "target": "Message",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "source": "Administrator",
+   "target": "Account",
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "source": "Administrator",
+   "target": "Game",
+   "src": [
+    "R59"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D1/school.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Student:\n    \"\"\"Source: R6, R7, R12, R13, R14, R15, R16, R17, R18, R27, R28, R34, R45, R46\"\"\"\n    name: _t.Optional[str] = None\n    contactInformation: _t.Optional[str] = None\n    knowledge: _t.Optional[str] = None\n    homework: _t.Optional[str] = None\n    timetable: _t.Optional[str] = None\n    grade: _t.Optional[str] = None\n    attendance: _t.Optional[str] = None\n\n    def directMessage(self) -> None:\n        \"\"\"Realizes UC1 \"Direct Message\" (R1, R6, R7, R18, R19, R27, R28).\"\"\"\n        raise NotImplementedError\n\n    def fillAbsence(self) -> None:\n        \"\"\"Realizes UC2 \"Fill Absence\" (R2).\"\"\"\n        raise NotImplementedError\n\n    def receiveNotification(self) -> None:\n        \"\"\"Realizes UC3 \"Receive Notification\" (R3, R11, R12).\"\"\"\n        raise NotImplementedError\n\n    def viewInformation(self) -> None:\n        \"\"\"Realizes UC4 \"View Information\" (R4, R15, R45).\"\"\"\n        raise NotImplementedError\n\n    def viewClass(self) -> None:\n        \"\"\"Realizes UC21 \"View Class\" (R46).\"\"\"\n        raise NotImplementedError\n\n    def viewContactInformation(self) -> None:\n        \"\"\"Realizes UC22 \"View Contact Information\" (R16).\"\"\"\n        raise NotImplementedError\n\n    def receiveConfirmation(self) -> None:\n        \"\"\"Realizes UC11 \"Receive Confirmation\" (R32).\"\"\"\n        raise NotImplementedError\n\n    def recordBehavior(self) -> None:\n        \"\"\"Realizes UC12 \"Record Behavior\" (R36).\"\"\"\n        raise NotImplementedError\n\n    def recordGrade(self) -> None:\n        \"\"\"Realizes UC13 \"Record Grade\" (R37).\"\"\"\n        raise NotImplementedError\n\n    def recordAttendance(self) -> None:\n        \"\"\"Realizes UC14 \"Record Attendance\" (R38).\"\"\"\n        raise NotImplementedError\n\n    def seeAnswer(self) -> None:\n        \"\"\"Realizes UC15 \"See Answer\" (R39).\"\"\"\n        raise NotImplementedError\n\n    def seeProgress(self) -> None:\n        \"\"\"Realizes UC17 \"See Progress\" (R41).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Teacher:\n    \"\"\"Source: R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R46\"\"\"\n    name: _t.Optional[str] = None\n    class_: _t.Optional[str] = None\n    mentor: _t.Optional[str] = None\n    timetable: _t.Optional[str] = None\n\n    def directMessage(self) -> None:\n        \"\"\"Realizes UC1 \"Direct Message\" (R1, R6, R7, R18, R19, R27, R28).\"\"\"\n        raise NotImplementedError\n\n    def assignSchedule(self) -> None:\n        \"\"\"Realizes UC8 \"Assign Schedule\" (R49).\"\"\"\n        raise NotImplementedError\n\n    def createDlm(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addPage(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def assignDueDate(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def autoGrade(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def editPage(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def makeSubmissionElements(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addAnswer(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def receiveConfirmation(self) -> None:\n        \"\"\"Realizes UC11 \"Receive Confirmation\" (R32).\"\"\"\n        raise NotImplementedError\n\n    def recordBehavior(self) -> None:\n        \"\"\"Realizes UC12 \"Record Behavior\" (R36).\"\"\"\n        raise NotImplementedError\n\n    def recordGrade(self) -> None:\n        \"\"\"Realizes UC13 \"Record Grade\" (R37).\"\"\"\n        raise NotImplementedError\n\n    def recordAttendance(self) -> None:\n        \"\"\"Realizes UC14 \"Record Attendance\" (R38).\"\"\"\n        raise NotImplementedError\n\n    def seeAnswer(self) -> None:\n        \"\"\"Realizes UC15 \"See Answer\" (R39).\"\"\"\n        raise NotImplementedError\n\n    def seeProgress(self) -> None:\n        \"\"\"Realizes UC17 \"See Progress\" (R41).\"\"\"\n        raise NotImplementedError\n\n    def setAppearanceDate(self) -> None:\n        \"\"\"Realizes UC18 \"Set Appearance Date\" (R42).\"\"\"\n        raise NotImplementedError\n\n    def setAvailableDates(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def uploadFiles(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def viewAttendance(self) -> None:\n        \"\"\"Realizes UC20 \"View Attendance\" (R45).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Administrator:\n    \"\"\"Source: R48, R49, R50, R51, R52, R53, R54, R55, R56\"\"\"\n    name: _t.Optional[str] = None\n    schedule: _t.Optional[str] = None\n    messages: _t.List[\"Message\"] = _dc.field(default_factory=list)\n    account: _t.Optional[\"Account\"] = None\n    game: _t.Optional[\"Game\"] = None\n\n    def directMessage(self) -> None:\n        \"\"\"Realizes UC1 \"Direct Message\" (R1, R6, R7, R18, R19, R27, R28).\"\"\"\n        raise NotImplementedError\n\n    def assignSchedule(self) -> None:\n        \"\"\"Realizes UC8 \"Assign Schedule\" (R49).\"\"\"\n        raise NotImplementedError\n\n    def createAccount(self) -> None:\n        \"\"\"Realizes UC6 \"Create Account\" (R50).\"\"\"\n        raise NotImplementedError\n\n    def editAccount(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def useFilters(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def receiveNotification(self) -> None:\n        \"\"\"Realizes UC3 \"Receive Notification\" (R3, R11, R12).\"\"\"\n        raise NotImplementedError\n\n    def registerAbsence(self) -> None:\n        \"\"\"Realizes UC9 \"Register Absence\" (R56).\"\"\"\n        raise NotImplementedError\n\n    def registerChange(self) -> None:\n        \"\"\"Realizes UC10 \"Register Change\" (R55).\"\"\"\n        raise NotImplementedError\n\n    def setRole(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Guardian:\n    \"\"\"Source: R1, R3, R12, R13, R14, R15, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R46\"\"\"\n    name: _t.Optional[str] = None\n    child: _t.Optional[str] = None\n    mentor: _t.Optional[str] = None\n    timetable: _t.Optional[str] = None\n\n    def directMessage(self) -> None:\n        \"\"\"Realizes UC1 \"Direct Message\" (R1, R6, R7, R18, R19, R27, R28).\"\"\"\n        raise NotImplementedError\n\n    def fillAbsence(self) -> None:\n        \"\"\"Realizes UC2 \"Fill Absence\" (R2).\"\"\"\n        raise NotImplementedError\n\n    def receiveNotification(self) -> None:\n        \"\"\"Realizes UC3 \"Receive Notification\" (R3, R11, R12).\"\"\"\n        raise NotImplementedError\n\n    def viewInformation(self) -> None:\n        \"\"\"Realizes UC4 \"View Information\" (R4, R15, R45).\"\"\"\n        raise NotImplementedError\n\n    def viewClass(self) -> None:\n        \"\"\"Realizes UC21 \"View Class\" (R46).\"\"\"\n        raise NotImplementedError\n\n    def viewContactInformation(self) -> None:\n        \"\"\"Realizes UC22 \"View Contact Information\" (R16).\"\"\"\n        raise NotImplementedError\n\n    def receiveConfirmation(self) -> None:\n        \"\"\"Realizes UC11 \"Receive Confirmation\" (R32).\"\"\"\n        raise NotImplementedError\n\n    def recordBehavior(self) -> None:\n        \"\"\"Realizes UC12 \"Record Behavior\" (R36).\"\"\"\n        raise NotImplementedError\n\n    def recordGrade(self) -> None:\n        \"\"\"Realizes UC13 \"Record Grade\" (R37).\"\"\"\n        raise NotImplementedError\n\n    def recordAttendance(self) -> None:\n        \"\"\"Realizes UC14 \"Record Attendance\" (R38).\"\"\"\n        raise NotImplementedError\n\n    def seeAnswer(self) -> None:\n        \"\"\"Realizes UC15 \"See Answer\" (R39).\"\"\"\n        raise NotImplementedError\n\n    def seeProgress(self) -> None:\n        \"\"\"Realizes UC17 \"See Progress\" (R41).\"\"\"\n        raise NotImplementedError\n\n    def setAppearanceDate(self) -> None:\n        \"\"\"Realizes UC18 \"Set Appearance Date\" (R42).\"\"\"\n        raise NotImplementedError\n\n    def setAvailableDates(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def uploadFiles(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def viewAttendance(self) -> None:\n        \"\"\"Realizes UC20 \"View Attendance\" (R45).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Message:\n    \"\"\"Source: R1, R6, R7, R18, R27, R28, R33, R34, R48\"\"\"\n    sender: _t.Optional[str] = None\n    receiver: _t.Optional[str] = None\n    content: _t.Optional[str] = None\n\n    def send(self) -> None:\n        \"\"\"Realizes UC1 \"Direct Message\" (R1, R6, R7, R18, R19, R27, R28).\"\"\"\n        raise NotImplementedError\n\n    def receive(self) -> None:\n        \"\"\"Realizes UC3 \"Receive Notification\" (R3, R11, R12).\"\"\"\n        raise NotImplementedError\n\n    def sendBroadcastMessage(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Notification:\n    \"\"\"Source: R3, R12, R13, R14, R18, R19, R27, R28, R33, R34, R48, R49, R50, R51, R52, R53, R54, R55, R56\"\"\"\n    sender: _t.Optional[str] = None\n    receiver: _t.Optional[str] = None\n    content: _t.Optional[str] = None\n\n    def send(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Absence:\n    \"\"\"Source: R2, R12, R13, R14, R18, R19, R27, R28, R33, R34, R48, R49, R50, R51, R52, R53, R54, R55, R56\"\"\"\n    student: _t.Optional[str] = None\n    date: _t.Optional[str] = None\n\n    def register(self) -> None:\n        \"\"\"Realizes UC9 \"Register Absence\" (R56).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Dlm:\n    \"\"\"Source: R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R46\"\"\"\n    title: _t.Optional[str] = None\n    pages: _t.Optional[str] = None\n    dueDate: _t.Optional[str] = None\n    appearanceDate: _t.Optional[str] = None\n    submissionElements: _t.Optional[str] = None\n    answers: _t.Optional[str] = None\n    grade: _t.Optional[str] = None\n    attendance: _t.Optional[str] = None\n\n    def addPage(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def assignDueDate(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def autoGrade(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def editPage(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def makeSubmissionElements(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addAnswer(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def receiveConfirmation(self) -> None:\n        \"\"\"Realizes UC11 \"Receive Confirmation\" (R32).\"\"\"\n        raise NotImplementedError\n\n    def recordBehavior(self) -> None:\n        \"\"\"Realizes UC12 \"Record Behavior\" (R36).\"\"\"\n        raise NotImplementedError\n\n    def recordGrade(self) -> None:\n        \"\"\"Realizes UC13 \"Record Grade\" (R37).\"\"\"\n        raise NotImplementedError\n\n    def recordAttendance(self) -> None:\n        \"\"\"Realizes UC14 \"Record Attendance\" (R38).\"\"\"\n        raise NotImplementedError\n\n    def seeAnswer(self) -> None:\n        \"\"\"Realizes UC15 \"See Answer\" (R39).\"\"\"\n        raise NotImplementedError\n\n    def seeProgress(self) -> None:\n        \"\"\"Realizes UC17 \"See Progress\" (R41).\"\"\"\n        raise NotImplementedError\n\n    def setAppearanceDate(self) -> None:\n        \"\"\"Realizes UC18 \"Set Appearance Date\" (R42).\"\"\"\n        raise NotImplementedError\n\n    def setAvailableDates(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def uploadFiles(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def viewAttendance(self) -> None:\n        \"\"\"Realizes UC20 \"View Attendance\" (R45).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass File:\n    \"\"\"Source: R5, R10, R13, R14, R18, R19, R27, R28, R33, R34, R48, R49, R50, R51, R52, R53, R54, R55, R56\"\"\"\n    title: _t.Optional[str] = None\n    content: _t.Optional[str] = None\n\n    def upload(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Account:\n    \"\"\"Source: R47, R50, R51, R52, R53, R54, R55, R56\"\"\"\n    username: _t.Optional[str] = None\n    password: _t.Optional[str] = None\n    data: _t.Optional[str] = None\n    role: _t.Optional[str] = None\n\n    def resetPassword(self) -> None:\n        \"\"\"Realizes UC23 \"Reset Password\" (R47).\"\"\"\n        raise NotImplementedError\n\n    def createAccount(self) -> None:\n        \"\"\"Realizes UC6 \"Create Account\" (R50).\"\"\"\n        raise NotImplementedError\n\n    def editAccount(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def useFilters(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def viewDetails(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def viewStatistics(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Game.java": "/** Generated from shared model D1/school. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Student.java": "/** Generated from shared model D1/school. Source: R6, R7, R12, R13, R14, R15, R16, R17, R18, R27, R28, R34, R45, R46 */\npublic class Student {\n    private java.lang.String name;\n    private java.lang.String contactInformation;\n    private java.lang.String knowledge;\n    private java.lang.String homework;\n    private java.lang.String timetable;\n    private java.lang.String grade;\n    private java.lang.String attendance;\n\n    /** Realizes UC1 \"Direct Message\" (R1, R6, R7, R18, R19, R27, R28). */\n    public void directMessage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Fill Absence\" (R2). */\n    public void fillAbsence() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Receive Notification\" (R3, R11, R12). */\n    public void receiveNotification() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC4 \"View Information\" (R4, R15, R45). */\n    public void viewInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC21 \"View Class\" (R46). */\n    public void viewClass() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC22 \"View Contact Information\" (R16). */\n    public void viewContactInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC11 \"Receive Confirmation\" (R32). */\n    public void receiveConfirmation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC12 \"Record Behavior\" (R36). */\n    public void recordBehavior() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC13 \"Record Grade\" (R37). */\n    public void recordGrade() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC14 \"Record Attendance\" (R38). */\n    public void recordAttendance() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"See Answer\" (R39). */\n    public void seeAnswer() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC17 \"See Progress\" (R41). */\n    public void seeProgress() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Teacher.java": "/** Generated from shared model D1/school. Source: R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R46 */\npublic class Teacher {\n    private java.lang.String name;\n    private java.lang.String class_;\n    private java.lang.String mentor;\n    private java.lang.String timetable;\n\n    /** Realizes UC1 \"Direct Message\" (R1, R6, R7, R18, R19, R27, R28). */\n    public void directMessage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC8 \"Assign Schedule\" (R49). */\n    public void assignSchedule() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void createDlm() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addPage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void assignDueDate() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void autoGrade() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void editPage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void makeSubmissionElements() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addAnswer() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC11 \"Receive Confirmation\" (R32). */\n    public void receiveConfirmation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC12 \"Record Behavior\" (R36). */\n    public void recordBehavior() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC13 \"Record Grade\" (R37). */\n    public void recordGrade() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC14 \"Record Attendance\" (R38). */\n    public void recordAttendance() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"See Answer\" (R39). */\n    public void seeAnswer() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC17 \"See Progress\" (R41). */\n    public void seeProgress() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC18 \"Set Appearance Date\" (R42). */\n    public void setAppearanceDate() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void setAvailableDates() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void uploadFiles() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC20 \"View Attendance\" (R45). */\n    public void viewAttendance() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Administrator.java": "/** Generated from shared model D1/school. Source: R48, R49, R50, R51, R52, R53, R54, R55, R56 */\npublic class Administrator {\n    private java.lang.String name;\n    private java.lang.String schedule;\n    private java.util.List<Message> messages;\n    private Account account;\n    private Game game;\n\n    /** Realizes UC1 \"Direct Message\" (R1, R6, R7, R18, R19, R27, R28). */\n    public void directMessage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC8 \"Assign Schedule\" (R49). */\n    public void assignSchedule() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC6 \"Create Account\" (R50). */\n    public void createAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void editAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void useFilters() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Receive Notification\" (R3, R11, R12). */\n    public void receiveNotification() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"Register Absence\" (R56). */\n    public void registerAbsence() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"Register Change\" (R55). */\n    public void registerChange() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void setRole() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Guardian.java": "/** Generated from shared model D1/school. Source: R1, R3, R12, R13, R14, R15, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R46 */\npublic class Guardian {\n    private java.lang.String name;\n    private java.lang.String child;\n    private java.lang.String mentor;\n    private java.lang.String timetable;\n\n    /** Realizes UC1 \"Direct Message\" (R1, R6, R7, R18, R19, R27, R28). */\n    public void directMessage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Fill Absence\" (R2). */\n    public void fillAbsence() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Receive Notification\" (R3, R11, R12). */\n    public void receiveNotification() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC4 \"View Information\" (R4, R15, R45). */\n    public void viewInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC21 \"View Class\" (R46). */\n    public void viewClass() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC22 \"View Contact Information\" (R16). */\n    public void viewContactInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC11 \"Receive Confirmation\" (R32). */\n    public void receiveConfirmation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC12 \"Record Behavior\" (R36). */\n    public void recordBehavior() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC13 \"Record Grade\" (R37). */\n    public void recordGrade() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC14 \"Record Attendance\" (R38). */\n    public void recordAttendance() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"See Answer\" (R39). */\n    public void seeAnswer() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC17 \"See Progress\" (R41). */\n    public void seeProgress() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC18 \"Set Appearance Date\" (R42). */\n    public void setAppearanceDate() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void setAvailableDates() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void uploadFiles() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC20 \"View Attendance\" (R45). */\n    public void viewAttendance() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Message.java": "/** Generated from shared model D1/school. Source: R1, R6, R7, R18, R27, R28, R33, R34, R48 */\npublic class Message {\n    private java.lang.String sender;\n    private java.lang.String receiver;\n    private java.lang.String content;\n\n    /** Realizes UC1 \"Direct Message\" (R1, R6, R7, R18, R19, R27, R28). */\n    public void send() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Receive Notification\" (R3, R11, R12). */\n    public void receive() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void sendBroadcastMessage() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Notification.java": "/** Generated from shared model D1/school. Source: R3, R12, R13, R14, R18, R19, R27, R28, R33, R34, R48, R49, R50, R51, R52, R53, R54, R55, R56 */\npublic class Notification {\n    private java.lang.String sender;\n    private java.lang.String receiver;\n    private java.lang.String content;\n\n    /** Operation. */\n    public void send() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Absence.java": "/** Generated from shared model D1/school. Source: R2, R12, R13, R14, R18, R19, R27, R28, R33, R34, R48, R49, R50, R51, R52, R53, R54, R55, R56 */\npublic class Absence {\n    private java.lang.String student;\n    private java.time.LocalDate date;\n\n    /** Realizes UC9 \"Register Absence\" (R56). */\n    public void register() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Dlm.java": "/** Generated from shared model D1/school. Source: R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R46 */\npublic class Dlm {\n    private java.lang.String title;\n    private java.lang.String pages;\n    private java.time.LocalDate dueDate;\n    private java.time.LocalDate appearanceDate;\n    private java.lang.String submissionElements;\n    private java.lang.String answers;\n    private java.lang.String grade;\n    private java.lang.String attendance;\n\n    /** Operation. */\n    public void addPage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void assignDueDate() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void autoGrade() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void editPage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void makeSubmissionElements() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addAnswer() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC11 \"Receive Confirmation\" (R32). */\n    public void receiveConfirmation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC12 \"Record Behavior\" (R36). */\n    public void recordBehavior() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC13 \"Record Grade\" (R37). */\n    public void recordGrade() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC14 \"Record Attendance\" (R38). */\n    public void recordAttendance() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"See Answer\" (R39). */\n    public void seeAnswer() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC17 \"See Progress\" (R41). */\n    public void seeProgress() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC18 \"Set Appearance Date\" (R42). */\n    public void setAppearanceDate() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void setAvailableDates() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void uploadFiles() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC20 \"View Attendance\" (R45). */\n    public void viewAttendance() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "File.java": "/** Generated from shared model D1/school. Source: R5, R10, R13, R14, R18, R19, R27, R28, R33, R34, R48, R49, R50, R51, R52, R53, R54, R55, R56 */\npublic class File {\n    private java.lang.String title;\n    private java.lang.String content;\n\n    /** Operation. */\n    public void upload() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Account.java": "/** Generated from shared model D1/school. Source: R47, R50, R51, R52, R53, R54, R55, R56 */\npublic class Account {\n    private java.lang.String username;\n    private java.lang.String password;\n    private java.lang.String data;\n    private java.lang.String role;\n\n    /** Realizes UC23 \"Reset Password\" (R47). */\n    public void resetPassword() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC6 \"Create Account\" (R50). */\n    public void createAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void editAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void useFilters() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewDetails() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewStatistics() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

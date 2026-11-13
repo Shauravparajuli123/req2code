@@ -1,0 +1,17 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Node {
+  name : String
+  startLine : int
+  endLine : int
+}
+class Element {
+  parent : String
+  children : String
+  +createGame()
+}
+Element --|> Node
+Node "1" -- "1..*" Element : has parent
+Element "1..*" -- "0..*" Node : has child
+@enduml

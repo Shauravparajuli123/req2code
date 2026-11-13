@@ -1,0 +1,556 @@
+{
+ "actors": [
+  {
+   "name": "System Administrator",
+   "src": [
+    "FR-DA-01",
+    "FR-DA-02"
+   ]
+  },
+  {
+   "name": "Employee",
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02",
+    "FR-EM-03",
+    "FR-EM-04",
+    "FR-EM-05",
+    "FR-SOP-01",
+    "FR-SOP-03",
+    "FR-POP-02",
+    "FR-POP-03",
+    "FR-POP-04"
+   ]
+  },
+  {
+   "name": "Customer",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-02"
+   ]
+  },
+  {
+   "name": "Vendor",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-02"
+   ]
+  },
+  {
+   "name": "Shipper",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-05"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "Maintain Company Records",
+   "actor": "System Administrator",
+   "src": [
+    "FR-CM-01",
+    "FR-CM-02",
+    "FR-CM-03",
+    "FR-CM-04",
+    "FR-CM-05",
+    "FR-CM-06",
+    "FR-CM-07",
+    "FR-CM-08"
+   ]
+  },
+  {
+   "name": "Maintain Employee Records",
+   "actor": "System Administrator",
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02",
+    "FR-EM-03",
+    "FR-EM-04",
+    "FR-EM-05"
+   ]
+  },
+  {
+   "name": "Maintain Product Catalog",
+   "actor": "System Administrator",
+   "src": [
+    "FR-PM-01",
+    "FR-PM-02",
+    "FR-PM-03",
+    "FR-PM-04",
+    "FR-PM-05",
+    "FR-PM-06",
+    "FR-PM-07"
+   ]
+  },
+  {
+   "name": "Maintain Stock Takes",
+   "actor": "System Administrator",
+   "src": [
+    "FR-IM-01",
+    "FR-IM-02",
+    "FR-IM-03"
+   ]
+  },
+  {
+   "name": "Record Customer Orders",
+   "actor": "Employee",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-02",
+    "FR-SOP-03",
+    "FR-SOP-04",
+    "FR-SOP-05",
+    "FR-SOP-06",
+    "FR-SOP-07",
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "name": "Manage Purchase Orders",
+   "actor": "Employee",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-02",
+    "FR-POP-03",
+    "FR-POP-04",
+    "FR-POP-05",
+    "FR-POP-06",
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Company",
+   "src": [
+    "FR-CM-01",
+    "FR-CM-02",
+    "FR-CM-03",
+    "FR-CM-04",
+    "FR-CM-05",
+    "FR-CM-06",
+    "FR-CM-07",
+    "FR-CM-08"
+   ]
+  },
+  {
+   "name": "Employee",
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02",
+    "FR-EM-03",
+    "FR-EM-04",
+    "FR-EM-05"
+   ]
+  },
+  {
+   "name": "Product",
+   "src": [
+    "FR-PM-01",
+    "FR-PM-02",
+    "FR-PM-03",
+    "FR-PM-04",
+    "FR-PM-05",
+    "FR-PM-06",
+    "FR-PM-07"
+   ]
+  },
+  {
+   "name": "StockTake",
+   "src": [
+    "FR-IM-01",
+    "FR-IM-02",
+    "FR-IM-03"
+   ]
+  },
+  {
+   "name": "Order",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-02",
+    "FR-SOP-03",
+    "FR-SOP-04",
+    "FR-SOP-05",
+    "FR-SOP-06",
+    "FR-SOP-07",
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "name": "OrderDetail",
+   "src": [
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "name": "PurchaseOrder",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-02",
+    "FR-POP-03",
+    "FR-POP-04",
+    "FR-POP-05",
+    "FR-POP-06",
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  },
+  {
+   "name": "PurchaseOrderDetail",
+   "src": [
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Company",
+   "name": "name",
+   "src": [
+    "FR-CM-03"
+   ]
+  },
+  {
+   "owner": "Company",
+   "name": "phone_number",
+   "src": [
+    "FR-CM-03"
+   ]
+  },
+  {
+   "owner": "Company",
+   "name": "address_details",
+   "src": [
+    "FR-CM-03"
+   ]
+  },
+  {
+   "owner": "Company",
+   "name": "state",
+   "src": [
+    "FR-CM-05"
+   ]
+  },
+  {
+   "owner": "Company",
+   "name": "zip_code",
+   "src": [
+    "FR-CM-03"
+   ]
+  },
+  {
+   "owner": "Company",
+   "name": "website",
+   "src": [
+    "FR-CM-03"
+   ]
+  },
+  {
+   "owner": "Company",
+   "name": "company_type",
+   "src": [
+    "FR-CM-04"
+   ]
+  },
+  {
+   "owner": "Company",
+   "name": "tax_status",
+   "src": [
+    "FR-CM-06"
+   ]
+  },
+  {
+   "owner": "Employee",
+   "name": "first_name",
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02"
+   ]
+  },
+  {
+   "owner": "Employee",
+   "name": "last_name",
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02"
+   ]
+  },
+  {
+   "owner": "Employee",
+   "name": "primary_phone_number",
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02"
+   ]
+  },
+  {
+   "owner": "Employee",
+   "name": "secondary_phone_number",
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02"
+   ]
+  },
+  {
+   "owner": "Employee",
+   "name": "job_title",
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02"
+   ]
+  },
+  {
+   "owner": "Employee",
+   "name": "email",
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02"
+   ]
+  },
+  {
+   "owner": "Employee",
+   "name": "title",
+   "src": [
+    "FR-EM-02"
+   ]
+  },
+  {
+   "owner": "Employee",
+   "name": "supervisor",
+   "src": [
+    "FR-EM-03",
+    "FR-EM-04"
+   ]
+  },
+  {
+   "owner": "Order",
+   "name": "order_date",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-06"
+   ]
+  },
+  {
+   "owner": "Order",
+   "name": "customer",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-02"
+   ]
+  },
+  {
+   "owner": "Order",
+   "name": "employee",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-03"
+   ]
+  },
+  {
+   "owner": "Order",
+   "name": "status",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-04",
+    "FR-SOP-05",
+    "FR-SOP-06",
+    "FR-SOP-07",
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "owner": "OrderDetail",
+   "name": "product",
+   "src": [
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "owner": "OrderDetail",
+   "name": "quantity",
+   "src": [
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "owner": "OrderDetail",
+   "name": "unit_price",
+   "src": [
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "owner": "OrderDetail",
+   "name": "discount",
+   "src": [
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "owner": "OrderDetail",
+   "name": "status",
+   "src": [
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "owner": "PurchaseOrder",
+   "name": "order_date",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-06"
+   ]
+  },
+  {
+   "owner": "PurchaseOrder",
+   "name": "vendor",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-02"
+   ]
+  },
+  {
+   "owner": "PurchaseOrder",
+   "name": "employee_submitted",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-03"
+   ]
+  },
+  {
+   "owner": "PurchaseOrder",
+   "name": "employee_approved",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-04"
+   ]
+  },
+  {
+   "owner": "PurchaseOrder",
+   "name": "status",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-05",
+    "FR-POP-06",
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Company",
+   "target": "Company",
+   "src": [
+    "FR-CM-02"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Employee",
+   "target": "Employee",
+   "src": [
+    "FR-EM-03",
+    "FR-EM-04"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Order",
+   "target": "Company",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-02"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Order",
+   "target": "Employee",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-03"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "OrderDetail",
+   "target": "Product",
+   "src": [
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Order",
+   "target": "OrderDetail",
+   "src": [
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "PurchaseOrder",
+   "target": "Vendor",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-02"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "PurchaseOrder",
+   "target": "Employee",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-03",
+    "FR-POP-04"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "PurchaseOrderDetail",
+   "target": "Product",
+   "src": [
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "PurchaseOrder",
+   "target": "PurchaseOrderDetail",
+   "src": [
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

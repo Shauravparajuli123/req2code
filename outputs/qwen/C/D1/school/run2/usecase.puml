@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Guardian" as A1
+actor "Student" as A2
+actor "Teacher" as A3
+actor "Administrator" as A4
+rectangle "school" {
+  usecase "Direct Message" as UC1
+  usecase "Fill Absence" as UC2
+  usecase "Receive Notification" as UC3
+  usecase "View Information" as UC4
+  usecase "Create Account" as UC5
+  usecase "Edit Data" as UC6
+  usecase "Assign Schedule" as UC7
+  usecase "Register Absence" as UC8
+  usecase "Register Change" as UC9
+  usecase "View Contact Information" as UC10
+  usecase "View Class" as UC11
+  usecase "Send Broadcast Message" as UC12
+  usecase "Set Role" as UC13
+  usecase "Upload Schedule" as UC14
+  usecase "View Detail" as UC15
+  usecase "View Statistic" as UC16
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A4 --> UC5
+A4 --> UC6
+A4 --> UC7
+A4 --> UC8
+A4 --> UC9
+A2 --> UC10
+A3 --> UC11
+A4 --> UC12
+A4 --> UC13
+A4 --> UC14
+A4 --> UC15
+A4 --> UC16
+@enduml

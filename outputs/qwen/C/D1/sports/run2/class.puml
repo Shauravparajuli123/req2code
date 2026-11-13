@@ -1,0 +1,83 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  name : String
+  personalInformation : String
+  bankingDetails : String
+  membershipType : String
+  subscription : String
+  familyMembers : String
+  notifications : String
+  checkInStatus : boolean
+  subscriptionStatus : boolean
+  +openAccount()
+  +addInformation()
+  +addBankingDetail()
+  +chooseMembershipType()
+  +extendSubscription()
+  +unsubscribe()
+  +resetPassword()
+  +changeDetail()
+  +updatePaymentInformation()
+  +seeInformation()
+  +seeLesson()
+  +seeRoom()
+  +seeSchedule()
+  +callGym()
+  +bookSpot()
+  +seeSpot()
+  +seeCustomer()
+  +seeSubscription()
+  +seeNotification()
+  +confirmBooking()
+}
+class Admin {
+  +cancelLesson()
+  +addTrainer()
+  +addAdmin()
+  +removeTrainer()
+  +seeNoShow()
+  +seeNoShowCount()
+  +issueFine()
+}
+class Trainer {
+  lessons : String
+  +addLesson()
+  +setTime()
+  +setDescription()
+  +setRoom()
+  +setNumber()
+  +setType()
+  +editLesson()
+  +editTime()
+  +editRoom()
+  +editNumber()
+}
+class Lesson {
+  description : String
+  room : String
+  type : String
+  number : int
+  time : LocalDate
+  +editDescription()
+  +editTime()
+  +editRoom()
+  +editNumber()
+}
+class Notification {
+  type : String
+  method : String
+}
+class Person {
+}
+class Room {
+}
+class Schedule {
+}
+class TrainingSession {
+  +editTrainingSession()
+}
+class Spot {
+}
+@enduml

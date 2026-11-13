@@ -1,0 +1,91 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Administrator" as A1
+actor "Guardian" as A2
+actor "Student" as A3
+actor "Teacher" as A4
+rectangle "school" {
+  usecase "Create Account" as UC1
+  usecase "Edit Data" as UC2
+  usecase "Assign Schedule" as UC3
+  usecase "Register Change" as UC4
+  usecase "Register Absence" as UC5
+  usecase "Receive Notification" as UC6
+  usecase "Receive Confirmation" as UC7
+  usecase "Create Learning Module" as UC8
+  usecase "Add Page" as UC9
+  usecase "Assign Dlm" as UC10
+  usecase "Assign Date" as UC11
+  usecase "Make Submission Element" as UC12
+  usecase "Add Answer" as UC13
+  usecase "Grade Dlm Submission" as UC14
+  usecase "Record Grade" as UC15
+  usecase "Record Behavior" as UC16
+  usecase "Record Attendance" as UC17
+  usecase "Record Action" as UC18
+  usecase "Edit Page" as UC19
+  usecase "Hand Homework" as UC20
+  usecase "Fill Absence" as UC21
+  usecase "View Information" as UC22
+  usecase "View Class" as UC23
+  usecase "View Contact Information" as UC24
+  usecase "View Attendance" as UC25
+  usecase "See Grade" as UC26
+  usecase "See Progress" as UC27
+  usecase "See Answer" as UC28
+  usecase "Set Appearance Date" as UC29
+  usecase "Set Date" as UC30
+  usecase "Upload File" as UC31
+  usecase "Message Teacher" as UC32
+  usecase "Message Mentor" as UC33
+  usecase "Message Student" as UC34
+  usecase "Send Broadcast Message" as UC35
+  usecase "Set Role" as UC36
+  usecase "Upload Schedule" as UC37
+  usecase "View Detail" as UC38
+  usecase "View Statistic" as UC39
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A2 --> UC6
+A4 --> UC7
+A4 --> UC8
+A4 --> UC9
+A4 --> UC10
+A4 --> UC11
+A4 --> UC12
+A4 --> UC13
+A4 --> UC14
+A4 --> UC15
+A4 --> UC16
+A4 --> UC17
+A4 --> UC18
+A4 --> UC19
+A3 --> UC20
+A2 --> UC21
+A2 --> UC22
+A4 --> UC23
+A3 --> UC24
+A4 --> UC25
+A4 --> UC26
+A4 --> UC27
+A4 --> UC28
+A4 --> UC29
+A4 --> UC30
+A4 --> UC31
+A2 --> UC32
+A3 --> UC33
+A4 --> UC34
+A1 --> UC35
+A1 --> UC36
+A1 --> UC37
+A1 --> UC38
+A1 --> UC39
+UC8 ..> UC9 : <<include>>
+UC8 ..> UC11 : <<include>>
+UC8 ..> UC12 : <<include>>
+@enduml

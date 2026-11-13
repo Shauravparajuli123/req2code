@@ -1,0 +1,89 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Camper {
+  name : String
+  guardian : String
+  emergencyInformation : String
+  problem : String
+  +createCamper()
+  +deleteCamper()
+  +modifyCamperInformation()
+  +enrollCamper()
+  +seeCamper()
+  +seeConsentForm()
+  +seeCounselor()
+}
+class Parent {
+  name : String
+  camperBehavior : String
+  +createAccount()
+  +seeCamperActivity()
+  +seeConsentForm()
+  +seeCounselor()
+  +seeSchedule()
+  +seePayment()
+  +sharePhoto()
+  +signConsentForm()
+  +submitForm()
+}
+class CampAdministrator {
+  +createAccount()
+  +createCamper()
+  +deleteCamper()
+  +keepCamperRecord()
+  +keepInformation()
+  +keepTrack()
+  +logAttendance()
+  +makeNametag()
+  +modifyInformation()
+  +modifyTask()
+  +notifyParent()
+  +provideFeedback()
+  +removeCamper()
+  +scheduleActivity()
+  +scheduleTask()
+  +seeCampGroup()
+  +seeConsentForm()
+  +seeCounselor()
+  +seeEvent()
+  +seeForm()
+  +seePayment()
+  +seeSchedule()
+  +setReminder()
+  +storeEmergencyInformation()
+  +storeInformation()
+  +uploadConsentForm()
+}
+class CampCounselor {
+  name : String
+  assignedKids : String
+  +takeAttendance()
+  +submitCompletionReport()
+  +reportBehavior()
+  +reportSupplies()
+  +reportRepairs()
+}
+class CampWorker {
+  name : String
+  assignedKids : String
+  +seeAssignedKids()
+}
+class Event {
+  name : String
+  date : LocalDate
+  +seeEvent()
+}
+class Form {
+  type : String
+  +uploadConsentForm()
+  +submitForm()
+}
+CampAdministrator "1" -- "0..*" Camper : has
+CampAdministrator "1" -- "0..*" Parent : has
+CampAdministrator "1" -- "0..*" Event : has
+CampAdministrator "1" -- "0..*" Form : has
+CampCounselor "1" -- "0..*" Camper : has
+CampWorker "1" -- "0..*" Camper : has
+Form "1" -- "1" Parent : has
+@enduml

@@ -1,0 +1,118 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "TemplateExp",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CollectionTemplateExpression",
+   "kind": "class",
+   "attributes": [
+    "kind",
+    "oclExpressions"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "ObjectTemplateExp",
+   "kind": "class",
+   "attributes": [
+    "objectContainer"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "PropertyTemplateItem",
+   "kind": "class",
+   "attributes": [
+    "objectContainer",
+    "referredProperty"
+   ],
+   "methods": [
+    {
+     "name": "createPropertyTemplateItem",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "OclExpression",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Property",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "CollectionTemplateExpression",
+   "target": "OclExpression",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "source": "ObjectTemplateExp",
+   "target": "PropertyTemplateItem",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "source": "PropertyTemplateItem",
+   "target": "ObjectTemplateExp",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "PropertyTemplateItem",
+   "target": "Property",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/QVT.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass TemplateExp:\n    \"\"\"Source: R1\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass CollectionTemplateExpression:\n    \"\"\"Source: R3, R7, R8\"\"\"\n    kind: _t.Optional[str] = None\n    oclExpressions: _t.Optional[str] = None\n    oclExpression: _t.Optional[\"OclExpression\"] = None\n\n\n@_dc.dataclass\nclass ObjectTemplateExp:\n    \"\"\"Source: R2\"\"\"\n    objectContainer: _t.Optional[str] = None\n    propertyTemplateItem: _t.Optional[\"PropertyTemplateItem\"] = None\n\n\n@_dc.dataclass\nclass PropertyTemplateItem:\n    \"\"\"Source: R9, R10\"\"\"\n    objectContainer: _t.Optional[str] = None\n    referredProperty: _t.Optional[str] = None\n    objectTemplateExp: _t.Optional[\"ObjectTemplateExp\"] = None\n    property: _t.Optional[\"Property\"] = None\n\n    def createPropertyTemplateItem(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass OclExpression:\n    \"\"\"Source: R7, R8\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Property:\n    \"\"\"Source: R10\"\"\"\n    pass\n",
+ "java": {
+  "TemplateExp.java": "/** Generated from shared model D2/QVT. Source: R1 */\npublic class TemplateExp {\n}\n",
+  "CollectionTemplateExpression.java": "/** Generated from shared model D2/QVT. Source: R3, R7, R8 */\npublic class CollectionTemplateExpression {\n    private java.lang.String kind;\n    private java.lang.String oclExpressions;\n    private OclExpression oclExpression;\n}\n",
+  "ObjectTemplateExp.java": "/** Generated from shared model D2/QVT. Source: R2 */\npublic class ObjectTemplateExp {\n    private java.lang.String objectContainer;\n    private PropertyTemplateItem propertyTemplateItem;\n}\n",
+  "PropertyTemplateItem.java": "/** Generated from shared model D2/QVT. Source: R9, R10 */\npublic class PropertyTemplateItem {\n    private java.lang.String objectContainer;\n    private java.lang.String referredProperty;\n    private ObjectTemplateExp objectTemplateExp;\n    private Property property;\n\n    /** Operation. */\n    public void createPropertyTemplateItem() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "OclExpression.java": "/** Generated from shared model D2/QVT. Source: R7, R8 */\npublic class OclExpression {\n}\n",
+  "Property.java": "/** Generated from shared model D2/QVT. Source: R10 */\npublic class Property {\n}\n"
+ }
+}

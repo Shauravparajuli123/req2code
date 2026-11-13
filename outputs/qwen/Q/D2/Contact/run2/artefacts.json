@@ -1,0 +1,61 @@
+{
+ "actors": [
+  "Contact"
+ ],
+ "use_cases": [
+  {
+   "name": "MapPhoneNumber",
+   "actor": "Contact",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "phoneNumber"
+   ],
+   "methods": [
+    {
+     "name": "mapPhoneNumber",
+     "use_case": "MapPhoneNumber"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "CellPhoneNumber",
+   "kind": "class",
+   "attributes": [
+    "number"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Contact",
+   "target": "CellPhoneNumber",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Contact:\n    def __init__(self, name: str, phone_number: str):\n        self.name = name\n        self.phoneNumber = phone_number\n        self.cell_phone_numbers: List[CellPhoneNumber] = []\n\n    def mapPhoneNumber(self) -> None:\n        raise NotImplementedError('mapPhoneNumber method needs implementation')\n\nclass CellPhoneNumber:\n    def __init__(self, number: str):\n        self.number = number",
+ "java": {}
+}

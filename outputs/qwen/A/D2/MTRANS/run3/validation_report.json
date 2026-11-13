@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each module is composed by a set of one or more rules as stated in R11"
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class MetaClass",
+   "fix": "Add class MetaClass to the model."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case R6 is not represented",
+   "fix": "Add a use case for expressions and their properties to the model."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case R9 is not represented",
+   "fix": "Add a use case for variables and their properties to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Instruction and Expression is not correctly defined",
+   "fix": "Ensure that each Instruction is associated with exactly one Expression and vice versa."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Module is not correctly defined",
+   "fix": "Ensure that each Rule is associated with exactly one Module and vice versa."
+  }
+ ]
+}

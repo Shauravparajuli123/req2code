@@ -1,0 +1,53 @@
+[
+ {
+  "id": "A7",
+  "type": "referential",
+  "sid": "R7.s1",
+  "req_id": "R7",
+  "cue": "it",
+  "text": "As a user, I want to be able to edit my personal information (e.g., address) so that I can update it when needed.",
+  "readings": [
+   "personal information includes address",
+   "personal information does not include address"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The use of 'it' in R7 could refer to either 'personal information' or 'address' from R1, creating ambiguity.",
+  "chosen": "personal information includes address"
+ },
+ {
+  "id": "A12",
+  "type": "coordination",
+  "sid": "R10.s1",
+  "req_id": "R10",
+  "cue": "modifier scope: artists",
+  "text": "As a user, I want to find my list of favorited artists and events under my profile, so that I can easily find them back.",
+  "readings": [
+   "artists and events",
+   "artists or events"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "coordination",
+  "explanation": "The use of 'and' in R12 could imply a conjunction or disjunction between 'artists' and 'events'.",
+  "chosen": "artists and events"
+ },
+ {
+  "id": "A18",
+  "type": "coordination",
+  "sid": "R23.s1",
+  "req_id": "R23",
+  "cue": "modifier scope: premium",
+  "text": "As a visitor, I want to see the types of tickets (e.g., normal, premium, gold tickets) once I select the event, so that I can choose which type I want to buy.",
+  "readings": [
+   "types of tickets (normal, premium, gold)",
+   "types of tickets (normal, gold)"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "coordination",
+  "explanation": "The use of 'or' in R23 could imply that only one type is shown or both types are shown.",
+  "chosen": "types of tickets (normal, premium, gold)"
+ }
+]

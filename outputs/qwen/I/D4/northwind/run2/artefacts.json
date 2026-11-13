@@ -1,0 +1,96 @@
+{
+ "actors": [
+  "customer",
+  "employee"
+ ],
+ "use_cases": [
+  {
+   "name": "Maintain Company Records",
+   "actor": "employee",
+   "src": [
+    "FR-CM-01",
+    "FR-CM-03",
+    "FR-CM-04",
+    "FR-CM-05",
+    "FR-CM-06",
+    "FR-CM-07",
+    "FR-CM-08"
+   ]
+  },
+  {
+   "name": "Maintain Employee Records",
+   "actor": "employee",
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02",
+    "FR-EM-03",
+    "FR-EM-04",
+    "FR-EM-05"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "employee",
+   "src": [
+    "FR-PM-01",
+    "FR-PM-02",
+    "FR-PM-03",
+    "FR-PM-04",
+    "FR-PM-05",
+    "FR-PM-06",
+    "FR-PM-07"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "employee",
+   "src": [
+    "FR-IM-01",
+    "FR-IM-02",
+    "FR-IM-03"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "employee",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-02",
+    "FR-SOP-03",
+    "FR-SOP-04",
+    "FR-SOP-05",
+    "FR-SOP-06",
+    "FR-SOP-07",
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "employee",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-02",
+    "FR-POP-03",
+    "FR-POP-04",
+    "FR-POP-05",
+    "FR-POP-06",
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "employee",
+   "src": [
+    "FR-DA-01",
+    "FR-DA-02"
+   ]
+  }
+ ],
+ "classes": [],
+ "relations": [],
+ "python": "from typing import List, Optional\n\nclass Entity:\n    def __init__(self, name: str, phone_number: Optional[str] = None, address: Optional[str] = None, state: Optional[str] = None, zip_code: Optional[str] = None, website: Optional[str] = None, tax_status: Optional[str] = None):\n        self.name = name\n        self.phone_number = phone_number\n        self.address = address\n        self.state = state\n        self.zip_code = zip_code\n        self.website = website\n        self.tax_status = tax_status\n\nclass Company(Entity):\n    def __init__(self, name: str, phone_number: Optional[str] = None, address: Optional[str] = None, state: Optional[str] = None, zip_code: Optional[str] = None, website: Optional[str] = None, tax_status: Optional[str] = None, company_type: str):\n        super().__init__(name, phone_number, address, state, zip_code, website, tax_status)\n        self.company_type = company_type\n        self.contacts: List[Contact] = []\n\n    def add_contact(self, contact: Contact):\n        raise NotImplementedError\n\n    def remove_contact(self, contact: Contact):\n        raise NotImplementedError\n\n    def get_contacts(self) -> List[Contact]:\n        raise NotImplementedError\n\n    def assign_tax_status(self, tax_status: str):\n        raise NotImplementedError\n\n    def assign_state(self, state: str):\n        raise NotImplementedError\n\n    def assign_company_type(self, company_type: str):\n        raise NotImplementedError\n\n    def __str__(self):\n        return self.name\n\nclass Contact:\n    def __init__(self, first_name: str, last_name: str, primary_phone: Optional[str] = None, secondary_phone: Optional[str] = None, email: Optional[str] = None, job_title: Optional[str] = None, notes: Optional[str] = None):\n        self.first_name = first_name\n        self.last_name = last_name\n        self.primary_phone = primary_phone\n        self.secondary_phone = secondary_phone\n        self.email = email\n        self.job_title = job_title\n        self.notes = notes\n\n    def __str__(self):\n        return f'{self.first_name} {self.last_name} ({self.email})'\n\nclass Employee(Entity):\n    def __init__(self, first_name: str, last_name: str, phone_number: Optional[str] = None, address: Optional[str] = None, state: Optional[str] = None, zip_code: Optional[str] = None, website: Optional[str] = None, tax_status: Optional[str] = None, job_title: str, supervisor: Optional['Employee'] = None):\n        super().__init__(first_name, last_name, phone_number, address, state, zip_code, website, tax_status)\n        self.job_title = job_title\n        self.supervisor = supervisor\n        self.employees: List[Employee] = []\n\n    def add_employee(self, employee: 'Employee'):\n        raise NotImplementedError\n\n    def remove_employee(self, employee: 'Employee'):\n        raise NotImplementedError\n\n    def get_employees(self) -> List['Employee']:\n        raise NotImplementedError\n\n    def assign_supervisor(self, supervisor: 'Employee'):\n        raise NotImplementedError\n\n    def __str__(self):\n        return f'{self.first_name} {self.last_name} ({self.job_title})'\n\nclass CompanyType:\n    CUSTOMER = 'Customer'\n    VENDOR = 'Vendor'\n    SHIPPER = 'Shipper'\n\nclass TaxStatus:\n    def __init__(self, status: str):\n        self.status = status\n\n    def __str__(self):\n        return self.status\n\nclass State:\n    def __init__(self, name: str, code: str):\n        self.name = name\n        self.code = code\n\n    def __str__(self):\n        return self.name\n\nclass JobTitle:\n    def __init__(self, title: str):\n        self.title = title\n\n    def __str__(self):\n        return self.title\n\nclass Customer(Company):\n    def __init__(self, name: str, phone_number: Optional[str] = None, address: Optional[str] = None, state: Optional[str] = None, zip_code: Optional[str] = None, website: Optional[str] = None, tax_status: Optional[str] = None, company_type: str = CompanyType.CUSTOMER):\n        super().__init__(name, phone_number, address, state, zip_code, website, tax_status, company_type)\n\n    def __str__(self):\n        return self.name\n\nclass Vendor(Company):\n    def __init__(self, name: str, phone_number: Optional[str] = None, address: Optional[str] = None, state: Optional[str] = None, zip_code: Optional[str] = None, website: Optional[str] = None, tax_status: Optional[str] = None, company_type: str = CompanyType.VENDOR):\n        super().__init__(name, phone_number, address, state, zip_code, website, tax_status, company_type)\n\n    def __str__(self):\n        return self.name\n\nclass Shipper(Company):\n    def __init__(self, name: str, phone_number: Optional[str] = None, address: Optional[str] = None, state: Optional[str] = None, zip_code: Optional[str] = None, website: Optional[str] = None, tax_status: Optional[str] = None, company_type: str = CompanyType.SHIPPER):\n        super().__init__(name, phone_number, address, state, zip_code, website, tax_status, company_type)\n\n    def __str__(self):\n        return self.name\n\nclass Product:\n    def __init__(self, code: str, name: str, description: str, unit_cost: float, retail_price: float, inventory_level: int, reorder_level: int, target_level: int, min_reorder_quantity: int, discontinued: bool):\n        self.code = code\n        self.name = name\n        self.description = description\n        self.unit_cost = unit_cost\n        self.retail_price = retail_price\n        self.inventory_level = inventory_level\n        self.reorder_level = reorder_level\n        self.target_level = target_level\n        self.min_reorder_quantity = min_reorder_quantity\n        self.discontinued = discontinued\n\n    def __str__(self):\n        return self.name\n\nclass ProductCategory:\n    def __init__(self, name: str, code: str, description: str, image: Optional[str] = None):\n        self.name = name\n        self.code = code\n        self.description = description\n        self.image = image\n\n    def __str__(self):\n        return self.name\n\nclass PurchaseOrder:\n    def __init__(self, vendor: Vendor, employee_submitter: Employee, employee_approver: Employee, status: str, order_date: str):\n        self.vendor = vendor\n        self.employee_submitter = employee_submitter\n        self.employee_approver = employee_approver\n        self.status = status\n        self.order_date = order_date\n        self.details: List[PurchaseOrderDetailItem] = []\n\n    def add_detail(self, detail: PurchaseOrderDetailItem):\n        raise NotImplementedError\n\n    def remove_detail(self, detail: PurchaseOrderDetailItem):\n        raise NotImplementedError\n\n    def get_details(self) -> List[PurchaseOrderDetailItem]:\n        raise NotImplementedError\n\n    def __str__(self):\n        return f'PO from {self.vendor.name} submitted by {self.employee_submitter.first_name} {self.employee_submitter.last_name} and approved by {self.employee_approver.first_name} {self.employee_approver.last_name} on {self.order_date} '\n\nclass PurchaseOrderDetailItem:\n    def __init__(self, product: Product, quantity: int, unit_price: float):\n        self.product = product\n        self.quantity = quantity\n        self.unit_price = unit_price\n\n    def __str__(self):\n        return f'{self.product.name} x{self.quantity} @ ${self.unit_price} each'\n\nclass Order:\n    def __init__(self, customer: Customer, employee: Employee, status: str, order_date: str):\n        self.customer = customer\n        self.employee = employee\n        self.status = status\n        self.order_date = order_date\n        self.details: List[OrderDetailItem] = []\n\n    def add_detail(self, detail: OrderDetailItem):\n        raise NotImplementedError\n\n    def remove_detail(self, detail: OrderDetailItem):\n        raise NotImplementedError\n\n    def get_details(self) -> List[OrderDetailItem]:\n        raise NotImplementedError\n\n    def __str__(self):\n        return f'Order for {self.customer.name} processed by {self.employee.first_name} {self.employee.last_name} on {self.order_date} '\n\nclass OrderDetailItem:\n    def __init__(self, product: Product, quantity: int, unit_price: float, discount: float):\n        self.product = product\n        self.quantity = quantity\n        self.unit_price = unit_price\n        self.discount = discount\n\n    def __str__(self):\n        return f'{self.product.name} x{self.quantity} @ ${self.unit_price} each with {self.discount}% discount'\n\nclass Record:\n    def __init__(self, added_by: Employee, added_date: str, modified_by: Employee, modified_date: str):\n        self.added_by = added_by\n        self.added_date = added_date\n        self.modified_by = modified_by\n        self.modified_date = modified_date\n",
+ "java": {}
+}

@@ -1,0 +1,33 @@
+[
+ {
+  "id": "A1",
+  "type": "incompleteness",
+  "sid": "R6.s1",
+  "req_id": "R6",
+  "cue": "certain",
+  "text": "Each engine has a certain power.",
+  "readings": [],
+  "status": "rejected",
+  "confirmed": false,
+  "llm_type": "incompleteness",
+  "explanation": "The requirement is incomplete and does not provide enough information to determine the power of the engine.",
+  "chosen": ""
+ },
+ {
+  "id": "A2",
+  "type": "referential",
+  "sid": "R7.s1",
+  "req_id": "R7",
+  "cue": "it",
+  "text": "Likewise, the seats have a size, which must be the same for all the seats of the cars of the same model.Each car has a number plate that identifies it.",
+  "readings": [
+   "Each car has a number plate that identifies it.",
+   "Each seat has a size that must be the same for all seats of the same model."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The term 'it' in the second sentence could refer to either the number plate or the seat size.",
+  "chosen": "Each car has a number plate that identifies it."
+ }
+]

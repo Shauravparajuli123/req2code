@@ -1,0 +1,192 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Implement WorkflowApplicationDeclaration",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "WorkflowProcessDefinition",
+   "kind": "class",
+   "attributes": [
+    "participantSpecifications",
+    "applicationDeclarations",
+    "transitionDefinitions"
+   ],
+   "methods": [
+    {
+     "name": "addParticipantSpecification",
+     "use_case": "R15"
+    },
+    {
+     "name": "addApplicationDeclaration",
+     "use_case": "R8"
+    },
+    {
+     "name": "addTransitionDefinition",
+     "use_case": "R20"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8",
+    "R15",
+    "R20"
+   ]
+  },
+  {
+   "name": "WorkflowApplicationDeclaration",
+   "kind": "class",
+   "attributes": [
+    "relevantData"
+   ],
+   "methods": [
+    {
+     "name": "implementWorkflowApplicationDeclaration",
+     "use_case": "R1"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Specification",
+   "kind": "class",
+   "attributes": [
+    "processDefinition",
+    "processActivities"
+   ],
+   "methods": [
+    {
+     "name": "addProcessActivity",
+     "use_case": "R16"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "ProcessActivity",
+   "kind": "class",
+   "attributes": [
+    "processDefinition",
+    "relevantData"
+   ],
+   "methods": [
+    {
+     "name": "setProcessDefinition",
+     "use_case": "R17"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R17"
+   ]
+  },
+  {
+   "name": "ProcessDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "TransitionInformation",
+   "kind": "class",
+   "attributes": [
+    "targetProcessActivity"
+   ],
+   "methods": [
+    {
+     "name": "setTargetProcessActivity",
+     "use_case": "R21"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "name": "WfMc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "Workflow",
+   "kind": "class",
+   "attributes": [
+    "specification"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R19"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "WorkflowProcessDefinition",
+   "target": "Specification",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Specification",
+   "target": "ProcessActivity",
+   "multiplicity_target": "1",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Specification",
+   "target": "ProcessDefinition",
+   "multiplicity_target": "1",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "WorkflowProcessDefinition",
+   "target": "WorkflowApplicationDeclaration",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "WorkflowProcessDefinition",
+   "target": "TransitionInformation",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R20"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass ProcessDefinition:\n    pass\n\nclass ProcessActivity:\n    pass\n\nclass WorkflowApplicationDeclaration:\n    def __init__(self):\n        self.relevantData: str = ''\n    def implementWorkflowApplicationDeclaration(self):\n        raise NotImplementedError('R1')\n\nclass Specification:\n    def __init__(self):\n        self.processDefinition: ProcessDefinition = ProcessDefinition()\n        self.processActivities: List[ProcessActivity] = []\n    def addProcessActivity(self):\n        raise NotImplementedError('R16')\n\nclass WorkflowProcessDefinition:\n    def __init__(self):\n        self.participantSpecifications: List[Specification] = []\n        self.applicationDeclarations: List[WorkflowApplicationDeclaration] = []\n        self.transitionDefinitions: List[TransitionInformation] = []\n    def addParticipantSpecification(self):\n        raise NotImplementedError('R15')\n    def addApplicationDeclaration(self):\n        raise NotImplementedError('R8')\n    def addTransitionDefinition(self):\n        raise NotImplementedError('R20')\n\nclass TransitionInformation:\n    def __init__(self):\n        self.targetProcessActivity: ProcessActivity = ProcessActivity()\n    def setTargetProcessActivity(self):\n        raise NotImplementedError('R21')\n",
+ "java": {}
+}

@@ -1,0 +1,92 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineTextualPath",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TextualPathExp",
+   "kind": "class",
+   "attributes": [
+    "path"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R1"
+   ]
+  },
+  {
+   "name": "Path",
+   "kind": "class",
+   "attributes": [
+    "transitions"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R1"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R2",
+    "R1"
+   ]
+  },
+  {
+   "name": "AlternativeTrans",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8",
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Path",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AlternativeTrans",
+   "target": "Path",
+   "multiplicity_target": "1",
+   "src": [
+    "R8",
+    "R1"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\n# Define the Path class\nclass Path:\n    def __init__(self, transitions: List['Transition']):\n        self.transitions = transitions\n\n    def __str__(self):\n        raise NotImplementedError\n\n# Define the Transition class\nclass Transition:\n    def __init__(self, name: str):\n        self.name = name\n\n    def __str__(self):\n        raise NotImplementedError\n\n# Define the AlternativeTrans class\nclass AlternativeTrans:\n    def __init__(self):\n        pass\n\n    def __str__(self):\n        raise NotImplementedError\n\n# Define the TextualPathExp class\nclass TextualPathExp:\n    def __init__(self, path: Path):\n        self.path = path\n\n    def __str__(self):\n        raise NotImplementedError",
+ "java": {}
+}

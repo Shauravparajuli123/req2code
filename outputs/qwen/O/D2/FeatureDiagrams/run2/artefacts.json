@@ -1,0 +1,177 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineNode",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "name": "DefineAttribute",
+   "actor": "User",
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "name": "DefineFeatureDiagram",
+   "actor": "User",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "DefineXORGroup",
+   "actor": "User",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "name": "DefineORGroup",
+   "actor": "User",
+   "src": [
+    "R6",
+    "R13"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "reference"
+   ],
+   "methods": [
+    {
+     "name": "addAttribute",
+     "use_case": "DefineAttribute"
+    },
+    {
+     "name": "addChild",
+     "use_case": "DefineFeatureDiagram"
+    },
+    {
+     "name": "addXORGroup",
+     "use_case": "DefineXORGroup"
+    },
+    {
+     "name": "addORGroup",
+     "use_case": "DefineORGroup"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R7",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "name",
+    "key"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "name": "Orgroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R13"
+   ]
+  },
+  {
+   "name": "Xorgroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Node",
+   "target": "Attribute",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Node",
+   "target": "Orgroup",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Node",
+   "target": "Xorgroup",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Orgroup",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Xorgroup",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "class Node:\n    def __init__(self, description, reference):\n        self.description = description\n        self.reference = reference\n        self.attributes = []\n        self.orgroups = []\n        self.xorgroups = []\n\n    def addAttribute(self, attribute):\n        if isinstance(attribute, Attribute):\n            self.attributes.append(attribute)\n        else:\n            raise ValueError('Attribute must be an instance of Attribute class')\n\n    def addChild(self, child):\n        if isinstance(child, Node):\n            self.orgroups.append(child)\n        else:\n            raise ValueError('Child must be an instance of Node class')\n\n    def addXORGroup(self, xorgroup):\n        if isinstance(xorgroup, Xorgroup):\n            self.xorgroups.append(xorgroup)\n        else:\n            raise ValueError('Xorgroup must be an instance of Xorgroup class')\n\n    def addORGroup(self, orgroup):\n        if isinstance(orgroup, Orgroup):\n            self.orgroups.append(orgroup)\n        else:\n            raise ValueError('Orgroup must be an instance of Orgroup class')\n\nclass Attribute:\n    def __init__(self, description, name, key):\n        self.description = description\n        self.name = name\n        self.key = key\n\nclass Orgroup:\n    def __init__(self, preliminary):\n        self.preliminary = preliminary\n\nclass Xorgroup:\n    def __init__(self, preliminary):\n        self.preliminary = preliminary",
+ "java": {}
+}

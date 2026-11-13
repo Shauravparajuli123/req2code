@@ -1,0 +1,107 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "AssignPassengerToFlight",
+   "actor": "User",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Flight",
+   "kind": "class",
+   "attributes": [
+    "originAirport",
+    "departureTime"
+   ],
+   "methods": [
+    {
+     "name": "assignPassenger",
+     "use_case": "AssignPassengerToFlight"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "name": "Passenger",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "gender"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Time",
+   "kind": "class",
+   "attributes": [
+    "year",
+    "day",
+    "minute"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Flight",
+   "target": "Passenger",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Airport",
+   "target": "Flight",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Flight",
+   "target": "Passenger",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "python": "class Airport:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Time:\n    def __init__(self, year: int, day: int, minute: int):\n        self.year = year\n        self.day = day\n        self.minute = minute\n\nclass Flight:\n    def __init__(self, originAirport: Airport, departureTime: Time):\n        self.originAirport = originAirport\n        self.departureTime = departureTime\n        self.passengers = []\n\n    def assignPassenger(self, passenger: Passenger):\n        if len(self.passengers) < self.maximumPassengers:\n            self.passengers.append(passenger)\n        else:\n            raise Exception('Flight is full')\n\nclass Passenger:\n    def __init__(self, name: str, gender: str):\n        self.name = name\n        self.gender = gender",
+ "java": {}
+}

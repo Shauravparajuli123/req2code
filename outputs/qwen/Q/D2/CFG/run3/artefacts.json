@@ -1,0 +1,115 @@
+{
+ "actors": [
+  "Node"
+ ],
+ "use_cases": [
+  {
+   "name": "HasExpression",
+   "actor": "Node",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "SetInNode",
+   "actor": "Node",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "ConditionalNodeHasTrueNode",
+   "actor": "ConditionalNode",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "expression",
+    "inNode"
+   ],
+   "methods": [
+    {
+     "name": "setExpression",
+     "use_case": "HasExpression"
+    },
+    {
+     "name": "setInNode",
+     "use_case": "SetInNode"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R1"
+   ]
+  },
+  {
+   "name": "ConditionalNode",
+   "kind": "class",
+   "attributes": [
+    "trueNode"
+   ],
+   "methods": [
+    {
+     "name": "hasTrueNode",
+     "use_case": "ConditionalNodeHasTrueNode"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Expression",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ConditionalNode",
+   "target": "Node",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "class Node:\n    def __init__(self):\n        self.expression = None\n        self.inNode = None\n\n    def setExpression(self, expression: Expression):\n        self.expression = expression\n\n    def setInNode(self, inNode: Node):\n        self.inNode = inNode\n\n    def __str__(self):\n        return f'Node(expression={self.expression}, inNode={self.inNode})'\n\nclass Expression:\n    def __init__(self, name: str):\n        self.name = name\n\n    def __str__(self):\n        return f'Expression(name={self.name})'\n\nclass ConditionalNode(Node):\n    def __init__(self):\n        super().__init__()\n        self.trueNode = None\n\n    def hasTrueNode(self) -> bool:\n        return self.trueNode is not None\n\n    def setTrueNode(self, trueNode: Node):\n        self.trueNode = trueNode\n\n    def __str__(self):\n        return f'ConditionalNode(trueNode={self.trueNode})'",
+ "java": {}
+}

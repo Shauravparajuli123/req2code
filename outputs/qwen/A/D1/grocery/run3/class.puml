@@ -1,0 +1,48 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Employee {
+  name : String
+  preferredWorkingHours : String
+  personalInformation : String
+  contract : String
+  certificates : String
+  financialStatements : String
+  +expressPreferredWorkingHours()
+  +viewSchedule()
+  +viewPersonalInbox()
+  +resetPassword()
+  +chooseNotifications()
+  +choosePaymentFrequency()
+  +viewFinancialStatements()
+  +ensurePrivacy()
+  +updatePersonalInformation()
+}
+class Manager {
+  name : String
+  complaints : String
+  +sendSalaryStatements()
+  +enablePaymentOptions()
+  +automatePaymentSystem()
+  +outsourcePaymentProcess()
+  +semiAutomateSchedulingProcess()
+  +manuallyEditSchedule()
+  +manuallyAuthorizeSchedule()
+  +receiveNotificationForScheduleAdjustments()
+  +receiveNewScheduleNotification()
+  +viewSchedule()
+  +viewEmployeeOverview()
+  +viewEmployeeContracts()
+  +viewEmployeeCertificates()
+  +hireNewEmployees()
+  +viewAllComplaints()
+  +respondToUnsolvedComplaints()
+  +prioritizeComplaints()
+  +viewComplaints()
+  +contactManagement()
+  +contactEmployee()
+  +forwardMessages()
+}
+Manager "1" -- "1..*" Employee : manages
+Employee "1" -- "1" Manager : is managed by
+@enduml

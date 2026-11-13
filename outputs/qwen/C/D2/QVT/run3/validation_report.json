@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "A collection template expression has a collection kind, which is represented by the 'kind' attribute in CollectionTemplateExpression class."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R4: An element of a model pattern is not represented in the model.",
+   "fix": "Add a class for 'element of a model pattern'."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R5: A template expression can be bound to a variable is not represented in the model.",
+   "fix": "Add a method to bind a template expression to a variable in the TemplateExp class."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R6: An object template expression may contain multiple property template items is not represented in the model.",
+   "fix": "Add a relationship between ObjectTemplateExp and ObjectTemplateItem class, and ensure ObjectTemplateItem can have multiple instances."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R9: A property template item has exactly one Object Template Expression as its object container is not represented in the model.",
+   "fix": "Create a class for 'PropertyTemplateItem' and add a relationship to ObjectTemplateExp."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R10: A property template item has exactly one property as its referred property is not represented in the model.",
+   "fix": "Create a class for 'PropertyTemplateItem' and add an attribute for the property."
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  name : String
+  personalInformation : String
+  bankingDetails : String
+  membershipType : String
+  subscription : String
+  familyMembers : String
+  lessonsBooked : String
+  preferredNotificationMethod : String
+  checkInStatus : boolean
+  +openAccount()
+  +addInformation()
+  +addBankingDetail()
+  +chooseMembershipType()
+  +extendSubscription()
+  +seeInformation()
+  +useInformation()
+  +unsubscribe()
+  +resetPassword()
+  +changeDetail()
+  +updatePaymentInformation()
+  +seeMembership()
+  +seeLesson()
+  +seeRecord()
+  +callGym()
+  +bookSpot()
+  +receiveNotification()
+  +receivePushNotification()
+  +confirmBooking()
+}
+class Admin {
+  +editLesson()
+  +editTrainingSession()
+  +haveMethod()
+  +haveSystem()
+  +haveFine()
+  +seeSchedule()
+  +seeCustomer()
+  +knowCustomer()
+  +knowSubscription()
+  +notifySession()
+}
+class Trainer {
+  name : String
+  lessons : String
+  +addLesson()
+  +setTime()
+  +setDescription()
+  +setRoom()
+  +setNumber()
+  +setType()
+  +editLesson()
+}
+class Lesson {
+  description : String
+  room : String
+  time : String
+  number : int
+  type : String
+  +addLesson()
+  +setTime()
+  +setDescription()
+  +setRoom()
+  +setNumber()
+  +setType()
+  +editLesson()
+}
+class Notification {
+  method : String
+  message : String
+}
+Customer "0..*" -- "1" Lesson : attends
+Admin "1" -- "1" Lesson : manages
+Customer "0..*" -- "1" Notification : receives
+Admin "1" -- "1" Customer : manages
+@enduml

@@ -1,0 +1,455 @@
+{
+ "actors": [
+  "User",
+  "Visitor",
+  "Reseller",
+  "Artist"
+ ],
+ "use_cases": [
+  {
+   "name": "Save Personal Information",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Save Payment Details",
+   "actor": "User",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Fill Out Survey",
+   "actor": "User",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "See Personalized Content",
+   "actor": "User",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Edit Personal Information",
+   "actor": "User",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Change Password",
+   "actor": "User",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "See And Edit Preferences",
+   "actor": "User",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "See Ticket Order History",
+   "actor": "User",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "See Upcoming Events",
+   "actor": "User",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Find Favorite Artists And Events",
+   "actor": "User",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Read About Event",
+   "actor": "Visitor",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Buy Tickets Directly",
+   "actor": "Visitor",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Resell Tickets Directly",
+   "actor": "Reseller",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "Upload Digital Ticket",
+   "actor": "Reseller",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Set Ticket Price",
+   "actor": "Reseller",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "Add Ticket Description",
+   "actor": "Reseller",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Save Bank Account",
+   "actor": "Reseller",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "See Calendar View Of Events",
+   "actor": "Visitor",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "See Popular Events",
+   "actor": "Visitor",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Click On Event On Homepage",
+   "actor": "Visitor",
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "name": "Find Information About Event",
+   "actor": "Artist",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "name": "Link To Website",
+   "actor": "Artist",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "name": "Link To Social Media",
+   "actor": "Artist",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "name": "Description Of Artist And Event",
+   "actor": "Artist",
+   "src": [
+    "R52"
+   ]
+  },
+  {
+   "name": "Favorite Events Or Artists",
+   "actor": "User",
+   "src": [
+    "R53"
+   ]
+  },
+  {
+   "name": "Link To Music Platforms",
+   "actor": "Artist",
+   "src": [
+    "R54"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "dateOfBirth",
+    "email",
+    "address",
+    "preferences",
+    "personalInfo",
+    "paymentDetails",
+    "favoriteArtists",
+    "favoriteEvents",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "savePersonalInformation",
+     "use_case": "Save Personal Information"
+    },
+    {
+     "name": "savePaymentDetails",
+     "use_case": "Save Payment Details"
+    },
+    {
+     "name": "fillOutSurvey",
+     "use_case": "Fill Out Survey"
+    },
+    {
+     "name": "seePersonalizedContent",
+     "use_case": "See Personalized Content"
+    },
+    {
+     "name": "editPreferences",
+     "use_case": "See And Edit Preferences"
+    },
+    {
+     "name": "changePassword",
+     "use_case": "Change Password"
+    },
+    {
+     "name": "editPersonalInformation",
+     "use_case": "Edit Personal Information"
+    },
+    {
+     "name": "seeOrderHistory",
+     "use_case": "See Ticket Order History"
+    },
+    {
+     "name": "seeUpcomingEvents",
+     "use_case": "See Upcoming Events"
+    },
+    {
+     "name": "findFavoriteArtistsAndEvents",
+     "use_case": "Find Favorite Artists And Events"
+    }
+   ],
+   "src": [
+    "R1",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R10",
+    "R15",
+    "R16",
+    "R17",
+    "R28",
+    "R33",
+    "R49",
+    "R53"
+   ]
+  },
+  {
+   "name": "Visitor",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "email"
+   ],
+   "methods": [
+    {
+     "name": "readAboutEvent",
+     "use_case": "Read About Event"
+    },
+    {
+     "name": "buyTicketsDirectly",
+     "use_case": "Buy Tickets Directly"
+    },
+    {
+     "name": "seeAvailableTickets",
+     "use_case": null
+    },
+    {
+     "name": "seeSeatMap",
+     "use_case": null
+    },
+    {
+     "name": "seeTicketTypes",
+     "use_case": null
+    },
+    {
+     "name": "addTicketsToCart",
+     "use_case": null
+    },
+    {
+     "name": "seeOrderSummary",
+     "use_case": null
+    },
+    {
+     "name": "searchEvents",
+     "use_case": "Find Information About Event"
+    },
+    {
+     "name": "clickOnEvent",
+     "use_case": "Click On Event On Homepage"
+    },
+    {
+     "name": "sortSearchResultsByDate",
+     "use_case": null
+    },
+    {
+     "name": "filterSearchByPrice",
+     "use_case": null
+    },
+    {
+     "name": "filterSearchByVenue",
+     "use_case": null
+    },
+    {
+     "name": "filterSearchByGenre",
+     "use_case": null
+    },
+    {
+     "name": "seeCalendarView",
+     "use_case": "See Calendar View Of Events"
+    },
+    {
+     "name": "seePopularEvents",
+     "use_case": "See Popular Events"
+    }
+   ],
+   "src": [
+    "R11",
+    "R12",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R34",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "name": "Reseller",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "bankAccount"
+   ],
+   "methods": [
+    {
+     "name": "resellTicketsDirectly",
+     "use_case": "Resell Tickets Directly"
+    },
+    {
+     "name": "uploadDigitalTicket",
+     "use_case": "Upload Digital Ticket"
+    },
+    {
+     "name": "setTicketPrice",
+     "use_case": "Set Ticket Price"
+    },
+    {
+     "name": "addTicketDescription",
+     "use_case": "Add Ticket Description"
+    },
+    {
+     "name": "saveBankAccount",
+     "use_case": "Save Bank Account"
+    }
+   ],
+   "src": [
+    "R13",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R45"
+   ]
+  },
+  {
+   "name": "Artist",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "website",
+    "socialMedia",
+    "description",
+    "musicPlatforms"
+   ],
+   "methods": [
+    {
+     "name": "findInformationAboutEvent",
+     "use_case": "Find Information About Event"
+    },
+    {
+     "name": "linkToWebsite",
+     "use_case": "Link To Website"
+    },
+    {
+     "name": "linkToSocialMedia",
+     "use_case": "Link To Social Media"
+    },
+    {
+     "name": "descriptionOfArtistAndEvent",
+     "use_case": "Description Of Artist And Event"
+    },
+    {
+     "name": "favoriteEventsOrArtists",
+     "use_case": "Favorite Events Or Artists"
+    },
+    {
+     "name": "linkToMusicPlatforms",
+     "use_case": "Link To Music Platforms"
+    }
+   ],
+   "src": [
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  }
+ ],
+ "relations": [],
+ "python": "\"\"\"Code skeleton generated from the shared model of D1/ticket.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass User:\n    \"\"\"Source: R1, R5, R6, R7, R8, R10, R15, R16, R17, R28, R33, R49, R53\"\"\"\n    name: _t.Optional[str] = None\n    dateOfBirth: _t.Optional[str] = None\n    email: _t.Optional[str] = None\n    address: _t.Optional[str] = None\n    preferences: _t.Optional[str] = None\n    personalInfo: _t.Optional[str] = None\n    paymentDetails: _t.Optional[str] = None\n    favoriteArtists: _t.Optional[str] = None\n    favoriteEvents: _t.Optional[str] = None\n    password: _t.Optional[str] = None\n\n    def savePersonalInformation(self) -> None:\n        \"\"\"Realizes UC1 \"Save Personal Information\" (R1).\"\"\"\n        raise NotImplementedError\n\n    def savePaymentDetails(self) -> None:\n        \"\"\"Realizes UC2 \"Save Payment Details\" (R2).\"\"\"\n        raise NotImplementedError\n\n    def fillOutSurvey(self) -> None:\n        \"\"\"Realizes UC3 \"Fill Out Survey\" (R3).\"\"\"\n        raise NotImplementedError\n\n    def seePersonalizedContent(self) -> None:\n        \"\"\"Realizes UC4 \"See Personalized Content\" (R4).\"\"\"\n        raise NotImplementedError\n\n    def editPreferences(self) -> None:\n        \"\"\"Realizes UC7 \"See And Edit Preferences\" (R5).\"\"\"\n        raise NotImplementedError\n\n    def changePassword(self) -> None:\n        \"\"\"Realizes UC6 \"Change Password\" (R6).\"\"\"\n        raise NotImplementedError\n\n    def editPersonalInformation(self) -> None:\n        \"\"\"Realizes UC5 \"Edit Personal Information\" (R7).\"\"\"\n        raise NotImplementedError\n\n    def seeOrderHistory(self) -> None:\n        \"\"\"Realizes UC8 \"See Ticket Order History\" (R8).\"\"\"\n        raise NotImplementedError\n\n    def seeUpcomingEvents(self) -> None:\n        \"\"\"Realizes UC9 \"See Upcoming Events\" (R9).\"\"\"\n        raise NotImplementedError\n\n    def findFavoriteArtistsAndEvents(self) -> None:\n        \"\"\"Realizes UC10 \"Find Favorite Artists And Events\" (R10).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Visitor:\n    \"\"\"Source: R11, R12, R18, R19, R20, R21, R22, R23, R24, R25, R26, R28, R29, R30, R31, R32, R34, R46, R47, R48\"\"\"\n    name: _t.Optional[str] = None\n    email: _t.Optional[str] = None\n\n    def readAboutEvent(self) -> None:\n        \"\"\"Realizes UC11 \"Read About Event\" (R11).\"\"\"\n        raise NotImplementedError\n\n    def buyTicketsDirectly(self) -> None:\n        \"\"\"Realizes UC12 \"Buy Tickets Directly\" (R12).\"\"\"\n        raise NotImplementedError\n\n    def seeAvailableTickets(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def seeSeatMap(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def seeTicketTypes(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addTicketsToCart(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def seeOrderSummary(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def searchEvents(self) -> None:\n        \"\"\"Realizes UC21 \"Find Information About Event\" (R49).\"\"\"\n        raise NotImplementedError\n\n    def clickOnEvent(self) -> None:\n        \"\"\"Realizes UC20 \"Click On Event On Homepage\" (R48).\"\"\"\n        raise NotImplementedError\n\n    def sortSearchResultsByDate(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def filterSearchByPrice(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def filterSearchByVenue(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def filterSearchByGenre(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def seeCalendarView(self) -> None:\n        \"\"\"Realizes UC18 \"See Calendar View Of Events\" (R46).\"\"\"\n        raise NotImplementedError\n\n    def seePopularEvents(self) -> None:\n        \"\"\"Realizes UC19 \"See Popular Events\" (R47).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Reseller:\n    \"\"\"Source: R13, R35, R36, R37, R38, R39, R40, R41, R42, R43, R45\"\"\"\n    name: _t.Optional[str] = None\n    bankAccount: _t.Optional[str] = None\n\n    def resellTicketsDirectly(self) -> None:\n        \"\"\"Realizes UC13 \"Resell Tickets Directly\" (R41).\"\"\"\n        raise NotImplementedError\n\n    def uploadDigitalTicket(self) -> None:\n        \"\"\"Realizes UC14 \"Upload Digital Ticket\" (R42).\"\"\"\n        raise NotImplementedError\n\n    def setTicketPrice(self) -> None:\n        \"\"\"Realizes UC15 \"Set Ticket Price\" (R43).\"\"\"\n        raise NotImplementedError\n\n    def addTicketDescription(self) -> None:\n        \"\"\"Realizes UC16 \"Add Ticket Description\" (R44).\"\"\"\n        raise NotImplementedError\n\n    def saveBankAccount(self) -> None:\n        \"\"\"Realizes UC17 \"Save Bank Account\" (R45).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Artist:\n    \"\"\"Source: R49, R50, R51, R52, R53, R54\"\"\"\n    name: _t.Optional[str] = None\n    website: _t.Optional[str] = None\n    socialMedia: _t.Optional[str] = None\n    description: _t.Optional[str] = None\n    musicPlatforms: _t.Optional[str] = None\n\n    def findInformationAboutEvent(self) -> None:\n        \"\"\"Realizes UC21 \"Find Information About Event\" (R49).\"\"\"\n        raise NotImplementedError\n\n    def linkToWebsite(self) -> None:\n        \"\"\"Realizes UC22 \"Link To Website\" (R50).\"\"\"\n        raise NotImplementedError\n\n    def linkToSocialMedia(self) -> None:\n        \"\"\"Realizes UC23 \"Link To Social Media\" (R51).\"\"\"\n        raise NotImplementedError\n\n    def descriptionOfArtistAndEvent(self) -> None:\n        \"\"\"Realizes UC24 \"Description Of Artist And Event\" (R52).\"\"\"\n        raise NotImplementedError\n\n    def favoriteEventsOrArtists(self) -> None:\n        \"\"\"Realizes UC25 \"Favorite Events Or Artists\" (R53).\"\"\"\n        raise NotImplementedError\n\n    def linkToMusicPlatforms(self) -> None:\n        \"\"\"Realizes UC26 \"Link To Music Platforms\" (R54).\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "User.java": "/** Generated from shared model D1/ticket. Source: R1, R5, R6, R7, R8, R10, R15, R16, R17, R28, R33, R49, R53 */\npublic class User {\n    private java.lang.String name;\n    private java.time.LocalDate dateOfBirth;\n    private java.lang.String email;\n    private java.lang.String address;\n    private java.lang.String preferences;\n    private java.lang.String personalInfo;\n    private java.lang.String paymentDetails;\n    private java.lang.String favoriteArtists;\n    private java.lang.String favoriteEvents;\n    private java.lang.String password;\n\n    /** Realizes UC1 \"Save Personal Information\" (R1). */\n    public void savePersonalInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Save Payment Details\" (R2). */\n    public void savePaymentDetails() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Fill Out Survey\" (R3). */\n    public void fillOutSurvey() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC4 \"See Personalized Content\" (R4). */\n    public void seePersonalizedContent() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC7 \"See And Edit Preferences\" (R5). */\n    public void editPreferences() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC6 \"Change Password\" (R6). */\n    public void changePassword() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC5 \"Edit Personal Information\" (R7). */\n    public void editPersonalInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC8 \"See Ticket Order History\" (R8). */\n    public void seeOrderHistory() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"See Upcoming Events\" (R9). */\n    public void seeUpcomingEvents() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"Find Favorite Artists And Events\" (R10). */\n    public void findFavoriteArtistsAndEvents() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Visitor.java": "/** Generated from shared model D1/ticket. Source: R11, R12, R18, R19, R20, R21, R22, R23, R24, R25, R26, R28, R29, R30, R31, R32, R34, R46, R47, R48 */\npublic class Visitor {\n    private java.lang.String name;\n    private java.lang.String email;\n\n    /** Realizes UC11 \"Read About Event\" (R11). */\n    public void readAboutEvent() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC12 \"Buy Tickets Directly\" (R12). */\n    public void buyTicketsDirectly() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void seeAvailableTickets() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void seeSeatMap() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void seeTicketTypes() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addTicketsToCart() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void seeOrderSummary() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC21 \"Find Information About Event\" (R49). */\n    public void searchEvents() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC20 \"Click On Event On Homepage\" (R48). */\n    public void clickOnEvent() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void sortSearchResultsByDate() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void filterSearchByPrice() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void filterSearchByVenue() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void filterSearchByGenre() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC18 \"See Calendar View Of Events\" (R46). */\n    public void seeCalendarView() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC19 \"See Popular Events\" (R47). */\n    public void seePopularEvents() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Reseller.java": "/** Generated from shared model D1/ticket. Source: R13, R35, R36, R37, R38, R39, R40, R41, R42, R43, R45 */\npublic class Reseller {\n    private java.lang.String name;\n    private java.lang.String bankAccount;\n\n    /** Realizes UC13 \"Resell Tickets Directly\" (R41). */\n    public void resellTicketsDirectly() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC14 \"Upload Digital Ticket\" (R42). */\n    public void uploadDigitalTicket() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"Set Ticket Price\" (R43). */\n    public void setTicketPrice() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC16 \"Add Ticket Description\" (R44). */\n    public void addTicketDescription() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC17 \"Save Bank Account\" (R45). */\n    public void saveBankAccount() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Artist.java": "/** Generated from shared model D1/ticket. Source: R49, R50, R51, R52, R53, R54 */\npublic class Artist {\n    private java.lang.String name;\n    private java.lang.String website;\n    private java.lang.String socialMedia;\n    private java.lang.String description;\n    private java.lang.String musicPlatforms;\n\n    /** Realizes UC21 \"Find Information About Event\" (R49). */\n    public void findInformationAboutEvent() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC22 \"Link To Website\" (R50). */\n    public void linkToWebsite() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC23 \"Link To Social Media\" (R51). */\n    public void linkToSocialMedia() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC24 \"Description Of Artist And Event\" (R52). */\n    public void descriptionOfArtistAndEvent() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC25 \"Favorite Events Or Artists\" (R53). */\n    public void favoriteEventsOrArtists() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC26 \"Link To Music Platforms\" (R54). */\n    public void linkToMusicPlatforms() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

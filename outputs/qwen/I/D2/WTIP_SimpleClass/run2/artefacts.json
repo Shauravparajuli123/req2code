@@ -1,0 +1,124 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "PrimitiveDataType",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "TypeString",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Association",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "src"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R7"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "type"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "SimpleClass",
+   "kind": "class",
+   "attributes": [
+    "parent",
+    "association",
+    "attribute"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "PrimitiveDataType",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "TypeString",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SimpleClass",
+   "target": "Association",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SimpleClass",
+   "target": "Attribute",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "python": "from typing import Type, TypeVar\n\nT = TypeVar('T')\n\nclass Classifier:\n    pass\n\nclass PrimitiveDataType(Classifier):\n    def __init__(self, name: str):\n        self.name = name\n\nclass Type(Classifier):\n    pass\n\nclass Association:\n    def __init__(self, name: str, src: 'Class'):\n        self.name = name\n        self.src = src\n\nclass SimpleClass(Classifier):\n    def __init__(self, name: str, parent: 'SimpleClass' = None):\n        self.name = name\n        self.parent = parent\n\nclass Attribute:\n    def __init__(self, name: str, type_: Type):\n        self.name = name\n        self.type = type_\n",
+ "java": {}
+}

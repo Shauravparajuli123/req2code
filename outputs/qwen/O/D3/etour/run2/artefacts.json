@@ -1,0 +1,1527 @@
+{
+ "actors": [
+  "Agency",
+  "Visitor",
+  "AccountTourist",
+  "SheetTourist",
+  "Tourist",
+  "Agency",
+  "GuestUser",
+  "RegisteredUser",
+  "AgencyOperator",
+  "RestaurantOperator",
+  "Restaurant Operator",
+  "Tourist",
+  "tourist",
+  "system"
+ ],
+ "use_cases": [
+  {
+   "name": "Delete Object",
+   "actor": "Agency",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Insert Object",
+   "actor": "Agency",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Change Data",
+   "actor": "Agency",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Return List",
+   "actor": "Agency",
+   "src": [
+    "R4",
+    "R9"
+   ]
+  },
+  {
+   "name": "View Detail",
+   "actor": "Agency",
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "View History",
+   "actor": "Agency",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Enable Account",
+   "actor": "Agency",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Change Data",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC15",
+    "UC23"
+   ]
+  },
+  {
+   "name": "Delete Account",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC16"
+   ]
+  },
+  {
+   "name": "Change Image",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC17"
+   ]
+  },
+  {
+   "name": "Check Point",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC18"
+   ]
+  },
+  {
+   "name": "Delete BannerAd",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC19"
+   ]
+  },
+  {
+   "name": "Delete News",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC22"
+   ]
+  },
+  {
+   "name": "Edit Comment",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC26"
+   ]
+  },
+  {
+   "name": "Insert Banner",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC20"
+   ]
+  },
+  {
+   "name": "Insert News",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC21"
+   ]
+  },
+  {
+   "name": "View Feedback",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC24"
+   ]
+  },
+  {
+   "name": "View Report",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC25"
+   ]
+  },
+  {
+   "name": "SearchSite",
+   "actor": "GuestUser",
+   "src": [
+    "UC27",
+    "UC34"
+   ]
+  },
+  {
+   "name": "RemoveSearchTag",
+   "actor": "AgencyOperator",
+   "src": [
+    "UC28"
+   ]
+  },
+  {
+   "name": "AskSearchTag",
+   "actor": "AgencyOperator",
+   "src": [
+    "UC29"
+   ]
+  },
+  {
+   "name": "InsertTagSearch",
+   "actor": "AgencyOperator",
+   "src": [
+    "UC30"
+   ]
+  },
+  {
+   "name": "RequireCreation",
+   "actor": "GuestUser",
+   "src": [
+    "UC33"
+   ]
+  },
+  {
+   "name": "EnsureUser",
+   "actor": "GuestUser",
+   "src": [
+    "UC35"
+   ]
+  },
+  {
+   "name": "SupplyLogin",
+   "actor": "GuestUser",
+   "src": [
+    "UC36"
+   ]
+  },
+  {
+   "name": "EndSession",
+   "actor": "RegisteredUser",
+   "src": [
+    "UC37"
+   ]
+  },
+  {
+   "name": "InsertBanner",
+   "actor": "RestaurantOperator",
+   "src": [
+    "UC38"
+   ]
+  },
+  {
+   "name": "ChangeImage",
+   "actor": "RestaurantOperator",
+   "src": [
+    "UC39"
+   ]
+  },
+  {
+   "name": "DeleteBannerAd",
+   "actor": "RestaurantOperator",
+   "src": [
+    "UC40"
+   ]
+  },
+  {
+   "name": "Change Menu",
+   "actor": "Restaurant Operator",
+   "src": [
+    "UC41"
+   ]
+  },
+  {
+   "name": "Delete Menu",
+   "actor": "Restaurant Operator",
+   "src": [
+    "UC42"
+   ]
+  },
+  {
+   "name": "Change DataPoint",
+   "actor": "Restaurant Operator",
+   "src": [
+    "UC43"
+   ]
+  },
+  {
+   "name": "Require Convention",
+   "actor": "Restaurant Operator",
+   "src": [
+    "UC44"
+   ]
+  },
+  {
+   "name": "View Statistic",
+   "actor": "Restaurant Operator",
+   "src": [
+    "UC45"
+   ]
+  },
+  {
+   "name": "Edit Preferences",
+   "actor": "Tourist",
+   "src": [
+    "UC46"
+   ]
+  },
+  {
+   "name": "Edit SearchPreference",
+   "actor": "Tourist",
+   "src": [
+    "UC48"
+   ]
+  },
+  {
+   "name": "Insert Site",
+   "actor": "Tourist",
+   "src": [
+    "UC51"
+   ]
+  },
+  {
+   "name": "Delete Site",
+   "actor": "Tourist",
+   "src": [
+    "UC52"
+   ]
+  },
+  {
+   "name": "Insert Feedback",
+   "actor": "Tourist",
+   "src": [
+    "UC53"
+   ]
+  },
+  {
+   "name": "Edit Comment",
+   "actor": "tourist",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Entry Condition",
+   "actor": "tourist",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Return Position",
+   "actor": "tourist",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Search Site",
+   "actor": "tourist",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "View Detail",
+   "actor": "tourist",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Cultural",
+   "kind": "class",
+   "attributes": [
+    "id"
+   ],
+   "methods": [
+    {
+     "name": "delete",
+     "use_case": "Delete Object"
+    },
+    {
+     "name": "insert",
+     "use_case": "Insert Object"
+    },
+    {
+     "name": "change",
+     "use_case": "Change Data"
+    },
+    {
+     "name": "search",
+     "use_case": "Return List"
+    },
+    {
+     "name": "viewDetail",
+     "use_case": "View Detail"
+    },
+    {
+     "name": "viewHistory",
+     "use_case": "View History"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R11"
+   ]
+  },
+  {
+   "name": "RefreshmentPoint",
+   "kind": "class",
+   "attributes": [
+    "id"
+   ],
+   "methods": [
+    {
+     "name": "delete",
+     "use_case": "Delete Object"
+    },
+    {
+     "name": "insert",
+     "use_case": "Insert Object"
+    },
+    {
+     "name": "change",
+     "use_case": "Change Data"
+    },
+    {
+     "name": "search",
+     "use_case": "Return List"
+    },
+    {
+     "name": "viewDetail",
+     "use_case": "View Detail"
+    },
+    {
+     "name": "viewHistory",
+     "use_case": "View History"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R8",
+    "R12",
+    "R14"
+   ]
+  },
+  {
+   "name": "Account",
+   "kind": "class",
+   "attributes": [
+    "id"
+   ],
+   "methods": [
+    {
+     "name": "enable",
+     "use_case": "Enable Account"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Tourist",
+   "kind": "class",
+   "attributes": [
+    "id"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12",
+    "R14"
+   ]
+  },
+  {
+   "name": "Connection",
+   "kind": "class",
+   "attributes": [
+    "status"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "QualityRequirement",
+   "kind": "class",
+   "attributes": [
+    "criteria"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "Account",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "AccountTourist",
+   "kind": "class",
+   "attributes": [
+    "id"
+   ],
+   "methods": [
+    {
+     "name": "changeData",
+     "use_case": "Change Data"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC15"
+   ]
+  },
+  {
+   "name": "BannerAd",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "image"
+   ],
+   "methods": [
+    {
+     "name": "changeImage",
+     "use_case": "Change Image"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC17"
+   ]
+  },
+  {
+   "name": "Characteristics",
+   "kind": "class",
+   "attributes": [
+    "valid"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Computer",
+   "kind": "class",
+   "attributes": [
+    "connection"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Connection",
+   "kind": "class",
+   "attributes": [
+    "interruption"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "DataNews",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "title",
+    "content"
+   ],
+   "methods": [
+    {
+     "name": "insert",
+     "use_case": "Insert News"
+    },
+    {
+     "name": "delete",
+     "use_case": "Delete News"
+    },
+    {
+     "name": "changeData",
+     "use_case": "Change Data"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC21",
+    "UC22",
+    "UC23"
+   ]
+  },
+  {
+   "name": "Image",
+   "kind": "class",
+   "attributes": [
+    "path"
+   ],
+   "methods": [
+    {
+     "name": "change",
+     "use_case": "Change Image"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC17"
+   ]
+  },
+  {
+   "name": "Interruption",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Location",
+   "kind": "class",
+   "attributes": [
+    "id"
+   ],
+   "methods": [
+    {
+     "name": "viewReport",
+     "use_case": "View Report"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC25"
+   ]
+  },
+  {
+   "name": "RefreshmentPoint",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "banners"
+   ],
+   "methods": [
+    {
+     "name": "checkPoint",
+     "use_case": "Check Point"
+    },
+    {
+     "name": "insertBanner",
+     "use_case": "Insert Banner"
+    },
+    {
+     "name": "removeBanner",
+     "use_case": "Delete BannerAd"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC18",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "name": "Report",
+   "kind": "class",
+   "attributes": [
+    "location",
+    "feedback"
+   ],
+   "methods": [
+    {
+     "name": "generate",
+     "use_case": "View Report"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC25"
+   ]
+  },
+  {
+   "name": "Restaurant",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "refreshmentPoints"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "SearchSite",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "search",
+     "use_case": "View Feedback"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC24"
+   ]
+  },
+  {
+   "name": "SearchTourist",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "search",
+     "use_case": "Change Data"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC15"
+   ]
+  },
+  {
+   "name": "State",
+   "kind": "class",
+   "attributes": [
+    "valid"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Transaction",
+   "kind": "class",
+   "attributes": [
+    "request"
+   ],
+   "methods": [
+    {
+     "name": "confirm",
+     "use_case": "Change Data"
+    },
+    {
+     "name": "confirm",
+     "use_case": "Delete Account"
+    },
+    {
+     "name": "confirm",
+     "use_case": "Delete BannerAd"
+    },
+    {
+     "name": "confirm",
+     "use_case": "Delete News"
+    },
+    {
+     "name": "confirm",
+     "use_case": "Edit Comment"
+    },
+    {
+     "name": "confirm",
+     "use_case": "Insert Banner"
+    },
+    {
+     "name": "confirm",
+     "use_case": "Insert News"
+    },
+    {
+     "name": "confirm",
+     "use_case": "View Feedback"
+    },
+    {
+     "name": "confirm",
+     "use_case": "View Report"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "UseCase",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "UserInteraction",
+   "kind": "class",
+   "attributes": [
+    "computer"
+   ],
+   "methods": [
+    {
+     "name": "activateUseCase",
+     "use_case": "Change Data"
+    },
+    {
+     "name": "activateUseCase",
+     "use_case": "Delete Account"
+    },
+    {
+     "name": "activateUseCase",
+     "use_case": "Change Image"
+    },
+    {
+     "name": "activateUseCase",
+     "use_case": "Check Point"
+    },
+    {
+     "name": "activateUseCase",
+     "use_case": "Delete BannerAd"
+    },
+    {
+     "name": "activateUseCase",
+     "use_case": "Delete News"
+    },
+    {
+     "name": "activateUseCase",
+     "use_case": "Edit Comment"
+    },
+    {
+     "name": "activateUseCase",
+     "use_case": "Insert Banner"
+    },
+    {
+     "name": "activateUseCase",
+     "use_case": "Insert News"
+    },
+    {
+     "name": "activateUseCase",
+     "use_case": "View Feedback"
+    },
+    {
+     "name": "activateUseCase",
+     "use_case": "View Report"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "SearchTag",
+   "kind": "class",
+   "attributes": [
+    "tag"
+   ],
+   "methods": [
+    {
+     "name": "askSearchTag",
+     "use_case": "AskSearchTag"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC29"
+   ]
+  },
+  {
+   "name": "TagSearch",
+   "kind": "class",
+   "attributes": [
+    "searchTag"
+   ],
+   "methods": [
+    {
+     "name": "insertTagSearch",
+     "use_case": "InsertTagSearch"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC30"
+   ]
+  },
+  {
+   "name": "SearchSite",
+   "kind": "class",
+   "attributes": [
+    "site"
+   ],
+   "methods": [
+    {
+     "name": "searchSite",
+     "use_case": "SearchSite"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC27",
+    "UC34"
+   ]
+  },
+  {
+   "name": "RestaurantOperator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "insertBanner",
+     "use_case": "InsertBanner"
+    },
+    {
+     "name": "changeImage",
+     "use_case": "ChangeImage"
+    },
+    {
+     "name": "deleteBannerAd",
+     "use_case": "DeleteBannerAd"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "name": "GuestUser",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "requireCreation",
+     "use_case": "RequireCreation"
+    },
+    {
+     "name": "searchSite",
+     "use_case": "SearchSite"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC33",
+    "UC34"
+   ]
+  },
+  {
+   "name": "RegisteredUser",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "ensureUser",
+     "use_case": "EnsureUser"
+    },
+    {
+     "name": "supplyLogin",
+     "use_case": "SupplyLogin"
+    },
+    {
+     "name": "endSession",
+     "use_case": "EndSession"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC35",
+    "UC36",
+    "UC37"
+   ]
+  },
+  {
+   "name": "Menu",
+   "kind": "class",
+   "attributes": [
+    "days"
+   ],
+   "methods": [
+    {
+     "name": "editMenu",
+     "use_case": "Change Menu"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC41"
+   ]
+  },
+  {
+   "name": "Day",
+   "kind": "class",
+   "attributes": [
+    "date",
+    "menuItems"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "UC41"
+   ]
+  },
+  {
+   "name": "MenuItem",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "description"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "UC41"
+   ]
+  },
+  {
+   "name": "Operator",
+   "kind": "class",
+   "attributes": [
+    "username"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "UC41",
+    "UC42",
+    "UC43",
+    "UC44",
+    "UC45"
+   ]
+  },
+  {
+   "name": "Tourist",
+   "kind": "class",
+   "attributes": [
+    "username"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "UC46",
+    "UC47",
+    "UC48",
+    "UC49",
+    "UC50",
+    "UC51",
+    "UC52",
+    "UC53"
+   ]
+  },
+  {
+   "name": "Preference",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "UC46",
+    "UC47",
+    "UC48"
+   ]
+  },
+  {
+   "name": "SearchPreference",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "UC46",
+    "UC48"
+   ]
+  },
+  {
+   "name": "Account",
+   "kind": "class",
+   "attributes": [
+    "username",
+    "preferences"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "UC47"
+   ]
+  },
+  {
+   "name": "RefreshmentPoint",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "operator"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "UC45",
+    "UC43"
+   ]
+  },
+  {
+   "name": "Convention",
+   "kind": "class",
+   "attributes": [
+    "date",
+    "operator"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "UC44"
+   ]
+  },
+  {
+   "name": "Connection",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "QualityRequirement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Visitor",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "AdvancedSearchForm",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "name": "Site",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "SearchResult",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Position",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Cultural",
+   "target": "Connection",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RefreshmentPoint",
+   "target": "Connection",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Account",
+   "target": "Connection",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Connection",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12",
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AccountTourist",
+   "target": "Account",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC15"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BannerAd",
+   "target": "Image",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC17"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RefreshmentPoint",
+   "target": "BannerAd",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC18",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RefreshmentPoint",
+   "target": "Location",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC18",
+    "UC25"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Report",
+   "target": "Location",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC25"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Report",
+   "target": "Feedback",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC25"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UserInteraction",
+   "target": "Computer",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "GuestUser",
+   "target": "User",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC33",
+    "UC34"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RegisteredUser",
+   "target": "User",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC35",
+    "UC37"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RestaurantOperator",
+   "target": "User",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RefreshmentPoint",
+   "target": "Operator",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC45",
+    "UC43",
+    "UC44"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Account",
+   "multiplicity_target": "1",
+   "src": [
+    "UC46",
+    "UC47",
+    "UC48",
+    "UC49",
+    "UC50",
+    "UC51",
+    "UC52",
+    "UC53"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Operator",
+   "target": "RefreshmentPoint",
+   "multiplicity_target": "1",
+   "src": [
+    "UC45",
+    "UC43",
+    "UC44"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Menu",
+   "target": "Day",
+   "multiplicity_target": "1",
+   "src": [
+    "UC41"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Connection",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Connection",
+   "target": "Interruption",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Search",
+   "target": "Research",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Feedback",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Site",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Comment",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  }
+ ],
+ "python": "class Cultural:\n    def __init__(self, id):\n        self.id = id\n\n    def delete(self):\n        raise NotImplementedError\n\n    def insert(self):\n        raise NotImplementedError\n\n    def change(self):\n        raise NotImplementedError\n\n    def search(self):\n        raise NotImplementedError\n\n    def viewDetail(self):\n        raise NotImplementedError\n\n    def viewHistory(self):\n        raise NotImplementedError\n\nclass RefreshmentPoint:\n    def __init__(self, id):\n        self.id = id\n\n    def delete(self):\n        raise NotImplementedError\n\n    def insert(self):\n        raise NotImplementedError\n\n    def change(self):\n        raise NotImplementedError\n\n    def search(self):\n        raise NotImplementedError\n\n    def viewDetail(self):\n        raise NotImplementedError\n\n    def viewHistory(self):\n        raise NotImplementedError\nclass Account:\n    def __init__(self, id):\n        self.id = id\n\n    def enable(self):\n        raise NotImplementedError\nclass Tourist:\n    def __init__(self, id):\n        self.id = id\nclass Connection:\n    def __init__(self, status):\n        self.status = status\nclass QualityRequirement:\n    def __init__(self, criteria):\n        self.criteria = criteria\n\nfrom typing import List, Optional\n\nclass Account:\n    pass\nclass AccountTourist:\n    def __init__(self, id: int):\n        self.id = id\n    def changeData(self):\n        raise NotImplementedError\nclass BannerAd:\n    def __init__(self, id: int, image: Image):\n        self.id = id\n        self.image = image\n    def changeImage(self):\n        raise NotImplementedError\nclass Characteristics:\n    def __init__(self, valid: bool):\n        self.valid = valid\nclass Computer:\n    def __init__(self, connection: Connection):\n        self.connection = connection\nclass Connection:\n    def __init__(self, interruption: Interruption):\n        self.interruption = interruption\nclass DataNews:\n    def __init__(self, id: int, title: str, content: str):\n        self.id = id\n        self.title = title\n        self.content = content\n    def insert(self):\n        raise NotImplementedError\n    def delete(self):\n        raise NotImplementedError\n    def changeData(self):\n        raise NotImplementedError\nclass Image:\n    def __init__(self, path: str):\n        self.path = path\n    def change(self):\n        raise NotImplementedError\nclass Interruption:\n    pass\nclass Location:\n    def __init__(self, id: int):\n        self.id = id\n    def viewReport(self):\n        raise NotImplementedError\nclass RefreshmentPoint:\n    def __init__(self, id: int, banners: List[BannerAd]):\n        self.id = id\n        self.banners = banners\n    def checkPoint(self):\n        raise NotImplementedError\n    def insertBanner(self):\n        raise NotImplementedError\n    def removeBanner(self):\n        raise NotImplementedError\nclass Report:\n    def __init__(self, location: Location, feedback: List[Feedback]):\n        self.location = location\n        self.feedback = feedback\n    def generate(self):\n        raise NotImplementedError\nclass Restaurant:\n    def __init__(self, id: int, refreshmentPoints: List[RefreshmentPoint]):\n        self.id = id\n        self.refreshmentPoints = refreshmentPoints\nclass SearchSite:\n    def search(self):\n        raise NotImplementedError\nclass SearchTourist:\n    def search(self):\n        raise NotImplementedError\nclass State:\n    def __init__(self, valid: bool):\n        self.valid = valid\nclass Transaction:\n    def __init__(self, request: Request):\n        self.request = request\n    def confirm(self):\n        raise NotImplementedError\nclass UseCase:\n    pass\nclass UserInteraction:\n    def __init__(self, computer: Computer):\n        self.computer = computer\n    def activateUseCase(self, use_case: UseCase):\n        raise NotImplementedError\n\nclass SearchTag:\n    def __init__(self, tag):\n        self.tag = tag\n    def askSearchTag(self):\n        raise NotImplementedError\n\nclass TagSearch:\n    def __init__(self, searchTag):\n        self.searchTag = searchTag\n    def insertTagSearch(self):\n        raise NotImplementedError\n\nclass SearchSite:\n    def __init__(self, site):\n        self.site = site\n    def searchSite(self):\n        raise NotImplementedError\n\nclass RestaurantOperator:\n    def __init__(self):\n        pass\n    def insertBanner(self):\n        raise NotImplementedError\n    def changeImage(self):\n        raise NotImplementedError\n    def deleteBannerAd(self):\n        raise NotImplementedError\n\nclass GuestUser:\n    def __init__(self):\n        pass\n    def requireCreation(self):\n        raise NotImplementedError\n    def searchSite(self):\n        raise NotImplementedError\n\nclass RegisteredUser:\n    def __init__(self):\n        pass\n    def ensureUser(self):\n        raise NotImplementedError\n    def supplyLogin(self):\n        raise NotImplementedError\n    def endSession(self):\n        raise NotImplementedError\n\n\nclass Menu:\n    def __init__(self):\n        self.days = []\n    def editMenu(self):\n        raise NotImplementedError\n\nclass Day:\n    def __init__(self, date):\n        self.date = date\n        self.menuItems = []\n\nclass MenuItem:\n    def __init__(self, name, description):\n        self.name = name\n        self.description = description\n\nclass Operator:\n    def __init__(self, username):\n        self.username = username\n\nclass Tourist:\n    def __init__(self, username):\n        self.username = username\n\nclass Preference:\n    def __init__(self, type, value):\n        self.type = type\n        self.value = value\n\nclass SearchPreference(Preference):\n    def __init__(self, type, value):\n        super().__init__(type, value)\n\nclass Account:\n    def __init__(self, username, preferences):\n        self.username = username\n        self.preferences = preferences\n\nclass RefreshmentPoint:\n    def __init__(self, name, operator):\n        self.name = name\n        self.operator = operator\n\nclass Convention:\n    def __init__(self, date, operator):\n        self.date = date\n        self.operator = operator\n\nclass User:\n    def __init__(self):\n        pass\n\nclass Connection:\n    def __init__(self):\n        pass\n\nclass QualityRequirement:\n    def __init__(self):\n        pass\n\nclass Visitor:\n    def __init__(self):\n        pass\n\nclass AdvancedSearchForm:\n    def __init__(self):\n        pass\n\nclass Feedback:\n    def __init__(self):\n        pass\n\nclass Site:\n    def __init__(self):\n        pass\n\nclass SearchResult:\n    def __init__(self):\n        pass\n\nclass Position:\n    def __init__(self):\n        pass\n\nclass Comment:\n    def __init__(self):\n        pass\n\n# Use case methods\n\nclass EditComment:\n    def __init__(self, user, feedback):\n        self.user = user\n        self.feedback = feedback\n    def edit_comment(self):\n        raise NotImplementedError\n\nclass EntryCondition:\n    def __init__(self, user, feedback):\n        self.user = user\n        self.feedback = feedback\n    def entry_condition(self):\n        raise NotImplementedError\n\nclass ReturnPosition:\n    def __init__(self, user, site):\n        self.user = user\n        self.site = site\n    def return_position(self):\n        raise NotImplementedError\n\nclass SearchSite:\n    def __init__(self, user, site):\n        self.user = user\n        self.site = site\n    def search_site(self):\n        raise NotImplementedError\n\nclass ViewDetail:\n    def __init__(self, user, site):\n        self.user = user\n        self.site = site\n    def view_detail(self):\n        raise NotImplementedError",
+ "java": {}
+}

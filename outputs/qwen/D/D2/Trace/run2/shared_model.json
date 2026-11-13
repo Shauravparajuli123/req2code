@@ -1,0 +1,131 @@
+{
+ "case": "D2/Trace",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Trace",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Level",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "trace",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "value",
+     "type": "int",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addLevel",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Call",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "methodName",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "numberOfDatabaseRows",
+     "type": "int",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "level",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "createCall",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C3",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

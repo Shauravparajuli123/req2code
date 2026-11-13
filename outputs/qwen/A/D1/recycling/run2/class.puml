@@ -1,0 +1,116 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  email : String
+  favorites : String
+  zipCode : String
+  schedule : String
+  password : String
+  +viewPublicInformation()
+  +getNearbyFacilities()
+  +getFacilityHours()
+  +selectRecyclableWasteTypes()
+  +addFavorite()
+  +giveFeedback()
+  +createAccount()
+  +blockUser()
+  +viewDashboard()
+  +encryptData()
+  +accessData()
+  +accessRoutePlanningSystem()
+  +accessEmployeeInformation()
+  +accessAPI()
+  +useBootstrap()
+  +attendLessons()
+  +viewRecyclingCenterLocations()
+  +uploadSchedule()
+  +linkEmailAccount()
+  +contactAdmins()
+  +addFacilityInfo()
+  +viewErrorLogs()
+  +onboardFacility()
+  +updateFacilityInfo()
+  +viewUserStats()
+  +replyToUserQuestions()
+  +communicateWithFacilities()
+  +viewFacilityStats()
+}
+class Admin {
+  +addRemoveFacilityInfo()
+  +readFeedbackComplaints()
+  +blockUser()
+  +viewDashboard()
+  +encryptData()
+  +accessData()
+  +accessRoutePlanningSystem()
+  +accessEmployeeInformation()
+  +accessAPI()
+  +useBootstrap()
+  +attendLessons()
+  +viewRecyclingCenterLocations()
+  +uploadSchedule()
+  +linkEmailAccount()
+  +contactAdmins()
+  +addFacilityInfo()
+  +viewErrorLogs()
+  +onboardFacility()
+  +updateFacilityInfo()
+  +viewUserStats()
+  +replyToUserQuestions()
+  +communicateWithFacilities()
+  +viewFacilityStats()
+}
+class Executive {
+  +accessData()
+}
+class Employee {
+  +accessRoutePlanningSystem()
+  +accessEmployeeInformation()
+}
+class HREmployee {
+  +accessEmployeeInformation()
+}
+class Developer {
+  +accessAPI()
+  +useBootstrap()
+  +attendLessons()
+}
+class RecyclingFacility {
+  facilityName : String
+  facilityType : String
+  schedule : String
+  email : String
+  password : String
+  +viewRecyclingCenterLocations()
+  +uploadSchedule()
+  +linkEmailAccount()
+  +contactAdmins()
+  +addFacilityInfo()
+  +viewErrorLogs()
+  +onboardFacility()
+  +updateFacilityInfo()
+  +viewUserStats()
+  +replyToUserQuestions()
+  +communicateWithFacilities()
+  +viewFacilityStats()
+}
+class RecyclingFacilityRepresentative {
+  +updateFacilityInfo()
+  +viewFacilityStats()
+}
+class Superuser {
+  +viewUserStats()
+  +replyToUserQuestions()
+  +communicateWithFacilities()
+  +viewFacilityStats()
+}
+User "0..*" -- "1" RecyclingFacility : has
+Admin "0..*" -- "1" RecyclingFacility : manages
+Superuser "0..*" -- "1" RecyclingFacility : manages
+RecyclingFacilityRepresentative "1" -- "1" RecyclingFacility : represents
+Admin "1" -- "0..*" User : manages
+Employee "0..*" -- "1" Admin : is
+HREmployee "1" -- "1" Employee : is
+Developer "0..*" -- "1" Admin : is
+@enduml

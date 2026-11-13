@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "CompoundQoSStatement is a class and not a string or any other data type."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Parameter' is missing in the model.",
+   "fix": "Add a 'Parameter' class to the model."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'R8' is not represented in the model.",
+   "fix": "Add a use case for 'R8'."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'R9' is not represented in the model.",
+   "fix": "Add a use case for 'R9'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between QoSStatement and CompoundQoSStatement is incorrectly defined as [1..1]. It should be [0..*].",
+   "fix": "Change the relationship to [0..*] to reflect that a QoSStatement can be a CompoundQoSStatement or not."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between SingleQoSStatement and QoSConstraint is incorrectly defined as [1..1]. It should be [0..1].",
+   "fix": "Change the relationship to [0..1] to reflect that a SingleQoSStatement can have zero or one QoSConstraint."
+  }
+ ]
+}

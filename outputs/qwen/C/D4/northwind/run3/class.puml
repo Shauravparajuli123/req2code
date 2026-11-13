@@ -1,0 +1,124 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Company {
+  name : String
+  phoneNumber : String
+  address : String
+  state : String
+  zipCode : String
+  website : String
+  companyType : String
+  taxStatus : String
+  contacts : String
+}
+class Contact {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  email : String
+  jobTitle : String
+  notes : String
+}
+class Customer {
+}
+class Employee {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  jobTitle : String
+  email : String
+  +assignTitle()
+}
+class Order {
+  orderDate : LocalDate
+  customer : String
+  employee : String
+  status : String
+  shipper : String
+  taxRate : double
+  taxStatus : String
+  invoiceDate : LocalDate
+  paymentMethod : String
+  paymentDate : LocalDate
+  orderDetails : String
+  +addOrderDetail()
+}
+class OrderDetailItem {
+  product : String
+  quantity : int
+  unitPrice : double
+  discount : double
+  status : String
+}
+class Product {
+  code : String
+  name : String
+  description : String
+  unitCost : double
+  retailPrice : double
+  category : String
+  inventoryLevel : int
+  reorderLevel : int
+  targetLevel : int
+  minReorderQuantity : int
+  discontinued : boolean
+}
+class PurchaseOrder {
+  orderDate : LocalDate
+  vendor : String
+  employee : String
+  approver : String
+  status : String
+}
+class PurchaseOrderDetailItem {
+  product : String
+  quantity : int
+  unitPrice : double
+}
+class PhoneNumber {
+  number : String
+}
+class ProductCategory {
+  name : String
+  code : String
+  description : String
+  image : String
+}
+class Shippers {
+}
+class State {
+}
+enum TaxStatus {
+  TAXSTATUSENUM
+}
+enum CompanyType {
+  CUSTOMER
+  VENDOR
+  SHIPPER
+}
+enum OrderStatus {
+  ORDERSTATUSENUM
+}
+enum PurchaseOrderStatus {
+  PURCHASEORDERSTATUSENUM
+}
+enum OrderDetailStatus {
+  ORDERDETAILSTATUSENUM
+}
+Company "1" -- "1" CompanyType : has
+Company "1" -- "1" State : is in
+Company "1" -- "1" TaxStatus : has
+Company "*" -- "1" Contact : has
+Product "1" -- "1" ProductCategory : is in
+Order "1" -- "1" Customer : is for
+Order "1" -- "1" Employee : is processed by
+Order "1" -- "1" OrderStatus : has
+Order "1" -- "1" Shippers : is shipped by
+Order "*" -- "1" OrderDetailItem : contains
+PurchaseOrder "1" -- "1" Employee : is submitted by
+PurchaseOrder "1" -- "1" PurchaseOrderStatus : has
+PurchaseOrder "*" -- "1" PurchaseOrderDetailItem : contains
+@enduml

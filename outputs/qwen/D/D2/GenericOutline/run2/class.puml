@@ -1,0 +1,27 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class LocatedElement {
+  location : String
+}
+class Node {
+  name : String
+  icon : String
+  +createNode()
+}
+class Label {
+  label : String
+  +createLabel()
+}
+class LabelSuite {
+  label : String
+  +createLabelSuite()
+}
+class Map {
+  mapString : String
+  +createMap()
+}
+Node "1" *-- "1" Label : has
+Node "1" *-- "1" Map : has
+Label "0..*" o-- "1" LabelSuite : may have
+@enduml

@@ -1,0 +1,103 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Define UIML",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Header",
+   "kind": "class",
+   "attributes": [
+    "metaData"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R6",
+    "R5"
+   ]
+  },
+  {
+   "name": "MetaData",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Uiml",
+   "kind": "class",
+   "attributes": [
+    "header",
+    "interface"
+   ],
+   "methods": [
+    {
+     "name": "defineUIML",
+     "use_case": "Define UIML"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Interface",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Uiml",
+   "target": "Header",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Header",
+   "target": "MetaData",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Uiml",
+   "target": "Interface",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "python": "class Header:\n    def __init__(self):\n        self.metaData = []\n\nclass MetaData:\n    def __init__(self, name: str):\n        self.name = name\nclass Uiml:\n    def __init__(self, header: Header):\n        self.header = header\n        self.interface = []\n    def defineUIML(self):\n        raise NotImplementedError\nclass Interface:\n    pass",
+ "java": {}
+}

@@ -1,0 +1,60 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that 'CompositeParDef' is a collection of 'PartCompositeMember' as per R11, but the model does not explicitly show this relationship."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class 'Condition' as per R1",
+   "fix": "Add class 'Condition' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class 'ElementaryPartDef' as per R3",
+   "fix": "Add class 'ElementaryPartDef' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class 'ElementaryActDef' as per R4",
+   "fix": "Add class 'ElementaryActDef' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class 'CompositeActDef' as per R5",
+   "fix": "Add class 'CompositeActDef' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class 'ActCompositeMember' as per R6",
+   "fix": "Add class 'ActCompositeMember' to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Cristal and ElementaryPartDef as per R3",
+   "fix": "Add association Cristal -> ElementaryPartDef [1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Cristal and ElementaryActDef as per R4",
+   "fix": "Add association Cristal -> ElementaryActDef [1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Cristal and ActivityDefinition as per R7",
+   "fix": "Add association Cristal -> ActivityDefinition [1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Cristal and PartDefinitionNode as per R8",
+   "fix": "Add association Cristal -> PartDefinitionNode [1..*]"
+  }
+ ]
+}

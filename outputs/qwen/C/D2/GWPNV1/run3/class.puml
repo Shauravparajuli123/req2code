@@ -1,0 +1,23 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Place {
+  name : String
+  destination : String
+}
+class Transition {
+  name : String
+  net : String
+  destination : String
+  +createTransition()
+}
+class Net {
+  name : String
+  places : String
+  +createNet()
+}
+Net "1" -- "1..*" Place : has
+Place "0..*" -- "0..*" Transition : has
+Transition "1" -- "1" Net : belongs to
+Transition "1" -- "1..*" Place : has destination
+@enduml

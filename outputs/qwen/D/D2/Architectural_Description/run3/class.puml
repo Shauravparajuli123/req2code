@@ -1,0 +1,19 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Architecture {
+}
+class ArchitectureDescription {
+}
+class ArchitectureView {
+}
+class ArchitectureViewPoint {
+}
+class MainView {
+}
+Architecture "1" -- "1" ArchitectureDescription : described_by
+ArchitectureDescription "1" -- "1..*" ArchitectureView : selects
+ArchitectureView "1..*" -- "1" ArchitectureViewPoint : conforms_to
+ArchitectureViewPoint "1" -- "1" MainView : defines
+MainView "1..*" -- "1" ArchitectureView : projected_on
+@enduml

@@ -1,0 +1,308 @@
+[
+ {
+  "id": "A1",
+  "type": "coordination",
+  "sid": "FR-CM-01.s1",
+  "req_id": "FR-CM-01",
+  "cue": "either/or",
+  "text": "The system shall maintain records of external organizations classified as either Customers, Vendors, or Shippers.",
+  "readings": [
+   "The system shall maintain records of external organizations classified as Customers, Vendors, or Shippers.",
+   "The system shall maintain records of external organizations classified as Customers, Vendors, or Shippers, but not all three at the same time."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "coordination",
+  "explanation": "The system must decide if it can have a record that is a Customer, Vendor, and Shipper, or if it must choose one of the three.",
+  "chosen": "The system shall maintain records of external organizations classified as Customers, Vendors, or Shippers."
+ },
+ {
+  "id": "A2",
+  "type": "incompleteness",
+  "sid": "FR-CM-03.s1",
+  "req_id": "FR-CM-03",
+  "cue": "information",
+  "text": "The system shall record Company information including name, phone number, address details, state, zip code and website.",
+  "readings": [
+   "The system shall record Company information including name, phone number, address details, state, zip code and website.",
+   "The system shall record Company information including name, phone number, address details, state, zip code, and website."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "incompleteness",
+  "explanation": "The system must decide if the website is included in the company information or not.",
+  "chosen": "The system shall record Company information including name, phone number, address details, state, zip code, and website."
+ },
+ {
+  "id": "A3",
+  "type": "quantifier",
+  "sid": "FR-CM-07.s1",
+  "req_id": "FR-CM-07",
+  "cue": "multiple",
+  "text": "The system shall allow multiple Contacts to be associated with a single company.",
+  "readings": [
+   "The system shall allow multiple Contacts to be associated with a single company.",
+   "The system shall allow a single Contact to be associated with a single company."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The system must decide if a company can have multiple contacts or just one.",
+  "chosen": "The system shall allow multiple Contacts to be associated with a single company."
+ },
+ {
+  "id": "A4",
+  "type": "coordination",
+  "sid": "FR-CM-08.s1",
+  "req_id": "FR-CM-08",
+  "cue": "modifier scope: name",
+  "text": "The system shall maintain Contacts including first name, last name, primary and secondary phone numbers, email address, job title, and notes for each company contact.",
+  "readings": [
+   "The system shall maintain Contacts including first name, last name, primary and secondary phone numbers, email address, job title, and notes for each company contact.",
+   "The system shall maintain Contacts including first name, last name, primary and secondary phone numbers, email address, job title, and notes for each company contact, but not all of these are required for each contact."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "coordination",
+  "explanation": "The system must decide if all the fields are mandatory for each contact or if some can be optional.",
+  "chosen": "The system shall maintain Contacts including first name, last name, primary and secondary phone numbers, email address, job title, and notes for each company contact."
+ },
+ {
+  "id": "A5",
+  "type": "coordination",
+  "sid": "FR-EM-01.s1",
+  "req_id": "FR-EM-01",
+  "cue": "modifier scope: name",
+  "text": "The system shall maintain Employee records with personal information (first and last name, primary/secondary phone numbers) and professional information (job title, email).",
+  "readings": [
+   "The system shall maintain Employee records with personal information (first and last name, primary/secondary phone numbers) and professional information (job title, email).",
+   "The system shall maintain Employee records with personal information (first and last name, primary/secondary phone numbers) and professional information (job title, email), but not all of these are required for each employee."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "coordination",
+  "explanation": "The system must decide if all the fields are mandatory for each employee or if some can be optional.",
+  "chosen": "The system shall maintain Employee records with personal information (first and last name, primary/secondary phone numbers) and professional information (job title, email)."
+ },
+ {
+  "id": "A7",
+  "type": "quantifier",
+  "sid": "FR-EM-04.s1",
+  "req_id": "FR-EM-04",
+  "cue": "multiple",
+  "text": "The system shall allow one supervisor to manage multiple Employees.",
+  "readings": [
+   "The system shall allow one supervisor to manage multiple Employees.",
+   "The system shall allow one supervisor to manage a single Employee."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The system must decide if a supervisor can manage multiple employees or just one.",
+  "chosen": "The system shall allow one supervisor to manage multiple Employees."
+ },
+ {
+  "id": "A8",
+  "type": "quantifier",
+  "sid": "FR-EM-05.s1",
+  "req_id": "FR-EM-05",
+  "cue": "multiple",
+  "text": "The system shall allow Employees to be assigned multiple privileges.",
+  "readings": [
+   "The system shall allow Employees to be assigned multiple privileges.",
+   "The system shall allow Employees to be assigned a single privilege."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The system must decide if an employee can have multiple privileges or just one.",
+  "chosen": "The system shall allow Employees to be assigned multiple privileges."
+ },
+ {
+  "id": "A9",
+  "type": "incompleteness",
+  "sid": "FR-PM-01.s1",
+  "req_id": "FR-PM-01",
+  "cue": "information",
+  "text": "The system shall maintain a Product catalog with product codes, names, descriptions, and pricing information.",
+  "readings": [
+   "The system shall maintain a Product catalog with product codes, names, descriptions, and pricing information.",
+   "The system shall maintain a Product catalog with product codes, names, descriptions, and pricing information, but also with other information not mentioned."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "incompleteness",
+  "explanation": "The system must decide if the catalog includes only the mentioned information or if it can include other details.",
+  "chosen": "The system shall maintain a Product catalog with product codes, names, descriptions, and pricing information."
+ },
+ {
+  "id": "A10",
+  "type": "quantifier",
+  "sid": "FR-PM-07.s1",
+  "req_id": "FR-PM-07",
+  "cue": "multiple",
+  "text": "The system shall allow multiple Products to be supplied by multiple Vendors.",
+  "readings": [
+   "The system shall allow multiple Products to be supplied by multiple Vendors.",
+   "The system shall allow a single Product to be supplied by multiple Vendors."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The system must decide if a product can be supplied by multiple vendors or just one.",
+  "chosen": "The system shall allow multiple Products to be supplied by multiple Vendors."
+ },
+ {
+  "id": "A11",
+  "type": "incompleteness",
+  "sid": "FR-IM-02.s1",
+  "req_id": "FR-IM-02",
+  "cue": "information",
+  "text": "The system shall record Stock Take information including date, product, quantity on hand, and expected quantity.",
+  "readings": [
+   "The system shall record Stock Take information including date, product, quantity on hand, and expected quantity.",
+   "The system shall record Stock Take information including date, product, quantity on hand, and expected quantity, but also with other information not mentioned."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "incompleteness",
+  "explanation": "The system must decide if the stock take information includes only the mentioned details or if it can include other details.",
+  "chosen": "The system shall record Stock Take information including date, product, quantity on hand, and expected quantity."
+ },
+ {
+  "id": "A12",
+  "type": "incompleteness",
+  "sid": "FR-SOP-01.s1",
+  "req_id": "FR-SOP-01",
+  "cue": "information",
+  "text": "The system shall record Customer Orders with dates, customer information, and shipping details.",
+  "readings": [
+   "The system shall record Customer Orders with dates, customer information, and shipping details.",
+   "The system shall record Customer Orders with dates, customer information, and shipping details, but also with other information not mentioned."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "incompleteness",
+  "explanation": "The system must decide if the order information includes only the mentioned details or if it can include other details.",
+  "chosen": "The system shall record Customer Orders with dates, customer information, and shipping details."
+ },
+ {
+  "id": "A13",
+  "type": "incompleteness",
+  "sid": "FR-SOP-06.s1",
+  "req_id": "FR-SOP-06",
+  "cue": "information",
+  "text": "The system shall calculate and record tax information including tax rate and Tax Status for each order.",
+  "readings": [
+   "The system shall calculate and record tax information including tax rate and Tax Status for each order.",
+   "The system shall calculate and record tax information including tax rate and Tax Status for each order, but also with other information not mentioned."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "incompleteness",
+  "explanation": "The system must decide if the tax information includes only the mentioned details or if it can include other details.",
+  "chosen": "The system shall calculate and record tax information including tax rate and Tax Status for each order."
+ },
+ {
+  "id": "A14",
+  "type": "quantifier",
+  "sid": "FR-SOP-08.s1",
+  "req_id": "FR-SOP-08",
+  "cue": "one or more",
+  "text": "The system shall require each Order to contain one or more Order Detail items.",
+  "readings": [
+   "The system shall require each Order to contain one or more Order Detail items.",
+   "The system shall require each Order to contain a single Order Detail item."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The system must decide if an order can contain multiple detail items or just one.",
+  "chosen": "The system shall require each Order to contain one or more Order Detail items."
+ },
+ {
+  "id": "A15",
+  "type": "quantifier",
+  "sid": "FR-POP-07.s1",
+  "req_id": "FR-POP-07",
+  "cue": "one or more",
+  "text": "The system shall require each Purchase Order to contain one or more Purchase Order Detail items.",
+  "readings": [
+   "The system shall require each Purchase Order to contain one or more Purchase Order Detail items.",
+   "The system shall require each Purchase Order to contain a single Purchase Order Detail item."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The system must decide if a purchase order can contain multiple detail items or just one.",
+  "chosen": "The system shall require each Purchase Order to contain one or more Purchase Order Detail items."
+ },
+ {
+  "id": "A16",
+  "type": "referential",
+  "sid": "FR-DA-01.s1",
+  "req_id": "FR-DA-01",
+  "cue": "it",
+  "text": "The system shall record which Employee added each record and when it was added.",
+  "readings": [
+   "The system shall record which Employee added each record and when it was added.",
+   "The system shall record which Employee last modified each record and when it was modified."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The system must decide if it records the employee who added the record or the employee who last modified it.",
+  "chosen": "The system shall record which Employee added each record and when it was added."
+ },
+ {
+  "id": "A17",
+  "type": "actor",
+  "sid": "FR-DA-01.s1",
+  "req_id": "FR-DA-01",
+  "cue": "passive 'added' without agent",
+  "text": "The system shall record which Employee added each record and when it was added.",
+  "readings": [
+   "The system shall record which Employee added each record and when it was added.",
+   "The system shall record which Employee last modified each record and when it was modified."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "actor",
+  "explanation": "The system must decide if the actor is the employee who added the record or the employee who last modified it.",
+  "chosen": "The system shall record which Employee added each record and when it was added."
+ },
+ {
+  "id": "A18",
+  "type": "referential",
+  "sid": "FR-DA-02.s1",
+  "req_id": "FR-DA-02",
+  "cue": "it",
+  "text": "The system shall record which Employee last modified each record and when it was modified.",
+  "readings": [
+   "The system shall record which Employee last modified each record and when it was modified.",
+   "The system shall record which Employee added each record and when it was added."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The system must decide if it records the employee who added the record or the employee who last modified it.",
+  "chosen": "The system shall record which Employee last modified each record and when it was modified."
+ },
+ {
+  "id": "A19",
+  "type": "actor",
+  "sid": "FR-DA-02.s1",
+  "req_id": "FR-DA-02",
+  "cue": "passive 'modified' without agent",
+  "text": "The system shall record which Employee last modified each record and when it was modified.",
+  "readings": [
+   "The system shall record which Employee last modified each record and when it was modified.",
+   "The system shall record which Employee added each record and when it was added."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "actor",
+  "explanation": "The system must decide if the actor is the employee who added the record or the employee who last modified it.",
+  "chosen": "The system shall record which Employee last modified each record and when it was modified."
+ }
+]

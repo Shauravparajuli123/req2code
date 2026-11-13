@@ -1,0 +1,179 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "places",
+    "tokens"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R7",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "inputArcs",
+    "outputArcs"
+   ],
+   "methods": [
+    {
+     "name": "addInputArc",
+     "use_case": "R9"
+    },
+    {
+     "name": "addOutputArc",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9"
+   ]
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    "weight"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R10"
+   ]
+  },
+  {
+   "name": "PlaceTransitionArc",
+   "kind": "class",
+   "attributes": [
+    "transition"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "Token",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R15"
+   ]
+  },
+  {
+   "name": "Weight",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Arc",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "PlaceTransitionArc",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Place",
+   "target": "Arc",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PlaceTransitionArc",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Arc",
+   "target": "Weight",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Token",
+   "target": "Place",
+   "multiplicity_target": "1",
+   "src": [
+    "R15"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Net:\n    def __init__(self):\n        self.places: List[Place] = []\n        self.tokens: List[Token] = []\n    def add_place(self, place: Place):\n        raise NotImplementedError\n    def add_token(self, token: Token):\n        raise NotImplementedError\n    src = ['R1', 'R3', 'R7', 'R8', 'R12']\n\nclass Place:\n    def __init__(self, name: str):\n        self.name: str = name\n        self.inputArcs: List[Arc] = []\n        self.outputArcs: List[Arc] = []\n    def add_input_arc(self, arc: Arc):\n        raise NotImplementedError\n    def add_output_arc(self, arc: Arc):\n        raise NotImplementedError\n    src = ['R1', 'R9']\n\nclass Arc:\n    def __init__(self, weight: Weight):\n        self.weight: Weight = weight\n    src = ['R4']\n\nclass Transition:\n    def __init__(self, name: str):\n        self.name: str = name\n    src = ['R2', 'R10']\n\nclass PlaceTransitionArc:\n    def __init__(self, transition: Transition):\n        self.transition: Transition = transition\n    src = ['R5', 'R6', 'R13', 'R14']\n\nclass Token:\n    def __init__(self):\n        pass\n    src = ['R7', 'R15']\n\nclass Weight:\n    def __init__(self):\n        pass\n    src = ['R4']",
+ "java": {}
+}

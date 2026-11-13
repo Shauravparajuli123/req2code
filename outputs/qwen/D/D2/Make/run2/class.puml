@@ -1,0 +1,31 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Makefile {
+  name : String
+  comments : String
+  rules : String
+  +addRule()
+  +addComment()
+}
+class Rule {
+  name : String
+  shellLines : String
+  dependencies : String
+  +addShellLine()
+  +addDependency()
+}
+class RuleDep {
+  rule : String
+  dependency : String
+}
+class Comment {
+  text : String
+}
+class ShellLine {
+  command : String
+}
+Makefile "0..*" -- "1" Rule : contains
+Rule "1" -- "0..*" RuleDep : has
+Makefile "0..1" -- "1" Comment : contains
+@enduml

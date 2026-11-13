@@ -1,0 +1,206 @@
+{
+ "actors": [
+  "owner"
+ ],
+ "use_cases": [
+  {
+   "name": "contains",
+   "actor": "owner",
+   "src": [
+    "R1",
+    "R5",
+    "R11",
+    "R12",
+    "R14"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "CoreModel",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "modelElements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R11"
+   ]
+  },
+  {
+   "name": "ModelElement",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "isSpecification",
+    "namespace"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "name": "Namespace",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "modelElements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Generalization",
+   "kind": "class",
+   "attributes": [
+    "discriminator",
+    "parent"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R14"
+   ]
+  },
+  {
+   "name": "GeneralizableElement",
+   "kind": "class",
+   "attributes": [
+    "isRoot",
+    "isAbstract",
+    "generalizations"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10",
+    "R15"
+   ]
+  },
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    "powerTypeRanges"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Feature",
+   "kind": "class",
+   "attributes": [
+    "ownerScope",
+    "owner"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Element",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Generalization",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "ModelElement",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Namespace",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ModelElement",
+   "target": "Namespace",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "GeneralizableElement",
+   "target": "Generalization",
+   "multiplicity_target": "1",
+   "src": [
+    "R10",
+    "R15"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Feature",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Generalization",
+   "target": "GeneralizableElement",
+   "multiplicity_target": "1",
+   "src": [
+    "R8",
+    "R14"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass ScopeKind:\n    pass\n\nclass CoreModel:\n    def __init__(self):\n        self.classifiers: List[Classifier] = []\n        self.elements: List[ModelElement] = []\n        self.generalizations: List[Generalization] = []\n        self.namespaces: List[Namespace] = []\n\nclass Element:\n    def __init__(self, name: str, is_specification: bool, root: bool, abstract: bool):\n        self.name: str = name\n        self.is_specification: bool = is_specification\n        self.root: bool = root\n        self.abstract: bool = abstract\n\nclass Generalization:\n    def __init__(self, parent: Optional[GeneralizableElement], discriminator: Optional[str]):\n        self.parent: Optional[GeneralizableElement] = parent\n        self.discriminator: Optional[str] = discriminator\n\nclass GeneralizableElement(Element):\n    def __init__(self, name: str, is_specification: bool, root: bool, abstract: bool, generalization: Optional[Generalization]):\n        super().__init__(name, is_specification, root, abstract)\n        self.generalization: Optional[Generalization] = generalization\n\nclass ModelElement(Element):\n    def __init__(self, name: str, is_specification: bool, root: bool, abstract: bool, namespace: Optional[Namespace]):\n        super().__init__(name, is_specification, root, abstract)\n        self.namespace: Optional[Namespace] = namespace\n\nclass Namespace:\n    def __init__(self):\n        self.elements: List[ModelElement] = []\n\nclass Classifier(Element):\n    def __init__(self, name: str, is_specification: bool, root: bool, abstract: bool, power_type_range: Optional[Generalization]):\n        super().__init__(name, is_specification, root, abstract)\n        self.power_type_range: Optional[Generalization] = power_type_range\n\nclass Feature:\n    def __init__(self, owner_scope: ScopeKind, owner: Optional[Classifier]):\n        self.owner_scope: ScopeKind = owner_scope\n        self.owner: Optional[Classifier] = owner\n",
+ "java": {}
+}

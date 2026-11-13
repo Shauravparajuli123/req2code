@@ -1,0 +1,159 @@
+{
+ "case": "D2/CDE",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "IUmlType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "ICdeComponentSpec",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "IUmlClass",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "IUmlComponent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "ICdeServer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "ICdeComponent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "IUmlMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "ICdeMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "generalization",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is a",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "generalization",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is a",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "generalization",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is a",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "aggregation",
+   "source": "C1",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

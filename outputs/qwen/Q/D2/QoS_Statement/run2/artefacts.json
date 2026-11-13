@@ -1,0 +1,126 @@
+{
+ "actors": [],
+ "use_cases": [
+  {
+   "name": "DefineQoSStatement",
+   "actor": "",
+   "src": [
+    "R1",
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "defineQoSStatement",
+     "use_case": "DefineQoSStatement"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "qosConstraint"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "qosStatements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "QoSConstraint",
+   "kind": "class",
+   "attributes": [
+    "qualificationKind",
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R11"
+   ]
+  },
+  {
+   "name": "Parameter",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Domain",
+   "kind": "class",
+   "attributes": [
+    "qosConstraints"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "QoSStatement",
+   "target": "CompoundQoSStatement",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "SingleQoSStatement",
+   "target": "QoSConstraint",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "Domain",
+   "target": "QoSConstraint",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass QoSConstraint:\n    def __init__(self, qualificationKind: str, value: str):\n        self.qualificationKind = qualificationKind\n        self.value = value\n\nclass Parameter:\n    pass\n\nclass Domain:\n    def __init__(self):\n        self.qosConstraints: List[QoSConstraint] = []\n\nclass QoSStatement:\n    def defineQoSStatement(self):\n        raise NotImplementedError\n\nclass SingleQoSStatement(QoSStatement):\n    def __init__(self, qosConstraint: QoSConstraint):\n        self.qosConstraint = qosConstraint\n\nclass CompoundQoSStatement(QoSStatement):\n    def __init__(self, qosStatements: List[QoSStatement]):\n        self.qosStatements = qosStatements",
+ "java": {}
+}

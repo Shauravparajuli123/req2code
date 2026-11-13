@@ -1,0 +1,97 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D2/Contact",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R3",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "the number of a cell phone number is encoded as a String"
+     },
+     {
+      "sid": "R6.s1",
+      "text": "a cell phone number is mapped to a single contact"
+     }
+    ],
+    "name": "CellPhoneNumber",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R1",
+     "R5",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A contact has a name"
+     },
+     {
+      "sid": "R5.s1",
+      "text": "a land line number is mapped to exactly one contact"
+     },
+     {
+      "sid": "R6.s1",
+      "text": "a cell phone number is mapped to a single contact"
+     }
+    ],
+    "name": "Contact",
+    "freq": 3
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A contact has a name"
+     }
+    ],
+    "owner": "Contact",
+    "name": "name",
+    "type_hint": null
+   }
+  ],
+  "relations": [],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "CellPhoneNumber",
+     "target": "Contact",
+     "multiplicity": "1..1"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

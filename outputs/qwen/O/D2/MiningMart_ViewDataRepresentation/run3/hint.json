@@ -1,0 +1,125 @@
+{
+ "condition": "O",
+ "hint": {
+  "case": "D2/MiningMart_ViewDataRepresentation",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "noun_role",
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Classifier is a class that belongs to SimplifiedMiningMart package"
+     }
+    ],
+    "name": "Classifier",
+    "freq": 1
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R5",
+     "R8"
+    ],
+    "rule": [
+     "noun_role",
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "DataType is a class that belongs to SimplifiedMiningMart package"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A DataType has one and only one Attribute"
+     }
+    ],
+    "name": "DataType",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "noun_role",
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "ModelElement is a class that belongs to SimplifiedMiningMart Package"
+     }
+    ],
+    "name": "ModelElement",
+    "freq": 1
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "explicit_attribute"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "Attribute is a class that belongs to SimplifiedMiningMart package"
+     }
+    ],
+    "owner": "Attribute",
+    "name": "is",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "explicit_attribute"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s2",
+      "text": "It has an attribute named \"name\" of type \"String\""
+     }
+    ],
+    "owner": "Classifier",
+    "name": "name",
+    "type_hint": "String"
+   }
+  ],
+  "relations": [],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Classifier",
+     "target": "Attribute",
+     "multiplicity": "1..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

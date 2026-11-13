@@ -1,0 +1,380 @@
+{
+ "case": "D2/Architectural_Description",
+ "stage": "result2_after_ambiguity_removal",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R7",
+    "R8",
+    "R9",
+    "R12"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R2.s1",
+     "text": "The package \"ArchitecturalDescription\" contain the component \"ArchitectureDescription\""
+    },
+    {
+     "sid": "R3.s1",
+     "text": "\"ArchitectureView\" is a component included in package \"ArchitecturalDescription\""
+    },
+    {
+     "sid": "R4.s1",
+     "text": "\"ArchitectureViewPoint\" is a component of the package \"ArchitecturalDescription\""
+    }
+   ],
+   "name": "ArchitecturalDescription",
+   "freq": 8
+  },
+  {
+   "id": "C3",
+   "src": [
+    "R2",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R2.s1",
+     "text": "The package \"ArchitecturalDescription\" contain the component \"ArchitectureDescription\""
+    },
+    {
+     "sid": "R7.s2",
+     "text": "An \"Architecture\" is described by exactly one \"Architecture Description\"."
+    },
+    {
+     "sid": "R7.s3",
+     "text": "An \"Architecture Description\" does not know the \"Architecture\" it describes."
+    }
+   ],
+   "name": "ArchitectureDescription",
+   "freq": 7
+  },
+  {
+   "id": "C4",
+   "src": [
+    "R3",
+    "R8",
+    "R9",
+    "R10"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "\"ArchitectureView\" is a component included in package \"ArchitecturalDescription\""
+    },
+    {
+     "sid": "R8.s1",
+     "text": "The packahe \"ArchitecturalDescription\" contains : component \"ArchitectureDescription\" and component \"ArchitectureView\"."
+    },
+    {
+     "sid": "R9.s1",
+     "text": "Package \"ArchitecturalDescription\" contains component \"ArchitectureView\" which is selected by one or more \"ArchitectureDescription\" (another component)."
+    }
+   ],
+   "name": "ArchitectureView",
+   "freq": 5
+  },
+  {
+   "id": "C5",
+   "src": [
+    "R8",
+    "R12"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R8.s2",
+     "text": "An \"ArchitectureDescription\" selects one or more \"ArchitectureView\"."
+    },
+    {
+     "sid": "R12.s1",
+     "text": "a \"MainView\" is projected onto one or more \"ArchitectureView\"."
+    }
+   ],
+   "name": "Architectureview",
+   "freq": 2
+  },
+  {
+   "id": "C6",
+   "src": [
+    "R4",
+    "R10",
+    "R11"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "\"ArchitectureViewPoint\" is a component of the package \"ArchitecturalDescription\""
+    },
+    {
+     "sid": "R10.s2",
+     "text": "Component \"ArchitectureView\" conforms to one or more components \"ArchitectureViewPoint\"."
+    },
+    {
+     "sid": "R10.s3",
+     "text": "An \"ArchitectureViewPoint\" does not know the \"ArchitectureView\" that conform to it."
+    }
+   ],
+   "name": "Architectureviewpoint",
+   "freq": 4
+  },
+  {
+   "id": "C7",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R9",
+    "R10",
+    "R11",
+    "R12"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "This model contains a package called \"Architectural description\" which contains a component called \"Architecture\"."
+    },
+    {
+     "sid": "R2.s1",
+     "text": "The package \"ArchitecturalDescription\" contain the component \"ArchitectureDescription\""
+    },
+    {
+     "sid": "R3.s1",
+     "text": "\"ArchitectureView\" is a component included in package \"ArchitecturalDescription\""
+    }
+   ],
+   "name": "Component",
+   "freq": 14
+  },
+  {
+   "id": "C8",
+   "src": [
+    "R5",
+    "R11",
+    "R12"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R5.s1",
+     "text": "\"MainView\" is a component of the package \"ArchitecturalDescription\""
+    },
+    {
+     "sid": "R11.s1",
+     "text": "In package \"ArchitecturalDescription\" there are several components, including \"ArchitectureViewPoint\" and \"MainView\"."
+    },
+    {
+     "sid": "R12.s1",
+     "text": "a \"MainView\" is projected onto one or more \"ArchitectureView\"."
+    }
+   ],
+   "name": "MainView",
+   "freq": 3
+  }
+ ],
+ "attributes": [],
+ "relations": [
+  {
+   "id": "REL2",
+   "src": [
+    "R8"
+   ],
+   "rule": [
+    "verb:select"
+   ],
+   "evidence": [
+    {
+     "sid": "R8.s2",
+     "text": "An \"ArchitectureDescription\" selects one or more \"ArchitectureView\"."
+    }
+   ],
+   "kind": "association",
+   "source": "ArchitectureDescription",
+   "target": "Architectureview",
+   "multiplicity_target": "1..*"
+  },
+  {
+   "id": "REL3",
+   "src": [
+    "R10"
+   ],
+   "rule": [
+    "verb:know"
+   ],
+   "evidence": [
+    {
+     "sid": "R10.s3",
+     "text": "An \"ArchitectureViewPoint\" does not know the \"ArchitectureView\" that conform to it."
+    }
+   ],
+   "kind": "association",
+   "source": "Architectureviewpoint",
+   "target": "ArchitectureView",
+   "multiplicity_target": "1..*"
+  },
+  {
+   "id": "REL4",
+   "src": [
+    "R3"
+   ],
+   "rule": [
+    "is_a"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "\"ArchitectureView\" is a component included in package \"ArchitecturalDescription\""
+    }
+   ],
+   "kind": "generalization",
+   "source": "ArchitectureView",
+   "target": "Component",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL5",
+   "src": [
+    "R4"
+   ],
+   "rule": [
+    "is_a"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "\"ArchitectureViewPoint\" is a component of the package \"ArchitecturalDescription\""
+    }
+   ],
+   "kind": "generalization",
+   "source": "Architectureviewpoint",
+   "target": "Component",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL6",
+   "src": [
+    "R5"
+   ],
+   "rule": [
+    "is_a"
+   ],
+   "evidence": [
+    {
+     "sid": "R5.s1",
+     "text": "\"MainView\" is a component of the package \"ArchitecturalDescription\""
+    }
+   ],
+   "kind": "generalization",
+   "source": "MainView",
+   "target": "Component",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL7",
+   "src": [
+    "R9"
+   ],
+   "rule": [
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R9.s1",
+     "text": "Package \"ArchitecturalDescription\" contains component \"ArchitectureView\" which is selected by one or more \"ArchitectureDescription\" (another component)."
+    }
+   ],
+   "kind": "has",
+   "source": "ArchitecturalDescription",
+   "target": "ArchitectureView",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL8",
+   "src": [
+    "R9"
+   ],
+   "rule": [
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R9.s1",
+     "text": "Package \"ArchitecturalDescription\" contains component \"ArchitectureView\" which is selected by one or more \"ArchitectureDescription\" (another component)."
+    }
+   ],
+   "kind": "has",
+   "source": "ArchitecturalDescription",
+   "target": "Component",
+   "multiplicity_target": "one or more"
+  }
+ ],
+ "enums": [],
+ "applied_edits": {
+  "remove_classes": [
+   "Architecture"
+  ],
+  "merge_classes": [
+   [
+    "ArchitectureView",
+    "Architectureview"
+   ],
+   [
+    "ArchitectureViewPoint",
+    "Architectureviewpoint"
+   ]
+  ],
+  "merge_actors": [
+   [
+    "MainView",
+    "Component"
+   ]
+  ],
+  "enums": [],
+  "multiplicities": [
+   {
+    "source": "ArchitectureDescription",
+    "target": "ArchitectureView",
+    "multiplicity": "1..*"
+   },
+   {
+    "source": "ArchitectureView",
+    "target": "ArchitectureViewPoint",
+    "multiplicity": "1..*"
+   }
+  ],
+  "actor_assumptions": []
+ }
+}

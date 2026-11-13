@@ -1,0 +1,1670 @@
+{
+ "case": "D3/etour",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": []
+  },
+  {
+   "id": "A2",
+   "name": "Agency",
+   "src": []
+  },
+  {
+   "id": "A3",
+   "name": "Visitor",
+   "src": []
+  },
+  {
+   "id": "A4",
+   "name": "Tourist",
+   "src": []
+  },
+  {
+   "id": "A5",
+   "name": "GuestUser",
+   "src": [
+    "UC33",
+    "UC34"
+   ]
+  },
+  {
+   "id": "A6",
+   "name": "RegisteredUser",
+   "src": [
+    "UC35",
+    "UC37"
+   ]
+  },
+  {
+   "id": "A7",
+   "name": "AgencyOperator",
+   "src": [
+    "UC31"
+   ]
+  },
+  {
+   "id": "A8",
+   "name": "RestaurantOperator",
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Delete Object",
+   "actor": "A2",
+   "src": [],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC2",
+   "name": "Insert Object",
+   "actor": "A2",
+   "src": [],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC3",
+   "name": "Change Data",
+   "actor": "A2",
+   "src": [
+    "UC15",
+    "UC23"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC4",
+   "name": "Return List",
+   "actor": "A2",
+   "src": [],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC5",
+   "name": "View Detail",
+   "actor": "A3",
+   "src": [
+    "UC58"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC6",
+   "name": "View History",
+   "actor": "A2",
+   "src": [],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC7",
+   "name": "Enable Account",
+   "actor": "A2",
+   "src": [],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC8",
+   "name": "Delete Account",
+   "actor": "A2",
+   "src": [
+    "UC16"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC9",
+   "name": "Change Image",
+   "actor": "A2",
+   "src": [
+    "UC17",
+    "UC39"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC10",
+   "name": "Check Point",
+   "actor": "A2",
+   "src": [
+    "UC18"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC11",
+   "name": "Delete Banner Ad",
+   "actor": "A2",
+   "src": [
+    "UC19",
+    "UC40"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC12",
+   "name": "Insert Banner",
+   "actor": "A2",
+   "src": [
+    "UC20",
+    "UC38"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC13",
+   "name": "Insert News",
+   "actor": "A2",
+   "src": [
+    "UC21"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC14",
+   "name": "Delete News",
+   "actor": "A2",
+   "src": [
+    "UC22"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC15",
+   "name": "View Feedback",
+   "actor": "A2",
+   "src": [
+    "UC24"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC16",
+   "name": "View Report",
+   "actor": "A2",
+   "src": [
+    "UC25"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC17",
+   "name": "Edit Comment",
+   "actor": "A2",
+   "src": [
+    "UC26",
+    "UC54"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC18",
+   "name": "Search Site",
+   "actor": "A5",
+   "src": [
+    "UC27",
+    "UC57"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC19",
+   "name": "Remove Search Tag",
+   "actor": "A7",
+   "src": [
+    "UC28"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC20",
+   "name": "Ask Search Tag",
+   "actor": "A7",
+   "src": [
+    "UC29"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC21",
+   "name": "Insert Tag Search",
+   "actor": "A7",
+   "src": [
+    "UC30"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC22",
+   "name": "Ensure User",
+   "actor": "A5",
+   "src": [
+    "UC35"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC23",
+   "name": "Supply Login",
+   "actor": "A6",
+   "src": [
+    "UC36"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC24",
+   "name": "End Session",
+   "actor": "A6",
+   "src": [
+    "UC37"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC25",
+   "name": "Require Creation",
+   "actor": "A5",
+   "src": [
+    "UC33"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC26",
+   "name": "Research Heritage",
+   "actor": "A5",
+   "src": [
+    "UC34"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC27",
+   "name": "Change Menu",
+   "actor": "A8",
+   "src": [
+    "UC41"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC28",
+   "name": "Delete Menu",
+   "actor": "A8",
+   "src": [
+    "UC42"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC29",
+   "name": "Change Data Point",
+   "actor": "A8",
+   "src": [
+    "UC43"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC30",
+   "name": "Require Convention",
+   "actor": "A8",
+   "src": [
+    "UC44"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC31",
+   "name": "View Statistic",
+   "actor": "A8",
+   "src": [
+    "UC45"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC32",
+   "name": "Edit Search Preference",
+   "actor": "A4",
+   "src": [
+    "UC46"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC33",
+   "name": "Edit Personal Data",
+   "actor": "A4",
+   "src": [
+    "UC47"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC34",
+   "name": "Edit Preferences",
+   "actor": "A4",
+   "src": [
+    "UC48"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC35",
+   "name": "View List Of Favorites",
+   "actor": "A4",
+   "src": [
+    "UC49"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC36",
+   "name": "View List Of Sites",
+   "actor": "A4",
+   "src": [
+    "UC50"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC37",
+   "name": "Insert Site",
+   "actor": "A4",
+   "src": [
+    "UC51"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC38",
+   "name": "Delete Site",
+   "actor": "A4",
+   "src": [
+    "UC52"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC39",
+   "name": "Insert Feedback",
+   "actor": "A4",
+   "src": [
+    "UC53"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC40",
+   "name": "Entry Entry Condition",
+   "actor": "A4",
+   "src": [
+    "UC55"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC41",
+   "name": "Return Position",
+   "actor": "A4",
+   "src": [
+    "UC56"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "CulturalHeritage",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "UC4",
+      "UC10",
+      "UC12"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "UC4",
+      "UC10",
+      "UC12"
+     ]
+    },
+    {
+     "name": "location",
+     "type": "String",
+     "src": [
+      "UC4",
+      "UC10",
+      "UC12"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "searchCulturalHeritage",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "viewDetails",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "editData",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC4",
+    "UC10",
+    "UC12"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "RefreshmentPoint",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "UC6",
+      "UC8",
+      "UC11",
+      "UC14"
+     ]
+    },
+    {
+     "name": "location",
+     "type": "String",
+     "src": [
+      "UC6",
+      "UC8",
+      "UC11",
+      "UC14"
+     ]
+    },
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "UC6",
+      "UC8",
+      "UC11",
+      "UC14"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "searchRefreshmentPoint",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M5",
+     "name": "viewDetails",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M6",
+     "name": "viewHistory",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M7",
+     "name": "editData",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC6",
+    "UC8",
+    "UC11",
+    "UC14"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "AccountTourist",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "username",
+     "type": "String",
+     "src": [
+      "UC13",
+      "UC14"
+     ]
+    },
+    {
+     "name": "status",
+     "type": "String",
+     "src": [
+      "UC13",
+      "UC14"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M8",
+     "name": "searchTourist",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M9",
+     "name": "viewDetails",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M10",
+     "name": "enableDisableAccount",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M11",
+     "name": "modifyData",
+     "realizes": "UC3",
+     "src": [
+      "R3",
+      "UC15",
+      "UC23"
+     ]
+    },
+    {
+     "id": "M12",
+     "name": "deleteAccount",
+     "realizes": "UC8",
+     "src": [
+      "UC16"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC13",
+    "UC14"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Account",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C5",
+   "name": "BannerAd",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "UC38",
+      "UC39",
+      "UC40"
+     ]
+    },
+    {
+     "name": "image",
+     "type": "String",
+     "src": [
+      "UC38",
+      "UC39",
+      "UC40"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M13",
+     "name": "changeImage",
+     "realizes": "UC9",
+     "src": [
+      "UC17",
+      "UC39"
+     ]
+    },
+    {
+     "id": "M14",
+     "name": "deleteBanner",
+     "realizes": "UC11",
+     "src": [
+      "UC19",
+      "UC40"
+     ]
+    },
+    {
+     "id": "M15",
+     "name": "insertBanner",
+     "realizes": "UC12",
+     "src": [
+      "UC20",
+      "UC38"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC17",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "News",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M16",
+     "name": "insertNews",
+     "realizes": "UC13",
+     "src": [
+      "UC21"
+     ]
+    },
+    {
+     "id": "M17",
+     "name": "deleteNews",
+     "realizes": "UC14",
+     "src": [
+      "UC22"
+     ]
+    },
+    {
+     "id": "M18",
+     "name": "changeNews",
+     "realizes": "UC3",
+     "src": [
+      "R3",
+      "UC15",
+      "UC23"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC21",
+    "UC22",
+    "UC23"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M19",
+     "name": "viewFeedback",
+     "realizes": "UC15",
+     "src": [
+      "UC24"
+     ]
+    },
+    {
+     "id": "M20",
+     "name": "viewReport",
+     "realizes": "UC16",
+     "src": [
+      "UC25"
+     ]
+    },
+    {
+     "id": "M21",
+     "name": "editComment",
+     "realizes": "UC17",
+     "src": [
+      "UC26",
+      "UC54"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC24",
+    "UC25",
+    "UC26"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "GuestUser",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "UC33",
+      "UC34",
+      "UC37"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "UC33",
+      "UC35",
+      "UC37"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M22",
+     "name": "register",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M23",
+     "name": "searchHeritage",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M24",
+     "name": "endSession",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC33",
+    "UC34",
+    "UC37"
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "RegisteredUser",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "UC35",
+      "UC37"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "UC35",
+      "UC37"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M25",
+     "name": "login",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M26",
+     "name": "endSession",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC35",
+    "UC37"
+   ]
+  },
+  {
+   "id": "C10",
+   "name": "AgencyOperator",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "UC28",
+      "UC29",
+      "UC30",
+      "UC31"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "UC28",
+      "UC29",
+      "UC30",
+      "UC31"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M27",
+     "name": "removeSearchTag",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M28",
+     "name": "askSearchTag",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M29",
+     "name": "insertTagSearch",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M30",
+     "name": "changePassword",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC28",
+    "UC29",
+    "UC30",
+    "UC31"
+   ]
+  },
+  {
+   "id": "C11",
+   "name": "RestaurantOperator",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "UC38",
+      "UC39",
+      "UC40"
+     ]
+    },
+    {
+     "name": "password",
+     "type": "String",
+     "src": [
+      "UC38",
+      "UC39",
+      "UC40"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M31",
+     "name": "insertBanner",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M32",
+     "name": "changeImage",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M33",
+     "name": "deleteBannerAd",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M34",
+     "name": "changeMenu",
+     "realizes": "UC27",
+     "src": [
+      "UC41"
+     ]
+    },
+    {
+     "id": "M35",
+     "name": "deleteMenu",
+     "realizes": "UC28",
+     "src": [
+      "UC42"
+     ]
+    },
+    {
+     "id": "M36",
+     "name": "changeDataPoint",
+     "realizes": "UC29",
+     "src": [
+      "UC43"
+     ]
+    },
+    {
+     "id": "M37",
+     "name": "requireConvention",
+     "realizes": "UC30",
+     "src": [
+      "UC44"
+     ]
+    },
+    {
+     "id": "M38",
+     "name": "viewStatistic",
+     "realizes": "UC31",
+     "src": [
+      "UC45"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "id": "C12",
+   "name": "SearchTag",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "UC28",
+      "UC29",
+      "UC30"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "UC28",
+    "UC29",
+    "UC30"
+   ]
+  },
+  {
+   "id": "C13",
+   "name": "TagSearch",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "UC29",
+      "UC30"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "UC29",
+    "UC30"
+   ]
+  },
+  {
+   "id": "C14",
+   "name": "Image",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "path",
+     "type": "String",
+     "src": [
+      "UC38",
+      "UC39",
+      "UC40"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "id": "C15",
+   "name": "Tourist",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M39",
+     "name": "editSearchPreference",
+     "realizes": "UC32",
+     "src": [
+      "UC46"
+     ]
+    },
+    {
+     "id": "M40",
+     "name": "editPersonalData",
+     "realizes": "UC33",
+     "src": [
+      "UC47"
+     ]
+    },
+    {
+     "id": "M41",
+     "name": "editPreferences",
+     "realizes": "UC34",
+     "src": [
+      "UC48"
+     ]
+    },
+    {
+     "id": "M42",
+     "name": "viewFavoriteList",
+     "realizes": "UC35",
+     "src": [
+      "UC49"
+     ]
+    },
+    {
+     "id": "M43",
+     "name": "viewSiteList",
+     "realizes": "UC36",
+     "src": [
+      "UC50"
+     ]
+    },
+    {
+     "id": "M44",
+     "name": "insertSite",
+     "realizes": "UC37",
+     "src": [
+      "UC51"
+     ]
+    },
+    {
+     "id": "M45",
+     "name": "deleteSite",
+     "realizes": "UC38",
+     "src": [
+      "UC52"
+     ]
+    },
+    {
+     "id": "M46",
+     "name": "insertFeedback",
+     "realizes": "UC39",
+     "src": [
+      "UC53"
+     ]
+    },
+    {
+     "id": "M60",
+     "name": "editComment",
+     "realizes": "UC17",
+     "src": [
+      "UC26",
+      "UC54"
+     ]
+    },
+    {
+     "id": "M61",
+     "name": "viewDetail",
+     "realizes": "UC5",
+     "src": [
+      "R10",
+      "R12",
+      "UC58"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C16",
+   "name": "Menu",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "day",
+     "type": "String",
+     "src": [
+      "UC41",
+      "UC42"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M47",
+     "name": "changeMenu",
+     "realizes": "UC27",
+     "src": [
+      "UC41"
+     ]
+    },
+    {
+     "id": "M48",
+     "name": "deleteMenu",
+     "realizes": "UC28",
+     "src": [
+      "UC42"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC41",
+    "UC42"
+   ]
+  },
+  {
+   "id": "C17",
+   "name": "DataPoint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M49",
+     "name": "changeDataPoint",
+     "realizes": "UC29",
+     "src": [
+      "UC43"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC43"
+   ]
+  },
+  {
+   "id": "C18",
+   "name": "Convention",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M50",
+     "name": "requireConvention",
+     "realizes": "UC30",
+     "src": [
+      "UC44"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC44"
+   ]
+  },
+  {
+   "id": "C19",
+   "name": "Statistic",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M51",
+     "name": "viewStatistic",
+     "realizes": "UC31",
+     "src": [
+      "UC45"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC45"
+   ]
+  },
+  {
+   "id": "C20",
+   "name": "SearchPreference",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M52",
+     "name": "editSearchPreference",
+     "realizes": "UC32",
+     "src": [
+      "UC46"
+     ]
+    },
+    {
+     "id": "M53",
+     "name": "editPersonalData",
+     "realizes": "UC33",
+     "src": [
+      "UC47"
+     ]
+    },
+    {
+     "id": "M54",
+     "name": "editPreferences",
+     "realizes": "UC34",
+     "src": [
+      "UC48"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC46",
+    "UC47",
+    "UC48"
+   ]
+  },
+  {
+   "id": "C21",
+   "name": "Site",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M55",
+     "name": "viewFavoriteList",
+     "realizes": "UC35",
+     "src": [
+      "UC49"
+     ]
+    },
+    {
+     "id": "M56",
+     "name": "viewSiteList",
+     "realizes": "UC36",
+     "src": [
+      "UC50"
+     ]
+    },
+    {
+     "id": "M57",
+     "name": "insertSite",
+     "realizes": "UC37",
+     "src": [
+      "UC51"
+     ]
+    },
+    {
+     "id": "M58",
+     "name": "deleteSite",
+     "realizes": "UC38",
+     "src": [
+      "UC52"
+     ]
+    },
+    {
+     "id": "M59",
+     "name": "insertFeedback",
+     "realizes": "UC39",
+     "src": [
+      "UC53"
+     ]
+    },
+    {
+     "id": "M62",
+     "name": "search",
+     "realizes": "UC18",
+     "src": [
+      "UC27",
+      "UC57"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC49",
+    "UC50",
+    "UC51",
+    "UC52",
+    "UC53"
+   ]
+  },
+  {
+   "id": "C22",
+   "name": "Position",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M63",
+     "name": "returnPosition",
+     "realizes": "UC41",
+     "src": [
+      "UC56"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..1",
+   "label": "has",
+   "src": [
+    "UC11",
+    "UC13"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C10",
+   "target": "C18",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "UC1"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C10",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "UC6",
+    "UC7",
+    "UC8",
+    "UC10",
+    "UC11"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is",
+   "src": [
+    "UC15",
+    "UC16"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C5",
+   "target": "C14",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "UC17",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C21",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "UC24"
+   ]
+  },
+  {
+   "id": "R7",
+   "kind": "association",
+   "source": "C4",
+   "target": "C9",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "UC35"
+   ]
+  },
+  {
+   "id": "R8",
+   "kind": "association",
+   "source": "C15",
+   "target": "C20",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "UC46",
+    "UC47",
+    "UC48"
+   ]
+  },
+  {
+   "id": "R9",
+   "kind": "association",
+   "source": "C15",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "visits",
+   "src": [
+    "UC51",
+    "UC52",
+    "UC53"
+   ]
+  },
+  {
+   "id": "R10",
+   "kind": "association",
+   "source": "C15",
+   "target": "C21",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "visits",
+   "src": [
+    "UC58"
+   ]
+  },
+  {
+   "id": "R11",
+   "kind": "association",
+   "source": "C15",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "issues",
+   "src": [
+    "UC54",
+    "UC55"
+   ]
+  },
+  {
+   "id": "R12",
+   "kind": "association",
+   "source": "C15",
+   "target": "C22",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "UC56"
+   ]
+  },
+  {
+   "id": "R13",
+   "kind": "association",
+   "source": "C21",
+   "target": "C15",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "UC58"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "All use cases UC22, UC23, UC26, UC33, UC35, UC38, UC40, UC42, UC44, UC47, UC49, UC50, UC52, UC53, UC55, UC57 are assumed to be incomplete as they have no corresponding class or method in the model."
+  }
+ ],
+ "open_tags": [
+  "UC22 (incompleteness, \"data\"): readings []",
+  "UC23 (incompleteness, \"information\"): readings []",
+  "UC23 (incompleteness, \"data\"): readings []",
+  "UC23 (incompleteness, \"data\"): readings []",
+  "UC26 (incompleteness, \"data\"): readings []",
+  "UC30 (incompleteness, \"information\"): readings []",
+  "UC30 (incompleteness, \"data\"): readings []",
+  "UC31 (incompleteness, \"appropriate\"): readings []",
+  "UC33 (incompleteness, \"data\"): readings []",
+  "UC35 (incompleteness, \"information\"): readings []",
+  "UC41 (incompleteness, \"data\"): readings []",
+  "UC43 (incompleteness, \"information\"): readings []",
+  "UC43 (incompleteness, \"data\"): readings []",
+  "UC44 (incompleteness, \"data\"): readings []",
+  "UC47 (incompleteness, \"information\"): readings []",
+  "UC47 (incompleteness, \"data\"): readings []"
+ ]
+}

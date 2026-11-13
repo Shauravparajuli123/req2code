@@ -1,0 +1,152 @@
+{
+ "actors": [
+  {
+   "name": "User",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "track bug",
+   "actor": "User",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "link control to sequence",
+   "actor": "User",
+   "src": [
+    "R3",
+    "R8"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Date",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ControlsSequence",
+   "src": [
+    "R2",
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Control",
+   "src": [
+    "R4",
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "name": "Bug",
+   "src": [
+    "R6",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "SoftwareQualityControl",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Architecture",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Date",
+   "name": "day",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Date",
+   "name": "year",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Bug",
+   "name": "number",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "owner": "Bug",
+   "name": "description",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "owner": "Bug",
+   "name": "originator",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "owner": "Bug",
+   "name": "comments",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "owner": "Bug",
+   "name": "closeDate",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "owner": "Control",
+   "name": "type",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Control",
+   "target": "ControlsSequence",
+   "src": [
+    "R3",
+    "R8"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Bug",
+   "target": "SoftwareQualityControl",
+   "src": [
+    "R5",
+    "R12",
+    "R13"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

@@ -1,0 +1,156 @@
+{
+ "actors": [
+  "BusinessEntity"
+ ],
+ "use_cases": [
+  {
+   "name": "ManageBusinessEntity",
+   "actor": "BusinessEntity",
+   "src": [
+    "R1",
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "IdentifierBag",
+   "kind": "class",
+   "attributes": [
+    "identifiers"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "BusinessEntity",
+   "kind": "class",
+   "attributes": [
+    "businessContacts",
+    "identifierBag"
+   ],
+   "methods": [
+    {
+     "name": "addBusinessContact",
+     "use_case": "ManageBusinessEntity"
+    },
+    {
+     "name": "removeBusinessContact",
+     "use_case": "ManageBusinessEntity"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R8"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "overviewDocuments"
+   ],
+   "methods": [
+    {
+     "name": "addOverviewDocument",
+     "use_case": "ManageBusinessEntity"
+    },
+    {
+     "name": "removeOverviewDocument",
+     "use_case": "ManageBusinessEntity"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "OverviewDocument",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "PifModel",
+   "kind": "class",
+   "attributes": [
+    "businessTemplates"
+   ],
+   "methods": [
+    {
+     "name": "addBusinessTemplate",
+     "use_case": "ManageBusinessEntity"
+    },
+    {
+     "name": "removeBusinessTemplate",
+     "use_case": "ManageBusinessEntity"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "BusinessEntity",
+   "target": "Contact",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Model",
+   "target": "OverviewDocument",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "UtilityClass",
+   "target": "IdentifierBag",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "PifModel",
+   "target": "Contact",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "python": "class IdentifierBag:\n    def __init__(self):\n        self.identifiers = []\n\nclass BusinessEntity:\n    def __init__(self):\n        self.businessContacts = []\n        self.identifierBag = IdentifierBag()\n    def addBusinessContact(self, contact):\n        raise NotImplementedError\n    def removeBusinessContact(self, contact):\n        raise NotImplementedError\nclass Contact:\n    pass\nclass Model:\n    def __init__(self):\n        self.overviewDocuments = []\n    def addOverviewDocument(self, document):\n        raise NotImplementedError\n    def removeOverviewDocument(self, document):\n        raise NotImplementedError\nclass OverviewDocument:\n    pass\nclass PifModel:\n    def __init__(self):\n        self.businessTemplates = []\n    def addBusinessTemplate(self, template):\n        raise NotImplementedError\n    def removeBusinessTemplate(self, template):\n        raise NotImplementedError",
+ "java": {}
+}

@@ -1,0 +1,96 @@
+{
+ "case": "D2/GWPNV0",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "destination",
+     "type": "String",
+     "src": [
+      "R5",
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C2",
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createTransition",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Network",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "places",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "createNetwork",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "A Network can contain multiple Places, as stated in R7"
+  }
+ ],
+ "open_tags": []
+}

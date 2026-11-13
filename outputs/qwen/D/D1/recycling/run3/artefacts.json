@@ -1,0 +1,629 @@
+{
+ "actors": [
+  "User",
+  "Admin",
+  "Superuser",
+  "RecyclingFacilityRepresentative",
+  "RecyclingFacility",
+  "Moderator",
+  "Executive",
+  "Employee",
+  "HREmployee",
+  "Developer"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Game",
+   "actor": "Moderator",
+   "src": []
+  },
+  {
+   "name": "View Public Information",
+   "actor": "User",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Enter Zip Code And Get List Of Nearby Recycling Facilities",
+   "actor": "User",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Get Hours Of Each Recycling Facility",
+   "actor": "User",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Select Different Types Of Recyclable Waste",
+   "actor": "User",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Add Donation Centers As Favorites",
+   "actor": "User",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Give Email ID",
+   "actor": "User",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "View Map Display Of Public Recycling Bins",
+   "actor": "User",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "View Map Display Of Special Waste Drop Off Sites",
+   "actor": "User",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "View Safe Disposal Events",
+   "actor": "User",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Choose Flexible Pick Up Time",
+   "actor": "User",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "name": "View User Documentation",
+   "actor": "User",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Enter Invalid Zip Code",
+   "actor": "User",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "Create An Account",
+   "actor": "User",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "Add Or Remove Recycling Facilities Information",
+   "actor": "Admin",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "Read Users Feedback And Complaints",
+   "actor": "Admin",
+   "src": [
+    "R17"
+   ]
+  },
+  {
+   "name": "Block Specific Users Based On IP Address",
+   "actor": "Admin",
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "name": "View A Dashboard That Monitors All The Sites Statuses",
+   "actor": "Admin",
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "name": "View All Data Encrypted",
+   "actor": "Admin",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Have Full Access To Data Related To Company",
+   "actor": "Executive",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "Access Route Planning System",
+   "actor": "Employee",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "Access Full Information Of All Employees",
+   "actor": "HREmployee",
+   "src": [
+    "R26"
+   ]
+  },
+  {
+   "name": "Use Bootstrap",
+   "actor": "Developer",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Attend UI UX Lessons",
+   "actor": "Developer",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "View All Locations Of Recycling Centers On A Map",
+   "actor": "User",
+   "src": [
+    "R36"
+   ]
+  },
+  {
+   "name": "Upload Week S Schedule",
+   "actor": "User",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Link Email Account To Profile",
+   "actor": "User",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "Contact Administrators",
+   "actor": "User",
+   "src": [
+    "R39"
+   ]
+  },
+  {
+   "name": "Add Recycling Center Information",
+   "actor": "Admin",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "View User Error Logs",
+   "actor": "Admin",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "Onboard Recycling Centers",
+   "actor": "Admin",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Update Recycling Center Information",
+   "actor": "Superuser",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "View Users Stats",
+   "actor": "Superuser",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Reply To User Questions",
+   "actor": "Superuser",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Communicate Directly With Facilities",
+   "actor": "Admin",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Browse Through List Of Facilities",
+   "actor": "User",
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "name": "Update Information And Type Of Material Accepted",
+   "actor": "RecyclingFacilityRepresentative",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "name": "Access User Stats And Schedules",
+   "actor": "RecyclingFacility",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "name": "Communicate Directly With Site Admin",
+   "actor": "RecyclingFacility",
+   "src": [
+    "R51"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "email",
+    "password",
+    "profile",
+    "schedule",
+    "transactionHistory"
+   ],
+   "methods": [
+    {
+     "name": "viewPublicInformation",
+     "use_case": "View Public Information"
+    },
+    {
+     "name": "enterZipCode",
+     "use_case": "Enter Zip Code And Get List Of Nearby Recycling Facilities"
+    },
+    {
+     "name": "getFacilityHours",
+     "use_case": "Get Hours Of Each Recycling Facility"
+    },
+    {
+     "name": "selectWasteTypes",
+     "use_case": "Select Different Types Of Recyclable Waste"
+    },
+    {
+     "name": "addFavoriteFacility",
+     "use_case": "Add Donation Centers As Favorites"
+    },
+    {
+     "name": "giveEmailID",
+     "use_case": "Give Email ID"
+    },
+    {
+     "name": "viewMapDisplayPublicBins",
+     "use_case": "View Map Display Of Public Recycling Bins"
+    },
+    {
+     "name": "viewMapDisplaySpecialWasteSites",
+     "use_case": "View Map Display Of Special Waste Drop Off Sites"
+    },
+    {
+     "name": "viewSafeDisposalEvents",
+     "use_case": "View Safe Disposal Events"
+    },
+    {
+     "name": "choosePickUpTime",
+     "use_case": "Choose Flexible Pick Up Time"
+    },
+    {
+     "name": "viewUserDocumentation",
+     "use_case": "View User Documentation"
+    },
+    {
+     "name": "viewInvalidZipCodeFeedback",
+     "use_case": "Enter Invalid Zip Code"
+    },
+    {
+     "name": "createAccount",
+     "use_case": "Create An Account"
+    },
+    {
+     "name": "viewAllLocationsOfRecyclingCenters",
+     "use_case": "View All Locations Of Recycling Centers On A Map"
+    },
+    {
+     "name": "uploadWeeksSchedule",
+     "use_case": "Upload Week S Schedule"
+    },
+    {
+     "name": "linkEmailAccountToProfile",
+     "use_case": "Link Email Account To Profile"
+    },
+    {
+     "name": "contactAdministrators",
+     "use_case": "Contact Administrators"
+    }
+   ],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R19",
+    "R20",
+    "R36",
+    "R37",
+    "R38",
+    "R39"
+   ]
+  },
+  {
+   "name": "Admin",
+   "kind": "class",
+   "attributes": [
+    "errorLogs",
+    "dashboard"
+   ],
+   "methods": [
+    {
+     "name": "addRemoveFacilityInfo",
+     "use_case": "Add Or Remove Recycling Facilities Information"
+    },
+    {
+     "name": "readFeedbackComplaints",
+     "use_case": "Read Users Feedback And Complaints"
+    },
+    {
+     "name": "blockUsersBasedOnIP",
+     "use_case": "Block Specific Users Based On IP Address"
+    },
+    {
+     "name": "viewDashboard",
+     "use_case": "View A Dashboard That Monitors All The Sites Statuses"
+    },
+    {
+     "name": "viewEncryptedData",
+     "use_case": "View All Data Encrypted"
+    },
+    {
+     "name": "addRecyclingCenterInfo",
+     "use_case": "Add Recycling Center Information"
+    },
+    {
+     "name": "viewUserErrorLogs",
+     "use_case": "View User Error Logs"
+    },
+    {
+     "name": "onboardRecyclingCenters",
+     "use_case": "Onboard Recycling Centers"
+    },
+    {
+     "name": "communicateWithFacilities",
+     "use_case": "Communicate Directly With Facilities"
+    }
+   ],
+   "src": [
+    "R16",
+    "R17",
+    "R21",
+    "R22",
+    "R23",
+    "R31",
+    "R34",
+    "R41",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "name": "Superuser",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "handleUserActivities",
+     "use_case": null
+    },
+    {
+     "name": "onboardRecyclingCenters",
+     "use_case": "Onboard Recycling Centers"
+    },
+    {
+     "name": "updateRecyclingCenterInfo",
+     "use_case": "Update Recycling Center Information"
+    },
+    {
+     "name": "viewUsersStats",
+     "use_case": "View Users Stats"
+    },
+    {
+     "name": "replyToUserQuestions",
+     "use_case": "Reply To User Questions"
+    }
+   ],
+   "src": [
+    "R30",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "accessRoutePlanningSystem",
+     "use_case": "Access Route Planning System"
+    },
+    {
+     "name": "accessEmployeeInfo",
+     "use_case": "Access Full Information Of All Employees"
+    }
+   ],
+   "src": [
+    "R25",
+    "R26"
+   ]
+  },
+  {
+   "name": "Developer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "accessWebsiteAPI",
+     "use_case": "Access Route Planning System"
+    },
+    {
+     "name": "useBootstrap",
+     "use_case": "Use Bootstrap"
+    },
+    {
+     "name": "attendUIUXLessons",
+     "use_case": "Attend UI UX Lessons"
+    }
+   ],
+   "src": [
+    "R19",
+    "R27",
+    "R28",
+    "R34",
+    "R35"
+   ]
+  },
+  {
+   "name": "CompanyAccountant",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "viewActivityFees",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "name": "RecyclingFacilityRepresentative",
+   "kind": "class",
+   "attributes": [
+    "facilityInformation"
+   ],
+   "methods": [
+    {
+     "name": "updateFacilityInfo",
+     "use_case": "Update Information And Type Of Material Accepted"
+    },
+    {
+     "name": "viewUserStatsAndSchedules",
+     "use_case": null
+    },
+    {
+     "name": "communicateWithSiteAdmin",
+     "use_case": "Communicate Directly With Site Admin"
+    }
+   ],
+   "src": [
+    "R40",
+    "R48",
+    "R49",
+    "R50"
+   ]
+  },
+  {
+   "name": "RecyclingFacility",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "communicateWithSiteAdmin",
+     "use_case": "Communicate Directly With Site Admin"
+    }
+   ],
+   "src": [
+    "R51"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "User",
+   "target": "RecyclingFacility",
+   "src": [
+    "R36",
+    "R48"
+   ]
+  },
+  {
+   "source": "Admin",
+   "target": "RecyclingFacility",
+   "src": [
+    "R40",
+    "R46"
+   ]
+  },
+  {
+   "source": "Superuser",
+   "target": "RecyclingFacility",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "source": "RecyclingFacilityRepresentative",
+   "target": "RecyclingFacility",
+   "src": [
+    "R49",
+    "R50"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D1/recycling.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass User:\n    \"\"\"Source: R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R19, R20, R36, R37, R38, R39\"\"\"\n    email: _t.Optional[str] = None\n    password: _t.Optional[str] = None\n    profile: _t.Optional[str] = None\n    schedule: _t.Optional[str] = None\n    transactionHistory: _t.Optional[str] = None\n    recyclingFacility: _t.Optional[\"RecyclingFacility\"] = None\n\n    def viewPublicInformation(self) -> None:\n        \"\"\"Realizes UC2 \"View Public Information\" (R2).\"\"\"\n        raise NotImplementedError\n\n    def enterZipCode(self) -> None:\n        \"\"\"Realizes UC3 \"Enter Zip Code And Get List Of Nearby Recycling Facilities\" (R3).\"\"\"\n        raise NotImplementedError\n\n    def getFacilityHours(self) -> None:\n        \"\"\"Realizes UC4 \"Get Hours Of Each Recycling Facility\" (R4).\"\"\"\n        raise NotImplementedError\n\n    def selectWasteTypes(self) -> None:\n        \"\"\"Realizes UC5 \"Select Different Types Of Recyclable Waste\" (R6).\"\"\"\n        raise NotImplementedError\n\n    def addFavoriteFacility(self) -> None:\n        \"\"\"Realizes UC6 \"Add Donation Centers As Favorites\" (R7).\"\"\"\n        raise NotImplementedError\n\n    def giveEmailID(self) -> None:\n        \"\"\"Realizes UC7 \"Give Email ID\" (R8).\"\"\"\n        raise NotImplementedError\n\n    def viewMapDisplayPublicBins(self) -> None:\n        \"\"\"Realizes UC8 \"View Map Display Of Public Recycling Bins\" (R9).\"\"\"\n        raise NotImplementedError\n\n    def viewMapDisplaySpecialWasteSites(self) -> None:\n        \"\"\"Realizes UC9 \"View Map Display Of Special Waste Drop Off Sites\" (R10).\"\"\"\n        raise NotImplementedError\n\n    def viewSafeDisposalEvents(self) -> None:\n        \"\"\"Realizes UC10 \"View Safe Disposal Events\" (R11).\"\"\"\n        raise NotImplementedError\n\n    def choosePickUpTime(self) -> None:\n        \"\"\"Realizes UC11 \"Choose Flexible Pick Up Time\" (R5, R12).\"\"\"\n        raise NotImplementedError\n\n    def viewUserDocumentation(self) -> None:\n        \"\"\"Realizes UC12 \"View User Documentation\" (R13).\"\"\"\n        raise NotImplementedError\n\n    def viewInvalidZipCodeFeedback(self) -> None:\n        \"\"\"Realizes UC13 \"Enter Invalid Zip Code\" (R14).\"\"\"\n        raise NotImplementedError\n\n    def createAccount(self) -> None:\n        \"\"\"Realizes UC14 \"Create An Account\" (R15).\"\"\"\n        raise NotImplementedError\n\n    def viewAllLocationsOfRecyclingCenters(self) -> None:\n        \"\"\"Realizes UC25 \"View All Locations Of Recycling Centers On A Map\" (R36).\"\"\"\n        raise NotImplementedError\n\n    def uploadWeeksSchedule(self) -> None:\n        \"\"\"Realizes UC26 \"Upload Week S Schedule\" (R37).\"\"\"\n        raise NotImplementedError\n\n    def linkEmailAccountToProfile(self) -> None:\n        \"\"\"Realizes UC27 \"Link Email Account To Profile\" (R38).\"\"\"\n        raise NotImplementedError\n\n    def contactAdministrators(self) -> None:\n        \"\"\"Realizes UC28 \"Contact Administrators\" (R39).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Admin:\n    \"\"\"Source: R16, R17, R21, R22, R23, R31, R34, R41, R46, R47\"\"\"\n    errorLogs: _t.Optional[str] = None\n    dashboard: _t.Optional[str] = None\n    recyclingFacility: _t.Optional[\"RecyclingFacility\"] = None\n\n    def addRemoveFacilityInfo(self) -> None:\n        \"\"\"Realizes UC15 \"Add Or Remove Recycling Facilities Information\" (R16).\"\"\"\n        raise NotImplementedError\n\n    def readFeedbackComplaints(self) -> None:\n        \"\"\"Realizes UC16 \"Read Users Feedback And Complaints\" (R17).\"\"\"\n        raise NotImplementedError\n\n    def blockUsersBasedOnIP(self) -> None:\n        \"\"\"Realizes UC17 \"Block Specific Users Based On IP Address\" (R21).\"\"\"\n        raise NotImplementedError\n\n    def viewDashboard(self) -> None:\n        \"\"\"Realizes UC18 \"View A Dashboard That Monitors All The Sites Statuses\" (R22).\"\"\"\n        raise NotImplementedError\n\n    def viewEncryptedData(self) -> None:\n        \"\"\"Realizes UC19 \"View All Data Encrypted\" (R23).\"\"\"\n        raise NotImplementedError\n\n    def addRecyclingCenterInfo(self) -> None:\n        \"\"\"Realizes UC29 \"Add Recycling Center Information\" (R40).\"\"\"\n        raise NotImplementedError\n\n    def viewUserErrorLogs(self) -> None:\n        \"\"\"Realizes UC30 \"View User Error Logs\" (R41).\"\"\"\n        raise NotImplementedError\n\n    def onboardRecyclingCenters(self) -> None:\n        \"\"\"Realizes UC31 \"Onboard Recycling Centers\" (R42).\"\"\"\n        raise NotImplementedError\n\n    def communicateWithFacilities(self) -> None:\n        \"\"\"Realizes UC35 \"Communicate Directly With Facilities\" (R47).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Superuser:\n    \"\"\"Source: R30, R42, R43, R44, R45\"\"\"\n    recyclingFacility: _t.Optional[\"RecyclingFacility\"] = None\n\n    def handleUserActivities(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def onboardRecyclingCenters(self) -> None:\n        \"\"\"Realizes UC31 \"Onboard Recycling Centers\" (R42).\"\"\"\n        raise NotImplementedError\n\n    def updateRecyclingCenterInfo(self) -> None:\n        \"\"\"Realizes UC32 \"Update Recycling Center Information\" (R43).\"\"\"\n        raise NotImplementedError\n\n    def viewUsersStats(self) -> None:\n        \"\"\"Realizes UC33 \"View Users Stats\" (R44).\"\"\"\n        raise NotImplementedError\n\n    def replyToUserQuestions(self) -> None:\n        \"\"\"Realizes UC34 \"Reply To User Questions\" (R45).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Employee:\n    \"\"\"Source: R25, R26\"\"\"\n\n    def accessRoutePlanningSystem(self) -> None:\n        \"\"\"Realizes UC21 \"Access Route Planning System\" (R25).\"\"\"\n        raise NotImplementedError\n\n    def accessEmployeeInfo(self) -> None:\n        \"\"\"Realizes UC22 \"Access Full Information Of All Employees\" (R26).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Developer:\n    \"\"\"Source: R19, R27, R28, R34, R35\"\"\"\n\n    def accessWebsiteAPI(self) -> None:\n        \"\"\"Realizes UC21 \"Access Route Planning System\" (R25).\"\"\"\n        raise NotImplementedError\n\n    def useBootstrap(self) -> None:\n        \"\"\"Realizes UC23 \"Use Bootstrap\" (R34).\"\"\"\n        raise NotImplementedError\n\n    def attendUIUXLessons(self) -> None:\n        \"\"\"Realizes UC24 \"Attend UI UX Lessons\" (R35).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass CompanyAccountant:\n    \"\"\"Source: R33\"\"\"\n\n    def viewActivityFees(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass RecyclingFacilityRepresentative:\n    \"\"\"Source: R40, R48, R49, R50\"\"\"\n    facilityInformation: _t.Optional[str] = None\n    recyclingFacility: _t.Optional[\"RecyclingFacility\"] = None\n\n    def updateFacilityInfo(self) -> None:\n        \"\"\"Realizes UC37 \"Update Information And Type Of Material Accepted\" (R49).\"\"\"\n        raise NotImplementedError\n\n    def viewUserStatsAndSchedules(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def communicateWithSiteAdmin(self) -> None:\n        \"\"\"Realizes UC39 \"Communicate Directly With Site Admin\" (R51).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass RecyclingFacility:\n    \"\"\"Source: R51\"\"\"\n\n    def communicateWithSiteAdmin(self) -> None:\n        \"\"\"Realizes UC39 \"Communicate Directly With Site Admin\" (R51).\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "User.java": "/** Generated from shared model D1/recycling. Source: R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R19, R20, R36, R37, R38, R39 */\npublic class User {\n    private java.lang.String email;\n    private java.lang.String password;\n    private java.lang.String profile;\n    private java.lang.String schedule;\n    private java.lang.String transactionHistory;\n    private RecyclingFacility recyclingFacility;\n\n    /** Realizes UC2 \"View Public Information\" (R2). */\n    public void viewPublicInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Enter Zip Code And Get List Of Nearby Recycling Facilities\" (R3). */\n    public void enterZipCode() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC4 \"Get Hours Of Each Recycling Facility\" (R4). */\n    public void getFacilityHours() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC5 \"Select Different Types Of Recyclable Waste\" (R6). */\n    public void selectWasteTypes() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC6 \"Add Donation Centers As Favorites\" (R7). */\n    public void addFavoriteFacility() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC7 \"Give Email ID\" (R8). */\n    public void giveEmailID() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC8 \"View Map Display Of Public Recycling Bins\" (R9). */\n    public void viewMapDisplayPublicBins() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"View Map Display Of Special Waste Drop Off Sites\" (R10). */\n    public void viewMapDisplaySpecialWasteSites() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"View Safe Disposal Events\" (R11). */\n    public void viewSafeDisposalEvents() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC11 \"Choose Flexible Pick Up Time\" (R5, R12). */\n    public void choosePickUpTime() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC12 \"View User Documentation\" (R13). */\n    public void viewUserDocumentation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC13 \"Enter Invalid Zip Code\" (R14). */\n    public void viewInvalidZipCodeFeedback() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC14 \"Create An Account\" (R15). */\n    public void createAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC25 \"View All Locations Of Recycling Centers On A Map\" (R36). */\n    public void viewAllLocationsOfRecyclingCenters() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC26 \"Upload Week S Schedule\" (R37). */\n    public void uploadWeeksSchedule() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC27 \"Link Email Account To Profile\" (R38). */\n    public void linkEmailAccountToProfile() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC28 \"Contact Administrators\" (R39). */\n    public void contactAdministrators() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Admin.java": "/** Generated from shared model D1/recycling. Source: R16, R17, R21, R22, R23, R31, R34, R41, R46, R47 */\npublic class Admin {\n    private java.lang.String errorLogs;\n    private java.lang.String dashboard;\n    private RecyclingFacility recyclingFacility;\n\n    /** Realizes UC15 \"Add Or Remove Recycling Facilities Information\" (R16). */\n    public void addRemoveFacilityInfo() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC16 \"Read Users Feedback And Complaints\" (R17). */\n    public void readFeedbackComplaints() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC17 \"Block Specific Users Based On IP Address\" (R21). */\n    public void blockUsersBasedOnIP() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC18 \"View A Dashboard That Monitors All The Sites Statuses\" (R22). */\n    public void viewDashboard() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC19 \"View All Data Encrypted\" (R23). */\n    public void viewEncryptedData() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC29 \"Add Recycling Center Information\" (R40). */\n    public void addRecyclingCenterInfo() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC30 \"View User Error Logs\" (R41). */\n    public void viewUserErrorLogs() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC31 \"Onboard Recycling Centers\" (R42). */\n    public void onboardRecyclingCenters() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC35 \"Communicate Directly With Facilities\" (R47). */\n    public void communicateWithFacilities() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Superuser.java": "/** Generated from shared model D1/recycling. Source: R30, R42, R43, R44, R45 */\npublic class Superuser {\n    private RecyclingFacility recyclingFacility;\n\n    /** Operation. */\n    public void handleUserActivities() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC31 \"Onboard Recycling Centers\" (R42). */\n    public void onboardRecyclingCenters() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC32 \"Update Recycling Center Information\" (R43). */\n    public void updateRecyclingCenterInfo() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC33 \"View Users Stats\" (R44). */\n    public void viewUsersStats() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC34 \"Reply To User Questions\" (R45). */\n    public void replyToUserQuestions() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Employee.java": "/** Generated from shared model D1/recycling. Source: R25, R26 */\npublic class Employee {\n\n    /** Realizes UC21 \"Access Route Planning System\" (R25). */\n    public void accessRoutePlanningSystem() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC22 \"Access Full Information Of All Employees\" (R26). */\n    public void accessEmployeeInfo() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Developer.java": "/** Generated from shared model D1/recycling. Source: R19, R27, R28, R34, R35 */\npublic class Developer {\n\n    /** Realizes UC21 \"Access Route Planning System\" (R25). */\n    public void accessWebsiteAPI() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC23 \"Use Bootstrap\" (R34). */\n    public void useBootstrap() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC24 \"Attend UI UX Lessons\" (R35). */\n    public void attendUIUXLessons() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "CompanyAccountant.java": "/** Generated from shared model D1/recycling. Source: R33 */\npublic class CompanyAccountant {\n\n    /** Operation. */\n    public void viewActivityFees() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "RecyclingFacilityRepresentative.java": "/** Generated from shared model D1/recycling. Source: R40, R48, R49, R50 */\npublic class RecyclingFacilityRepresentative {\n    private java.lang.String facilityInformation;\n    private RecyclingFacility recyclingFacility;\n\n    /** Realizes UC37 \"Update Information And Type Of Material Accepted\" (R49). */\n    public void updateFacilityInfo() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewUserStatsAndSchedules() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC39 \"Communicate Directly With Site Admin\" (R51). */\n    public void communicateWithSiteAdmin() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "RecyclingFacility.java": "/** Generated from shared model D1/recycling. Source: R51 */\npublic class RecyclingFacility {\n\n    /** Realizes UC39 \"Communicate Directly With Site Admin\" (R51). */\n    public void communicateWithSiteAdmin() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

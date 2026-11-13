@@ -1,0 +1,215 @@
+{
+ "case": "D2/GraphVizDot",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Graph",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "dimension",
+     "type": "int",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "elements",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "GraphElement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "label",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "zIndex",
+     "type": "int",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "parentGraph",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "shape",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "DirectedArc",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "sourceNode",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "targetNode",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "shape",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Constraint",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "value",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "SubGraph",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "0..1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": []
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "0..1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": []
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C1",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is contained in",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

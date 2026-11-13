@@ -1,0 +1,140 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineGraphElement",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "label",
+    "z_index"
+   ],
+   "methods": [
+    {
+     "name": "define",
+     "use_case": "DefineGraphElement"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Graph",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "dimension",
+    "location"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R1"
+   ]
+  },
+  {
+   "name": "GraphElement",
+   "kind": "class",
+   "attributes": [
+    "label",
+    "parent_graph",
+    "z_index"
+   ],
+   "methods": [
+    {
+     "name": "get_parent_graph",
+     "use_case": "DefineGraphElement"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "shape"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "DirectedArc",
+   "kind": "class",
+   "attributes": [
+    "source_node",
+    "target_node",
+    "shape"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Constraint",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "SubGraph",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Graph",
+   "target": "GraphElement",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "aggregation",
+   "source": "GraphElement",
+   "target": "Graph",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "class Element:\n    def __init__(self, label, z_index):\n        self.label = label\n        self.z_index = z_index\n    def define(self):\n        raise NotImplementedError\n\nclass Graph:\n    def __init__(self, type, dimension, location):\n        self.type = type\n        self.dimension = dimension\n        self.location = location\n\nclass GraphElement(Element):\n    def __init__(self, label, z_index, parent_graph):\n        super().__init__(label, z_index)\n        self.parent_graph = parent_graph\n    def get_parent_graph(self):\n        raise NotImplementedError\n\nclass Node(GraphElement):\n    def __init__(self, label, z_index, parent_graph, shape):\n        super().__init__(label, z_index, parent_graph)\n        self.shape = shape\n\nclass DirectedArc:\n    def __init__(self, source_node, target_node, shape):\n        self.source_node = source_node\n        self.target_node = target_node\n        self.shape = shape\n\nclass Constraint:\n    def __init__(self, value):\n        self.value = value\n\nclass SubGraph:\n    pass",
+ "java": {}
+}

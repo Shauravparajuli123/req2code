@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The relationship between 'Administrator' and 'Account' is assumed to be a one-to-one relationship, as indicated by the cardinality 1..1."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "The class 'Account' is missing a method to realize the use case 'Receive Notification For Messages' (R28).",
+   "fix": "Add a method 'receiveNotificationForMessages' to the 'Account' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Account' is missing a method to realize the use case 'Receive Notification For Absence Forms' (R54).",
+   "fix": "Add a method 'receiveNotificationForAbsenceForms' to the 'Account' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Account' is missing a method to realize the use case 'Receive Notification For Messages' (R48).",
+   "fix": "Add a method 'receiveNotificationForMessages' to the 'Account' class."
+  }
+ ]
+}

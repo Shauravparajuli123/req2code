@@ -1,0 +1,283 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D2/FiniteStateMachine",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C2",
+    "src": [
+     "R3",
+     "R4"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A FSM (may) have a state"
+     },
+     {
+      "sid": "R4.s1",
+      "text": "A FSM (may) have a state machine"
+     }
+    ],
+    "name": "Fsm",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R5",
+     "R10",
+     "R12"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A root folder has a name"
+     },
+     {
+      "sid": "R10.s1",
+      "text": "A state machine has one and only one root folder"
+     },
+     {
+      "sid": "R12.s1",
+      "text": "A root folder may have root folders, potentially many."
+     }
+    ],
+    "name": "RootFolder",
+    "freq": 4
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R3",
+     "R8",
+     "R9"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A FSM (may) have a state"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A state has one and only one StateMachine"
+     },
+     {
+      "sid": "R9.s1",
+      "text": "A state has one or more association state source"
+     }
+    ],
+    "name": "State",
+    "freq": 3
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R2",
+     "R7",
+     "R11",
+     "R13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Transition of finite state machines"
+     },
+     {
+      "sid": "R7.s1",
+      "text": "A transition has one and only one a state machine."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "A state machine may have a transition or many or not"
+     }
+    ],
+    "name": "Transition",
+    "freq": 4
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT2",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A root folder has a name"
+     }
+    ],
+    "owner": "RootFolder",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "A state has one or more association state source"
+     }
+    ],
+    "owner": "State",
+    "name": "association state source",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL3",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A FSM (may) have a state"
+     }
+    ],
+    "kind": "has",
+    "source": "Fsm",
+    "target": "State",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "A state machine has one and only one root folder"
+     }
+    ],
+    "kind": "has",
+    "source": "Fsm",
+    "target": "RootFolder",
+    "multiplicity_target": "one one"
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "A state machine may have a transition or many or not"
+     }
+    ],
+    "kind": "has",
+    "source": "Fsm",
+    "target": "Transition",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "A state has one and only one StateMachine"
+     }
+    ],
+    "kind": "has",
+    "source": "State",
+    "target": "Fsm",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL7",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A transition has one and only one a state machine."
+     }
+    ],
+    "kind": "has",
+    "source": "Transition",
+    "target": "Fsm",
+    "multiplicity_target": "one"
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [
+    "AssociationState"
+   ],
+   "merge_classes": [
+    [
+     "Fsm",
+     "StateMachine"
+    ]
+   ],
+   "merge_actors": [
+    [
+     "User",
+     "Actor"
+    ]
+   ],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "State",
+     "target": "AssociationState",
+     "multiplicity": "0..1"
+    }
+   ],
+   "actor_assumptions": [
+    {
+     "use_case": "UC3",
+     "actor": "User"
+    }
+   ]
+  }
+ },
+ "open_tags": []
+}

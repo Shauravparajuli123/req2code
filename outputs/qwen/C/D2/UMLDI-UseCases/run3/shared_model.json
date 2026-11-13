@@ -1,0 +1,212 @@
+{
+ "case": "D2/UMLDI-UseCases",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Instance",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createInstance",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "AttributeLink",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "link",
+     "type": "String",
+     "src": [
+      "R10",
+      "R11"
+     ]
+    },
+    {
+     "name": "instance",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "createAttributeLink",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Linkend",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "link",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    },
+    {
+     "name": "instance",
+     "type": "String",
+     "src": [
+      "R14"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "createLinkend",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ComponentInstance",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "residents",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "addResident",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "NodeInstance",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "componentInstances",
+     "type": "String",
+     "src": [
+      "R16"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "addComponentInstance",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "aggregation",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "0..1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "aggregation",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "0..1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R11",
+    "R11"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "aggregation",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "aggregation",
+   "source": "C4",
+   "target": "C5",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R15",
+    "R16"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The link class refers to the AttributeLink class."
+  }
+ ],
+ "open_tags": []
+}

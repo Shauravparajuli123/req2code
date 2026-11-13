@@ -1,0 +1,128 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "LocatedElement",
+   "kind": "class",
+   "attributes": [
+    "location"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Label",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "label",
+     "use_case": "Label"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "LabelSuite",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "label",
+     "use_case": "LabelSuite"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "Map",
+   "kind": "class",
+   "attributes": [
+    "mapString"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "icon"
+   ],
+   "methods": [
+    {
+     "name": "label",
+     "use_case": "Label"
+    },
+    {
+     "name": "maps",
+     "use_case": "Map"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "name": "Outline",
+   "kind": "class",
+   "attributes": [
+    "extension"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Node",
+   "target": "Label",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Node",
+   "target": "Map",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "LabelSuite",
+   "target": "Label",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "class LocatedElement:\n    def __init__(self, location: str):\n        self.location = location\n\nclass Label:\n    def label(self) -> str:\n        raise NotImplementedError\n\nclass LabelSuite:\n    def label(self) -> str:\n        raise NotImplementedError\n\nclass Map:\n    def __init__(self, mapString: str):\n        self.mapString = mapString\n\nclass Node:\n    def __init__(self, name: str, icon: str):\n        self.name = name\n        self.icon = icon\n        self.labels = []\n        self.maps = []\n    def label(self) -> str:\n        raise NotImplementedError\n    def maps(self) -> List[str]:\n        raise NotImplementedError\n\nclass Outline:\n    def __init__(self, extension: str):\n        self.extension = extension",
+ "java": {}
+}

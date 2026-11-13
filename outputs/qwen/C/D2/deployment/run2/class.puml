@@ -1,0 +1,27 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Node {
+  name : String
+}
+class CommunicationLink {
+  name : String
+  sourceNode : String
+}
+class Deployment {
+  nodes : String
+  executionEnvironment : String
+}
+class Nodes {
+  hierarchy : String
+}
+class ExecutionEnvironment {
+}
+class Specification {
+  nodes : String
+}
+Deployment "0..*" -- "1" CommunicationLink : has
+Deployment "1" *-- "1..*" Node : contains
+Specification "0..*" o-- "0..*" Node : contains
+Deployment "0..1" -- "1" ExecutionEnvironment : has
+@enduml

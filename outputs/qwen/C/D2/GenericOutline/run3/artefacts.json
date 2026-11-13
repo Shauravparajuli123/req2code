@@ -1,0 +1,101 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "icon",
+    "maps"
+   ],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Label",
+   "kind": "class",
+   "attributes": [
+    "label",
+    "labelSuites"
+   ],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "LabelSuite",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Map",
+   "kind": "class",
+   "attributes": [
+    "mapString"
+   ],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Outline",
+   "kind": "class",
+   "attributes": [
+    "extension",
+    "nodes"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Outline",
+   "target": "Node",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "Node",
+   "target": "Label",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Node",
+   "target": "Map",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "LabelSuite",
+   "target": "Label",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GenericOutline.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R3\"\"\"\n    name: _t.Optional[str] = None\n    icon: _t.Optional[str] = None\n    maps: _t.Optional[str] = None\n    label: _t.Optional[\"Label\"] = None\n\n\n@_dc.dataclass\nclass Label:\n    \"\"\"Source: R4\"\"\"\n    label: _t.Optional[str] = None\n    labelSuites: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass LabelSuite:\n    \"\"\"Source: R5\"\"\"\n    label: _t.Optional[\"Label\"] = None\n\n\n@_dc.dataclass\nclass Map:\n    \"\"\"Source: R6\"\"\"\n    mapString: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Outline:\n    \"\"\"Source: R2\"\"\"\n    extension: _t.Optional[str] = None\n    nodes: _t.Optional[str] = None\n",
+ "java": {
+  "Node.java": "/** Generated from shared model D2/GenericOutline. Source: R3 */\npublic class Node {\n    private java.lang.String name;\n    private java.lang.String icon;\n    private java.lang.String maps;\n    private Label label;\n}\n",
+  "Label.java": "/** Generated from shared model D2/GenericOutline. Source: R4 */\npublic class Label {\n    private java.lang.String label;\n    private java.lang.String labelSuites;\n}\n",
+  "LabelSuite.java": "/** Generated from shared model D2/GenericOutline. Source: R5 */\npublic class LabelSuite {\n    private Label label;\n}\n",
+  "Map.java": "/** Generated from shared model D2/GenericOutline. Source: R6 */\npublic class Map {\n    private java.lang.String mapString;\n}\n",
+  "Outline.java": "/** Generated from shared model D2/GenericOutline. Source: R2 */\npublic class Outline {\n    private java.lang.String extension;\n    private java.lang.String nodes;\n}\n"
+ }
+}

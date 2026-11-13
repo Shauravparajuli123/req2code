@@ -1,0 +1,118 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineGraphElement",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Graph",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "dimension"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "GraphElement",
+   "kind": "class",
+   "attributes": [
+    "label",
+    "zIndex",
+    "parentGraph"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "location"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "shape"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "DirectedArc",
+   "kind": "class",
+   "attributes": [
+    "sourceNode",
+    "targetNode",
+    "shape"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "SubGraph",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Constraint",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Graph",
+   "target": "GraphElement",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "from typing import Optional, List\n\nclass Element:\n    pass\n\nclass Graph:\n    def __init__(self, type: str, dimension: int, location: Optional[str] = None):\n        self.type = type\n        self.dimension = dimension\n        self.location = location\n        self.elements: List[GraphElement] = []\n\nclass GraphElement:\n    def __init__(self, label: str, z_index: int, parent_graph: Graph):\n        self.label = label\n        self.z_index = z_index\n        self.parent_graph = parent_graph\n\nclass GraphObject:\n    pass\n\nclass Shape:\n    pass\n\nclass Node(GraphElement):\n    def __init__(self, label: str, z_index: int, parent_graph: Graph, shape: Shape):\n        super().__init__(label, z_index, parent_graph)\n        self.shape = shape\n\nclass DirectedArc:\n    def __init__(self, source_node: Node, target_node: Node, shape: Shape):\n        self.source_node = source_node\n        self.target_node = target_node\n        self.shape = shape\n\nclass Constraint:\n    def __init__(self, value: str):\n        self.value = value\n\nclass SubGraph(Graph):\n    pass",
+ "java": {}
+}

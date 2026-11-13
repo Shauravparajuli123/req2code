@@ -1,0 +1,208 @@
+{
+ "case": "D2/EclipseLaunchConfigurations",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "LaunchConfiguration",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "attributes",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "key",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "StringAttribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "value",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "BooleanAttribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "value",
+     "type": "boolean",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "MapAttribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "entries",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "MapEntry",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "key",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "value",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "ListAttribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "entries",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "ListEntry",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "value",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C7",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R12",
+    "R13"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

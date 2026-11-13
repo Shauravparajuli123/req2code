@@ -1,0 +1,25 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R4 is not represented in the model.",
+   "fix": "Add a relationship between Professor and Course indicating that a professor can teach multiple courses."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R5 is not fully represented. The relationship between Course and Student should be [0..5..*] instead of [1..5..*].",
+   "fix": "Adjust the multiplicity of the aggregation relationship between Course and Student to [0..5..*]"
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R8 is not represented in the model.",
+   "fix": "Add a class DormitoryFee with an attribute price and a relationship with Dormitory."
+  }
+ ]
+}

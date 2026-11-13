@@ -1,0 +1,88 @@
+{
+ "actors": [
+  "JavaSource"
+ ],
+ "use_cases": [
+  {
+   "name": "InvokeMethod",
+   "actor": "JavaSource",
+   "src": [
+    "R5",
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Definition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "invokeMethod",
+     "use_case": "InvokeMethod"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "MethodDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Method",
+   "kind": "class",
+   "attributes": [
+    "definition"
+   ],
+   "methods": [
+    {
+     "name": "invoke",
+     "use_case": "InvokeMethod"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Method",
+   "target": "Definition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Method",
+   "target": "MethodDefinition",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "python": "class Definition:\n    def __init__(self, name):\n        self.name = name\n    def invokeMethod(self):\n        raise NotImplementedError\n\nclass MethodDefinition:\n    pass\nclass Method:\n    def __init__(self, definition, method_definition):\n        self.definition = definition\n        self.method_definition = method_definition\n    def invoke(self):\n        raise NotImplementedError",
+ "java": {}
+}

@@ -1,0 +1,105 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "ArchitectureDescription",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "ArchitectureView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "name": "ArchitectureViewPoint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "MainView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Architecture",
+   "target": "ArchitectureDescription",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "ArchitectureDescription",
+   "target": "ArchitectureView",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "source": "ArchitectureView",
+   "target": "ArchitectureViewPoint",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "ArchitectureViewPoint",
+   "target": "MainView",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "source": "MainView",
+   "target": "ArchitectureView",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/Architectural_Description.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Architecture:\n    \"\"\"Source: R7, R10, R11\"\"\"\n    architectureDescription: _t.Optional[\"ArchitectureDescription\"] = None\n\n\n@_dc.dataclass\nclass ArchitectureDescription:\n    \"\"\"Source: R7, R8, R9\"\"\"\n    architectureViews: _t.List[\"ArchitectureView\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass ArchitectureView:\n    \"\"\"Source: R7, R8, R9, R12\"\"\"\n    architectureViewPoint: _t.Optional[\"ArchitectureViewPoint\"] = None\n\n\n@_dc.dataclass\nclass ArchitectureViewPoint:\n    \"\"\"Source: R10, R11\"\"\"\n    mainView: _t.Optional[\"MainView\"] = None\n\n\n@_dc.dataclass\nclass MainView:\n    \"\"\"Source: R11\"\"\"\n    architectureView: _t.Optional[\"ArchitectureView\"] = None\n",
+ "java": {
+  "Architecture.java": "/** Generated from shared model D2/Architectural_Description. Source: R7, R10, R11 */\npublic class Architecture {\n    private ArchitectureDescription architectureDescription;\n}\n",
+  "ArchitectureDescription.java": "/** Generated from shared model D2/Architectural_Description. Source: R7, R8, R9 */\npublic class ArchitectureDescription {\n    private java.util.List<ArchitectureView> architectureViews;\n}\n",
+  "ArchitectureView.java": "/** Generated from shared model D2/Architectural_Description. Source: R7, R8, R9, R12 */\npublic class ArchitectureView {\n    private ArchitectureViewPoint architectureViewPoint;\n}\n",
+  "ArchitectureViewPoint.java": "/** Generated from shared model D2/Architectural_Description. Source: R10, R11 */\npublic class ArchitectureViewPoint {\n    private MainView mainView;\n}\n",
+  "MainView.java": "/** Generated from shared model D2/Architectural_Description. Source: R11 */\npublic class MainView {\n    private ArchitectureView architectureView;\n}\n"
+ }
+}

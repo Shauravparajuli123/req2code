@@ -1,0 +1,53 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "startLine",
+    "endLine"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addChild",
+     "use_case": null
+    }
+   ],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "source": "Element",
+   "target": "Node",
+   "src": []
+  },
+  {
+   "source": "Element",
+   "target": "Node",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/XML.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n    startLine: _t.Optional[int] = None\n    endLine: _t.Optional[int] = None\n\n\n@_dc.dataclass\nclass Element(Node):\n    \"\"\"Source: -\"\"\"\n    nodes: _t.List[\"Node\"] = _dc.field(default_factory=list)\n\n    def addChild(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Node.java": "/** Generated from shared model D2/XML. Source: R1 */\npublic class Node {\n    private java.lang.String name;\n    private int startLine;\n    private int endLine;\n}\n",
+  "Element.java": "/** Generated from shared model D2/XML. Source: - */\npublic class Element extends Node {\n    private java.util.List<Node> nodes;\n\n    /** Operation. */\n    public void addChild() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

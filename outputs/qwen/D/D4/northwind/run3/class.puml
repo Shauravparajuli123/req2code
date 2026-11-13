@@ -1,0 +1,96 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Company {
+  name : String
+  phoneNumber : String
+  addressDetails : String
+  state : String
+  zipCode : String
+  website : String
+  companyType : String
+  taxStatus : String
+}
+class Contact {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  emailAddress : String
+  jobTitle : String
+  notes : String
+}
+class Employee {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  jobTitle : String
+  email : String
+  title : String
+  +assignPrivileges()
+}
+class Product {
+  productCode : String
+  name : String
+  description : String
+  price : double
+  unitCost : double
+  retailPrice : double
+  reorderLevel : int
+  targetLevel : int
+  minimumReorderQuantity : int
+  discontinued : boolean
+  +associateVendor()
+}
+class ProductCategory {
+  name : String
+  code : String
+  description : String
+  image : String
+}
+class StockTake {
+  date : LocalDate
+  product : String
+  quantityOnHand : int
+  expectedQuantity : int
+}
+class Order {
+  orderDate : LocalDate
+  status : String
+  customer : String
+  employee : String
+  shipper : String
+  +addOrderDetail()
+}
+class OrderDetail {
+  product : String
+  quantity : int
+  unitPrice : double
+  discount : double
+  status : String
+}
+class PurchaseOrder {
+  orderDate : LocalDate
+  status : String
+  vendor : String
+  employeeSubmitted : String
+  employeeApproved : String
+  +addPurchaseOrderDetail()
+}
+class PurchaseOrderDetail {
+  product : String
+  quantity : int
+  unitPrice : double
+}
+Company "1" -- "0..*" Contact : has
+Employee "1" -- "1" Order : processes
+Employee "1" -- "1" PurchaseOrder : submits
+Order "1" -- "1" Company : is placed by
+Order "1" -- "1" Employee : assigned to
+OrderDetail "1" -- "1" Order : is part of
+OrderDetail "1" -- "1" Product : contains
+PurchaseOrderDetail "1" -- "1" PurchaseOrder : is part of
+PurchaseOrderDetail "1" -- "1" Product : contains
+Product "1" -- "1" ProductCategory : belongs to
+@enduml

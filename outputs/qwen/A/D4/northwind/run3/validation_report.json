@@ -1,0 +1,20 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement FR-CM-08 is not supported by the model as there is no class named 'Contact' that includes all the attributes mentioned in the requirement.",
+   "fix": "Add a 'Contact' class with the attributes: firstName, lastName, primaryPhoneNumber, secondaryPhoneNumber, email, jobTitle, and notes."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement FR-DA-01 and FR-DA-02 are not supported by the model as there is no class that tracks the addition and modification of records.",
+   "fix": "Add a 'Record' class with attributes for employee and date of addition/last modification."
+  }
+ ]
+}

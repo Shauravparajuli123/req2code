@@ -1,0 +1,129 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "LaunchConfiguration",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "attributes"
+   ],
+   "methods": [],
+   "src": [
+    "R1",
+    "R9"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "key"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "StringAttribute",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "BooleanAttribute",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "MapAttribute",
+   "kind": "class",
+   "attributes": [
+    "entries"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "MapEntry",
+   "kind": "class",
+   "attributes": [
+    "key",
+    "value"
+   ],
+   "methods": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "ListAttribute",
+   "kind": "class",
+   "attributes": [
+    "entries"
+   ],
+   "methods": [],
+   "src": [
+    "R7",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "LaunchConfiguration",
+   "target": "Attribute",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "MapAttribute",
+   "target": "MapEntry",
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "source": "Attribute",
+   "target": "StringAttribute",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "Attribute",
+   "target": "BooleanAttribute",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/EclipseLaunchConfigurations.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass LaunchConfiguration:\n    \"\"\"Source: R1, R9\"\"\"\n    type: _t.Optional[str] = None\n    attributes: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Attribute:\n    \"\"\"Source: R2\"\"\"\n    key: _t.Optional[str] = None\n    stringAttributes: _t.List[\"StringAttribute\"] = _dc.field(default_factory=list)\n    booleanAttributes: _t.List[\"BooleanAttribute\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass StringAttribute:\n    \"\"\"Source: R3\"\"\"\n    value: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass BooleanAttribute:\n    \"\"\"Source: R4\"\"\"\n    value: _t.Optional[bool] = None\n\n\n@_dc.dataclass\nclass MapAttribute:\n    \"\"\"Source: R5, R10\"\"\"\n    entries: _t.Optional[str] = None\n    mapEntries: _t.List[\"MapEntry\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass MapEntry:\n    \"\"\"Source: R11\"\"\"\n    key: _t.Optional[str] = None\n    value: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass ListAttribute:\n    \"\"\"Source: R7, R12\"\"\"\n    entries: _t.Optional[str] = None\n",
+ "java": {
+  "LaunchConfiguration.java": "/** Generated from shared model D2/EclipseLaunchConfigurations. Source: R1, R9 */\npublic class LaunchConfiguration {\n    private java.lang.String type;\n    private java.lang.String attributes;\n}\n",
+  "Attribute.java": "/** Generated from shared model D2/EclipseLaunchConfigurations. Source: R2 */\npublic class Attribute {\n    private java.lang.String key;\n    private java.util.List<StringAttribute> stringAttributes;\n    private java.util.List<BooleanAttribute> booleanAttributes;\n}\n",
+  "StringAttribute.java": "/** Generated from shared model D2/EclipseLaunchConfigurations. Source: R3 */\npublic class StringAttribute {\n    private java.lang.String value;\n}\n",
+  "BooleanAttribute.java": "/** Generated from shared model D2/EclipseLaunchConfigurations. Source: R4 */\npublic class BooleanAttribute {\n    private boolean value;\n}\n",
+  "MapAttribute.java": "/** Generated from shared model D2/EclipseLaunchConfigurations. Source: R5, R10 */\npublic class MapAttribute {\n    private java.lang.String entries;\n    private java.util.List<MapEntry> mapEntries;\n}\n",
+  "MapEntry.java": "/** Generated from shared model D2/EclipseLaunchConfigurations. Source: R11 */\npublic class MapEntry {\n    private java.lang.String key;\n    private java.lang.String value;\n}\n",
+  "ListAttribute.java": "/** Generated from shared model D2/EclipseLaunchConfigurations. Source: R7, R12 */\npublic class ListAttribute {\n    private java.lang.String entries;\n}\n"
+ }
+}

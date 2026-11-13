@@ -1,0 +1,139 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D2/EAI",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R5",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "The EAI model has a class that is EAIResource"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "The EAISink which is also a FCMSink has a list of zero or more EAIResource."
+     }
+    ],
+    "name": "Eairesource",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R4",
+     "R8"
+    ],
+    "rule": [
+     "explicit_class",
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A concrete class named EAISink in a package named EAI."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "The EAISink which is also a FCMSink has a list of zero or more EAIResource."
+     }
+    ],
+    "name": "Eaisink",
+    "freq": 1
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R3",
+     "R8"
+    ],
+    "rule": [
+     "explicit_class",
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A concrete class named FCMSink in a package named EAI."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "The EAISink which is also a FCMSink has a list of zero or more EAIResource."
+     }
+    ],
+    "name": "Fcmsink",
+    "freq": 1
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R1",
+     "R2"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "The EAI model has a class of type FCMSource."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "The EAI Model has an EAISource class that extends FCMSource."
+     }
+    ],
+    "name": "Fcmsource",
+    "freq": 2
+   }
+  ],
+  "attributes": [],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "The EAISink which is also a FCMSink has a list of zero or more EAIResource."
+     }
+    ],
+    "kind": "has",
+    "source": "Eaisink",
+    "target": "Eairesource",
+    "multiplicity_target": "zero or more"
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Eaisource",
+     "target": "Eairesource",
+     "multiplicity": "0..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

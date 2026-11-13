@@ -1,0 +1,188 @@
+{
+ "case": "D2/UsiXML-task",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Game",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Task",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "identifier",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "category",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "taskType",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "importance",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "complexityLevel",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "centrality",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createTask",
+     "realizes": "UC1",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Operator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "BinaryOperator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "UnaryOperator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C4",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C5",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "acts over",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

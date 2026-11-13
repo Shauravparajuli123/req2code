@@ -1,0 +1,535 @@
+{
+ "actors": [
+  "CampAdministrator"
+ ],
+ "use_cases": [
+  {
+   "name": "Add Campers",
+   "actor": "CampAdministrator",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Remove Campers",
+   "actor": "CampAdministrator",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Keep Camper Records",
+   "actor": "CampAdministrator",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Upload Consent Forms",
+   "actor": "CampAdministrator",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Track Form Submissions",
+   "actor": "CampAdministrator",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Schedule Activities",
+   "actor": "CampAdministrator",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Create Nametags",
+   "actor": "CampAdministrator",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Suspend Campers",
+   "actor": "CampAdministrator",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Set Reminders",
+   "actor": "CampAdministrator",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Assign Positions",
+   "actor": "CampAdministrator",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Warn Camp Workers",
+   "actor": "CampAdministrator",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Create Rules",
+   "actor": "CampAdministrator",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Track Facility Usage",
+   "actor": "CampAdministrator",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Store Emergency Information",
+   "actor": "CampAdministrator",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "Store Parent Information",
+   "actor": "CampAdministrator",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "Provide Feedback",
+   "actor": "CampAdministrator",
+   "src": [
+    "R17"
+   ]
+  },
+  {
+   "name": "Create Registration Forms",
+   "actor": "CampAdministrator",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Store Camp Information",
+   "actor": "CampAdministrator",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "name": "Log Attendance",
+   "actor": "CampAdministrator",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Add Parents",
+   "actor": "CampAdministrator",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "Create Groups",
+   "actor": "CampAdministrator",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "See Group Events",
+   "actor": "CampAdministrator",
+   "src": [
+    "R26",
+    "R35"
+   ]
+  },
+  {
+   "name": "Schedule Tasks",
+   "actor": "CampAdministrator",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "Delete Tasks",
+   "actor": "CampAdministrator",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Modify Tasks",
+   "actor": "CampAdministrator",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "Modify Camper Information",
+   "actor": "CampAdministrator",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Delete Campers",
+   "actor": "CampAdministrator",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Modify Parent Information",
+   "actor": "CampAdministrator",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "Delete Parents",
+   "actor": "CampAdministrator",
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "name": "Modify Group Information",
+   "actor": "CampAdministrator",
+   "src": [
+    "R34"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Camper",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "emergencyInformation",
+    "parent"
+   ],
+   "methods": [
+    {
+     "name": "addCamper",
+     "use_case": "Add Campers"
+    },
+    {
+     "name": "removeCamper",
+     "use_case": "Remove Campers"
+    },
+    {
+     "name": "modifyCamperInformation",
+     "use_case": "Modify Camper Information"
+    },
+    {
+     "name": "deleteCamper",
+     "use_case": "Delete Campers"
+    }
+   ],
+   "src": [
+    "R1",
+    "R2",
+    "R30",
+    "R31"
+   ]
+  },
+  {
+   "name": "Parent",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "account",
+    "children"
+   ],
+   "methods": [
+    {
+     "name": "createAccount",
+     "use_case": "Create Registration Forms"
+    },
+    {
+     "name": "enrollCamper",
+     "use_case": null
+    },
+    {
+     "name": "modifyParentInformation",
+     "use_case": "Modify Parent Information"
+    },
+    {
+     "name": "deleteParent",
+     "use_case": "Delete Parents"
+    }
+   ],
+   "src": [
+    "R14",
+    "R36",
+    "R39",
+    "R40",
+    "R41",
+    "R43",
+    "R44",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "name": "CampWorker",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "assignedCampers"
+   ],
+   "methods": [
+    {
+     "name": "takeAttendance",
+     "use_case": "Log Attendance"
+    },
+    {
+     "name": "reportCamperBehavior",
+     "use_case": null
+    },
+    {
+     "name": "reportSuppliesShortage",
+     "use_case": null
+    },
+    {
+     "name": "reportFacilityRepair",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "CampAdministrator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addCamper",
+     "use_case": "Add Campers"
+    },
+    {
+     "name": "removeCamper",
+     "use_case": "Remove Campers"
+    },
+    {
+     "name": "keepCamperRecords",
+     "use_case": "Keep Camper Records"
+    },
+    {
+     "name": "uploadConsentForms",
+     "use_case": "Upload Consent Forms"
+    },
+    {
+     "name": "trackFormSubmissions",
+     "use_case": "Track Form Submissions"
+    },
+    {
+     "name": "scheduleActivities",
+     "use_case": "Schedule Activities"
+    },
+    {
+     "name": "createNametags",
+     "use_case": "Create Nametags"
+    },
+    {
+     "name": "suspendCamper",
+     "use_case": "Suspend Campers"
+    },
+    {
+     "name": "setReminders",
+     "use_case": "Set Reminders"
+    },
+    {
+     "name": "assignPositions",
+     "use_case": "Assign Positions"
+    },
+    {
+     "name": "warnCampWorker",
+     "use_case": "Warn Camp Workers"
+    },
+    {
+     "name": "createRules",
+     "use_case": "Create Rules"
+    },
+    {
+     "name": "trackFacilityUsage",
+     "use_case": "Track Facility Usage"
+    },
+    {
+     "name": "storeEmergencyInformation",
+     "use_case": "Store Emergency Information"
+    },
+    {
+     "name": "storeParentInformation",
+     "use_case": "Store Parent Information"
+    },
+    {
+     "name": "provideFeedback",
+     "use_case": "Provide Feedback"
+    },
+    {
+     "name": "createRegistrationForms",
+     "use_case": "Create Registration Forms"
+    },
+    {
+     "name": "storeCampInformation",
+     "use_case": "Store Camp Information"
+    },
+    {
+     "name": "logAttendance",
+     "use_case": "Log Attendance"
+    },
+    {
+     "name": "addParent",
+     "use_case": "Add Parents"
+    },
+    {
+     "name": "createGroups",
+     "use_case": "Create Groups"
+    },
+    {
+     "name": "seeGroupEvents",
+     "use_case": "See Group Events"
+    },
+    {
+     "name": "scheduleTasks",
+     "use_case": "Schedule Tasks"
+    },
+    {
+     "name": "deleteTasks",
+     "use_case": "Delete Tasks"
+    },
+    {
+     "name": "modifyTasks",
+     "use_case": "Modify Tasks"
+    },
+    {
+     "name": "modifyCamperInformation",
+     "use_case": "Modify Camper Information"
+    },
+    {
+     "name": "deleteCampers",
+     "use_case": "Delete Campers"
+    },
+    {
+     "name": "modifyParentInformation",
+     "use_case": "Modify Parent Information"
+    },
+    {
+     "name": "deleteParents",
+     "use_case": "Delete Parents"
+    },
+    {
+     "name": "modifyGroupInformation",
+     "use_case": "Modify Group Information"
+    }
+   ],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "CampAdministrator",
+   "target": "Camper",
+   "src": [
+    "R1",
+    "R30",
+    "R34",
+    "R36",
+    "R47"
+   ]
+  },
+  {
+   "source": "CampAdministrator",
+   "target": "Parent",
+   "src": [
+    "R24",
+    "R26",
+    "R30",
+    "R32",
+    "R34",
+    "R36",
+    "R47"
+   ]
+  },
+  {
+   "source": "CampAdministrator",
+   "target": "CampWorker",
+   "src": [
+    "R10",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R34"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D1/camperplus.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Camper:\n    \"\"\"Source: R1, R2, R30, R31\"\"\"\n    name: _t.Optional[str] = None\n    emergencyInformation: _t.Optional[str] = None\n    parent: _t.Optional[str] = None\n\n    def addCamper(self) -> None:\n        \"\"\"Realizes UC1 \"Add Campers\" (R1).\"\"\"\n        raise NotImplementedError\n\n    def removeCamper(self) -> None:\n        \"\"\"Realizes UC2 \"Remove Campers\" (R2).\"\"\"\n        raise NotImplementedError\n\n    def modifyCamperInformation(self) -> None:\n        \"\"\"Realizes UC26 \"Modify Camper Information\" (R30).\"\"\"\n        raise NotImplementedError\n\n    def deleteCamper(self) -> None:\n        \"\"\"Realizes UC27 \"Delete Campers\" (R31).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Parent:\n    \"\"\"Source: R14, R36, R39, R40, R41, R43, R44, R46, R47\"\"\"\n    name: _t.Optional[str] = None\n    account: _t.Optional[str] = None\n    children: _t.Optional[str] = None\n\n    def createAccount(self) -> None:\n        \"\"\"Realizes UC17 \"Create Registration Forms\" (R19).\"\"\"\n        raise NotImplementedError\n\n    def enrollCamper(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def modifyParentInformation(self) -> None:\n        \"\"\"Realizes UC28 \"Modify Parent Information\" (R32).\"\"\"\n        raise NotImplementedError\n\n    def deleteParent(self) -> None:\n        \"\"\"Realizes UC29 \"Delete Parents\" (R33).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass CampWorker:\n    \"\"\"Source: R49, R50, R51, R52, R53, R54\"\"\"\n    name: _t.Optional[str] = None\n    assignedCampers: _t.Optional[str] = None\n\n    def takeAttendance(self) -> None:\n        \"\"\"Realizes UC19 \"Log Attendance\" (R23).\"\"\"\n        raise NotImplementedError\n\n    def reportCamperBehavior(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def reportSuppliesShortage(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def reportFacilityRepair(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass CampAdministrator:\n    \"\"\"Source: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35\"\"\"\n    campers: _t.List[\"Camper\"] = _dc.field(default_factory=list)\n    parents: _t.List[\"Parent\"] = _dc.field(default_factory=list)\n    campWorkers: _t.List[\"CampWorker\"] = _dc.field(default_factory=list)\n\n    def addCamper(self) -> None:\n        \"\"\"Realizes UC1 \"Add Campers\" (R1).\"\"\"\n        raise NotImplementedError\n\n    def removeCamper(self) -> None:\n        \"\"\"Realizes UC2 \"Remove Campers\" (R2).\"\"\"\n        raise NotImplementedError\n\n    def keepCamperRecords(self) -> None:\n        \"\"\"Realizes UC3 \"Keep Camper Records\" (R3).\"\"\"\n        raise NotImplementedError\n\n    def uploadConsentForms(self) -> None:\n        \"\"\"Realizes UC4 \"Upload Consent Forms\" (R4).\"\"\"\n        raise NotImplementedError\n\n    def trackFormSubmissions(self) -> None:\n        \"\"\"Realizes UC5 \"Track Form Submissions\" (R5).\"\"\"\n        raise NotImplementedError\n\n    def scheduleActivities(self) -> None:\n        \"\"\"Realizes UC6 \"Schedule Activities\" (R6).\"\"\"\n        raise NotImplementedError\n\n    def createNametags(self) -> None:\n        \"\"\"Realizes UC7 \"Create Nametags\" (R7).\"\"\"\n        raise NotImplementedError\n\n    def suspendCamper(self) -> None:\n        \"\"\"Realizes UC8 \"Suspend Campers\" (R8).\"\"\"\n        raise NotImplementedError\n\n    def setReminders(self) -> None:\n        \"\"\"Realizes UC9 \"Set Reminders\" (R9).\"\"\"\n        raise NotImplementedError\n\n    def assignPositions(self) -> None:\n        \"\"\"Realizes UC10 \"Assign Positions\" (R10).\"\"\"\n        raise NotImplementedError\n\n    def warnCampWorker(self) -> None:\n        \"\"\"Realizes UC11 \"Warn Camp Workers\" (R11).\"\"\"\n        raise NotImplementedError\n\n    def createRules(self) -> None:\n        \"\"\"Realizes UC12 \"Create Rules\" (R12).\"\"\"\n        raise NotImplementedError\n\n    def trackFacilityUsage(self) -> None:\n        \"\"\"Realizes UC13 \"Track Facility Usage\" (R13).\"\"\"\n        raise NotImplementedError\n\n    def storeEmergencyInformation(self) -> None:\n        \"\"\"Realizes UC14 \"Store Emergency Information\" (R15).\"\"\"\n        raise NotImplementedError\n\n    def storeParentInformation(self) -> None:\n        \"\"\"Realizes UC15 \"Store Parent Information\" (R16).\"\"\"\n        raise NotImplementedError\n\n    def provideFeedback(self) -> None:\n        \"\"\"Realizes UC16 \"Provide Feedback\" (R17).\"\"\"\n        raise NotImplementedError\n\n    def createRegistrationForms(self) -> None:\n        \"\"\"Realizes UC17 \"Create Registration Forms\" (R19).\"\"\"\n        raise NotImplementedError\n\n    def storeCampInformation(self) -> None:\n        \"\"\"Realizes UC18 \"Store Camp Information\" (R20).\"\"\"\n        raise NotImplementedError\n\n    def logAttendance(self) -> None:\n        \"\"\"Realizes UC19 \"Log Attendance\" (R23).\"\"\"\n        raise NotImplementedError\n\n    def addParent(self) -> None:\n        \"\"\"Realizes UC20 \"Add Parents\" (R24).\"\"\"\n        raise NotImplementedError\n\n    def createGroups(self) -> None:\n        \"\"\"Realizes UC21 \"Create Groups\" (R25).\"\"\"\n        raise NotImplementedError\n\n    def seeGroupEvents(self) -> None:\n        \"\"\"Realizes UC22 \"See Group Events\" (R26, R35).\"\"\"\n        raise NotImplementedError\n\n    def scheduleTasks(self) -> None:\n        \"\"\"Realizes UC23 \"Schedule Tasks\" (R27).\"\"\"\n        raise NotImplementedError\n\n    def deleteTasks(self) -> None:\n        \"\"\"Realizes UC24 \"Delete Tasks\" (R28).\"\"\"\n        raise NotImplementedError\n\n    def modifyTasks(self) -> None:\n        \"\"\"Realizes UC25 \"Modify Tasks\" (R29).\"\"\"\n        raise NotImplementedError\n\n    def modifyCamperInformation(self) -> None:\n        \"\"\"Realizes UC26 \"Modify Camper Information\" (R30).\"\"\"\n        raise NotImplementedError\n\n    def deleteCampers(self) -> None:\n        \"\"\"Realizes UC27 \"Delete Campers\" (R31).\"\"\"\n        raise NotImplementedError\n\n    def modifyParentInformation(self) -> None:\n        \"\"\"Realizes UC28 \"Modify Parent Information\" (R32).\"\"\"\n        raise NotImplementedError\n\n    def deleteParents(self) -> None:\n        \"\"\"Realizes UC29 \"Delete Parents\" (R33).\"\"\"\n        raise NotImplementedError\n\n    def modifyGroupInformation(self) -> None:\n        \"\"\"Realizes UC30 \"Modify Group Information\" (R34).\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Camper.java": "/** Generated from shared model D1/camperplus. Source: R1, R2, R30, R31 */\npublic class Camper {\n    private java.lang.String name;\n    private java.lang.String emergencyInformation;\n    private java.lang.String parent;\n\n    /** Realizes UC1 \"Add Campers\" (R1). */\n    public void addCamper() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Remove Campers\" (R2). */\n    public void removeCamper() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC26 \"Modify Camper Information\" (R30). */\n    public void modifyCamperInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC27 \"Delete Campers\" (R31). */\n    public void deleteCamper() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Parent.java": "/** Generated from shared model D1/camperplus. Source: R14, R36, R39, R40, R41, R43, R44, R46, R47 */\npublic class Parent {\n    private java.lang.String name;\n    private java.lang.String account;\n    private java.lang.String children;\n\n    /** Realizes UC17 \"Create Registration Forms\" (R19). */\n    public void createAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void enrollCamper() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC28 \"Modify Parent Information\" (R32). */\n    public void modifyParentInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC29 \"Delete Parents\" (R33). */\n    public void deleteParent() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "CampWorker.java": "/** Generated from shared model D1/camperplus. Source: R49, R50, R51, R52, R53, R54 */\npublic class CampWorker {\n    private java.lang.String name;\n    private java.lang.String assignedCampers;\n\n    /** Realizes UC19 \"Log Attendance\" (R23). */\n    public void takeAttendance() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void reportCamperBehavior() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void reportSuppliesShortage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void reportFacilityRepair() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "CampAdministrator.java": "/** Generated from shared model D1/camperplus. Source: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35 */\npublic class CampAdministrator {\n    private java.util.List<Camper> campers;\n    private java.util.List<Parent> parents;\n    private java.util.List<CampWorker> campWorkers;\n\n    /** Realizes UC1 \"Add Campers\" (R1). */\n    public void addCamper() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Remove Campers\" (R2). */\n    public void removeCamper() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Keep Camper Records\" (R3). */\n    public void keepCamperRecords() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC4 \"Upload Consent Forms\" (R4). */\n    public void uploadConsentForms() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC5 \"Track Form Submissions\" (R5). */\n    public void trackFormSubmissions() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC6 \"Schedule Activities\" (R6). */\n    public void scheduleActivities() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC7 \"Create Nametags\" (R7). */\n    public void createNametags() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC8 \"Suspend Campers\" (R8). */\n    public void suspendCamper() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"Set Reminders\" (R9). */\n    public void setReminders() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"Assign Positions\" (R10). */\n    public void assignPositions() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC11 \"Warn Camp Workers\" (R11). */\n    public void warnCampWorker() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC12 \"Create Rules\" (R12). */\n    public void createRules() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC13 \"Track Facility Usage\" (R13). */\n    public void trackFacilityUsage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC14 \"Store Emergency Information\" (R15). */\n    public void storeEmergencyInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"Store Parent Information\" (R16). */\n    public void storeParentInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC16 \"Provide Feedback\" (R17). */\n    public void provideFeedback() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC17 \"Create Registration Forms\" (R19). */\n    public void createRegistrationForms() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC18 \"Store Camp Information\" (R20). */\n    public void storeCampInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC19 \"Log Attendance\" (R23). */\n    public void logAttendance() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC20 \"Add Parents\" (R24). */\n    public void addParent() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC21 \"Create Groups\" (R25). */\n    public void createGroups() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC22 \"See Group Events\" (R26, R35). */\n    public void seeGroupEvents() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC23 \"Schedule Tasks\" (R27). */\n    public void scheduleTasks() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC24 \"Delete Tasks\" (R28). */\n    public void deleteTasks() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC25 \"Modify Tasks\" (R29). */\n    public void modifyTasks() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC26 \"Modify Camper Information\" (R30). */\n    public void modifyCamperInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC27 \"Delete Campers\" (R31). */\n    public void deleteCampers() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC28 \"Modify Parent Information\" (R32). */\n    public void modifyParentInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC29 \"Delete Parents\" (R33). */\n    public void deleteParents() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC30 \"Modify Group Information\" (R34). */\n    public void modifyGroupInformation() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

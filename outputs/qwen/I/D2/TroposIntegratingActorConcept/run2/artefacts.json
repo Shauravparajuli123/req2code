@@ -1,0 +1,83 @@
+{
+ "actors": [
+  "Agent"
+ ],
+ "use_cases": [
+  {
+   "name": "OccupiesPosition",
+   "actor": "Agent",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Actor",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Agent",
+   "kind": "class",
+   "attributes": [
+    "position"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Position",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Role",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Agent",
+   "target": "Position",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Position",
+   "target": "Role",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "from typing import Optional\n\nclass Position:\n    def __init__(self, role: Optional[str] = None):\n        self.role = role\n\nclass Actor:\n    pass\n\nclass Agent(Actor):\n    def __init__(self, position: Position):\n        self.position = position\n\nclass Role:\n    pass",
+ "java": {}
+}

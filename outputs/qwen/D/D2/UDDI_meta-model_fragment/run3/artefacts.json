@@ -1,0 +1,127 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "BusinessEntity",
+   "kind": "class",
+   "attributes": [
+    "identifiers",
+    "businessContacts",
+    "services"
+   ],
+   "methods": [],
+   "src": [
+    "R4",
+    "R9"
+   ]
+  },
+  {
+   "name": "IdentifierBag",
+   "kind": "class",
+   "attributes": [
+    "identifiers"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R9"
+   ]
+  },
+  {
+   "name": "BusinessContact",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Service",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "overviewDocuments"
+   ],
+   "methods": [],
+   "src": [
+    "R6",
+    "R10"
+   ]
+  },
+  {
+   "name": "OverviewDocument",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "BusinessEntity",
+   "target": "BusinessContact",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "BusinessEntity",
+   "target": "Service",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "BusinessEntity",
+   "target": "IdentifierBag",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "Model",
+   "target": "OverviewDocument",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/UDDI_meta-model_fragment.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass BusinessEntity:\n    \"\"\"Source: R4, R9\"\"\"\n    identifiers: _t.Optional[str] = None\n    businessContacts: _t.Optional[str] = None\n    services: _t.Optional[str] = None\n    businessContact: _t.Optional[\"BusinessContact\"] = None\n    identifierBag: _t.Optional[\"IdentifierBag\"] = None\n\n\n@_dc.dataclass\nclass IdentifierBag:\n    \"\"\"Source: R5, R9\"\"\"\n    identifiers: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass BusinessContact:\n    \"\"\"Source: R2\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Service:\n    \"\"\"Source: R3\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Model:\n    \"\"\"Source: R6, R10\"\"\"\n    overviewDocuments: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass OverviewDocument:\n    \"\"\"Source: R7\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "BusinessEntity.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R4, R9 */\npublic class BusinessEntity {\n    private java.lang.String identifiers;\n    private java.lang.String businessContacts;\n    private java.lang.String services;\n    private BusinessContact businessContact;\n    private IdentifierBag identifierBag;\n}\n",
+  "IdentifierBag.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R5, R9 */\npublic class IdentifierBag {\n    private java.lang.String identifiers;\n}\n",
+  "BusinessContact.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R2 */\npublic class BusinessContact {\n}\n",
+  "Service.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R3 */\npublic class Service {\n}\n",
+  "Model.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R6, R10 */\npublic class Model {\n    private java.lang.String overviewDocuments;\n}\n",
+  "OverviewDocument.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R7 */\npublic class OverviewDocument {\n}\n",
+  "Game.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

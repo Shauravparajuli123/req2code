@@ -1,0 +1,216 @@
+{
+ "case": "D2/FiniteStateMachine",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createGame",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "StateMachine",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "rootFolder",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "addTransition",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "removeTransition",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C3",
+   "name": "RootFolder",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "subFolders",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "State",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "stateMachine",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "associationStateSources",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "AssociationState",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "transition",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    },
+    {
+     "name": "sourceStates",
+     "type": "String",
+     "src": [
+      "R14"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "stateMachine",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "states",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "aggregation",
+   "source": "C2",
+   "target": "C6",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "generalization",
+   "source": "C5",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is a",
+   "src": []
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

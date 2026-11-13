@@ -1,0 +1,100 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "CreateTechnologyObject",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "ImplementableStandard",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "extendTechnologyObject",
+     "use_case": "CreateTechnologyObject"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R8"
+   ]
+  },
+  {
+   "name": "Implementation",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "IXIT",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "TechnologyObject",
+   "kind": "class",
+   "attributes": [
+    "implementableStandard"
+   ],
+   "methods": [
+    {
+     "name": "implement",
+     "use_case": "CreateTechnologyObject"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "TechnologyObject",
+   "target": "ImplementableStandard",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Implementation",
+   "target": "IXIT",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "python": "class ImplementableStandard:\n    def __init__(self, name):\n        self.name = name\n    def extendTechnologyObject(self):\n        raise NotImplementedError\n\nclass Implementation:\n    def __init__(self):\n        pass\n\nclass IXIT:\n    def __init__(self):\n        pass\n\nclass TechnologyObject:\n    def __init__(self, implementableStandard):\n        self.implementableStandard = implementableStandard\n    def implement(self):\n        raise NotImplementedError",
+ "java": {}
+}

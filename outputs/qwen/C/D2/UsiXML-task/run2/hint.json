@@ -1,0 +1,206 @@
+{
+ "condition": "C",
+ "hint": {
+  "case": "D2/UsiXML-task",
+  "stage": "result1_before_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "A task with an associate operator"
+     }
+    ],
+    "name": "operator"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R1",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s2",
+      "text": "This node also has integer attributes to describe the importance, complexity level and centrality of the task."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A node describing a task that may be decomposed on other sub-tasks."
+     }
+    ],
+    "name": "Node",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R2",
+     "R3",
+     "R4",
+     "R8",
+     "R9",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "An operator in some expression language."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "A binary operator"
+     },
+     {
+      "sid": "R4.s1",
+      "text": "A unary operator"
+     }
+    ],
+    "name": "Operator",
+    "freq": 6
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R1",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s2",
+      "text": "This node also has integer attributes to describe the importance, complexity level and centrality of the task."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A node describing a task that may be decomposed on other sub-tasks."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "A task with an associated expression"
+     }
+    ],
+    "name": "Task",
+    "freq": 7
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s2",
+      "text": "This node also has integer attributes to describe the importance, complexity level and centrality of the task."
+     }
+    ],
+    "owner": "Node",
+    "name": "centrality",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s2",
+      "text": "This node also has integer attributes to describe the importance, complexity level and centrality of the task."
+     }
+    ],
+    "owner": "Node",
+    "name": "complexity level",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s2",
+      "text": "This node also has integer attributes to describe the importance, complexity level and centrality of the task."
+     }
+    ],
+    "owner": "Node",
+    "name": "importance",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s2",
+      "text": "This node also has integer attributes to describe the importance, complexity level and centrality of the task."
+     }
+    ],
+    "owner": "Task",
+    "name": "importance",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "verb:act"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "A unary operator which acts over some task"
+     }
+    ],
+    "kind": "association",
+    "source": "Operator",
+    "target": "Task",
+    "multiplicity_target": "some"
+   }
+  ]
+ },
+ "open_tags": []
+}

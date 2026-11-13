@@ -1,0 +1,165 @@
+{
+ "actors": [
+  {
+   "name": "MgaObject",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "Transition",
+   "actor": "MgaObject",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Has",
+   "actor": "FiniteStateMachine",
+   "src": [
+    "R6",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "MayHave",
+   "actor": "FiniteStateMachine",
+   "src": [
+    "R3",
+    "R4",
+    "R11"
+   ]
+  },
+  {
+   "name": "Has",
+   "actor": "State",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Has",
+   "actor": "StateMachine",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "MayHave",
+   "actor": "RootFolder",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "MgaObject",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "FiniteStateMachine",
+   "src": [
+    "R6",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "State",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "StateMachine",
+   "src": [
+    "R3",
+    "R4",
+    "R11"
+   ]
+  },
+  {
+   "name": "RootFolder",
+   "src": [
+    "R10",
+    "R12"
+   ]
+  },
+  {
+   "name": "AssociationState",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "MgaObject",
+   "name": "name",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "FiniteStateMachine",
+   "target": "State",
+   "src": [
+    "R6",
+    "R8"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "FiniteStateMachine",
+   "target": "StateMachine",
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "StateMachine",
+   "target": "RootFolder",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "State",
+   "target": "AssociationState",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "AssociationState",
+   "target": "Transition",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "AssociationState",
+   "target": "State",
+   "src": [
+    "R14"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

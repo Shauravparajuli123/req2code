@@ -1,0 +1,33 @@
+"""Code skeleton generated from the shared model of D2/UIML-3_0.
+Every class and method records the requirement(s) it traces to."""
+from __future__ import annotations
+
+import dataclasses as _dc
+import enum as _enum
+import typing as _t
+
+
+@_dc.dataclass
+class MetaData:
+    """Source: R3"""
+    name: _t.Optional[str] = None
+    uIML: _t.Optional["UIML"] = None
+
+
+@_dc.dataclass
+class Header:
+    """Source: R4, R6"""
+    metas: _t.Optional[str] = None
+    metaDatas: _t.List["MetaData"] = _dc.field(default_factory=list)
+
+
+@_dc.dataclass
+class UIML:
+    """Source: R1, R2, R4"""
+    head: _t.Optional[str] = None
+    interfaces: _t.Optional[str] = None
+    header: _t.Optional["Header"] = None
+
+    def createHeader(self) -> None:
+        """Operation."""
+        raise NotImplementedError

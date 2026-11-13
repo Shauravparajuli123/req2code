@@ -1,0 +1,179 @@
+{
+ "case": "D2/GenericOutline",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "LocatedElement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "location",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "icon",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createNode",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Label",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "label",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "createLabel",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "LabelSuite",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "label",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "createLabelSuite",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Map",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "mapString",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "createMap",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "aggregation",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "may have",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

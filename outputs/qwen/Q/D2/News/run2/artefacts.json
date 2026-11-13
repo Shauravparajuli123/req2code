@@ -1,0 +1,109 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "PublishNews",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R6",
+    "R8"
+   ]
+  },
+  {
+   "name": "ReportNews",
+   "actor": "Newspaper",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "News",
+   "kind": "class",
+   "attributes": [
+    "title",
+    "link",
+    "author",
+    "date"
+   ],
+   "methods": [
+    {
+     "name": "publish",
+     "use_case": "PublishNews"
+    },
+    {
+     "name": "report",
+     "use_case": "ReportNews"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6",
+    "R8"
+   ]
+  },
+  {
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    "dayOfWeek",
+    "month",
+    "hour",
+    "second"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Newspaper",
+   "kind": "class",
+   "attributes": [
+    "language"
+   ],
+   "methods": [
+    {
+     "name": "publishNews",
+     "use_case": "PublishNews"
+    },
+    {
+     "name": "reportNews",
+     "use_case": "ReportNews"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "News",
+   "target": "Date",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Newspaper",
+   "target": "News",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\nfrom datetime import datetime\n\nclass Date:\n    def __init__(self, dayOfWeek: str, month: str, hour: int, second: int):\n        self.dayOfWeek = dayOfWeek\n        self.month = month\n        self.hour = hour\n        self.second = second\n\n    def __str__(self):\n        return f'{self.dayOfWeek}, {self.month} at {self.hour}:{self.second:02d}\n\nclass News:\n    def __init__(self, title: str, link: str, author: str, date: Date):\n        self.title = title\n        self.link = link\n        self.author = author\n        self.date = date\n\n    def publish(self) -> None:\n        raise NotImplementedError\n\n    def report(self) -> None:\n        raise NotImplementedError\n\n    def __str__(self):\n        return f'News: {self.title} by {self.author} on {self.date}\n'\n\nclass Newspaper:\n    def __init__(self, language: str):\n        self.language = language\n        self.news: List[News] = []\n\n    def publishNews(self, news: News) -> None:\n        raise NotImplementedError\n\n    def reportNews(self, news: News) -> None:\n        raise NotImplementedError\n\n    def addNews(self, news: News) -> None:\n        self.news.append(news)\n\n    def __str__(self):\n        return f'Newspaper in {self.language} with {len(self.news)} news\n'",
+ "java": {}
+}

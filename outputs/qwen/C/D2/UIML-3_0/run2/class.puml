@@ -1,0 +1,17 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Uiml {
+  head : String
+  interfaces : String
+}
+class Header {
+  metas : String
+}
+class MetaData {
+  name : String
+}
+Uiml "1" -- "1" Header : has
+Uiml "1" -- "0..*" MetaData : has
+MetaData "0..*" -- "1" Uiml : is part of
+@enduml

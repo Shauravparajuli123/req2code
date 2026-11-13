@@ -1,0 +1,50 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The 'Reseller' class has a bank account attribute, which is not explicitly mentioned in the requirements but is assumed for the functionality of reselling tickets."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Moderator' and 'Company' in the model.",
+   "fix": "Add 'Moderator' and 'Company' classes to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "No relationship between 'User' and 'Event' for use cases 'See Upcoming Events' and 'Favorite Artists And Events'.",
+   "fix": "Add an association between 'User' and 'Event' for these use cases."
+  },
+  {
+   "agent": "relationship",
+   "issue": "No relationship between 'Visitor' and 'Event' for use cases 'Read About Event', 'Buy Tickets Directly', and 'Purchase Ticket'.",
+   "fix": "Add an association between 'Visitor' and 'Event' for these use cases."
+  },
+  {
+   "agent": "relationship",
+   "issue": "No relationship between 'Reseller' and 'Event' for use cases 'Resell Tickets Directly'.",
+   "fix": "Add an association between 'Reseller' and 'Event' for this use case."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Event' in the model.",
+   "fix": "Add 'Event' class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Company' in the model.",
+   "fix": "Add 'Company' class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Moderator' in the model.",
+   "fix": "Add 'Moderator' class to the model."
+  }
+ ]
+}

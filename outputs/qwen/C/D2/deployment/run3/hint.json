@@ -1,0 +1,261 @@
+{
+ "condition": "C",
+ "hint": {
+  "case": "D2/deployment",
+  "stage": "result1_before_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R5",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A communication link of a deployment has a name"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A communication link of a deployment has one source node at the most"
+     }
+    ],
+    "name": "CommunicationLink",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R2",
+     "R3",
+     "R5",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "There exist devices in a deployment"
+     },
+     {
+      "sid": "R3.s1",
+      "text": "Deployments may have execution environments, which ae of type ExecutionEnvironment)"
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A communication link of a deployment has a name"
+     }
+    ],
+    "name": "Deployment",
+    "freq": 4
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A class named \"Node\", containing an attribute called \"name\", of type \"String\"."
+     }
+    ],
+    "name": "Node",
+    "freq": 0
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A package called \"Deployment\", containing a hierarchy of \"Nodes\"."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "A package called \"Deployment\" containing a \"Specification\", that can contain arbitrary number of Nodes."
+     }
+    ],
+    "name": "Nodes",
+    "freq": 2
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R4",
+     "R7"
+    ],
+    "rule": [
+     "explicit_class",
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A class named \"Specification\"."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "A package called \"Deployment\" containing a \"Specification\", that can contain arbitrary number of Nodes."
+     }
+    ],
+    "name": "Specification",
+    "freq": 1
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A communication link of a deployment has a name"
+     }
+    ],
+    "owner": "CommunicationLink",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "A communication link of a deployment has one source node at the most"
+     }
+    ],
+    "owner": "CommunicationLink",
+    "name": "source node",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Deployments may have execution environments, which ae of type ExecutionEnvironment)"
+     }
+    ],
+    "owner": "Deployment",
+    "name": "execution environment",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "explicit_attribute"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A class named \"Node\", containing an attribute called \"name\", of type \"String\"."
+     }
+    ],
+    "owner": "Node",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A package called \"Deployment\", containing a hierarchy of \"Nodes\"."
+     }
+    ],
+    "owner": "Nodes",
+    "name": "hierarchy",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R5",
+     "R8"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A communication link of a deployment has a name"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A communication link of a deployment has one source node at the most"
+     }
+    ],
+    "kind": "has",
+    "source": "Deployment",
+    "target": "CommunicationLink",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A package called \"Deployment\" containing a \"Specification\", that can contain arbitrary number of Nodes."
+     }
+    ],
+    "kind": "has",
+    "source": "Specification",
+    "target": "Nodes",
+    "multiplicity_target": null
+   }
+  ]
+ },
+ "open_tags": []
+}

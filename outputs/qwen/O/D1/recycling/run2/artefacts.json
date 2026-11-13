@@ -1,0 +1,428 @@
+{
+ "actors": [
+  "User",
+  "Admin",
+  "Superuser",
+  "RecyclingFacilityRepresentative",
+  "RecyclingFacility"
+ ],
+ "use_cases": [
+  {
+   "name": "Click Address",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Enter ZipCode",
+   "actor": "User",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Get Hour",
+   "actor": "User",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Get Notification",
+   "actor": "Employee",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "Get Feedback",
+   "actor": "User",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "Add DonationCenter",
+   "actor": "User",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Add RecyclingCenterInformation",
+   "actor": "Admin",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "Browse List",
+   "actor": "User",
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "name": "Choose Pick",
+   "actor": "User",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Communicate Facility",
+   "actor": "Admin",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Communicate Site",
+   "actor": "RecyclingFacility",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "name": "Contact Administrator",
+   "actor": "User",
+   "src": [
+    "R39"
+   ]
+  },
+  {
+   "name": "Create Acocunt",
+   "actor": "User",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "Handle Activity",
+   "actor": "Admin",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Have Access",
+   "actor": "Executive",
+   "src": [
+    "R24",
+    "R26",
+    "R50"
+   ]
+  },
+  {
+   "name": "Have Dashboard",
+   "actor": "Admin",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "Have Data",
+   "actor": "Admin",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Have Information",
+   "actor": "User",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "Have Website",
+   "actor": "Company",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Link EmailAccount",
+   "actor": "User",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "Onboard RecyclingCenter",
+   "actor": "Admin",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Read Feedback",
+   "actor": "Admin",
+   "src": [
+    "R17"
+   ]
+  },
+  {
+   "name": "Receive Reward",
+   "actor": "User",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Reply UserQuestion",
+   "actor": "Superuser",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Select Type",
+   "actor": "User",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Update Information",
+   "actor": "RecyclingFacilityRepresentative",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "name": "Update RecyclingCenterInformation",
+   "actor": "Superuser",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "Upload Schedule",
+   "actor": "User",
+   "src": [
+    "R37"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "activity"
+   ],
+   "methods": [
+    {
+     "name": "enterZipCode",
+     "use_case": "Enter ZipCode"
+    },
+    {
+     "name": "getHour",
+     "use_case": "Get Hour"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Admin",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addRecyclingCenterInformation",
+     "use_case": "Add RecyclingCenterInformation"
+    },
+    {
+     "name": "handleActivity",
+     "use_case": "Handle Activity"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R40",
+    "R30"
+   ]
+  },
+  {
+   "name": "RecyclingFacility",
+   "kind": "class",
+   "attributes": [
+    "openingHour"
+   ],
+   "methods": [
+    {
+     "name": "communicateSite",
+     "use_case": "Communicate Site"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "name": "RecyclingFacilityRepresentative",
+   "kind": "class",
+   "attributes": [
+    "material"
+   ],
+   "methods": [
+    {
+     "name": "updateInformation",
+     "use_case": "Update Information"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "name": "Superuser",
+   "kind": "class",
+   "attributes": [
+    "stats"
+   ],
+   "methods": [
+    {
+     "name": "replyUserQuestion",
+     "use_case": "Reply UserQuestion"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "RecyclingCenter",
+   "kind": "class",
+   "attributes": [
+    "location"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "Location",
+   "kind": "class",
+   "attributes": [
+    "area"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [
+    "emailId"
+   ],
+   "methods": [
+    {
+     "name": "giveEmailId",
+     "use_case": "Give EmailId"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [
+    "errorLogs"
+   ],
+   "methods": [
+    {
+     "name": "getFeedback",
+     "use_case": "Get Feedback"
+    },
+    {
+     "name": "readFeedback",
+     "use_case": "Read Feedback"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R14",
+    "R17"
+   ]
+  },
+  {
+   "name": "Schedule",
+   "kind": "class",
+   "attributes": [
+    "pick"
+   ],
+   "methods": [
+    {
+     "name": "uploadSchedule",
+     "use_case": "Upload Schedule"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "PickType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [
+    {
+     "name": "PickUp"
+    },
+    {
+     "name": "DropOff"
+    }
+   ],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "User",
+   "target": "RecyclingCenter",
+   "multiplicity_target": "1",
+   "src": [
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Admin",
+   "target": "RecyclingFacility",
+   "multiplicity_target": "1",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RecyclingFacilityRepresentative",
+   "target": "RecyclingFacility",
+   "multiplicity_target": "1",
+   "src": [
+    "R49"
+   ]
+  }
+ ],
+ "python": "from enum import Enum\n\nclass PickType(Enum):\n    PickUp = 'PickUp'\n    DropOff = 'DropOff'\n\n\nclass User:\n    def enterZipCode(self):\n        raise NotImplementedError\n    def getHour(self):\n        raise NotImplementedError\n\nclass Admin:\n    def addRecyclingCenterInformation(self):\n        raise NotImplementedError\n    def handleActivity(self):\n        raise NotImplementedError\n\nclass RecyclingFacility:\n    def __init__(self, openingHour):\n        self.openingHour = openingHour\n    def communicateSite(self):\n        raise NotImplementedError\n\nclass RecyclingFacilityRepresentative:\n    def __init__(self, material):\n        self.material = material\n    def updateInformation(self):\n        raise NotImplementedError\n\nclass Superuser:\n    def __init__(self, stats):\n        self.stats = stats\n    def replyUserQuestion(self):\n        raise NotImplementedError\n\nclass RecyclingCenter:\n    def __init__(self, location):\n        self.location = location\n\nclass Location:\n    def __init__(self, area):\n        self.area = area\n\nclass Notification:\n    def __init__(self, emailId):\n        self.emailId = emailId\n    def giveEmailId(self):\n        raise NotImplementedError\n\nclass Feedback:\n    def __init__(self, errorLogs):\n        self.errorLogs = errorLogs\n    def getFeedback(self):\n        raise NotImplementedError\n    def readFeedback(self):\n        raise NotImplementedError\n\nclass Schedule:\n    def __init__(self, pick):\n        self.pick = pick\n    def uploadSchedule(self):\n        raise NotImplementedError",
+ "java": {}
+}

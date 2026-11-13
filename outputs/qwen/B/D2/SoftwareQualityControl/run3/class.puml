@@ -1,0 +1,30 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Date {
+  day : int
+  year : int
+}
+class Control {
+  type : String
+  date : LocalDate
+}
+class ControlsSequence {
+}
+class ControlType {
+}
+class Bug {
+  number : int
+  description : String
+  originator : String
+  commentsAnswer : String
+  closeDate : LocalDate
+}
+class BugTracking {
+}
+class Architecture {
+}
+Control "1" -- "1..*" ControlsSequence : isPartOf
+Bug "1" -- "1" BugTracking : isAssociatedTo
+ControlType --|> Control
+@enduml

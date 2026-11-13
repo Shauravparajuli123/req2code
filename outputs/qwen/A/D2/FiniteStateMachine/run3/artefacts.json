@@ -1,0 +1,129 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "State",
+   "kind": "class",
+   "attributes": [
+    "stateMachine",
+    "associationStateSources"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "StateMachine",
+   "kind": "class",
+   "attributes": [
+    "rootFolder",
+    "transitions"
+   ],
+   "methods": [],
+   "src": [
+    "R10",
+    "R4"
+   ]
+  },
+  {
+   "name": "RootFolder",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "rootFolders"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "stateMachine",
+    "associationState"
+   ],
+   "methods": [],
+   "src": [
+    "R7",
+    "R13"
+   ]
+  },
+  {
+   "name": "AssociationState",
+   "kind": "class",
+   "attributes": [
+    "transition",
+    "sourceStates"
+   ],
+   "methods": [],
+   "src": [
+    "R14"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "StateMachine",
+   "target": "State",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "StateMachine",
+   "target": "AssociationState",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "source": "AssociationState",
+   "target": "Transition",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "source": "StateMachine",
+   "target": "RootFolder",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "Transition",
+   "target": "StateMachine",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/FiniteStateMachine.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass State:\n    \"\"\"Source: -\"\"\"\n    stateMachine: _t.Optional[str] = None\n    associationStateSources: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass StateMachine:\n    \"\"\"Source: R10, R4\"\"\"\n    rootFolder: _t.Optional[str] = None\n    transitions: _t.Optional[str] = None\n    states: _t.List[\"State\"] = _dc.field(default_factory=list)\n    associationState: _t.Optional[\"AssociationState\"] = None\n\n\n@_dc.dataclass\nclass RootFolder:\n    \"\"\"Source: R5, R12\"\"\"\n    name: _t.Optional[str] = None\n    rootFolders: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: R7, R13\"\"\"\n    stateMachine: _t.Optional[str] = None\n    associationState: _t.Optional[str] = None\n    stateMachines: _t.List[\"StateMachine\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass AssociationState:\n    \"\"\"Source: R14\"\"\"\n    transition: _t.Optional[str] = None\n    sourceStates: _t.Optional[str] = None\n",
+ "java": {
+  "Game.java": "/** Generated from shared model D2/FiniteStateMachine. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "State.java": "/** Generated from shared model D2/FiniteStateMachine. Source: - */\npublic class State {\n    private java.lang.String stateMachine;\n    private java.lang.String associationStateSources;\n}\n",
+  "StateMachine.java": "/** Generated from shared model D2/FiniteStateMachine. Source: R10, R4 */\npublic class StateMachine {\n    private java.lang.String rootFolder;\n    private java.lang.String transitions;\n    private java.util.List<State> states;\n    private AssociationState associationState;\n}\n",
+  "RootFolder.java": "/** Generated from shared model D2/FiniteStateMachine. Source: R5, R12 */\npublic class RootFolder {\n    private java.lang.String name;\n    private java.lang.String rootFolders;\n}\n",
+  "Transition.java": "/** Generated from shared model D2/FiniteStateMachine. Source: R7, R13 */\npublic class Transition {\n    private java.lang.String stateMachine;\n    private java.lang.String associationState;\n    private java.util.List<StateMachine> stateMachines;\n}\n",
+  "AssociationState.java": "/** Generated from shared model D2/FiniteStateMachine. Source: R14 */\npublic class AssociationState {\n    private java.lang.String transition;\n    private java.lang.String sourceStates;\n}\n"
+ }
+}

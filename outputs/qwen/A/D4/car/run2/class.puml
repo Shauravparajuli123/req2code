@@ -1,0 +1,27 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Car {
+  name : String
+  numberPlate : String
+}
+class Wheel {
+  diameter : double
+}
+class Engine {
+  power : int
+}
+class Seat {
+  size : int
+}
+class Model {
+  name : String
+}
+class Make {
+  name : String
+}
+Car "1" *-- "0..1" Engine : has
+Car "1" *-- "0..*" Seat : has
+Car "1" *-- "0..*" Wheel : has
+Model "1" o-- "1..*" Make : belongs to
+@enduml

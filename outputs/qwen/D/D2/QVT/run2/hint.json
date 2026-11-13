@@ -1,0 +1,99 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "TemplateExp",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "ObjectTemplateExp",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "name": "CollectionTemplateExp",
+    "src": [
+     "R3",
+     "R7",
+     "R8"
+    ]
+   },
+   {
+    "name": "ModelPattern",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "TemplateExpression",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "name": "PropertyTemplateItem",
+    "src": [
+     "R9",
+     "R10"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "TemplateExp",
+    "name": "collectionKind",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "owner": "TemplateExpression",
+    "name": "variable",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "owner": "ObjectTemplateExp",
+    "name": "propertyTemplateItems",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "owner": "CollectionTemplateExp",
+    "name": "oclExpressions",
+    "src": [
+     "R7",
+     "R8"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "PropertyTemplateItem",
+    "target": "ObjectTemplateExp",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "PropertyTemplateItem",
+    "target": "Property",
+    "src": [
+     "R10"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

@@ -1,0 +1,182 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Instance",
+   "kind": "class",
+   "attributes": [
+    "classifiers",
+    "slots"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "AttributeLink",
+   "kind": "class",
+   "attributes": [
+    "instance",
+    "linkend"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Link",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "association",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Linkend",
+   "kind": "class",
+   "attributes": [
+    "link",
+    "instance"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "ComponentInstance",
+   "kind": "class",
+   "attributes": [
+    "residents"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "NodeInstance",
+   "kind": "class",
+   "attributes": [
+    "componentinstances"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Instance",
+   "target": "Instance",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Instance",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Instance",
+   "target": "AttributeLink",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AttributeLink",
+   "target": "Instance",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AttributeLink",
+   "target": "Linkend",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Link",
+   "target": "Linkend",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Linkend",
+   "target": "Link",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Linkend",
+   "target": "Instance",
+   "multiplicity_target": "1",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ComponentInstance",
+   "target": "NodeInstance",
+   "multiplicity_target": "1",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "NodeInstance",
+   "target": "ComponentInstance",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Instance:\n    def __init__(self, classifiers: List[str], slots: Optional[List[AttributeLink]] = None):\n        self.classifiers = classifiers\n        self.slots = slots if slots else []\n\n    def association(self):\n        raise NotImplementedError\n\n    src = ['R1', 'R8', 'R9']\n\nclass AttributeLink:\n    def __init__(self, instance: Instance, linkend: Optional[Linkend] = None):\n        self.instance = instance\n        self.linkend = linkend\n\n    src = ['R10', 'R11']\n\nclass Link:\n    def __init__(self):\n        pass\n\n    def association(self):\n        raise NotImplementedError\n\n    src = ['R12']\n\nclass Linkend:\n    def __init__(self, link: Link, instance: Instance):\n        self.link = link\n        self.instance = instance\n\n    src = ['R13', 'R14']\n\nclass ComponentInstance:\n    def __init__(self, residents: Optional[List[NodeInstance]] = None):\n        self.residents = residents if residents else []\n\n    src = ['R15']\n\nclass NodeInstance:\n    def __init__(self, componentinstances: Optional[List[ComponentInstance]] = None):\n        self.componentinstances = componentinstances if componentinstances else []\n\n    src = ['R16']",
+ "java": {}
+}

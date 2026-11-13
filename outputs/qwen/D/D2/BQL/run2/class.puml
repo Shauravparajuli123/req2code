@@ -1,0 +1,28 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class BQLModel {
+  queries : String
+  entries : String
+  fields : String
+  +createBQLModel()
+}
+class Entry {
+  name : String
+  allFields : boolean
+  +createEntry()
+}
+class Field {
+  name : String
+}
+class Query {
+}
+class Element {
+  location : String
+  comments : String
+}
+BQLModel "1" -- "0..*" Query : has
+BQLModel "1" -- "0..*" Entry : has
+BQLModel "1" -- "0..*" Field : has
+Entry "1" -- "1" Field : has
+@enduml

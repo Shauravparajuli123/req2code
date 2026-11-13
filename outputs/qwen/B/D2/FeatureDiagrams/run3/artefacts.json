@@ -1,0 +1,144 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "reference",
+    "attribute"
+   ],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": null
+    },
+    {
+     "name": "addChild",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R7",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "name",
+    "key"
+   ],
+   "methods": [],
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "name": "Xorgroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "Orgroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R6",
+    "R13",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Node",
+   "target": "Attribute",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "Node",
+   "target": "Attribute",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "Node",
+   "target": "Xorgroup",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Orgroup",
+   "target": "Node",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "Orgroup",
+   "target": "Xorgroup",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "source": "Xorgroup",
+   "target": "Node",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "source": "Xorgroup",
+   "target": "Orgroup",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "source": "Xorgroup",
+   "target": "Orgroup",
+   "src": []
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/FeatureDiagrams.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R7, R9, R10, R11\"\"\"\n    description: _t.Optional[str] = None\n    reference: _t.Optional[str] = None\n    attribute: _t.Optional[str] = None\n    attributes: _t.List[\"Attribute\"] = _dc.field(default_factory=list)\n    xorgroups: _t.List[\"Xorgroup\"] = _dc.field(default_factory=list)\n\n    def addNode(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addChild(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Attribute:\n    \"\"\"Source: R2, R9\"\"\"\n    description: _t.Optional[str] = None\n    name: _t.Optional[str] = None\n    key: _t.Optional[bool] = None\n\n\n@_dc.dataclass\nclass Orgroup:\n    \"\"\"Source: R6, R13, R11\"\"\"\n    preliminary: _t.Optional[bool] = None\n    nodes: _t.List[\"Node\"] = _dc.field(default_factory=list)\n    xorgroups: _t.List[\"Xorgroup\"] = _dc.field(default_factory=list)\n\n    def addNode(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Xorgroup(Orgroup):\n    \"\"\"Source: R5, R8, R12\"\"\"\n    preliminary: _t.Optional[bool] = None\n    nodes: _t.List[\"Node\"] = _dc.field(default_factory=list)\n    orgroups: _t.List[\"Orgroup\"] = _dc.field(default_factory=list)\n\n    def addNode(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Node.java": "/** Generated from shared model D2/FeatureDiagrams. Source: R7, R9, R10, R11 */\npublic class Node {\n    private java.lang.String description;\n    private java.lang.String reference;\n    private java.lang.String attribute;\n    private java.util.List<Attribute> attributes;\n    private java.util.List<Xorgroup> xorgroups;\n\n    /** Operation. */\n    public void addNode() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addChild() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Attribute.java": "/** Generated from shared model D2/FeatureDiagrams. Source: R2, R9 */\npublic class Attribute {\n    private java.lang.String description;\n    private java.lang.String name;\n    private boolean key;\n}\n",
+  "Orgroup.java": "/** Generated from shared model D2/FeatureDiagrams. Source: R6, R13, R11 */\npublic class Orgroup {\n    private boolean preliminary;\n    private java.util.List<Node> nodes;\n    private java.util.List<Xorgroup> xorgroups;\n\n    /** Operation. */\n    public void addNode() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Xorgroup.java": "/** Generated from shared model D2/FeatureDiagrams. Source: R5, R8, R12 */\npublic class Xorgroup extends Orgroup {\n    private boolean preliminary;\n    private java.util.List<Node> nodes;\n    private java.util.List<Orgroup> orgroups;\n\n    /** Operation. */\n    public void addNode() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

@@ -1,0 +1,170 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "tokens"
+   ],
+   "methods": [
+    {
+     "name": "addToken",
+     "use_case": null
+    },
+    {
+     "name": "removeToken",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R9",
+    "R13",
+    "R15"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "inputArcs",
+    "outputArcs"
+   ],
+   "methods": [
+    {
+     "name": "addInputArc",
+     "use_case": null
+    },
+    {
+     "name": "removeInputArc",
+     "use_case": null
+    },
+    {
+     "name": "addOutputArc",
+     "use_case": null
+    },
+    {
+     "name": "removeOutputArc",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R10",
+    "R11",
+    "R14"
+   ]
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    "weight",
+    "source",
+    "destination"
+   ],
+   "methods": [],
+   "src": [
+    "R4",
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "places",
+    "transitions"
+   ],
+   "methods": [
+    {
+     "name": "createPlace",
+     "use_case": null
+    },
+    {
+     "name": "createTransition",
+     "use_case": null
+    },
+    {
+     "name": "addPlace",
+     "use_case": null
+    },
+    {
+     "name": "addTransition",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R8",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "PetriNet",
+   "target": "Place",
+   "src": [
+    "R1",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "source": "PetriNet",
+   "target": "Transition",
+   "src": [
+    "R5",
+    "R6",
+    "R14"
+   ]
+  },
+  {
+   "source": "Place",
+   "target": "Arc",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "Transition",
+   "target": "Arc",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "source": "Arc",
+   "target": "PetriNet",
+   "src": [
+    "R4",
+    "R5",
+    "R6",
+    "R13"
+   ]
+  },
+  {
+   "source": "PetriNet",
+   "target": "Arc",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GWPNV5.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Place:\n    \"\"\"Source: R9, R13, R15\"\"\"\n    name: _t.Optional[str] = None\n    tokens: _t.Optional[int] = None\n    arcs: _t.List[\"Arc\"] = _dc.field(default_factory=list)\n\n    def addToken(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removeToken(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: R2, R10, R11, R14\"\"\"\n    name: _t.Optional[str] = None\n    inputArcs: _t.Optional[str] = None\n    outputArcs: _t.Optional[str] = None\n    arcs: _t.List[\"Arc\"] = _dc.field(default_factory=list)\n\n    def addInputArc(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removeInputArc(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addOutputArc(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removeOutputArc(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Arc:\n    \"\"\"Source: R4, R5, R6, R13, R14\"\"\"\n    weight: _t.Optional[float] = None\n    source: _t.Optional[str] = None\n    destination: _t.Optional[str] = None\n    petriNet: _t.Optional[\"PetriNet\"] = None\n\n\n@_dc.dataclass\nclass PetriNet:\n    \"\"\"Source: R3, R8, R12\"\"\"\n    name: _t.Optional[str] = None\n    places: _t.Optional[str] = None\n    transitions: _t.Optional[str] = None\n    arcs: _t.List[\"Arc\"] = _dc.field(default_factory=list)\n\n    def createPlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def createTransition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addPlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addTransition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Place.java": "/** Generated from shared model D2/GWPNV5. Source: R9, R13, R15 */\npublic class Place {\n    private java.lang.String name;\n    private int tokens;\n    private java.util.List<Arc> arcs;\n\n    /** Operation. */\n    public void addToken() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removeToken() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Transition.java": "/** Generated from shared model D2/GWPNV5. Source: R2, R10, R11, R14 */\npublic class Transition {\n    private java.lang.String name;\n    private java.lang.String inputArcs;\n    private java.lang.String outputArcs;\n    private java.util.List<Arc> arcs;\n\n    /** Operation. */\n    public void addInputArc() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removeInputArc() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addOutputArc() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removeOutputArc() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Arc.java": "/** Generated from shared model D2/GWPNV5. Source: R4, R5, R6, R13, R14 */\npublic class Arc {\n    private double weight;\n    private java.lang.String source;\n    private java.lang.String destination;\n    private PetriNet petriNet;\n}\n",
+  "PetriNet.java": "/** Generated from shared model D2/GWPNV5. Source: R3, R8, R12 */\npublic class PetriNet {\n    private java.lang.String name;\n    private java.lang.String places;\n    private java.lang.String transitions;\n    private java.util.List<Arc> arcs;\n\n    /** Operation. */\n    public void createPlace() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void createTransition() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addPlace() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addTransition() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

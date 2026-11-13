@@ -1,0 +1,91 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Guardian {
+  +directMessage()
+  +fillAbsence()
+  +receiveNotification()
+  +viewInformation()
+}
+class Student {
+  +accessFilesAndDLM()
+  +directMessageTeacher()
+  +directMessageMentor()
+  +handHomework()
+  +viewTimetable()
+  +receiveNotificationForDueDate()
+  +receiveNotificationForNewFiles()
+  +receiveNotificationForTimetableChanges()
+  +viewAccountInformation()
+  +viewContactInformation()
+  +changePreferences()
+}
+class Teacher {
+  +receiveNotificationForDueDate()
+  +receiveNotificationForTimetableChanges()
+  +addVideoToDLM()
+  +addTextAndPicturesToDLM()
+  +addQuestionToDLM()
+  +assignDLM()
+  +assignDueDate()
+  +automaticallyGradeDLM()
+  +createDLM()
+  +directMessageClass()
+  +directMessageMentoredStudent()
+  +editDLMPage()
+  +addSubmissionElements()
+  +addAnswerToQuestion()
+  +confirmFileUpload()
+  +recordDisciplinaryActions()
+  +recordBehavior()
+  +recordGrades()
+  +recordAttendance()
+  +viewStudentSubmissions()
+  +viewClassPerformance()
+  +viewStudentProgress()
+  +setAppearanceDate()
+  +setAvailableDates()
+  +uploadFiles()
+  +viewClassInformation()
+  +viewClassAttendance()
+}
+class Administrator {
+  +sendDirectMessage()
+  +assignSchedules()
+  +createAccount()
+  +editAccount()
+  +changeView()
+  +receiveNotification()
+  +receiveAbsenceForm()
+  +registerScheduleChanges()
+  +registerAbsence()
+  +sendBroadcastMessage()
+  +setAccountRole()
+  +uploadSchedules()
+  +viewAccountDetails()
+  +viewStatistics()
+}
+class Account {
+  role : String
+}
+class Schedule {
+}
+class Statistic {
+}
+Guardian "0..*" -- "0..*" Teacher : can message
+Guardian "0..*" -- "0..*" Administrator : can message
+Guardian "0..*" -- "1" Student : has
+Teacher "1..*" -- "1" Student : mentors
+Administrator "0..*" -- "1..*" Student : can message
+Administrator "0..*" -- "1..*" Teacher : can message
+Administrator "0..*" -- "0..*" Guardian : can message
+Administrator "1" -- "1..*" Schedule : assigns
+Schedule "1..*" -- "1" Student : participates in
+Schedule "1..*" -- "1" Teacher : participates in
+Administrator "1" -- "1..*" Account : manages
+Administrator "1" -- "1..*" Statistic : views
+Account "1" -- "1" Student : is
+Account "1" -- "1" Teacher : is
+Account "1" -- "1" Administrator : is
+Account "1" -- "1" Guardian : is
+@enduml

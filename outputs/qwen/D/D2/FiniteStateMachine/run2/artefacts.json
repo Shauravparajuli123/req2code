@@ -1,0 +1,41 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "MgaObject",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/FiniteStateMachine.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass MgaObject:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "MgaObject.java": "/** Generated from shared model D2/FiniteStateMachine. Source: R1 */\npublic class MgaObject {\n    private java.lang.String name;\n}\n",
+  "Game.java": "/** Generated from shared model D2/FiniteStateMachine. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

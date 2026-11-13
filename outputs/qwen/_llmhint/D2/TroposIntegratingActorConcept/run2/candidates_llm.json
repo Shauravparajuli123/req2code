@@ -1,0 +1,83 @@
+{
+ "actors": [
+  {
+   "name": "IntegratedTroposActorConcept",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "has roles",
+   "actor": "IntegratedTroposActorConcept",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Actor",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Agent",
+   "src": [
+    "R2",
+    "R5"
+   ]
+  },
+  {
+   "name": "Position",
+   "src": [
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "name": "Role",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Agent",
+   "name": "position",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "Position",
+   "name": "role",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Agent",
+   "target": "Position",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Position",
+   "target": "Role",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

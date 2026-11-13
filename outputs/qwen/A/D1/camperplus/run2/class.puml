@@ -1,0 +1,83 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Camper {
+  name : String
+  emergencyContact : String
+  parent : String
+  consentForms : String
+  activitySchedule : String
+  attendance : boolean
+  +addCamper()
+  +removeCamper()
+  +modifyCamperInfo()
+  +deleteCamper()
+  +seeCamperActivity()
+}
+class Parent {
+  name : String
+  children : String
+  consentForms : String
+  payments : String
+  photos : String
+  counselors : String
+  +createAccount()
+  +submitConsentForms()
+  +seeCamperSchedule()
+  +seeEnrolledCampers()
+  +messageCounselors()
+}
+class CampAdministrator {
+  name : String
+  groups : String
+  tasks : String
+  +addCamper()
+  +removeCamper()
+  +keepCamperRecords()
+  +uploadConsentForms()
+  +trackConsentFormSubmission()
+  +scheduleActivities()
+  +createNametags()
+  +suspendCamper()
+  +setReminders()
+  +assignStaffPositions()
+  +warnStaff()
+  +createRules()
+  +trackFacilityUsage()
+  +createFeedbackAvenue()
+  +storeEmergencyInformation()
+  +storeParentInformation()
+  +provideParentFeedback()
+  +makeNametagsFaster()
+  +createRegistrationForm()
+  +keepInformationOrganized()
+  +seeMedicalForms()
+  +notifyParents()
+  +logAttendance()
+  +addParents()
+  +createGroups()
+  +seeCampGroupsAndEvents()
+  +scheduleTasks()
+  +deleteTasks()
+  +modifyTasks()
+  +modifyCamperInformation()
+  +deleteCampers()
+  +modifyParentInformation()
+  +deleteParents()
+  +modifyGroupInformation()
+  +seeSpecificGroupEvents()
+}
+class CampWorker {
+  name : String
+  assignedCampers : String
+  +submitCompletionReport()
+  +reportInappropriateBehavior()
+  +reportSuppliesShortage()
+  +reportRepairsNeeded()
+  +seeAssignedCampers()
+}
+CampAdministrator "1" -- "0..*" Camper : manages
+CampAdministrator "1" -- "0..*" Parent : manages
+CampWorker "1" -- "0..*" Camper : manages
+Parent "1" -- "1" Camper : enrolls
+@enduml

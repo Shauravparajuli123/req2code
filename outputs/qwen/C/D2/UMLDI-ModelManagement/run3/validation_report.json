@@ -1,0 +1,45 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each GeneralizableElement is linked to zero or many Generalizations, as stated in R10."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'CoreModel' is missing attributes 'isSpecification' and methods to set and get it.",
+   "fix": "Add 'isSpecification' attribute and methods to set and get it."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Element' is missing attributes 'isRoot' and 'isAbstract'.",
+   "fix": "Add 'isRoot' and 'isAbstract' attributes."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Classifier' is missing attribute 'powerTypeRanges'.",
+   "fix": "Add 'powerTypeRanges' attribute."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Feature' is missing attribute 'ownerScope'.",
+   "fix": "Add 'ownerScope' attribute."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Generalization' is missing attribute 'discriminator'.",
+   "fix": "Add 'discriminator' attribute."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'GeneralizableElement' is missing a relationship to 'Generalization'.",
+   "fix": "Add a relationship to 'Generalization'."
+  }
+ ]
+}

@@ -1,0 +1,158 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Agency {
+  +logIn()
+  +logOut()
+}
+class CulturalHeritage {
+  name : String
+  description : String
+}
+class RefreshmentPoint {
+  name : String
+  address : String
+  status : String
+  +searchRefreshmentPoint()
+  +checkBanners()
+  +insertBanner()
+  +deleteBanner()
+}
+class TouristAccount {
+  username : String
+  status : String
+}
+class UseCase {
+}
+class SearchCulturalHeritage {
+}
+class SearchRefreshmentPoint {
+}
+class SearchTourist {
+}
+class Delete {
+  +deleteCulturalHeritage()
+  +deleteRefreshmentPoint()
+}
+class Insert {
+  +insertCulturalHeritage()
+}
+class Change {
+  +changeCulturalHeritageData()
+}
+class View {
+  +viewCulturalHeritageDetails()
+  +viewRefreshmentPointDetails()
+  +viewTouristAccountDetails()
+}
+class ActivateConvention {
+  +activateConventionAtRefreshmentPoint()
+}
+class Edit {
+  +editRefreshmentPointData()
+}
+class Search {
+  +searchCulturalHeritage()
+  +searchRefreshmentPoint()
+  +searchTouristAccount()
+}
+class EnableDisable {
+  +enableDisableTouristAccount()
+}
+class Tourist {
+  name : String
+  +searchTourist()
+  +modifyData()
+  +deleteAccount()
+  +editPreferences()
+  +changeData()
+  +viewStatistics()
+  +viewFavoriteList()
+  +insertSite()
+  +deleteSite()
+  +insertFeedback()
+}
+class BannerAd {
+  image : String
+}
+class News {
+  title : String
+  content : String
+  +insertNews()
+  +deleteNews()
+  +editNews()
+}
+class Feedback {
+  site : String
+  comments : String
+  +viewFeedback()
+  +viewReport()
+  +editComment()
+}
+class GuestUser {
+  name : String
+  password : String
+  email : String
+  +register()
+  +login()
+  +searchHeritage()
+  +searchSite()
+}
+class AgencyOperator {
+  username : String
+  password : String
+  +removeSearchTag()
+  +askSearchTag()
+  +insertTagSearch()
+  +changePassword()
+}
+class RestaurantOperator {
+  username : String
+  password : String
+  +endSession()
+  +insertBanner()
+  +changeImage()
+  +deleteBannerAd()
+  +changeMenu()
+  +deleteMenu()
+  +changeDataPoint()
+  +requireConvention()
+}
+class SearchTag {
+  name : String
+  type : String
+}
+class TagSearch {
+  name : String
+  type : String
+}
+class Banner {
+  name : String
+  image : String
+  position : int
+}
+class Comment {
+  text : String
+  +editComment()
+}
+class Site {
+}
+class Position {
+}
+class AdvancedSearch {
+}
+class SearchResult {
+}
+Agency "1" -- "1..*" UseCase : activates
+Agency "1" -- "0..*" CulturalHeritage : searches
+Agency "1" -- "0..*" RefreshmentPoint : searches
+Agency "1" -- "0..*" TouristAccount : searches
+Agency "1" -- "0..*" Tourist : has
+Agency "1" -- "0..*" Site : has
+Agency "1" -- "0..*" Comment : has
+Agency "1" -- "1" AgencyOperator : has
+Tourist "1" -- "1" Feedback : has
+Tourist "1" -- "1" Site : has
+Tourist "1" -- "1" Position : has
+Comment "1" -- "1" Change : has
+@enduml

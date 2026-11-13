@@ -1,0 +1,89 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "startLine",
+    "endLine"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addChildNode",
+     "use_case": null
+    },
+    {
+     "name": "getParent",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "Text",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Root",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Element",
+   "target": "Node",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "source": "Root",
+   "target": "Element",
+   "src": []
+  },
+  {
+   "source": "Text",
+   "target": "Element",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "Node",
+   "target": "Element",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/XML.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n    startLine: _t.Optional[int] = None\n    endLine: _t.Optional[int] = None\n    element: _t.Optional[\"Element\"] = None\n\n\n@_dc.dataclass\nclass Element:\n    \"\"\"Source: -\"\"\"\n    nodes: _t.List[\"Node\"] = _dc.field(default_factory=list)\n\n    def addChildNode(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def getParent(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Text:\n    \"\"\"Source: R3\"\"\"\n    elements: _t.List[\"Element\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Root:\n    \"\"\"Source: R5\"\"\"\n    elements: _t.List[\"Element\"] = _dc.field(default_factory=list)\n",
+ "java": {
+  "Node.java": "/** Generated from shared model D2/XML. Source: R1 */\npublic class Node {\n    private java.lang.String name;\n    private int startLine;\n    private int endLine;\n    private Element element;\n}\n",
+  "Element.java": "/** Generated from shared model D2/XML. Source: - */\npublic class Element {\n    private java.util.List<Node> nodes;\n\n    /** Operation. */\n    public void addChildNode() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void getParent() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Text.java": "/** Generated from shared model D2/XML. Source: R3 */\npublic class Text {\n    private java.util.List<Element> elements;\n}\n",
+  "Root.java": "/** Generated from shared model D2/XML. Source: R5 */\npublic class Root {\n    private java.util.List<Element> elements;\n}\n"
+ }
+}

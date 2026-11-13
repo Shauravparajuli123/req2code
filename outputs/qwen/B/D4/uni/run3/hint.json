@@ -1,0 +1,310 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D4/uni",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R5",
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "For a course to exist, it must aggregate, at least, five students, where each student has a name."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "Students can be enrolled in any number of courses."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "Finally, students can be accommodated in dormitories, where each dormitory can have from one to four students."
+     }
+    ],
+    "name": "student"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "This model represents some entities of a course."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "We know that courses have a name and a specific number of credits."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "Each course can have one or more professors, who have a name."
+     }
+    ],
+    "name": "Course",
+    "freq": 6
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R7",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "Finally, students can be accommodated in dormitories, where each dormitory can have from one to four students."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "Besides, each dormitory has a price."
+     }
+    ],
+    "name": "Dormitory",
+    "freq": 3
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R3",
+     "R4"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Each course can have one or more professors, who have a name."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "Professors could participate in any number of courses."
+     }
+    ],
+    "name": "Professor",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R5",
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "For a course to exist, it must aggregate, at least, five students, where each student has a name."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "Students can be enrolled in any number of courses."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "Finally, students can be accommodated in dormitories, where each dormitory can have from one to four students."
+     }
+    ],
+    "name": "Student",
+    "freq": 5
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "We know that courses have a name and a specific number of credits."
+     }
+    ],
+    "owner": "Course",
+    "name": "credit",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "This model represents some entities of a course."
+     }
+    ],
+    "owner": "Course",
+    "name": "entity",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "We know that courses have a name and a specific number of credits."
+     }
+    ],
+    "owner": "Course",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "Besides, each dormitory has a price."
+     }
+    ],
+    "owner": "Dormitory",
+    "name": "price",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Each course can have one or more professors, who have a name."
+     }
+    ],
+    "owner": "Professor",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT6",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "For a course to exist, it must aggregate, at least, five students, where each student has a name."
+     }
+    ],
+    "owner": "Student",
+    "name": "name",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "verb:aggregate"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "For a course to exist, it must aggregate, at least, five students, where each student has a name."
+     }
+    ],
+    "kind": "association",
+    "source": "Course",
+    "target": "Student",
+    "multiplicity_target": "0..*"
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "Each course can have one or more professors, who have a name."
+     }
+    ],
+    "kind": "has",
+    "source": "Course",
+    "target": "Professor",
+    "multiplicity_target": "one or more"
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Course",
+     "target": "Student",
+     "multiplicity": "0..*"
+    }
+   ],
+   "actor_assumptions": [
+    {
+     "use_case": "Enrollment",
+     "actor": "Student"
+    }
+   ]
+  }
+ },
+ "open_tags": []
+}

@@ -1,0 +1,154 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Game {
+  name : String
+  +createGame()
+}
+class Student {
+  name : String
+  contactInformation : String
+  knowledge : String
+  homework : String
+  timetable : String
+  grade : String
+  attendance : String
+  +directMessage()
+  +fillAbsence()
+  +receiveNotification()
+  +viewInformation()
+  +viewClass()
+  +viewContactInformation()
+  +receiveConfirmation()
+  +recordBehavior()
+  +recordGrade()
+  +recordAttendance()
+  +seeAnswer()
+  +seeProgress()
+}
+class Teacher {
+  name : String
+  class_ : String
+  mentor : String
+  timetable : String
+  +directMessage()
+  +assignSchedule()
+  +createDlm()
+  +addPage()
+  +assignDueDate()
+  +autoGrade()
+  +editPage()
+  +makeSubmissionElements()
+  +addAnswer()
+  +receiveConfirmation()
+  +recordBehavior()
+  +recordGrade()
+  +recordAttendance()
+  +seeAnswer()
+  +seeProgress()
+  +setAppearanceDate()
+  +setAvailableDates()
+  +uploadFiles()
+  +viewAttendance()
+}
+class Administrator {
+  name : String
+  schedule : String
+  +directMessage()
+  +assignSchedule()
+  +createAccount()
+  +editAccount()
+  +useFilters()
+  +receiveNotification()
+  +registerAbsence()
+  +registerChange()
+  +setRole()
+}
+class Guardian {
+  name : String
+  child : String
+  mentor : String
+  timetable : String
+  +directMessage()
+  +fillAbsence()
+  +receiveNotification()
+  +viewInformation()
+  +viewClass()
+  +viewContactInformation()
+  +receiveConfirmation()
+  +recordBehavior()
+  +recordGrade()
+  +recordAttendance()
+  +seeAnswer()
+  +seeProgress()
+  +setAppearanceDate()
+  +setAvailableDates()
+  +uploadFiles()
+  +viewAttendance()
+}
+class Message {
+  sender : String
+  receiver : String
+  content : String
+  +send()
+  +receive()
+  +sendBroadcastMessage()
+}
+class Notification {
+  sender : String
+  receiver : String
+  content : String
+  +send()
+}
+class Absence {
+  student : String
+  date : LocalDate
+  +register()
+}
+class Dlm {
+  title : String
+  pages : String
+  dueDate : LocalDate
+  appearanceDate : LocalDate
+  submissionElements : String
+  answers : String
+  grade : String
+  attendance : String
+  +addPage()
+  +assignDueDate()
+  +autoGrade()
+  +editPage()
+  +makeSubmissionElements()
+  +addAnswer()
+  +receiveConfirmation()
+  +recordBehavior()
+  +recordGrade()
+  +recordAttendance()
+  +seeAnswer()
+  +seeProgress()
+  +setAppearanceDate()
+  +setAvailableDates()
+  +uploadFiles()
+  +viewAttendance()
+}
+class File {
+  title : String
+  content : String
+  +upload()
+}
+class Account {
+  username : String
+  password : String
+  data : String
+  role : String
+  +resetPassword()
+  +createAccount()
+  +editAccount()
+  +useFilters()
+  +viewDetails()
+  +viewStatistics()
+}
+Administrator "1" -- "1..*" Message : sends
+Administrator "1" -- "1" Account : sets role of
+Administrator "1" -- "1" Game : uploads
+@enduml

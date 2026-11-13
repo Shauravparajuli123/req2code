@@ -1,0 +1,306 @@
+{
+ "condition": "C",
+ "hint": {
+  "case": "D2/CompanyStructure",
+  "stage": "result1_before_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R7",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A company structure model has cash registers"
+     },
+     {
+      "sid": "R11.s1",
+      "text": "A store is composed by zero or more cash registers"
+     }
+    ],
+    "name": "CashRegister",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R1",
+     "R5",
+     "R6",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A company structure model has companies"
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A company contains one back office for each store"
+     },
+     {
+      "sid": "R6.s1",
+      "text": "The employees that are working in the company."
+     }
+    ],
+    "name": "Company",
+    "freq": 4
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R7",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A company structure model has companies"
+     },
+     {
+      "sid": "R2.s1",
+      "text": "A company structure model has corporate HQ"
+     },
+     {
+      "sid": "R3.s1",
+      "text": "A company structure model has stores"
+     }
+    ],
+    "name": "CompanyStructureModel",
+    "freq": 6
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R2",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A company structure model has corporate HQ"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A company is composed by one and only one corporate HQ"
+     }
+    ],
+    "name": "Hq",
+    "freq": 2
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R4",
+     "R5",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A company structure model has back offices"
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A company contains one back office for each store"
+     },
+     {
+      "sid": "R10.s1",
+      "text": "In a company structure model, stores have exactly one back office"
+     }
+    ],
+    "name": "Office",
+    "freq": 3
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R3",
+     "R5",
+     "R9",
+     "R10",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A company structure model has stores"
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A company contains one back office for each store"
+     },
+     {
+      "sid": "R9.s1",
+      "text": "Each corporate HQs manages a certain number of stores"
+     }
+    ],
+    "name": "Store",
+    "freq": 5
+   }
+  ],
+  "attributes": [],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A company structure model has cash registers"
+     }
+    ],
+    "kind": "has",
+    "source": "CompanyStructureModel",
+    "target": "CashRegister",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A company structure model has companies"
+     }
+    ],
+    "kind": "has",
+    "source": "CompanyStructureModel",
+    "target": "Company",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A company structure model has corporate HQ"
+     }
+    ],
+    "kind": "has",
+    "source": "CompanyStructureModel",
+    "target": "Hq",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A company structure model has back offices"
+     }
+    ],
+    "kind": "has",
+    "source": "CompanyStructureModel",
+    "target": "Office",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A company structure model has stores"
+     }
+    ],
+    "kind": "has",
+    "source": "CompanyStructureModel",
+    "target": "Store",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A company contains one back office for each store"
+     }
+    ],
+    "kind": "has",
+    "source": "Company",
+    "target": "Office",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL7",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "In a company structure model, stores have exactly one back office"
+     }
+    ],
+    "kind": "has",
+    "source": "Store",
+    "target": "Office",
+    "multiplicity_target": "one"
+   }
+  ]
+ },
+ "open_tags": []
+}

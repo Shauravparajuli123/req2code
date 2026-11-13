@@ -1,0 +1,107 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "constraint"
+   ],
+   "methods": [],
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "statements"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "QoSConstraint",
+   "kind": "class",
+   "attributes": [
+    "kind"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R11"
+   ]
+  },
+  {
+   "name": "QualificationKind",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "CompoundQoSStatement",
+   "target": "QoSStatement",
+   "src": [
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "source": "SingleQoSStatement",
+   "target": "QoSStatement",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "QoSStatement",
+   "target": "CompoundQoSStatement",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "SingleQoSStatement",
+   "target": "QoSConstraint",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "CompoundQoSStatement",
+   "target": "QoSStatement",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/QoS_Statement.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass QoSStatement:\n    \"\"\"Source: R7, R8\"\"\"\n    compoundQoSStatement: _t.Optional[\"CompoundQoSStatement\"] = None\n\n\n@_dc.dataclass\nclass SingleQoSStatement(QoSStatement):\n    \"\"\"Source: R2, R9\"\"\"\n    constraint: _t.Optional[str] = None\n    qoSConstraint: _t.Optional[\"QoSConstraint\"] = None\n\n\n@_dc.dataclass\nclass CompoundQoSStatement(QoSStatement):\n    \"\"\"Source: R3, R10\"\"\"\n    statements: _t.Optional[str] = None\n    qoSStatement: _t.Optional[\"QoSStatement\"] = None\n\n\n@_dc.dataclass\nclass QoSConstraint:\n    \"\"\"Source: R5, R11\"\"\"\n    kind: _t.Optional[str] = None\n\n\nclass QualificationKind(_enum.Enum):\n    \"\"\"Source: R11\"\"\"\n    LITERAL = \"LITERAL\"\n",
+ "java": {
+  "QoSStatement.java": "/** Generated from shared model D2/QoS_Statement. Source: R7, R8 */\npublic class QoSStatement {\n    private CompoundQoSStatement compoundQoSStatement;\n}\n",
+  "SingleQoSStatement.java": "/** Generated from shared model D2/QoS_Statement. Source: R2, R9 */\npublic class SingleQoSStatement extends QoSStatement {\n    private java.lang.String constraint;\n    private QoSConstraint qoSConstraint;\n}\n",
+  "CompoundQoSStatement.java": "/** Generated from shared model D2/QoS_Statement. Source: R3, R10 */\npublic class CompoundQoSStatement extends QoSStatement {\n    private java.lang.String statements;\n    private QoSStatement qoSStatement;\n}\n",
+  "QoSConstraint.java": "/** Generated from shared model D2/QoS_Statement. Source: R5, R11 */\npublic class QoSConstraint {\n    private java.lang.String kind;\n}\n",
+  "QualificationKind.java": "/** Generated from shared model D2/QoS_Statement. Source: R11 */\npublic enum QualificationKind {\n    LITERAL\n}\n"
+ }
+}

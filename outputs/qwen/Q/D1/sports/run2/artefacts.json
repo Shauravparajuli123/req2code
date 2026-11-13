@@ -1,0 +1,919 @@
+{
+ "actors": [
+  "customer",
+  "trainer",
+  "admin"
+ ],
+ "use_cases": [
+  {
+   "name": "Open Account",
+   "actor": "customer",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Add Information",
+   "actor": "customer",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Add BankingDetail",
+   "actor": "customer",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Choose MembershipType",
+   "actor": "customer",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Extend Subscription",
+   "actor": "customer",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "See How Long Subscription Lasts",
+   "actor": "customer",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Use Previous Information",
+   "actor": "customer",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Unsubscribe",
+   "actor": "customer",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Reset Password",
+   "actor": "customer",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Change Detail",
+   "actor": "customer",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Update PaymentInformation",
+   "actor": "customer",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "See Overview of Lessons",
+   "actor": "customer",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "See Future Lessons",
+   "actor": "customer",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "See Record of Previous Lessons",
+   "actor": "customer",
+   "src": [
+    "R17"
+   ]
+  },
+  {
+   "name": "Call Gym to Book Lesson",
+   "actor": "customer",
+   "src": [
+    "R18"
+   ]
+  },
+  {
+   "name": "Call Gym to Cancel Lesson",
+   "actor": "customer",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Call Gym to Book Personal Training Session",
+   "actor": "customer",
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "name": "Call Gym to Cancel Personal Training Session",
+   "actor": "customer",
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "name": "Book Spot for Free Practice Area",
+   "actor": "customer",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "See How Many Spots Booked",
+   "actor": "customer",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "Add Lesson",
+   "actor": "trainer",
+   "src": [
+    "R26"
+   ]
+  },
+  {
+   "name": "Set Time of Lesson",
+   "actor": "trainer",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "Set Description of Lesson",
+   "actor": "trainer",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Set Room of Lesson",
+   "actor": "trainer",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "Set Type of Lesson",
+   "actor": "trainer",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Set Number of People Allowed",
+   "actor": "trainer",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "See Schedule",
+   "actor": "trainer",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "Edit Lesson",
+   "actor": "trainer",
+   "src": [
+    "R33",
+    "R38"
+   ]
+  },
+  {
+   "name": "Edit Time of Lesson",
+   "actor": "trainer",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Edit Room of Lesson",
+   "actor": "trainer",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Edit Description of Lesson",
+   "actor": "trainer",
+   "src": [
+    "R36"
+   ]
+  },
+  {
+   "name": "Edit Number of People Allowed",
+   "actor": "trainer",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Cancel Lesson",
+   "actor": "trainer",
+   "src": [
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "name": "Edit Any Lesson",
+   "actor": "admin",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "name": "Cancel Lesson by Admin",
+   "actor": "admin",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "See if Customer Did Not Show Up",
+   "actor": "admin",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "See How Many Times Customer Did Not Show Up",
+   "actor": "admin",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Issue Fine for Repeat Offenders",
+   "actor": "admin",
+   "src": [
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "name": "Add New Trainer",
+   "actor": "admin",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Add New Admin",
+   "actor": "admin",
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "name": "Remove Trainer",
+   "actor": "admin",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "name": "Log In to System",
+   "actor": "customer",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "name": "Choose Notification Method",
+   "actor": "customer",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "name": "Receive Email Notification",
+   "actor": "customer",
+   "src": [
+    "R52"
+   ]
+  },
+  {
+   "name": "Receive Push Notification",
+   "actor": "customer",
+   "src": [
+    "R53"
+   ]
+  },
+  {
+   "name": "Choose What to Receive Notifications For",
+   "actor": "customer",
+   "src": [
+    "R54"
+   ]
+  },
+  {
+   "name": "Receive Notification of Booking Cancellation",
+   "actor": "customer",
+   "src": [
+    "R55"
+   ]
+  },
+  {
+   "name": "Confirm Booking Cancellation",
+   "actor": "customer",
+   "src": [
+    "R56"
+   ]
+  },
+  {
+   "name": "See Customer Information",
+   "actor": "admin",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "name": "See Customer Subscription",
+   "actor": "customer",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "See Customer Information",
+   "actor": "admin",
+   "src": [
+    "R62",
+    "R63"
+   ]
+  },
+  {
+   "name": "See Customer Information",
+   "actor": "customer",
+   "src": [
+    "R60"
+   ]
+  },
+  {
+   "name": "See Customer Membership",
+   "actor": "customer with a family membership",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Add Person to Family Membership",
+   "actor": "customer with a family membership",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Remove Person from Family Membership",
+   "actor": "customer with a family membership",
+   "src": [
+    "R14"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [
+    "account",
+    "subscription",
+    "information",
+    "paymentInformation",
+    "familyMembership"
+   ],
+   "methods": [
+    {
+     "name": "openAccount",
+     "use_case": "Open Account"
+    },
+    {
+     "name": "addInformation",
+     "use_case": "Add Information"
+    },
+    {
+     "name": "addBankingDetail",
+     "use_case": "Add BankingDetail"
+    },
+    {
+     "name": "chooseMembershipType",
+     "use_case": "Choose MembershipType"
+    },
+    {
+     "name": "extendSubscription",
+     "use_case": "Extend Subscription"
+    },
+    {
+     "name": "seeHowLongSubscriptionLasts",
+     "use_case": "See How Long Subscription Lasts"
+    },
+    {
+     "name": "usePreviousInformation",
+     "use_case": "Use Previous Information"
+    },
+    {
+     "name": "unsubscribe",
+     "use_case": "Unsubscribe"
+    },
+    {
+     "name": "resetPassword",
+     "use_case": "Reset Password"
+    },
+    {
+     "name": "changeDetail",
+     "use_case": "Change Detail"
+    },
+    {
+     "name": "updatePaymentInformation",
+     "use_case": "Update PaymentInformation"
+    },
+    {
+     "name": "seeOverviewOfLessons",
+     "use_case": "See Overview of Lessons"
+    },
+    {
+     "name": "seeFutureLessons",
+     "use_case": "See Future Lessons"
+    },
+    {
+     "name": "seeRecordOfPreviousLessons",
+     "use_case": "See Record of Previous Lessons"
+    },
+    {
+     "name": "callGymToBookLesson",
+     "use_case": "Call Gym to Book Lesson"
+    },
+    {
+     "name": "callGymToCancelLesson",
+     "use_case": "Call Gym to Cancel Lesson"
+    },
+    {
+     "name": "callGymToBookPersonalTrainingSession",
+     "use_case": "Call Gym to Book Personal Training Session"
+    },
+    {
+     "name": "callGymToCancelPersonalTrainingSession",
+     "use_case": "Call Gym to Cancel Personal Training Session"
+    },
+    {
+     "name": "bookSpotForFreePracticeArea",
+     "use_case": "Book Spot for Free Practice Area"
+    },
+    {
+     "name": "seeHowManySpotsBooked",
+     "use_case": "See How Many Spots Booked"
+    },
+    {
+     "name": "receiveNotificationOfBookingCancellation",
+     "use_case": "Receive Notification of Booking Cancellation"
+    },
+    {
+     "name": "confirmBookingCancellation",
+     "use_case": "Confirm Booking Cancellation"
+    },
+    {
+     "name": "seeCustomerInformation",
+     "use_case": "See Customer Information"
+    },
+    {
+     "name": "seeCustomerMembership",
+     "use_case": "See Customer Membership"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56",
+    "R60",
+    "R61",
+    "R62",
+    "R63"
+   ]
+  },
+  {
+   "name": "FamilyMembership",
+   "kind": "class",
+   "attributes": [
+    "members"
+   ],
+   "methods": [
+    {
+     "name": "addPerson",
+     "use_case": "Add Person"
+    },
+    {
+     "name": "removePerson",
+     "use_case": "Remove Person"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "Admin",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addNewTrainer",
+     "use_case": "Add New Trainer"
+    },
+    {
+     "name": "addNewAdmin",
+     "use_case": "Add New Admin"
+    },
+    {
+     "name": "removeTrainer",
+     "use_case": "Remove Trainer"
+    },
+    {
+     "name": "seeCustomerInformation",
+     "use_case": "See Customer Information"
+    },
+    {
+     "name": "seeCustomerSubscription",
+     "use_case": "See Customer Subscription"
+    },
+    {
+     "name": "seeIfCustomerDidNotShowUp",
+     "use_case": "See if Customer Did Not Show Up"
+    },
+    {
+     "name": "seeHowManyTimesCustomerDidNotShowUp",
+     "use_case": "See How Many Times Customer Did Not Show Up"
+    },
+    {
+     "name": "issueFineForRepeatOffenders",
+     "use_case": "Issue Fine for Repeat Offenders"
+    },
+    {
+     "name": "editAnyLesson",
+     "use_case": "Edit Any Lesson"
+    },
+    {
+     "name": "cancelLessonByAdmin",
+     "use_case": "Cancel Lesson by Admin"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R20",
+    "R40",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R57"
+   ]
+  },
+  {
+   "name": "Trainer",
+   "kind": "class",
+   "attributes": [
+    "lessons"
+   ],
+   "methods": [
+    {
+     "name": "addLesson",
+     "use_case": "Add Lesson"
+    },
+    {
+     "name": "setTimeOfLesson",
+     "use_case": "Set Time of Lesson"
+    },
+    {
+     "name": "setDescriptionOfLesson",
+     "use_case": "Set Description of Lesson"
+    },
+    {
+     "name": "setRoomOfLesson",
+     "use_case": "Set Room of Lesson"
+    },
+    {
+     "name": "setTypeOfLesson",
+     "use_case": "Set Type of Lesson"
+    },
+    {
+     "name": "setNumberPeopleAllowed",
+     "use_case": "Set Number of People Allowed"
+    },
+    {
+     "name": "seeSchedule",
+     "use_case": "See Schedule"
+    },
+    {
+     "name": "editLesson",
+     "use_case": "Edit Lesson"
+    },
+    {
+     "name": "editTimeOfLesson",
+     "use_case": "Edit Time of Lesson"
+    },
+    {
+     "name": "editRoomOfLesson",
+     "use_case": "Edit Room of Lesson"
+    },
+    {
+     "name": "editDescriptionOfLesson",
+     "use_case": "Edit Description of Lesson"
+    },
+    {
+     "name": "editNumberPeopleAllowed",
+     "use_case": "Edit Number of People Allowed"
+    },
+    {
+     "name": "cancelLesson",
+     "use_case": "Cancel Lesson"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "name": "Lesson",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "room",
+    "type",
+    "numberOfPeopleAllowed"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31"
+   ]
+  },
+  {
+   "name": "Room",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [
+    "method"
+   ],
+   "methods": [
+    {
+     "name": "chooseNotificationMethod",
+     "use_case": "Choose Notification Method"
+    },
+    {
+     "name": "receiveEmailNotification",
+     "use_case": "Receive Email Notification"
+    },
+    {
+     "name": "receivePushNotification",
+     "use_case": "Receive Push Notification"
+    },
+    {
+     "name": "chooseWhatToReceiveNotificationsFor",
+     "use_case": "Choose What to Receive Notifications For"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Subscription",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Account",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Information",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "PaymentInformation",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Method",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Customer",
+   "target": "Subscription",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Customer",
+   "target": "Account",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Customer",
+   "target": "Information",
+   "multiplicity_target": "1",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Customer",
+   "target": "PaymentInformation",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Customer",
+   "target": "FamilyMembership",
+   "multiplicity_target": "1",
+   "src": [
+    "R12",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "FamilyMembership",
+   "target": "Person",
+   "multiplicity_target": "1",
+   "src": [
+    "R12",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Admin",
+   "target": "Customer",
+   "multiplicity_target": "1",
+   "src": [
+    "R43",
+    "R62",
+    "R63"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Trainer",
+   "target": "Lesson",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional, Union\n\nclass Person:\n    pass\n\nclass Room:\n    pass\n\nclass Lesson:\n    def __init__(self, description: str, room: Room, type: str, numberOfPeopleAllowed: int):\n        self.description = description\n        self.room = room\n        self.type = type\n        self.numberOfPeopleAllowed = numberOfPeopleAllowed\n\nclass FamilyMembership:\n    def __init__(self):\n        self.members: List[Person] = []\n    def addPerson(self, person: Person):\n        self.members.append(person)\n    def removePerson(self, person: Person):\n        self.members.remove(person)\n\nclass Customer:\n    def __init__(self):\n        self.account: Account = Account()\n        self.subscription: Subscription = Subscription()\n        self.information: Information = Information()\n        self.paymentInformation: PaymentInformation = PaymentInformation()\n        self.familyMembership: Optional[FamilyMembership] = None\n    def openAccount(self):\n        raise NotImplementedError\n    def addInformation(self):\n        raise NotImplementedError\n    def addBankingDetail(self):\n        raise NotImplementedError\n    def chooseMembershipType(self):\n        raise NotImplementedError\n    def extendSubscription(self):\n        raise NotImplementedError\n    def seeHowLongSubscriptionLasts(self):\n        raise NotImplementedError\n    def usePreviousInformation(self):\n        raise NotImplementedError\n    def unsubscribe(self):\n        raise NotImplementedError\n    def resetPassword(self):\n        raise NotImplementedError\n    def changeDetail(self):\n        raise NotImplementedError\n    def updatePaymentInformation(self):\n        raise NotImplementedError\n    def seeOverviewOfLessons(self):\n        raise NotImplementedError\n    def seeFutureLessons(self):\n        raise NotImplementedError\n    def seeRecordOfPreviousLessons(self):\n        raise NotImplementedError\n    def callGymToBookLesson(self):\n        raise NotImplementedError\n    def callGymToCancelLesson(self):\n        raise NotImplementedError\n    def callGymToBookPersonalTrainingSession(self):\n        raise NotImplementedError\n    def callGymToCancelPersonalTrainingSession(self):\n        raise NotImplementedError\n    def bookSpotForFreePracticeArea(self):\n        raise NotImplementedError\n    def seeHowManySpotsBooked(self):\n        raise NotImplementedError\n    def receiveNotificationOfBookingCancellation(self):\n        raise NotImplementedError\n    def confirmBookingCancellation(self):\n        raise NotImplementedError\n    def seeCustomerInformation(self):\n        raise NotImplementedError\n    def seeCustomerMembership(self):\n        raise NotImplementedError\n\nclass Admin:\n    def __init__(self):\n        pass\n    def addNewTrainer(self):\n        raise NotImplementedError\n    def addNewAdmin(self):\n        raise NotImplementedError\n    def removeTrainer(self):\n        raise NotImplementedError\n    def seeCustomerInformation(self):\n        raise NotImplementedError\n    def seeCustomerSubscription(self):\n        raise NotImplementedError\n    def seeIfCustomerDidNotShowUp(self):\n        raise NotImplementedError\n    def seeHowManyTimesCustomerDidNotShowUp(self):\n        raise NotImplementedError\n    def issueFineForRepeatOffenders(self):\n        raise NotImplementedError\n    def editAnyLesson(self):\n        raise NotImplementedError\n    def cancelLessonByAdmin(self):\n        raise NotImplementedError\n\nclass Trainer:\n    def __init__(self):\n        self.lessons: List[Lesson] = []\n    def addLesson(self):\n        raise NotImplementedError\n    def setTimeOfLesson(self):\n        raise NotImplementedError\n    def setDescriptionOfLesson(self):\n        raise NotImplementedError\n    def setRoomOfLesson(self):\n        raise NotImplementedError\n    def setTypeOfLesson(self):\n        raise NotImplementedError\n    def setNumberPeopleAllowed(self):\n        raise NotImplementedError\n    def seeSchedule(self):\n        raise NotImplementedError\n    def editLesson(self):\n        raise NotImplementedError\n    def editTimeOfLesson(self):\n        raise NotImplementedError\n    def editRoomOfLesson(self):\n        raise NotImplementedError\n    def editDescriptionOfLesson(self):\n        raise NotImplementedError\n    def editNumberPeopleAllowed(self):\n        raise NotImplementedError\n    def cancelLesson(self):\n        raise NotImplementedError\n\nclass Notification:\n    def __init__(self, method: str):\n        self.method = method\n    def chooseNotificationMethod(self):\n        raise NotImplementedError\n    def receiveEmailNotification(self):\n        raise NotImplementedError\n    def receivePushNotification(self):\n        raise NotImplementedError\n    def chooseWhatToReceiveNotificationsFor(self):\n        raise NotImplementedError\n\nclass Subscription:\n    pass\n\nclass Account:\n    pass\n\nclass Information:\n    pass\n\nclass PaymentInformation:\n    pass\n\nclass Method:\n    pass",
+ "java": {}
+}

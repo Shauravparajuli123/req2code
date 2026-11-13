@@ -1,0 +1,148 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "SetLaunchConfigurationType",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "LaunchConfiguration",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "attributes",
+    "mapAttribute",
+    "listAttribute"
+   ],
+   "methods": [
+    {
+     "name": "set_type",
+     "use_case": "SetLaunchConfigurationType"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "key"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "MapAttribute",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "add_entry",
+     "use_case": "SetLaunchConfigurationType"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "MapEntry",
+   "kind": "class",
+   "attributes": [
+    "key",
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R11"
+   ]
+  },
+  {
+   "name": "ListAttribute",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "add_entry",
+     "use_case": "SetLaunchConfigurationType"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "ListEntry",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "LaunchConfiguration",
+   "target": "Attribute",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MapAttribute",
+   "target": "MapEntry",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ListAttribute",
+   "target": "ListEntry",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12",
+    "R13"
+   ]
+  }
+ ],
+ "python": "class LaunchConfiguration:\n    def __init__(self):\n        self.type = None\n        self.attributes = []\n        self.mapAttribute = None\n        self.listAttribute = None\n\n    def set_type(self, type):\n        self.type = type\n\n    def add_attribute(self, attribute):\n        self.attributes.append(attribute)\n\n    def add_map_entry(self, entry):\n        if self.mapAttribute is None:\n            self.mapAttribute = MapAttribute()\\n        self.mapAttribute.add_entry(entry)\n\n    def add_list_entry(self, entry):\n        if self.listAttribute is None:\n            self.listAttribute = ListAttribute()\n        self.listAttribute.add_entry(entry)\nclass Attribute:\n    def __init__(self, key):\n        self.key = key\nclass MapAttribute:\n    def __init__(self):\n        self.entries = []\n    def add_entry(self, entry):\n        self.entries.append(entry)\nclass MapEntry:\n    def __init__(self, key, value):\n        self.key = key\n        self.value = value\nclass ListAttribute:\n    def __init__(self):\n        self.entries = []\n    def add_entry(self, entry):\n        self.entries.append(entry)\nclass ListEntry:\n    def __init__(self, value):\n        self.value = value",
+ "java": {}
+}

@@ -1,0 +1,111 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "tokens"
+   ],
+   "methods": [],
+   "src": [
+    "R1",
+    "R9",
+    "R12",
+    "R15"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R2",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    "weight"
+   ],
+   "methods": [],
+   "src": [
+    "R4",
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "PlaceTransitionArc",
+   "kind": "class",
+   "attributes": [
+    "transition"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "TransitionPlaceArc",
+   "kind": "class",
+   "attributes": [
+    "transition"
+   ],
+   "methods": [],
+   "src": [
+    "R6",
+    "R14"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Place",
+   "target": "Net",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "PlaceTransitionArc",
+   "target": "Transition",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GWPNV5.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Place:\n    \"\"\"Source: R1, R9, R12, R15\"\"\"\n    name: _t.Optional[str] = None\n    tokens: _t.Optional[int] = None\n    net: _t.Optional[\"Net\"] = None\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: R2, R10, R11\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Net:\n    \"\"\"Source: R3, R8, R12\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Arc:\n    \"\"\"Source: R4, R5, R6, R13, R14\"\"\"\n    weight: _t.Optional[float] = None\n\n\n@_dc.dataclass\nclass PlaceTransitionArc:\n    \"\"\"Source: R5, R13, R14\"\"\"\n    transition: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass TransitionPlaceArc:\n    \"\"\"Source: R6, R14\"\"\"\n    transition: _t.Optional[str] = None\n",
+ "java": {
+  "Place.java": "/** Generated from shared model D2/GWPNV5. Source: R1, R9, R12, R15 */\npublic class Place {\n    private java.lang.String name;\n    private int tokens;\n    private Net net;\n}\n",
+  "Transition.java": "/** Generated from shared model D2/GWPNV5. Source: R2, R10, R11 */\npublic class Transition {\n    private java.lang.String name;\n}\n",
+  "Net.java": "/** Generated from shared model D2/GWPNV5. Source: R3, R8, R12 */\npublic class Net {\n}\n",
+  "Arc.java": "/** Generated from shared model D2/GWPNV5. Source: R4, R5, R6, R13, R14 */\npublic class Arc {\n    private double weight;\n}\n",
+  "PlaceTransitionArc.java": "/** Generated from shared model D2/GWPNV5. Source: R5, R13, R14 */\npublic class PlaceTransitionArc {\n    private java.lang.String transition;\n}\n",
+  "TransitionPlaceArc.java": "/** Generated from shared model D2/GWPNV5. Source: R6, R14 */\npublic class TransitionPlaceArc {\n    private java.lang.String transition;\n}\n"
+ }
+}

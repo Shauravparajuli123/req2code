@@ -1,0 +1,87 @@
+[
+ {
+  "id": "A1",
+  "type": "quantifier",
+  "sid": "R1.s1",
+  "req_id": "R1",
+  "cue": "Many",
+  "text": "Many different airlines can operate in different airports.",
+  "readings": [
+   "Many different airlines can operate in the same airport.",
+   "A single airline can operate in many airports."
+  ],
+  "status": "open",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The phrase 'Many different airlines' could imply multiple airlines operating in the same airport or a single airline operating in multiple airports.",
+  "chosen": null
+ },
+ {
+  "id": "A2",
+  "type": "referential",
+  "sid": "R4.s1",
+  "req_id": "R4",
+  "cue": "its",
+  "text": "Besides, the operation of an airline in a specific airport can be started and stopped at any time, and its operating cost can be updated at any time.",
+  "readings": [
+   "The operating cost can be updated at any time.",
+   "The operating cost of the specific airport can be updated at any time."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The pronoun 'its' could refer to the operating cost of the airline or the operating cost of the specific airport.",
+  "chosen": "The operating cost can be updated at any time."
+ },
+ {
+  "id": "A3",
+  "type": "quantifier",
+  "sid": "R4.s1",
+  "req_id": "R4",
+  "cue": "any",
+  "text": "Besides, the operation of an airline in a specific airport can be started and stopped at any time, and its operating cost can be updated at any time.",
+  "readings": [
+   "The operation of an airline in a specific airport can be started and stopped at any time.",
+   "The operation of an airline in a specific airport can be started and stopped at any time, and its operating cost can be updated at any time."
+  ],
+  "status": "open",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The phrase 'any time' could imply that the operation and cost can be updated independently or together.",
+  "chosen": null
+ },
+ {
+  "id": "A4",
+  "type": "actor",
+  "sid": "R4.s1",
+  "req_id": "R4",
+  "cue": "passive 'started' without agent",
+  "text": "Besides, the operation of an airline in a specific airport can be started and stopped at any time, and its operating cost can be updated at any time.",
+  "readings": [
+   "The operation of an airline in a specific airport can be started and stopped at any time, and its operating cost can be updated at any time.",
+   "The operation of an airline in a specific airport can be started and stopped by the airport authority, and its operating cost can be updated by the airline."
+  ],
+  "status": "open",
+  "confirmed": true,
+  "llm_type": "actor",
+  "explanation": "The passive voice 'can be started and stopped' could imply that the operation is managed by the airport authority or by the airline.",
+  "chosen": null
+ },
+ {
+  "id": "A5",
+  "type": "incompleteness",
+  "sid": "R5.s1",
+  "req_id": "R5",
+  "cue": "details",
+  "text": "The relation between airport and airline contains a details class with the operating cost.",
+  "readings": [
+   "The relation between airport and airline contains a class with the operating cost.",
+   "The relation between airport and airline contains a class with the details of the operating cost."
+  ],
+  "status": "open",
+  "confirmed": true,
+  "llm_type": "incompleteness",
+  "explanation": "The phrase 'details class' is incomplete and could refer to a class with the operating cost or a class with more detailed information about the operating cost.",
+  "chosen": null
+ }
+]

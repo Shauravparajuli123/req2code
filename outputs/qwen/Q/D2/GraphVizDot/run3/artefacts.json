@@ -1,0 +1,70 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineGraphElement",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Graph",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "dimension"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "GraphElement",
+   "kind": "class",
+   "attributes": [
+    "label",
+    "zIndex",
+    "parentGraph"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "location"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Graph",
+   "target": "GraphElement",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "class Element:\n    def __init__(self, location: str):\n        self.location = location\n\n\nclass GraphElement(Element):\n    def __init__(self, label: str, zIndex: int, parentGraph: Graph):\n        super().__init__(location=\"\")\n        self.label = label\n        self.zIndex = zIndex\n        self.parentGraph = parentGraph\n\n\nclass Graph:\n    def __init__(self, type: str, dimension: str):\n        self.type = type\n        self.dimension = dimension\n        self.graph_elements = []\n\n    def add_element(self, element: GraphElement):\n        raise NotImplementedError\n\nif __name__ == '__main__':\n    pass",
+ "java": {}
+}

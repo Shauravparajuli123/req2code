@@ -1,0 +1,69 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "UIML",
+   "src": [
+    "R1",
+    "R4"
+   ]
+  },
+  {
+   "name": "Header",
+   "src": [
+    "R4",
+    "R6"
+   ]
+  },
+  {
+   "name": "MetaData",
+   "src": [
+    "R3",
+    "R6"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "UIML",
+   "name": "head",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "owner": "Header",
+   "name": "metas",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "owner": "MetaData",
+   "name": "name",
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "has",
+   "source": "UIML",
+   "target": "Header",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Header",
+   "target": "MetaData",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

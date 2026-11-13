@@ -1,0 +1,100 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineSchema",
+   "actor": "User",
+   "src": []
+  }
+ ],
+ "classes": [
+  {
+   "name": "RmodelElement",
+   "kind": "class",
+   "attributes": [
+    "kind"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Schema",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "type"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Key",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "name": "ForeignKey",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R13",
+    "R14",
+    "R15"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Table",
+   "target": "Schema",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass RmodelElement:\n    def __init__(self, kind: str):\n        self.kind: str = kind\n    \n    def __str__(self) -> str:\n        return self.kind\n    \n    def __repr__(self) -> str:\n        return f'RmodelElement(kind={self.kind!r})'\n    \n    src: List[str] = ['R1']\n\nclass Schema:\n    def __init__(self):\n        pass\n    \n    def __str__(self) -> str:\n        return 'Schema()'\n    \n    def __repr__(self) -> str:\n        return 'Schema()'\n    \n    src: List[str] = ['R2']\n\nclass Table:\n    def __init__(self):\n        pass\n    \n    def __str__(self) -> str:\n        return 'Table()'\n    \n    def __repr__(self) -> str:\n        return 'Table()'\n    \n    src: List[str] = ['R3', 'R7', 'R8']\n\nclass Column:\n    def __init__(self, type: str):\n        self.type: str = type\n    \n    def __str__(self) -> str:\n        return f'Column(type={self.type!r})'\n    \n    def __repr__(self) -> str:\n        return f'Column(type={self.type!r})'\n    \n    src: List[str] = ['R4', 'R10', 'R11']\n\nclass Key:\n    def __init__(self):\n        pass\n    \n    def __str__(self) -> str:\n        return 'Key()'\n    \n    def __repr__(self) -> str:\n        return 'Key()'\n    \n    src: List[str] = ['R5', 'R9', 'R12']\n\nclass ForeignKey:\n    def __init__(self):\n        pass\n    \n    def __str__(self) -> str:\n        return 'ForeignKey()'\n    \n    def __repr__(self) -> str:\n        return 'ForeignKey()'\n    \n    src: List[str] = ['R6', 'R13', 'R14', 'R15']\n",
+ "java": {}
+}

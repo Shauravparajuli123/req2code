@@ -1,0 +1,271 @@
+{
+ "condition": "O",
+ "hint": {
+  "case": "D2/XML",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A Node of an XML file may have one parent which is an Element of the XML file."
+     }
+    ],
+    "name": "parent"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R4",
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "an XML file comprises Element"
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A Node of an XML file may have one parent which is an Element of the XML file."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "An Element of an XML file can have many children Nodes"
+     }
+    ],
+    "name": "Element",
+    "freq": 3
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R1",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A Node of an XML file has a name, a startLine number, and an endLine number"
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A Node of an XML file may have one parent which is an Element of the XML file."
+     }
+    ],
+    "name": "Node",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R1",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A Node of an XML file has a name, a startLine number, and an endLine number"
+     },
+     {
+      "sid": "R3.s1",
+      "text": "an XML file comprises Text elements"
+     },
+     {
+      "sid": "R4.s1",
+      "text": "an XML file comprises Element"
+     }
+    ],
+    "name": "XmlFile",
+    "freq": 7
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "An Element of an XML file can have many children Nodes"
+     }
+    ],
+    "owner": "Element",
+    "name": "child",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A Node of an XML file has a name, a startLine number, and an endLine number"
+     }
+    ],
+    "owner": "Node",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A Node of an XML file may have one parent which is an Element of the XML file."
+     }
+    ],
+    "owner": "Node",
+    "name": "parent",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "an XML file comprises Root elements"
+     }
+    ],
+    "owner": "XmlFile",
+    "name": "root element",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "an XML file comprises Text elements"
+     }
+    ],
+    "owner": "XmlFile",
+    "name": "text element",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R4",
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "has_verb",
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "an XML file comprises Element"
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A Node of an XML file may have one parent which is an Element of the XML file."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "An Element of an XML file can have many children Nodes"
+     }
+    ],
+    "kind": "has",
+    "source": "XmlFile",
+    "target": "Element",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R1",
+     "R6"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A Node of an XML file has a name, a startLine number, and an endLine number"
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A Node of an XML file may have one parent which is an Element of the XML file."
+     }
+    ],
+    "kind": "has",
+    "source": "XmlFile",
+    "target": "Node",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Element",
+     "target": "Node",
+     "multiplicity": "0..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

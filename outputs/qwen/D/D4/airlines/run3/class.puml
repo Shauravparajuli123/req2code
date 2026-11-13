@@ -1,0 +1,24 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Airline {
+  name : String
+  +startOperation()
+  +stopOperation()
+  +updateOperatingCost()
+}
+class Airport {
+  code : String
+  city : String
+}
+class Operation {
+  operatingCost : double
+}
+class Details {
+}
+Airline "1" -- "1..*" Airport : operates at
+Airline "1" -- "1" Details : has
+Details "1" -- "1" Operation : contains
+Operation "1" -- "1" Airport : operates at
+Operation "1" -- "1" Airline : performed by
+@enduml

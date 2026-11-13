@@ -1,0 +1,59 @@
+{
+ "actors": [
+  "Contact"
+ ],
+ "use_cases": [
+  {
+   "name": "SetContactName",
+   "actor": "Contact",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "set_name",
+     "use_case": "SetContactName"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CellPhoneNumber",
+   "kind": "class",
+   "attributes": [
+    "number"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Contact",
+   "target": "CellPhoneNumber",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "class Contact:\n    def __init__(self, name):\n        self.name = name\n    def set_name(self, new_name):\n        raise NotImplementedError\n\nclass CellPhoneNumber:\n    def __init__(self, number):\n        self.number = number\n",
+ "java": {}
+}

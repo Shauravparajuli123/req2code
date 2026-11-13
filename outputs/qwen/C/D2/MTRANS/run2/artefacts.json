@@ -1,0 +1,195 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "MtransModel",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "modules",
+    "rules",
+    "inheritances",
+    "expressions",
+    "sections",
+    "variables"
+   ],
+   "methods": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17"
+   ]
+  },
+  {
+   "name": "Module",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "rules"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "module",
+    "source",
+    "sections",
+    "inheritances"
+   ],
+   "methods": [
+    {
+     "name": "addSection",
+     "use_case": null
+    },
+    {
+     "name": "addInheritance",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R12",
+    "R13",
+    "R14",
+    "R15"
+   ]
+  },
+  {
+   "name": "Section",
+   "kind": "class",
+   "attributes": [
+    "kind"
+   ],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Inheritance",
+   "kind": "class",
+   "attributes": [
+    "rule"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R16"
+   ]
+  },
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    "instruction"
+   ],
+   "methods": [],
+   "src": [
+    "R6",
+    "R18",
+    "R19"
+   ]
+  },
+  {
+   "name": "Instruction",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Variable",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R9",
+    "R22"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "MtransModel",
+   "target": "Module",
+   "src": [
+    "R10",
+    "R3"
+   ]
+  },
+  {
+   "source": "Module",
+   "target": "Rule",
+   "src": [
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "source": "Rule",
+   "target": "Section",
+   "src": [
+    "R20",
+    "R14"
+   ]
+  },
+  {
+   "source": "Rule",
+   "target": "Variable",
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "source": "Expression",
+   "target": "Instruction",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "source": "Instruction",
+   "target": "Expression",
+   "src": [
+    "R21"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/MTRANS.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass MtransModel:\n    \"\"\"Source: R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17\"\"\"\n    name: _t.Optional[str] = None\n    modules: _t.Optional[str] = None\n    rules: _t.Optional[str] = None\n    inheritances: _t.Optional[str] = None\n    expressions: _t.Optional[str] = None\n    sections: _t.Optional[str] = None\n    variables: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Module:\n    \"\"\"Source: R3, R10, R11\"\"\"\n    name: _t.Optional[str] = None\n    rules: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Rule:\n    \"\"\"Source: R4, R12, R13, R14, R15\"\"\"\n    name: _t.Optional[str] = None\n    module: _t.Optional[str] = None\n    source: _t.Optional[str] = None\n    sections: _t.Optional[str] = None\n    inheritances: _t.Optional[str] = None\n    variables: _t.List[\"Variable\"] = _dc.field(default_factory=list)\n\n    def addSection(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addInheritance(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Section:\n    \"\"\"Source: R7\"\"\"\n    kind: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Inheritance:\n    \"\"\"Source: R5, R16\"\"\"\n    rule: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Expression:\n    \"\"\"Source: R6, R18, R19\"\"\"\n    instruction: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Instruction:\n    \"\"\"Source: R19\"\"\"\n    expression: _t.Optional[\"Expression\"] = None\n\n\n@_dc.dataclass\nclass Variable:\n    \"\"\"Source: R9, R22\"\"\"\n    name: _t.Optional[str] = None\n",
+ "java": {
+  "MtransModel.java": "/** Generated from shared model D2/MTRANS. Source: R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17 */\npublic class MtransModel {\n    private java.lang.String name;\n    private java.lang.String modules;\n    private java.lang.String rules;\n    private java.lang.String inheritances;\n    private java.lang.String expressions;\n    private java.lang.String sections;\n    private java.lang.String variables;\n}\n",
+  "Module.java": "/** Generated from shared model D2/MTRANS. Source: R3, R10, R11 */\npublic class Module {\n    private java.lang.String name;\n    private java.lang.String rules;\n}\n",
+  "Rule.java": "/** Generated from shared model D2/MTRANS. Source: R4, R12, R13, R14, R15 */\npublic class Rule {\n    private java.lang.String name;\n    private java.lang.String module;\n    private java.lang.String source;\n    private java.lang.String sections;\n    private java.lang.String inheritances;\n    private java.util.List<Variable> variables;\n\n    /** Operation. */\n    public void addSection() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addInheritance() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Section.java": "/** Generated from shared model D2/MTRANS. Source: R7 */\npublic class Section {\n    private java.lang.String kind;\n}\n",
+  "Inheritance.java": "/** Generated from shared model D2/MTRANS. Source: R5, R16 */\npublic class Inheritance {\n    private java.lang.String rule;\n}\n",
+  "Expression.java": "/** Generated from shared model D2/MTRANS. Source: R6, R18, R19 */\npublic class Expression {\n    private java.lang.String instruction;\n}\n",
+  "Instruction.java": "/** Generated from shared model D2/MTRANS. Source: R19 */\npublic class Instruction {\n    private Expression expression;\n}\n",
+  "Variable.java": "/** Generated from shared model D2/MTRANS. Source: R9, R22 */\npublic class Variable {\n    private java.lang.String name;\n}\n"
+ }
+}

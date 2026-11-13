@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "R13, R42, R43, R44, R45 are not explicitly modeled but assumed to be related to the Reseller class."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for R12, R18, R28, R30, R31, R32, R46, R48, R50, R52, R53, R54",
+   "fix": "Add corresponding classes for these requirements."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for R13, R41, R42, R44, R45",
+   "fix": "Add corresponding classes for these requirements."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between User and BankAccount for R2, R16, R17",
+   "fix": "Add a 1..1 relationship between User and BankAccount."
+  }
+ ]
+}

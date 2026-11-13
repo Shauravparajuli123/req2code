@@ -1,0 +1,158 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [
+   {
+    "name": "Company Structure Model",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11"
+    ]
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "Company",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10"
+    ]
+   },
+   {
+    "name": "CorporateHQ",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "name": "Store",
+    "src": [
+     "R1",
+     "R3",
+     "R4",
+     "R9",
+     "R10"
+    ]
+   },
+   {
+    "name": "BackOffice",
+    "src": [
+     "R1",
+     "R3",
+     "R4",
+     "R5",
+     "R10"
+    ]
+   },
+   {
+    "name": "CashRegister",
+    "src": [
+     "R7",
+     "R11"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Company",
+    "name": "backOffice",
+    "src": [
+     "R5",
+     "R10"
+    ]
+   },
+   {
+    "owner": "Company",
+    "name": "stores",
+    "src": [
+     "R1",
+     "R3",
+     "R4",
+     "R9"
+    ]
+   },
+   {
+    "owner": "CorporateHQ",
+    "name": "stores",
+    "src": [
+     "R8",
+     "R9"
+    ]
+   },
+   {
+    "owner": "Store",
+    "name": "cashRegisters",
+    "src": [
+     "R11"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Company",
+    "target": "BackOffice",
+    "src": [
+     "R5",
+     "R10"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Company",
+    "target": "Store",
+    "src": [
+     "R1",
+     "R3",
+     "R4",
+     "R9"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "CorporateHQ",
+    "target": "Store",
+    "src": [
+     "R8",
+     "R9"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Store",
+    "target": "BackOffice",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Store",
+    "target": "CashRegister",
+    "src": [
+     "R11"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

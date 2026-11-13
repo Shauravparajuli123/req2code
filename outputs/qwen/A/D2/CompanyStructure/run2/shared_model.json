@@ -1,0 +1,254 @@
+{
+ "case": "D2/CompanyStructure",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createCompany",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "CorporateHQ",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "createCorporateHQ",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Store",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "createStore",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "BackOffice",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "createBackOffice",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "CashRegister",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "createCashRegister",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "aggregation",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "aggregation",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "aggregation",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "aggregation",
+   "source": "C3",
+   "target": "C5",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "generalization",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is",
+   "src": []
+  },
+  {
+   "id": "R7",
+   "kind": "generalization",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is",
+   "src": []
+  },
+  {
+   "id": "R8",
+   "kind": "generalization",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is",
+   "src": []
+  },
+  {
+   "id": "R9",
+   "kind": "generalization",
+   "source": "C5",
+   "target": "C3",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "is",
+   "src": []
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Requirement R2 is implicitly satisfied by the generalization relationship CorporateHQ -> Company."
+  }
+ ],
+ "open_tags": []
+}

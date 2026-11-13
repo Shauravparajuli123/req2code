@@ -1,0 +1,117 @@
+{
+ "actors": [
+  "none"
+ ],
+ "use_cases": [
+  {
+   "name": "none",
+   "actor": "none",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "ModelElement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R1"
+   ]
+  },
+  {
+   "name": "StructuralFeature",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R1"
+   ]
+  },
+  {
+   "name": "Class",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R1"
+   ]
+  },
+  {
+   "name": "DataType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R1"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Class",
+   "target": "Attribute",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "DataType",
+   "target": "Attribute",
+   "multiplicity_target": "1",
+   "src": [
+    "R8",
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Attribute",
+   "target": "Class",
+   "multiplicity_target": "1",
+   "src": [
+    "R9",
+    "R1"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass ModelElement:\n    pass\nclass SimplifiedMiningMart:\n    pass\nclass Classifier:\n    def __init__(self, name: str):\n        self.name = name\nclass StructuralFeature:\n    pass\nclass Class(Classifier):\n    def __init__(self, name: str):\n        self.name = name\n        self.attributes: List[Attribute] = []\nclass DataType(Classifier):\n    def __init__(self, name: str):\n        self.name = name\n        self.attribute: Attribute = None\nclass Attribute:\n    def __init__(self, name: str, class_: Class):\n        self.name = name\n        self.class_ = class_\n        self.data_type: DataType = None",
+ "java": {}
+}

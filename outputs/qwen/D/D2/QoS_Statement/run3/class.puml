@@ -1,0 +1,13 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class QoSStatement {
+}
+class SingleQoSStatement {
+  qoSConstraint : String
+}
+class CompoundQoSStatement {
+  qoSStatement : String
+}
+CompoundQoSStatement --|> QoSStatement
+@enduml

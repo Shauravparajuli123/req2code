@@ -1,0 +1,192 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "TrackBug",
+   "actor": "User",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "name": "DescribeControl",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R6",
+    "R10"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    "day",
+    "year"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Control",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "date"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10",
+    "R9"
+   ]
+  },
+  {
+   "name": "ControlsSequence",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "ControlsObject",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Bug",
+   "kind": "class",
+   "attributes": [
+    "number",
+    "description",
+    "originator",
+    "comments",
+    "closeDate"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "BugTracking",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "ControlType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "SoftwareQualityControl",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R5"
+   ]
+  },
+  {
+   "name": "SoftwareBugTrackingSystem",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Control",
+   "target": "ControlsSequence",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ControlsObject",
+   "target": "ControlsSequence",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Control",
+   "target": "Date",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Bug",
+   "target": "BugTracking",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ControlType",
+   "target": "SoftwareBugTrackingSystem",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Date:\n    def __init__(self, day: int, year: int):\n        self.day: int = day\n        self.year: int = year\n\nclass ControlType:\n    pass\n\nclass Control:\n    def __init__(self, type: ControlType, date: Date):\n        self.type: ControlType = type\n        self.date: Date = date\n        self.role: Optional[str] = None\n        self.bug: Optional[Bug] = None\n\nclass ControlsSequence:\n    def __init__(self):\n        self.controls: List[Control] = []\n\nclass ControlsObject:\n    def __init__(self, role: str):\n        self.role: str = role\n\nclass Bug:\n    def __init__(self, number: int, description: str, originator: str, comments: str, closedate: Optional[Date] = None):\n        self.number: int = number\n        self.description: str = description\n        self.originator: str = originator\n        self.comments: str = comments\n        self.closedate: Optional[Date] = closedate\n\nclass SoftwareQualityControl:\n    def __init__(self, bug_tracking: BugTracking):\n        self.bug_tracking: BugTracking = bug_tracking\n\nclass BugTracking:\n    def __init__(self):\n        self.bugs: List[Bug] = []\n\nclass Architecture:\n    pass\n\nclass SoftwareBugTrackingSystem:\n    def __init__(self):\n        self.control_types: List[ControlType] = []\n        self.bugs: List[Bug] = []\n",
+ "java": {}
+}

@@ -1,0 +1,65 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "AlternativeTrans",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Path",
+   "kind": "class",
+   "attributes": [
+    "transitions"
+   ],
+   "methods": [
+    {
+     "name": "addTransition",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Path",
+   "target": "Transition",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "AlternativeTrans",
+   "target": "Path",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/TextualPathExp.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass AlternativeTrans:\n    \"\"\"Source: R4\"\"\"\n    name: _t.Optional[str] = None\n    paths: _t.List[\"Path\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Path:\n    \"\"\"Source: R6, R7\"\"\"\n    transitions: _t.Optional[str] = None\n\n    def addTransition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: R7\"\"\"\n    pass\n",
+ "java": {
+  "AlternativeTrans.java": "/** Generated from shared model D2/TextualPathExp. Source: R4 */\npublic class AlternativeTrans {\n    private java.lang.String name;\n    private java.util.List<Path> paths;\n}\n",
+  "Path.java": "/** Generated from shared model D2/TextualPathExp. Source: R6, R7 */\npublic class Path {\n    private java.lang.String transitions;\n\n    /** Operation. */\n    public void addTransition() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Transition.java": "/** Generated from shared model D2/TextualPathExp. Source: R7 */\npublic class Transition {\n}\n"
+ }
+}

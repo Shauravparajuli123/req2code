@@ -1,0 +1,138 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Fsm",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "associationStateSource"
+   ],
+   "methods": [
+    {
+     "name": "hasState",
+     "use_case": "R3"
+    },
+    {
+     "name": "hasStateMachine",
+     "use_case": "R4"
+    },
+    {
+     "name": "hasTransition",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R4",
+    "R11"
+   ]
+  },
+  {
+   "name": "RootFolder",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasStateMachine",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "State",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasStateMachine",
+     "use_case": "R8"
+    },
+    {
+     "name": "hasAssociationStateSource",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasStateMachine",
+     "use_case": "R7"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Fsm",
+   "target": "State",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Fsm",
+   "target": "RootFolder",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Fsm",
+   "target": "Transition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "State",
+   "target": "Fsm",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "Fsm",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass MgaObject:\n    def __init__(self, name: str):\n        self.name = name\n\nclass AssociationStateState:\n    pass\nclass FiniteStateMachine:\n    def __init__(self, root_folder: RootFolder):\n        self.root_folder = root_folder\n        self.states: List[State] = []\n        self.transitions: List[Transition] = []\n\nclass RootFolder:\n    def __init__(self, name: str):\n        self.name = name\n\nclass State:\n    def __init__(self, fsm: FiniteStateMachine):\n        self.fsm = fsm\n        self.association_state_sources: List[AssociationStateState] = []\n\nclass Transition:\n    def __init__(self, fsm: FiniteStateMachine):\n        self.fsm = fsm\n        self.state_machine = fsm\n        self.association_state_source: AssociationStateState = None\n",
+ "java": {}
+}

@@ -1,0 +1,127 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [
+  "R11 (incompleteness, \"relevant\"): readings ['relevant data exists', 'no relevant data']",
+  "R13 (incompleteness, \"relevant\"): readings ['relevant data exists', 'no relevant data']",
+  "R14 (incompleteness, \"informations\"): readings ['informations exists', 'no informations']",
+  "R18 (incompleteness, \"relevant\"): readings ['relevant data exists', 'no relevant data']",
+  "R20 (incompleteness, \"information\"): readings ['information exists', 'no information']",
+  "R21 (incompleteness, \"information\"): readings ['one transition information', 'multiple transition informations']"
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Assuming 'relevant data' in R11 and R18 refers to 'WorkflowData' class"
+  },
+  {
+   "tag": "R13",
+   "assumption": "Assuming 'relevant data' in R13 refers to 'WorkflowProcessActivity' class"
+  },
+  {
+   "tag": "R14",
+   "assumption": "Assuming 'information' in R14 refers to 'TransitionInformation' class"
+  },
+  {
+   "tag": "R15",
+   "assumption": "Assuming 'participant specification' in R15 refers to 'ParticipantSpecification' class"
+  },
+  {
+   "tag": "R16",
+   "assumption": "Assuming 'process activities' in R16 refers to 'WorkflowProcessActivity' class"
+  },
+  {
+   "tag": "R21",
+   "assumption": "Assuming 'transition information' in R21 refers to 'TransitionInformation' class"
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for R2: Interface for workflow",
+   "fix": "Add a class named 'WorkflowInterface'"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for R3: Class that has the data related to workflow",
+   "fix": "Add a class named 'WorkflowData'"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for R4: A WfMC model has workflow participant specifications",
+   "fix": "Add a class named 'ParticipantSpecification'"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for R5: Workflow State class",
+   "fix": "Add a class named 'WorkflowState'"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for R6: Workflow State Class, collaborates with WorkflowProcessActivity",
+   "fix": "Add a class named 'WorkflowState'"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for R10: Abstract and Concrete classes for workflow",
+   "fix": "Add abstract class 'AbstractWorkflow' and concrete class 'ConcreteWorkflow'"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for R12: Abstract and Concrete classes related to specific functionality in Workflow",
+   "fix": "Add abstract class 'AbstractWorkflowFunction' and concrete class 'ConcreteWorkflowFunction'"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for R19: Collaborating classes for Activity/Transition (i.e. workflow state)",
+   "fix": "Add classes 'Activity' and 'Transition'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'Game' and 'WorkflowState'",
+   "fix": "Add a relationship 'Game' has 'WorkflowState'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'WorkflowState' and 'WorkflowProcessActivity'",
+   "fix": "Add a relationship 'WorkflowState' collaborates with 'WorkflowProcessActivity'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'WorkflowProcessActivity' and 'Transition'",
+   "fix": "Add a relationship 'WorkflowProcessActivity' has 'Transition'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'WorkflowProcessActivity' and 'WorkflowData'",
+   "fix": "Add a relationship 'WorkflowProcessActivity' has 'WorkflowData'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'ParticipantSpecification' and 'WorkflowProcessActivity'",
+   "fix": "Add a relationship 'ParticipantSpecification' has 'WorkflowProcessActivity'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'ParticipantSpecification' and 'WorkflowState'",
+   "fix": "Add a relationship 'ParticipantSpecification' has 'WorkflowState'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'Transition' and 'WorkflowProcessActivity'",
+   "fix": "Add a relationship 'Transition' has 'WorkflowProcessActivity'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'Transition' and 'WorkflowData'",
+   "fix": "Add a relationship 'Transition' has 'WorkflowData'"
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'Create Game' does not have a realising method",
+   "fix": "Add a method 'realizeCreateGame' to 'Game' class"
+  }
+ ]
+}

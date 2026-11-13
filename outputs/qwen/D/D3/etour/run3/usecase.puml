@@ -1,0 +1,221 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Agency" as A1
+actor "Tourist" as A2
+actor "User" as A3
+actor "AgencyOperator" as A4
+actor "PointOfRestaurantOperator" as A5
+actor "GuestUser" as A6
+actor "GpsSystem" as A7
+rectangle "etour" {
+  usecase "Delete A Cultural Object" as UC1
+  usecase "Insert A New Cultural Object" as UC2
+  usecase "Change Data Of A Cultural Object" as UC3
+  usecase "Return The List Of Cultural Objects" as UC4
+  usecase "View The Details Of A Selected Cultural Object" as UC5
+  usecase "Delete A Refreshment Point" as UC6
+  usecase "Activate A Convention At A Refreshment Point" as UC7
+  usecase "Edit Data Of A Refreshment Point" as UC8
+  usecase "Return The List Of Refreshment Points" as UC9
+  usecase "View The Details Of A Selected Refreshment Point" as UC10
+  usecase "View The History Of Conventions For A Refreshment Point" as UC11
+  usecase "View The Details Of A Selected Tourist Account" as UC12
+  usecase "Enable Or Disable A Tourist Account" as UC13
+  usecase "Return The List Of Tourist Accounts" as UC14
+  usecase "Modify Data" as UC15
+  usecase "Search Tourist" as UC16
+  usecase "Errored" as UC17
+  usecase "Search Refreshment Point" as UC18
+  usecase "Edit Banner" as UC19
+  usecase "Check Banner Limit" as UC20
+  usecase "Delete Banner" as UC21
+  usecase "Insert Banner" as UC22
+  usecase "Insert News" as UC23
+  usecase "Delete News" as UC24
+  usecase "Change News Data" as UC25
+  usecase "View Site Feedback" as UC26
+  usecase "Generate Statistical Report" as UC27
+  usecase "Edit Feedback Comment" as UC28
+  usecase "Search For A Specific Site" as UC29
+  usecase "Remove One Or More Search Tags" as UC30
+  usecase "Enter Search Tags Already In The System" as UC31
+  usecase "Insert A New Tag Search" as UC32
+  usecase "Change The Password Associated With Your Account" as UC33
+  usecase "Enter A Password But Is Not Confirmed In A Correct Way" as UC34
+  usecase "Create A New System" as UC35
+  usecase "Research And Cultural Heritage For All" as UC36
+  usecase "Ensure A Registered User To Access The System With The Privileges That Fall" as UC37
+  usecase "Data Supplied For The Login Is Incorrect" as UC38
+  usecase "End The Current Session" as UC39
+  usecase "Inserting A New Banner Associated With The Point Of Rest" as UC40
+  usecase "Changing The Image Of A Banner Ad" as UC41
+  usecase "Delete A Banner Ad Associated With The Point Of Rest" as UC42
+  usecase "Activate The Editing Functionality Of The Menu" as UC43
+  usecase "Display A Form With Seven Days Of The Week" as UC44
+  usecase "Select A Day Of The Week And Submit The Form" as UC45
+  usecase "Upload The Data Menu For The Selected Day And Loads Them Into A Form" as UC46
+  usecase "Edit Menu Of The Selected Day And Submit The Form" as UC47
+  usecase "Verify The Data Entered And Asks For Confirmation Of The Edit Menu" as UC48
+  usecase "Confirm The Operation" as UC49
+  usecase "Save Changes To The Menu Selected" as UC50
+  usecase "Enable The Functionality Of Deleting A Menu" as UC51
+  usecase "Display A Form Containing The Seven Days Of The Week" as UC52
+  usecase "Call To Confirm The Deletion" as UC53
+  usecase "Delete The Daily Menu Selection" as UC54
+  usecase "Enable The Functionality Of The Information Required By The Point Of Rest" as UC55
+  usecase "Upload Data Point Refreshments And Displays Them In A Form" as UC56
+  usecase "Change Data In The Form And Submit" as UC57
+  usecase "Verify The Data Entered And Asks For Confirmation Of The Change" as UC58
+  usecase "Store The Modified Data Of The Point Of Rest" as UC59
+  usecase "Enable The Functionality To Request The Convention To The Agency" as UC60
+  usecase "Display A Form For Entering Data Of The Convention" as UC61
+  usecase "Insert The Data In The Form Of The Agreement And Submit" as UC62
+  usecase "Verify The Data Entered And Asks For Confirmation Of The Request" as UC63
+  usecase "Send The Request To The Convention" as UC64
+  usecase "Select The Feature To Display Personal Statistics" as UC65
+  usecase "Display A Form That Shows Data For The Statistics Associated Refreshment Point" as UC66
+  usecase "Access To Functionality For The Modification Of Personal Search Preferences" as UC67
+  usecase "Upload Your Search Preferences And Displays Them In A Form" as UC68
+  usecase "Edit The Fields In The Form And Submit" as UC69
+  usecase "Asks Confirmation" as UC70
+  usecase "Confirmation For Changing Search Preferences" as UC71
+  usecase "Memorize Search Preferences Changed" as UC72
+  usecase "Access To Functionality For The Modification Of Data" as UC73
+  usecase "Load The Data And Displays Them In A Form" as UC74
+  usecase "Check The Modified Information And Asks For Confirmation Of The Change" as UC75
+  usecase "Confirmation Of The Transaction Change" as UC76
+  usecase "Store The Modified Data" as UC77
+  usecase "Access To Functionality For The Modification Of Generic Personal Preferences" as UC78
+  usecase "Upload Your Preferences And The General View In A Form" as UC79
+  usecase "Asks For Confirmation Of The Change" as UC80
+  usecase "Stores Preferences Changed" as UC81
+  usecase "Select The Feature To Display The List Of Personal Favorites" as UC82
+  usecase "Upload The List Of Bookmarks" as UC83
+  usecase "Select The Feature To Display The List Of Sites Visited Personal" as UC84
+  usecase "Upload The List Of Sites For Which The Tourist Has Issued A Feedback" as UC85
+  usecase "Activate The Feature For The Insertion Of The Selected Site From The Bookmarks" as UC86
+  usecase "Prompt The Inclusion" as UC87
+  usecase "Confirm The Input" as UC88
+  usecase "Insert The Selected Site In The List Of Bookmarks" as UC89
+  usecase "Choose To Remove Your Site From The List Of Bookmarks By Specific Features" as UC90
+  usecase "Prompt Removal" as UC91
+  usecase "Confirm The Removal" as UC92
+  usecase "Removes The Selected Site From The List Of Bookmarks" as UC93
+  usecase "Activate The Feature On The Issue Of Feedback" as UC94
+  usecase "Verify That The Visitor Has Not Already Issued A Feedback For The Site And Displays A Form For Entering The Feedback For The Selected Site" as UC95
+  usecase "Fill Out The Form Selecting One Vote And Inserting A Comment Then Submit" as UC96
+  usecase "Verify The Data Entered And Confirm The Cheide" as UC97
+  usecase "Confirming The Issue Of Feedback" as UC98
+  usecase "Remember Feedback And Inserts The Selected Site In The List Of Sites Visited" as UC99
+  usecase "Edit Comment" as UC100
+  usecase "Cancel Feedback" as UC101
+  usecase "Get Position" as UC102
+  usecase "Advanced Search" as UC103
+  usecase "View Site Details" as UC104
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+A1 --> UC7
+A1 --> UC8
+A1 --> UC9
+A1 --> UC10
+A1 --> UC11
+A1 --> UC12
+A1 --> UC13
+A1 --> UC14
+A1 --> UC15
+A1 --> UC16
+A1 --> UC17
+A1 --> UC18
+A1 --> UC19
+A1 --> UC20
+A1 --> UC21
+A1 --> UC22
+A1 --> UC23
+A1 --> UC24
+A1 --> UC25
+A1 --> UC26
+A1 --> UC27
+A1 --> UC28
+A3 --> UC29
+A3 --> UC30
+A3 --> UC31
+A3 --> UC32
+A4 --> UC33
+A3 --> UC34
+A6 --> UC35
+A6 --> UC36
+A3 --> UC37
+A3 --> UC38
+A3 --> UC39
+A5 --> UC40
+A5 --> UC41
+A5 --> UC42
+A5 --> UC43
+A5 --> UC44
+A5 --> UC45
+A5 --> UC46
+A5 --> UC47
+A5 --> UC48
+A5 --> UC49
+A5 --> UC50
+A5 --> UC51
+A5 --> UC52
+A5 --> UC53
+A5 --> UC54
+A5 --> UC55
+A5 --> UC56
+A5 --> UC57
+A5 --> UC58
+A5 --> UC59
+A5 --> UC60
+A5 --> UC61
+A5 --> UC62
+A5 --> UC63
+A5 --> UC64
+A5 --> UC65
+A5 --> UC66
+A2 --> UC67
+A2 --> UC68
+A2 --> UC69
+A2 --> UC70
+A2 --> UC71
+A2 --> UC72
+A2 --> UC73
+A2 --> UC74
+A2 --> UC75
+A2 --> UC76
+A2 --> UC77
+A2 --> UC78
+A2 --> UC79
+A2 --> UC80
+A2 --> UC81
+A2 --> UC82
+A2 --> UC83
+A2 --> UC84
+A2 --> UC85
+A2 --> UC86
+A2 --> UC87
+A2 --> UC88
+A2 --> UC89
+A2 --> UC90
+A2 --> UC91
+A2 --> UC92
+A2 --> UC93
+A2 --> UC94
+A2 --> UC95
+A2 --> UC96
+A2 --> UC97
+A2 --> UC98
+A2 --> UC99
+A2 --> UC100
+A2 --> UC101
+A7 --> UC102
+A2 --> UC103
+A2 --> UC104
+@enduml

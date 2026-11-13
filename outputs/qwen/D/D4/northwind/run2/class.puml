@@ -1,0 +1,122 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Company {
+  name : String
+  phoneNumber : String
+  addressDetails : String
+  state : String
+  zipCode : String
+  website : String
+  companyType : String
+  taxStatus : String
+  contacts : String
+  +addContact()
+  +removeContact()
+}
+class Contact {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  email : String
+  jobTitle : String
+  notes : String
+}
+class Employee {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  jobTitle : String
+  email : String
+  title : String
+  supervisor : String
+  +assignSupervisor()
+  +removeSupervisor()
+}
+class Product {
+  productCode : String
+  name : String
+  description : String
+  category : String
+  unitCost : double
+  retailPrice : double
+  inventoryLevel : int
+  reorderLevel : int
+  targetLevel : int
+  minimumReorderQuantity : int
+  discontinued : boolean
+}
+class ProductCategory {
+  name : String
+  code : String
+  description : String
+  image : String
+}
+class StockTake {
+  date : LocalDate
+  product : String
+  quantityOnHand : int
+  expectedQuantity : int
+}
+class Order {
+  orderDate : LocalDate
+  customer : String
+  employee : String
+  status : String
+  shipper : String
+  orderDetails : String
+  +addOrderDetail()
+  +removeOrderDetail()
+}
+class OrderDetail {
+  product : String
+  quantity : int
+  unitPrice : double
+  discount : double
+  status : String
+}
+enum OrderStatus {
+  PENDING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+enum OrderDetailStatus {
+  PENDING
+  FULFILLED
+  CANCELLED
+}
+class PurchaseOrder {
+  orderDate : LocalDate
+  vendor : String
+  employeeSubmitted : String
+  employeeApproved : String
+  status : String
+  purchaseOrderDetails : String
+  +addPurchaseOrderDetail()
+  +removePurchaseOrderDetail()
+}
+class PurchaseOrderDetail {
+  product : String
+  quantity : int
+  unitPrice : double
+}
+enum PurchaseOrderStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  FULFILLED
+}
+Company "0..*" -- "1" Contact : has
+Product "1" -- "1" ProductCategory : is in category
+Order "1" -- "1" Company : is for
+Order "1" -- "1" Employee : is processed by
+OrderDetail "1" -- "1" Product : contains
+Order "1" -- "0..*" OrderDetail : contains
+PurchaseOrder "1" -- "1" Employee : is submitted by
+PurchaseOrderDetail "1" -- "1" Product : contains
+PurchaseOrder "1" -- "0..*" PurchaseOrderDetail : contains
+StockTake "1" -- "1" Product : records
+@enduml

@@ -1,0 +1,242 @@
+{
+ "case": "D2/FeatureDiagrams",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "object_",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "attributes",
+     "type": "String",
+     "src": [
+      "R7",
+      "R9",
+      "R10",
+      "R12"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7",
+    "R9",
+    "R10",
+    "R12"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "key",
+     "type": "boolean",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "node",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "FeatureDiagram",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "root",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "XORGroup",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "preliminary",
+     "type": "boolean",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addNode",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "ORGroup",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "preliminary",
+     "type": "boolean",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "addNode",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R11",
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C5",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R10",
+    "R13"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is composed of",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "aggregation",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

@@ -1,0 +1,61 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  name : String
+  language : String
+  pushNotifications : boolean
+  newsletterSubscription : boolean
+  defaultStore : String
+  +createAccount()
+  +signNewsletter()
+  +unsubscribeNewsletter()
+  +activatePushNotification()
+  +deactivatePushNotification()
+  +resetPassword()
+  +changeFontSize()
+  +changeContrast()
+  +changeLanguage()
+  +receiveSuggestion()
+  +receiveDiscount()
+  +haveDeliveryService()
+  +getRecipe()
+  +provideRecipeIdea()
+  +addProductToWishlist()
+  +searchProduct()
+  +filterProducts()
+  +orderProductByPrice()
+  +orderProductByPopularity()
+  +seeOnSaleProducts()
+  +scanBarcode()
+  +readProductInformation()
+  +checkProductStock()
+  +checkProductStockInOtherStore()
+  +seeQuantityInStore()
+  +seeProductAvailabilityDate()
+  +getInspiration()
+  +seeUsedProductsInRecipe()
+  +purchaseProductOnline()
+  +haveGroceriesDelivered()
+  +selectDeliveryDate()
+  +selectDeliveryTimeSlot()
+  +useExpressDelivery()
+  +seeOrderHistory()
+  +placePreviousOrder()
+  +addPreviousOrderToNewOrder()
+  +digitallyPayForGroceries()
+  +findProductLocation()
+  +getNearestStoreRecommendation()
+  +changeDefaultStore()
+  +linkLoyaltyCard()
+}
+class Employee {
+  +updateApplicationWithNewRecipes()
+  +editDiscountForProduct()
+  +confirmDeliveryTime()
+  +notifyCustomerOfUnavailableProduct()
+  +notifyCustomerOfDelayedDelivery()
+  +contactCustomerForCanceledDelivery()
+  +provideNewDeliveryTimeForCanceledDelivery()
+}
+@enduml

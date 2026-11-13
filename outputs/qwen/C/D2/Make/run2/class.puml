@@ -1,0 +1,19 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Makefile {
+  fileDependencies : String
+  comment : String
+  +addRule()
+  +addFileDependency()
+}
+class Rule {
+  name : String
+  +addDependency()
+}
+class RuleDependency {
+  rule : String
+  dependency : String
+}
+Makefile "1" -- "0..*" Rule : has
+@enduml

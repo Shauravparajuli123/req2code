@@ -1,0 +1,69 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Trace",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Level",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Call",
+   "kind": "class",
+   "attributes": [
+    "methodName",
+    "databaseRows"
+   ],
+   "methods": [
+    {
+     "name": "createCall",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Call",
+   "target": "Level",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "Trace",
+   "target": "Level",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/Trace.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Trace:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n    level: _t.Optional[\"Level\"] = None\n\n\n@_dc.dataclass\nclass Level:\n    \"\"\"Source: R2, R5, R6\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Call:\n    \"\"\"Source: R3, R7\"\"\"\n    methodName: _t.Optional[str] = None\n    databaseRows: _t.Optional[int] = None\n    level: _t.Optional[\"Level\"] = None\n\n    def createCall(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Trace.java": "/** Generated from shared model D2/Trace. Source: R1 */\npublic class Trace {\n    private java.lang.String name;\n    private Level level;\n}\n",
+  "Level.java": "/** Generated from shared model D2/Trace. Source: R2, R5, R6 */\npublic class Level {\n}\n",
+  "Call.java": "/** Generated from shared model D2/Trace. Source: R3, R7 */\npublic class Call {\n    private java.lang.String methodName;\n    private int databaseRows;\n    private Level level;\n\n    /** Operation. */\n    public void createCall() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

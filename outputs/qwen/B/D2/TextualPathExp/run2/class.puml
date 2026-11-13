@@ -1,0 +1,15 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class AlternativeTrans {
+  name : String
+}
+class Path {
+  transitions : String
+  +addTransition()
+}
+class Transition {
+}
+Path "1" -- "1..*" Transition : has
+AlternativeTrans "1" -- "1..*" Path : belongs to
+@enduml

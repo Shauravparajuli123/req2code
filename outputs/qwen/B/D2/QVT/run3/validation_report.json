@@ -1,0 +1,47 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [
+  "R5 (referential, \"passive 'bound' without agent\"): readings ['A template expression can be bound to a variable', 'A variable can be bound to a template expression']",
+  "R8 (referential, \"passive 'matched' without agent\"): readings ['A collection template expression may be matched to one OCL expression', 'An OCL expression may be matched to one collection template expression']"
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a template expression can be bound to a variable, but this is not explicitly represented in the model."
+  },
+  {
+   "tag": "R5",
+   "assumption": "The model assumes that a collection template expression can be matched to one OCL expression, but this is not explicitly represented in the model."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R4 is not supported by any class in the model.",
+   "fix": "Add a class for 'Element' or ensure R4 is addressed in an existing class."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R5 is not supported by any class in the model.",
+   "fix": "Add a class for 'Binding' or ensure R5 is addressed in an existing class."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R6 is not supported by any class in the model.",
+   "fix": "Add a class for 'PropertyTemplateItem' or ensure R6 is addressed in an existing class."
+  },
+  {
+   "agent": "relationship",
+   "issue": "There is no relationship between CollectionTemplateExpression and OclExpression that supports Requirement R7.",
+   "fix": "Add an association or aggregation relationship between CollectionTemplateExpression and OclExpression."
+  },
+  {
+   "agent": "relationship",
+   "issue": "There is no relationship between CollectionTemplateExpression and OclExpression that supports Requirement R8.",
+   "fix": "Add an association or aggregation relationship between CollectionTemplateExpression and OclExpression."
+  }
+ ]
+}

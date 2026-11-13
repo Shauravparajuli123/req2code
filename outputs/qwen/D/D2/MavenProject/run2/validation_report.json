@@ -1,0 +1,45 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a build configuration can be associated with multiple resources."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class Person in the model.",
+   "fix": "Add class Person to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class Developer in the model.",
+   "fix": "Add class Developer to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing relationship between Project and Person in the model.",
+   "fix": "Add association Project -> Person [1..0..*] to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing relationship between Project and Developer in the model.",
+   "fix": "Add association Project -> Developer [1..0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Project and BuildConfiguration is not specified in the model.",
+   "fix": "Add association Project -> BuildConfiguration [0..1..1] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between BuildConfiguration and Resource is not specified in the model.",
+   "fix": "Add association BuildConfiguration -> Resource [0..1..*] to the model."
+  }
+ ]
+}

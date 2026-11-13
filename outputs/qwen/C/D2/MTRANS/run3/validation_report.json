@@ -1,0 +1,50 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that MtransModel contains at least one module, rule, inheritance, expression, section, and variable."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class MetaClass as per requirement R1.",
+   "fix": "Add class MetaClass to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class MtransModel should have an attribute 'abstract' as per requirement R4.",
+   "fix": "Add attribute 'abstract' to class MtransModel."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Rule should have an attribute 'metaclass' as per requirement R13.",
+   "fix": "Add attribute 'metaclass' to class Rule."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between MtransModel and Module should be 0..*..1 as per requirement R10.",
+   "fix": "Change the association between MtransModel and Module to 0..*..1."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Section should be 1..*..1 as per requirement R20.",
+   "fix": "Change the association between Rule and Section to 1..*..1."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Instruction and Expression should be 1..1 as per requirement R21.",
+   "fix": "Change the association between Instruction and Expression to 1..1."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Variable should be 1..*..1 as per requirement R22.",
+   "fix": "Change the association between Rule and Variable to 1..*..1."
+  }
+ ]
+}

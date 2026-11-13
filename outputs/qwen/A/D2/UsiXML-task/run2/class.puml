@@ -1,0 +1,25 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Task {
+  identifier : String
+  category : String
+  taskType : String
+  importance : int
+  complexityLevel : int
+  centrality : int
+  +createTask()
+}
+class Expression {
+}
+class Operator {
+}
+class BinaryOperator {
+}
+class UnaryOperator {
+}
+Task "0..*" -- "1" Expression : has
+Task "0..*" -- "1" Operator : has
+BinaryOperator "1" -- "1" Task : has
+UnaryOperator "1" -- "1" Task : acts over
+@enduml

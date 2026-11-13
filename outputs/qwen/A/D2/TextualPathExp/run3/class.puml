@@ -1,0 +1,23 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class TextualPathExp {
+  path : String
+}
+class Path {
+  transitions : String
+}
+class Transition {
+}
+class AlternativeTrans {
+  name : String
+}
+class PrimitiveTrans {
+  name : String
+}
+TextualPathExp "1" -- "1" Path : has
+Path "1" -- "0..*" Transition : contains
+TextualPathExp "1" *-- "1" Path : has
+Path "1" -- "1..*" AlternativeTrans : contains
+AlternativeTrans --|> Transition
+@enduml

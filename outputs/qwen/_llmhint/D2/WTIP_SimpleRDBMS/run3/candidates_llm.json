@@ -1,0 +1,77 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Table",
+   "src": [
+    "R1",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Column",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "FKey",
+   "src": [
+    "R3",
+    "R6"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Table",
+   "name": "name",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Column",
+   "name": "name",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "Table",
+   "name": "fkeys",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "owner": "Table",
+   "name": "columns",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Table",
+   "target": "FKey",
+   "src": [
+    "R4",
+    "R6"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Table",
+   "target": "Column",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

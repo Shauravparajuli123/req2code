@@ -1,0 +1,110 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "IUmlType",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "ICdeComponentSpec",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "name": "IUmlClass",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "name": "IUmlComponent",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "ICdeServer",
+    "src": [
+     "R5",
+     "R11"
+    ]
+   },
+   {
+    "name": "ICdeComponent",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "name": "IUmlMember",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "name": "ICdeMember",
+    "src": [
+     "R8"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "ICdeMemberExe",
+    "name": "executionPerformance",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "owner": "ICdeMemberExe",
+    "name": "executionDetails",
+    "src": [
+     "R9"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "generalization",
+    "source": "ICdeComponentSpec",
+    "target": "IUmlType",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "IUmlClass",
+    "target": "IUmlType",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "IUmlComponent",
+    "target": "IUmlClass",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "ICdeServer",
+    "target": "ICdeComponent",
+    "src": [
+     "R11"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

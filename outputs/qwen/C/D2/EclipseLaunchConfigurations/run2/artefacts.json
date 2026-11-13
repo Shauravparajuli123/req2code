@@ -1,0 +1,68 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "LaunchConfiguration",
+   "kind": "class",
+   "attributes": [
+    "attributes"
+   ],
+   "methods": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "key",
+    "value"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "MapEntry",
+   "kind": "class",
+   "attributes": [
+    "key",
+    "value"
+   ],
+   "methods": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "ListEntry",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "LaunchConfiguration",
+   "target": "Attribute",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/EclipseLaunchConfigurations.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass LaunchConfiguration:\n    \"\"\"Source: R9\"\"\"\n    attributes: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Attribute:\n    \"\"\"Source: R2\"\"\"\n    key: _t.Optional[str] = None\n    value: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass MapEntry:\n    \"\"\"Source: R11\"\"\"\n    key: _t.Optional[str] = None\n    value: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass ListEntry:\n    \"\"\"Source: R13\"\"\"\n    value: _t.Optional[str] = None\n",
+ "java": {
+  "LaunchConfiguration.java": "/** Generated from shared model D2/EclipseLaunchConfigurations. Source: R9 */\npublic class LaunchConfiguration {\n    private java.lang.String attributes;\n}\n",
+  "Attribute.java": "/** Generated from shared model D2/EclipseLaunchConfigurations. Source: R2 */\npublic class Attribute {\n    private java.lang.String key;\n    private java.lang.String value;\n}\n",
+  "MapEntry.java": "/** Generated from shared model D2/EclipseLaunchConfigurations. Source: R11 */\npublic class MapEntry {\n    private java.lang.String key;\n    private java.lang.String value;\n}\n",
+  "ListEntry.java": "/** Generated from shared model D2/EclipseLaunchConfigurations. Source: R13 */\npublic class ListEntry {\n    private java.lang.String value;\n}\n"
+ }
+}

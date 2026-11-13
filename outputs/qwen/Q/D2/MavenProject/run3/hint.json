@@ -1,0 +1,263 @@
+{
+ "condition": "Q",
+ "hint": {
+  "case": "D2/MavenProject",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A developer contributing to a Maven project has a unique identifier."
+     }
+    ],
+    "name": "developer"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R2",
+     "R9",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A build configuration has one default goal, and one path to a unit test source directory."
+     },
+     {
+      "sid": "R9.s1",
+      "text": "A Maven project is composed of at most one build configuration."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "A build configuration is associated with at least zero and at most n resources."
+     }
+    ],
+    "name": "BuildConfiguration",
+    "freq": 3
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A developer contributing to a Maven project has a unique identifier."
+     }
+    ],
+    "name": "Developer",
+    "freq": 1
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R4",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A mailing list has a name, a subscribe string, and an archive string."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A Maven project is composed of zero to n mailing lists."
+     }
+    ],
+    "name": "MailingList",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A person contributing to a Maven project has a name, a URL, an organization URL, and a given time zone."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A developer contributing to a Maven project has a unique identifier."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "A Maven project has contributors."
+     }
+    ],
+    "name": "MavenProject",
+    "freq": 5
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "A build configuration is associated with at least zero and at most n resources."
+     }
+    ],
+    "name": "NResource",
+    "freq": 1
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A build configuration has one default goal, and one path to a unit test source directory."
+     }
+    ],
+    "owner": "BuildConfiguration",
+    "name": "default goal",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A build configuration has one default goal, and one path to a unit test source directory."
+     }
+    ],
+    "owner": "BuildConfiguration",
+    "name": "path",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A developer contributing to a Maven project has a unique identifier."
+     }
+    ],
+    "owner": "Developer",
+    "name": "identifier",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A mailing list has a name, a subscribe string, and an archive string."
+     }
+    ],
+    "owner": "MailingList",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A Maven project has contributors."
+     }
+    ],
+    "owner": "MavenProject",
+    "name": "contributor",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "A build configuration is associated with at least zero and at most n resources."
+     }
+    ],
+    "kind": "association",
+    "source": "BuildConfiguration",
+    "target": "NResource",
+    "multiplicity_target": "zero"
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

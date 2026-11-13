@@ -1,0 +1,173 @@
+{
+ "actors": [
+  "owner"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "CoreModel",
+   "kind": "class",
+   "attributes": [
+    "namespaces"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R11"
+   ]
+  },
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    "powerTypeRanges"
+   ],
+   "methods": [
+    {
+     "name": "features",
+     "use_case": null
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "isSpecification",
+    "root",
+    "abstract"
+   ],
+   "methods": [
+    {
+     "name": "ownerScope",
+     "use_case": null
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3"
+   ]
+  },
+  {
+   "name": "Generalization",
+   "kind": "class",
+   "attributes": [
+    "discriminator",
+    "parent"
+   ],
+   "methods": [
+    {
+     "name": "generalizableElements",
+     "use_case": null
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R14"
+   ]
+  },
+  {
+   "name": "ModelElement",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "isSpecification"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R10"
+   ]
+  },
+  {
+   "name": "Namespace",
+   "kind": "class",
+   "attributes": [
+    "modelElements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Classifier",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Element",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R2",
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Generalization",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R8",
+    "R14"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "ModelElement",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R2",
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "CoreModel",
+   "target": "Namespace",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4",
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ModelElement",
+   "target": "Namespace",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "class CoreModel:\n    def __init__(self, namespaces=None):\n        self.namespaces = namespaces if namespaces else []\n\nclass Classifier:\n    def __init__(self, powerTypeRanges=None):\n        self.powerTypeRanges = powerTypeRanges if powerTypeRanges else []\n    def features(self):\n        raise NotImplementedError\n\nclass Element:\n    def __init__(self, name, isSpecification, root, abstract):\n        self.name = name\n        self.isSpecification = isSpecification\n        self.root = root\n        self.abstract = abstract\n\nclass Generalization:\n    def __init__(self, discriminator, parent):\n        self.discriminator = discriminator\n        self.parent = parent\n    def generalizableElements(self):\n        raise NotImplementedError\n\nclass ModelElement(Element):\n    def __init__(self, name, isSpecification):\n        super().__init__(name, isSpecification, False, False)\n\nclass Namespace:\n    def __init__(self, modelElements=None):\n        self.modelElements = modelElements if modelElements else []",
+ "java": {}
+}

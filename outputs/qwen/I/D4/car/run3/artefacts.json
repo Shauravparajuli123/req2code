@@ -1,0 +1,167 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "RepresentCar",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Car",
+   "kind": "class",
+   "attributes": [
+    "numberPlate",
+    "engine",
+    "seats",
+    "wheels"
+   ],
+   "methods": [
+    {
+     "name": "startEngine",
+     "use_case": "R1"
+    },
+    {
+     "name": "stopEngine",
+     "use_case": "R1"
+    },
+    {
+     "name": "addSeat",
+     "use_case": "R1"
+    },
+    {
+     "name": "removeSeat",
+     "use_case": "R1"
+    },
+    {
+     "name": "addWheel",
+     "use_case": "R1"
+    },
+    {
+     "name": "removeWheel",
+     "use_case": "R1"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7"
+   ]
+  },
+  {
+   "name": "Engine",
+   "kind": "class",
+   "attributes": [
+    "power"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Make",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Seat",
+   "kind": "class",
+   "attributes": [
+    "size"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Wheel",
+   "kind": "class",
+   "attributes": [
+    "diameter"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Car",
+   "target": "Model",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Model",
+   "target": "Make",
+   "multiplicity_target": "1",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Car",
+   "target": "Engine",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Car",
+   "target": "Seat",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Car",
+   "target": "Wheel",
+   "multiplicity_target": "4",
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "python": "from typing import List, Set\n\nclass Wheel:\n    def __init__(self, diameter: float):\n        self.diameter: float = diameter\n\nclass Engine:\n    def __init__(self, power: int):\n        self.power: int = power\n\nclass Seat:\n    def __init__(self, size: float):\n        self.size: float = size\n\nclass Model:\n    def __init__(self, name: str):\n        self.name: str = name\n        self.cars: Set[Car] = set()\n\nclass Make:\n    def __init__(self, name: str):\n        self.name: str = name\n        self.models: Set[Model] = set()\n\nclass Car:\n    def __init__(self, number_plate: str, engine: Engine, seats: Set[Seat], wheels: List[Wheel]):\n        self.number_plate: str = number_plate\n        self.engine: Engine = engine\n        self.seats: Set[Seat] = seats\n        self.wheels: List[Wheel] = wheels\n        self.model: Model = None\n\n    def associate_with_model(self, model: Model):\n        if self.model is not None:\n            raise ValueError(\"Car is already associated with a model.\")\n        self.model = model\n        model.cars.add(self)\n\n    def disassociate_from_model(self, model: Model):\n        if self.model is model:\n            self.model.cars.remove(self)\n            self.model = None\n\n    def get_model_name(self) -> str:\n        if self.model is None:\n            raise ValueError(\"Car is not associated with any model.\")\n        return self.model.name\n\n    def get_make_name(self) -> str:\n        if self.model is None:\n            raise ValueError(\"Car is not associated with any model.\")\n        return self.model.make.name\n\n    def get_engine_power(self) -> int:\n        return self.engine.power\n\n    def get_seat_size(self) -> float:\n        if not self.seats:\n            raise ValueError(\"Car has no seats.\")\n        return self.seats.pop().size\n\n    def get_wheel_diameter(self) -> float:\n        if not self.wheels:\n            raise ValueError(\"Car has no wheels.\")\n        return self.wheels.pop().diameter\n",
+ "java": {}
+}

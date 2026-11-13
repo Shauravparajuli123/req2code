@@ -1,0 +1,123 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Instance",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createInstance",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "AttributeLink",
+   "kind": "class",
+   "attributes": [
+    "link",
+    "instance"
+   ],
+   "methods": [
+    {
+     "name": "createAttributeLink",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Linkend",
+   "kind": "class",
+   "attributes": [
+    "link",
+    "instance"
+   ],
+   "methods": [
+    {
+     "name": "createLinkend",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "ComponentInstance",
+   "kind": "class",
+   "attributes": [
+    "residents"
+   ],
+   "methods": [
+    {
+     "name": "addResident",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "NodeInstance",
+   "kind": "class",
+   "attributes": [
+    "componentInstances"
+   ],
+   "methods": [
+    {
+     "name": "addComponentInstance",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "AttributeLink",
+   "target": "Instance",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "AttributeLink",
+   "target": "Linkend",
+   "src": [
+    "R11",
+    "R12",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "source": "NodeInstance",
+   "target": "ComponentInstance",
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/UMLDI-UseCases.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Instance:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createInstance(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass AttributeLink:\n    \"\"\"Source: R2\"\"\"\n    link: _t.Optional[str] = None\n    instance: _t.Optional[str] = None\n    linkend: _t.Optional[\"Linkend\"] = None\n\n    def createAttributeLink(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Linkend:\n    \"\"\"Source: R3, R4\"\"\"\n    link: _t.Optional[str] = None\n    instance: _t.Optional[str] = None\n\n    def createLinkend(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ComponentInstance:\n    \"\"\"Source: R5\"\"\"\n    residents: _t.Optional[str] = None\n\n    def addResident(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass NodeInstance:\n    \"\"\"Source: R6\"\"\"\n    componentInstances: _t.Optional[str] = None\n\n    def addComponentInstance(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Instance.java": "/** Generated from shared model D2/UMLDI-UseCases. Source: R1 */\npublic class Instance {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void createInstance() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "AttributeLink.java": "/** Generated from shared model D2/UMLDI-UseCases. Source: R2 */\npublic class AttributeLink {\n    private java.lang.String link;\n    private java.lang.String instance;\n    private Linkend linkend;\n\n    /** Operation. */\n    public void createAttributeLink() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Linkend.java": "/** Generated from shared model D2/UMLDI-UseCases. Source: R3, R4 */\npublic class Linkend {\n    private java.lang.String link;\n    private java.lang.String instance;\n\n    /** Operation. */\n    public void createLinkend() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ComponentInstance.java": "/** Generated from shared model D2/UMLDI-UseCases. Source: R5 */\npublic class ComponentInstance {\n    private java.lang.String residents;\n\n    /** Operation. */\n    public void addResident() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "NodeInstance.java": "/** Generated from shared model D2/UMLDI-UseCases. Source: R6 */\npublic class NodeInstance {\n    private java.lang.String componentInstances;\n\n    /** Operation. */\n    public void addComponentInstance() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

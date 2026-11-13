@@ -1,0 +1,119 @@
+{
+ "case": "D2/Trace",
+ "stage": "result2_after_ambiguity_removal",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "src": [
+    "R3",
+    "R7"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "A Call has a string to store its method name and an integer to store the number of its database rows."
+    },
+    {
+     "sid": "R7.s1",
+     "text": "A call has exactly one level."
+    }
+   ],
+   "name": "Call",
+   "freq": 2
+  }
+ ],
+ "attributes": [
+  {
+   "id": "AT1",
+   "src": [
+    "R3"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "A Call has a string to store its method name and an integer to store the number of its database rows."
+    }
+   ],
+   "owner": "Call",
+   "name": "database row",
+   "type_hint": null
+  },
+  {
+   "id": "AT2",
+   "src": [
+    "R3"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "A Call has a string to store its method name and an integer to store the number of its database rows."
+    }
+   ],
+   "owner": "Call",
+   "name": "method name",
+   "type_hint": null
+  },
+  {
+   "id": "AT3",
+   "src": [
+    "R1"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "A trace has a string to store its name."
+    }
+   ],
+   "owner": "Call",
+   "name": "name",
+   "type_hint": null
+  }
+ ],
+ "relations": [],
+ "enums": [],
+ "applied_edits": {
+  "remove_classes": [
+   "Level"
+  ],
+  "merge_classes": [
+   [
+    "Call",
+    "Trace"
+   ]
+  ],
+  "merge_actors": [
+   [
+    "User",
+    "System"
+   ]
+  ],
+  "enums": [],
+  "multiplicities": [
+   {
+    "source": "Call",
+    "target": "Level",
+    "multiplicity": "0..*"
+   }
+  ],
+  "actor_assumptions": [
+   {
+    "use_case": "Use Case Name",
+    "actor": "ActorName"
+   }
+  ]
+ }
+}

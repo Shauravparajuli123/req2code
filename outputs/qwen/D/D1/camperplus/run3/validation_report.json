@@ -1,0 +1,55 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that the Camper class will have a method to modifyCamperInformation, as per R30, and a method to deleteCamper, as per R31, which are already implemented."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class Camper is missing a method to add and remove campers, as per R1 and R2.",
+   "fix": "Add methods to Camper class for addCamper and removeCamper."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Camper is missing an attribute for emergencyInformation, as per R15.",
+   "fix": "Add attribute emergencyInformation to Camper class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Parent is missing a method to enroll a camper, as per R36.",
+   "fix": "Add method enrollCamper to Parent class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class CampWorker is missing a method to reportCamperBehavior, as per R51.",
+   "fix": "Add method reportCamperBehavior to CampWorker class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class CampWorker is missing a method to reportSuppliesShortage, as per R52.",
+   "fix": "Add method reportSuppliesShortage to CampWorker class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class CampWorker is missing a method to reportFacilityRepair, as per R53.",
+   "fix": "Add method reportFacilityRepair to CampWorker class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class CampAdministrator is missing a method to seeGroupEvents, as per R26.",
+   "fix": "Add method seeGroupEvents to CampAdministrator class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class CampAdministrator is missing a method to seeGroupEvents, as per R35.",
+   "fix": "Add method seeGroupEvents to CampAdministrator class."
+  }
+ ]
+}

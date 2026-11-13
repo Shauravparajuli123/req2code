@@ -1,0 +1,101 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3"
+   ]
+  },
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Network",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "PetriNet",
+   "target": "Net",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Place",
+   "target": "Net",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "Net",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "Place",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass PetriNet:\n    def __init__(self):\n        self.net: List[Net] = []\n        self.src = ['R1', 'R3']\n    def add_net(self, net: Net):\n        raise NotImplementedError\n    def remove_net(self, net: Net):\n        raise NotImplementedError\n\nclass Net:\n    def __init__(self):\n        self.src = ['R3']\n\nclass Place:\n    def __init__(self):\n        self.net: Net = None\n        self.src = ['R5', 'R8']\n    def set_net(self, net: Net):\n        raise NotImplementedError\n\nclass Transition:\n    def __init__(self):\n        self.net: Net = None\n        self.place: Place = None\n        self.src = ['R5', 'R6', 'R7']\n    def set_net(self, net: Net):\n        raise NotImplementedError\n    def set_place(self, place: Place):\n        raise NotImplementedError\n\nclass Network:\n    def __init__(self):\n        self.src = ['R4']\n",
+ "java": {}
+}

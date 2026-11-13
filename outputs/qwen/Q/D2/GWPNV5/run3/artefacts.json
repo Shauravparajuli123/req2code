@@ -1,0 +1,242 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefinePetriNet",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R3",
+    "R7",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "AddPlace",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R7",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "AddTransition",
+   "actor": "User",
+   "src": [
+    "R2",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "CreateArc",
+   "actor": "User",
+   "src": [
+    "R5",
+    "R6",
+    "R9",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "AssociateToken",
+   "actor": "User",
+   "src": [
+    "R4",
+    "R15"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "definePetriNet",
+     "use_case": "DefinePetriNet"
+    },
+    {
+     "name": "addPlace",
+     "use_case": "AddPlace"
+    },
+    {
+     "name": "addTransition",
+     "use_case": "AddTransition"
+    },
+    {
+     "name": "createArc",
+     "use_case": "CreateArc"
+    },
+    {
+     "name": "associateToken",
+     "use_case": "AssociateToken"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R7",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "tokens"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    "weight"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "PlaceTransitionArc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "Token",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R15"
+   ]
+  },
+  {
+   "name": "Weight",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Transition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Arc",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "PlaceTransitionArc",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Place",
+   "target": "Token",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R15"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PlaceTransitionArc",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Arc",
+   "target": "Weight",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "python": "from typing import List, Weight\n\nclass Net:\n    def __init__(self, name: str):\n        self.name = name\n        self.places: List[Place] = []\n        self.transitions: List[Transition] = []\n        self.arcs: List[Arc] = []\n        self.place_transition_arcs: List[PlaceTransitionArc] = []\n\n    def definePetriNet(self):\n        raise NotImplementedError\n\n    def addPlace(self, place: Place):\n        raise NotImplementedError\n\n    def addTransition(self, transition: Transition):\n        raise NotImplementedError\n\n    def createArc(self, arc: Arc):\n        raise NotImplementedError\n\n    def associateToken(self, token: Token):\n        raise NotImplementedError\n\nclass Place:\n    def __init__(self, tokens: List[Token] = []):\n        self.tokens: List[Token] = tokens\n\nclass Transition:\n    pass\n\nclass Arc:\n    def __init__(self, weight: Weight):\n        self.weight: Weight = weight\n\nclass PlaceTransitionArc:\n    pass\n\nclass Token:\n    pass\n\nclass Weight:\n    pass",
+ "java": {}
+}

@@ -1,0 +1,67 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "inNode"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "AbstractNode",
+   "kind": "class",
+   "attributes": [
+    "expression"
+   ],
+   "methods": [],
+   "src": [
+    "R1",
+    "R5"
+   ]
+  },
+  {
+   "name": "ConditionalNode",
+   "kind": "class",
+   "attributes": [
+    "trueConditionNode"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "AbstractNode",
+   "target": "Node",
+   "src": [
+    "R1",
+    "R2"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/CFG.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: -\"\"\"\n    inNode: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Expression:\n    \"\"\"Source: R4\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass AbstractNode(Node):\n    \"\"\"Source: R1, R5\"\"\"\n    expression: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass ConditionalNode:\n    \"\"\"Source: R3, R7\"\"\"\n    trueConditionNode: _t.Optional[str] = None\n",
+ "java": {
+  "Node.java": "/** Generated from shared model D2/CFG. Source: - */\npublic class Node {\n    private java.lang.String inNode;\n}\n",
+  "Expression.java": "/** Generated from shared model D2/CFG. Source: R4 */\npublic class Expression {\n    private java.lang.String name;\n}\n",
+  "AbstractNode.java": "/** Generated from shared model D2/CFG. Source: R1, R5 */\npublic class AbstractNode extends Node {\n    private java.lang.String expression;\n}\n",
+  "ConditionalNode.java": "/** Generated from shared model D2/CFG. Source: R3, R7 */\npublic class ConditionalNode {\n    private java.lang.String trueConditionNode;\n}\n"
+ }
+}

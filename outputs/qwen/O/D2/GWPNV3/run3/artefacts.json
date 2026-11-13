@@ -1,0 +1,189 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefinePetriNet",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R2",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "add_place",
+     "use_case": "DefinePetriNet"
+    },
+    {
+     "name": "add_transition",
+     "use_case": "DefinePetriNet"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "add_arc",
+     "use_case": "DefinePetriNet"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "add_outgoing_arc",
+     "use_case": "DefinePetriNet"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "add_net",
+     "use_case": "DefinePetriNet"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Ptarc",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Tparcs",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Place",
+   "target": "Net",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Net",
+   "target": "Tparcs",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Net",
+   "target": "Transition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Transition",
+   "target": "Tparcs",
+   "multiplicity_target": "1",
+   "src": [
+    "R12",
+    "R13"
+   ]
+  }
+ ],
+ "python": "class Net:\n    def __init__(self, name):\n        self.name = name\n        self.places = []\n        self.transitions = []\n    def add_place(self, place):\n        self.places.append(place)\n    def add_transition(self, transition):\n        self.transitions.append(transition)\n\nclass Place:\n    def __init__(self, name):\n        self.name = name\n        self.arcs = []\n    def add_arc(self, arc):\n        self.arcs.append(arc)\n\nclass Transition:\n    def __init__(self, name):\n        self.name = name\n        self.outgoing_arcs = []\n    def add_outgoing_arc(self, arc):\n        self.outgoing_arcs.append(arc)\n\nclass Model:\n    def __init__(self):\n        self.nets = []\n    def add_net(self, net):\n        self.nets.append(net)\n\nclass Arc:\n    def __init__(self, name):\n        self.name = name\n\nclass Ptarc(Arc):\n    pass\n\nclass Tparcs(Arc):\n    pass",
+ "java": {}
+}

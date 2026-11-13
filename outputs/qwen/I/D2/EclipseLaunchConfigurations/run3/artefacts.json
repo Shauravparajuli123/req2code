@@ -1,0 +1,165 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineLaunchConfiguration",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "LaunchConfiguration",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "attributes"
+   ],
+   "methods": [
+    {
+     "name": "addAttribute",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "key"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "StringAttribute",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "BooleanAttribute",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "MapAttribute",
+   "kind": "class",
+   "attributes": [
+    "entries"
+   ],
+   "methods": [
+    {
+     "name": "addEntry",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "MapEntry",
+   "kind": "class",
+   "attributes": [
+    "key",
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R11"
+   ]
+  },
+  {
+   "name": "ListAttribute",
+   "kind": "class",
+   "attributes": [
+    "entries"
+   ],
+   "methods": [
+    {
+     "name": "addEntry",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R12"
+   ]
+  },
+  {
+   "name": "ListEntry",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "LaunchConfiguration",
+   "target": "Attribute",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MapAttribute",
+   "target": "MapEntry",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ListAttribute",
+   "target": "ListEntry",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "from typing import List, Dict, Optional\n\nclass Attribute:\n    def __init__(self, key: str):\n        self.key = key\n        self.value: Optional[str | bool] = None\n\nclass MapEntry:\n    def __init__(self, key: str, value: str):\n        self.key = key\n        self.value = value\n\nclass ListEntry:\n    def __init__(self, value: str):\n        self.value = value\n\nclass LaunchConfiguration:\n    def __init__(self, type_: str):\n        self.type = type_\n        self.attributes: List[Attribute] = []\n        self.map_attribute: Optional[MapAttribute] = None\n        self.list_attribute: Optional[ListAttribute] = None\n\nclass MapAttribute:\n    def __init__(self):\n        self.entries: List[MapEntry] = []\n\nclass ListAttribute:\n    def __init__(self):\n        self.entries: List[ListEntry] = []",
+ "java": {}
+}

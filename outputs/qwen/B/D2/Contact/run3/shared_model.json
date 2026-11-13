@@ -1,0 +1,95 @@
+{
+ "case": "D2/Contact",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "PhoneNumber",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "number",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C3",
+   "name": "LandLine",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "number",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "CellPhone",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "number",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

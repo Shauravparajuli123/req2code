@@ -1,0 +1,18 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Node {
+  inNode : String
+}
+class AbstractNode {
+  expression : String
+  +createGame()
+}
+class Expression {
+  name : String
+}
+class ConditionalNode {
+  trueConditionNode : String
+}
+AbstractNode --|> Node
+@enduml

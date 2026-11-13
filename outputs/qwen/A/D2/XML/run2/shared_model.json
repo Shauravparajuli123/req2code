@@ -1,0 +1,131 @@
+{
+ "case": "D2/XML",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "startLine",
+     "type": "int",
+     "src": []
+    },
+    {
+     "name": "endLine",
+     "type": "int",
+     "src": []
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Element",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addChildNode",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "getParent",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C3",
+   "name": "Text",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Root",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C4",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "contains",
+   "src": []
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C3",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "isPartOf",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "0..1",
+   "mult_target": "1",
+   "label": "isChildOf",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

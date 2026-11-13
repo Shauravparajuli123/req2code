@@ -1,0 +1,152 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "CreateTemplateExpression",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TemplateExp",
+   "kind": "class",
+   "attributes": [
+    "expression"
+   ],
+   "methods": [
+    {
+     "name": "create_expression",
+     "use_case": "CreateTemplateExpression"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CollectionTemplateExpression",
+   "kind": "class",
+   "attributes": [
+    "collectionKind",
+    "oclExpressions"
+   ],
+   "methods": [
+    {
+     "name": "add_ocl_expression",
+     "use_case": "CreateTemplateExpression"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "ObjectTemplateExpression",
+   "kind": "class",
+   "attributes": [
+    "propertyTemplateItems"
+   ],
+   "methods": [
+    {
+     "name": "add_property_template_item",
+     "use_case": "CreateTemplateExpression"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6"
+   ]
+  },
+  {
+   "name": "OclExpression",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Property",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "PropertyTemplateItem",
+   "kind": "class",
+   "attributes": [
+    "objectContainer",
+    "referredProperty"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "CollectionTemplateExpression",
+   "target": "OclExpression",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ObjectTemplateExpression",
+   "target": "PropertyTemplateItem",
+   "multiplicity_target": "1",
+   "src": [
+    "R6",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PropertyTemplateItem",
+   "target": "ObjectTemplateExpression",
+   "multiplicity_target": "1",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PropertyTemplateItem",
+   "target": "Property",
+   "multiplicity_target": "1",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "python": "class TemplateExp:\n    def __init__(self, expression: str):\n        self.expression = expression\n    def create_expression(self, expression: str):\n        raise NotImplementedError\n\nclass CollectionTemplateExpression(TemplateExp):\n    def __init__(self, collectionKind: str):\n        super().__init__('CollectionTemplateExpression')\n        self.collectionKind = collectionKind\n        self.oclExpressions = []\n    def add_ocl_expression(self, ocl_expression: OclExpression):\n        self.oclExpressions.append(ocl_expression)\n\nclass ObjectTemplateExpression(TemplateExp):\n    def __init__(self):\n        super().__init__('ObjectTemplateExpression')\n        self.propertyTemplateItems = []\n    def add_property_template_item(self, property_template_item: PropertyTemplateItem):\n        self.propertyTemplateItems.append(property_template_item)\n\nclass OclExpression:\n    pass\n\nclass Property:\n    pass\n\nclass PropertyTemplateItem:\n    def __init__(self, objectContainer: ObjectTemplateExpression, referredProperty: Property):\n        self.objectContainer = objectContainer\n        self.referredProperty = referredProperty",
+ "java": {}
+}

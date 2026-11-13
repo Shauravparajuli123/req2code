@@ -1,0 +1,100 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Game",
+   "actor": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": "Create Game"
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "State",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "StateMachine",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "RootFolder",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R10",
+    "R12"
+   ]
+  },
+  {
+   "name": "AssociationState",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R13",
+    "R14"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "StateMachine",
+   "target": "RootFolder",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "State",
+   "target": "AssociationState",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "AssociationState",
+   "target": "State",
+   "src": [
+    "R14"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/FiniteStateMachine.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Realizes UC1 \"Create Game\" (R1).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass State:\n    \"\"\"Source: -\"\"\"\n    associationStates: _t.List[\"AssociationState\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass StateMachine:\n    \"\"\"Source: -\"\"\"\n    rootFolder: _t.Optional[\"RootFolder\"] = None\n\n\n@_dc.dataclass\nclass RootFolder:\n    \"\"\"Source: R5, R10, R12\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass AssociationState:\n    \"\"\"Source: R13, R14\"\"\"\n    states: _t.List[\"State\"] = _dc.field(default_factory=list)\n",
+ "java": {
+  "Game.java": "/** Generated from shared model D2/FiniteStateMachine. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Realizes UC1 \"Create Game\" (R1). */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "State.java": "/** Generated from shared model D2/FiniteStateMachine. Source: - */\npublic class State {\n    private java.util.List<AssociationState> associationStates;\n}\n",
+  "StateMachine.java": "/** Generated from shared model D2/FiniteStateMachine. Source: - */\npublic class StateMachine {\n    private RootFolder rootFolder;\n}\n",
+  "RootFolder.java": "/** Generated from shared model D2/FiniteStateMachine. Source: R5, R10, R12 */\npublic class RootFolder {\n    private java.lang.String name;\n}\n",
+  "AssociationState.java": "/** Generated from shared model D2/FiniteStateMachine. Source: R13, R14 */\npublic class AssociationState {\n    private java.util.List<State> states;\n}\n"
+ }
+}

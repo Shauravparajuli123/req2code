@@ -1,0 +1,71 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "expression",
+    "inNode",
+    "conditionNode"
+   ],
+   "methods": [
+    {
+     "name": "createNode",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "ConditionalNode",
+   "kind": "class",
+   "attributes": [
+    "trueConditionNode"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Node",
+   "target": "Expression",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "ConditionalNode",
+   "target": "Node",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/CFG.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R1, R2\"\"\"\n    name: _t.Optional[str] = None\n    expression: _t.Optional[str] = None\n    inNode: _t.Optional[str] = None\n    conditionNode: _t.Optional[str] = None\n\n    def createNode(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Expression:\n    \"\"\"Source: R5\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass ConditionalNode:\n    \"\"\"Source: R3, R7\"\"\"\n    trueConditionNode: _t.Optional[str] = None\n    node: _t.Optional[\"Node\"] = None\n",
+ "java": {
+  "Node.java": "/** Generated from shared model D2/CFG. Source: R1, R2 */\npublic class Node {\n    private java.lang.String name;\n    private java.lang.String expression;\n    private java.lang.String inNode;\n    private java.lang.String conditionNode;\n\n    /** Operation. */\n    public void createNode() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Expression.java": "/** Generated from shared model D2/CFG. Source: R5 */\npublic class Expression {\n    private java.lang.String name;\n}\n",
+  "ConditionalNode.java": "/** Generated from shared model D2/CFG. Source: R3, R7 */\npublic class ConditionalNode {\n    private java.lang.String trueConditionNode;\n    private Node node;\n}\n"
+ }
+}

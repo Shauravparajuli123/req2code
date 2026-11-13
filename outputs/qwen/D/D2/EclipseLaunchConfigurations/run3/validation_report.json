@@ -1,0 +1,48 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "A map attribute is a class, and it has a relationship with MapEntry."
+  },
+  {
+   "tag": "A6",
+   "assumption": "A map entry is a class and is connected to one map attribute."
+  },
+  {
+   "tag": "A7",
+   "assumption": "A list attribute is a class, and it has a relationship with ListAttributeEntry."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for StringAttribute and BooleanAttribute",
+   "fix": "Add classes StringAttribute and BooleanAttribute to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for ListAttributeEntry",
+   "fix": "Add class ListAttributeEntry to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Attribute and StringAttribute/BooleanAttribute",
+   "fix": "Add associations Attribute -> StringAttribute and Attribute -> BooleanAttribute to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between ListAttribute and ListAttributeEntry",
+   "fix": "Add association ListAttribute -> ListAttributeEntry to the model."
+  },
+  {
+   "agent": "use_case",
+   "issue": "No use cases in the model",
+   "fix": "Add use cases to the model."
+  }
+ ]
+}

@@ -1,0 +1,137 @@
+{
+ "actors": [
+  "student"
+ ],
+ "use_cases": [
+  {
+   "name": "EnrollInCourse",
+   "actor": "student",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "AccommodateInDormitory",
+   "actor": "student",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Exist",
+   "actor": "course",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Course",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "credits",
+    "professors",
+    "students"
+   ],
+   "methods": [
+    {
+     "name": "addProfessor",
+     "use_case": "R3"
+    },
+    {
+     "name": "addStudent",
+     "use_case": "R5"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "name": "Dormitory",
+   "kind": "class",
+   "attributes": [
+    "price"
+   ],
+   "methods": [
+    {
+     "name": "addStudent",
+     "use_case": "R7"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Professor",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Student",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "enrollInCourse",
+     "use_case": "R6"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Course",
+   "target": "Professor",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Course",
+   "target": "Student",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Dormitory",
+   "target": "Student",
+   "multiplicity_target": "1..4",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Student:\n    def __init__(self, name: str):\n        self.name: str = name\n\nclass Professor:\n    def __init__(self, name: str):\n        self.name: str = name\n\nclass Course:\n    def __init__(self, name: str, credits: int, professors: List[Professor], students: List[Student]):\n        self.name: str = name\n        self.credits: int = credits\n        self.professors: List[Professor] = professors\n        self.students: List[Student] = students\n\nclass Dormitory:\n    def __init__(self, price: float):\n        self.price: float = price\n        self.students: List[Student] = []\n",
+ "java": {}
+}

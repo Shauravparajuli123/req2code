@@ -1,0 +1,151 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "reference"
+   ],
+   "methods": [
+    {
+     "name": "addAttribute",
+     "use_case": "R7"
+    },
+    {
+     "name": "addXorgroup",
+     "use_case": "R8"
+    },
+    {
+     "name": "addOrgroup",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9",
+    "R10",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "name",
+    "key"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "name": "Xorgroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "name": "Orgroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R11"
+   ]
+  },
+  {
+   "name": "Child",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasNode",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Attribute",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Xorgroup",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Orgroup",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Xorgroup",
+   "target": "Node",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Orgroup",
+   "target": "Node",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Node:\n    def __init__(self, description: str, reference: Attribute):\n        self.description = description\n        self.reference = reference\n        self.attributes: List[Attribute] = []\n        self.xorgroups: List[Xorgroup] = []\n        self.orgroups: List[Orgroup] = []\n\n    def addAttribute(self) -> None:\n        raise NotImplementedError('Method implementation required')\n\n    def addXorgroup(self) -> None:\n        raise NotImplementedError('Method implementation required')\n\n    def addOrgroup(self) -> None:\n        raise NotImplementedError('Method implementation required')\n\n    def hasNode(self, node: 'Node') -> bool:\n        raise NotImplementedError('Method implementation required')\n\nclass Attribute:\n    def __init__(self, description: str, name: str, key: bool):\n        self.description = description\n        self.name = name\n        self.key = key\n\nclass Xorgroup:\n    def __init__(self, preliminary: bool):\n        self.preliminary = preliminary\n\n    def addNode(self, node: Node) -> None:\n        raise NotImplementedError('Method implementation required')\n\nclass Orgroup:\n    def __init__(self, preliminary: bool):\n        self.preliminary = preliminary\n\n    def addNode(self, node: Node) -> None:\n        raise NotImplementedError('Method implementation required')\n\nclass Child:\n    def hasNode(self, node: Node) -> bool:\n        raise NotImplementedError('Method implementation required')",
+ "java": {}
+}

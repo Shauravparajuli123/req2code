@@ -1,0 +1,161 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [
+   {
+    "name": "Company Structure Model",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11"
+    ]
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "Company",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10"
+    ]
+   },
+   {
+    "name": "Corporate HQ",
+    "src": [
+     "R8",
+     "R9"
+    ]
+   },
+   {
+    "name": "Store",
+    "src": [
+     "R1",
+     "R3",
+     "R4",
+     "R9",
+     "R10",
+     "R11"
+    ]
+   },
+   {
+    "name": "Back Office",
+    "src": [
+     "R1",
+     "R3",
+     "R4",
+     "R5",
+     "R10"
+    ]
+   },
+   {
+    "name": "Cash Register",
+    "src": [
+     "R7",
+     "R11"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Company",
+    "name": "contains one back office for each store",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "owner": "Corporate HQ",
+    "name": "manages a certain number of stores",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "owner": "Store",
+    "name": "has exactly one back office",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "owner": "Store",
+    "name": "has zero or more cash registers",
+    "src": [
+     "R11"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Company",
+    "target": "Back Office",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Company",
+    "target": "Store",
+    "src": [
+     "R1",
+     "R3",
+     "R4",
+     "R10"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Company",
+    "target": "Corporate HQ",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Corporate HQ",
+    "target": "Store",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Store",
+    "target": "Back Office",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Store",
+    "target": "Cash Register",
+    "src": [
+     "R11"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

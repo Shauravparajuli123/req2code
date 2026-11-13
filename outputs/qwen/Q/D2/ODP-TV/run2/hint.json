@@ -1,0 +1,160 @@
+{
+ "condition": "Q",
+ "hint": {
+  "case": "D2/ODP-TV",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "A class ImplementableStandard."
+     },
+     {
+      "sid": "R8.s2",
+      "text": "TechnologyObject extends ImplementableStandard on a 1 to many basis."
+     }
+    ],
+    "name": "ImplementableStandard",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R2",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Implementation implements the technology object class."
+     },
+     {
+      "sid": "R7.s2",
+      "text": "Implementation extends IXIT on a 0 to many basis."
+     }
+    ],
+    "name": "Implementation",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s2",
+      "text": "IXIT extends Implementation Class on a 0 to many basis."
+     },
+     {
+      "sid": "R7.s2",
+      "text": "Implementation extends IXIT on a 0 to many basis."
+     }
+    ],
+    "name": "Ixit",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R1",
+     "R5",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "The ODPTV model has a Technology Object."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "The Implementable standard implements or extends the technology object."
+     },
+     {
+      "sid": "R8.s2",
+      "text": "TechnologyObject extends ImplementableStandard on a 1 to many basis."
+     }
+    ],
+    "name": "TechnologyObject",
+    "freq": 3
+   }
+  ],
+  "attributes": [],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "verb:extend"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s2",
+      "text": "Implementation extends IXIT on a 0 to many basis."
+     }
+    ],
+    "kind": "association",
+    "source": "Implementation",
+    "target": "Ixit",
+    "multiplicity_target": "0..*"
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "verb:extend"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s2",
+      "text": "TechnologyObject extends ImplementableStandard on a 1 to many basis."
+     }
+    ],
+    "kind": "association",
+    "source": "TechnologyObject",
+    "target": "ImplementableStandard",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Implementation",
+     "target": "Ixit",
+     "multiplicity": "0..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

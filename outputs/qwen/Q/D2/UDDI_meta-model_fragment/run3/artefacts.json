@@ -1,0 +1,157 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "ModelBusinessTemplates",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "BusinessEntity",
+   "kind": "class",
+   "attributes": [
+    "businessContact",
+    "identifierBag"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "businessTemplate"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "OverviewDocument",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "PifModel",
+   "kind": "class",
+   "attributes": [
+    "businessTemplate"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "UtilityClass",
+   "kind": "class",
+   "attributes": [
+    "identifier"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "BusinessTemplate",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R10"
+   ]
+  },
+  {
+   "name": "IdentifierBag",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "BusinessEntity",
+   "target": "Contact",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Model",
+   "target": "OverviewDocument",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "UtilityClass",
+   "target": "Class",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "PifModel",
+   "target": "Model",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PifModel",
+   "target": "BusinessTemplate",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass BusinessEntity:\n    def __init__(self, businessContact: Optional[Contact] = None, identifierBag: Optional[IdentifierBag] = None):\n        self.businessContact = businessContact\n        self.identifierBag = identifierBag\n    def __str__(self):\n        raise NotImplementedError\n\nclass Contact:\n    def __init__(self):\n        pass\n    def __str__(self):\n        raise NotImplementedError\n\nclass Model:\n    def __init__(self, businessTemplate: BusinessTemplate):\n        self.businessTemplate = businessTemplate\n    def __str__(self):\n        raise NotImplementedError\n\nclass OverviewDocument:\n    def __init__(self):\n        pass\n    def __str__(self):\n        raise NotImplementedError\n\nclass PifModel(Model):\n    def __init__(self, businessTemplate: BusinessTemplate):\n        super().__init__(businessTemplate)\n    def __str__(self):\n        raise NotImplementedError\n\nclass UtilityClass:\n    def __init__(self, identifier: str):\n        self.identifier = identifier\n    def __str__(self):\n        raise NotImplementedError\n\nclass BusinessTemplate:\n    def __init__(self):\n        pass\n    def __str__(self):\n        raise NotImplementedError\n\nclass IdentifierBag:\n    def __init__(self):\n        pass\n    def __str__(self):\n        raise NotImplementedError",
+ "java": {}
+}

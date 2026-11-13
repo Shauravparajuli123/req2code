@@ -1,0 +1,33 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Airport {
+  name : String
+}
+class Flight {
+  maxNumberOfPassengers : int
+  departureTime : LocalTime
+  originAirport : String
+  passengers : String
+  +addPassenger()
+  +removePassenger()
+}
+class Passenger {
+  name : String
+  gender : String
+  +assignToFlight()
+}
+class Airplane {
+  name : String
+}
+class Time {
+  year : int
+  day : int
+  minute : int
+}
+Flight "1" -- "0..*" Airport : departFrom
+Flight "1" -- "1" Time : hasDepartureTime
+Flight "1" -- "1" Airplane : isOperatedBy
+Flight "1" -- "0..*" Passenger : carries
+Passenger "1" -- "1" Flight : isAssignedTo
+@enduml

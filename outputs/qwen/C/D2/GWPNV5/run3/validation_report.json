@@ -1,0 +1,55 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class Transition in the model.",
+   "fix": "Add class Transition to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class Arc in the model.",
+   "fix": "Add class Arc to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class PlaceTransitionArc in the model.",
+   "fix": "Add class PlaceTransitionArc to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class TransitionPlaceArc in the model.",
+   "fix": "Add class TransitionPlaceArc to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Transition and Net in the model.",
+   "fix": "Add association Transition -> Net [0..1] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Arc and Net in the model.",
+   "fix": "Add association Arc -> Net [0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between PlaceTransitionArc and Place in the model.",
+   "fix": "Add association PlaceTransitionArc -> Place [0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between TransitionPlaceArc and Transition in the model.",
+   "fix": "Add association TransitionPlaceArc -> Transition [0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Place and tokens in the model.",
+   "fix": "Add attribute tokens to the class Place."
+  }
+ ]
+}

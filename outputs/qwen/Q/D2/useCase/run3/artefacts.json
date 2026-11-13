@@ -1,0 +1,175 @@
+{
+ "actors": [
+  "Actor"
+ ],
+ "use_cases": [
+  {
+   "name": "Use Case",
+   "actor": "Actor",
+   "src": [
+    "R1",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "UseCaseDiagram",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "actors",
+    "useCases",
+    "extends",
+    "includes",
+    "containers",
+    "associations"
+   ],
+   "methods": [
+    {
+     "name": "addActor",
+     "use_case": "R1"
+    },
+    {
+     "name": "addUseCase",
+     "use_case": "R2"
+    },
+    {
+     "name": "addExtend",
+     "use_case": "R10"
+    },
+    {
+     "name": "addInclude",
+     "use_case": "R11"
+    },
+    {
+     "name": "addContainer",
+     "use_case": "R12"
+    },
+    {
+     "name": "addAssociation",
+     "use_case": "R13"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R10",
+    "R11",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Actor",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Extend",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "UseCase",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "CaseContainer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Association",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "Actor",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "UseCase",
+   "multiplicity_target": "1",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "Extend",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "UseCase",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "CaseContainer",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "Association",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "python": "class UseCaseDiagram:\n    def __init__(self, name: str):\n        self.name = name\n        self.actors = []\n        self.useCases = []\n        self.extends = []\n        self.includes = []\n        self.containers = []\n        self.associations = []\n\n    def addActor(self, actor: Actor):\n        self.actors.append(actor)\n        raise NotImplementedError\n\n    def addUseCase(self, use_case: UseCase):\n        self.useCases.append(use_case)\n        raise NotImplementedError\n\n    def addExtend(self, extend: Extend):\n        self.extends.append(extend)\n        raise NotImplementedError\n\n    def addInclude(self, include: UseCase):\n        self.includes.append(include)\n        raise NotImplementedError\n\n    def addContainer(self, container: CaseContainer):\n        self.containers.append(container)\n        raise NotImplementedError\n\n    def addAssociation(self, association: Association):\n        self.associations.append(association)\n        raise NotImplementedError\n\nclass Actor:\n    pass\nclass Extend:\n    pass\nclass UseCase:\n    pass\nclass CaseContainer:\n    pass\nclass Association:\n    pass",
+ "java": {}
+}

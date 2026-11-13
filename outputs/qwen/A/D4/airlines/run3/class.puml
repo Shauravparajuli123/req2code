@@ -1,0 +1,23 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Airline {
+  name : String
+  operatingCosts : String
+  +addOperatingCost()
+  +removeOperatingCost()
+}
+class Airport {
+  code : String
+  city : String
+}
+class OperatingCost {
+  airline : String
+  airport : String
+  cost : double
+  +updateCost()
+}
+Airline "1" -- "1..*" Airport : operates at
+Airline "1" *-- "1" OperatingCost : has
+OperatingCost "1" -- "1" Airport : for
+@enduml

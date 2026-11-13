@@ -1,0 +1,65 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  email : String
+  password : String
+  profile : String
+  schedule : String
+  account : String
+  +clickOnAddress()
+  +viewPublicInformation()
+  +enterZipCode()
+  +getFacilityHours()
+  +selectRecyclableWaste()
+  +addFavoriteDonationCenter()
+  +giveEmailID()
+  +viewMapDisplayPublicBins()
+  +viewMapDisplaySpecialWasteSites()
+  +viewSafeDisposalEvents()
+  +createAccount()
+}
+class Admin {
+  +addRemoveRecyclingFacilities()
+  +readUserFeedback()
+  +blockUsersBasedOnIP()
+  +viewDashboard()
+  +encryptData()
+  +handleUserActivities()
+}
+class Superuser {
+  +updateRecyclingCenterInfo()
+  +viewUserStats()
+  +replyToUserQuestions()
+}
+class Employee {
+  +accessRoutePlanningSystem()
+  +getQuickNotifications()
+}
+class Developer {
+  +accessAPI()
+  +useBootstrap()
+  +attendUIUXLessons()
+}
+class Company {
+  +accessWebsite()
+}
+class CompanyAccountant {
+  +viewActivityFees()
+}
+class RecyclingFacilityRepresentative {
+  +updateFacilityInfo()
+  +viewUserStatsAndSchedules()
+}
+class RecyclingFacility {
+  information : String
+  +communicateWithSiteAdmin()
+}
+User "0..*" -- "1" RecyclingFacility : visits
+Admin "1" -- "0..*" User : manages
+Superuser "1" -- "0..*" Admin : is
+Employee "1" -- "1" Company : worksFor
+Developer "1" -- "1" Company : worksFor
+CompanyAccountant "1" -- "1" Company : manages
+RecyclingFacilityRepresentative "1" -- "1" RecyclingFacility : represents
+@enduml

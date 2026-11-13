@@ -1,0 +1,104 @@
+[
+ {
+  "id": "A1",
+  "type": "actor",
+  "sid": "R5.s1",
+  "req_id": "R5",
+  "cue": "passive 'bound' without agent",
+  "text": "A template expression can be bound to a variable",
+  "readings": [
+   "A template expression can be bound to a variable",
+   "A variable can be bound to a template expression"
+  ],
+  "status": "open",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The sentence is ambiguous and could imply either a template expression binding to a variable or a variable binding to a template expression.",
+  "chosen": null
+ },
+ {
+  "id": "A2",
+  "type": "quantifier",
+  "sid": "R6.s1",
+  "req_id": "R6",
+  "cue": "multiple",
+  "text": "An object template expression may contain multiple property template items.",
+  "readings": [
+   "An object template expression may contain one property template item",
+   "An object template expression may contain multiple property template items"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The sentence is ambiguous and could mean that an object template expression can contain one or multiple property template items.",
+  "chosen": "An object template expression may contain multiple property template items."
+ },
+ {
+  "id": "A3",
+  "type": "quantifier",
+  "sid": "R7.s1",
+  "req_id": "R7",
+  "cue": "any",
+  "text": "A collection template expression may contain any number of OCL expressions",
+  "readings": [
+   "A collection template expression may contain zero or more OCL expressions",
+   "A collection template expression may contain one or more OCL expressions"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The sentence is ambiguous and could mean that a collection template expression can contain zero or one OCL expression, or one or more OCL expressions.",
+  "chosen": "A collection template expression may contain one or more OCL expressions."
+ },
+ {
+  "id": "A4",
+  "type": "actor",
+  "sid": "R8.s1",
+  "req_id": "R8",
+  "cue": "passive 'matched' without agent",
+  "text": "A collection template expression may be matched to one OCL expression.",
+  "readings": [
+   "A collection template expression may be matched to one OCL expression",
+   "An OCL expression may be matched to one collection template expression"
+  ],
+  "status": "open",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The sentence is ambiguous and could imply either a collection template expression being matched to an OCL expression or an OCL expression being matched to a collection template expression.",
+  "chosen": null
+ },
+ {
+  "id": "A5",
+  "type": "referential",
+  "sid": "R9.s1",
+  "req_id": "R9",
+  "cue": "its",
+  "text": "A property template item has exactly one Object Template Expression as its object container.",
+  "readings": [
+   "A property template item has exactly one Object Template Expression as its object container",
+   "A property template item has exactly one Object Template Expression as its property container"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The sentence is ambiguous and could mean that a property template item has an object container or a property container.",
+  "chosen": "A property template item has exactly one Object Template Expression as its object container."
+ },
+ {
+  "id": "A6",
+  "type": "referential",
+  "sid": "R10.s1",
+  "req_id": "R10",
+  "cue": "its",
+  "text": "A property template item has exactly one property as its referred property.",
+  "readings": [
+   "A property template item has exactly one property as its referred property",
+   "A property template item has exactly one Object Template Expression as its referred property"
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The sentence is ambiguous and could mean that a property template item refers to a property or an object template expression.",
+  "chosen": "A property template item has exactly one property as its referred property."
+ }
+]

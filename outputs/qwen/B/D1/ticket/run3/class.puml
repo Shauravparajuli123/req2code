@@ -1,0 +1,37 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  dateOfBirth : LocalDate
+  email : String
+  address : String
+  preferences : String
+  bankAccount : String
+  +createUser()
+  +changePassword()
+  +editInformation()
+  +seeHistory()
+  +seeOverview()
+  +seePreference()
+  +fillInformation()
+  +fillName()
+  +fillSurvey()
+}
+class Address {
+  street : String
+  city : String
+  state : String
+  zipCode : String
+}
+class Preference {
+  genre : String
+  eventTypes : String
+}
+class BankAccount {
+  iban : String
+}
+User "1" -- "1" Preference : has
+User "1" -- "1" Address : has
+User "1" -- "1" BankAccount : has
+@enduml

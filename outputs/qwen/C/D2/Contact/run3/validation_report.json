@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "No class representing PhoneNumber for use case R2",
+   "fix": "Add a class PhoneNumber with attribute number as String"
+  },
+  {
+   "agent": "class",
+   "issue": "No class representing CellPhone for use case R3 and R6",
+   "fix": "Add a class CellPhone with attribute number as String"
+  },
+  {
+   "agent": "relationship",
+   "issue": "No relationship between Contact and CellPhone for R6",
+   "fix": "Add a relationship Contact -> CellPhone [0..1]"
+  },
+  {
+   "agent": "use_case",
+   "issue": "No use case for R6",
+   "fix": "Add a use case for R6"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "User" as A1
+rectangle "SoftwareQualityControl" {
+  usecase "Track Bug" as UC1
+  usecase "Link Control To Sequence" as UC2
+}
+A1 --> UC1
+A1 --> UC2
+@enduml

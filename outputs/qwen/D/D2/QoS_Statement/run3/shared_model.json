@@ -1,0 +1,81 @@
+{
+ "case": "D2/QoS_Statement",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "qoSConstraint",
+     "type": "String",
+     "src": [
+      "R6",
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "qoSStatement",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "generalization",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "*",
+   "mult_target": "1",
+   "label": "is a",
+   "src": [
+    "R7",
+    "R10"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "CompoundQoSStatement is a subclass of QoSStatement."
+  }
+ ],
+ "open_tags": []
+}

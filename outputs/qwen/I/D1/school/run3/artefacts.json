@@ -1,0 +1,428 @@
+{
+ "actors": [
+  "guardian",
+  "student",
+  "teacher",
+  "administrator",
+  "user",
+  "administrator"
+ ],
+ "use_cases": [
+  {
+   "name": "Access File",
+   "actor": "student",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": []
+  },
+  {
+   "name": "Send BroadcastMessage",
+   "actor": "administrator",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "name": "Set Role",
+   "actor": "administrator",
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "name": "Upload Schedule",
+   "actor": "administrator",
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "name": "View Detail",
+   "actor": "administrator",
+   "src": [
+    "R60"
+   ]
+  },
+  {
+   "name": "View Statistic",
+   "actor": "administrator",
+   "src": [
+    "R61"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Administrator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "sendBroadcastMessage",
+     "use_case": "Send BroadcastMessage"
+    },
+    {
+     "name": "setRole",
+     "use_case": "Set Role"
+    },
+    {
+     "name": "uploadSchedule",
+     "use_case": "Upload Schedule"
+    },
+    {
+     "name": "viewDetail",
+     "use_case": "View Detail"
+    },
+    {
+     "name": "viewStatistic",
+     "use_case": "View Statistic"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R57",
+    "R58",
+    "R59",
+    "R60",
+    "R61"
+   ]
+  },
+  {
+   "name": "Account",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "name": "Message",
+   "kind": "class",
+   "attributes": [
+    "content"
+   ],
+   "methods": [
+    {
+     "name": "sendToParticipants",
+     "use_case": "Send BroadcastMessage"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "name": "Role",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [
+    {
+     "name": "student"
+    },
+    {
+     "name": "teacher"
+    },
+    {
+     "name": "administrator"
+    },
+    {
+     "name": "guardian"
+    }
+   ],
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "name": "Schedule",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "upload",
+     "use_case": "Upload Schedule"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "name": "Statistic",
+   "kind": "class",
+   "attributes": [
+    "grades",
+    "attendance",
+    "disciplinaryActions"
+   ],
+   "methods": [
+    {
+     "name": "view",
+     "use_case": "View Statistic"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R61"
+   ]
+  },
+  {
+   "name": "Grade",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R61"
+   ]
+  },
+  {
+   "name": "Attendance",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R61"
+   ]
+  },
+  {
+   "name": "Action",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R61"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Account",
+   "multiplicity_target": "1",
+   "src": [
+    "R58",
+    "R60"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Message",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Schedule",
+   "multiplicity_target": "1",
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Statistic",
+   "multiplicity_target": "1",
+   "src": [
+    "R61"
+   ]
+  }
+ ],
+ "python": "from abc import ABC, abstractmethod\n\nclass User(ABC):\n    def __init__(self, role: str):\n        self.role = role\n\n    @abstractmethod\ndefine method signatures\n\nclass Guardian(User):\n    def __init__(self, role: str):\n        super().__init__(role)\n\ndefine method signatures\n\nclass Student(User):\n    def __init__(self, role: str):\n        super().__init__(role)\n\ndefine method signatures\n\nclass Teacher(User):\n    def __init__(self, role: str):\n        super().__init__(role)\n\ndefine method signatures\n\nclass Administrator(User):\n    def __init__(self, role: str):\n        super().__init__(role)\n\ndefine method signatures\n\nclass Absence:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\nclass Behavior:\n    def __init__(self, student: Student, behavior: str):\n        self.student = student\n        self.behavior = behavior\n\ndefine method signatures\n\nclass Child:\n    def __init__(self, guardian: Guardian, student: Student):\n        self.guardian = guardian\n        self.student = student\n\ndefine method signatures\n\nclass Dlm:\n    def __init__(self, teacher: Teacher):\n        self.teacher = teacher\n\ndefine method signatures\n\nclass File:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\nclass Grade:\n    def __init__(self, student: Student, grade: int):\n        self.student = student\n        self.grade = grade\n\ndefine method signatures\n\nclass Homework:\n    def __init__(self, student: Student):\n        self.student = student\n\ndefine method signatures\n\nclass Insight:\n    def __init__(self, user: User, information: str):\n        self.user = user\n        self.information = information\n\ndefine method signatures\n\nclass Lms:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\nclass Material:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\nclass Notification:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\nclass Participant:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\nclass Performance:\n    def __init__(self, user: User, performance: str):\n        self.user = user\n        self.performance = performance\n\ndefine method signatures\n\nclass Question:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\nclass Schedule:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\nclass Staff:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\nclass Submission:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\nclass Timetable:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\nclass Work:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\nclass Year:\n    def __init__(self, user: User):\n        self.user = user\n\ndefine method signatures\n\n\nfrom enum import Enum\n\nclass Role(Enum):\n    student = 'student'\n    teacher = 'teacher'\n    administrator = 'administrator'\n    guardian = 'guardian'\n\nclass Account:\n    def __init__(self, role: Role):\n        self.role = role\n\nclass Message:\n    def __init__(self, content: str):\n        self.content = content\n\nclass Schedule:\n    def __init__(self, content: str):\n        self.content = content\n\nclass School:\n    def __init__(self):\n        self.accounts = []\n        self.schedules = []\n        self.stats = {\n            'grades': {},\n            'attendance': {},\n            'disciplinary_actions': {}\n        }\n\ndef send_broadcast_message(self, message: Message, participants: list[Account]):\n    raise NotImplementedError\n\ndef set_role(self, account: Account, new_role: Role):\n    raise NotImplementedError\n\ndef upload_schedule(self, schedule: Schedule):\n    raise NotImplementedError\n\ndef view_detail(self, account: Account):\n    raise NotImplementedError\n\ndef view_statistic(self):\n    raise NotImplementedError\n",
+ "java": {}
+}

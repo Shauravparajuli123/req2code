@@ -1,0 +1,107 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Track Bug",
+   "actor": "User",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Link Control To Sequence",
+   "actor": "User",
+   "src": [
+    "R3",
+    "R8"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    "day",
+    "year"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Bug",
+   "kind": "class",
+   "attributes": [
+    "number",
+    "description",
+    "originator",
+    "comments",
+    "closeDate"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "name": "Control",
+   "kind": "class",
+   "attributes": [
+    "type"
+   ],
+   "methods": [
+    {
+     "name": "linkControlToSequence",
+     "use_case": "Link Control To Sequence"
+    }
+   ],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "ControlsSequence",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2",
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Control",
+   "target": "ControlsSequence",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/SoftwareQualityControl.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Date:\n    \"\"\"Source: R1\"\"\"\n    day: _t.Optional[int] = None\n    year: _t.Optional[int] = None\n\n\n@_dc.dataclass\nclass Bug:\n    \"\"\"Source: R5, R12\"\"\"\n    number: _t.Optional[int] = None\n    description: _t.Optional[str] = None\n    originator: _t.Optional[str] = None\n    comments: _t.Optional[str] = None\n    closeDate: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Control:\n    \"\"\"Source: R10\"\"\"\n    type: _t.Optional[str] = None\n    controlsSequences: _t.List[\"ControlsSequence\"] = _dc.field(default_factory=list)\n\n    def linkControlToSequence(self) -> None:\n        \"\"\"Realizes UC2 \"Link Control To Sequence\" (R3, R8).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ControlsSequence:\n    \"\"\"Source: R2, R3, R7, R8\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Architecture:\n    \"\"\"Source: R11\"\"\"\n    pass\n",
+ "java": {
+  "Date.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R1 */\npublic class Date {\n    private int day;\n    private int year;\n}\n",
+  "Bug.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R5, R12 */\npublic class Bug {\n    private int number;\n    private java.lang.String description;\n    private java.lang.String originator;\n    private java.lang.String comments;\n    private java.time.LocalDate closeDate;\n}\n",
+  "Control.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R10 */\npublic class Control {\n    private java.lang.String type;\n    private java.util.List<ControlsSequence> controlsSequences;\n\n    /** Realizes UC2 \"Link Control To Sequence\" (R3, R8). */\n    public void linkControlToSequence() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ControlsSequence.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R2, R3, R7, R8 */\npublic class ControlsSequence {\n}\n",
+  "Architecture.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R11 */\npublic class Architecture {\n}\n"
+ }
+}

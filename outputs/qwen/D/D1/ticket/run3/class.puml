@@ -1,0 +1,50 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  personalInformation : String
+  paymentDetails : String
+  preferences : String
+  password : String
+  ticketOrders : String
+  favoriteEventsArtists : String
+  +savePersonalInformation()
+  +savePaymentDetails()
+  +fillOutSurvey()
+  +seePersonalizedContent()
+  +editPreferences()
+  +changePassword()
+  +editPersonalInformation()
+  +seeTicketOrders()
+  +seeFavoriteEventsArtists()
+}
+class Visitor {
+  +readAboutEvent()
+  +buyTicketsDirectly()
+  +resellTicketsDirectly()
+  +seeAvailableSeats()
+  +seeAvailableSeatsMap()
+  +seeTypesOfTickets()
+  +addTicketsToShoppingCart()
+  +seeOrderSummary()
+  +seeListPaymentMethods()
+  +seeUpcomingEventsCalendar()
+  +seePopularUpcomingEvents()
+  +clickOnEventHomepage()
+}
+class Reseller {
+  +uploadDigitalTicket()
+  +setAnyPriceAbove5Cents()
+  +addShortDescriptionEvent()
+  +saveBankAccount()
+}
+class Company {
+  +haveIntuitiveBuyingProcess()
+  +haveMinimumPriceReselling()
+  +sellOnlyDigitalTickets()
+  +validateTickets()
+  +deductServiceFee()
+  +avoidFraudulentBehavior()
+  +protectUsersFromOnlineFraud()
+}
+@enduml

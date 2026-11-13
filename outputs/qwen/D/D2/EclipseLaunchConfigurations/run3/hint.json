@@ -1,0 +1,140 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "LaunchConfiguration",
+    "src": [
+     "R1",
+     "R9"
+    ]
+   },
+   {
+    "name": "Attribute",
+    "src": [
+     "R2",
+     "R4",
+     "R5",
+     "R7",
+     "R9"
+    ]
+   },
+   {
+    "name": "StringAttribute",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "name": "BooleanAttribute",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "MapAttribute",
+    "src": [
+     "R5",
+     "R10",
+     "R11"
+    ]
+   },
+   {
+    "name": "MapEntry",
+    "src": [
+     "R6",
+     "R11",
+     "R8",
+     "R13",
+     "R12"
+    ]
+   },
+   {
+    "name": "ListAttribute",
+    "src": [
+     "R7",
+     "R12",
+     "R13"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "LaunchConfiguration",
+    "name": "type",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "Attribute",
+    "name": "key",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "owner": "StringAttribute",
+    "name": "string value",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "owner": "BooleanAttribute",
+    "name": "boolean value",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "owner": "MapAttribute",
+    "name": "map entries",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "owner": "ListAttribute",
+    "name": "list entries",
+    "src": [
+     "R12"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "has",
+    "source": "LaunchConfiguration",
+    "target": "Attribute",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "kind": "has",
+    "source": "Attribute",
+    "target": "MapEntry",
+    "src": [
+     "R5",
+     "R10",
+     "R11"
+    ]
+   },
+   {
+    "kind": "has",
+    "source": "Attribute",
+    "target": "ListEntry",
+    "src": [
+     "R7",
+     "R12",
+     "R13"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

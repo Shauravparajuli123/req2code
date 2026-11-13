@@ -1,0 +1,26 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Node {
+  name : String
+  icon : String
+  maps : String
+}
+class Label {
+  label : String
+  labelSuites : String
+}
+class LabelSuite {
+}
+class Map {
+  mapString : String
+}
+class Outline {
+  extension : String
+  nodes : String
+}
+Outline "1" *-- "1..*" Node : is composed of
+Node "1" *-- "1" Label : is composed of
+Node "1" *-- "1..*" Map : is composed of
+LabelSuite "1" -- "1" Label : has
+@enduml

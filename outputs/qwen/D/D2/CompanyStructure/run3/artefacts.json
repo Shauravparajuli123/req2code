@@ -1,0 +1,122 @@
+{
+ "actors": [
+  "CompanyStructureModel"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "corporateHQ",
+    "stores",
+    "backOffices"
+   ],
+   "methods": [],
+   "src": [
+    "R1",
+    "R6"
+   ]
+  },
+  {
+   "name": "CorporateHQ",
+   "kind": "class",
+   "attributes": [
+    "managedStores"
+   ],
+   "methods": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Store",
+   "kind": "class",
+   "attributes": [
+    "backOffice",
+    "cashRegisters"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "BackOffice",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R4",
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "CashRegister",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Company",
+   "target": "CorporateHQ",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Company",
+   "target": "Store",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "Company",
+   "target": "BackOffice",
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "source": "CorporateHQ",
+   "target": "Store",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "Store",
+   "target": "BackOffice",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "Store",
+   "target": "CashRegister",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/CompanyStructure.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Company:\n    \"\"\"Source: R1, R6\"\"\"\n    corporateHQ: _t.Optional[str] = None\n    stores: _t.Optional[str] = None\n    backOffices: _t.Optional[str] = None\n    backOffice: _t.Optional[\"BackOffice\"] = None\n\n\n@_dc.dataclass\nclass CorporateHQ:\n    \"\"\"Source: R8, R9\"\"\"\n    managedStores: _t.Optional[str] = None\n    stores: _t.List[\"Store\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Store:\n    \"\"\"Source: R3, R10, R11\"\"\"\n    backOffice: _t.Optional[str] = None\n    cashRegisters: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass BackOffice:\n    \"\"\"Source: R4, R5, R10\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass CashRegister:\n    \"\"\"Source: R7, R11\"\"\"\n    pass\n",
+ "java": {
+  "Company.java": "/** Generated from shared model D2/CompanyStructure. Source: R1, R6 */\npublic class Company {\n    private java.lang.String corporateHQ;\n    private java.lang.String stores;\n    private java.lang.String backOffices;\n    private BackOffice backOffice;\n}\n",
+  "CorporateHQ.java": "/** Generated from shared model D2/CompanyStructure. Source: R8, R9 */\npublic class CorporateHQ {\n    private java.lang.String managedStores;\n    private java.util.List<Store> stores;\n}\n",
+  "Store.java": "/** Generated from shared model D2/CompanyStructure. Source: R3, R10, R11 */\npublic class Store {\n    private java.lang.String backOffice;\n    private java.lang.String cashRegisters;\n}\n",
+  "BackOffice.java": "/** Generated from shared model D2/CompanyStructure. Source: R4, R5, R10 */\npublic class BackOffice {\n}\n",
+  "CashRegister.java": "/** Generated from shared model D2/CompanyStructure. Source: R7, R11 */\npublic class CashRegister {\n}\n"
+ }
+}

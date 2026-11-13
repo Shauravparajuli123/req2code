@@ -1,0 +1,224 @@
+{
+ "actors": [
+  {
+   "name": "Author",
+   "src": [
+    "R4",
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "name": "Participant",
+   "src": [
+    "R5",
+    "R7",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "name": "Theater",
+   "src": [
+    "R1",
+    "R11"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "play",
+   "actor": "Theater",
+   "src": [
+    "R2",
+    "R11"
+   ]
+  },
+  {
+   "name": "write",
+   "actor": "Author",
+   "src": [
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "name": "act",
+   "actor": "Participant",
+   "src": [
+    "R5",
+    "R9",
+    "R12"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Play",
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R11"
+   ]
+  },
+  {
+   "name": "Author",
+   "src": [
+    "R4",
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "name": "Participant",
+   "src": [
+    "R5",
+    "R7",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "name": "Theater",
+   "src": [
+    "R1",
+    "R2",
+    "R11"
+   ]
+  },
+  {
+   "name": "Session",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Play",
+   "name": "name",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Play",
+   "name": "type",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "Play",
+   "name": "location",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "Play",
+   "name": "author",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "owner": "Play",
+   "name": "session",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "owner": "Author",
+   "name": "name",
+   "src": [
+    "R4",
+    "R7"
+   ]
+  },
+  {
+   "owner": "Participant",
+   "name": "name",
+   "src": [
+    "R5",
+    "R7"
+   ]
+  },
+  {
+   "owner": "Theater",
+   "name": "location",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "Session",
+   "name": "beginTime",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "owner": "Session",
+   "name": "endTime",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Theater",
+   "target": "Play",
+   "src": [
+    "R2",
+    "R11"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Play",
+   "target": "Author",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Play",
+   "target": "Participant",
+   "src": [
+    "R5",
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Author",
+   "target": "Play",
+   "src": [
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Participant",
+   "target": "Session",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

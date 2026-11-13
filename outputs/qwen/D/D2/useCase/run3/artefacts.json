@@ -1,0 +1,46 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Login",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Logout",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "login",
+     "use_case": "Login"
+    },
+    {
+     "name": "logout",
+     "use_case": "Logout"
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/useCase.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass User:\n    \"\"\"Source: R1\"\"\"\n\n    def login(self) -> None:\n        \"\"\"Realizes UC1 \"Login\" (R1).\"\"\"\n        raise NotImplementedError\n\n    def logout(self) -> None:\n        \"\"\"Realizes UC2 \"Logout\" (R1).\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "User.java": "/** Generated from shared model D2/useCase. Source: R1 */\npublic class User {\n\n    /** Realizes UC1 \"Login\" (R1). */\n    public void login() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Logout\" (R1). */\n    public void logout() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

@@ -1,0 +1,73 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Guardian {
+  +fillAbsence()
+  +messageTeacher()
+  +messageMentor()
+  +receiveNotification()
+}
+class Student {
+  +handHomework()
+  +messageTeacher()
+  +fillAbsence()
+  +receiveNotification()
+  +viewInformation()
+  +viewContactInformation()
+}
+class Teacher {
+  +messageStudent()
+  +messageGuardian()
+  +messageTeacher()
+  +receiveNotification()
+  +recordBehavior()
+  +recordAttendance()
+  +recordGrade()
+  +seeProgress()
+  +setAppearanceDate()
+  +setDate()
+  +uploadFile()
+  +viewAttendance()
+  +viewGrade()
+  +viewProgress()
+  +viewAnswer()
+}
+class Administrator {
+  +createAccount()
+  +editData()
+  +assignSchedule()
+  +receiveNotification()
+  +registerChange()
+  +registerAbsence()
+  +sendBroadcastMessage()
+  +setRole()
+  +uploadSchedule()
+  +viewDetail()
+  +viewStatistic()
+}
+class Absence {
+  +registerAbsence()
+}
+class Notification {
+  +receiveNotification()
+}
+class Account {
+  role : String
+}
+class Schedule {
+  +uploadSchedule()
+}
+class Message {
+  +sendBroadcastMessage()
+}
+class Participant {
+  +sendBroadcastMessage()
+}
+Administrator "1" -- "1..*" Message : sends
+Administrator "1" -- "1" Account : sets role of
+Administrator "1" -- "1..*" Schedule : uploads
+Account "1" -- "0..1" Schedule : has
+Participant "1" -- "0..1" Schedule : has
+Student "1" -- "1" Schedule : has
+Teacher "1" -- "1" Schedule : has
+@enduml

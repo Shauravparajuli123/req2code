@@ -1,0 +1,113 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "icon"
+   ],
+   "methods": [
+    {
+     "name": "addMap",
+     "use_case": null
+    },
+    {
+     "name": "addLabel",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Label",
+   "kind": "class",
+   "attributes": [
+    "label"
+   ],
+   "methods": [
+    {
+     "name": "addLabelSuite",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "name": "LabelSuite",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Map",
+   "kind": "class",
+   "attributes": [
+    "mapString"
+   ],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Outline",
+   "kind": "class",
+   "attributes": [
+    "extension"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Outline",
+   "target": "Node",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "Node",
+   "target": "Label",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Node",
+   "target": "Map",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "Label",
+   "target": "LabelSuite",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GenericOutline.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R3\"\"\"\n    name: _t.Optional[str] = None\n    icon: _t.Optional[str] = None\n    label: _t.Optional[\"Label\"] = None\n    maps: _t.List[\"Map\"] = _dc.field(default_factory=list)\n\n    def addMap(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addLabel(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Label:\n    \"\"\"Source: R4, R10\"\"\"\n    label: _t.Optional[str] = None\n    labelSuite: _t.Optional[\"LabelSuite\"] = None\n\n    def addLabelSuite(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass LabelSuite:\n    \"\"\"Source: R5\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Map:\n    \"\"\"Source: R6\"\"\"\n    mapString: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Outline:\n    \"\"\"Source: R2\"\"\"\n    extension: _t.Optional[str] = None\n    nodes: _t.List[\"Node\"] = _dc.field(default_factory=list)\n",
+ "java": {
+  "Node.java": "/** Generated from shared model D2/GenericOutline. Source: R3 */\npublic class Node {\n    private java.lang.String name;\n    private java.lang.String icon;\n    private Label label;\n    private java.util.List<Map> maps;\n\n    /** Operation. */\n    public void addMap() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addLabel() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Label.java": "/** Generated from shared model D2/GenericOutline. Source: R4, R10 */\npublic class Label {\n    private java.lang.String label;\n    private LabelSuite labelSuite;\n\n    /** Operation. */\n    public void addLabelSuite() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "LabelSuite.java": "/** Generated from shared model D2/GenericOutline. Source: R5 */\npublic class LabelSuite {\n}\n",
+  "Map.java": "/** Generated from shared model D2/GenericOutline. Source: R6 */\npublic class Map {\n    private java.lang.String mapString;\n}\n",
+  "Outline.java": "/** Generated from shared model D2/GenericOutline. Source: R2 */\npublic class Outline {\n    private java.lang.String extension;\n    private java.util.List<Node> nodes;\n}\n"
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "actors": [
+  "Contact"
+ ],
+ "use_cases": [
+  {
+   "name": "MapPhoneNumber",
+   "actor": "Contact",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "addLandLine",
+     "use_case": "R5"
+    },
+    {
+     "name": "addCellPhone",
+     "use_case": "R6"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CellPhoneNumber",
+   "kind": "class",
+   "attributes": [
+    "number"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Contact",
+   "target": "CellPhoneNumber",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Contact",
+   "target": "LandLine",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "python": "from typing import Dict\n\nclass CellPhoneNumber(str):\n    pass\n\nclass Contact:\n    def __init__(self, name: str, cell_phone_number: CellPhoneNumber):\n        self.name = name\n        self.cell_phone_number = cell_phone_number\n        self.land_line_number: str = ''\n\n    def set_land_line_number(self, land_line_number: str) -> None:\n        raise NotImplementedError\n\n    def get_land_line_number(self) -> str:\n        raise NotImplementedError\n\n    def set_cell_phone_number(self, cell_phone_number: CellPhoneNumber) -> None:\n        raise NotImplementedError\n\n    def get_cell_phone_number(self) -> CellPhoneNumber:\n        raise NotImplementedError",
+ "java": {}
+}

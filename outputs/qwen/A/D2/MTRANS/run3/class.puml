@@ -1,0 +1,41 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Module {
+  name : String
+  rules : String
+}
+class Rule {
+  name : String
+  abstract_ : boolean
+  sections : String
+  source : String
+  inheritances : String
+  +addSection()
+}
+class Section {
+  kind : String
+}
+class Inheritance {
+  rule : String
+}
+class MetaClass {
+}
+class Expression {
+  instruction : String
+}
+class Instruction {
+}
+class Variable {
+  rule : String
+}
+enum InheritedRule {
+  INHERITEDRULE
+}
+Module "1" *-- "1..*" Rule : contains
+Rule "1" -- "1..*" Section : has
+Rule "1" -- "0..*" Inheritance : has
+Expression "1" -- "1" Instruction : has
+Instruction "1" -- "1" Expression : has
+Rule "1" -- "1..*" Variable : contains
+@enduml

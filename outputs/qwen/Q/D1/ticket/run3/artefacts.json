@@ -1,0 +1,826 @@
+{
+ "actors": [
+  "user",
+  "visitor",
+  "reseller",
+  "artist"
+ ],
+ "use_cases": [
+  {
+   "name": "Fill Information",
+   "actor": "user",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Save Information",
+   "actor": "user",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Save PaymentDetail",
+   "actor": "user",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Fill Survey",
+   "actor": "user",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "See Content",
+   "actor": "user",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "See Preference",
+   "actor": "user",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "See History",
+   "actor": "user",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "See Overview",
+   "actor": "user",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "See Event",
+   "actor": "visitor",
+   "src": [
+    "R11",
+    "R19",
+    "R21",
+    "R22",
+    "R23",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Purchase Ticket",
+   "actor": "visitor",
+   "src": [
+    "R12",
+    "R14",
+    "R20",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Change Password",
+   "actor": "user",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Edit Information",
+   "actor": "user",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Resell Ticket",
+   "actor": "reseller",
+   "src": [
+    "R41",
+    "R42",
+    "R43",
+    "R45"
+   ]
+  },
+  {
+   "name": "Validate Ticket",
+   "actor": "company",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Avoid Behavior",
+   "actor": "company",
+   "src": [
+    "R39"
+   ]
+  },
+  {
+   "name": "Deduct ServiceFee",
+   "actor": "company",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "Protect User",
+   "actor": "company",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "Have BuyingProcess",
+   "actor": "company",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "Have Description",
+   "actor": "artist",
+   "src": [
+    "R52"
+   ]
+  },
+  {
+   "name": "Have Link",
+   "actor": "artist",
+   "src": [
+    "R50",
+    "R51",
+    "R54"
+   ]
+  },
+  {
+   "name": "Have Price",
+   "actor": "company",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Have Reseller",
+   "actor": "company",
+   "src": [
+    "R36"
+   ]
+  },
+  {
+   "name": "Have SearchEngine",
+   "actor": "visitor",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Land EventPage",
+   "actor": "visitor",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "Click Event",
+   "actor": "visitor",
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "name": "Filter List",
+   "actor": "visitor",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Filter Search",
+   "actor": "visitor",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "Filter SearchResult",
+   "actor": "visitor",
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "name": "Sort SearchResult",
+   "actor": "visitor",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Add Ticket",
+   "actor": "visitor",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "See OrderSummary",
+   "actor": "visitor",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "See Seat",
+   "actor": "visitor",
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "See Type",
+   "actor": "visitor",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Edit Information",
+   "actor": "user",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Favorite Event",
+   "actor": "user",
+   "src": [
+    "R53"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "dateOfBirth",
+    "email",
+    "address",
+    "preferences",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "fillInformation",
+     "use_case": "Fill Information"
+    },
+    {
+     "name": "saveInformation",
+     "use_case": "Save Information"
+    },
+    {
+     "name": "editInformation",
+     "use_case": "Edit Information"
+    },
+    {
+     "name": "seePreference",
+     "use_case": "See Preference"
+    },
+    {
+     "name": "seeHistory",
+     "use_case": "See History"
+    },
+    {
+     "name": "seeOverview",
+     "use_case": "See Overview"
+    },
+    {
+     "name": "changePassword",
+     "use_case": "Change Password"
+    },
+    {
+     "name": "seeContent",
+     "use_case": "See Content"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7",
+    "R6",
+    "R5",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Address",
+   "kind": "class",
+   "attributes": [
+    "street",
+    "city",
+    "state",
+    "zipCode"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Preference",
+   "kind": "class",
+   "attributes": [
+    "genre",
+    "eventTypes"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "PaymentDetail",
+   "kind": "class",
+   "attributes": [
+    "cardNumber",
+    "expiryDate",
+    "cvv"
+   ],
+   "methods": [
+    {
+     "name": "savePaymentDetail",
+     "use_case": "Save PaymentDetail"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Event",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "date",
+    "artist",
+    "venue",
+    "description",
+    "price",
+    "type"
+   ],
+   "methods": [
+    {
+     "name": "seeEvent",
+     "use_case": "See Event"
+    },
+    {
+     "name": "seeSeat",
+     "use_case": "See Seat"
+    },
+    {
+     "name": "seeType",
+     "use_case": "See Type"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R21",
+    "R22",
+    "R23"
+   ]
+  },
+  {
+   "name": "Venue",
+   "kind": "class",
+   "attributes": [
+    "map"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "name": "Ticket",
+   "kind": "class",
+   "attributes": [
+    "event",
+    "seat",
+    "price",
+    "type"
+   ],
+   "methods": [
+    {
+     "name": "addTicket",
+     "use_case": "Add Ticket"
+    },
+    {
+     "name": "seeOrderSummary",
+     "use_case": "See OrderSummary"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R24",
+    "R25"
+   ]
+  },
+  {
+   "name": "Seat",
+   "kind": "class",
+   "attributes": [
+    "row",
+    "column"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "UserProfile",
+   "kind": "class",
+   "attributes": [
+    "user",
+    "paymentDetails",
+    "preferences",
+    "history",
+    "overview"
+   ],
+   "methods": [
+    {
+     "name": "fillSurvey",
+     "use_case": "Fill Survey"
+    },
+    {
+     "name": "seeContent",
+     "use_case": "See Content"
+    },
+    {
+     "name": "seePreference",
+     "use_case": "See Preference"
+    },
+    {
+     "name": "seeHistory",
+     "use_case": "See History"
+    },
+    {
+     "name": "seeOverview",
+     "use_case": "See Overview"
+    },
+    {
+     "name": "editInformation",
+     "use_case": "Edit Information"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R5",
+    "R8",
+    "R9",
+    "R7"
+   ]
+  },
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "buyingProcess",
+    "resellers",
+    "serviceFee"
+   ],
+   "methods": [
+    {
+     "name": "haveBuyingProcess",
+     "use_case": "Have BuyingProcess"
+    },
+    {
+     "name": "haveReseller",
+     "use_case": "Have Reseller"
+    },
+    {
+     "name": "havePrice",
+     "use_case": "Have Price"
+    },
+    {
+     "name": "validateTicket",
+     "use_case": "Validate Ticket"
+    },
+    {
+     "name": "deductServiceFee",
+     "use_case": "Deduct ServiceFee"
+    },
+    {
+     "name": "avoidBehavior",
+     "use_case": "Avoid Behavior"
+    },
+    {
+     "name": "protectUser",
+     "use_case": "Protect User"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R27",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "name": "Reseller",
+   "kind": "class",
+   "attributes": [
+    "bankAccount",
+    "tickets"
+   ],
+   "methods": [
+    {
+     "name": "resellTicket",
+     "use_case": "Resell Ticket"
+    },
+    {
+     "name": "saveBankAccount",
+     "use_case": "Save BankAccount"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R41",
+    "R45"
+   ]
+  },
+  {
+   "name": "BankAccount",
+   "kind": "class",
+   "attributes": [
+    "iban"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Artist",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "upcomingEvents"
+   ],
+   "methods": [
+    {
+     "name": "findInformation",
+     "use_case": "Find Information"
+    },
+    {
+     "name": "haveDescription",
+     "use_case": "Have Description"
+    },
+    {
+     "name": "haveLink",
+     "use_case": "Have Link"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R49",
+    "R52",
+    "R50",
+    "R51",
+    "R54"
+   ]
+  },
+  {
+   "name": "Process",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "haveBuyingProcess",
+     "use_case": "Have BuyingProcess"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "ServiceFee",
+   "kind": "class",
+   "attributes": [
+    "percentage"
+   ],
+   "methods": [
+    {
+     "name": "deductServiceFee",
+     "use_case": "Deduct ServiceFee"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R38"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "User",
+   "target": "UserProfile",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "R7",
+    "R6",
+    "R5",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UserProfile",
+   "target": "PaymentDetail",
+   "multiplicity_target": "1",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UserProfile",
+   "target": "Preference",
+   "multiplicity_target": "1",
+   "src": [
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UserProfile",
+   "target": "Event",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Event",
+   "target": "Artist",
+   "multiplicity_target": "1",
+   "src": [
+    "R11",
+    "R49"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Event",
+   "target": "Venue",
+   "multiplicity_target": "1",
+   "src": [
+    "R21",
+    "R22",
+    "R23"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Ticket",
+   "target": "Event",
+   "multiplicity_target": "1",
+   "src": [
+    "R24",
+    "R25"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Ticket",
+   "target": "Seat",
+   "multiplicity_target": "1",
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Company",
+   "target": "Reseller",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R36",
+    "R41",
+    "R45"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Reseller",
+   "target": "BankAccount",
+   "multiplicity_target": "1",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Reseller",
+   "target": "Ticket",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R41",
+    "R45"
+   ]
+  }
+ ],
+ "python": "",
+ "java": {}
+}

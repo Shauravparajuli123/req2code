@@ -1,0 +1,105 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Moderator" as A1
+actor "User" as A2
+actor "Admin" as A3
+actor "Superuser" as A4
+actor "RecyclingfacilityRepresentative" as A5
+actor "Company" as A6
+actor "CompanyAccountant" as A7
+actor "Employee" as A8
+actor "Developer" as A9
+actor "Recyclingfacility" as A10
+actor "Executive" as A11
+rectangle "recycling" {
+  usecase "Create Account" as UC1
+  usecase "Enter Zip Code" as UC2
+  usecase "Get Feedback" as UC3
+  usecase "Get Hour" as UC4
+  usecase "Get Notification" as UC5
+  usecase "Give Email Id" as UC6
+  usecase "Handle Activity" as UC7
+  usecase "Browse List" as UC8
+  usecase "Check Transaction History" as UC9
+  usecase "Choose Pick" as UC10
+  usecase "Click Address" as UC11
+  usecase "Communicate Facility" as UC12
+  usecase "Communicate Site" as UC13
+  usecase "Contact Administrator" as UC14
+  usecase "Add Donation Center" as UC15
+  usecase "Add Recycling Center Information" as UC16
+  usecase "Add Recycling Facility" as UC17
+  usecase "Onboard Recycling Center" as UC18
+  usecase "Read Feedback" as UC19
+  usecase "Reply User Question" as UC20
+  usecase "Select Type" as UC21
+  usecase "Update Information" as UC22
+  usecase "Update Recycling Center Information" as UC23
+  usecase "Upload Schedule" as UC24
+  usecase "Use Bootstrap" as UC25
+  usecase "Attend Ux Lesson" as UC26
+  usecase "View Activity Fee" as UC27
+  usecase "View Dashboard" as UC28
+  usecase "View Disposal Event" as UC29
+  usecase "View Information" as UC30
+  usecase "View Location" as UC31
+  usecase "View Map Display" as UC32
+  usecase "View Stat" as UC33
+  usecase "View User Documentation" as UC34
+  usecase "View User Error Log" as UC35
+  usecase "Block User" as UC36
+  usecase "Have Dashboard" as UC37
+  usecase "Have Data" as UC38
+  usecase "Have Information" as UC39
+  usecase "Have Website" as UC40
+  usecase "Have Access" as UC41
+  usecase "Have Pick" as UC42
+  usecase "Have Ui" as UC43
+  usecase "Receive Reward" as UC44
+}
+A2 --> UC1
+A2 --> UC2
+A2 --> UC3
+A2 --> UC4
+A8 --> UC5
+A2 --> UC6
+A3 --> UC7
+A2 --> UC8
+A2 --> UC9
+A2 --> UC10
+A2 --> UC11
+A3 --> UC12
+A10 --> UC13
+A2 --> UC14
+A2 --> UC15
+A3 --> UC16
+A3 --> UC17
+A3 --> UC18
+A3 --> UC19
+A4 --> UC20
+A2 --> UC21
+A5 --> UC22
+A4 --> UC23
+A2 --> UC24
+A9 --> UC25
+A9 --> UC26
+A7 --> UC27
+A3 --> UC28
+A2 --> UC29
+A2 --> UC30
+A2 --> UC31
+A2 --> UC32
+A4 --> UC33
+A2 --> UC34
+A3 --> UC35
+A3 --> UC36
+A3 --> UC37
+A3 --> UC38
+A2 --> UC39
+A6 --> UC40
+A11 --> UC41
+A2 --> UC42
+A2 --> UC43
+A2 --> UC44
+@enduml

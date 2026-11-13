@@ -1,0 +1,103 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  name : String
+  personalInformation : String
+  subscription : String
+  familyMembers : String
+  notifications : String
+  +createAccount()
+  +addPersonalInformation()
+  +addBankingDetails()
+  +chooseMembershipType()
+  +extendSubscription()
+  +knowSubscriptionDuration()
+  +usePreviousInformation()
+  +unsubscribe()
+  +resetPassword()
+  +changePersonalDetails()
+  +updatePaymentInformation()
+  +seeFamilyMembers()
+  +addPersonToMembership()
+  +removePersonFromMembership()
+  +seeAvailableLessons()
+  +seeFutureLessons()
+  +seePastLessons()
+  +callToBookLesson()
+  +callToCancelLesson()
+  +bookFreePracticeArea()
+  +seeBookedSpots()
+  +seeFreeRooms()
+  +logIn()
+  +chooseNotificationMethod()
+  +receiveEmailNotifications()
+  +receivePushNotifications()
+  +chooseNotifications()
+  +receiveCanceledLessonNotification()
+  +confirmCanceledLesson()
+  +seeCustomerSubscription()
+  +seeCustomerCheckIn()
+  +seeCustomerBookings()
+  +seeCustomerPastAndFutureSessions()
+}
+class Admin {
+  name : String
+  users : String
+  +addTrainer()
+  +addAdmin()
+  +removeTrainer()
+  +seeCustomerSubscription()
+  +seeCustomerCheckIn()
+  +seeCustomerBookings()
+  +seeCustomerPastAndFutureSessions()
+}
+class Trainer {
+  name : String
+  lessons : String
+  +addLesson()
+  +setLessonTime()
+  +setLessonDescription()
+  +setLessonRoom()
+  +setLessonType()
+  +setLessonMaxPeople()
+  +seeSchedule()
+  +editLessonTime()
+  +changeLessonRoom()
+  +editLessonDescription()
+  +editLessonMaxPeople()
+  +editAnyLesson()
+  +cancelLesson()
+}
+class Lesson {
+  name : String
+  time : LocalDate
+  description : String
+  room : String
+  type : String
+  maxPeople : int
+  trainer : String
+  +setTime()
+  +setDescription()
+  +setRoom()
+  +setType()
+  +setMaxPeople()
+  +editTime()
+  +changeRoom()
+  +editDescription()
+  +editMaxPeople()
+}
+class Membership {
+  type : String
+  duration : int
+}
+class Notification {
+  method : String
+  message : String
+}
+Customer "1" -- "1" Membership : has
+Customer "1" -- "0..*" Notification : receives
+Admin "0..*" -- "1" Customer : manages
+Trainer "1" -- "1" Lesson : teaches
+Admin "1" -- "1" Lesson : manages
+@enduml

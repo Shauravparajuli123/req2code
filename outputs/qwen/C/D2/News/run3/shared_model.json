@@ -1,0 +1,191 @@
+{
+ "case": "D2/News",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "News",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "title",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "link",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "author",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "publishedDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R8"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "publishNews",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Newspaper",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "language",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "publishedDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "news",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "addNews",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "day",
+     "type": "int",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "month",
+     "type": "int",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "hour",
+     "type": "int",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "second",
+     "type": "int",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "reports",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "published on",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "related to",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

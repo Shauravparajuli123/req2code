@@ -1,0 +1,139 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "ICdeServer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "ICdeComponent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "ICdeComponentSpec",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "IUmlType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "IUmlClass",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "IUmlComponent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "IUmlMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "ICdeMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "ICdeMemberExe",
+   "kind": "class",
+   "attributes": [
+    "executionPerformance",
+    "executionDetails"
+   ],
+   "methods": [],
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "ICdeComponentSpec",
+   "target": "IUmlType",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "source": "IUmlClass",
+   "target": "IUmlType",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "IUmlComponent",
+   "target": "IUmlClass",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "source": "ICdeServer",
+   "target": "ICdeComponent",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "source": "IUmlClass",
+   "target": "IUmlMember",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/CDE.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass ICdeServer:\n    \"\"\"Source: R5\"\"\"\n    iCdeComponents: _t.List[\"ICdeComponent\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass ICdeComponent:\n    \"\"\"Source: R6\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass IUmlType:\n    \"\"\"Source: R1\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass ICdeComponentSpec(IUmlType):\n    \"\"\"Source: R2\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass IUmlClass(IUmlType):\n    \"\"\"Source: R3\"\"\"\n    iUmlMembers: _t.List[\"IUmlMember\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass IUmlComponent(IUmlClass):\n    \"\"\"Source: R4\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass IUmlMember:\n    \"\"\"Source: R7\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass ICdeMember:\n    \"\"\"Source: R8\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass ICdeMemberExe:\n    \"\"\"Source: R9\"\"\"\n    executionPerformance: _t.Optional[str] = None\n    executionDetails: _t.Optional[str] = None\n",
+ "java": {
+  "ICdeServer.java": "/** Generated from shared model D2/CDE. Source: R5 */\npublic class ICdeServer {\n    private java.util.List<ICdeComponent> iCdeComponents;\n}\n",
+  "ICdeComponent.java": "/** Generated from shared model D2/CDE. Source: R6 */\npublic class ICdeComponent {\n}\n",
+  "IUmlType.java": "/** Generated from shared model D2/CDE. Source: R1 */\npublic class IUmlType {\n}\n",
+  "ICdeComponentSpec.java": "/** Generated from shared model D2/CDE. Source: R2 */\npublic class ICdeComponentSpec extends IUmlType {\n}\n",
+  "IUmlClass.java": "/** Generated from shared model D2/CDE. Source: R3 */\npublic class IUmlClass extends IUmlType {\n    private java.util.List<IUmlMember> iUmlMembers;\n}\n",
+  "IUmlComponent.java": "/** Generated from shared model D2/CDE. Source: R4 */\npublic class IUmlComponent extends IUmlClass {\n}\n",
+  "IUmlMember.java": "/** Generated from shared model D2/CDE. Source: R7 */\npublic class IUmlMember {\n}\n",
+  "ICdeMember.java": "/** Generated from shared model D2/CDE. Source: R8 */\npublic class ICdeMember {\n}\n",
+  "ICdeMemberExe.java": "/** Generated from shared model D2/CDE. Source: R9 */\npublic class ICdeMemberExe {\n    private java.lang.String executionPerformance;\n    private java.lang.String executionDetails;\n}\n"
+ }
+}

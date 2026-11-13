@@ -1,0 +1,166 @@
+{
+ "actors": [
+  "TemplateExp"
+ ],
+ "use_cases": [
+  {
+   "name": "BindToVariable",
+   "actor": "TemplateExp",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "ContainPropertyTemplateItems",
+   "actor": "ObjectTemplateExp",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "ContainOCLExpressions",
+   "actor": "CollectionTemplateExp",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "MatchToOCLExpression",
+   "actor": "CollectionTemplateExp",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "HaveObjectContainer",
+   "actor": "PropertyTemplateItem",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "HaveReferredProperty",
+   "actor": "PropertyTemplateItem",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TemplateExp",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5"
+   ]
+  },
+  {
+   "name": "CollectionTemplateExpression",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "ObjectTemplateExp",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "OclExpression",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "Property",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "PropertyTemplateItem",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "ObjectTemplateExpression",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "CollectionTemplateExpression",
+   "target": "OclExpression",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ObjectTemplateExpression",
+   "target": "PropertyTemplateItem",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PropertyTemplateItem",
+   "target": "ObjectTemplateExpression",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PropertyTemplateItem",
+   "target": "Property",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass TemplateExp:\n    def __init__(self, variable: str):\n        self.variable = variable\n    def bind_to_variable(self, variable: str):\n        raise NotImplementedError\n\nclass ObjectTemplateExp(TemplateExp):\n    def __init__(self, variable: str):\n        super().__init__(variable)\n    def has_property_template_items(self) -> List[PropertyTemplateItem]:\n        raise NotImplementedError\n\nclass CollectionTemplateExpression(TemplateExp):\n    def __init__(self, variable: str, collection_kind: str):\n        super().__init__(variable)\n        self.collection_kind = collection_kind\n    def has_ocl_expressions(self) -> List['OclExpression']:\n        raise NotImplementedError\n    def match_to_ocl_expression(self, ocl_expression: 'OclExpression'):\n        raise NotImplementedError\n\nclass PropertyTemplateItem:\n    def __init__(self, object_container: ObjectTemplateExp, property: Property):\n        self.object_container = object_container\n        self.property = property\n    def has_object_container(self) -> ObjectTemplateExp:\n        return self.object_container\n    def has_property(self) -> Property:\n        return self.property\n",
+ "java": {}
+}

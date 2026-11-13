@@ -1,0 +1,98 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  emailId : String
+  profile : String
+  activity : String
+  stat : String
+  +createAccount()
+  +giveEmailId()
+  +viewDocumentation()
+  +viewErrorLog()
+}
+class Profile {
+  favorites : String
+}
+class Facility {
+  name : String
+  type : String
+  openingHours : String
+  location : String
+  materialAccepted : String
+  environmentFriendly : boolean
+}
+class Location {
+  coordinates : String
+}
+class Material {
+  name : String
+}
+class Admin {
+  name : String
+  dashboard : String
+  +addFacilityInfo()
+  +removeFacilityInfo()
+  +readFeedback()
+  +viewStats()
+  +communicateWithFacility()
+}
+class Dashboard {
+  usageStats : String
+  locations : String
+}
+class Executive {
+  name : String
+  company : String
+  +viewCompanyInfo()
+}
+class Company {
+  name : String
+  website : String
+}
+class CompanyAccountant {
+  name : String
+  website : String
+  +viewActivityFees()
+}
+class Developer {
+  name : String
+  website : String
+  +useBootstrap()
+  +attendLessons()
+}
+class RecyclingCenter {
+  name : String
+  info : String
+  +addInfo()
+  +updateInfo()
+}
+class RecyclingCenterInformation {
+  name : String
+  type : String
+}
+class RecyclingfacilityRepresentative {
+  name : String
+  facility : String
+  +updateFacilityInfo()
+  +viewUserStats()
+}
+class Superuser {
+  name : String
+  website : String
+  +replyToUserQuestions()
+}
+User "0..*" -- "1" RecyclingCenter : has
+Admin "1" -- "1" RecyclingCenterInformation : has
+RecyclingCenterInformation "1" -- "1" RecyclingCenter : has
+RecyclingCenter "1" -- "1" Location : has
+User "1" -- "1" Profile : has
+Admin "1" -- "1" Dashboard : has
+CompanyAccountant "1" -- "1" RecyclingCenterInformation : has
+RecyclingCenter "1" -- "1" Material : has
+Admin "1" -- "1" User : has
+Company "1" -- "1" CompanyAccountant : has
+RecyclingfacilityRepresentative "1" -- "1" RecyclingCenter : has
+RecyclingCenter "1" -- "1" RecyclingfacilityRepresentative : has
+@enduml

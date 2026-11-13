@@ -1,0 +1,25 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class ICdeComponentSpec is not a subtype of IUmlType as per R2.",
+   "fix": "Add a generalization relationship from IUmlType to ICdeComponentSpec."
+  },
+  {
+   "agent": "class",
+   "issue": "Class IUmlComponent is not a subclass of IUmlClass as per R4.",
+   "fix": "Add a generalization relationship from IUmlClass to IUmlComponent."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The association between ICdeServer and ICdeComponent should be a composition or aggregation, not an association as per R11.",
+   "fix": "Change the association to an aggregation or composition relationship."
+  }
+ ]
+}

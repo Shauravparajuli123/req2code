@@ -1,0 +1,102 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  emailId : String
+  profile : String
+  activity : String
+  stat : String
+  +createAccount()
+  +giveEmailId()
+  +viewDocumentation()
+  +viewFeedback()
+  +viewPick()
+  +viewInformation()
+  +viewLocation()
+  +viewMapDisplay()
+  +viewDisposalEvent()
+  +contactAdministrator()
+  +browseList()
+  +checkTransactionHistory()
+  +receiveReward()
+  +viewUserErrorLog()
+}
+class Admin {
+  data : String
+  dashboard : String
+  +addRecyclingCenterInformation()
+  +readFeedback()
+  +blockUser()
+  +onboardRecyclingCenter()
+  +viewUserErrorLogs()
+  +communicateFacility()
+}
+class RecyclingFacility {
+  name : String
+  material : String
+  +updateInformation()
+  +communicateSite()
+}
+class RecyclingCenterInformation {
+  name : String
+  material : String
+  +addInformation()
+}
+class RecyclingCenter {
+  name : String
+  material : String
+  +updateInformation()
+}
+class Profile {
+  favorites : String
+}
+class Dashboard {
+  usageStats : String
+  locations : String
+}
+class Material {
+  type : String
+}
+class Location {
+  name : String
+  material : String
+}
+class Schedule {
+  weekSchedule : String
+}
+class Feedback {
+  message : String
+}
+class Notification {
+  message : String
+}
+class CompanyAccountant {
+  activityFees : String
+}
+class Developer {
+  apiAccess : boolean
+}
+class Executive {
+  companyPerformance : String
+}
+class Employee {
+  employeeInfo : String
+}
+class Facility {
+  name : String
+  material : String
+}
+class Work {
+  routePlanning : String
+}
+class ZipCode {
+  code : String
+}
+User "0..*" -- "1" RecyclingCenter : has
+User "0..*" -- "1" Notification : receives
+User "1" -- "1" Profile : has
+Admin "1" -- "1" RecyclingCenterInformation : manages
+Admin "1" -- "0..*" User : monitors
+Employee "1" -- "1" Work : performs
+@enduml

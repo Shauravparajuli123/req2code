@@ -1,0 +1,29 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "News",
+   "kind": "class",
+   "attributes": [
+    "title",
+    "link",
+    "author"
+   ],
+   "methods": [
+    {
+     "name": "publishOn",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/News.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass News:\n    \"\"\"Source: R1\"\"\"\n    title: _t.Optional[str] = None\n    link: _t.Optional[str] = None\n    author: _t.Optional[str] = None\n\n    def publishOn(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "News.java": "/** Generated from shared model D2/News. Source: R1 */\npublic class News {\n    private java.lang.String title;\n    private java.lang.String link;\n    private java.lang.String author;\n\n    /** Operation. */\n    public void publishOn() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

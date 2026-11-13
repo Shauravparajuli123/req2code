@@ -1,0 +1,117 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Customer" as A1
+actor "ReturningCustomer" as A2
+actor "Admin" as A3
+actor "Trainer" as A4
+actor "User" as A5
+rectangle "sports" {
+  usecase "Open Account" as UC1
+  usecase "Add Personal Information" as UC2
+  usecase "Add Banking Details" as UC3
+  usecase "Choose Membership Type" as UC4
+  usecase "Extend Subscription" as UC5
+  usecase "Know Subscription Duration" as UC6
+  usecase "Use Previous Information" as UC7
+  usecase "Unsubscribe" as UC8
+  usecase "Reset Password" as UC9
+  usecase "Change Personal Details" as UC10
+  usecase "Update Payment Information" as UC11
+  usecase "See Family Members" as UC12
+  usecase "Add Person To Membership" as UC13
+  usecase "Remove Person From Membership" as UC14
+  usecase "See Available Lessons" as UC15
+  usecase "See Booked Lessons" as UC16
+  usecase "See Past Lessons" as UC17
+  usecase "Call To Book Lesson" as UC18
+  usecase "Call To Cancel Lesson" as UC19
+  usecase "Add Lesson" as UC20
+  usecase "Set Lesson Time" as UC21
+  usecase "Set Lesson Description" as UC22
+  usecase "Set Lesson Room" as UC23
+  usecase "Set Lesson Type" as UC24
+  usecase "Set Lesson Max People" as UC25
+  usecase "See Schedule" as UC26
+  usecase "Edit Lesson Time" as UC27
+  usecase "Change Lesson Room" as UC28
+  usecase "Edit Lesson Description" as UC29
+  usecase "Edit Lesson Max People" as UC30
+  usecase "Edit Any Lesson" as UC31
+  usecase "Cancel Lesson" as UC32
+  usecase "Notify Customer Of Canceled Lesson" as UC33
+  usecase "Notify Customer Of No Show" as UC34
+  usecase "See No Shows" as UC35
+  usecase "See No Show Count" as UC36
+  usecase "Issue Fine For No Show" as UC37
+  usecase "Increase Fine For Repeat No Show" as UC38
+  usecase "Add Trainer" as UC39
+  usecase "Add Admin" as UC40
+  usecase "Remove Trainer" as UC41
+  usecase "Log In" as UC42
+  usecase "Choose Notification Method" as UC43
+  usecase "Receive Email Notifications" as UC44
+  usecase "Receive Push Notifications" as UC45
+  usecase "Choose Notifications" as UC46
+  usecase "Receive Canceled Lesson Notification" as UC47
+  usecase "Confirm Canceled Lesson" as UC48
+  usecase "See Customer Subscriptions" as UC49
+  usecase "See Customer Check In" as UC50
+  usecase "See Customer Bookings" as UC51
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+A2 --> UC7
+A1 --> UC8
+A1 --> UC9
+A1 --> UC10
+A1 --> UC11
+A1 --> UC12
+A1 --> UC13
+A1 --> UC14
+A1 --> UC15
+A1 --> UC16
+A1 --> UC17
+A1 --> UC18
+A1 --> UC19
+A4 --> UC20
+A4 --> UC21
+A4 --> UC22
+A4 --> UC23
+A4 --> UC24
+A4 --> UC25
+A4 --> UC26
+A4 --> UC27
+A4 --> UC28
+A4 --> UC29
+A4 --> UC30
+A3 --> UC31
+A4 --> UC32
+A3 --> UC33
+A3 --> UC34
+A3 --> UC35
+A3 --> UC36
+A3 --> UC37
+A3 --> UC38
+A3 --> UC39
+A3 --> UC40
+A3 --> UC41
+A5 --> UC42
+A1 --> UC43
+A1 --> UC44
+A1 --> UC45
+A1 --> UC46
+A1 --> UC47
+A1 --> UC48
+A3 --> UC49
+A3 --> UC50
+A3 --> UC51
+UC7 ..> UC1 : <<include>>
+UC44 ..> UC43 : <<include>>
+UC45 ..> UC43 : <<include>>
+UC46 ..> UC43 : <<include>>
+@enduml

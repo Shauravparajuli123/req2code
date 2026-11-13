@@ -1,0 +1,55 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  name : String
+  language : String
+  pushNotifications : boolean
+  newsletterSubscription : boolean
+  defaultStore : String
+  loyaltyCard : String
+  +createAccount()
+  +signNewsletter()
+  +unsubscribeNewsletter()
+  +activatePushNotification()
+  +deactivatePushNotification()
+  +resetPassword()
+  +changeFontSize()
+  +changeContrast()
+  +changeLanguage()
+  +receiveSuggestion()
+  +receiveDiscount()
+  +haveDeliveryService()
+  +getRecipeIdea()
+  +contactCustomerService()
+  +scanProduct()
+  +addProductToWishlist()
+  +searchProduct()
+  +filterProducts()
+  +orderProductByPrice()
+  +orderProductByPopularity()
+  +seeOnSaleProducts()
+  +scanBarcode()
+  +readProductInformation()
+  +seeProductStock()
+  +seeProductRestockDate()
+  +getInspiration()
+  +seeOrderHistory()
+  +placeOrder()
+  +payGrocery()
+  +seeStoreLocation()
+  +getNearestStore()
+  +changeDefaultStore()
+  +linkLoyaltyCard()
+}
+class Employee {
+  +updateApplication()
+  +editDiscount()
+  +confirmDeliveryTime()
+  +notifyCustomerOfUnavailability()
+  +notifyCustomerOfDelay()
+  +contactCustomerForCanceledDelivery()
+  +provideNewDeliveryTime()
+}
+Employee "1" -- "1" Customer : notifiesOfCancellation
+@enduml

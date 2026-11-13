@@ -1,0 +1,148 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Fsm",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "state",
+    "rootFolder",
+    "transition"
+   ],
+   "methods": [
+    {
+     "name": "transitionStateMachine",
+     "use_case": "R2"
+    },
+    {
+     "name": "hasStateMachine",
+     "use_case": "R4"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R7",
+    "R11"
+   ]
+  },
+  {
+   "name": "RootFolder",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasRootFolder",
+     "use_case": "R10"
+    },
+    {
+     "name": "hasRootFolders",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R10",
+    "R12"
+   ]
+  },
+  {
+   "name": "State",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasStateMachine",
+     "use_case": "R8"
+    },
+    {
+     "name": "hasAssociationStateSource",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasStateMachine",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Fsm",
+   "target": "State",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Fsm",
+   "target": "RootFolder",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Fsm",
+   "target": "Transition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "State",
+   "target": "Fsm",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "Fsm",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass State:\n    def __init__(self, name: str):\n        self.name = name\n\n    def hasStateMachine(self) -> bool:\n        raise NotImplementedError()\n\n    def hasAssociationStateSource(self) -> bool:\n        raise NotImplementedError()\n\n    @property\n    def name(self) -> str:\n        pass\n\n    @name.setter\n    def name(self, value: str):\n        pass\n\nclass RootFolder:\n    def __init__(self, name: str):\n        self.name = name\n\n    def hasRootFolder(self) -> bool:\n        raise NotImplementedError()\n\n    def hasRootFolders(self) -> bool:\n        raise NotImplementedError()\n\n    @property\n    def name(self) -> str:\n        pass\n\n    @name.setter\n    def name(self, value: str):\n        pass\n\nclass Transition:\n    def __init__(self, name: str):\n        self.name = name\n\n    def hasStateMachine(self) -> bool:\n        raise NotImplementedError()\n\n    @property\n    def name(self) -> str:\n        pass\n\n    @name.setter\n    def name(self, value: str):\n        pass\n\nclass Fsm:\n    def __init__(self, name: str, state: State, rootFolder: RootFolder, transition: List[Transition] = None):\n        self.name = name\n        self.state = state\n        self.rootFolder = rootFolder\n        self.transition = transition if transition is not None else []\n\n    def transitionStateMachine(self) -> bool:\n        raise NotImplementedError()\n\n    def hasStateMachine(self) -> bool:\n        raise NotImplementedError()\n\n    @property\n    def name(self) -> str:\n        pass\n\n    @name.setter\n    def name(self, value: str):\n        pass\n\n    @property\n    def state(self) -> State:\n        pass\n\n    @state.setter\n    def state(self, value: State):\n        pass\n\n    @property\n    def rootFolder(self) -> RootFolder:\n        pass\n\n    @rootFolder.setter\n    def rootFolder(self, value: RootFolder):\n        pass\n\n    @property\n    def transition(self) -> List[Transition]:\n        pass\n\n    @transition.setter\n    def transition(self, value: List[Transition]):\n        pass",
+ "java": {}
+}

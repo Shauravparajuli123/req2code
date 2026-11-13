@@ -1,0 +1,31 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Net {
+  name : String
+  places : String
+  arcs : String
+}
+class Place {
+  name : String
+  net : String
+}
+class Arc {
+  src : String
+  dst : String
+}
+class Transition {
+  name : String
+  net : String
+  outgoingArcs : String
+}
+class Tparcs {
+  src : String
+  dst : String
+}
+Net "1" -- "1" Place : has
+Net "1" *-- "1..*" Place : is composed of
+Net "1" -- "1..*" Tparcs : has
+Net "1" -- "1" Transition : has
+Transition "1" -- "1..*" Tparcs : has
+@enduml

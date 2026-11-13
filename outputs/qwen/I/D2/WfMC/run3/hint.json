@@ -1,0 +1,346 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D2/WfMC",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R10",
+     "R12"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "Abstract and Concrete classes for workflow"
+     },
+     {
+      "sid": "R12.s1",
+      "text": "Abstract and Concrete classes related to specific functionality in Workflow"
+     }
+    ],
+    "name": "Concrete",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R13",
+     "R16",
+     "R17",
+     "R18"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "In WfMC, the workflow's relevant data has 0 or more WorkflowProcessActivity as process activities."
+     },
+     {
+      "sid": "R16.s1",
+      "text": "In WfMC, the workflow's participant specification has 0 more process activities."
+     },
+     {
+      "sid": "R17.s1",
+      "text": "A workflow process activity has exactly one process definition in the workflow."
+     }
+    ],
+    "name": "ProcessActivity",
+    "freq": 4
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R15",
+     "R17"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "In WfMC, the workflow's participant specification has exactly one process definition."
+     },
+     {
+      "sid": "R17.s1",
+      "text": "A workflow process activity has exactly one process definition in the workflow."
+     }
+    ],
+    "name": "ProcessDefinition",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R4",
+     "R15",
+     "R16"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A WfMC model has workflow participant specifications"
+     },
+     {
+      "sid": "R15.s1",
+      "text": "In WfMC, the workflow's participant specification has exactly one process definition."
+     },
+     {
+      "sid": "R16.s1",
+      "text": "In WfMC, the workflow's participant specification has 0 more process activities."
+     }
+    ],
+    "name": "Specification",
+    "freq": 3
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R14",
+     "R21"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "In WfMC, the workflow's relevant data has 0 or more transition informations."
+     },
+     {
+      "sid": "R21.s1",
+      "text": "A transition information has exactly one workflow process activity to go to."
+     }
+    ],
+    "name": "TransitionInformation",
+    "freq": 2
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R13",
+     "R14",
+     "R15",
+     "R16"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "In WfMC, the workflow's relevant data has 0 or more WorkflowProcessActivity as process activities."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "In WfMC, the workflow's relevant data has 0 or more transition informations."
+     },
+     {
+      "sid": "R15.s1",
+      "text": "In WfMC, the workflow's participant specification has exactly one process definition."
+     }
+    ],
+    "name": "WfMc",
+    "freq": 4
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R2",
+     "R10",
+     "R12",
+     "R17",
+     "R18"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Interface for workflow"
+     },
+     {
+      "sid": "R10.s1",
+      "text": "Abstract and Concrete classes for workflow"
+     },
+     {
+      "sid": "R12.s1",
+      "text": "Abstract and Concrete classes related to specific functionality in Workflow"
+     }
+    ],
+    "name": "Workflow",
+    "freq": 5
+   },
+   {
+    "id": "C8",
+    "src": [
+     "R8",
+     "R9"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "A workflow process definition is composed of a set workflow application declaration."
+     },
+     {
+      "sid": "R9.s1",
+      "text": "A workflow process definition is composed of a set of transition definitions"
+     }
+    ],
+    "name": "WorkflowProcessDefinition",
+    "freq": 2
+   },
+   {
+    "id": "C9",
+    "src": [
+     "R6",
+     "R13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "Workflow State Class, collaborates with WorkflowProcessActivity"
+     },
+     {
+      "sid": "R13.s1",
+      "text": "In WfMC, the workflow's relevant data has 0 or more WorkflowProcessActivity as process activities."
+     }
+    ],
+    "name": "Workflowprocessactivity",
+    "freq": 2
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R21"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R21.s1",
+      "text": "A transition information has exactly one workflow process activity to go to."
+     }
+    ],
+    "owner": "TransitionInformation",
+    "name": "workflow process activity",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R17"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R17.s1",
+      "text": "A workflow process activity has exactly one process definition in the workflow."
+     }
+    ],
+    "kind": "has",
+    "source": "ProcessActivity",
+    "target": "ProcessDefinition",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "In WfMC, the workflow's participant specification has 0 more process activities."
+     }
+    ],
+    "kind": "has",
+    "source": "Specification",
+    "target": "ProcessActivity",
+    "multiplicity_target": "0"
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R15"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "In WfMC, the workflow's participant specification has exactly one process definition."
+     }
+    ],
+    "kind": "has",
+    "source": "Specification",
+    "target": "ProcessDefinition",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R15",
+     "R16"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "In WfMC, the workflow's participant specification has exactly one process definition."
+     },
+     {
+      "sid": "R16.s1",
+      "text": "In WfMC, the workflow's participant specification has 0 more process activities."
+     }
+    ],
+    "kind": "has",
+    "source": "Workflow",
+    "target": "Specification",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

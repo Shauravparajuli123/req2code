@@ -1,0 +1,181 @@
+{
+ "actors": [
+  "Participant"
+ ],
+ "use_cases": [
+  {
+   "name": "Play",
+   "actor": "Participant",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Author",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "writePlay",
+     "use_case": "Play"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "name": "Musical",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "name": "Opera",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "name": "Participant",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "actInSession",
+     "use_case": "Play"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "name": "Person",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7"
+   ]
+  },
+  {
+   "name": "Play",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "day",
+    "night"
+   ],
+   "methods": [
+    {
+     "name": "play",
+     "use_case": "Play"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3"
+   ]
+  },
+  {
+   "name": "Session",
+   "kind": "class",
+   "attributes": [
+    "beginTime",
+    "endTime"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "name": "Theater",
+   "kind": "class",
+   "attributes": [
+    "location"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Author",
+   "target": "Play",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Participant",
+   "target": "Session",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R5",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Theater",
+   "target": "Play",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "R11"
+   ]
+  }
+ ],
+ "python": "class Author:\n    def __init__(self, name):\n        self.name = name\n    def writePlay(self):\n        raise NotImplementedError\n\nclass Musical:\n    def __init__(self, name):\n        self.name = name\nclass Opera:\n    def __init__(self, name):\n        self.name = name\nclass Participant:\n    def __init__(self, name):\n        self.name = name\n    def actInSession(self, session):\n        raise NotImplementedError\nclass Person:\n    def __init__(self, name):\n        self.name = name\nclass Play:\n    def __init__(self, name, day, night):\n        self.name = name\n        self.day = day\n        self.night = night\n    def play(self):\n        raise NotImplementedError\nclass Session:\n    def __init__(self, beginTime, endTime):\n        self.beginTime = beginTime\n        self.endTime = endTime\nclass Theater:\n    def __init__(self, location):\n        self.location = location",
+ "java": {}
+}

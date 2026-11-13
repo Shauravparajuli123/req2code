@@ -1,0 +1,39 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Condition {
+}
+class CompositeParDef {
+}
+class ElementaryPartDef {
+}
+class ElementaryActDef {
+}
+class CompositeActDef {
+}
+class ActCompositeMember {
+}
+class Cristal {
+  activityDefinitions : String
+  partDefinitions : String
+  partCompositeMembers : String
+  compositeActDefs : String
+  +createGame()
+}
+class ActivityDefinition {
+  actCompositeMember : String
+}
+class PartCompositeMember {
+  partDefinition : String
+  compositeParDef : String
+  actCompositeMembers : String
+}
+Cristal "1" -- "1" Condition : has
+Cristal "1" -- "1..*" CompositeParDef : has
+Cristal "1" -- "1" CompositeActDef : has
+Cristal "1" -- "1..*" ActCompositeMember : has
+Cristal "1" -- "1" ActivityDefinition : has
+Cristal "1" -- "1" ElementaryActDef : has
+Cristal "1" -- "1" ElementaryPartDef : has
+Cristal "1" -- "1..*" PartCompositeMember : has
+@enduml

@@ -1,0 +1,197 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "RmodelElement",
+   "kind": "class",
+   "attributes": [
+    "kind"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Schema",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [
+    "schema",
+    "keys",
+    "columns"
+   ],
+   "methods": [
+    {
+     "name": "add_column",
+     "use_case": "None"
+    },
+    {
+     "name": "add_key",
+     "use_case": "None"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "table",
+    "foreign_keys"
+   ],
+   "methods": [
+    {
+     "name": "add_foreign_key",
+     "use_case": "None"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Key",
+   "kind": "class",
+   "attributes": [
+    "table"
+   ],
+   "methods": [
+    {
+     "name": "add_opposite_foreign_key",
+     "use_case": "None"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R9",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "ForeignKey",
+   "kind": "class",
+   "attributes": [
+    "key",
+    "columns"
+   ],
+   "methods": [
+    {
+     "name": "add_column",
+     "use_case": "None"
+    },
+    {
+     "name": "set_key",
+     "use_case": "None"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R11",
+    "R14",
+    "R15"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Table",
+   "target": "Schema",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Table",
+   "target": "Key",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Column",
+   "target": "Table",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Column",
+   "target": "ForeignKey",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Key",
+   "target": "Table",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Key",
+   "target": "ForeignKey",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ForeignKey",
+   "target": "Column",
+   "multiplicity_target": "1",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ForeignKey",
+   "target": "Key",
+   "multiplicity_target": "1",
+   "src": [
+    "R15"
+   ]
+  }
+ ],
+ "python": "class RmodelElement:\n    def __init__(self, kind):\n        self.kind = kind\n\nclass Schema:\n    pass\nclass Table:\n    def __init__(self, schema):\n        self.schema = schema\n        self.keys = []\n        self.columns = []\n    def add_column(self, column):\n        if column.table is not self:\n            raise ValueError('Column must belong to this table')\n        self.columns.append(column)\n    def add_key(self, key):\n        if key.table is not self:\n            raise ValueError('Key must belong to this table')\n        self.keys.append(key)\nclass Column:\n    def __init__(self, type, table):\n        self.type = type\n        self.table = table\n        self.foreign_keys = []\n    def add_foreign_key(self, foreign_key):\n        if foreign_key.columns[0] is not self:\n            raise ValueError('Column must be part of the foreign key')\n        self.foreign_keys.append(foreign_key)\nclass Key:\n    def __init__(self, table):\n        self.table = table\n    def add_opposite_foreign_key(self, foreign_key):\n        if foreign_key.key is not self:\n            raise ValueError('Foreign key must refer to this key')\nclass ForeignKey:\n    def __init__(self, key):\n        self.key = key\n        self.columns = []\n    def add_column(self, column):\n        if column not in self.columns:\n            self.columns.append(column)\n    def set_key(self, key):\n        if key is not self.key:\n            raise ValueError('Key must be the same as the existing key')",
+ "java": {}
+}

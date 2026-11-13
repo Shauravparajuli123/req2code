@@ -1,0 +1,79 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "CreateTrace",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Trace",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "addLevel",
+     "use_case": "CreateTrace"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Level",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "call",
+     "use_case": "CreateTrace"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "Call",
+   "kind": "class",
+   "attributes": [
+    "methodName",
+    "databaseRow"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Trace",
+   "target": "Level",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "python": "class Trace:\n    def __init__(self, name):\n        self.name = name\n        self.levels = []\n    def addLevel(self):\n        raise NotImplementedError\n\nclass Level:\n    def __init__(self):\n        pass\n    def call(self, methodName, databaseRow):\n        raise NotImplementedError\nclass Call:\n    def __init__(self, methodName, databaseRow):\n        self.methodName = methodName\n        self.databaseRow = databaseRow",
+ "java": {}
+}

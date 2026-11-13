@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Moderator" as A1
+actor "User" as A2
+rectangle "BQL" {
+  usecase "Create BLQModel" as UC1
+  usecase "Create BQLModel" as UC2
+}
+A2 --> UC1
+A2 --> UC2
+@enduml

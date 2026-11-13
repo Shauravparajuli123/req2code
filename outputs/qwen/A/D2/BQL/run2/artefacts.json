@@ -1,0 +1,158 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "location",
+    "comments"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "BqlModel",
+   "kind": "class",
+   "attributes": [
+    "queries",
+    "entries",
+    "fields"
+   ],
+   "methods": [
+    {
+     "name": "addQuery",
+     "use_case": null
+    },
+    {
+     "name": "addEntry",
+     "use_case": null
+    },
+    {
+     "name": "addField",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Query",
+   "kind": "class",
+   "attributes": [
+    "entries"
+   ],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Entry",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "allFields"
+   ],
+   "methods": [
+    {
+     "name": "associatePredicate",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1",
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "Field",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "associateEntry",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Predicate",
+   "kind": "class",
+   "attributes": [
+    "entry"
+   ],
+   "methods": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "BqlModel",
+   "target": "Entry",
+   "src": [
+    "R3",
+    "R7",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "source": "BqlModel",
+   "target": "Field",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "source": "Entry",
+   "target": "Field",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "Predicate",
+   "target": "Entry",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "BqlModel",
+   "target": "Query",
+   "src": [
+    "R2",
+    "R7"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/BQL.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Element:\n    \"\"\"Source: R1\"\"\"\n    location: _t.Optional[str] = None\n    comments: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass BqlModel:\n    \"\"\"Source: R2, R7, R8, R9, R10\"\"\"\n    queries: _t.Optional[str] = None\n    entries: _t.Optional[str] = None\n    fields: _t.Optional[str] = None\n\n    def addQuery(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addEntry(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addField(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Query:\n    \"\"\"Source: R7\"\"\"\n    entries: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Entry:\n    \"\"\"Source: R1, R3, R10\"\"\"\n    name: _t.Optional[str] = None\n    allFields: _t.Optional[bool] = None\n    field: _t.Optional[\"Field\"] = None\n\n    def associatePredicate(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Field:\n    \"\"\"Source: R4, R8, R9\"\"\"\n    name: _t.Optional[str] = None\n\n    def associateEntry(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Predicate:\n    \"\"\"Source: R10\"\"\"\n    entry: _t.Optional[str] = None\n",
+ "java": {
+  "Element.java": "/** Generated from shared model D2/BQL. Source: R1 */\npublic class Element {\n    private java.lang.String location;\n    private java.lang.String comments;\n}\n",
+  "BqlModel.java": "/** Generated from shared model D2/BQL. Source: R2, R7, R8, R9, R10 */\npublic class BqlModel {\n    private java.lang.String queries;\n    private java.lang.String entries;\n    private java.lang.String fields;\n\n    /** Operation. */\n    public void addQuery() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addEntry() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addField() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Query.java": "/** Generated from shared model D2/BQL. Source: R7 */\npublic class Query {\n    private java.lang.String entries;\n}\n",
+  "Entry.java": "/** Generated from shared model D2/BQL. Source: R1, R3, R10 */\npublic class Entry {\n    private java.lang.String name;\n    private boolean allFields;\n    private Field field;\n\n    /** Operation. */\n    public void associatePredicate() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Field.java": "/** Generated from shared model D2/BQL. Source: R4, R8, R9 */\npublic class Field {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void associateEntry() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Predicate.java": "/** Generated from shared model D2/BQL. Source: R10 */\npublic class Predicate {\n    private java.lang.String entry;\n}\n"
+ }
+}

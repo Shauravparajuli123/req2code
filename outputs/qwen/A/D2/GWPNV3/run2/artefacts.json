@@ -1,0 +1,173 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "places",
+    "transitions"
+   ],
+   "methods": [
+    {
+     "name": "addPlace",
+     "use_case": null
+    },
+    {
+     "name": "addTransition",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "net"
+   ],
+   "methods": [
+    {
+     "name": "setNet",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R7",
+    "R11"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "net"
+   ],
+   "methods": [
+    {
+     "name": "setNet",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "PTArc",
+   "kind": "class",
+   "attributes": [
+    "srcPlace",
+    "dstTransition"
+   ],
+   "methods": [],
+   "src": [
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "name": "TPArc",
+   "kind": "class",
+   "attributes": [
+    "srcTransition",
+    "dstTransition"
+   ],
+   "methods": [],
+   "src": [
+    "R8",
+    "R13"
+   ]
+  },
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "places",
+    "transitions"
+   ],
+   "methods": [
+    {
+     "name": "addPlace",
+     "use_case": null
+    },
+    {
+     "name": "addTransition",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R11",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Net",
+   "target": "Place",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "PetriNet",
+   "target": "Place",
+   "src": [
+    "R1",
+    "R8"
+   ]
+  },
+  {
+   "source": "PetriNet",
+   "target": "Transition",
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "source": "Net",
+   "target": "PTArc",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Net",
+   "target": "TPArc",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "source": "PTArc",
+   "target": "Transition",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "source": "TPArc",
+   "target": "Transition",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GWPNV3.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass PetriNet:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    places: _t.Optional[str] = None\n    transitions: _t.Optional[str] = None\n\n    def addPlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addTransition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Place:\n    \"\"\"Source: R7, R11\"\"\"\n    name: _t.Optional[str] = None\n    net: _t.Optional[str] = None\n\n    def setNet(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: R9, R10\"\"\"\n    name: _t.Optional[str] = None\n    net: _t.Optional[str] = None\n\n    def setNet(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass PTArc:\n    \"\"\"Source: R11, R12\"\"\"\n    srcPlace: _t.Optional[str] = None\n    dstTransition: _t.Optional[str] = None\n    transition: _t.Optional[\"Transition\"] = None\n\n\n@_dc.dataclass\nclass TPArc:\n    \"\"\"Source: R8, R13\"\"\"\n    srcTransition: _t.Optional[str] = None\n    dstTransition: _t.Optional[str] = None\n    transition: _t.Optional[\"Transition\"] = None\n\n\n@_dc.dataclass\nclass Net:\n    \"\"\"Source: R11, R11\"\"\"\n    name: _t.Optional[str] = None\n    places: _t.Optional[str] = None\n    transitions: _t.Optional[str] = None\n    place: _t.Optional[\"Place\"] = None\n    pTArcs: _t.List[\"PTArc\"] = _dc.field(default_factory=list)\n    tPArcs: _t.List[\"TPArc\"] = _dc.field(default_factory=list)\n\n    def addPlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addTransition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "PetriNet.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class PetriNet {\n    private java.lang.String name;\n    private java.lang.String places;\n    private java.lang.String transitions;\n\n    /** Operation. */\n    public void addPlace() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addTransition() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Place.java": "/** Generated from shared model D2/GWPNV3. Source: R7, R11 */\npublic class Place {\n    private java.lang.String name;\n    private java.lang.String net;\n\n    /** Operation. */\n    public void setNet() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Transition.java": "/** Generated from shared model D2/GWPNV3. Source: R9, R10 */\npublic class Transition {\n    private java.lang.String name;\n    private java.lang.String net;\n\n    /** Operation. */\n    public void setNet() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "PTArc.java": "/** Generated from shared model D2/GWPNV3. Source: R11, R12 */\npublic class PTArc {\n    private java.lang.String srcPlace;\n    private java.lang.String dstTransition;\n    private Transition transition;\n}\n",
+  "TPArc.java": "/** Generated from shared model D2/GWPNV3. Source: R8, R13 */\npublic class TPArc {\n    private java.lang.String srcTransition;\n    private java.lang.String dstTransition;\n    private Transition transition;\n}\n",
+  "Net.java": "/** Generated from shared model D2/GWPNV3. Source: R11, R11 */\npublic class Net {\n    private java.lang.String name;\n    private java.lang.String places;\n    private java.lang.String transitions;\n    private Place place;\n    private java.util.List<PTArc> pTArcs;\n    private java.util.List<TPArc> tPArcs;\n\n    /** Operation. */\n    public void addPlace() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addTransition() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

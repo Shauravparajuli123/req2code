@@ -1,0 +1,102 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class CulturalHeritage {
+  name : String
+  +deleteCulturalHeritage()
+  +insertCulturalHeritage()
+  +changeCulturalHeritageData()
+  +searchCulturalHeritage()
+  +viewCulturalHeritageDetails()
+}
+class RefreshmentPoint {
+  name : String
+  +deleteRefreshmentPoint()
+  +activateConvention()
+  +editRefreshmentPointData()
+  +searchRefreshmentPoint()
+  +viewRefreshmentPointDetails()
+  +viewRefreshmentPointHistory()
+}
+class TouristAccount {
+  username : String
+  +enableDisableTouristAccount()
+  +searchTouristAccount()
+  +viewTouristAccountDetails()
+}
+class Tourist {
+  name : String
+  +modifyData()
+  +deleteAccount()
+  +editPersonalSearchPreferences()
+  +changeDataAssociatedWithAccount()
+  +editGenericPersonalPreferences()
+  +viewPersonalFavorites()
+  +viewListSitesForFeedback()
+  +insertSiteInBookmarks()
+  +deleteSiteFromBookmarks()
+  +insertFeedbackForSite()
+}
+class Banner {
+  image : String
+  +changeImage()
+  +checkBannerLimit()
+  +deleteBanner()
+  +insertBanner()
+}
+class News {
+  title : String
+  content : String
+  +insertNews()
+  +deleteNews()
+  +modifyNews()
+}
+class Site {
+  name : String
+  id : int
+  +viewFeedback()
+  +viewStatisticalReport()
+  +editFeedbackComment()
+}
+class GuestUser {
+}
+class RegisteredUser {
+}
+class PointOfRestaurantOperator {
+}
+class SearchTag {
+}
+class Game {
+  name : String
+  +createGame()
+}
+class RestaurantOperator {
+  +changeDailyMenu()
+  +deleteDailyMenu()
+  +changeDataPointRefreshment()
+  +requestConvention()
+  +viewStatistics()
+}
+class Feedback {
+  comment : String
+  siteId : int
+  +editComment()
+}
+class User {
+  username : String
+  password : String
+  +authenticate()
+}
+class Gps {
+  position : String
+  +getPosition()
+}
+GuestUser "0..*" -- "1" Site : visits
+RegisteredUser "1" -- "1" Site : accesses
+PointOfRestaurantOperator "1" -- "0..*" Banner : manages
+PointOfRestaurantOperator "1" -- "1" RefreshmentPoint : manages
+Tourist "0..*" -- "1" Site : visits
+Feedback "1" -- "1" Tourist : issued by
+Gps "1" -- "1" Tourist : tracks
+Tourist "1" -- "0..*" SearchTag : uses for search
+@enduml

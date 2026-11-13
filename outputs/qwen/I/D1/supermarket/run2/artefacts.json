@@ -1,0 +1,674 @@
+{
+ "actors": [
+  "customer",
+  "employee"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Account",
+   "actor": "customer",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Sign Newsletter",
+   "actor": "customer",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Unsubscribe Newsletter",
+   "actor": "customer",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Activate PushNotification",
+   "actor": "customer",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Deactivate PushNotification",
+   "actor": "customer",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Reset Password",
+   "actor": "customer",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Change Size",
+   "actor": "customer",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Change Contrast",
+   "actor": "customer",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Change Language",
+   "actor": "customer",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Receive Suggestion",
+   "actor": "customer",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Receive Discount",
+   "actor": "customer",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Have DeliveryService",
+   "actor": "customer",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Have Grocery",
+   "actor": "customer",
+   "src": [
+    "R33",
+    "R36"
+   ]
+  },
+  {
+   "name": "Order Product",
+   "actor": "customer",
+   "src": [
+    "R20",
+    "R21"
+   ]
+  },
+  {
+   "name": "Pay Grocery",
+   "actor": "customer",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "Place Order",
+   "actor": "customer",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "See OrderHistory",
+   "actor": "customer",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "See Product",
+   "actor": "customer",
+   "src": [
+    "R25",
+    "R27",
+    "R29"
+   ]
+  },
+  {
+   "name": "See Quantity",
+   "actor": "customer",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Select Date",
+   "actor": "customer",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Select TimeSlot",
+   "actor": "customer",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Scan Barcode",
+   "actor": "customer",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Read ProductInformation",
+   "actor": "customer",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "Search Product",
+   "actor": "customer",
+   "src": [
+    "R18"
+   ]
+  },
+  {
+   "name": "Filter Product",
+   "actor": "customer",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Find Location",
+   "actor": "customer",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "Get Recommendation",
+   "actor": "customer",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Get Recipe",
+   "actor": "customer",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "Link LoyaltyCard",
+   "actor": "customer",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Update Application",
+   "actor": "employee",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Edit Discount",
+   "actor": "employee",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "Confirm DeliveryTime",
+   "actor": "employee",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Notify Customer",
+   "actor": "employee",
+   "src": [
+    "R48",
+    "R49"
+   ]
+  },
+  {
+   "name": "Notify Discount",
+   "actor": "employee",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Notify Item",
+   "actor": "employee",
+   "src": [
+    "R26"
+   ]
+  },
+  {
+   "name": "Contact Customer",
+   "actor": "employee",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "name": "Provide Customer",
+   "actor": "employee",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "name": "Provide RecipeIdea",
+   "actor": "customer",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Add Product",
+   "actor": "customer",
+   "src": [
+    "R17",
+    "R39"
+   ]
+  },
+  {
+   "name": "Change Selection",
+   "actor": "customer",
+   "src": [
+    "R43"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [
+    "email",
+    "password",
+    "language",
+    "pushNotification",
+    "fontSize",
+    "contrast"
+   ],
+   "methods": [
+    {
+     "name": "createAccount",
+     "use_case": "R1"
+    },
+    {
+     "name": "signUpForNewsletter",
+     "use_case": "R2"
+    },
+    {
+     "name": "unsubscribeFromNewsletter",
+     "use_case": "R3"
+    },
+    {
+     "name": "activatePushNotification",
+     "use_case": "R4"
+    },
+    {
+     "name": "deactivatePushNotification",
+     "use_case": "R5"
+    },
+    {
+     "name": "resetPassword",
+     "use_case": "R6"
+    },
+    {
+     "name": "changeLanguage",
+     "use_case": "R9"
+    },
+    {
+     "name": "changeFontSize",
+     "use_case": "R7"
+    },
+    {
+     "name": "changeContrast",
+     "use_case": "R8"
+    },
+    {
+     "name": "searchProduct",
+     "use_case": "R18"
+    },
+    {
+     "name": "filterProduct",
+     "use_case": "R19"
+    },
+    {
+     "name": "seeOrderHistory",
+     "use_case": "R37"
+    },
+    {
+     "name": "seeProduct",
+     "use_case": "R25"
+    },
+    {
+     "name": "seeQuantity",
+     "use_case": "R28"
+    },
+    {
+     "name": "seeLocation",
+     "use_case": "R41"
+    },
+    {
+     "name": "seeRecommendation",
+     "use_case": "R42"
+    },
+    {
+     "name": "seeRecipe",
+     "use_case": "R30"
+    },
+    {
+     "name": "seeAnomaly",
+     "use_case": "R10"
+    },
+    {
+     "name": "seeDiscount",
+     "use_case": "R11"
+    },
+    {
+     "name": "seeItem",
+     "use_case": "R27"
+    },
+    {
+     "name": "seeMeal",
+     "use_case": "R27"
+    },
+    {
+     "name": "seeStock",
+     "use_case": "R27"
+    },
+    {
+     "name": "seeStore",
+     "use_case": "R27"
+    },
+    {
+     "name": "seeRecipeIdea",
+     "use_case": "R30"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R18",
+    "R19",
+    "R25",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R37"
+   ]
+  },
+  {
+   "name": "PushNotification",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "activate",
+     "use_case": "R4"
+    },
+    {
+     "name": "deactivate",
+     "use_case": "R5"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Language",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "change",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Text",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "changeSize",
+     "use_case": "R7"
+    },
+    {
+     "name": "changeContrast",
+     "use_case": "R8"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Newsletter",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "signUp",
+     "use_case": "R2"
+    },
+    {
+     "name": "unsubscribe",
+     "use_case": "R3"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3"
+   ]
+  },
+  {
+   "name": "Product",
+   "kind": "class",
+   "attributes": [
+    "barcode",
+    "quantity"
+   ],
+   "methods": [
+    {
+     "name": "search",
+     "use_case": "R18"
+    },
+    {
+     "name": "filter",
+     "use_case": "R19"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R18",
+    "R19"
+   ]
+  },
+  {
+   "name": "Order",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "seeHistory",
+     "use_case": "R37"
+    },
+    {
+     "name": "place",
+     "use_case": "R38"
+    },
+    {
+     "name": "addFromPrevious",
+     "use_case": "R39"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R37",
+    "R38",
+    "R39"
+   ]
+  },
+  {
+   "name": "Delivery",
+   "kind": "class",
+   "attributes": [
+    "date",
+    "timeSlot"
+   ],
+   "methods": [
+    {
+     "name": "confirmTime",
+     "use_case": "R47"
+    },
+    {
+     "name": "notifyDelay",
+     "use_case": "R49"
+    },
+    {
+     "name": "notifyCancellation",
+     "use_case": "R50"
+    },
+    {
+     "name": "provideNewTime",
+     "use_case": "R51"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R47",
+    "R49",
+    "R50",
+    "R51"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "updateApplication",
+     "use_case": "R45"
+    },
+    {
+     "name": "editDiscount",
+     "use_case": "R46"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R45",
+    "R46"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Customer",
+   "target": "PushNotification",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Customer",
+   "target": "Language",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Customer",
+   "target": "Text",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Customer",
+   "target": "Newsletter",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R2",
+    "R3"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Customer",
+   "target": "Product",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R18",
+    "R19",
+    "R25",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R37"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Order",
+   "target": "Delivery",
+   "multiplicity_target": "1",
+   "src": [
+    "R37",
+    "R38",
+    "R39"
+   ]
+  }
+ ],
+ "python": "",
+ "java": {}
+}

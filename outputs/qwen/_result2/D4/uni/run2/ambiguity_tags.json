@@ -1,0 +1,104 @@
+[
+ {
+  "id": "A1",
+  "type": "quantifier",
+  "sid": "R1.s1",
+  "req_id": "R1",
+  "cue": "some",
+  "text": "This model represents some entities of a course.",
+  "readings": [
+   "This model represents a single entity of a course.",
+   "This model represents multiple entities of a course."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The term 'some' is ambiguous and could mean either a single course or multiple courses.",
+  "chosen": "This model represents multiple entities of a course."
+ },
+ {
+  "id": "A2",
+  "type": "quantifier",
+  "sid": "R3.s1",
+  "req_id": "R3",
+  "cue": "one or more",
+  "text": "Each course can have one or more professors, who have a name.",
+  "readings": [
+   "Each course can have one professor.",
+   "Each course can have one or more professors."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The term 'one or more' is ambiguous and could mean either exactly one professor or one or more professors.",
+  "chosen": "Each course can have one or more professors."
+ },
+ {
+  "id": "A3",
+  "type": "quantifier",
+  "sid": "R4.s1",
+  "req_id": "R4",
+  "cue": "any",
+  "text": "Professors could participate in any number of courses.",
+  "readings": [
+   "Professors can participate in one course.",
+   "Professors can participate in any number of courses."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The term 'any number of' is ambiguous and could mean either one course or multiple courses.",
+  "chosen": "Professors can participate in any number of courses."
+ },
+ {
+  "id": "A4",
+  "type": "quantifier",
+  "sid": "R6.s1",
+  "req_id": "R6",
+  "cue": "any",
+  "text": "Students can be enrolled in any number of courses.",
+  "readings": [
+   "Students can be enrolled in one course.",
+   "Students can be enrolled in any number of courses."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The term 'any number of' is ambiguous and could mean either one course or multiple courses.",
+  "chosen": "Students can be enrolled in any number of courses."
+ },
+ {
+  "id": "A5",
+  "type": "actor",
+  "sid": "R6.s1",
+  "req_id": "R6",
+  "cue": "passive 'enrolled' without agent",
+  "text": "Students can be enrolled in any number of courses.",
+  "readings": [
+   "Students can enroll themselves in courses.",
+   "Students can be enrolled by a professor or administrator."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "actor",
+  "explanation": "The passive form 'enrolled' without an agent could imply either self-enrollment or enrollment by another entity.",
+  "chosen": "Students can be enrolled by a professor or administrator."
+ },
+ {
+  "id": "A6",
+  "type": "actor",
+  "sid": "R7.s1",
+  "req_id": "R7",
+  "cue": "passive 'accommodated' without agent",
+  "text": "Finally, students can be accommodated in dormitories, where each dormitory can have from one to four students.",
+  "readings": [
+   "Students can be accommodated in dormitories.",
+   "Dormitories can accommodate students."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "actor",
+  "explanation": "The passive form 'accommodated' without an agent could imply either students being accommodated or dormitories accommodating students.",
+  "chosen": "Dormitories can accommodate students."
+ }
+]

@@ -1,0 +1,59 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Employee {
+  name : String
+  certificate : String
+  status : String
+  group : String
+  qualification : String
+  preferredWorkingHours : String
+  personalInformation : String
+  contract : String
+  +expressWorkingHours()
+  +viewPersonalInbox()
+  +changeInformation()
+  +viewFinancialAnnualStatements()
+  +viewContract()
+  +chooseEmail()
+  +choosePayment()
+}
+class Manager {
+  name : String
+  hiringProcess : String
+  employeeOverview : String
+  +sendSalaryStatement()
+  +enableOption()
+  +automatePaymentSystem()
+  +outsourcePart()
+  +semiSchedulingProcess()
+  +manuallyEditSchedule()
+  +notifyAdjustment()
+  +hireEmployee()
+  +notifyHiringProcess()
+  +haveOverviewOfEmployees()
+  +haveOverviewOfAbsentEmployees()
+  +viewEmployeeContracts()
+  +viewEmployeeCertificates()
+  +contactManagement()
+  +contactEmployee()
+  +forwardMessage()
+}
+class OfficeEmployee {
+  +fileComplaint()
+  +viewComplaint()
+  +categorizeComplaint()
+  +prioritizeComplaint()
+}
+class Complaint {
+  status : String
+}
+class SalaryStatement {
+}
+class Notification {
+}
+class Schedule {
+}
+class HiringProcess {
+}
+@enduml

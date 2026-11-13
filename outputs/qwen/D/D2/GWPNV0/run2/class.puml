@@ -1,0 +1,28 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Place {
+  name : String
+  destination : String
+}
+class Transition {
+  name : String
+  destination : String
+}
+class Network {
+  name : String
+}
+class PetriNet {
+  name : String
+  places : String
+  transitions : String
+  +addPlace()
+  +addTransition()
+}
+Network --|> PetriNet
+PetriNet "1" -- "0..*" Place : has
+PetriNet "1" -- "0..*" Transition : has
+PetriNet "1" -- "1" Network : contains
+Place "0..*" -- "1" Transition : is the destination of
+Transition "1" -- "1" Network : maps to
+@enduml

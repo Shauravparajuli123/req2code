@@ -1,0 +1,27 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Element {
+  location : String
+  comments : String
+}
+class Entry {
+  name : String
+  allFields : boolean
+}
+class BqlModel {
+  queries : String
+  entries : String
+  fields : String
+}
+class Query {
+  entries : String
+}
+class Field {
+  name : String
+}
+BqlModel "1" -- "0..*" Entry : has
+BqlModel "1" -- "0..*" Query : has
+BqlModel "1" -- "0..*" Field : has
+Entry "1" -- "1" Field : has
+@enduml

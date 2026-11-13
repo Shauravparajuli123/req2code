@@ -1,0 +1,35 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The collection kind of a CollectionTemplateExp is assumed to be a specific type of collection, such as a list or set, based on the context of the model."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R4 is not supported by any class in the model.",
+   "fix": "Add a class or modify an existing class to represent an element of a model pattern."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R5 is not supported by any class in the model.",
+   "fix": "Add a class or modify an existing class to represent a template expression that can be bound to a variable."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R7 is not supported by any class in the model.",
+   "fix": "Add a class or modify an existing class to represent a collection template expression that contains OCL expressions."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R8 is not supported by the relationship between CollectionTemplateExp and OclExpressions.",
+   "fix": "Ensure the relationship between CollectionTemplateExp and OclExpressions supports the requirement."
+  }
+ ]
+}

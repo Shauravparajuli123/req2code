@@ -1,0 +1,99 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "News",
+    "src": [
+     "R1",
+     "R3",
+     "R5",
+     "R8"
+    ]
+   },
+   {
+    "name": "Newspaper",
+    "src": [
+     "R2",
+     "R6",
+     "R7",
+     "R9"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "News",
+    "name": "title",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "News",
+    "name": "link",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "News",
+    "name": "author",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "owner": "News",
+    "name": "date",
+    "src": [
+     "R5",
+     "R8"
+    ]
+   },
+   {
+    "owner": "Newspaper",
+    "name": "language",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "owner": "Newspaper",
+    "name": "publishedDate",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "owner": "Newspaper",
+    "name": "categoryValue",
+    "src": [
+     "R4"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Newspaper",
+    "target": "News",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "News",
+    "target": "Newspaper",
+    "src": [
+     "R9"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

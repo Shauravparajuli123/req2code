@@ -1,0 +1,93 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Game {
+  name : String
+  +createGame()
+}
+class Absence {
+}
+class AbsenceForm {
+}
+class Account {
+  role : String
+}
+class Administrator {
+  +sendBroadcastMessage()
+  +setRole()
+  +uploadSchedule()
+  +viewDetail()
+  +viewStatistic()
+}
+class Answer {
+}
+class AppearanceDate {
+}
+class Assignment {
+}
+class Attendance {
+}
+class Behavior {
+}
+class Change {
+}
+class Child {
+}
+class Date {
+}
+class Dlm {
+}
+class File {
+}
+class Grade {
+}
+class Guardian {
+}
+class Homework {
+}
+class Insight {
+}
+class Lms {
+}
+class Manner {
+}
+class Material {
+}
+class Mentor {
+}
+class Message {
+}
+class Notification {
+}
+class Participant {
+}
+class Performance {
+}
+class Question {
+}
+class Schedule {
+}
+class School {
+}
+class Staff {
+}
+class Student {
+}
+class Submission {
+}
+class Teacher {
+}
+class Timetable {
+}
+class User {
+}
+class Work {
+}
+class Year {
+}
+Administrator "1" -- "1..*" Message : sends
+Administrator "1" -- "1" Account : setsRole
+Administrator "1" -- "1..*" Schedule : uploads
+Administrator "1" -- "1..*" Performance : views
+Schedule "1..*" -- "1" Student : has
+@enduml

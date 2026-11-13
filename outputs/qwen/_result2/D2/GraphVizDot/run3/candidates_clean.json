@@ -1,0 +1,184 @@
+{
+ "case": "D2/GraphVizDot",
+ "stage": "result2_after_ambiguity_removal",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "src": [
+    "R1",
+    "R2"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "An element in a graph along its location within that graph."
+    },
+    {
+     "sid": "R2.s1",
+     "text": "A basic element with a name."
+    }
+   ],
+   "name": "Element",
+   "freq": 2
+  },
+  {
+   "id": "C2",
+   "src": [
+    "R1"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "An element in a graph along its location within that graph."
+    }
+   ],
+   "name": "Graph",
+   "freq": 2
+  },
+  {
+   "id": "C3",
+   "src": [
+    "R4",
+    "R10"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "A GraphElement has a label and a z index."
+    },
+    {
+     "sid": "R10.s1",
+     "text": "A GraphElement contains a reference to its parent Graph."
+    }
+   ],
+   "name": "GraphElement",
+   "freq": 2
+  }
+ ],
+ "attributes": [
+  {
+   "id": "AT1",
+   "src": [
+    "R4"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "A GraphElement has a label and a z index."
+    }
+   ],
+   "owner": "GraphElement",
+   "name": "label",
+   "type_hint": null
+  },
+  {
+   "id": "AT2",
+   "src": [
+    "R10"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R10.s1",
+     "text": "A GraphElement contains a reference to its parent Graph."
+    }
+   ],
+   "owner": "GraphElement",
+   "name": "parent graph",
+   "type_hint": null
+  },
+  {
+   "id": "AT3",
+   "src": [
+    "R10"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R10.s1",
+     "text": "A GraphElement contains a reference to its parent Graph."
+    }
+   ],
+   "owner": "GraphElement",
+   "name": "reference",
+   "type_hint": null
+  },
+  {
+   "id": "AT4",
+   "src": [
+    "R4"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "A GraphElement has a label and a z index."
+    }
+   ],
+   "owner": "GraphElement",
+   "name": "z index",
+   "type_hint": null
+  },
+  {
+   "id": "AT6",
+   "src": [
+    "R1"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "An element in a graph along its location within that graph."
+    }
+   ],
+   "owner": "Graph",
+   "name": "location",
+   "type_hint": null
+  }
+ ],
+ "relations": [],
+ "enums": [],
+ "applied_edits": {
+  "remove_classes": [
+   "GraphObject"
+  ],
+  "merge_classes": [
+   [
+    "GraphElement",
+    "Shape"
+   ]
+  ],
+  "merge_actors": [],
+  "enums": [],
+  "multiplicities": [
+   {
+    "source": "GraphElement",
+    "target": "Graph",
+    "multiplicity": "0..*"
+   }
+  ],
+  "actor_assumptions": []
+ }
+}

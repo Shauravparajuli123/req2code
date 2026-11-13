@@ -1,0 +1,78 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "TupleElement",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Tuple",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addTupleElement",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "RelationalDatabase",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addTable",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addTuple",
+     "use_case": null
+    }
+   ],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "source": "RelationalDatabase",
+   "target": "Table",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "source": "Tuple",
+   "target": "TupleElement",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/RelationalDBContent.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass TupleElement:\n    \"\"\"Source: R5\"\"\"\n    value: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Tuple:\n    \"\"\"Source: -\"\"\"\n    tupleElement: _t.Optional[\"TupleElement\"] = None\n\n    def addTupleElement(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass RelationalDatabase:\n    \"\"\"Source: -\"\"\"\n    tables: _t.List[\"Table\"] = _dc.field(default_factory=list)\n\n    def addTable(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Table:\n    \"\"\"Source: -\"\"\"\n\n    def addTuple(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "TupleElement.java": "/** Generated from shared model D2/RelationalDBContent. Source: R5 */\npublic class TupleElement {\n    private java.lang.String value;\n}\n",
+  "Tuple.java": "/** Generated from shared model D2/RelationalDBContent. Source: - */\npublic class Tuple {\n    private TupleElement tupleElement;\n\n    /** Operation. */\n    public void addTupleElement() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "RelationalDatabase.java": "/** Generated from shared model D2/RelationalDBContent. Source: - */\npublic class RelationalDatabase {\n    private java.util.List<Table> tables;\n\n    /** Operation. */\n    public void addTable() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Table.java": "/** Generated from shared model D2/RelationalDBContent. Source: - */\npublic class Table {\n\n    /** Operation. */\n    public void addTuple() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

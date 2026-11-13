@@ -1,0 +1,1041 @@
+{
+ "actors": [
+  "Student",
+  "Teacher",
+  "Administrator",
+  "User",
+  "administrator"
+ ],
+ "use_cases": [
+  {
+   "name": "DirectMessage",
+   "actor": "Student",
+   "src": [
+    "R1",
+    "R6",
+    "R7",
+    "R18",
+    "R28",
+    "R48"
+   ]
+  },
+  {
+   "name": "FillAbsence",
+   "actor": "Student",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "ReceiveNotification",
+   "actor": "Student",
+   "src": [
+    "R3",
+    "R11",
+    "R12",
+    "R34"
+   ]
+  },
+  {
+   "name": "ViewInformation",
+   "actor": "Student",
+   "src": [
+    "R4",
+    "R15"
+   ]
+  },
+  {
+   "name": "ViewContactInformation",
+   "actor": "Student",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "AddPage",
+   "actor": "Teacher",
+   "src": [
+    "R20",
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "AssignDlm",
+   "actor": "Teacher",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "AssignDate",
+   "actor": "Teacher",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "MakeSubmissionElement",
+   "actor": "Teacher",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "MakeUse",
+   "actor": "Administrator",
+   "src": [
+    "R52"
+   ]
+  },
+  {
+   "name": "EditPage",
+   "actor": "Teacher",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "EditData",
+   "actor": "Administrator",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "name": "CreateAccount",
+   "actor": "Administrator",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "name": "CreateLearningModule",
+   "actor": "Teacher",
+   "src": [
+    "R26"
+   ]
+  },
+  {
+   "name": "ReceiveConfirmation",
+   "actor": "Teacher",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "ReceiveNotification",
+   "actor": "Teacher",
+   "src": [
+    "R18",
+    "R19",
+    "R33",
+    "R34"
+   ]
+  },
+  {
+   "name": "ReceiveNotification",
+   "actor": "Administrator",
+   "src": [
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "RegisterAbsence",
+   "actor": "Administrator",
+   "src": [
+    "R56"
+   ]
+  },
+  {
+   "name": "RegisterChange",
+   "actor": "Administrator",
+   "src": [
+    "R55"
+   ]
+  },
+  {
+   "name": "ResetPassword",
+   "actor": "User",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "SeeAnswer",
+   "actor": "Teacher",
+   "src": [
+    "R39"
+   ]
+  },
+  {
+   "name": "SeeGrade",
+   "actor": "Teacher",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "SeeProgress",
+   "actor": "Teacher",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "SetAppearanceDate",
+   "actor": "Teacher",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "SetDate",
+   "actor": "Teacher",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "UploadFile",
+   "actor": "Teacher",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "ViewAttendance",
+   "actor": "Teacher",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "ViewClass",
+   "actor": "Teacher",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "Send BroadcastMessage",
+   "actor": "administrator",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "name": "Set Role",
+   "actor": "administrator",
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "name": "Upload Schedule",
+   "actor": "administrator",
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "name": "View Detail",
+   "actor": "administrator",
+   "src": [
+    "R60"
+   ]
+  },
+  {
+   "name": "View Statistic",
+   "actor": "administrator",
+   "src": [
+    "R61"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Student",
+   "kind": "class",
+   "attributes": [
+    "contactInformation",
+    "group",
+    "knowledge"
+   ],
+   "methods": [
+    {
+     "name": "directMessage",
+     "use_case": "Message Teacher"
+    },
+    {
+     "name": "directMessageMentor",
+     "use_case": "Message Mentor"
+    },
+    {
+     "name": "fillAbsence",
+     "use_case": "Fill Absence"
+    },
+    {
+     "name": "receiveNotification",
+     "use_case": "Receive Notification"
+    },
+    {
+     "name": "viewInformation",
+     "use_case": "View Information"
+    },
+    {
+     "name": "viewContactInformation",
+     "use_case": "View ContactInformation"
+    },
+    {
+     "name": "handHomework",
+     "use_case": "Hand Homework"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R2",
+    "R11",
+    "R12",
+    "R15",
+    "R16",
+    "R8"
+   ]
+  },
+  {
+   "name": "Teacher",
+   "kind": "class",
+   "attributes": [
+    "contactInformation",
+    "group",
+    "knowledge"
+   ],
+   "methods": [
+    {
+     "name": "directMessageStudent",
+     "use_case": "Message Student"
+    },
+    {
+     "name": "directMessageMentor",
+     "use_case": "Message Mentor"
+    },
+    {
+     "name": "assignDlm",
+     "use_case": "Assign Dlm"
+    },
+    {
+     "name": "assignDate",
+     "use_case": "Assign Date"
+    },
+    {
+     "name": "makeSubmissionElement",
+     "use_case": "Make SubmissionElement"
+    },
+    {
+     "name": "editPage",
+     "use_case": "Edit Page"
+    },
+    {
+     "name": "receiveConfirmation",
+     "use_case": "Receive Confirmation"
+    },
+    {
+     "name": "receiveNotification",
+     "use_case": "Receive Notification"
+    },
+    {
+     "name": "recordAction",
+     "use_case": "Record Action"
+    },
+    {
+     "name": "recordAttendance",
+     "use_case": "Record Attendance"
+    },
+    {
+     "name": "recordBehavior",
+     "use_case": "Record Behavior"
+    },
+    {
+     "name": "recordGrade",
+     "use_case": "Record Grade"
+    },
+    {
+     "name": "seeAnswer",
+     "use_case": "See Answer"
+    },
+    {
+     "name": "seeGrade",
+     "use_case": "See Grade"
+    },
+    {
+     "name": "seeProgress",
+     "use_case": "See Progress"
+    },
+    {
+     "name": "setAppearanceDate",
+     "use_case": "Set AppearanceDate"
+    },
+    {
+     "name": "setDate",
+     "use_case": "Set Date"
+    },
+    {
+     "name": "uploadFile",
+     "use_case": "Upload File"
+    },
+    {
+     "name": "viewAttendance",
+     "use_case": "View Attendance"
+    },
+    {
+     "name": "viewClass",
+     "use_case": "View Class"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R27",
+    "R28",
+    "R23",
+    "R24",
+    "R30",
+    "R29",
+    "R32",
+    "R18",
+    "R19",
+    "R35",
+    "R36",
+    "R37",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "name": "Administrator",
+   "kind": "class",
+   "attributes": [
+    "contactInformation",
+    "group",
+    "knowledge"
+   ],
+   "methods": [
+    {
+     "name": "createAccount",
+     "use_case": "Create Account"
+    },
+    {
+     "name": "editData",
+     "use_case": "Edit Data"
+    },
+    {
+     "name": "receiveNotification",
+     "use_case": "Receive Notification"
+    },
+    {
+     "name": "registerAbsence",
+     "use_case": "Register Absence"
+    },
+    {
+     "name": "registerChange",
+     "use_case": "Register Change"
+    },
+    {
+     "name": "makeUse",
+     "use_case": "Make Use"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R50",
+    "R51",
+    "R53",
+    "R54",
+    "R55",
+    "R52"
+   ]
+  },
+  {
+   "name": "Absence",
+   "kind": "class",
+   "attributes": [
+    "date"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R56"
+   ]
+  },
+  {
+   "name": "Action",
+   "kind": "class",
+   "attributes": [
+    "status"
+   ],
+   "methods": [],
+   "literals": [
+    {
+     "name": "BehaviorStatus",
+     "type": "enumeration",
+     "values": [
+      "Sufficient",
+      "Insufficient"
+     ]
+    }
+   ],
+   "src": [
+    "R35",
+    "R36"
+   ]
+  },
+  {
+   "name": "Dlm",
+   "kind": "class",
+   "attributes": [
+    "dueDate"
+   ],
+   "methods": [
+    {
+     "name": "assignDate",
+     "use_case": "Assign Date"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R23",
+    "R24"
+   ]
+  },
+  {
+   "name": "File",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "upload",
+     "use_case": "Upload File"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Grade",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Mentor",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [
+    "message"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R11",
+    "R12",
+    "R34",
+    "R18",
+    "R19",
+    "R33",
+    "R34",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Page",
+   "kind": "class",
+   "attributes": [
+    "content"
+   ],
+   "methods": [
+    {
+     "name": "addText",
+     "use_case": "Add Page"
+    },
+    {
+     "name": "addVideo",
+     "use_case": "Add Page"
+    },
+    {
+     "name": "addQuestion",
+     "use_case": "Add Page"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R20",
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "SubmissionElement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "makeElement",
+     "use_case": "Make SubmissionElement"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "contactInformation",
+    "group",
+    "knowledge"
+   ],
+   "methods": [
+    {
+     "name": "resetPassword",
+     "use_case": "Reset Password"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Administrator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "sendBroadcastMessage",
+     "use_case": "Send BroadcastMessage"
+    },
+    {
+     "name": "setRole",
+     "use_case": "Set Role"
+    },
+    {
+     "name": "uploadSchedule",
+     "use_case": "Upload Schedule"
+    },
+    {
+     "name": "viewDetail",
+     "use_case": "View Detail"
+    },
+    {
+     "name": "viewStatistic",
+     "use_case": "View Statistic"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R57",
+    "R58",
+    "R59",
+    "R60",
+    "R61"
+   ]
+  },
+  {
+   "name": "Account",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "name": "Message",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "send",
+     "use_case": "Send BroadcastMessage"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "name": "Participant",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "receiveMessage",
+     "use_case": "Send BroadcastMessage"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "name": "Schedule",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "upload",
+     "use_case": "Upload Schedule"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "name": "Statistic",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "view",
+     "use_case": "View Statistic"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R61"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Student",
+   "target": "Teacher",
+   "multiplicity_target": "1",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Student",
+   "target": "Mentor",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Teacher",
+   "target": "Student",
+   "multiplicity_target": "1",
+   "src": [
+    "R27",
+    "R28"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "User",
+   "multiplicity_target": "1",
+   "src": [
+    "R50",
+    "R51"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Teacher",
+   "target": "Dlm",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R23",
+    "R24",
+    "R26",
+    "R29",
+    "R32",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Student",
+   "target": "Absence",
+   "multiplicity_target": "1",
+   "src": [
+    "R2",
+    "R56"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Teacher",
+   "target": "Absence",
+   "multiplicity_target": "1",
+   "src": [
+    "R18",
+    "R19",
+    "R33",
+    "R34"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Absence",
+   "multiplicity_target": "1",
+   "src": [
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Action",
+   "multiplicity_target": "1",
+   "src": [
+    "R35",
+    "R36"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Teacher",
+   "target": "Action",
+   "multiplicity_target": "1",
+   "src": [
+    "R35",
+    "R36"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Student",
+   "target": "Action",
+   "multiplicity_target": "1",
+   "src": [
+    "R35",
+    "R36"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Teacher",
+   "target": "Grade",
+   "multiplicity_target": "1",
+   "src": [
+    "R37",
+    "R40",
+    "R41"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Student",
+   "target": "Grade",
+   "multiplicity_target": "1",
+   "src": [
+    "R37",
+    "R40",
+    "R41"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Teacher",
+   "target": "File",
+   "multiplicity_target": "1",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Student",
+   "target": "Notification",
+   "multiplicity_target": "1",
+   "src": [
+    "R3",
+    "R11",
+    "R12",
+    "R34",
+    "R18",
+    "R19",
+    "R33",
+    "R34",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Teacher",
+   "target": "Notification",
+   "multiplicity_target": "1",
+   "src": [
+    "R18",
+    "R19",
+    "R33",
+    "R34"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Notification",
+   "multiplicity_target": "1",
+   "src": [
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Teacher",
+   "target": "Page",
+   "multiplicity_target": "1",
+   "src": [
+    "R20",
+    "R21",
+    "R22",
+    "R26",
+    "R29",
+    "R32",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Student",
+   "target": "Page",
+   "multiplicity_target": "1",
+   "src": [
+    "R20",
+    "R21",
+    "R22",
+    "R26",
+    "R29",
+    "R32",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Student",
+   "target": "SubmissionElement",
+   "multiplicity_target": "1",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Account",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Message",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Participant",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Schedule",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Administrator",
+   "target": "Statistic",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R61"
+   ]
+  }
+ ],
+ "python": "from enum import Enum\n\nclass BehaviorStatus(Enum):\n    Sufficient = 'Sufficient'\n    Insufficient = 'Insufficient'\n\nclass Date:\n    pass\n\nclass Student:\n    def __init__(self, contactInformation: str, group: str, knowledge: str):\n        self.contactInformation = contactInformation\n        self.group = group\n        self.knowledge = knowledge\n\ndef directMessage(self, recipient: str):\n    raise NotImplementedError\n\ndef directMessageMentor(self):\n    raise NotImplementedError\n\ndef fillAbsence(self):\n    raise NotImplementedError\n\ndef receiveNotification(self, message: str):\n    raise NotImplementedError\n\ndef viewInformation(self):\n    raise NotImplementedError\n\ndef viewContactInformation(self):\n    raise NotImplementedError\n\ndef handHomework(self):\n    raise NotImplementedError\n\nclass Teacher:\n    def __init__(self, contactInformation: str, group: str, knowledge: str):\n        self.contactInformation = contactInformation\n        self.group = group\n        self.knowledge = knowledge\n\ndef directMessageStudent(self, student: str):\n    raise NotImplementedError\n\ndef directMessageMentor(self):\n    raise NotImplementedError\n\ndef assignDlm(self, dlm: 'Dlm', class_or_student: str):\n    raise NotImplementedError\n\ndef assignDate(self, dlm: 'Dlm', dueDate: Date):\n    raise NotImplementedError\n\ndef makeSubmissionElement(self):\n    raise NotImplementedError\n\ndef editPage(self, page: 'Page', content: str):\n    raise NotImplementedError\n\ndef receiveConfirmation(self, file: 'File', uploadDate: Date):\n    raise NotImplementedError\n\ndef receiveNotification(self, message: str):\n    raise NotImplementedError\n\ndef recordAction(self, status: BehaviorStatus):\n    raise NotImplementedError\n\ndef recordAttendance(self, date: Date):\n    raise NotImplementedError\n\ndef recordBehavior(self, status: BehaviorStatus):\n    raise NotImplementedError\n\ndef recordGrade(self, value: int):\n    raise NotImplementedError\n\ndef seeAnswer(self, submission: str):\n    raise NotImplementedError\n\ndef seeGrade(self, student: str):\n    raise NotImplementedError\n\ndef seeProgress(self, student: str):\n    raise NotImplementedError\n\ndef setAppearanceDate(self, dlm: 'Dlm', appearanceDate: Date):\n    raise NotImplementedError\n\ndef setDate(self, date: Date):\n    raise NotImplementedError\n\ndef uploadFile(self, file: 'File', uploadDate: Date):\n    raise NotImplementedError\n\ndef viewAttendance(self, date: Date):\n    raise NotImplementedError\n\ndef viewClass(self, class_name: str):\n    raise NotImplementedError\n\nclass Administrator:\n    def __init__(self, contactInformation: str, group: str, knowledge: str):\n        self.contactInformation = contactInformation\n        self.group = group\n        self.knowledge = knowledge\n\ndef createAccount(self, user: 'User', password: str):\n    raise NotImplementedError\n\ndef editData(self, data: str):\n    raise NotImplementedError\n\ndef receiveNotification(self, message: str):\n    raise NotImplementedError\n\ndef registerAbsence(self, absence: 'Absence', date: Date):\n    raise NotImplementedError\n\ndef registerChange(self, change: str):\n    raise NotImplementedError\n\ndef makeUse(self, tool: str):\n    raise NotImplementedError\n\nclass Absence:\n    def __init__(self, date: Date):\n        self.date = date\n\nclass Action:\n    def __init__(self, status: BehaviorStatus):\n        self.status = status\n\nclass Dlm:\n    def __init__(self, dueDate: Date):\n        self.dueDate = dueDate\n\ndef assignDate(self, dueDate: Date):\n    raise NotImplementedError\n\nclass File:\n    def __init__(self, name: str):\n        self.name = name\n\ndef upload(self, uploadDate: Date):\n    raise NotImplementedError\n\nclass Grade:\n    def __init__(self, value: int):\n        self.value = value\n\nclass Notification:\n    def __init__(self, message: str):\n        self.message = message\n\nclass Page:\n    def __init__(self, content: str):\n        self.content = content\n\ndef addText(self, text: str):\n    raise NotImplementedError\n\ndef addVideo(self, video: str):\n    raise NotImplementedError\n\ndef addQuestion(self, question: str):\n    raise NotImplementedError\n\nclass SubmissionElement:\n    def __init__(self):\n        pass\n\ndef makeElement(self):\n    raise NotImplementedError\n\nclass User:\n    def __init__(self, contactInformation: str, group: str, knowledge: str):\n        self.contactInformation = contactInformation\n        self.group = group\n        self.knowledge = knowledge\n\ndef resetPassword(self, previousPassword: str):\n    raise NotImplementedError\n\nfrom typing import List\n\nclass Administrator:\n    def sendBroadcastMessage(self, recipients: List[str]) -> None:\n        raise NotImplementedError\n\n    def setRole(self, account: Account, role: str) -> None:\n        raise NotImplementedError\n\n    def uploadSchedule(self, schedule: Schedule) -> None:\n        raise NotImplementedError\n\n    def viewDetail(self, account: Account) -> None:\n        raise NotImplementedError\n\n    def viewStatistic(self) -> Statistic:\n        raise NotImplementedError\n\nclass Account:\n    def __init__(self, role: str):\n        self.role = role\n\nclass Message:\n    def send(self) -> None:\n        raise NotImplementedError\n\nclass Participant:\n    def receiveMessage(self) -> None:\n        raise NotImplementedError\n\nclass Schedule:\n    def upload(self) -> None:\n        raise NotImplementedError\n\nclass Statistic:\n    def view(self) -> None:\n        raise NotImplementedError",
+ "java": {}
+}

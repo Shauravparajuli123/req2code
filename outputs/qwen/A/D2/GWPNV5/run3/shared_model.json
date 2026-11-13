@@ -1,0 +1,293 @@
+{
+ "case": "D2/GWPNV5",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "tokens",
+     "type": "int",
+     "src": [
+      "R7",
+      "R15"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addToken",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "removeToken",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9",
+    "R13",
+    "R15"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "outputArcs",
+     "type": "String",
+     "src": [
+      "R11",
+      "R14"
+     ]
+    },
+    {
+     "name": "inputArcs",
+     "type": "String",
+     "src": [
+      "R9",
+      "R13"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addOutputArc",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M4",
+     "name": "removeOutputArc",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M5",
+     "name": "addInputArc",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M6",
+     "name": "removeInputArc",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R10",
+    "R11",
+    "R14"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "weight",
+     "type": "double",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "source",
+     "type": "String",
+     "src": [
+      "R6",
+      "R14"
+     ]
+    },
+    {
+     "name": "destination",
+     "type": "String",
+     "src": [
+      "R5",
+      "R13"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M7",
+     "name": "setWeight",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5",
+    "R6",
+    "R12"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "places",
+     "type": "String",
+     "src": [
+      "R8",
+      "R12"
+     ]
+    },
+    {
+     "name": "transitions",
+     "type": "String",
+     "src": [
+      "R10",
+      "R12"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M8",
+     "name": "addPlace",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M9",
+     "name": "removePlace",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M10",
+     "name": "addTransition",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M11",
+     "name": "removeTransition",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C4",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R1",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C4",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R5",
+    "R6",
+    "R10"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "composition",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "composes",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a Net is composed of transition-place arcs and place-transition arcs, but it does not explicitly state the relationship between these arcs and transitions."
+  }
+ ],
+ "open_tags": []
+}

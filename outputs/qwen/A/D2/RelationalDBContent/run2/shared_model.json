@@ -1,0 +1,104 @@
+{
+ "case": "D2/RelationalDBContent",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "TupleElement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "value",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Tuple",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addTupleElement",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C3",
+   "name": "RelationalDatabase",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "addTable",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C4",
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addTuple",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "is composed of",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

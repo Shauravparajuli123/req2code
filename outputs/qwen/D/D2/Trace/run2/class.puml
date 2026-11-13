@@ -1,0 +1,20 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Trace {
+  name : String
+}
+class Level {
+  trace : String
+  value : int
+  +addLevel()
+}
+class Call {
+  methodName : String
+  numberOfDatabaseRows : int
+  level : String
+  +createCall()
+}
+Trace "0..*" -- "1" Level : has
+Call "1" -- "1" Level : has
+@enduml

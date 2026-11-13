@@ -1,0 +1,2932 @@
+{
+ "condition": "Q",
+ "hint": {
+  "case": "D1/recycling",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R16",
+     "R17",
+     "R21",
+     "R22",
+     "R23",
+     "R30",
+     "R40",
+     "R41",
+     "R42",
+     "R46",
+     "R47"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As an admin, I want to be able to add or remove recycling facilities' information, so that users get the most recent information."
+     },
+     {
+      "sid": "R17.s1",
+      "text": "As an admin, I want to be able to read users' feedback and complaints, so that we can add more features and keep improving the service we provide to them."
+     },
+     {
+      "sid": "R21.s1",
+      "text": "As an admin, I want to be able to block specific users based on IP address, so that I can prevent spamming on the websites."
+     }
+    ],
+    "name": "admin"
+   },
+   {
+    "id": "A2",
+    "src": [
+     "R31"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R31.s1",
+      "text": "As a company, I want to have a website that is easy to use, so that I can upload or delete stuff step by step."
+     }
+    ],
+    "name": "company"
+   },
+   {
+    "id": "A3",
+    "src": [
+     "R33"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a company accountant, I want to view all available activity fees online, so that I can easily create a bill statement."
+     }
+    ],
+    "name": "company accountant"
+   },
+   {
+    "id": "A4",
+    "src": [
+     "R27",
+     "R34",
+     "R35"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a developer, I want to access an API from the website, so that I can integrate it and implement certain features in my own iOS application."
+     },
+     {
+      "sid": "R34.s1",
+      "text": "As a developer, I want to use bootstrap in the process of developing, so that I can easily design my website."
+     },
+     {
+      "sid": "R35.s1",
+      "text": "As a developer, I want to attend some UI/UX lessons, so that I can develop an awesome and beautiful features website."
+     }
+    ],
+    "name": "developer"
+   },
+   {
+    "id": "A5",
+    "src": [
+     "R25",
+     "R32"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R25.s1",
+      "text": "As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood."
+     },
+     {
+      "sid": "R32.s1",
+      "text": "As an employee, I want to get quick notifications, so that I can process cases the first time."
+     }
+    ],
+    "name": "employee"
+   },
+   {
+    "id": "A6",
+    "src": [
+     "R26"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R26.s1",
+      "text": "As an employee from the HR department, I want to have access to the full information of all employees working for this business."
+     }
+    ],
+    "name": "employee from the hr department"
+   },
+   {
+    "id": "A7",
+    "src": [
+     "R24"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As an executive, I want to have full access to data related to my company, so that I can have a sense of my company's performance."
+     }
+    ],
+    "name": "executive"
+   },
+   {
+    "id": "A8",
+    "src": [
+     "R51"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R51.s1",
+      "text": "As a recyclingfacility, I want to be able to communicate directly with the site admin and convey any issues or concerns I have, so that they fix them."
+     }
+    ],
+    "name": "recyclingfacility"
+   },
+   {
+    "id": "A9",
+    "src": [
+     "R49",
+     "R50"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R49.s1",
+      "text": "As a recyclingfacility representative, I want to be able to update my information and the type of material I accept, so that I can avoid any miscommunication with users."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As a recyclingfacility representative, I want to have access to user stats and schedules, so that I can adjust my hours and/or upgrade equipment and capacity in order to be able to accomodate larger amounts of recyclable materials."
+     }
+    ],
+    "name": "recyclingfacility representative"
+   },
+   {
+    "id": "A10",
+    "src": [
+     "R43",
+     "R44",
+     "R45"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R43.s1",
+      "text": "As a superuser, I want to update the recycling center information, so that I can provide the latest information about the recycling center."
+     },
+     {
+      "sid": "R44.s1",
+      "text": "As a superuser, I want to view users' stats, so that I can view in real-time how many users have visited my recycling center information and their recyclable waste."
+     },
+     {
+      "sid": "R45.s1",
+      "text": "As a superuser, I want to reply to user questions, so that I can answer any questions about my recycling center."
+     }
+    ],
+    "name": "superuser"
+   },
+   {
+    "id": "A11",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R15",
+     "R18",
+     "R19",
+     "R20",
+     "R28",
+     "R29",
+     "R36",
+     "R37",
+     "R38",
+     "R39",
+     "R48"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a user, I want to click on the address, so that it takes me to a new tab with Google Maps."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "As a user, I want to be able to anonymously view public information, so that I know about recycling centers near me before creating an account."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to be able to enter my zip code and get a list of nearby recycling facilities, so that I can determine which ones I should consider."
+     }
+    ],
+    "name": "user"
+   }
+  ],
+  "use_cases": [
+   {
+    "id": "UC1",
+    "src": [
+     "R27"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a developer, I want to access an API from the website, so that I can integrate it and implement certain features in my own iOS application."
+     }
+    ],
+    "name": "Access Api",
+    "actor": "developer",
+    "goal_text": "access an API from the website"
+   },
+   {
+    "id": "UC2",
+    "src": [
+     "R25"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R25.s1",
+      "text": "As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood."
+     }
+    ],
+    "name": "Access RoutePlanningSystem",
+    "actor": "employee",
+    "goal_text": "access the route planning system during work"
+   },
+   {
+    "id": "UC3",
+    "src": [
+     "R20"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R20.s1",
+      "text": "As a user, I want to be able to access the site and do all the other stuffs on all of my electronic devices."
+     }
+    ],
+    "name": "Access Site",
+    "actor": "user",
+    "goal_text": "access the site and do all the other stuffs on all of my electronic devices."
+   },
+   {
+    "id": "UC4",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As a user, I want to add donation centers as favorites on my profile, so that I can view them later."
+     }
+    ],
+    "name": "Add DonationCenter",
+    "actor": "user",
+    "goal_text": "add donation centers as favorites on my profile"
+   },
+   {
+    "id": "UC5",
+    "src": [
+     "R40"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R40.s1",
+      "text": "As an admin, I want to add recycling center information, so that I can keep the database up-to-date over time."
+     }
+    ],
+    "name": "Add RecyclingCenterInformation",
+    "actor": "admin",
+    "goal_text": "add recycling center information"
+   },
+   {
+    "id": "UC6",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As an admin, I want to be able to add or remove recycling facilities' information, so that users get the most recent information."
+     }
+    ],
+    "name": "Add RecyclingFacility",
+    "actor": "admin",
+    "goal_text": "add or remove recycling facilities' information"
+   },
+   {
+    "id": "UC7",
+    "src": [
+     "R35"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a developer, I want to attend some UI/UX lessons, so that I can develop an awesome and beautiful features website."
+     }
+    ],
+    "name": "Attend UxLesson",
+    "actor": "developer",
+    "goal_text": "attend some UI/UX lessons"
+   },
+   {
+    "id": "UC8",
+    "src": [
+     "R21"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R21.s1",
+      "text": "As an admin, I want to be able to block specific users based on IP address, so that I can prevent spamming on the websites."
+     }
+    ],
+    "name": "Block User",
+    "actor": "admin",
+    "goal_text": "block specific users based on IP address"
+   },
+   {
+    "id": "UC9",
+    "src": [
+     "R48"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R48.s1",
+      "text": "As a user, I want to be able to browse through the list of facolities and see which ones are environment-friendly, so that I can know for sure my waste is not going to leave a negative ecological footprint."
+     }
+    ],
+    "name": "Browse List",
+    "actor": "user",
+    "goal_text": "browse through the list of facolities and see which ones are environment-friendly"
+   },
+   {
+    "id": "UC10",
+    "src": [
+     "R18"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R18.s1",
+      "text": "As a user, I want to be able to check transaction history and keep a record of it, so that I can go back when needed."
+     }
+    ],
+    "name": "Check TransactionHistory",
+    "actor": "user",
+    "goal_text": "check transaction history and keep a record of it"
+   },
+   {
+    "id": "UC11",
+    "src": [
+     "R12"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R12.s1",
+      "text": "As a user, I want to choose a flexible pick up time, so that I can more conveniently use the website."
+     }
+    ],
+    "name": "Choose Pick",
+    "actor": "user",
+    "goal_text": "choose a flexible pick up time"
+   },
+   {
+    "id": "UC12",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a user, I want to click on the address, so that it takes me to a new tab with Google Maps."
+     }
+    ],
+    "name": "Click Address",
+    "actor": "user",
+    "goal_text": "click on the address"
+   },
+   {
+    "id": "UC13",
+    "src": [
+     "R47"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R47.s1",
+      "text": "As an admin, I want to be able to communicate directly with facilities, so that I can keep them updated about features we have on our website."
+     }
+    ],
+    "name": "Communicate Facility",
+    "actor": "admin",
+    "goal_text": "communicate directly with facilities"
+   },
+   {
+    "id": "UC14",
+    "src": [
+     "R51"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R51.s1",
+      "text": "As a recyclingfacility, I want to be able to communicate directly with the site admin and convey any issues or concerns I have, so that they fix them."
+     }
+    ],
+    "name": "Communicate Site",
+    "actor": "recyclingfacility",
+    "goal_text": "communicate directly with the site admin and convey any issues or concerns I have"
+   },
+   {
+    "id": "UC15",
+    "src": [
+     "R39"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R39.s1",
+      "text": "As a user, I want to contact the administrators, so that I can give feedback or ask for help."
+     }
+    ],
+    "name": "Contact Administrator",
+    "actor": "user",
+    "goal_text": "contact the administrators"
+   },
+   {
+    "id": "UC16",
+    "src": [
+     "R15"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "As a user, I want to be able to create an acocunt, so that I can create my own profile."
+     }
+    ],
+    "name": "Create Acocunt",
+    "actor": "user",
+    "goal_text": "create an acocunt"
+   },
+   {
+    "id": "UC17",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to be able to enter my zip code and get a list of nearby recycling facilities, so that I can determine which ones I should consider."
+     }
+    ],
+    "name": "Enter ZipCode",
+    "actor": "user",
+    "goal_text": "enter my zip code and get a list of nearby recycling facilities"
+   },
+   {
+    "id": "UC18",
+    "src": [
+     "R14"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "As a user, I want to get feedback when I enter an invalid zip code."
+     }
+    ],
+    "name": "Get Feedback",
+    "actor": "user",
+    "goal_text": "get feedback when I enter an invalid zip code."
+   },
+   {
+    "id": "UC19",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a user, I want to be able to get the hours of each recycling facility, so that I can arrange drop-offs on my off days or during after-work hours."
+     }
+    ],
+    "name": "Get Hour",
+    "actor": "user",
+    "goal_text": "get the hours of each recycling facility"
+   },
+   {
+    "id": "UC20",
+    "src": [
+     "R32"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R32.s1",
+      "text": "As an employee, I want to get quick notifications, so that I can process cases the first time."
+     }
+    ],
+    "name": "Get Notification",
+    "actor": "employee",
+    "goal_text": "get quick notifications"
+   },
+   {
+    "id": "UC21",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a user, I want to be able to give my email ID, so that I can receive notifications for new events as they are posted."
+     }
+    ],
+    "name": "Give EmailId",
+    "actor": "user",
+    "goal_text": "give my email ID"
+   },
+   {
+    "id": "UC22",
+    "src": [
+     "R30"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R30.s1",
+      "text": "As an admin, I want to handle all users' activities, so that I can manage more efficiently."
+     }
+    ],
+    "name": "Handle Activity",
+    "actor": "admin",
+    "goal_text": "handle all users' activities"
+   },
+   {
+    "id": "UC23",
+    "src": [
+     "R24",
+     "R26",
+     "R50"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As an executive, I want to have full access to data related to my company, so that I can have a sense of my company's performance."
+     },
+     {
+      "sid": "R26.s1",
+      "text": "As an employee from the HR department, I want to have access to the full information of all employees working for this business."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As a recyclingfacility representative, I want to have access to user stats and schedules, so that I can adjust my hours and/or upgrade equipment and capacity in order to be able to accomodate larger amounts of recyclable materials."
+     }
+    ],
+    "name": "Have Access",
+    "actor": "executive",
+    "goal_text": "have full access to data related to my company"
+   },
+   {
+    "id": "UC24",
+    "src": [
+     "R46"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R46.s1",
+      "text": "As an admin, I want to be able to have a dashboard that shows usage stats and locations, so that I can identify the neighbourhoods with the largest number of drop-offs and to try getting more facilities involved."
+     }
+    ],
+    "name": "Have Dashboard",
+    "actor": "admin",
+    "goal_text": "have a dashboard that shows usage stats and locations"
+   },
+   {
+    "id": "UC25",
+    "src": [
+     "R23"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As an admin, I want to have all data encrypted, so that important information will not be stolen during a server breach or an attack."
+     }
+    ],
+    "name": "Have Data",
+    "actor": "admin",
+    "goal_text": "have all data encrypted"
+   },
+   {
+    "id": "UC26",
+    "src": [
+     "R29"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R29.s1",
+      "text": "As a user, I want to have my personal information kept securely in the database of the website, so that I will not suffer from identity theft or telephone harassment."
+     }
+    ],
+    "name": "Have Information",
+    "actor": "user",
+    "goal_text": "have my personal information kept securely in the database of the website"
+   },
+   {
+    "id": "UC27",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a user, I want to have a flexible pick up time, so that I can more conveniently use the website."
+     }
+    ],
+    "name": "Have Pick",
+    "actor": "user",
+    "goal_text": "have a flexible pick up time"
+   },
+   {
+    "id": "UC28",
+    "src": [
+     "R19"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R19.s1",
+      "text": "As a user, I want to have a great UI and UX from the sites, so that I have a pleasant experience when navigating through them."
+     }
+    ],
+    "name": "Have Ui",
+    "actor": "user",
+    "goal_text": "have a great UI and UX from the sites"
+   },
+   {
+    "id": "UC29",
+    "src": [
+     "R31"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R31.s1",
+      "text": "As a company, I want to have a website that is easy to use, so that I can upload or delete stuff step by step."
+     }
+    ],
+    "name": "Have Website",
+    "actor": "company",
+    "goal_text": "have a website that is easy to use"
+   },
+   {
+    "id": "UC30",
+    "src": [
+     "R38"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R38.s1",
+      "text": "As a user, I want to link my email account to my profile, so that I can get a temporary password in case I forget my own one."
+     }
+    ],
+    "name": "Link EmailAccount",
+    "actor": "user",
+    "goal_text": "link my email account to my profile"
+   },
+   {
+    "id": "UC31",
+    "src": [
+     "R42"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R42.s1",
+      "text": "As an admin, I want to onboard recycling centers on the platform, so that I can increase information accuracy."
+     }
+    ],
+    "name": "Onboard RecyclingCenter",
+    "actor": "admin",
+    "goal_text": "onboard recycling centers on the platform"
+   },
+   {
+    "id": "UC32",
+    "src": [
+     "R17"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R17.s1",
+      "text": "As an admin, I want to be able to read users' feedback and complaints, so that we can add more features and keep improving the service we provide to them."
+     }
+    ],
+    "name": "Read Feedback",
+    "actor": "admin",
+    "goal_text": "read users' feedback and complaints"
+   },
+   {
+    "id": "UC33",
+    "src": [
+     "R28"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a user, I want to be able to receive tempting rewards, so that I have a reason to use the website."
+     }
+    ],
+    "name": "Receive Reward",
+    "actor": "user",
+    "goal_text": "receive tempting rewards"
+   },
+   {
+    "id": "UC34",
+    "src": [
+     "R45"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R45.s1",
+      "text": "As a superuser, I want to reply to user questions, so that I can answer any questions about my recycling center."
+     }
+    ],
+    "name": "Reply UserQuestion",
+    "actor": "superuser",
+    "goal_text": "reply to user questions"
+   },
+   {
+    "id": "UC35",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As a user, I want to be able to select different types of recyclable waste, so I have and get a list of facilities that accept each type and their opening hours, so that I can find an optimal route and schedule."
+     }
+    ],
+    "name": "Select Type",
+    "actor": "user",
+    "goal_text": "select different types of recyclable waste"
+   },
+   {
+    "id": "UC36",
+    "src": [
+     "R49"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R49.s1",
+      "text": "As a recyclingfacility representative, I want to be able to update my information and the type of material I accept, so that I can avoid any miscommunication with users."
+     }
+    ],
+    "name": "Update Information",
+    "actor": "recyclingfacility representative",
+    "goal_text": "update my information and the type of material I accept"
+   },
+   {
+    "id": "UC37",
+    "src": [
+     "R43"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R43.s1",
+      "text": "As a superuser, I want to update the recycling center information, so that I can provide the latest information about the recycling center."
+     }
+    ],
+    "name": "Update RecyclingCenterInformation",
+    "actor": "superuser",
+    "goal_text": "update the recycling center information"
+   },
+   {
+    "id": "UC38",
+    "src": [
+     "R37"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a user, I want to upload my week's schedule, so that I can get recommendations for recycling centers that best fit my availability."
+     }
+    ],
+    "name": "Upload Schedule",
+    "actor": "user",
+    "goal_text": "upload my week's schedule"
+   },
+   {
+    "id": "UC39",
+    "src": [
+     "R34"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R34.s1",
+      "text": "As a developer, I want to use bootstrap in the process of developing, so that I can easily design my website."
+     }
+    ],
+    "name": "Use Bootstrap",
+    "actor": "developer",
+    "goal_text": "use bootstrap in the process of developing"
+   },
+   {
+    "id": "UC40",
+    "src": [
+     "R33"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a company accountant, I want to view all available activity fees online, so that I can easily create a bill statement."
+     }
+    ],
+    "name": "View ActivityFee",
+    "actor": "company accountant",
+    "goal_text": "view all available activity fees online"
+   },
+   {
+    "id": "UC41",
+    "src": [
+     "R22"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R22.s1",
+      "text": "As an admin, I want to view a dashboard that monitors all the sites' statuses, so that I can have a sense of what people are doing on our sites and know the service status."
+     }
+    ],
+    "name": "View Dashboard",
+    "actor": "admin",
+    "goal_text": "view a dashboard that monitors all the sites' statuses"
+   },
+   {
+    "id": "UC42",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a user, I want to be able to view the safe disposal events currently being organised around my area."
+     }
+    ],
+    "name": "View DisposalEvent",
+    "actor": "user",
+    "goal_text": "view the safe disposal events currently being organised around my area."
+   },
+   {
+    "id": "UC43",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a user, I want to be able to anonymously view public information, so that I know about recycling centers near me before creating an account."
+     }
+    ],
+    "name": "View Information",
+    "actor": "user",
+    "goal_text": "anonymously view public information"
+   },
+   {
+    "id": "UC44",
+    "src": [
+     "R36"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R36.s1",
+      "text": "As a user, I want to view all locations of recycling centers on a map, so that I can check which routes to take to drop off waste."
+     }
+    ],
+    "name": "View Location",
+    "actor": "user",
+    "goal_text": "view all locations of recycling centers on a map"
+   },
+   {
+    "id": "UC45",
+    "src": [
+     "R9",
+     "R10"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a user, I want to be able to view a map display of the public recycling bins around my area."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "As a user, I want to be able to view a map display of the special waste drop off sites around my area."
+     }
+    ],
+    "name": "View MapDisplay",
+    "actor": "user",
+    "goal_text": "view a map display of the public recycling bins around my area."
+   },
+   {
+    "id": "UC46",
+    "src": [
+     "R44"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R44.s1",
+      "text": "As a superuser, I want to view users' stats, so that I can view in real-time how many users have visited my recycling center information and their recyclable waste."
+     }
+    ],
+    "name": "View Stat",
+    "actor": "superuser",
+    "goal_text": "view users' stats"
+   },
+   {
+    "id": "UC47",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As a user, I want to view user documentation for the website, so that I know how to use the web app."
+     }
+    ],
+    "name": "View UserDocumentation",
+    "actor": "user",
+    "goal_text": "view user documentation for the website"
+   },
+   {
+    "id": "UC48",
+    "src": [
+     "R41"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R41.s1",
+      "text": "As an admin, I want to view user error logs, so that I can fix or review any issues that are being faced by users of the system."
+     }
+    ],
+    "name": "View UserErrorLog",
+    "actor": "admin",
+    "goal_text": "view user error logs"
+   }
+  ],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R24",
+     "R26",
+     "R50"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As an executive, I want to have full access to data related to my company, so that I can have a sense of my company's performance."
+     },
+     {
+      "sid": "R26.s1",
+      "text": "As an employee from the HR department, I want to have access to the full information of all employees working for this business."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As a recyclingfacility representative, I want to have access to user stats and schedules, so that I can adjust my hours and/or upgrade equipment and capacity in order to be able to accomodate larger amounts of recyclable materials."
+     }
+    ],
+    "name": "Access",
+    "freq": 3
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R16",
+     "R17",
+     "R21",
+     "R22",
+     "R23",
+     "R30",
+     "R40",
+     "R41",
+     "R42",
+     "R46",
+     "R47"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As an admin, I want to be able to add or remove recycling facilities' information, so that users get the most recent information."
+     },
+     {
+      "sid": "R17.s1",
+      "text": "As an admin, I want to be able to read users' feedback and complaints, so that we can add more features and keep improving the service we provide to them."
+     },
+     {
+      "sid": "R21.s1",
+      "text": "As an admin, I want to be able to block specific users based on IP address, so that I can prevent spamming on the websites."
+     }
+    ],
+    "name": "Admin",
+    "freq": 11
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R9",
+     "R10",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a user, I want to be able to view a map display of the public recycling bins around my area."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "As a user, I want to be able to view a map display of the special waste drop off sites around my area."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "As a user, I want to be able to view the safe disposal events currently being organised around my area."
+     }
+    ],
+    "name": "Area",
+    "freq": 3
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R24",
+     "R31"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As an executive, I want to have full access to data related to my company, so that I can have a sense of my company's performance."
+     },
+     {
+      "sid": "R31.s1",
+      "text": "As a company, I want to have a website that is easy to use, so that I can upload or delete stuff step by step."
+     }
+    ],
+    "name": "Company",
+    "freq": 2
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R33"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a company accountant, I want to view all available activity fees online, so that I can easily create a bill statement."
+     }
+    ],
+    "name": "CompanyAccountant",
+    "freq": 1
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R22",
+     "R46"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R22.s1",
+      "text": "As an admin, I want to view a dashboard that monitors all the sites' statuses, so that I can have a sense of what people are doing on our sites and know the service status."
+     },
+     {
+      "sid": "R46.s1",
+      "text": "As an admin, I want to be able to have a dashboard that shows usage stats and locations, so that I can identify the neighbourhoods with the largest number of drop-offs and to try getting more facilities involved."
+     }
+    ],
+    "name": "Dashboard",
+    "freq": 2
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R29",
+     "R40"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R29.s1",
+      "text": "As a user, I want to have my personal information kept securely in the database of the website, so that I will not suffer from identity theft or telephone harassment."
+     },
+     {
+      "sid": "R40.s1",
+      "text": "As an admin, I want to add recycling center information, so that I can keep the database up-to-date over time."
+     }
+    ],
+    "name": "Database",
+    "freq": 2
+   },
+   {
+    "id": "C8",
+    "src": [
+     "R27",
+     "R34",
+     "R35"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a developer, I want to access an API from the website, so that I can integrate it and implement certain features in my own iOS application."
+     },
+     {
+      "sid": "R34.s1",
+      "text": "As a developer, I want to use bootstrap in the process of developing, so that I can easily design my website."
+     },
+     {
+      "sid": "R35.s1",
+      "text": "As a developer, I want to attend some UI/UX lessons, so that I can develop an awesome and beautiful features website."
+     }
+    ],
+    "name": "Developer",
+    "freq": 3
+   },
+   {
+    "id": "C9",
+    "src": [
+     "R4",
+     "R46"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a user, I want to be able to get the hours of each recycling facility, so that I can arrange drop-offs on my off days or during after-work hours."
+     },
+     {
+      "sid": "R46.s1",
+      "text": "As an admin, I want to be able to have a dashboard that shows usage stats and locations, so that I can identify the neighbourhoods with the largest number of drop-offs and to try getting more facilities involved."
+     }
+    ],
+    "name": "DropOff",
+    "freq": 2
+   },
+   {
+    "id": "C10",
+    "src": [
+     "R25",
+     "R26",
+     "R32"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R25.s1",
+      "text": "As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood."
+     },
+     {
+      "sid": "R26.s1",
+      "text": "As an employee from the HR department, I want to have access to the full information of all employees working for this business."
+     },
+     {
+      "sid": "R32.s1",
+      "text": "As an employee, I want to get quick notifications, so that I can process cases the first time."
+     }
+    ],
+    "name": "Employee",
+    "freq": 4
+   },
+   {
+    "id": "C11",
+    "src": [],
+    "rule": [
+     "inferred"
+    ],
+    "evidence": [],
+    "name": "EmployeeFromTheHrDepartment",
+    "freq": 0
+   },
+   {
+    "id": "C12",
+    "src": [
+     "R24"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As an executive, I want to have full access to data related to my company, so that I can have a sense of my company's performance."
+     }
+    ],
+    "name": "Executive",
+    "freq": 1
+   },
+   {
+    "id": "C13",
+    "src": [
+     "R6",
+     "R46",
+     "R47"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As a user, I want to be able to select different types of recyclable waste, so I have and get a list of facilities that accept each type and their opening hours, so that I can find an optimal route and schedule."
+     },
+     {
+      "sid": "R46.s1",
+      "text": "As an admin, I want to be able to have a dashboard that shows usage stats and locations, so that I can identify the neighbourhoods with the largest number of drop-offs and to try getting more facilities involved."
+     },
+     {
+      "sid": "R47.s1",
+      "text": "As an admin, I want to be able to communicate directly with facilities, so that I can keep them updated about features we have on our website."
+     }
+    ],
+    "name": "Facility",
+    "freq": 3
+   },
+   {
+    "id": "C14",
+    "src": [
+     "R14",
+     "R17",
+     "R39"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "As a user, I want to get feedback when I enter an invalid zip code."
+     },
+     {
+      "sid": "R17.s1",
+      "text": "As an admin, I want to be able to read users' feedback and complaints, so that we can add more features and keep improving the service we provide to them."
+     },
+     {
+      "sid": "R39.s1",
+      "text": "As a user, I want to contact the administrators, so that I can give feedback or ask for help."
+     }
+    ],
+    "name": "Feedback",
+    "freq": 3
+   },
+   {
+    "id": "C15",
+    "src": [
+     "R4",
+     "R50"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a user, I want to be able to get the hours of each recycling facility, so that I can arrange drop-offs on my off days or during after-work hours."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As a recyclingfacility representative, I want to have access to user stats and schedules, so that I can adjust my hours and/or upgrade equipment and capacity in order to be able to accomodate larger amounts of recyclable materials."
+     }
+    ],
+    "name": "Hour",
+    "freq": 3
+   },
+   {
+    "id": "C16",
+    "src": [
+     "R41",
+     "R51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R41.s1",
+      "text": "As an admin, I want to view user error logs, so that I can fix or review any issues that are being faced by users of the system."
+     },
+     {
+      "sid": "R51.s1",
+      "text": "As a recyclingfacility, I want to be able to communicate directly with the site admin and convey any issues or concerns I have, so that they fix them."
+     }
+    ],
+    "name": "Issue",
+    "freq": 2
+   },
+   {
+    "id": "C17",
+    "src": [
+     "R36",
+     "R46"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R36.s1",
+      "text": "As a user, I want to view all locations of recycling centers on a map, so that I can check which routes to take to drop off waste."
+     },
+     {
+      "sid": "R46.s1",
+      "text": "As an admin, I want to be able to have a dashboard that shows usage stats and locations, so that I can identify the neighbourhoods with the largest number of drop-offs and to try getting more facilities involved."
+     }
+    ],
+    "name": "Location",
+    "freq": 2
+   },
+   {
+    "id": "C18",
+    "src": [
+     "R9",
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a user, I want to be able to view a map display of the public recycling bins around my area."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "As a user, I want to be able to view a map display of the special waste drop off sites around my area."
+     }
+    ],
+    "name": "MapDisplay",
+    "freq": 2
+   },
+   {
+    "id": "C19",
+    "src": [
+     "R49",
+     "R50"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R49.s1",
+      "text": "As a recyclingfacility representative, I want to be able to update my information and the type of material I accept, so that I can avoid any miscommunication with users."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As a recyclingfacility representative, I want to have access to user stats and schedules, so that I can adjust my hours and/or upgrade equipment and capacity in order to be able to accomodate larger amounts of recyclable materials."
+     }
+    ],
+    "name": "Material",
+    "freq": 2
+   },
+   {
+    "id": "C20",
+    "src": [
+     "R25",
+     "R46"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R25.s1",
+      "text": "As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood."
+     },
+     {
+      "sid": "R46.s1",
+      "text": "As an admin, I want to be able to have a dashboard that shows usage stats and locations, so that I can identify the neighbourhoods with the largest number of drop-offs and to try getting more facilities involved."
+     }
+    ],
+    "name": "Neighbourhood",
+    "freq": 2
+   },
+   {
+    "id": "C21",
+    "src": [
+     "R8",
+     "R32"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a user, I want to be able to give my email ID, so that I can receive notifications for new events as they are posted."
+     },
+     {
+      "sid": "R32.s1",
+      "text": "As an employee, I want to get quick notifications, so that I can process cases the first time."
+     }
+    ],
+    "name": "Notification",
+    "freq": 2
+   },
+   {
+    "id": "C22",
+    "src": [
+     "R5",
+     "R12"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a user, I want to have a flexible pick up time, so that I can more conveniently use the website."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As a user, I want to choose a flexible pick up time, so that I can more conveniently use the website."
+     }
+    ],
+    "name": "Pick",
+    "freq": 2
+   },
+   {
+    "id": "C23",
+    "src": [
+     "R7",
+     "R15",
+     "R38"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As a user, I want to add donation centers as favorites on my profile, so that I can view them later."
+     },
+     {
+      "sid": "R15.s1",
+      "text": "As a user, I want to be able to create an acocunt, so that I can create my own profile."
+     },
+     {
+      "sid": "R38.s1",
+      "text": "As a user, I want to link my email account to my profile, so that I can get a temporary password in case I forget my own one."
+     }
+    ],
+    "name": "Profile",
+    "freq": 3
+   },
+   {
+    "id": "C24",
+    "src": [
+     "R36",
+     "R37",
+     "R42",
+     "R43",
+     "R45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R36.s1",
+      "text": "As a user, I want to view all locations of recycling centers on a map, so that I can check which routes to take to drop off waste."
+     },
+     {
+      "sid": "R37.s1",
+      "text": "As a user, I want to upload my week's schedule, so that I can get recommendations for recycling centers that best fit my availability."
+     },
+     {
+      "sid": "R42.s1",
+      "text": "As an admin, I want to onboard recycling centers on the platform, so that I can increase information accuracy."
+     }
+    ],
+    "name": "RecyclingCenter",
+    "freq": 5
+   },
+   {
+    "id": "C25",
+    "src": [
+     "R40",
+     "R43",
+     "R44"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R40.s1",
+      "text": "As an admin, I want to add recycling center information, so that I can keep the database up-to-date over time."
+     },
+     {
+      "sid": "R43.s1",
+      "text": "As a superuser, I want to update the recycling center information, so that I can provide the latest information about the recycling center."
+     },
+     {
+      "sid": "R44.s1",
+      "text": "As a superuser, I want to view users' stats, so that I can view in real-time how many users have visited my recycling center information and their recyclable waste."
+     }
+    ],
+    "name": "RecyclingCenterInformation",
+    "freq": 3
+   },
+   {
+    "id": "C26",
+    "src": [
+     "R3",
+     "R4"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to be able to enter my zip code and get a list of nearby recycling facilities, so that I can determine which ones I should consider."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "As a user, I want to be able to get the hours of each recycling facility, so that I can arrange drop-offs on my off days or during after-work hours."
+     }
+    ],
+    "name": "RecyclingFacility",
+    "freq": 2
+   },
+   {
+    "id": "C27",
+    "src": [
+     "R51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R51.s1",
+      "text": "As a recyclingfacility, I want to be able to communicate directly with the site admin and convey any issues or concerns I have, so that they fix them."
+     }
+    ],
+    "name": "Recyclingfacility",
+    "freq": 1
+   },
+   {
+    "id": "C28",
+    "src": [
+     "R49",
+     "R50"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R49.s1",
+      "text": "As a recyclingfacility representative, I want to be able to update my information and the type of material I accept, so that I can avoid any miscommunication with users."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As a recyclingfacility representative, I want to have access to user stats and schedules, so that I can adjust my hours and/or upgrade equipment and capacity in order to be able to accomodate larger amounts of recyclable materials."
+     }
+    ],
+    "name": "RecyclingfacilityRepresentative",
+    "freq": 2
+   },
+   {
+    "id": "C29",
+    "src": [
+     "R6",
+     "R37",
+     "R50"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As a user, I want to be able to select different types of recyclable waste, so I have and get a list of facilities that accept each type and their opening hours, so that I can find an optimal route and schedule."
+     },
+     {
+      "sid": "R37.s1",
+      "text": "As a user, I want to upload my week's schedule, so that I can get recommendations for recycling centers that best fit my availability."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As a recyclingfacility representative, I want to have access to user stats and schedules, so that I can adjust my hours and/or upgrade equipment and capacity in order to be able to accomodate larger amounts of recyclable materials."
+     }
+    ],
+    "name": "Schedule",
+    "freq": 3
+   },
+   {
+    "id": "C30",
+    "src": [
+     "R43",
+     "R44",
+     "R45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R43.s1",
+      "text": "As a superuser, I want to update the recycling center information, so that I can provide the latest information about the recycling center."
+     },
+     {
+      "sid": "R44.s1",
+      "text": "As a superuser, I want to view users' stats, so that I can view in real-time how many users have visited my recycling center information and their recyclable waste."
+     },
+     {
+      "sid": "R45.s1",
+      "text": "As a superuser, I want to reply to user questions, so that I can answer any questions about my recycling center."
+     }
+    ],
+    "name": "Superuser",
+    "freq": 3
+   },
+   {
+    "id": "C31",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R15",
+     "R16",
+     "R18",
+     "R19",
+     "R20",
+     "R21",
+     "R28",
+     "R29",
+     "R36",
+     "R37",
+     "R38",
+     "R39",
+     "R41",
+     "R44",
+     "R48",
+     "R49"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a user, I want to click on the address, so that it takes me to a new tab with Google Maps."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "As a user, I want to be able to anonymously view public information, so that I know about recycling centers near me before creating an account."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to be able to enter my zip code and get a list of nearby recycling facilities, so that I can determine which ones I should consider."
+     }
+    ],
+    "name": "User",
+    "freq": 30
+   },
+   {
+    "id": "C32",
+    "src": [
+     "R6",
+     "R36",
+     "R44",
+     "R48"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As a user, I want to be able to select different types of recyclable waste, so I have and get a list of facilities that accept each type and their opening hours, so that I can find an optimal route and schedule."
+     },
+     {
+      "sid": "R36.s1",
+      "text": "As a user, I want to view all locations of recycling centers on a map, so that I can check which routes to take to drop off waste."
+     },
+     {
+      "sid": "R44.s1",
+      "text": "As a superuser, I want to view users' stats, so that I can view in real-time how many users have visited my recycling center information and their recyclable waste."
+     }
+    ],
+    "name": "Waste",
+    "freq": 4
+   },
+   {
+    "id": "C33",
+    "src": [
+     "R4",
+     "R25"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a user, I want to be able to get the hours of each recycling facility, so that I can arrange drop-offs on my off days or during after-work hours."
+     },
+     {
+      "sid": "R25.s1",
+      "text": "As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood."
+     }
+    ],
+    "name": "Work",
+    "freq": 2
+   },
+   {
+    "id": "C34",
+    "src": [
+     "R3",
+     "R14"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to be able to enter my zip code and get a list of nearby recycling facilities, so that I can determine which ones I should consider."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "As a user, I want to get feedback when I enter an invalid zip code."
+     }
+    ],
+    "name": "ZipCode",
+    "freq": 2
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R24"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As an executive, I want to have full access to data related to my company, so that I can have a sense of my company's performance."
+     }
+    ],
+    "owner": "Company",
+    "name": "performance",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As a user, I want to be able to select different types of recyclable waste, so I have and get a list of facilities that accept each type and their opening hours, so that I can find an optimal route and schedule."
+     }
+    ],
+    "owner": "Facility",
+    "name": "opening hour",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R50"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R50.s1",
+      "text": "As a recyclingfacility representative, I want to have access to user stats and schedules, so that I can adjust my hours and/or upgrade equipment and capacity in order to be able to accomodate larger amounts of recyclable materials."
+     }
+    ],
+    "owner": "Material",
+    "name": "amount",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R30"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R30.s1",
+      "text": "As an admin, I want to handle all users' activities, so that I can manage more efficiently."
+     }
+    ],
+    "owner": "User",
+    "name": "activity",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R44"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R44.s1",
+      "text": "As a superuser, I want to view users' stats, so that I can view in real-time how many users have visited my recycling center information and their recyclable waste."
+     }
+    ],
+    "owner": "User",
+    "name": "stat",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R30"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R30.s1",
+      "text": "As an admin, I want to handle all users' activities, so that I can manage more efficiently."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Admin",
+    "target": "Activity",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R22",
+     "R46"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R22.s1",
+      "text": "As an admin, I want to view a dashboard that monitors all the sites' statuses, so that I can have a sense of what people are doing on our sites and know the service status."
+     },
+     {
+      "sid": "R46.s1",
+      "text": "As an admin, I want to be able to have a dashboard that shows usage stats and locations, so that I can identify the neighbourhoods with the largest number of drop-offs and to try getting more facilities involved."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Admin",
+    "target": "Dashboard",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R47"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R47.s1",
+      "text": "As an admin, I want to be able to communicate directly with facilities, so that I can keep them updated about features we have on our website."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Admin",
+    "target": "Facility",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R17"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R17.s1",
+      "text": "As an admin, I want to be able to read users' feedback and complaints, so that we can add more features and keep improving the service we provide to them."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Admin",
+    "target": "Feedback",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R40"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R40.s1",
+      "text": "As an admin, I want to add recycling center information, so that I can keep the database up-to-date over time."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Admin",
+    "target": "RecyclingCenterInformation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R42"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R42.s1",
+      "text": "As an admin, I want to onboard recycling centers on the platform, so that I can increase information accuracy."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Admin",
+    "target": "RecyclingCenter",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL7",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As an admin, I want to be able to add or remove recycling facilities' information, so that users get the most recent information."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Admin",
+    "target": "RecyclingFacility",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL8",
+    "src": [
+     "R41"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R41.s1",
+      "text": "As an admin, I want to view user error logs, so that I can fix or review any issues that are being faced by users of the system."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Admin",
+    "target": "UserErrorLog",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL9",
+    "src": [
+     "R21"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R21.s1",
+      "text": "As an admin, I want to be able to block specific users based on IP address, so that I can prevent spamming on the websites."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Admin",
+    "target": "User",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL10",
+    "src": [
+     "R33"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a company accountant, I want to view all available activity fees online, so that I can easily create a bill statement."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "CompanyAccountant",
+    "target": "ActivityFee",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL11",
+    "src": [
+     "R27"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R27.s1",
+      "text": "As a developer, I want to access an API from the website, so that I can integrate it and implement certain features in my own iOS application."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Developer",
+    "target": "Api",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL12",
+    "src": [
+     "R34"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R34.s1",
+      "text": "As a developer, I want to use bootstrap in the process of developing, so that I can easily design my website."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Developer",
+    "target": "Bootstrap",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL13",
+    "src": [
+     "R35"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a developer, I want to attend some UI/UX lessons, so that I can develop an awesome and beautiful features website."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Developer",
+    "target": "UxLesson",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL14",
+    "src": [
+     "R26"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R26.s1",
+      "text": "As an employee from the HR department, I want to have access to the full information of all employees working for this business."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "EmployeeFromTheHrDepartment",
+    "target": "Access",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL15",
+    "src": [
+     "R32"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R32.s1",
+      "text": "As an employee, I want to get quick notifications, so that I can process cases the first time."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Notification",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL16",
+    "src": [
+     "R25"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R25.s1",
+      "text": "As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "RoutePlanningSystem",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL17",
+    "src": [
+     "R24"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As an executive, I want to have full access to data related to my company, so that I can have a sense of my company's performance."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Executive",
+    "target": "Access",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL18",
+    "src": [
+     "R50"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R50.s1",
+      "text": "As a recyclingfacility representative, I want to have access to user stats and schedules, so that I can adjust my hours and/or upgrade equipment and capacity in order to be able to accomodate larger amounts of recyclable materials."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "RecyclingfacilityRepresentative",
+    "target": "Access",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL19",
+    "src": [
+     "R43"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R43.s1",
+      "text": "As a superuser, I want to update the recycling center information, so that I can provide the latest information about the recycling center."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Superuser",
+    "target": "RecyclingCenterInformation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL20",
+    "src": [
+     "R44"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R44.s1",
+      "text": "As a superuser, I want to view users' stats, so that I can view in real-time how many users have visited my recycling center information and their recyclable waste."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Superuser",
+    "target": "Stat",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL21",
+    "src": [
+     "R45"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R45.s1",
+      "text": "As a superuser, I want to reply to user questions, so that I can answer any questions about my recycling center."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Superuser",
+    "target": "UserQuestion",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL22",
+    "src": [
+     "R15"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "As a user, I want to be able to create an acocunt, so that I can create my own profile."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Acocunt",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL23",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a user, I want to click on the address, so that it takes me to a new tab with Google Maps."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Address",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL24",
+    "src": [
+     "R39"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R39.s1",
+      "text": "As a user, I want to contact the administrators, so that I can give feedback or ask for help."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Administrator",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL25",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a user, I want to be able to view the safe disposal events currently being organised around my area."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "DisposalEvent",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL26",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As a user, I want to add donation centers as favorites on my profile, so that I can view them later."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "DonationCenter",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL27",
+    "src": [
+     "R38"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R38.s1",
+      "text": "As a user, I want to link my email account to my profile, so that I can get a temporary password in case I forget my own one."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "EmailAccount",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL28",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a user, I want to be able to give my email ID, so that I can receive notifications for new events as they are posted."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "EmailId",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL29",
+    "src": [
+     "R14"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "As a user, I want to get feedback when I enter an invalid zip code."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Feedback",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL30",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a user, I want to be able to get the hours of each recycling facility, so that I can arrange drop-offs on my off days or during after-work hours."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Hour",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL31",
+    "src": [
+     "R36"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R36.s1",
+      "text": "As a user, I want to view all locations of recycling centers on a map, so that I can check which routes to take to drop off waste."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Location",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL32",
+    "src": [
+     "R9",
+     "R10"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a user, I want to be able to view a map display of the public recycling bins around my area."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "As a user, I want to be able to view a map display of the special waste drop off sites around my area."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "MapDisplay",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL33",
+    "src": [
+     "R5",
+     "R12"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a user, I want to have a flexible pick up time, so that I can more conveniently use the website."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As a user, I want to choose a flexible pick up time, so that I can more conveniently use the website."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Pick",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL34",
+    "src": [
+     "R28"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a user, I want to be able to receive tempting rewards, so that I have a reason to use the website."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Reward",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL35",
+    "src": [
+     "R37"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a user, I want to upload my week's schedule, so that I can get recommendations for recycling centers that best fit my availability."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Schedule",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL36",
+    "src": [
+     "R18"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R18.s1",
+      "text": "As a user, I want to be able to check transaction history and keep a record of it, so that I can go back when needed."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "TransactionHistory",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL37",
+    "src": [
+     "R19"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R19.s1",
+      "text": "As a user, I want to have a great UI and UX from the sites, so that I have a pleasant experience when navigating through them."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "Ui",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL38",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As a user, I want to view user documentation for the website, so that I know how to use the web app."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "UserDocumentation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL39",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a user, I want to be able to enter my zip code and get a list of nearby recycling facilities, so that I can determine which ones I should consider."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "User",
+    "target": "ZipCode",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL40",
+    "src": [
+     "R36"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R36.s1",
+      "text": "As a user, I want to view all locations of recycling centers on a map, so that I can check which routes to take to drop off waste."
+     }
+    ],
+    "kind": "has",
+    "source": "RecyclingCenter",
+    "target": "Location",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL41",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a user, I want to be able to get the hours of each recycling facility, so that I can arrange drop-offs on my off days or during after-work hours."
+     }
+    ],
+    "kind": "has",
+    "source": "RecyclingFacility",
+    "target": "Hour",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL42",
+    "src": [
+     "R17"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R17.s1",
+      "text": "As an admin, I want to be able to read users' feedback and complaints, so that we can add more features and keep improving the service we provide to them."
+     }
+    ],
+    "kind": "has",
+    "source": "User",
+    "target": "Feedback",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL43",
+    "src": [
+     "R44"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R44.s1",
+      "text": "As a superuser, I want to view users' stats, so that I can view in real-time how many users have visited my recycling center information and their recyclable waste."
+     }
+    ],
+    "kind": "has",
+    "source": "User",
+    "target": "Waste",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": [
+  "R2 (incompleteness, \"information\"): readings []",
+  "R5 (incompleteness, \"flexible\"): readings []",
+  "R12 (incompleteness, \"flexible\"): readings []",
+  "R16 (incompleteness, \"information\"): readings []",
+  "R18 (incompleteness, \"it\"): readings []",
+  "R20 (incompleteness, \"stuffs\"): readings []",
+  "R23 (incompleteness, \"information\"): readings []",
+  "R26 (incompleteness, \"information\"): readings []",
+  "R27 (incompleteness, \"certain\"): readings []",
+  "R29 (incompleteness, \"noun or noun\"): readings []",
+  "R29 (incompleteness, \"information\"): readings []",
+  "R31 (incompleteness, \"stuff\"): readings []",
+  "R40 (incompleteness, \"information\"): readings []",
+  "R42 (incompleteness, \"information\"): readings []",
+  "R43 (incompleteness, \"information\"): readings []",
+  "R44 (incompleteness, \"information\"): readings []",
+  "R49 (incompleteness, \"any\"): readings []",
+  "R49 (incompleteness, \"information\"): readings []"
+ ]
+}

@@ -1,0 +1,27 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class BLQModel {
+  queries : String
+  entries : String
+  fields : String
+  +addQuery()
+  +addEntry()
+  +addField()
+}
+class Query {
+  name : String
+}
+class Entry {
+  name : String
+  allFields : boolean
+}
+class Field {
+  name : String
+}
+class Predicate {
+  name : String
+}
+Entry "1" -- "1" Field : is associated to
+Predicate "1" -- "1" Entry : is associated to
+@enduml

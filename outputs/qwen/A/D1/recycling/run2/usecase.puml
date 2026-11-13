@@ -1,0 +1,92 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "User" as A1
+actor "Admin" as A2
+actor "Superuser" as A3
+actor "Moderator" as A4
+actor "Executive" as A5
+actor "Employee" as A6
+actor "HREmployee" as A7
+actor "Developer" as A8
+actor "RecyclingFacilityRepresentative" as A9
+actor "RecyclingFacility" as A10
+rectangle "recycling" {
+  usecase "View Public Information" as UC1
+  usecase "Enter Zip Code And Get Nearby Facilities" as UC2
+  usecase "Get Hours Of Facilities" as UC3
+  usecase "Flexible Pick Up Time" as UC4
+  usecase "Select Recyclable Waste Types" as UC5
+  usecase "Add Favorites" as UC6
+  usecase "Enter Email ID" as UC7
+  usecase "View Map Of Recycling Bins" as UC8
+  usecase "View Map Of Special Waste Sites" as UC9
+  usecase "View Safe Disposal Events" as UC10
+  usecase "View User Documentation" as UC11
+  usecase "View Feedback For Invalid Zip Code" as UC12
+  usecase "Create Account" as UC13
+  usecase "Add Or Remove Recycling Facilities Information" as UC14
+  usecase "Read Users Feedback And Complaints" as UC15
+  usecase "Block Specific Users" as UC16
+  usecase "View Dashboard" as UC17
+  usecase "Encrypt Data" as UC18
+  usecase "Access Data Related To Company" as UC19
+  usecase "Access Route Planning System" as UC20
+  usecase "Access Full Employee Information" as UC21
+  usecase "Access API" as UC22
+  usecase "Use Bootstrap" as UC23
+  usecase "Attend UI UX Lessons" as UC24
+  usecase "View Recycling Center Locations" as UC25
+  usecase "Upload Weekly Schedule" as UC26
+  usecase "Link Email Account" as UC27
+  usecase "Contact Administrators" as UC28
+  usecase "Add Recycling Center Information" as UC29
+  usecase "View User Error Logs" as UC30
+  usecase "Onboard Recycling Centers" as UC31
+  usecase "Update Recycling Center Information" as UC32
+  usecase "View Users Stats" as UC33
+  usecase "Reply To User Questions" as UC34
+  usecase "Communicate With Facilities" as UC35
+  usecase "Update Information And Types Of Material" as UC36
+  usecase "Access User Stats And Schedules" as UC37
+  usecase "Communicate With Site Admin" as UC38
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+A1 --> UC7
+A1 --> UC8
+A1 --> UC9
+A1 --> UC10
+A1 --> UC11
+A1 --> UC12
+A1 --> UC13
+A2 --> UC14
+A2 --> UC15
+A2 --> UC16
+A2 --> UC17
+A2 --> UC18
+A5 --> UC19
+A6 --> UC20
+A7 --> UC21
+A8 --> UC22
+A8 --> UC23
+A8 --> UC24
+A1 --> UC25
+A1 --> UC26
+A1 --> UC27
+A1 --> UC28
+A2 --> UC29
+A2 --> UC30
+A2 --> UC31
+A3 --> UC32
+A3 --> UC33
+A3 --> UC34
+A2 --> UC35
+A9 --> UC36
+A10 --> UC37
+A10 --> UC38
+@enduml

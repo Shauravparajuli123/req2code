@@ -1,0 +1,65 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Camper {
+  name : String
+  emergencyInformation : String
+  parent : String
+  +addCamper()
+  +removeCamper()
+  +modifyCamperInformation()
+  +deleteCamper()
+}
+class Parent {
+  name : String
+  account : String
+  children : String
+  +createAccount()
+  +enrollCamper()
+  +modifyParentInformation()
+  +deleteParent()
+}
+class CampWorker {
+  name : String
+  assignedCampers : String
+  +takeAttendance()
+  +reportCamperBehavior()
+  +reportSuppliesShortage()
+  +reportFacilityRepair()
+}
+class CampAdministrator {
+  +addCamper()
+  +removeCamper()
+  +keepCamperRecords()
+  +uploadConsentForms()
+  +trackFormSubmissions()
+  +scheduleActivities()
+  +createNametags()
+  +suspendCamper()
+  +setReminders()
+  +assignPositions()
+  +warnCampWorker()
+  +createRules()
+  +trackFacilityUsage()
+  +storeEmergencyInformation()
+  +storeParentInformation()
+  +provideFeedback()
+  +createRegistrationForms()
+  +storeCampInformation()
+  +logAttendance()
+  +addParent()
+  +createGroups()
+  +seeGroupEvents()
+  +scheduleTasks()
+  +deleteTasks()
+  +modifyTasks()
+  +modifyCamperInformation()
+  +deleteCampers()
+  +modifyParentInformation()
+  +deleteParents()
+  +modifyGroupInformation()
+}
+CampAdministrator "1" -- "0..*" Camper : has
+CampAdministrator "1" -- "0..*" Parent : has
+CampAdministrator "1" -- "0..*" CampWorker : has
+@enduml

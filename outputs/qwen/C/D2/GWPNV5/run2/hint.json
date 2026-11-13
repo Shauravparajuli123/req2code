@@ -1,0 +1,432 @@
+{
+ "condition": "C",
+ "hint": {
+  "case": "D2/GWPNV5",
+  "stage": "result1_before_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R4",
+     "R13",
+     "R14"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "An arc of a Petri net is associated with a weight."
+     },
+     {
+      "sid": "R13.s1",
+      "text": "A place-transition arc in a Petri net has exactly one transition representing the destination of the arc."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "In a Petri net, a transition-place arc has exactly one transition acting as the source of the arc."
+     }
+    ],
+    "name": "Arc",
+    "freq": 3
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "Petri nets models have places, which are associated to exactly one net"
+     }
+    ],
+    "name": "Net",
+    "freq": 1
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "In the PetriNet package, a Transition object belongs to at most one Net object"
+     }
+    ],
+    "name": "Object",
+    "freq": 1
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R15"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "An arc of a Petri net is associated with a weight."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A Petri net has place-transition arcs."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A Petri net is composed of transition-place arcs."
+     }
+    ],
+    "name": "PetriNet",
+    "freq": 9
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R1",
+     "R8",
+     "R9",
+     "R12",
+     "R15"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A petri net model has places"
+     },
+     {
+      "sid": "R8.s1",
+      "text": "Petri nets models have places, which are associated to exactly one net"
+     },
+     {
+      "sid": "R9.s1",
+      "text": "A place has zero to n input arcs"
+     }
+    ],
+    "name": "Place",
+    "freq": 5
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R5",
+     "R13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A Petri net has place-transition arcs."
+     },
+     {
+      "sid": "R13.s1",
+      "text": "A place-transition arc in a Petri net has exactly one transition representing the destination of the arc."
+     }
+    ],
+    "name": "PlaceTransitionArc",
+    "freq": 2
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R11",
+     "R13",
+     "R14"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "A transition of a Petri net has zero to n output arcs."
+     },
+     {
+      "sid": "R13.s1",
+      "text": "A place-transition arc in a Petri net has exactly one transition representing the destination of the arc."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "In a Petri net, a transition-place arc has exactly one transition acting as the source of the arc."
+     }
+    ],
+    "name": "Transition",
+    "freq": 3
+   },
+   {
+    "id": "C8",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "In the PetriNet package, a Transition object belongs to at most one Net object"
+     }
+    ],
+    "name": "TransitionObject",
+    "freq": 1
+   },
+   {
+    "id": "C9",
+    "src": [
+     "R6",
+     "R14"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A Petri net is composed of transition-place arcs."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "In a Petri net, a transition-place arc has exactly one transition acting as the source of the arc."
+     }
+    ],
+    "name": "TransitionPlaceArc",
+    "freq": 2
+   },
+   {
+    "id": "C10",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "An arc of a Petri net is associated with a weight."
+     }
+    ],
+    "name": "Weight",
+    "freq": 1
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "A place-transition arc in a Petri net has exactly one transition representing the destination of the arc."
+     }
+    ],
+    "owner": "Arc",
+    "name": "destination",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R14"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "In a Petri net, a transition-place arc has exactly one transition acting as the source of the arc."
+     }
+    ],
+    "owner": "Arc",
+    "name": "source",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "An arc of a Petri net is associated with a weight."
+     }
+    ],
+    "kind": "association",
+    "source": "Arc",
+    "target": "Weight",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "Petri nets models have places, which are associated to exactly one net"
+     }
+    ],
+    "kind": "association",
+    "source": "Place",
+    "target": "Net",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "In the PetriNet package, a Transition object belongs to at most one Net object"
+     }
+    ],
+    "kind": "association",
+    "source": "TransitionObject",
+    "target": "Object",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "An arc of a Petri net is associated with a weight."
+     }
+    ],
+    "kind": "has",
+    "source": "PetriNet",
+    "target": "Arc",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A Petri net has place-transition arcs."
+     }
+    ],
+    "kind": "has",
+    "source": "PetriNet",
+    "target": "PlaceTransitionArc",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R15"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "A token is associated with exactly one place of the Petri net."
+     }
+    ],
+    "kind": "has",
+    "source": "PetriNet",
+    "target": "Place",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL7",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "A transition of a Petri net has zero to n output arcs."
+     }
+    ],
+    "kind": "has",
+    "source": "PetriNet",
+    "target": "Transition",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL8",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "A place-transition arc in a Petri net has exactly one transition representing the destination of the arc."
+     }
+    ],
+    "kind": "has",
+    "source": "PlaceTransitionArc",
+    "target": "Transition",
+    "multiplicity_target": "one"
+   }
+  ]
+ },
+ "open_tags": []
+}

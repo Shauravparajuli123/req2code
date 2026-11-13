@@ -1,0 +1,60 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Employee {
+  name : String
+  certificate : String
+  status : String
+  group : String
+  qualification : String
+  preferredWorkingHours : String
+  +expressHour()
+  +viewSchedule()
+  +viewCertificate()
+  +changeInformation()
+  +viewContract()
+  +viewStatement()
+  +resetPassword()
+  +navigateApplication()
+  +choosePayment()
+  +chooseEmail()
+  +fileComplaint()
+  +viewComplaint()
+  +respondComplaint()
+  +viewInbox()
+}
+class Manager {
+  name : String
+  hiringProcess : String
+  employeeOverview : String
+  +sendSalaryStatement()
+  +enableOption()
+  +automatePaymentSystem()
+  +outsourcePart()
+  +semiSchedulingProcess()
+  +authorizeSchedule()
+  +notifyAdjustment()
+  +notifyHiringProcess()
+  +viewSchedule()
+  +viewContract()
+  +viewStatement()
+  +contactEmployee()
+  +forwardMessage()
+  +haveOverview()
+  +haveSystem()
+}
+class OfficeEmployee {
+  name : String
+  complaints : String
+  +categorizeComplaint()
+  +prioritizeComplaint()
+  +viewComplaint()
+  +respondComplaint()
+}
+class Applicant {
+  name : String
+  account : String
+  +registerAccount()
+}
+Manager "1" -- "0..*" Employee : manages
+@enduml

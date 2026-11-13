@@ -1,0 +1,217 @@
+{
+ "actors": [
+  {
+   "name": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "CreateBLQModel",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CreateBQLModel",
+   "actor": "User",
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "BLQModel",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "BQLModel",
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Element",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Query",
+   "src": [
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "name": "Entry",
+   "src": [
+    "R3",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Field",
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Predicate",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Expression",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Element",
+   "name": "location",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Element",
+   "name": "comments",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Entry",
+   "name": "name",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Entry",
+   "name": "allFields",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Field",
+   "name": "name",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "owner": "BQLModel",
+   "name": "queries",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "owner": "BQLModel",
+   "name": "entries",
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "owner": "BQLModel",
+   "name": "fields",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "owner": "BQLModel",
+   "name": "predicates",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "BQLModel",
+   "target": "Query",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "BQLModel",
+   "target": "Entry",
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "BQLModel",
+   "target": "Field",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "BQLModel",
+   "target": "Predicate",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Entry",
+   "target": "Field",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Predicate",
+   "target": "Entry",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

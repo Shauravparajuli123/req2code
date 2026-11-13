@@ -1,0 +1,168 @@
+{
+ "case": "D2/RelationalDBContent",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Owner",
+   "src": []
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "TupleElement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "value",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Tuple",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addTupleElement",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Database",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "sgbdName",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R7"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "addTuple",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R6",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "RelationalDBcontent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C5",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C5",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "composition",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "contains",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C4",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "owns",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "contains",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

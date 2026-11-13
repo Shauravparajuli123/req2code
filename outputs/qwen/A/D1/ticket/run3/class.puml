@@ -1,0 +1,67 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  dateOfBirth : LocalDate
+  email : String
+  address : String
+  preferences : String
+  personalInfo : String
+  paymentDetails : String
+  favoriteArtists : String
+  favoriteEvents : String
+  password : String
+  +savePersonalInformation()
+  +savePaymentDetails()
+  +fillOutSurvey()
+  +seePersonalizedContent()
+  +editPreferences()
+  +changePassword()
+  +editPersonalInformation()
+  +seeOrderHistory()
+  +seeUpcomingEvents()
+  +findFavoriteArtistsAndEvents()
+}
+class Visitor {
+  name : String
+  email : String
+  +readAboutEvent()
+  +buyTicketsDirectly()
+  +seeAvailableTickets()
+  +seeSeatMap()
+  +seeTicketTypes()
+  +addTicketsToCart()
+  +seeOrderSummary()
+  +searchEvents()
+  +clickOnEvent()
+  +sortSearchResultsByDate()
+  +filterSearchByPrice()
+  +filterSearchByVenue()
+  +filterSearchByGenre()
+  +seeCalendarView()
+  +seePopularEvents()
+}
+class Reseller {
+  name : String
+  bankAccount : String
+  +resellTicketsDirectly()
+  +uploadDigitalTicket()
+  +setTicketPrice()
+  +addTicketDescription()
+  +saveBankAccount()
+}
+class Artist {
+  name : String
+  website : String
+  socialMedia : String
+  description : String
+  musicPlatforms : String
+  +findInformationAboutEvent()
+  +linkToWebsite()
+  +linkToSocialMedia()
+  +descriptionOfArtistAndEvent()
+  +favoriteEventsOrArtists()
+  +linkToMusicPlatforms()
+}
+@enduml

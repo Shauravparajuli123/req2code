@@ -1,0 +1,21 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class ArchitectureDescription {
+  +selectView()
+  +selectViewPoint()
+}
+class ArchitectureView {
+  +conformToViewPoint()
+  +beProjectedOnto()
+}
+class ArchitectureViewPoint {
+  +conformToView()
+}
+class MainView {
+  +conformToViewPoint()
+}
+ArchitectureDescription "1" -- "1..*" ArchitectureView : has
+ArchitectureViewPoint --|> ArchitectureView
+MainView --|> ArchitectureView
+@enduml

@@ -1,0 +1,107 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "User" as A1
+actor "Visitor" as A2
+actor "Reseller" as A3
+actor "Company" as A4
+actor "Artist" as A5
+rectangle "ticket" {
+  usecase "Save Personal Information" as UC1
+  usecase "Save Payment Details" as UC2
+  usecase "Fill Out Survey" as UC3
+  usecase "See Personalized Content" as UC4
+  usecase "Edit Preferences" as UC5
+  usecase "Change Password" as UC6
+  usecase "Edit Personal Information" as UC7
+  usecase "See History Of Previous Ticket Orders" as UC8
+  usecase "See Overview Of Upcoming Events" as UC9
+  usecase "Find Favorited Artists And Events" as UC10
+  usecase "Read About Event" as UC11
+  usecase "Buy Tickets Directly From Event Page" as UC12
+  usecase "Sell Tickets Directly From Event Page" as UC13
+  usecase "Buy Ticket As Guest" as UC14
+  usecase "Fill In Name And Email When Buying A Ticket" as UC15
+  usecase "Buy Ticket In Short Process" as UC16
+  usecase "Purchase A Ticket" as UC17
+  usecase "Buy Multiple Tickets In One Purchase" as UC18
+  usecase "See Available Seats" as UC19
+  usecase "See Seats In Map" as UC20
+  usecase "See Types Of Tickets" as UC21
+  usecase "Add Tickets To Cart" as UC22
+  usecase "See Order Summary" as UC23
+  usecase "See List Of Payment Methods" as UC24
+  usecase "Get List Of Events As Search Results" as UC25
+  usecase "Click On Search Result" as UC26
+  usecase "Sort Search Results By Date" as UC27
+  usecase "Filter Search Results By Price" as UC28
+  usecase "Filter Search Results By Venue" as UC29
+  usecase "Filter Search Results By Genre" as UC30
+  usecase "Validate Tickets" as UC31
+  usecase "Deduct Service Fee" as UC32
+  usecase "Avoid Fraudulent Behavior" as UC33
+  usecase "Protect Users From Online Fraud" as UC34
+  usecase "Resell Tickets Directly From Event Page" as UC35
+  usecase "Upload Digital Ticket" as UC36
+  usecase "Set Price For Ticket" as UC37
+  usecase "Add Description Of Event" as UC38
+  usecase "Save Bank Account" as UC39
+  usecase "See Upcoming Events In Calendar View" as UC40
+  usecase "See Popular Upcoming Events" as UC41
+  usecase "Click On Event On Homepage" as UC42
+  usecase "Find Information About Event" as UC43
+  usecase "Have Link To Website" as UC44
+  usecase "Have Link To Social Media" as UC45
+  usecase "Have Description Of Event" as UC46
+  usecase "Favorite Events Or Artists" as UC47
+  usecase "Have Link To Music Platforms" as UC48
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+A1 --> UC7
+A1 --> UC8
+A1 --> UC9
+A1 --> UC10
+A2 --> UC11
+A2 --> UC12
+A3 --> UC13
+A2 --> UC14
+A2 --> UC15
+A2 --> UC16
+A2 --> UC17
+A2 --> UC18
+A2 --> UC19
+A2 --> UC20
+A2 --> UC21
+A2 --> UC22
+A2 --> UC23
+A2 --> UC24
+A2 --> UC25
+A2 --> UC26
+A2 --> UC27
+A2 --> UC28
+A2 --> UC29
+A2 --> UC30
+A4 --> UC31
+A4 --> UC32
+A4 --> UC33
+A4 --> UC34
+A3 --> UC35
+A3 --> UC36
+A3 --> UC37
+A3 --> UC38
+A3 --> UC39
+A2 --> UC40
+A2 --> UC41
+A2 --> UC42
+A5 --> UC43
+A5 --> UC44
+A5 --> UC45
+A5 --> UC46
+A1 --> UC47
+A5 --> UC48
+@enduml

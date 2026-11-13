@@ -1,0 +1,33 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class BusinessEntity {
+  businessContact : String
+  identifierBag : String
+  +addBusinessContact()
+}
+class Contact {
+}
+class IdentifierBag {
+  identifiers : String
+}
+class Model {
+  overviewDocuments : String
+  +addOverviewDocument()
+}
+class OverviewDocument {
+}
+class PifModel {
+  businessTemplate : String
+  +addBusinessTemplate()
+}
+enum Identifier {
+  STRING
+}
+enum BusinessContactType {
+  STRING
+}
+PifModel --|> Contact
+Model "0..*" -- "1" OverviewDocument : contains
+BusinessEntity "1" -- "0..*" Contact : has
+@enduml

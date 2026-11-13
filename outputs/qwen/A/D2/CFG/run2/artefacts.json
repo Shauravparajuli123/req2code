@@ -1,0 +1,95 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "setInNode",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "name": "ConditionalNode",
+   "kind": "class",
+   "attributes": [
+    "trueConditionNode"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "AbstractNode",
+   "kind": "class",
+   "attributes": [
+    "expression"
+   ],
+   "methods": [
+    {
+     "name": "setExpression",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1",
+    "R5"
+   ]
+  },
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "ConditionalNode",
+   "target": "Node",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "ConditionalNode",
+   "target": "Node",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "AbstractNode",
+   "target": "Expression",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/CFG.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R1, R2\"\"\"\n    name: _t.Optional[str] = None\n\n    def setInNode(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ConditionalNode(Node):\n    \"\"\"Source: R3, R7\"\"\"\n    trueConditionNode: _t.Optional[str] = None\n    node: _t.Optional[\"Node\"] = None\n\n\n@_dc.dataclass\nclass AbstractNode:\n    \"\"\"Source: R1, R5\"\"\"\n    expression: _t.Optional[str] = None\n\n    def setExpression(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Expression:\n    \"\"\"Source: R4\"\"\"\n    name: _t.Optional[str] = None\n",
+ "java": {
+  "Node.java": "/** Generated from shared model D2/CFG. Source: R1, R2 */\npublic class Node {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void setInNode() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ConditionalNode.java": "/** Generated from shared model D2/CFG. Source: R3, R7 */\npublic class ConditionalNode extends Node {\n    private java.lang.String trueConditionNode;\n    private Node node;\n}\n",
+  "AbstractNode.java": "/** Generated from shared model D2/CFG. Source: R1, R5 */\npublic class AbstractNode {\n    private java.lang.String expression;\n\n    /** Operation. */\n    public void setExpression() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Expression.java": "/** Generated from shared model D2/CFG. Source: R4 */\npublic class Expression {\n    private java.lang.String name;\n}\n"
+ }
+}

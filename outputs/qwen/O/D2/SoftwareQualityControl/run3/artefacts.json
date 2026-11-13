@@ -1,0 +1,181 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DescribeDate",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    "day",
+    "year"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Control",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "date"
+   ],
+   "methods": [
+    {
+     "name": "verbObject",
+     "use_case": "DescribeDate"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ControlsSequence",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "ControlsObject",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "Bug",
+   "kind": "class",
+   "attributes": [
+    "number",
+    "description",
+    "originator",
+    "commentsanswer",
+    "closedate"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "BugTracking",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "name": "ControlType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "SoftwareQualityControl",
+   "kind": "class",
+   "attributes": [
+    "bugTracking"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Control",
+   "target": "ControlsSequence",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ControlsObject",
+   "target": "ControlsSequence",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Control",
+   "target": "SoftwareQualityControl",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Bug",
+   "target": "BugTracking",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ControlType",
+   "target": "Bug",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "class Date:\n    def __init__(self, day: int, year: int):\n        self.day = day\n        self.year = year\n\n    def verbObject(self):\n        raise NotImplementedError\n\n\nclass Control:\n    def __init__(self, type: str, date: Date):\n        self.type = type\n        self.date = date\n\n    def verbObject(self):\n        raise NotImplementedError\n\n\nclass ControlsSequence:\n    pass\n\n\nclass ControlsObject:\n    def __init__(self, role: str):\n        self.role = role\n\n\nclass Bug:\n    def __init__(self, number: int, description: str, originator: str, commentsanswer: str, closedate: Date):\n        self.number = number\n        self.description = description\n        self.originator = originator\n        self.commentsanswer = commentsanswer\n        self.closedate = closedate\n\n\nclass BugTracking:\n    pass\n\n\nclass ControlType:\n    pass\n\n\nclass Architecture:\n    pass\n\n\nclass SoftwareQualityControl:\n    def __init__(self, bugTracking: BugTracking):\n        self.bugTracking = bugTracking\n",
+ "java": {}
+}

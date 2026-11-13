@@ -1,0 +1,132 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "IdentifierBag",
+   "kind": "class",
+   "attributes": [
+    "identifiers"
+   ],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "BusinessEntity",
+   "kind": "class",
+   "attributes": [
+    "identifiers",
+    "businessContacts"
+   ],
+   "methods": [
+    {
+     "name": "addBusinessContact",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "BusinessTemplate",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createTemplate",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Service",
+   "kind": "class",
+   "attributes": [
+    "serviceDescription"
+   ],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "BusinessEntityModel",
+   "kind": "class",
+   "attributes": [
+    "businessEntities"
+   ],
+   "methods": [
+    {
+     "name": "addBusinessEntity",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "overviewDocuments"
+   ],
+   "methods": [
+    {
+     "name": "addOverviewDocument",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "BusinessEntity",
+   "target": "IdentifierBag",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "BusinessEntity",
+   "target": "BusinessTemplate",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "source": "BusinessEntity",
+   "target": "Service",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "BusinessEntityModel",
+   "target": "Model",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/UDDI_meta-model_fragment.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass IdentifierBag:\n    \"\"\"Source: R5\"\"\"\n    identifiers: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass BusinessEntity:\n    \"\"\"Source: R9\"\"\"\n    identifiers: _t.Optional[str] = None\n    businessContacts: _t.Optional[str] = None\n    identifierBag: _t.Optional[\"IdentifierBag\"] = None\n    businessTemplates: _t.List[\"BusinessTemplate\"] = _dc.field(default_factory=list)\n    services: _t.List[\"Service\"] = _dc.field(default_factory=list)\n\n    def addBusinessContact(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass BusinessTemplate:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createTemplate(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Service:\n    \"\"\"Source: R3\"\"\"\n    serviceDescription: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Model:\n    \"\"\"Source: R10\"\"\"\n    overviewDocuments: _t.Optional[str] = None\n\n    def addOverviewDocument(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass BusinessEntityModel(Model):\n    \"\"\"Source: R4\"\"\"\n    businessEntities: _t.Optional[str] = None\n\n    def addBusinessEntity(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "IdentifierBag.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R5 */\npublic class IdentifierBag {\n    private java.lang.String identifiers;\n}\n",
+  "BusinessEntity.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R9 */\npublic class BusinessEntity {\n    private java.lang.String identifiers;\n    private java.lang.String businessContacts;\n    private IdentifierBag identifierBag;\n    private java.util.List<BusinessTemplate> businessTemplates;\n    private java.util.List<Service> services;\n\n    /** Operation. */\n    public void addBusinessContact() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "BusinessTemplate.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R1 */\npublic class BusinessTemplate {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void createTemplate() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Service.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R3 */\npublic class Service {\n    private java.lang.String serviceDescription;\n}\n",
+  "Model.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R10 */\npublic class Model {\n    private java.lang.String overviewDocuments;\n\n    /** Operation. */\n    public void addOverviewDocument() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "BusinessEntityModel.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R4 */\npublic class BusinessEntityModel extends Model {\n    private java.lang.String businessEntities;\n\n    /** Operation. */\n    public void addBusinessEntity() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

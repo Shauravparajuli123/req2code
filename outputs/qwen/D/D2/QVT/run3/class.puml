@@ -1,0 +1,20 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class TemplateExp {
+}
+class ObjectTemplateExp {
+  propertyTemplateItems : String
+}
+class CollectionTemplateExp {
+  oclExpressions : String
+}
+class PropertyTemplateItem {
+  objectContainer : String
+  referredProperty : String
+}
+PropertyTemplateItem "1" -- "1" ObjectTemplateExp : has
+TemplateExp "1" -- "1" ObjectTemplateExp : is
+CollectionTemplateExp "1" -- "1" TemplateExp : is
+ObjectTemplateExp "1" -- "1..*" PropertyTemplateItem : may contain
+@enduml

@@ -1,0 +1,118 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefinePlace",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "destination"
+   ],
+   "methods": [
+    {
+     "name": "addDestination",
+     "use_case": "DefinePlace"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "net",
+    "destinationPlace"
+   ],
+   "methods": [
+    {
+     "name": "setNet",
+     "use_case": "DefinePlace"
+    },
+    {
+     "name": "setDestinationPlace",
+     "use_case": "DefinePlace"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8"
+   ]
+  },
+  {
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "1",
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PetriNet",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R2",
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Place",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "Net",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Place:\n    def __init__(self):\n        self.destination: Transition = None\n\n    def addDestination(self, destination: Transition) -> None:\n        raise NotImplementedError()\n\nclass Transition:\n    def __init__(self):\n        self.net: Net = None\n        self.destinationPlace: Place = None\n\n    def setNet(self, net: Net) -> None:\n        raise NotImplementedError()\n\n    def setDestinationPlace(self, destinationPlace: Place) -> None:\n        raise NotImplementedError()\n\nclass Net:\n    pass\n\nclass PetriNet:\n    pass",
+ "java": {}
+}

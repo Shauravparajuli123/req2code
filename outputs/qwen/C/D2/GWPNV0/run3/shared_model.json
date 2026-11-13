@@ -1,0 +1,85 @@
+{
+ "case": "D2/GWPNV0",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Place",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Network",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C4",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C4",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R2",
+    "R7"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

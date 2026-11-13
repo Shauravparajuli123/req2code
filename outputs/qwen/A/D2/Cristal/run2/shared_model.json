@@ -1,0 +1,135 @@
+{
+ "case": "D2/Cristal",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Condition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "CompositeParDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "ElementaryPartDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ElementaryActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "CompositeActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "ActCompositeMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "PartCompositeMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9",
+    "R15",
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C7",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "may have",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "may be composed by",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "composition",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "may be composed by",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

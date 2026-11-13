@@ -1,0 +1,139 @@
+{
+ "actors": [
+  "student"
+ ],
+ "use_cases": [
+  {
+   "name": "EnrollInCourse",
+   "actor": "student",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "AccommodateInDormitory",
+   "actor": "student",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Exist",
+   "actor": "course",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Course",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "credit",
+    "professors",
+    "students"
+   ],
+   "methods": [
+    {
+     "name": "enrollStudent",
+     "use_case": "EnrollInCourse"
+    },
+    {
+     "name": "accommodateStudent",
+     "use_case": "AccommodateInDormitory"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Dormitory",
+   "kind": "class",
+   "attributes": [
+    "price",
+    "students"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Professor",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Student",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "enrollInCourse",
+     "use_case": "EnrollInCourse"
+    },
+    {
+     "name": "accommodateInDormitory",
+     "use_case": "AccommodateInDormitory"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Course",
+   "target": "Professor",
+   "multiplicity_target": "1",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Course",
+   "target": "Student",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Dormitory",
+   "target": "Student",
+   "multiplicity_target": "0..4",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Course:\n    def __init__(self, name: str, credit: int):\n        self.name = name\n        self.credit = credit\n        self.professors: List[Professor] = []\n        self.students: List[Student] = []\n\n    def enrollStudent(self, student: Student):\n        # R5: For a course to exist, it must aggregate, at least, five students\n        if len(self.students) < 5:\n            raise ValueError(\"Course must have at least 5 students.\")\n        self.students.append(student)\n        student.enrollInCourse(self)\n\n    def accommodateStudent(self, student: Student):\n        # R7: Students can be accommodated in dormitories\n        pass\n\n    def __str__(self):\n        return f'Course: {self.name}, Credit: {self.credit}'\n\nclass Dormitory:\n    def __init__(self, price: float):\n        self.price = price\n        self.students: List[Student] = []\n\n    def __str__(self):\n        return f'Dormitory: Price {self.price}, Students: {len(self.students)}'\n\nclass Professor:\n    def __init__(self, name: str):\n        self.name = name\n\n    def __str__(self):\n        return f'Professor: {self.name}'\n\nclass Student:\n    def __init__(self, name: str):\n        self.name = name\n\n    def enrollInCourse(self, course: Course):\n        # R6: Students can be enrolled in any number of courses\n        course.enrollStudent(self)\n\n    def accommodateInDormitory(self, dormitory: Dormitory):\n        # R7: Students can be accommodated in dormitories\n        pass\n\n    def __str__(self):\n        return f'Student: {self.name}'",
+ "java": {}
+}

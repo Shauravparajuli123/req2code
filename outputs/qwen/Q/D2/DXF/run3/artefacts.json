@@ -1,0 +1,76 @@
+{
+ "actors": [],
+ "use_cases": [
+  {
+   "name": "CreateMesh",
+   "actor": "",
+   "src": [
+    "R4",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "AddPointToMesh",
+   "actor": "",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Mesh",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "points"
+   ],
+   "methods": [
+    {
+     "name": "addPoint",
+     "use_case": "AddPointToMesh"
+    },
+    {
+     "name": "createMesh",
+     "use_case": "CreateMesh"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R4",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Point",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "coordinatesX",
+    "coordinatesZ"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Mesh",
+   "target": "Point",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "python": "class Point:\n    def __init__(self, name: str, coordinatesX: float, coordinatesZ: float):\n        self.name = name\n        self.coordinatesX = coordinatesX\n        self.coordinatesZ = coordinatesZ\n\n    def __str__(self):\n        return f'Point(name={self.name}, coordinatesX={self.coordinatesX}, coordinatesZ={self.coordinatesZ})'\n\n\nclass Mesh:\n    def __init__(self, name: str):\n        self.name = name\n        self.points = []\n\n    def addPoint(self, point: Point):\n        self.points.append(point)\n        raise NotImplementedError\n\n    def createMesh(self):\n        raise NotImplementedError\n\n    def __str__(self):\n        return f'Mesh(name={self.name}, points={self.points})'",
+ "java": {}
+}

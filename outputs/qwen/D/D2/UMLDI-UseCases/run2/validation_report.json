@@ -1,0 +1,85 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "R1 mentions Instance but no such class exists in the model.",
+   "fix": "Add a class named Instance."
+  },
+  {
+   "agent": "class",
+   "issue": "R2 mentions AttributeLink but no such class exists in the model.",
+   "fix": "Add a class named AttributeLink."
+  },
+  {
+   "agent": "class",
+   "issue": "R4 mentions linkend but no such class exists in the model.",
+   "fix": "Add a class named linkend."
+  },
+  {
+   "agent": "class",
+   "issue": "R5 mentions componentinstance but no such class exists in the model.",
+   "fix": "Add a class named componentinstance."
+  },
+  {
+   "agent": "class",
+   "issue": "R6 mentions nodeinstance but no such class exists in the model.",
+   "fix": "Add a class named nodeinstance."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R7 states that an Instance is owned by 0 or several instances, but there is no relationship indicating ownership.",
+   "fix": "Add a relationship between Instance and Instance to represent ownership."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R8 states that the instance has one or more classifiers, but there is no relationship or attribute indicating this.",
+   "fix": "Add an attribute or relationship to represent classifiers."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R9 states that the instance has zero or more slots from the attributelink type, but there is no relationship or attribute indicating this.",
+   "fix": "Add an attribute or relationship to represent slots from attributelink."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R10 states that attributelink has zero or one instance of the Instance type, but the relationship is missing.",
+   "fix": "Add a relationship between AttributeLink and Instance."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R11 states that attributelink has zero or one linkend attributes from the linkend type, but the relationship is missing.",
+   "fix": "Add a relationship between AttributeLink and linkend."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R12 states that the link instance has an association attribute from the association type, but the relationship is missing.",
+   "fix": "Add a relationship between Link and association."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R13 states that linkend has one link attribute of the link type, but the relationship is missing.",
+   "fix": "Add a relationship between Linkend and Link."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R14 states that linkend has one attribute of the instance type, but the relationship is missing.",
+   "fix": "Add a relationship between Linkend and Instance."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R15 states that componentinstance has zero or more residents, but the relationship is missing.",
+   "fix": "Add a relationship between ComponentInstance and residents."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R16 states that nodeinstance has 0 or more componentinstance nodes that serve as resident, but the relationship is missing.",
+   "fix": "Add a relationship between NodeInstance and ComponentInstance."
+  }
+ ]
+}

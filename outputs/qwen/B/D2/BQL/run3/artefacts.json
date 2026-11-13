@@ -1,0 +1,115 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "location",
+    "comments"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Entry",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "allFields"
+   ],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Field",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "BqlModel",
+   "kind": "class",
+   "attributes": [
+    "queries",
+    "entries"
+   ],
+   "methods": [],
+   "src": [
+    "R2",
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "name": "Query",
+   "kind": "class",
+   "attributes": [
+    "entries"
+   ],
+   "methods": [],
+   "src": [
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "name": "Predicate",
+   "kind": "class",
+   "attributes": [
+    "entry"
+   ],
+   "methods": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "BqlModel",
+   "target": "Entry",
+   "src": [
+    "R3",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "source": "BqlModel",
+   "target": "Predicate",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "BqlModel",
+   "target": "Query",
+   "src": [
+    "R2",
+    "R7"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/BQL.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Element:\n    \"\"\"Source: R1\"\"\"\n    location: _t.Optional[str] = None\n    comments: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Entry:\n    \"\"\"Source: R3\"\"\"\n    name: _t.Optional[str] = None\n    allFields: _t.Optional[bool] = None\n\n\n@_dc.dataclass\nclass Field:\n    \"\"\"Source: R4, R8, R9\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass BqlModel:\n    \"\"\"Source: R2, R7, R10\"\"\"\n    queries: _t.Optional[str] = None\n    entries: _t.Optional[str] = None\n    predicates: _t.List[\"Predicate\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Query:\n    \"\"\"Source: R7, R10\"\"\"\n    entries: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Predicate:\n    \"\"\"Source: R10\"\"\"\n    entry: _t.Optional[str] = None\n",
+ "java": {
+  "Element.java": "/** Generated from shared model D2/BQL. Source: R1 */\npublic class Element {\n    private java.lang.String location;\n    private java.lang.String comments;\n}\n",
+  "Entry.java": "/** Generated from shared model D2/BQL. Source: R3 */\npublic class Entry {\n    private java.lang.String name;\n    private boolean allFields;\n}\n",
+  "Field.java": "/** Generated from shared model D2/BQL. Source: R4, R8, R9 */\npublic class Field {\n    private java.lang.String name;\n}\n",
+  "BqlModel.java": "/** Generated from shared model D2/BQL. Source: R2, R7, R10 */\npublic class BqlModel {\n    private java.lang.String queries;\n    private java.lang.String entries;\n    private java.util.List<Predicate> predicates;\n}\n",
+  "Query.java": "/** Generated from shared model D2/BQL. Source: R7, R10 */\npublic class Query {\n    private java.lang.String entries;\n}\n",
+  "Predicate.java": "/** Generated from shared model D2/BQL. Source: R10 */\npublic class Predicate {\n    private java.lang.String entry;\n}\n"
+ }
+}

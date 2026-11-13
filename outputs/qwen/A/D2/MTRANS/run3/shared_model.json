@@ -1,0 +1,297 @@
+{
+ "case": "D2/MTRANS",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Module",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3",
+      "R10"
+     ]
+    },
+    {
+     "name": "rules",
+     "type": "String",
+     "src": [
+      "R11",
+      "R12",
+      "R13"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10",
+    "R11",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "abstract_",
+     "type": "boolean",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "sections",
+     "type": "String",
+     "src": [
+      "R20",
+      "R14"
+     ]
+    },
+    {
+     "name": "source",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    },
+    {
+     "name": "inheritances",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addSection",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R12",
+    "R13",
+    "R14",
+    "R15"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Section",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "kind",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R20"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Inheritance",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "rule",
+     "type": "String",
+     "src": [
+      "R16"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R16",
+    "R17"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "MetaClass",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R13"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "instruction",
+     "type": "String",
+     "src": [
+      "R19"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R18",
+    "R19"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Instruction",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "Variable",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "rule",
+     "type": "String",
+     "src": [
+      "R22"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "InheritedRule",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "literals": [
+    "INHERITEDRULE"
+   ],
+   "src": [
+    "R18"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "contains",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C6",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R18"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C7",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C2",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "contains",
+   "src": [
+    "R22"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each module is composed by a set of one or more rules as stated in R11"
+  }
+ ],
+ "open_tags": []
+}

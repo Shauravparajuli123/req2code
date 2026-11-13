@@ -1,0 +1,1191 @@
+{
+ "case": "D1/school",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Administrator",
+   "src": [
+    "R48",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  },
+  {
+   "id": "A2",
+   "name": "Guardian",
+   "src": [
+    "R1",
+    "R6",
+    "R12",
+    "R15"
+   ]
+  },
+  {
+   "id": "A3",
+   "name": "Student",
+   "src": [
+    "R5",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R15",
+    "R16",
+    "R17"
+   ]
+  },
+  {
+   "id": "A4",
+   "name": "Teacher",
+   "src": [
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Account",
+   "actor": "A1",
+   "src": [
+    "R47",
+    "R50"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC2",
+   "name": "Edit Data",
+   "actor": "A1",
+   "src": [
+    "R51"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC3",
+   "name": "Assign Schedule",
+   "actor": "A1",
+   "src": [
+    "R49"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC4",
+   "name": "Register Change",
+   "actor": "A1",
+   "src": [
+    "R55"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC5",
+   "name": "Register Absence",
+   "actor": "A1",
+   "src": [
+    "R56"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC6",
+   "name": "Receive Notification",
+   "actor": "A2",
+   "src": [
+    "R11",
+    "R12",
+    "R18",
+    "R19",
+    "R3",
+    "R33",
+    "R34",
+    "R53",
+    "R54"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC7",
+   "name": "Receive Confirmation",
+   "actor": "A4",
+   "src": [
+    "R32"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC8",
+   "name": "Create Learning Module",
+   "actor": "A4",
+   "src": [
+    "R26"
+   ],
+   "includes": [
+    "UC9",
+    "UC11",
+    "UC12"
+   ],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC9",
+   "name": "Add Page",
+   "actor": "A4",
+   "src": [
+    "R20",
+    "R21",
+    "R22"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC10",
+   "name": "Assign Dlm",
+   "actor": "A4",
+   "src": [
+    "R23"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC11",
+   "name": "Assign Date",
+   "actor": "A4",
+   "src": [
+    "R24"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC12",
+   "name": "Make Submission Element",
+   "actor": "A4",
+   "src": [
+    "R30"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC13",
+   "name": "Add Answer",
+   "actor": "A4",
+   "src": [
+    "R31"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC14",
+   "name": "Grade Dlm Submission",
+   "actor": "A4",
+   "src": [
+    "R25"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC15",
+   "name": "Record Grade",
+   "actor": "A4",
+   "src": [
+    "R37"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC16",
+   "name": "Record Behavior",
+   "actor": "A4",
+   "src": [
+    "R36"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC17",
+   "name": "Record Attendance",
+   "actor": "A4",
+   "src": [
+    "R38"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC18",
+   "name": "Record Action",
+   "actor": "A4",
+   "src": [
+    "R35"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC19",
+   "name": "Edit Page",
+   "actor": "A4",
+   "src": [
+    "R29"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC20",
+   "name": "Hand Homework",
+   "actor": "A3",
+   "src": [
+    "R8"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC21",
+   "name": "Fill Absence",
+   "actor": "A2",
+   "src": [
+    "R2"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC22",
+   "name": "View Information",
+   "actor": "A2",
+   "src": [
+    "R4",
+    "R15"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC23",
+   "name": "View Class",
+   "actor": "A4",
+   "src": [
+    "R46"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC24",
+   "name": "View Contact Information",
+   "actor": "A3",
+   "src": [
+    "R16"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC25",
+   "name": "View Attendance",
+   "actor": "A4",
+   "src": [
+    "R45"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC26",
+   "name": "See Grade",
+   "actor": "A4",
+   "src": [
+    "R40"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC27",
+   "name": "See Progress",
+   "actor": "A4",
+   "src": [
+    "R41"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC28",
+   "name": "See Answer",
+   "actor": "A4",
+   "src": [
+    "R39"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC29",
+   "name": "Set Appearance Date",
+   "actor": "A4",
+   "src": [
+    "R42"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC30",
+   "name": "Set Date",
+   "actor": "A4",
+   "src": [
+    "R43"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC31",
+   "name": "Upload File",
+   "actor": "A4",
+   "src": [
+    "R44"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC32",
+   "name": "Message Teacher",
+   "actor": "A2",
+   "src": [
+    "R48",
+    "R6"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC33",
+   "name": "Message Mentor",
+   "actor": "A3",
+   "src": [
+    "R7"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC34",
+   "name": "Message Student",
+   "actor": "A4",
+   "src": [
+    "R27",
+    "R28"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC35",
+   "name": "Send Broadcast Message",
+   "actor": "A1",
+   "src": [
+    "R57"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC36",
+   "name": "Set Role",
+   "actor": "A1",
+   "src": [
+    "R58"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC37",
+   "name": "Upload Schedule",
+   "actor": "A1",
+   "src": [
+    "R59"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC38",
+   "name": "View Detail",
+   "actor": "A1",
+   "src": [
+    "R60"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC39",
+   "name": "View Statistic",
+   "actor": "A1",
+   "src": [
+    "R61"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Guardian",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "fillAbsence",
+     "realizes": "UC21",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "id": "M2",
+     "name": "messageTeacher",
+     "realizes": "UC32",
+     "src": [
+      "R48",
+      "R6"
+     ]
+    },
+    {
+     "id": "M3",
+     "name": "messageMentor",
+     "realizes": "UC33",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "id": "M4",
+     "name": "receiveNotification",
+     "realizes": "UC6",
+     "src": [
+      "R11",
+      "R12",
+      "R18",
+      "R19",
+      "R3",
+      "R33",
+      "R34",
+      "R53",
+      "R54"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R48"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Student",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "handHomework",
+     "realizes": "UC20",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "id": "M6",
+     "name": "messageTeacher",
+     "realizes": "UC32",
+     "src": [
+      "R48",
+      "R6"
+     ]
+    },
+    {
+     "id": "M7",
+     "name": "fillAbsence",
+     "realizes": "UC21",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "id": "M8",
+     "name": "receiveNotification",
+     "realizes": "UC6",
+     "src": [
+      "R11",
+      "R12",
+      "R18",
+      "R19",
+      "R3",
+      "R33",
+      "R34",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "id": "M9",
+     "name": "viewInformation",
+     "realizes": "UC22",
+     "src": [
+      "R4",
+      "R15"
+     ]
+    },
+    {
+     "id": "M10",
+     "name": "viewContactInformation",
+     "realizes": "UC24",
+     "src": [
+      "R16"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R11",
+    "R12",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Teacher",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M11",
+     "name": "messageStudent",
+     "realizes": "UC34",
+     "src": [
+      "R27",
+      "R28"
+     ]
+    },
+    {
+     "id": "M12",
+     "name": "messageGuardian",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M13",
+     "name": "messageTeacher",
+     "realizes": "UC32",
+     "src": [
+      "R48",
+      "R6"
+     ]
+    },
+    {
+     "id": "M14",
+     "name": "receiveNotification",
+     "realizes": "UC6",
+     "src": [
+      "R11",
+      "R12",
+      "R18",
+      "R19",
+      "R3",
+      "R33",
+      "R34",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "id": "M15",
+     "name": "recordBehavior",
+     "realizes": "UC16",
+     "src": [
+      "R36"
+     ]
+    },
+    {
+     "id": "M16",
+     "name": "recordAttendance",
+     "realizes": "UC17",
+     "src": [
+      "R38"
+     ]
+    },
+    {
+     "id": "M17",
+     "name": "recordGrade",
+     "realizes": "UC15",
+     "src": [
+      "R37"
+     ]
+    },
+    {
+     "id": "M18",
+     "name": "seeProgress",
+     "realizes": "UC27",
+     "src": [
+      "R41"
+     ]
+    },
+    {
+     "id": "M19",
+     "name": "setAppearanceDate",
+     "realizes": "UC29",
+     "src": [
+      "R42"
+     ]
+    },
+    {
+     "id": "M20",
+     "name": "setDate",
+     "realizes": "UC30",
+     "src": [
+      "R43"
+     ]
+    },
+    {
+     "id": "M21",
+     "name": "uploadFile",
+     "realizes": "UC31",
+     "src": [
+      "R44"
+     ]
+    },
+    {
+     "id": "M22",
+     "name": "viewAttendance",
+     "realizes": "UC25",
+     "src": [
+      "R45"
+     ]
+    },
+    {
+     "id": "M23",
+     "name": "viewGrade",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M24",
+     "name": "viewProgress",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M25",
+     "name": "viewAnswer",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Administrator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M26",
+     "name": "createAccount",
+     "realizes": "UC1",
+     "src": [
+      "R47",
+      "R50"
+     ]
+    },
+    {
+     "id": "M27",
+     "name": "editData",
+     "realizes": "UC2",
+     "src": [
+      "R51"
+     ]
+    },
+    {
+     "id": "M28",
+     "name": "assignSchedule",
+     "realizes": "UC3",
+     "src": [
+      "R49"
+     ]
+    },
+    {
+     "id": "M29",
+     "name": "receiveNotification",
+     "realizes": "UC6",
+     "src": [
+      "R11",
+      "R12",
+      "R18",
+      "R19",
+      "R3",
+      "R33",
+      "R34",
+      "R53",
+      "R54"
+     ]
+    },
+    {
+     "id": "M30",
+     "name": "registerChange",
+     "realizes": "UC4",
+     "src": [
+      "R55"
+     ]
+    },
+    {
+     "id": "M31",
+     "name": "registerAbsence",
+     "realizes": "UC5",
+     "src": [
+      "R56"
+     ]
+    },
+    {
+     "id": "M34",
+     "name": "sendBroadcastMessage",
+     "realizes": "UC35",
+     "src": [
+      "R57"
+     ]
+    },
+    {
+     "id": "M35",
+     "name": "setRole",
+     "realizes": "UC36",
+     "src": [
+      "R58"
+     ]
+    },
+    {
+     "id": "M36",
+     "name": "uploadSchedule",
+     "realizes": "UC37",
+     "src": [
+      "R59"
+     ]
+    },
+    {
+     "id": "M37",
+     "name": "viewDetail",
+     "realizes": "UC38",
+     "src": [
+      "R60"
+     ]
+    },
+    {
+     "id": "M38",
+     "name": "viewStatistic",
+     "realizes": "UC39",
+     "src": [
+      "R61"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Absence",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M32",
+     "name": "registerAbsence",
+     "realizes": "UC5",
+     "src": [
+      "R56"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R12",
+    "R14",
+    "R44",
+    "R56"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M33",
+     "name": "receiveNotification",
+     "realizes": "UC6",
+     "src": [
+      "R11",
+      "R12",
+      "R18",
+      "R19",
+      "R3",
+      "R33",
+      "R34",
+      "R53",
+      "R54"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R12",
+    "R14",
+    "R48",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Account",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "role",
+     "type": "String",
+     "src": [
+      "R58"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "Schedule",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M39",
+     "name": "uploadSchedule",
+     "realizes": "UC37",
+     "src": [
+      "R59"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "Message",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M40",
+     "name": "sendBroadcastMessage",
+     "realizes": "UC35",
+     "src": [
+      "R57"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "id": "C10",
+   "name": "Participant",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M41",
+     "name": "sendBroadcastMessage",
+     "realizes": "UC35",
+     "src": [
+      "R57"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R57"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C4",
+   "target": "C9",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "sends",
+   "src": [
+    "R57"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C4",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "sets role of",
+   "src": [
+    "R58"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C4",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "uploads",
+   "src": [
+    "R59"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C7",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "0..1",
+   "label": "has",
+   "src": []
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C10",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "0..1",
+   "label": "has",
+   "src": []
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C2",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": []
+  },
+  {
+   "id": "R7",
+   "kind": "association",
+   "source": "C3",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": []
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

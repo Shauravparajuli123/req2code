@@ -1,0 +1,146 @@
+{
+ "case": "D2/QoS_Statement",
+ "stage": "result2_after_ambiguity_removal",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "src": [
+    "R3"
+   ],
+   "rule": [
+    "explicit_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "CoumpoundQoSStatement is a class which belongs to QoSStatement package"
+    }
+   ],
+   "name": "CoumpoundQoSstatement",
+   "freq": 0
+  },
+  {
+   "id": "C2",
+   "src": [
+    "R5",
+    "R6"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R5.s1",
+     "text": "My domain contains QoS constraints"
+    },
+    {
+     "sid": "R6.s1",
+     "text": "My domain defines the possible types of qualifications."
+    }
+   ],
+   "name": "Domain",
+   "freq": 2
+  },
+  {
+   "id": "C3",
+   "src": [
+    "R4"
+   ],
+   "rule": [
+    "noun_role",
+    "explicit_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "Parameter is a class which belongs to QoSStatement package"
+    }
+   ],
+   "name": "Parameter",
+   "freq": 1
+  },
+  {
+   "id": "C4",
+   "src": [
+    "R5",
+    "R11"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R5.s1",
+     "text": "My domain contains QoS constraints"
+    },
+    {
+     "sid": "R11.s1",
+     "text": "Every QoS constraint should be qualified, according to its kind."
+    }
+   ],
+   "name": "QoSConstraint",
+   "freq": 2
+  },
+  {
+   "id": "C5",
+   "src": [
+    "R7",
+    "R10"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R7.s1",
+     "text": "QoSStatement is a superclass of all classes that describe various kind of objets, either simple or compound, that representing quality of services."
+    },
+    {
+     "sid": "R10.s1",
+     "text": "A CoumpoundQoSStatement is composed of 2 or more QoSStatements"
+    }
+   ],
+   "name": "Qosstatement",
+   "freq": 2
+  }
+ ],
+ "attributes": [],
+ "relations": [
+  {
+   "id": "REL1",
+   "src": [
+    "R5"
+   ],
+   "rule": [
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R5.s1",
+     "text": "My domain contains QoS constraints"
+    }
+   ],
+   "kind": "has",
+   "source": "Domain",
+   "target": "QoSConstraint",
+   "multiplicity_target": null
+  }
+ ],
+ "enums": [],
+ "applied_edits": {
+  "remove_classes": [],
+  "merge_classes": [],
+  "merge_actors": [],
+  "enums": [],
+  "multiplicities": [
+   {
+    "source": "CompoundQoSStatement",
+    "target": "QoSStatement",
+    "multiplicity": "2..*"
+   }
+  ],
+  "actor_assumptions": []
+ }
+}

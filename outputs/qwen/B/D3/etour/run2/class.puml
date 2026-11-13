@@ -1,0 +1,146 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class CulturalHeritage {
+  name : String
+  description : String
+  location : String
+  +searchCulturalHeritage()
+  +viewDetails()
+  +editData()
+}
+class RefreshmentPoint {
+  name : String
+  location : String
+  type : String
+  +searchRefreshmentPoint()
+  +viewDetails()
+  +viewHistory()
+  +editData()
+}
+class AccountTourist {
+  username : String
+  status : String
+  +searchTourist()
+  +viewDetails()
+  +enableDisableAccount()
+  +modifyData()
+  +deleteAccount()
+}
+class Account {
+}
+class BannerAd {
+  name : String
+  image : String
+  +changeImage()
+  +deleteBanner()
+  +insertBanner()
+}
+class News {
+  +insertNews()
+  +deleteNews()
+  +changeNews()
+}
+class Feedback {
+  +viewFeedback()
+  +viewReport()
+  +editComment()
+}
+class GuestUser {
+  name : String
+  password : String
+  +register()
+  +searchHeritage()
+  +endSession()
+}
+class RegisteredUser {
+  name : String
+  password : String
+  +login()
+  +endSession()
+}
+class AgencyOperator {
+  name : String
+  password : String
+  +removeSearchTag()
+  +askSearchTag()
+  +insertTagSearch()
+  +changePassword()
+}
+class RestaurantOperator {
+  name : String
+  password : String
+  +insertBanner()
+  +changeImage()
+  +deleteBannerAd()
+  +changeMenu()
+  +deleteMenu()
+  +changeDataPoint()
+  +requireConvention()
+  +viewStatistic()
+}
+class SearchTag {
+  name : String
+}
+class TagSearch {
+  name : String
+}
+class Image {
+  path : String
+}
+class Tourist {
+  +editSearchPreference()
+  +editPersonalData()
+  +editPreferences()
+  +viewFavoriteList()
+  +viewSiteList()
+  +insertSite()
+  +deleteSite()
+  +insertFeedback()
+  +editComment()
+  +viewDetail()
+}
+class Menu {
+  day : String
+  +changeMenu()
+  +deleteMenu()
+}
+class DataPoint {
+  +changeDataPoint()
+}
+class Convention {
+  +requireConvention()
+}
+class Statistic {
+  +viewStatistic()
+}
+class SearchPreference {
+  +editSearchPreference()
+  +editPersonalData()
+  +editPreferences()
+}
+class Site {
+  +viewFavoriteList()
+  +viewSiteList()
+  +insertSite()
+  +deleteSite()
+  +insertFeedback()
+  +search()
+}
+class Position {
+  +returnPosition()
+}
+Account "1" -- "0..1" AccountTourist : has
+AgencyOperator "1" -- "0..*" Convention : has
+AgencyOperator "1" -- "0..*" RefreshmentPoint : has
+AccountTourist "1" -- "1" Account : is
+BannerAd "1" -- "1" Image : has
+Site "1" -- "1" Feedback : has
+Account "1" -- "1" RegisteredUser : has
+Tourist "1" -- "1" SearchPreference : has
+Tourist "1" -- "0..*" RefreshmentPoint : visits
+Tourist "1" -- "0..*" Site : visits
+Tourist "1" -- "0..*" Feedback : issues
+Tourist "1" -- "1" Position : has
+Site "0..*" -- "1" Tourist : has
+@enduml

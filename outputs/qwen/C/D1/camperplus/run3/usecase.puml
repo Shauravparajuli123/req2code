@@ -1,0 +1,94 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "CampAdministrator" as A1
+actor "Parent" as A2
+actor "CampWorker" as A3
+actor "CampCounselor" as A4
+rectangle "camperplus" {
+  usecase "Create Account" as UC1
+  usecase "Create Camper" as UC2
+  usecase "Create Group" as UC3
+  usecase "Create Nametag" as UC4
+  usecase "Create Registration Form" as UC5
+  usecase "Create Rule" as UC6
+  usecase "Delete Camper" as UC7
+  usecase "Delete Parent" as UC8
+  usecase "Delete Task" as UC9
+  usecase "Enroll Camper" as UC10
+  usecase "Keep Camper Record" as UC11
+  usecase "Keep Information" as UC12
+  usecase "Keep Track" as UC13
+  usecase "Log Attendance" as UC14
+  usecase "Make Nametag" as UC15
+  usecase "Modify Information" as UC16
+  usecase "Modify Task" as UC17
+  usecase "Notify Parent" as UC18
+  usecase "Provide Feedback" as UC19
+  usecase "Remove Camper" as UC20
+  usecase "Schedule Activity" as UC21
+  usecase "Schedule Task" as UC22
+  usecase "See Camp Group" as UC23
+  usecase "See Camper" as UC24
+  usecase "See Consent Form" as UC25
+  usecase "See Counselor" as UC26
+  usecase "See Event" as UC27
+  usecase "See Form" as UC28
+  usecase "See Payment" as UC29
+  usecase "See Schedule" as UC30
+  usecase "Set Reminder" as UC31
+  usecase "Share Photo" as UC32
+  usecase "Sign Consent Form" as UC33
+  usecase "Store Emergency Information" as UC34
+  usecase "Store Information" as UC35
+  usecase "Submit Completion Report" as UC36
+  usecase "Submit Type" as UC37
+  usecase "Suspend Camper" as UC38
+  usecase "Take Attendance" as UC39
+  usecase "Track Camper Activity" as UC40
+  usecase "Upload Consent Form" as UC41
+  usecase "Warn Camp Worker" as UC42
+}
+A2 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+A1 --> UC7
+A1 --> UC8
+A1 --> UC9
+A2 --> UC10
+A1 --> UC11
+A1 --> UC12
+A1 --> UC13
+A1 --> UC14
+A1 --> UC15
+A1 --> UC16
+A1 --> UC17
+A1 --> UC18
+A1 --> UC19
+A1 --> UC20
+A1 --> UC21
+A1 --> UC22
+A1 --> UC23
+A2 --> UC24
+A2 --> UC25
+A2 --> UC26
+A1 --> UC27
+A1 --> UC28
+A2 --> UC29
+A2 --> UC30
+A1 --> UC31
+A2 --> UC32
+A2 --> UC33
+A1 --> UC34
+A1 --> UC35
+A3 --> UC36
+A2 --> UC37
+A1 --> UC38
+A4 --> UC39
+A2 --> UC40
+A1 --> UC41
+A1 --> UC42
+@enduml

@@ -1,0 +1,122 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  email : String
+  address : String
+  preferences : String
+  history : String
+  profile : String
+  +saveInformation()
+  +fillInformation()
+  +fillName()
+  +fillSurvey()
+  +seeContent()
+  +seeEvent()
+  +purchaseTicket()
+  +seeOrderSummary()
+  +seeOverview()
+  +seeSeat()
+  +seeType()
+  +editInformation()
+  +seeHistory()
+  +seePreference()
+  +changePassword()
+}
+class UserProfile {
+  preferences : String
+  favoriteArtists : String
+  favoriteEvents : String
+}
+class Preference {
+  genre : String
+  eventTypes : String
+}
+class Address {
+  street : String
+  city : String
+  zipCode : String
+}
+class Ticket {
+  type : String
+  seat : String
+  price : double
+  event : String
+  +addTicketToCart()
+}
+class Seat {
+  row : int
+  column : int
+}
+class Event {
+  name : String
+  date : LocalDate
+  artist : String
+  venue : String
+  type : String
+  description : String
+  link : String
+  +seeEvent()
+  +clickEvent()
+}
+class Link {
+  url : String
+}
+class Artist {
+  name : String
+  link : String
+}
+class Visitor {
+  events : String
+  +seeContent()
+  +purchaseTicket()
+  +seeOrderSummary()
+  +seeOverview()
+  +seeSeat()
+  +seeType()
+  +seeEvent()
+  +clickEvent()
+  +filterList()
+  +filterSearch()
+  +filterSearchResult()
+  +sortSearchResult()
+  +landEventPage()
+}
+class Company {
+  resellers : String
+  minimumResellPrice : double
+  searchEngine : String
+  +haveBuyingProcess()
+  +validateTicket()
+  +avoidBehavior()
+  +protectUser()
+  +resellTicket()
+  +saveBankAccount()
+}
+class Reseller {
+  name : String
+  tickets : String
+  bankAccount : String
+  +resellTicket()
+  +uploadTicket()
+}
+class BankAccount {
+  iban : String
+}
+class SearchEngine {
+  caseInsensitive : boolean
+  punctuationSensitive : boolean
+  sortByDate : boolean
+  filterByPrice : boolean
+  filterByVenue : boolean
+  filterByGenre : boolean
+}
+class Venue {
+  name : String
+  map : String
+}
+User "1" -- "1" UserProfile : has
+User "1" -- "1" Preference : has
+Event "1" -- "1..*" Ticket : has
+@enduml

@@ -1,0 +1,103 @@
+{
+ "case": "D2/DXF",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Mesh",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "points",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addPoint",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R4"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Point",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "coordinatesX",
+     "type": "double",
+     "src": []
+    },
+    {
+     "name": "coordinatesZ",
+     "type": "double",
+     "src": []
+    },
+    {
+     "name": "mesh",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "is composed of",
+   "src": []
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

@@ -1,0 +1,45 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a Petri net model contains at least one net."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class TpaArc is missing in the model.",
+   "fix": "Add class TpaArc to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Transition is missing in the model.",
+   "fix": "Add class Transition to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class TpaArc is incorrectly named as TpaArc in the model, it should be TPArc.",
+   "fix": "Rename class TpaArc to TPArc in the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Net and TPArc is missing in the model.",
+   "fix": "Add association Net -> TPArc [0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between TPArc and Transition is missing in the model.",
+   "fix": "Add association TPArc -> Transition [1] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Transition and Net is missing in the model.",
+   "fix": "Add association Transition -> Net [1] to the model."
+  }
+ ]
+}

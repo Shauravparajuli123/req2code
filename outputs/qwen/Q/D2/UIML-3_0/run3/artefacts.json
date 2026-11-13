@@ -1,0 +1,92 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "CreateUIML",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "UIML",
+   "kind": "class",
+   "attributes": [
+    "header",
+    "interfaces"
+   ],
+   "methods": [
+    {
+     "name": "createHeader",
+     "use_case": "CreateUIML"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Header",
+   "kind": "class",
+   "attributes": [
+    "metas"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6"
+   ]
+  },
+  {
+   "name": "MetaData",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "UIML",
+   "target": "Header",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "aggregation",
+   "source": "UIML",
+   "target": "Interface",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "aggregation",
+   "source": "Header",
+   "target": "MetaData",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass MetaData:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Interface:\n    pass\nclass Header:\n    def __init__(self):\n        self.metas: List[MetaData] = []\nclass UIML:\n    def __init__(self):\n        self.header: Header = Header()\n        self.interfaces: List[Interface] = []\n    def createHeader(self):\n        raise NotImplementedError",
+ "java": {}
+}

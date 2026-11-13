@@ -1,0 +1,112 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefinePlace",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "places"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8"
+   ]
+  },
+  {
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [
+    "transitions"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "net",
+    "transitions"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "net",
+    "destination"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "1",
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "PetriNet",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R2",
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Place",
+   "target": "Transition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Transition",
+   "target": "Net",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Net:\n    def __init__(self, places: List[Place] = []) -> None:\n        self.places = places\n\nclass PetriNet:\n    def __init__(self, transitions: List[Transition] = []) -> None:\n        self.transitions = transitions\n\nclass Place:\n    def __init__(self, destination: Transition = None) -> None:\n        self.destination = destination\n\nclass Transition:\n    def __init__(self, net: Net, destination: Place = None) -> None:\n        self.net = net\n        self.destination = destination\n        self.net.has(self)\n\n    def set_destination(self, place: Place) -> None:\n        raise NotImplementedError\n\n    def get_net(self) -> Net:\n        raise NotImplementedError\n\nclass Net:\n    def add_place(self, place: Place) -> None:\n        raise NotImplementedError\n\nclass PetriNet:\n    def add_transition(self, transition: Transition) -> None:\n        raise NotImplementedError",
+ "java": {}
+}

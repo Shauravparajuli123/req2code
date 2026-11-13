@@ -1,0 +1,846 @@
+{
+ "actors": [
+  "user",
+  "visitor",
+  "reseller",
+  "artist",
+  "company"
+ ],
+ "use_cases": [
+  {
+   "name": "Fill Information",
+   "actor": "user",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Save Information",
+   "actor": "user",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Save PaymentDetail",
+   "actor": "user",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Fill Survey",
+   "actor": "user",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "See Content",
+   "actor": "user",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "See Preference",
+   "actor": "user",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "See History",
+   "actor": "user",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "See Overview",
+   "actor": "user",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "See Event",
+   "actor": "visitor",
+   "src": [
+    "R11",
+    "R19",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "name": "Purchase Ticket",
+   "actor": "visitor",
+   "src": [
+    "R12",
+    "R14",
+    "R20",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Add Ticket",
+   "actor": "visitor",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "See OrderSummary",
+   "actor": "visitor",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "visitor",
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "visitor",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "visitor",
+   "src": [
+    "R28",
+    "R29",
+    "R48"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "visitor",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "visitor",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "reseller",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "reseller",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "company",
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "artist",
+   "src": [
+    "R52"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "artist",
+   "src": [
+    "R50",
+    "R51",
+    "R54"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "company",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "company",
+   "src": [
+    "R36"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "company",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "company",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "company",
+   "src": [
+    "R39"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "company",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "user",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "user",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "user",
+   "src": [
+    "R53"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "visitor",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "visitor",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "visitor",
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "visitor",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "visitor",
+   "src": [
+    "R30"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "dateOfBirth",
+    "email",
+    "address",
+    "preferences",
+    "personalInformation"
+   ],
+   "methods": [
+    {
+     "name": "fillInformation",
+     "use_case": "Fill Information"
+    },
+    {
+     "name": "saveInformation",
+     "use_case": "Save Information"
+    },
+    {
+     "name": "editInformation",
+     "use_case": "Edit Information"
+    },
+    {
+     "name": "changePassword",
+     "use_case": "Change Password"
+    },
+    {
+     "name": "seeContent",
+     "use_case": "See Content"
+    },
+    {
+     "name": "seePreference",
+     "use_case": "See Preference"
+    },
+    {
+     "name": "seeHistory",
+     "use_case": "See History"
+    },
+    {
+     "name": "seeOverview",
+     "use_case": "See Overview"
+    },
+    {
+     "name": "favoriteEvent",
+     "use_case": "Favorite Event"
+    },
+    {
+     "name": "filterList",
+     "use_case": "Filter List"
+    },
+    {
+     "name": "filterSearch",
+     "use_case": "Filter Search"
+    },
+    {
+     "name": "sortSearchResult",
+     "use_case": "Sort SearchResult"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "name": "Visitor",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "email"
+   ],
+   "methods": [
+    {
+     "name": "readEvent",
+     "use_case": "Read Event"
+    },
+    {
+     "name": "seeEvent",
+     "use_case": "See Event"
+    },
+    {
+     "name": "purchaseTicket",
+     "use_case": "Purchase Ticket"
+    },
+    {
+     "name": "seeAvailableSeats",
+     "use_case": "See Seat"
+    },
+    {
+     "name": "seeTicketTypes",
+     "use_case": "See Type"
+    },
+    {
+     "name": "addTicketToCart",
+     "use_case": "Add Ticket"
+    },
+    {
+     "name": "seeOrderSummary",
+     "use_case": "See OrderSummary"
+    },
+    {
+     "name": "filterSearch",
+     "use_case": "Filter Search"
+    },
+    {
+     "name": "sortSearchResult",
+     "use_case": "Sort SearchResult"
+    },
+    {
+     "name": "clickEvent",
+     "use_case": "Click Event"
+    },
+    {
+     "name": "landEventPage",
+     "use_case": "Land EventPage"
+    },
+    {
+     "name": "seeAvailableEvents",
+     "use_case": "See Event"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R12",
+    "R14",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R28",
+    "R29",
+    "R34",
+    "R38",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "name": "Reseller",
+   "kind": "class",
+   "attributes": [
+    "bankAccount",
+    "events"
+   ],
+   "methods": [
+    {
+     "name": "resellTicket",
+     "use_case": "Resell Ticket"
+    },
+    {
+     "name": "uploadTicket",
+     "use_case": "Add Ticket"
+    },
+    {
+     "name": "setTicketPrice",
+     "use_case": "Have Price"
+    },
+    {
+     "name": "setTicketDescription",
+     "use_case": "Have Description"
+    },
+    {
+     "name": "saveBankAccount",
+     "use_case": "Save BankAccount"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  },
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "buyingProcess",
+    "resellers"
+   ],
+   "methods": [
+    {
+     "name": "haveBuyingProcess",
+     "use_case": "Have BuyingProcess"
+    },
+    {
+     "name": "haveReseller",
+     "use_case": "Have Reseller"
+    },
+    {
+     "name": "validateTicket",
+     "use_case": "Validate Ticket"
+    },
+    {
+     "name": "deductServiceFee",
+     "use_case": "Deduct ServiceFee"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R27",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "name": "Event",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "date",
+    "artist",
+    "venue",
+    "tickets"
+   ],
+   "methods": [
+    {
+     "name": "readEventDetails",
+     "use_case": "Read Event"
+    },
+    {
+     "name": "seeAvailableSeats",
+     "use_case": "See Seat"
+    },
+    {
+     "name": "seeTicketTypes",
+     "use_case": "See Type"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R19",
+    "R21",
+    "R22",
+    "R23",
+    "R29",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "name": "Artist",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "upcomingEvents",
+    "links"
+   ],
+   "methods": [
+    {
+     "name": "findInformation",
+     "use_case": "Find Information"
+    },
+    {
+     "name": "haveLink",
+     "use_case": "Have Link"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "name": "Address",
+   "kind": "class",
+   "attributes": [
+    "street",
+    "city",
+    "state",
+    "zipCode"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Preference",
+   "kind": "class",
+   "attributes": [
+    "genre",
+    "eventTypes"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "BankAccount",
+   "kind": "class",
+   "attributes": [
+    "iban"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Ticket",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "price"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12",
+    "R14",
+    "R20",
+    "R24",
+    "R25",
+    "R26",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "name": "Cent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Process",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R27"
+   ]
+  },
+  {
+   "name": "Link",
+   "kind": "class",
+   "attributes": [
+    "url"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R50",
+    "R51",
+    "R54"
+   ]
+  },
+  {
+   "name": "Venue",
+   "kind": "class",
+   "attributes": [
+    "map"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R21",
+    "R22"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Preference",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Address",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "UserProfile",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Visitor",
+   "target": "Event",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11",
+    "R19",
+    "R21",
+    "R22",
+    "R23",
+    "R29",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Reseller",
+   "target": "Event",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Company",
+   "target": "Reseller",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R27",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Event",
+   "target": "Artist",
+   "multiplicity_target": "1",
+   "src": [
+    "R11",
+    "R19",
+    "R29",
+    "R46",
+    "R47"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Event",
+   "target": "Venue",
+   "multiplicity_target": "1",
+   "src": [
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Artist",
+   "target": "Link",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional, Union\n\nclass Cent:\n    pass\n\nclass Address:\n    def __init__(self, street: str, city: str, state: str, zip_code: str):\n        self.street = street\n        self.city = city\n        self.state = state\n        self.zip_code = zip_code\n\nclass Preference:\n    def __init__(self, genre: str, event_types: List[str]):\n        self.genre = genre\n        self.event_types = event_types\n\nclass BankAccount:\n    def __init__(self, iban: str):\n        self.iban = iban\n\nclass Ticket:\n    def __init__(self, type: str, price: Cent):\n        self.type = type\n        self.price = price\n\nclass Event:\n    def __init__(self, name: str, date: str, artist: str, venue: str, tickets: List[Ticket]):\n        self.name = name\n        self.date = date\n        self.artist = artist\n        self.venue = venue\n        self.tickets = tickets\n\nclass Artist:\n    def __init__(self, name: str, upcoming_events: List[str], links: List[str]):\n        self.name = name\n        self.upcoming_events = upcoming_events\n        self.links = links\n\nclass Venue:\n    def __init__(self, map: str):\n        self.map = map\n\nclass User:\n    def __init__(self, name: str, date_of_birth: str, email: str, address: Address, preferences: Preference, personal_information: str):\n        self.name = name\n        self.date_of_birth = date_of_birth\n        self.email = email\n        self.address = address\n        self.preferences = preferences\n        self.personal_information = personal_information\n    def fill_information(self):\n        raise NotImplementedError\n    def save_information(self):\n        raise NotImplementedError\n    def edit_information(self):\n        raise NotImplementedError\n    def change_password(self):\n        raise NotImplementedError\n    def see_content(self):\n        raise NotImplementedError\n    def see_preference(self):\n        raise NotImplementedError\n    def see_history(self):\n        raise NotImplementedError\n    def see_overview(self):\n        raise NotImplementedError\n    def favorite_event(self):\n        raise NotImplementedError\n    def filter_list(self):\n        raise NotImplementedError\n    def filter_search(self):\n        raise NotImplementedError\n    def sort_search_result(self):\n        raise NotImplementedError\n\nclass Visitor:\n    def __init__(self, name: str, email: str):\n        self.name = name\n        self.email = email\n    def read_event(self):\n        raise NotImplementedError\n    def see_event(self):\n        raise NotImplementedError\n    def purchase_ticket(self):\n        raise NotImplementedError\n    def see_available_seats(self):\n        raise NotImplementedError\n    def see_ticket_types(self):\n        raise NotImplementedError\n    def add_ticket_to_cart(self):\n        raise NotImplementedError\n    def see_order_summary(self):\n        raise NotImplementedError\n    def filter_search(self):\n        raise NotImplementedError\n    def sort_search_result(self):\n        raise NotImplementedError\n    def click_event(self):\n        raise NotImplementedError\n    def land_event_page(self):\n        raise NotImplementedError\n    def see_available_events(self):\n        raise NotImplementedError\n\nclass Reseller:\n    def __init__(self, bank_account: BankAccount, events: List[Event]):\n        self.bank_account = bank_account\n        self.events = events\n    def resell_ticket(self):\n        raise NotImplementedError\n    def upload_ticket(self):\n        raise NotImplementedError\n    def set_ticket_price(self):\n        raise NotImplementedError\n    def set_ticket_description(self):\n        raise NotImplementedError\n    def save_bank_account(self):\n        raise NotImplementedError\n\nclass Company:\n    def __init__(self, buying_process: str, resellers: List[Reseller]):\n        self.buying_process = buying_process\n        self.resellers = resellers\n    def have_buying_process(self):\n        raise NotImplementedError\n    def have_reseller(self):\n        raise NotImplementedError\n    def validate_ticket(self):\n        raise NotImplementedError\n    def deduct_service_fee(self):\n        raise NotImplementedError\n\nclass UserProfile:\n    pass\n\nclass Process:\n    pass\n\nclass Link:\n    def __init__(self, url: str):\n        self.url = url",
+ "java": {}
+}

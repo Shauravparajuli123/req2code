@@ -1,0 +1,153 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Fsm",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "StateMachine",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasRootFolder",
+     "use_case": "R10"
+    },
+    {
+     "name": "hasTransitions",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "State",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasStateMachine",
+     "use_case": "R8"
+    },
+    {
+     "name": "hasAssociationStates",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasStateMachine",
+     "use_case": "R7"
+    },
+    {
+     "name": "hasState",
+     "use_case": "R13"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R13"
+   ]
+  },
+  {
+   "name": "RootFolder",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasStateMachine",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "StateMachine",
+   "target": "RootFolder",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "StateMachine",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "State",
+   "target": "StateMachine",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "State",
+   "target": "AssociationState",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "StateMachine",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "AssociationState",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass MgaObject:\n    def __init__(self, name: str):\n        self.name = name\n\nclass StateMachine:\n    def __init__(self, root_folder_name: str):\n        self.root_folder_name = root_folder_name\n        self.root_folder = RootFolder(root_folder_name)\n\nclass RootFolder:\n    def __init__(self, name: str):\n        self.name = name\n\nclass State:\n    def __init__(self, state_machine: StateMachine):\n        self.state_machine = state_machine\n        self.association_state_sources: List['AssociationState'] = []\n\nclass AssociationState:\n    def __init__(self, transition: Transition):\n        self.transition = transition\n\nclass Transition:\n    def __init__(self, state_machine: StateMachine):\n        self.state_machine = state_machine\n        self.states: List[State] = []\n\nclass FSM:\n    def __init__(self, state_machine: StateMachine):\n        self.state_machine = state_machine\n        self.states: List[State] = []\n        self.transitions: List[Transition] = []\n",
+ "java": {}
+}

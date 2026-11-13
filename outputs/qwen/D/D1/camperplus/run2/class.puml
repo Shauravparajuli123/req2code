@@ -1,0 +1,87 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Camper {
+  name : String
+  emergencyInfo : String
+  +addCamper()
+  +removeCamper()
+  +modifyCamperInfo()
+}
+class Parent {
+  name : String
+  account : String
+  child : String
+  counselor : String
+  +submitConsentForm()
+  +submitFeedback()
+  +viewCamperActivity()
+  +viewEnrolledCampers()
+  +viewActivitySchedule()
+}
+class CampWorker {
+  name : String
+  assignedKids : String
+  +submitCompletionReport()
+  +reportInappropriateBehavior()
+  +reportSupplies()
+  +reportRepairs()
+}
+class EmergencyInformation {
+  allergies : String
+  medication : String
+}
+class Event {
+  date : LocalDate
+  description : String
+  +scheduleEvent()
+  +modifyEvent()
+  +deleteEvent()
+}
+class Group {
+  name : String
+  events : String
+  +addCamperToGroup()
+  +viewGroupEvents()
+}
+class Rule {
+  description : String
+  +createRule()
+}
+class Facility {
+  name : String
+  +trackUsage()
+}
+class Feedback {
+  date : LocalDate
+  content : String
+  +submitFeedback()
+  +viewFeedback()
+}
+class Payment {
+  amount : double
+  status : String
+  +viewPayments()
+}
+class Supplies {
+  name : String
+  quantity : int
+  +reportSupplies()
+}
+class Repair {
+  description : String
+  status : String
+  +reportRepairs()
+}
+Camper "0..*" -- "1" Parent : has
+Camper "0..*" -- "1" Event : participates_in
+Camper "1" -- "1" Group : belongs_to
+Parent "0..*" -- "1" Event : attends
+Parent "0..*" -- "1" Group : has_child_in
+Parent "0..*" -- "1" Feedback : receives
+Parent "1" -- "1" Payment : makes
+Parent "0..*" -- "1" Supplies : requests
+Event "1" -- "1" Group : is_for
+Group "1" -- "1" Camper : contains
+Group "1" -- "1" Event : has
+@enduml

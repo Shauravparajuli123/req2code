@@ -1,0 +1,232 @@
+{
+ "case": "D4/car",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Car",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "numberPlate",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C2",
+   "name": "Engine",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "power",
+     "type": "int",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Make",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R4"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Seat",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "size",
+     "type": "int",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Wheel",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "diameter",
+     "type": "int",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "*",
+   "label": "has",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "4",
+   "label": "has",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "belongs to",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "belongs to",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "R7",
+   "kind": "association",
+   "source": "C4",
+   "target": "C1",
+   "mult_source": "*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R8",
+   "kind": "generalization",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "*",
+   "mult_target": "1",
+   "label": "is a",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "R9",
+   "kind": "generalization",
+   "source": "C4",
+   "target": "C1",
+   "mult_source": "*",
+   "mult_target": "1",
+   "label": "is a",
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

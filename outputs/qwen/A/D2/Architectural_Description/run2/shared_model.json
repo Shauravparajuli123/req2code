@@ -1,0 +1,145 @@
+{
+ "case": "D2/Architectural_Description",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "ArchitectureDescription",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "selectView",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "ArchitectureView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "conformToViewPoint",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "projectOntoMainView",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "ArchitectureViewPoint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "defineView",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "MainView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "projectOntoView",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "contains",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "defines",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "aggregation",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "projects",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "conformsTo",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

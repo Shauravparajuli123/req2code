@@ -1,0 +1,99 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Moderator" as A1
+actor "User" as A2
+actor "Admin" as A3
+actor "Superuser" as A4
+actor "Recyclingfacility" as A5
+actor "RecyclingfacilityRepresentative" as A6
+actor "Employee" as A7
+actor "CompanyAccountant" as A8
+actor "Executive" as A9
+actor "Company" as A10
+actor "Developer" as A11
+rectangle "recycling" {
+  usecase "Create Game" as UC1
+  usecase "Enter Zip Code" as UC2
+  usecase "Get Hours" as UC3
+  usecase "Get Feedback" as UC4
+  usecase "Choose Pick" as UC5
+  usecase "Select Type" as UC6
+  usecase "Add Donation Center" as UC7
+  usecase "Get Notification" as UC8
+  usecase "Create Account" as UC9
+  usecase "Add Recycling Center Information" as UC10
+  usecase "Onboard Recycling Center" as UC11
+  usecase "Browse List" as UC12
+  usecase "Upload Schedule" as UC13
+  usecase "Link Email Account" as UC14
+  usecase "Contact Administrator" as UC15
+  usecase "Handle Activity" as UC16
+  usecase "View User Documentation" as UC17
+  usecase "View Location" as UC18
+  usecase "View Map Display" as UC19
+  usecase "View Disposal Event" as UC20
+  usecase "View Information" as UC21
+  usecase "View Activity Fee" as UC22
+  usecase "View Dashboard" as UC23
+  usecase "View Stat" as UC24
+  usecase "Communicate Facility" as UC25
+  usecase "Communicate Site" as UC26
+  usecase "Block User" as UC27
+  usecase "Read Feedback" as UC28
+  usecase "Update Information" as UC29
+  usecase "Update Recycling Center Information" as UC30
+  usecase "Have Access" as UC31
+  usecase "Have Data" as UC32
+  usecase "Have Information" as UC33
+  usecase "Have Ui" as UC34
+  usecase "Have Website" as UC35
+  usecase "Access Api" as UC36
+  usecase "Use Bootstrap" as UC37
+  usecase "Attend Ux Lesson" as UC38
+  usecase "Have Pick" as UC39
+  usecase "Add Recycling Facility" as UC40
+  usecase "View User Error Log" as UC41
+}
+A1 --> UC1
+A2 --> UC2
+A2 --> UC3
+A2 --> UC4
+A2 --> UC5
+A2 --> UC6
+A2 --> UC7
+A7 --> UC8
+A2 --> UC9
+A3 --> UC10
+A3 --> UC11
+A2 --> UC12
+A2 --> UC13
+A2 --> UC14
+A2 --> UC15
+A3 --> UC16
+A2 --> UC17
+A2 --> UC18
+A2 --> UC19
+A2 --> UC20
+A2 --> UC21
+A8 --> UC22
+A3 --> UC23
+A4 --> UC24
+A3 --> UC25
+A5 --> UC26
+A3 --> UC27
+A3 --> UC28
+A6 --> UC29
+A4 --> UC30
+A9 --> UC31
+A3 --> UC32
+A2 --> UC33
+A2 --> UC34
+A10 --> UC35
+A11 --> UC36
+A11 --> UC37
+A11 --> UC38
+A2 --> UC39
+A3 --> UC40
+A3 --> UC41
+@enduml

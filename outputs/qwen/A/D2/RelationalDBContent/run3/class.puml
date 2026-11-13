@@ -1,0 +1,11 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class TupleElement {
+  value : String
+}
+class Tuple {
+  +addTupleElement()
+}
+Tuple "1" -- "1" TupleElement : contains
+@enduml

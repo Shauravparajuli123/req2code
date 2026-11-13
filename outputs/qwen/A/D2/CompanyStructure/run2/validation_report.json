@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Requirement R2 is implicitly satisfied by the generalization relationship CorporateHQ -> Company."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R5 is not supported by the model.",
+   "fix": "Add a relationship between Store and BackOffice with a cardinality of 1..1."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R9 is not supported by the model.",
+   "fix": "Add a relationship between CorporateHQ and Store with a cardinality indicating the number of stores managed by each CorporateHQ."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R6 is not supported by the model.",
+   "fix": "Add a class for Employees and a relationship between Company and Employees."
+  }
+ ]
+}

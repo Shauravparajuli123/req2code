@@ -1,0 +1,146 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Identify Car",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Car",
+   "kind": "class",
+   "attributes": [
+    "numberPlate",
+    "engine",
+    "seats",
+    "wheels"
+   ],
+   "methods": [
+    {
+     "name": "identify",
+     "use_case": "Identify Car"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Engine",
+   "kind": "class",
+   "attributes": [
+    "power"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Make",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "make"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Seat",
+   "kind": "class",
+   "attributes": [
+    "size"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Wheel",
+   "kind": "class",
+   "attributes": [
+    "diameter"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Car",
+   "target": "Engine",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Car",
+   "target": "Seat",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Car",
+   "target": "Wheel",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Model",
+   "target": "Car",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Make",
+   "target": "Model",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "python": "class Car:\n    def __init__(self, numberPlate, engine, seats, wheels):\n        self.numberPlate = numberPlate\n        self.engine = engine\n        self.seats = seats\n        self.wheels = wheels\n\n    def identify(self):\n        raise NotImplementedError\n\nclass Engine:\n    def __init__(self, power):\n        self.power = power\n\n    def __str__(self):\n        raise NotImplementedError\n\nclass Make:\n    def __init__(self, name):\n        self.name = name\n\n    def __str__(self):\n        raise NotImplementedError\n\nclass Model:\n    def __init__(self, name, make):\n        self.name = name\n        self.make = make\n\n    def __str__(self):\n        raise NotImplementedError\n\nclass Seat:\n    def __init__(self, size):\n        self.size = size\n\n    def __str__(self):\n        raise NotImplementedError\n\nclass Wheel:\n    def __init__(self, diameter):\n        self.diameter = diameter\n\n    def __str__(self):\n        raise NotImplementedError\n",
+ "java": {}
+}

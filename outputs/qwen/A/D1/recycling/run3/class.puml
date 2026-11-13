@@ -1,0 +1,56 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  email : String
+  favorites : String
+  zipCode : String
+  +viewPublicInformation()
+  +getNearbyFacilities()
+  +getFacilityHours()
+  +selectRecyclableWasteTypes()
+  +addFavorite()
+  +viewEmailFeedback()
+  +createAccount()
+  +viewDocumentation()
+  +viewRecyclingCenterLocations()
+  +uploadWeeklySchedule()
+  +linkEmailAccount()
+  +contactAdministrators()
+  +viewSafeDisposalEvents()
+  +viewMapOfRecyclingBins()
+  +viewMapOfSpecialWasteSites()
+}
+class Admin {
+  blockedUsers : String
+  siteStatus : String
+  +addOrRemoveFacilityInfo()
+  +readFeedbackAndComplaints()
+  +blockUser()
+  +viewSiteStatusDashboard()
+  +encryptData()
+  +viewUserErrorLogs()
+  +onboardFacility()
+  +viewUsageStatsAndLocations()
+}
+class Superuser {
+  +updateFacilityInfo()
+  +viewUserStats()
+  +replyToUserQuestions()
+}
+class RecyclingFacility {
+  facilityInfo : String
+  materialTypes : String
+  +updateFacilityInfo()
+  +viewUserStatsAndSchedules()
+}
+class Game {
+  name : String
+  +createGame()
+}
+User "0..*" -- "1" RecyclingFacility : has
+User "1" -- "1" Admin : can interact with
+Admin "1" -- "1" RecyclingFacility : manages
+Superuser "1" -- "1" RecyclingFacility : manages
+Admin "1" -- "1" User : manages
+@enduml

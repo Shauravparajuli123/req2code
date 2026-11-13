@@ -1,0 +1,25 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "The class 'Dormitory' does not have an attribute 'price' as per R8.",
+   "fix": "Add an attribute 'price' to the class 'Dormitory'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between 'Course' and 'Student' is incorrectly specified as [1..0..*] in the aggregation, which should be [1..5..*] as per R5.",
+   "fix": "Correct the relationship to [1..5..*] between 'Course' and 'Student'."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Course' does not have a method 'enrollInCourse' as per R6.",
+   "fix": "Add a method 'enrollInCourse' to the class 'Course'."
+  }
+ ]
+}

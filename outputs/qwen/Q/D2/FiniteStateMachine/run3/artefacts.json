@@ -1,0 +1,180 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Fsm",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R1"
+   ]
+  },
+  {
+   "name": "StateMachine",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasRootFolder",
+     "use_case": "R10"
+    },
+    {
+     "name": "hasTransitions",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R6",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "State",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasStateMachine",
+     "use_case": "R8"
+    },
+    {
+     "name": "hasAssociationStates",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasStateMachine",
+     "use_case": "R7"
+    },
+    {
+     "name": "hasState",
+     "use_case": "R13"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R7",
+    "R11",
+    "R13"
+   ]
+  },
+  {
+   "name": "AssociationState",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasTransition",
+     "use_case": "R14"
+    },
+    {
+     "name": "hasSourceStates",
+     "use_case": "R14"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9",
+    "R14"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Fsm",
+   "target": "StateMachine",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "StateMachine",
+   "target": "RootFolder",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "StateMachine",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "State",
+   "target": "StateMachine",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "State",
+   "target": "AssociationState",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "StateMachine",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "AssociationState",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "AssociationState",
+   "target": "State",
+   "multiplicity_target": "1",
+   "src": [
+    "R14"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Fsm:\n    def __init__(self, name: str):\n        self.name = name\n        self.state_machine = None\n\n    def set_state_machine(self, state_machine) -> None:\n        self.state_machine = state_machine\n\n    def get_state_machine(self) -> 'StateMachine':\n        return self.state_machine\n\n    src = ['R5', 'R1']\n\nclass StateMachine:\n    def __init__(self):\n        self.root_folder = None\n        self.transitions = []\n\n    def has_root_folder(self) -> bool:\n        raise NotImplementedError\n\n    def has_transitions(self) -> bool:\n        raise NotImplementedError\n\n    src = ['R4', 'R6', 'R10', 'R11']\n\nclass State:\n    def __init__(self):\n        self.state_machine = None\n        self.association_states = []\n\n    def has_state_machine(self) -> bool:\n        raise NotImplementedError\n\n    def has_association_states(self) -> bool:\n        raise NotImplementedError\n\n    src = ['R3', 'R8', 'R9']\n\nclass Transition:\n    def __init__(self):\n        self.state_machine = None\n        self.state = None\n\n    def has_state_machine(self) -> bool:\n        raise NotImplementedError\n\n    def has_state(self) -> bool:\n        raise NotImplementedError\n\n    src = ['R2', 'R7', 'R11', 'R13']\n\nclass AssociationState:\n    def __init__(self):\n        self.transition = None\n        self.source_states = []\n\n    def has_transition(self) -> bool:\n        raise NotImplementedError\n\n    def has_source_states(self) -> bool:\n        raise NotImplementedError\n\n    src = ['R9', 'R14']",
+ "java": {}
+}

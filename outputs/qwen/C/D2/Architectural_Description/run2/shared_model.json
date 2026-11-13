@@ -1,0 +1,142 @@
+{
+ "case": "D2/Architectural_Description",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "ArchitectureDescription",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "selectView",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "selectViewPoint",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "describeArchitecture",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "ArchitectureView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "projectOnto",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12",
+    "R8",
+    "R9",
+    "R11"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "ArchitectureViewPoint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "conformTo",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "MainView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M6",
+     "name": "defineView",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M7",
+     "name": "createGame",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "conformsTo",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

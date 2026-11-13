@@ -1,0 +1,39 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Place {
+  name : String
+  tokens : int
+  +addToken()
+  +removeToken()
+}
+class Transition {
+  name : String
+  inputArcs : String
+  outputArcs : String
+  +addInputArc()
+  +removeInputArc()
+  +addOutputArc()
+  +removeOutputArc()
+}
+class Arc {
+  weight : double
+  source : String
+  destination : String
+}
+class PetriNet {
+  name : String
+  places : String
+  transitions : String
+  +createPlace()
+  +createTransition()
+  +addPlace()
+  +addTransition()
+}
+PetriNet "1" -- "0..*" Place : has
+PetriNet "1" -- "0..*" Transition : has
+Place "0..*" -- "0..*" Arc : has
+Transition "0..*" -- "0..*" Arc : has
+Arc "0..*" -- "1" PetriNet : is part of
+PetriNet "1" *-- "1..*" Arc : is composed of
+@enduml

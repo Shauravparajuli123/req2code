@@ -1,0 +1,96 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineTextualPath",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TextualPathExp",
+   "kind": "class",
+   "attributes": [
+    "path"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R1",
+    "R1"
+   ]
+  },
+  {
+   "name": "Path",
+   "kind": "class",
+   "attributes": [
+    "transitions"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R1",
+    "R1"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R2",
+    "R1"
+   ]
+  },
+  {
+   "name": "AlternativeTrans",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8",
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Path",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R1",
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AlternativeTrans",
+   "target": "Path",
+   "multiplicity_target": "1",
+   "src": [
+    "R8",
+    "R1",
+    "R1"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Transition:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Path:\n    def __init__(self, transitions: List[Transition]):\n        self.transitions = transitions\n\nclass AlternativeTrans:\n    def __init__(self):\n        pass\n\nclass TextualPathExp:\n    def __init__(self, path: Path):\n        self.path = path\n        if path.transitions is None or len(path.transitions) == 0:\n            raise ValueError('A path must contain at least one transition.')\n",
+ "java": {}
+}

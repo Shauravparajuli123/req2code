@@ -1,0 +1,126 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Define BQL Model",
+   "actor": "User",
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "BLQModel",
+   "kind": "class",
+   "attributes": [
+    "queries",
+    "entries",
+    "fields"
+   ],
+   "methods": [
+    {
+     "name": "addQuery",
+     "use_case": "Define BQL Model"
+    },
+    {
+     "name": "addEntry",
+     "use_case": "Define BQL Model"
+    },
+    {
+     "name": "addField",
+     "use_case": "Define BQL Model"
+    }
+   ],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Query",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Entry",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "allFields"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "Field",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Predicate",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Entry",
+   "target": "Field",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "source": "Predicate",
+   "target": "Entry",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/BQL.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass BLQModel:\n    \"\"\"Source: R2, R3, R4, R7, R8, R9, R10\"\"\"\n    queries: _t.Optional[str] = None\n    entries: _t.Optional[str] = None\n    fields: _t.Optional[str] = None\n\n    def addQuery(self) -> None:\n        \"\"\"Realizes UC1 \"Define BQL Model\" (R2, R3, R4, R7, R8, R9, R10).\"\"\"\n        raise NotImplementedError\n\n    def addEntry(self) -> None:\n        \"\"\"Realizes UC1 \"Define BQL Model\" (R2, R3, R4, R7, R8, R9, R10).\"\"\"\n        raise NotImplementedError\n\n    def addField(self) -> None:\n        \"\"\"Realizes UC1 \"Define BQL Model\" (R2, R3, R4, R7, R8, R9, R10).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Query:\n    \"\"\"Source: R7\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Entry:\n    \"\"\"Source: R3, R10\"\"\"\n    name: _t.Optional[str] = None\n    allFields: _t.Optional[bool] = None\n    field: _t.Optional[\"Field\"] = None\n\n\n@_dc.dataclass\nclass Field:\n    \"\"\"Source: R8, R9\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Predicate:\n    \"\"\"Source: R10\"\"\"\n    name: _t.Optional[str] = None\n    entry: _t.Optional[\"Entry\"] = None\n",
+ "java": {
+  "BLQModel.java": "/** Generated from shared model D2/BQL. Source: R2, R3, R4, R7, R8, R9, R10 */\npublic class BLQModel {\n    private java.lang.String queries;\n    private java.lang.String entries;\n    private java.lang.String fields;\n\n    /** Realizes UC1 \"Define BQL Model\" (R2, R3, R4, R7, R8, R9, R10). */\n    public void addQuery() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC1 \"Define BQL Model\" (R2, R3, R4, R7, R8, R9, R10). */\n    public void addEntry() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC1 \"Define BQL Model\" (R2, R3, R4, R7, R8, R9, R10). */\n    public void addField() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Query.java": "/** Generated from shared model D2/BQL. Source: R7 */\npublic class Query {\n    private java.lang.String name;\n}\n",
+  "Entry.java": "/** Generated from shared model D2/BQL. Source: R3, R10 */\npublic class Entry {\n    private java.lang.String name;\n    private boolean allFields;\n    private Field field;\n}\n",
+  "Field.java": "/** Generated from shared model D2/BQL. Source: R8, R9 */\npublic class Field {\n    private java.lang.String name;\n}\n",
+  "Predicate.java": "/** Generated from shared model D2/BQL. Source: R10 */\npublic class Predicate {\n    private java.lang.String name;\n    private Entry entry;\n}\n"
+ }
+}

@@ -1,0 +1,321 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D2/SimpleAirlineDomain",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R1",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "In the airline domain, an airport has a name of type string."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "Each airport has multiple flights that depart from it."
+     },
+     {
+      "sid": "R6.s2",
+      "text": "Each flight can depart from only one airport"
+     }
+    ],
+    "name": "Airport",
+    "freq": 3
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s2",
+      "text": "The class 'Flight' is connected via a directed association to class 'Passenger' which means that the associated 'Passenger' object is reachable from a 'Flight' object."
+     },
+     {
+      "sid": "R8.s3",
+      "text": "One end of the association is labeled 'passenger' and also carries the multiplicity constraint '0..*', meaning that a 'Passenger' object can be associated with 0 or more 'Flight' objects."
+     }
+    ],
+    "name": "Association",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R2",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A flight has a maximum number of passengers which is of type integer"
+     },
+     {
+      "sid": "R6.s1",
+      "text": "Each airport has multiple flights that depart from it."
+     },
+     {
+      "sid": "R6.s2",
+      "text": "Each flight can depart from only one airport"
+     }
+    ],
+    "name": "Flight",
+    "freq": 9
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s2",
+      "text": "The class 'Flight' is connected via a directed association to class 'Passenger' which means that the associated 'Passenger' object is reachable from a 'Flight' object."
+     },
+     {
+      "sid": "R8.s3",
+      "text": "One end of the association is labeled 'passenger' and also carries the multiplicity constraint '0..*', meaning that a 'Passenger' object can be associated with 0 or more 'Flight' objects."
+     }
+    ],
+    "name": "Object",
+    "freq": 4
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R2",
+     "R4",
+     "R8",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A flight has a maximum number of passengers which is of type integer"
+     },
+     {
+      "sid": "R4.s1",
+      "text": "a passenger in SimpleAirlineDomain has a name and a gender"
+     },
+     {
+      "sid": "R8.s2",
+      "text": "The class 'Flight' is connected via a directed association to class 'Passenger' which means that the associated 'Passenger' object is reachable from a 'Flight' object."
+     }
+    ],
+    "name": "Passenger",
+    "freq": 4
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R1",
+     "R3"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "In the airline domain, an airport has a name of type string."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "An airplane has a name which is of type string."
+     }
+    ],
+    "name": "TypeString",
+    "freq": 2
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "In the airline domain, an airport has a name of type string."
+     }
+    ],
+    "owner": "Airport",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "Each flight has exactly one origin airport."
+     }
+    ],
+    "owner": "Flight",
+    "name": "origin airport",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "a passenger in SimpleAirlineDomain has a name and a gender"
+     }
+    ],
+    "owner": "Passenger",
+    "name": "gender",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "a passenger in SimpleAirlineDomain has a name and a gender"
+     }
+    ],
+    "owner": "Passenger",
+    "name": "name",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "In the airline domain, an airport has a name of type string."
+     }
+    ],
+    "owner": "TypeString",
+    "name": "name",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "Each passenger is assigned to exactly one flight."
+     }
+    ],
+    "kind": "association",
+    "source": "Passenger",
+    "target": "Flight",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "Each airport has multiple flights that depart from it."
+     }
+    ],
+    "kind": "has",
+    "source": "Airport",
+    "target": "Flight",
+    "multiplicity_target": "multiple"
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A flight has a maximum number of passengers which is of type integer"
+     }
+    ],
+    "kind": "has",
+    "source": "Flight",
+    "target": "Passenger",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

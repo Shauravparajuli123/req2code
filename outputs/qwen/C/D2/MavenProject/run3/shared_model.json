@@ -1,0 +1,251 @@
+{
+ "case": "D2/MavenProject",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Developer",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "MavenProject",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "contributors",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "mailingLists",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "buildConfiguration",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addContributor",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addMailingList",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Contributor",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "url",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "organizationUrl",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "timeZone",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "identifier",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "BuildConfiguration",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "defaultGoal",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "path",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "MailingList",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "subscribeString",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "archiveString",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Resource",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "targetPath",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "directory",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "excludes",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C3",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

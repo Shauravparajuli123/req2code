@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that the 'seeCustomerPastAndFutureSessions' method in the Trainer class is intended to support the 'See Customer Past And Future Sessions' use case (R60), even though the actor is missing."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R63 is not supported by any class or relationship in the model.",
+   "fix": "Add a class or relationship that supports R63."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'See Customer Past And Future Sessions' (R60) is missing an actor.",
+   "fix": "Add the actor 'Trainer' to the use case 'See Customer Past And Future Sessions'."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'See Customer Bookings' (R62) is missing an actor.",
+   "fix": "Add the actor 'Admin' to the use case 'See Customer Bookings'."
+  }
+ ]
+}

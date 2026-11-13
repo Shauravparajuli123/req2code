@@ -1,0 +1,132 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Company {
+  name : String
+  phoneNumber : String
+  address : String
+  state : String
+  zipCode : String
+  website : String
+  type : String
+  taxStatus : String
+  contacts : String
+}
+class Contact {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  email : String
+  jobTitle : String
+  notes : String
+}
+class Employee {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  jobTitle : String
+  supervisor : String
+  privileges : String
+  +assignSupervisor()
+  +addPrivilege()
+}
+class Product {
+  code : String
+  name : String
+  description : String
+  category : String
+  unitCost : double
+  retailPrice : double
+  inventoryLevel : int
+  reorderLevel : int
+  targetLevel : int
+  minReorderQuantity : int
+  discontinued : boolean
+}
+class Order {
+  date : LocalDate
+  customer : String
+  employee : String
+  status : String
+  shipper : String
+  taxRate : double
+  taxStatus : String
+  invoiceDate : LocalDate
+  paymentMethod : String
+  paymentDate : LocalDate
+  details : String
+  +addDetail()
+}
+class OrderDetailItem {
+  product : String
+  quantity : int
+  unitPrice : double
+  discount : double
+  status : String
+}
+class PurchaseOrder {
+  date : LocalDate
+  vendor : String
+  submitter : String
+  approver : String
+  status : String
+  details : String
+}
+class PurchaseOrderDetailItem {
+  product : String
+  quantity : int
+  unitPrice : double
+}
+class Customer {
+  name : String
+  phoneNumber : String
+  address : String
+  state : String
+  zipCode : String
+  website : String
+  type : String
+  taxStatus : String
+  contacts : String
+}
+class Vendor {
+  name : String
+  phoneNumber : String
+  address : String
+  state : String
+  zipCode : String
+  website : String
+  type : String
+  taxStatus : String
+  contacts : String
+}
+class Shipper {
+  name : String
+  phoneNumber : String
+  address : String
+  state : String
+  zipCode : String
+  website : String
+  type : String
+  taxStatus : String
+  contacts : String
+}
+class State {
+}
+class PhoneNumber {
+}
+class JobTitle {
+}
+class Date {
+}
+Company "1" -- "1" State : is in
+Company "0..*" -- "1" Contact : has
+Employee "1" -- "1" JobTitle : has
+Order "1" -- "1" Customer : is for
+Order "1" -- "1" Employee : is processed by
+Order "1" -- "1" Shipper : is shipped by
+OrderDetailItem "1..*" -- "1" Order : is part of
+PurchaseOrder "1" -- "1" Vendor : is for
+PurchaseOrderDetailItem "1..*" -- "1" PurchaseOrder : is part of
+@enduml

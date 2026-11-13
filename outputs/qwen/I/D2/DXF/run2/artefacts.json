@@ -1,0 +1,76 @@
+{
+ "actors": [],
+ "use_cases": [
+  {
+   "name": "CreateMesh",
+   "actor": "",
+   "src": [
+    "R4",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "AddPointToMesh",
+   "actor": "",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Mesh",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "points"
+   ],
+   "methods": [
+    {
+     "name": "addPoint",
+     "use_case": "R4"
+    },
+    {
+     "name": "getPoints",
+     "use_case": "R4"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R4"
+   ]
+  },
+  {
+   "name": "Point",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "x",
+    "z"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Mesh",
+   "target": "Point",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass TypeString:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Point:\n    def __init__(self, name: str, x: float, z: float, type_string: TypeString):\n        self.name = name\n        self.x = x\n        self.z = z\n        self.type_string = type_string\n\nclass Mesh:\n    def __init__(self, name: str):\n        self.name = name\n        self.points: List[Point] = []\n\nclass DrawingInterchangeModel:\n    def __init__(self):\n        self.meshes: List[Mesh] = []\n\n    def add_mesh(self, mesh: Mesh):\n        raise NotImplementedError\n\n    def add_point_to_mesh(self, point: Point, mesh: Mesh):\n        raise NotImplementedError",
+ "java": {}
+}

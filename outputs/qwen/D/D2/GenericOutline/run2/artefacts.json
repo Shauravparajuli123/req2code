@@ -1,0 +1,115 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "LocatedElement",
+   "kind": "class",
+   "attributes": [
+    "location"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "icon"
+   ],
+   "methods": [
+    {
+     "name": "createNode",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Label",
+   "kind": "class",
+   "attributes": [
+    "label"
+   ],
+   "methods": [
+    {
+     "name": "createLabel",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "LabelSuite",
+   "kind": "class",
+   "attributes": [
+    "label"
+   ],
+   "methods": [
+    {
+     "name": "createLabelSuite",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Map",
+   "kind": "class",
+   "attributes": [
+    "mapString"
+   ],
+   "methods": [
+    {
+     "name": "createMap",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Node",
+   "target": "Label",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "source": "Node",
+   "target": "Map",
+   "src": [
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "source": "Label",
+   "target": "LabelSuite",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GenericOutline.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass LocatedElement:\n    \"\"\"Source: R1\"\"\"\n    location: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R3\"\"\"\n    name: _t.Optional[str] = None\n    icon: _t.Optional[str] = None\n    label: _t.Optional[\"Label\"] = None\n    map: _t.Optional[\"Map\"] = None\n\n    def createNode(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Label:\n    \"\"\"Source: R4\"\"\"\n    label: _t.Optional[str] = None\n    labelSuite: _t.Optional[\"LabelSuite\"] = None\n\n    def createLabel(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass LabelSuite:\n    \"\"\"Source: R5\"\"\"\n    label: _t.Optional[str] = None\n\n    def createLabelSuite(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Map:\n    \"\"\"Source: R6\"\"\"\n    mapString: _t.Optional[str] = None\n\n    def createMap(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "LocatedElement.java": "/** Generated from shared model D2/GenericOutline. Source: R1 */\npublic class LocatedElement {\n    private java.lang.String location;\n}\n",
+  "Node.java": "/** Generated from shared model D2/GenericOutline. Source: R3 */\npublic class Node {\n    private java.lang.String name;\n    private java.lang.String icon;\n    private Label label;\n    private Map map;\n\n    /** Operation. */\n    public void createNode() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Label.java": "/** Generated from shared model D2/GenericOutline. Source: R4 */\npublic class Label {\n    private java.lang.String label;\n    private LabelSuite labelSuite;\n\n    /** Operation. */\n    public void createLabel() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "LabelSuite.java": "/** Generated from shared model D2/GenericOutline. Source: R5 */\npublic class LabelSuite {\n    private java.lang.String label;\n\n    /** Operation. */\n    public void createLabelSuite() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Map.java": "/** Generated from shared model D2/GenericOutline. Source: R6 */\npublic class Map {\n    private java.lang.String mapString;\n\n    /** Operation. */\n    public void createMap() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

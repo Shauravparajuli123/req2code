@@ -1,0 +1,168 @@
+{
+ "actors": [
+  {
+   "name": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "getAttributes",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "containsText",
+   "actor": "User",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "containsElement",
+   "actor": "User",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "containsRoot",
+   "actor": "User",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "hasParent",
+   "actor": "User",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "hasChildren",
+   "actor": "User",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "src": [
+    "R1",
+    "R6"
+   ]
+  },
+  {
+   "name": "AttributeNode",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Text",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Element",
+   "src": [
+    "R4",
+    "R6"
+   ]
+  },
+  {
+   "name": "Root",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Node",
+   "name": "name",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Node",
+   "name": "startLine",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Node",
+   "name": "endLine",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Element",
+   "name": "parent",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "owner": "Element",
+   "name": "children",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Node",
+   "target": "Node",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "kind": "generalization",
+   "source": "AttributeNode",
+   "target": "Node",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "kind": "generalization",
+   "source": "Text",
+   "target": "Node",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "kind": "generalization",
+   "source": "Element",
+   "target": "Node",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "kind": "generalization",
+   "source": "Root",
+   "target": "Element",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

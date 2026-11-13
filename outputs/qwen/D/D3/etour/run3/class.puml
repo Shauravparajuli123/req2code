@@ -1,0 +1,140 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class CulturalHeritage {
+  id : int
+  name : String
+  +createCulturalHeritage()
+  +updateCulturalHeritage()
+  +deleteCulturalHeritage()
+  +searchCulturalHeritage()
+  +viewCulturalHeritageDetails()
+}
+class RefreshmentPoint {
+  id : int
+  name : String
+  banners : String
+  +createRefreshmentPoint()
+  +updateRefreshmentPoint()
+  +deleteRefreshmentPoint()
+  +searchRefreshmentPoint()
+  +viewRefreshmentPointDetails()
+  +insertBanner()
+  +deleteBanner()
+}
+class TouristAccount {
+  id : int
+  name : String
+  +searchTouristAccount()
+  +viewTouristAccountDetails()
+  +enableDisableTouristAccount()
+}
+class Tourist {
+  selectedAccount : String
+  searchPreferences : String
+  personalFavorites : String
+  visitedSites : String
+  +modifyData()
+  +editSearchPreferences()
+  +editPersonalData()
+  +insertFavorite()
+  +removeFavorite()
+  +insertFeedback()
+}
+class Account {
+  data : String
+}
+class Banner {
+  image : String
+  +insertBanner()
+  +editBanner()
+  +removeBanner()
+}
+class News {
+  title : String
+  content : String
+  +insertNews()
+  +deleteNews()
+  +modifyNews()
+}
+class Site {
+  feedbacks : String
+  id : int
+  name : String
+  +searchSite()
+  +viewFeedback()
+  +viewStatisticalReport()
+  +editComment()
+  +insertFeedback()
+}
+class Feedback {
+  comments : String
+  vote : String
+  comment : String
+  siteId : int
+  +insert()
+  +editComment()
+}
+class Comment {
+}
+class Search {
+  site : String
+  +searchSite()
+}
+class Tag {
+  name : String
+  +removeTag()
+  +addTag()
+}
+class UserAccount {
+  username : String
+  +changePassword()
+  +login()
+  +logout()
+}
+class PointOfRestaurant {
+  banners : String
+}
+class PointOfRestaurantOperator {
+  +activateMenuEditing()
+  +deleteMenu()
+  +editDataPoint()
+  +requestConvention()
+}
+class SearchPreference {
+  +edit()
+}
+class Bookmark {
+  site : String
+  +insert()
+  +remove()
+}
+class Menu {
+  day : String
+  +uploadData()
+}
+class Convention {
+  agreementData : String
+  +request()
+}
+class DataPoint {
+  +uploadData()
+}
+class Statistics {
+  +view()
+}
+class User {
+  userId : int
+}
+class Gps {
+  position : String
+}
+RefreshmentPoint "1" -- "0..*" Banner : has
+Site "1" -- "0..*" Feedback : has
+Feedback "1" -- "0..*" Comment : contains
+Search "0..*" -- "0..*" Tag : has
+PointOfRestaurant "1" -- "1..*" Banner : has
+Tourist "1" -- "1" SearchPreference : has
+Tourist "1" -- "1" Bookmark : has
+Tourist "1" -- "1" Site : visited
+@enduml

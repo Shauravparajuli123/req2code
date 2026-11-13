@@ -1,0 +1,122 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Employee {
+  name : String
+  workingHours : String
+  personalInbox : String
+  personalInformation : String
+  contract : String
+  dataSecurity : boolean
+  +expressWorkingHours()
+  +viewPersonalInbox()
+  +changePersonalInformation()
+  +viewContract()
+  +viewFinancialStatements()
+  +ensureApplicationSecurity()
+}
+class Manager {
+  name : String
+  paymentOptions : String
+  paymentSystem : String
+  paymentProcess : String
+  schedulingProcess : String
+  schedule : String
+  newEmployees : String
+  employeeContracts : String
+  employeeCertificates : String
+  oneSystem : String
+  +sendSalaryStatements()
+  +semiAutomateScheduling()
+  +editSchedule()
+  +authorizeSchedule()
+  +viewSchedule()
+  +viewComplaints()
+  +respondToComplaints()
+  +categorizeComplaints()
+  +prioritizeComplaints()
+  +hireNewEmployees()
+  +viewEmployeeContracts()
+  +viewEmployeeCertificates()
+  +contactManagement()
+  +contactEmployee()
+  +messageOtherEmployees()
+  +forwardMessages()
+  +resetPassword()
+  +useUserFriendlyApplication()
+  +navigateThroughApplication()
+  +chooseNotifications()
+  +choosePaymentFrequency()
+}
+class OfficeEmployee {
+  +viewComplaints()
+  +respondToComplaints()
+  +categorizeComplaints()
+  +prioritizeComplaints()
+  +fileComplaint()
+}
+class Applicant {
+  +registerAccount()
+}
+class Complaint {
+  title : String
+  description : String
+  status : String
+  +fileComplaint()
+  +respondToComplaint()
+  +categorizeComplaint()
+  +prioritizeComplaint()
+}
+class Notification {
+  title : String
+  description : String
+  status : String
+  +receiveNotification()
+  +markAsRead()
+}
+class Schedule {
+  date : LocalDate
+  status : String
+  +viewSchedule()
+  +editSchedule()
+  +authorizeSchedule()
+}
+class Contract {
+  startDate : LocalDate
+  endDate : LocalDate
+  status : String
+  +viewContract()
+  +viewEmployeeContracts()
+  +viewEmployeeCertificates()
+}
+class Message {
+  sender : String
+  receiver : String
+  content : String
+  status : String
+  +sendMessage()
+  +forwardMessage()
+}
+class Application {
+  userFriendly : boolean
+  navigation : String
+  notifications : String
+  paymentFrequency : String
+  financialStatements : String
+  dataSecurity : boolean
+  +useUserFriendlyApplication()
+  +navigateThroughApplication()
+  +chooseNotifications()
+  +choosePaymentFrequency()
+  +viewFinancialStatements()
+  +ensureApplicationSecurity()
+}
+Manager "1" -- "1" Application : uses
+Employee "1" -- "1" Application : uses
+OfficeEmployee "1" -- "1" Application : uses
+Complaint "1" -- "1" Application : uses
+Notification "1" -- "1" Application : uses
+Schedule "1" -- "1" Application : uses
+Contract "1" -- "1" Application : uses
+Message "1" -- "1" Application : uses
+@enduml

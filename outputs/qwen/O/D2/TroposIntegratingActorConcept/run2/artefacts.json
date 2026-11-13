@@ -1,0 +1,82 @@
+{
+ "actors": [
+  "Agent"
+ ],
+ "use_cases": [
+  {
+   "name": "occupyPosition",
+   "actor": "Agent",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Position",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Agent",
+   "kind": "class",
+   "attributes": [
+    "position"
+   ],
+   "methods": [
+    {
+     "name": "occupyPosition",
+     "use_case": "occupyPosition"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R5"
+   ]
+  },
+  {
+   "name": "Actor",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Role",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Agent",
+   "target": "Position",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "python": "class Position:\n    def __init__(self, role=None):\n        self.role = role\n\nclass Agent:\n    def __init__(self, position):\n        self.position = position\n    def occupyPosition(self):\n        raise NotImplementedError\n\nclass Actor:\n    pass\n\nclass Role:\n    pass",
+ "java": {}
+}

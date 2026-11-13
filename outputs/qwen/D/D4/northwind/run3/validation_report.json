@@ -1,0 +1,115 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The system does not support a hierarchical reporting structure where employees may report to one supervisor, and one supervisor to manage multiple employees."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Company' is missing attributes for tax status and company type.",
+   "fix": "Add 'taxStatus:String' and 'companyType:String' to the 'Company' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Contact' is missing attributes for first name, last name, primary and secondary phone numbers, email address, job title, and notes.",
+   "fix": "Add 'firstName:String', 'lastName:String', 'primaryPhoneNumber:String', 'secondaryPhoneNumber:String', 'emailAddress:String', 'jobTitle:String', 'notes:String' to the 'Contact' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Employee' is missing attribute for title.",
+   "fix": "Add 'title:String' to the 'Employee' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Order' is missing attributes for customer, shipper, and status values.",
+   "fix": "Add 'customer:String', 'shipper:String', and 'status:String' to the 'Order' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'OrderDetail' is missing attributes for discount and status.",
+   "fix": "Add 'discount:double' and 'status:String' to the 'OrderDetail' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'PurchaseOrder' is missing attributes for vendor, employee submitted, employee approved, and status values.",
+   "fix": "Add 'vendor:String', 'employeeSubmitted:String', 'employeeApproved:String', and 'status:String' to the 'PurchaseOrder' class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'PurchaseOrderDetail' is missing attribute for unit price.",
+   "fix": "Add 'unitPrice:double' to the 'PurchaseOrderDetail' class."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Order' and 'Company' is missing cardinality.",
+   "fix": "Add cardinality '1..1' to the relationship between 'Order' and 'Company'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Order' and 'Employee' is missing cardinality.",
+   "fix": "Add cardinality '1..1' to the relationship between 'Order' and 'Employee'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'OrderDetail' and 'Order' is missing cardinality.",
+   "fix": "Add cardinality '1..1' to the relationship between 'OrderDetail' and 'Order'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'OrderDetail' and 'Product' is missing cardinality.",
+   "fix": "Add cardinality '1..1' to the relationship between 'OrderDetail' and 'Product'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'PurchaseOrderDetail' and 'PurchaseOrder' is missing cardinality.",
+   "fix": "Add cardinality '1..1' to the relationship between 'PurchaseOrderDetail' and 'PurchaseOrder'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'PurchaseOrderDetail' and 'Product' is missing cardinality.",
+   "fix": "Add cardinality '1..1' to the relationship between 'PurchaseOrderDetail' and 'Product'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Product' and 'ProductCategory' is missing cardinality.",
+   "fix": "Add cardinality '1..1' to the relationship between 'Product' and 'ProductCategory'."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'Maintain Company Records' is missing actors.",
+   "fix": "Add actors 'SystemAdministrator' and 'Employee' to the use case 'Maintain Company Records'."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'Maintain Employee Records' is missing actors.",
+   "fix": "Add actor 'SystemAdministrator' to the use case 'Maintain Employee Records'."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'Maintain Product Catalog' is missing actors.",
+   "fix": "Add actor 'SystemAdministrator' to the use case 'Maintain Product Catalog'."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'Maintain Stock Takes' is missing actors.",
+   "fix": "Add actor 'SystemAdministrator' to the use case 'Maintain Stock Takes'."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'Record Customer Orders' is missing actors.",
+   "fix": "Add actor 'Employee' to the use case 'Record Customer Orders'."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'Manage Purchase Orders' is missing actors.",
+   "fix": "Add actor 'Employee' to the use case 'Manage Purchase Orders'."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Place {
+  name : String
+  tokens : int
+  +addToken()
+  +removeToken()
+}
+class Transition {
+  name : String
+  +addOutputArc()
+  +removeOutputArc()
+}
+class Arc {
+  weight : double
+  +setDestination()
+  +setSource()
+}
+class PlaceTransitionArc {
+  +connectToPlace()
+  +disconnectFromPlace()
+}
+class TransitionPlaceArc {
+  +connectToTransition()
+  +disconnectFromTransition()
+}
+class Net {
+  +addPlace()
+  +removePlace()
+  +addTransition()
+  +removeTransition()
+}
+Place "1" -- "1" Net : is part of
+PlaceTransitionArc "1" -- "1" Transition : connects
+@enduml

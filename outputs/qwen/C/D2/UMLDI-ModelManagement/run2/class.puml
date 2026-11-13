@@ -1,0 +1,35 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class CoreModel {
+  name : String
+  isSpecification : boolean
+}
+class Element {
+  name : String
+  isRoot : boolean
+  isAbstract : boolean
+  namespace : String
+}
+class Namespace {
+  name : String
+}
+class Classifier {
+  name : String
+  powerTypeRanges : String
+}
+class Generalization {
+  parent : String
+  discriminator : String
+}
+class GeneralizableElement {
+  name : String
+  generalizations : String
+}
+CoreModel "1" -- "0..*" Element : contains
+CoreModel "1" -- "0..*" Classifier : contains
+CoreModel "1" -- "0..*" Namespace : contains
+CoreModel "1" -- "0..*" Generalization : contains
+GeneralizableElement "1" *-- "0..1" Generalization : is linked to
+Classifier --|> GeneralizableElement
+@enduml

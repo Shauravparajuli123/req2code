@@ -1,0 +1,87 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Classifier",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Class",
+   "src": [
+    "R2",
+    "R4",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "PrimitiveDataType",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "SimpleClass",
+   "src": [
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Classifier",
+   "name": "name",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "Class",
+   "name": "name",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "SimpleClass",
+   "name": "type",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "generalization",
+   "source": "PrimitiveDataType",
+   "target": "Classifier",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "SimpleClass",
+   "target": "Class",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "kind": "generalization",
+   "source": "SimpleClass",
+   "target": "Class",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

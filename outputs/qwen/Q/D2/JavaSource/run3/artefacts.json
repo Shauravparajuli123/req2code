@@ -1,0 +1,105 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "CreateClassDefinition",
+   "actor": "User",
+   "src": [
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "InvokeMethod",
+   "actor": "User",
+   "src": [
+    "R5",
+    "R9"
+   ]
+  },
+  {
+   "name": "DeclareClasses",
+   "actor": "User",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "DefineMethod",
+   "actor": "User",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Definition",
+   "kind": "class",
+   "attributes": [
+    "className",
+    "superClassName"
+   ],
+   "methods": [
+    {
+     "name": "createClassDefinition",
+     "use_case": "CreateClassDefinition"
+    },
+    {
+     "name": "defineMethod",
+     "use_case": "DefineMethod"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Method",
+   "kind": "class",
+   "attributes": [
+    "methodName"
+   ],
+   "methods": [
+    {
+     "name": "invokeMethod",
+     "use_case": "InvokeMethod"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R9"
+   ]
+  },
+  {
+   "name": "MethodDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Method",
+   "target": "MethodDefinition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R9"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Definition:\n    def __init__(self, className: str, superClassName: str):\n        self.className = className\n        self.superClassName = superClassName\n    def createClassDefinition(self) -> None:\n        raise NotImplementedError()\n    def defineMethod(self) -> None:\n        raise NotImplementedError()\n\nclass Method:\n    def __init__(self, methodName: str):\n        self.methodName = methodName\n    def invokeMethod(self) -> None:\n        raise NotImplementedError()\n\nclass MethodDefinition:\n    pass",
+ "java": {}
+}

@@ -1,0 +1,80 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "CreateNode",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "condition_node"
+   ],
+   "methods": [
+    {
+     "name": "has_expression",
+     "use_case": "CreateNode"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6"
+   ]
+  },
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "ConditionalNode",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Node",
+   "target": "Expression",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ConditionalNode",
+   "target": "Node",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "class Node:\n    def __init__(self, condition_node=None):\n        self.condition_node = condition_node\n    def has_expression(self):\n        raise NotImplementedError\n\nclass Expression:\n    def __init__(self, name):\n        self.name = name\n\nclass ConditionalNode:\n    def __init__(self):\n        pass",
+ "java": {}
+}

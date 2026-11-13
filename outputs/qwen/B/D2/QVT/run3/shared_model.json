@@ -1,0 +1,174 @@
+{
+ "case": "D2/QVT",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "TemplateExp",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "TemplateExpression",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C3",
+   "name": "CollectionTemplateExpression",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "collectionKind",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "oclExpressions",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "matchedOclExpression",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ObjectTemplateExp",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "OclExpression",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C6",
+   "name": "Property",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "PropertyTemplateItem",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "objectContainer",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "name": "referredProperty",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C3",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C7",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "generalization",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is a",
+   "src": [
+    "R1",
+    "R2"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a template expression can be bound to a variable, but this is not explicitly represented in the model."
+  },
+  {
+   "tag": "R5",
+   "assumption": "The model assumes that a collection template expression can be matched to one OCL expression, but this is not explicitly represented in the model."
+  }
+ ],
+ "open_tags": [
+  "R5 (referential, \"passive 'bound' without agent\"): readings ['A template expression can be bound to a variable', 'A variable can be bound to a template expression']",
+  "R8 (referential, \"passive 'matched' without agent\"): readings ['A collection template expression may be matched to one OCL expression', 'An OCL expression may be matched to one collection template expression']"
+ ]
+}

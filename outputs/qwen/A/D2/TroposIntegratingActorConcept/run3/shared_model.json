@@ -1,0 +1,95 @@
+{
+ "case": "D2/TroposIntegratingActorConcept",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Agent",
+   "src": [
+    "R4",
+    "R5"
+   ]
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Agent",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "position",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "role",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R5"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Position",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Role",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "occupies",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "covers",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

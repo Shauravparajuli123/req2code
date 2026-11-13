@@ -1,0 +1,45 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class GraphElement {
+  name : String
+  label : String
+  zIndex : int
+  parentGraph : String
+  +createGraphElement()
+}
+class Node {
+  name : String
+  label : String
+  zIndex : int
+  shape : String
+  parentGraph : String
+  +createNode()
+}
+class DirectedArc {
+  name : String
+  label : String
+  zIndex : int
+  sourceNode : String
+  targetNode : String
+  shape : String
+  parentGraph : String
+  +createDirectedArc()
+}
+class Graph {
+  type : String
+  dimension : int
+  elements : String
+  +createGraph()
+}
+class SubGraph {
+  name : String
+  value : String
+  +createSubGraph()
+}
+Graph "1" *-- "0..*" GraphElement : contains
+GraphElement "0..1" -- "1..*" Node : has
+GraphElement "0..1" -- "1..*" DirectedArc : has
+Graph "1" -- "0..*" SubGraph : contains
+GraphElement "1" -- "1" Graph : is contained in
+@enduml

@@ -1,0 +1,69 @@
+{
+ "case": "D2/useCase",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Login",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC2",
+   "name": "Logout",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "User",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "login",
+     "realizes": "UC1",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "id": "M2",
+     "name": "logout",
+     "realizes": "UC2",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [],
+ "assumptions": [],
+ "open_tags": []
+}

@@ -1,0 +1,100 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasColumn",
+     "use_case": "R5"
+    },
+    {
+     "name": "hasFkey",
+     "use_case": "R4"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R4"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Fkey",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "referencesTable",
+     "use_case": "R3"
+    },
+    {
+     "name": "getReferencedTable",
+     "use_case": "R6"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R6"
+   ]
+  },
+  {
+   "name": "NameString",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Table",
+   "target": "Column",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Table",
+   "target": "Fkey",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "references",
+   "source": "Fkey",
+   "target": "Table",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "class Table:\n    def __init__(self, name: str):\n        self.name = name\n\n    def hasColumn(self, column: Column) -> bool:\n        raise NotImplementedError\n\n    def hasFkey(self, fkey: Fkey) -> bool:\n        raise NotImplementedError\n\nclass Column:\n    def __init__(self, name: str):\n        self.name = name\nclass Fkey:\n    def __init__(self):\n        pass\n    def referencesTable(self, table: Table) -> bool:\n        raise NotImplementedError\n    def getReferencedTable(self) -> Table:\n        raise NotImplementedError\nclass NameString:\n    pass",
+ "java": {}
+}

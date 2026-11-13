@@ -1,0 +1,160 @@
+{
+ "actors": [
+  "member"
+ ],
+ "use_cases": [
+  {
+   "name": "Implements Zero or More",
+   "actor": "member",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "IumlType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "IumlClass",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "IumlComponent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "ICdeServer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R11"
+   ]
+  },
+  {
+   "name": "ICdeComponent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "ICdeComponentSpec",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "ICdeMember",
+   "kind": "class",
+   "attributes": [
+    "executionPerformance",
+    "executionDetails"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "IUmlMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "IumlClass",
+   "target": "IumlType",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "IumlComponent",
+   "target": "IumlClass",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "ICdeComponentSpec",
+   "target": "IumlType",
+   "multiplicity_target": "1",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "ICdeComponent",
+   "target": "ICdeComponentSpec",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "ICdeServer",
+   "target": "ICdeComponent",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ICdeComponent",
+   "target": "IUmlMember",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass IumlType:\n    def __init__(self):\n        pass\n    def get_type(self) -> str:\n        raise NotImplementedError()\n\nclass IumlClass(IumlType):\n    def __init__(self):\n        super().__init__()\n    def get_class_name(self) -> str:\n        raise NotImplementedError()\n\nclass IumlComponent(IumlClass):\n    def __init__(self):\n        super().__init__()\n    def get_component_id(self) -> str:\n        raise NotImplementedError()\n\nclass ICdeComponentSpec(IumlType):\n    def __init__(self):\n        super().__init__()\n    def get_specification(self) -> str:\n        raise NotImplementedError()\n\nclass ICdeComponent(ICdeComponentSpec):\n    def __init__(self):\n        super().__init__()\n    def get_component_name(self) -> str:\n        raise NotImplementedError()\n\nclass ICdeServer(ICdeComponent):\n    def __init__(self):\n        super().__init__()\n    def get_server_name(self) -> str:\n        raise NotImplementedError()\n    def get_components(self) -> List[ICdeComponent]:\n        raise NotImplementedError()\n\nclass IUmlMember:\n    def __init__(self):\n        pass\n    def get_member_name(self) -> str:\n        raise NotImplementedError()\n\nclass ICdeMember(IUmlMember):\n    def __init__(self):\n        super().__init__()\n    def get_execution_performance(self) -> str:\n        raise NotImplementedError()\n    def get_execution_details(self) -> str:\n        raise NotImplementedError()",
+ "java": {}
+}

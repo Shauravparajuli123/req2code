@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing TechnologyObject class in the model.",
+   "fix": "Add TechnologyObject class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing Implementation class in the model.",
+   "fix": "Add Implementation class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing IXIT class in the model.",
+   "fix": "Add IXIT class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing ImplementableStandard class in the model.",
+   "fix": "Add ImplementableStandard class to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Association between IXIT and Implementation is missing.",
+   "fix": "Add association IXIT -> Implementation [0..*..0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Association between ImplementableStandard and TechnologyObject is missing.",
+   "fix": "Add association ImplementableStandard -> TechnologyObject [1..*..1..*] to the model."
+  }
+ ]
+}

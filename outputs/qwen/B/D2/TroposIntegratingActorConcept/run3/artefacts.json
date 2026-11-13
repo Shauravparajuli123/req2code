@@ -1,0 +1,67 @@
+{
+ "actors": [
+  "Agent"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Agent",
+   "kind": "class",
+   "attributes": [
+    "position"
+   ],
+   "methods": [
+    {
+     "name": "occupyPosition",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Position",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "name": "Role",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Agent",
+   "target": "Position",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "Position",
+   "target": "Role",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/TroposIntegratingActorConcept.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Agent:\n    \"\"\"Source: R2\"\"\"\n    position: _t.Optional[str] = None\n\n    def occupyPosition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Position:\n    \"\"\"Source: R3, R5\"\"\"\n    role: _t.Optional[str] = None\n    roles: _t.List[\"Role\"] = _dc.field(default_factory=list)\n\n\nclass Role(_enum.Enum):\n    \"\"\"Source: R6\"\"\"\n    CLASS = \"CLASS\"\n    AGENT = \"AGENT\"\n",
+ "java": {
+  "Agent.java": "/** Generated from shared model D2/TroposIntegratingActorConcept. Source: R2 */\npublic class Agent {\n    private java.lang.String position;\n\n    /** Operation. */\n    public void occupyPosition() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Position.java": "/** Generated from shared model D2/TroposIntegratingActorConcept. Source: R3, R5 */\npublic class Position {\n    private java.lang.String role;\n    private java.util.List<Role> roles;\n}\n",
+  "Role.java": "/** Generated from shared model D2/TroposIntegratingActorConcept. Source: R6 */\npublic enum Role {\n    CLASS, AGENT\n}\n"
+ }
+}

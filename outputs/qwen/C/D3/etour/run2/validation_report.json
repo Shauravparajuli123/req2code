@@ -1,0 +1,55 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that the 'Agency' class realizes the 'Delete Account', 'Change Data', 'View Report', and 'Edit Comment' use cases, but these are not explicitly defined in the model."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'UseCase' has no attributes or methods, but is referenced in relationships.",
+   "fix": "Add appropriate attributes and methods to class 'UseCase'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Gps' has no attributes or methods.",
+   "fix": "Add appropriate attributes and methods to class 'Gps'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'AdvancedSearch' has no attributes or methods.",
+   "fix": "Add appropriate attributes and methods to class 'AdvancedSearch'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Bookmark' has no attributes or methods.",
+   "fix": "Add appropriate attributes and methods to class 'Bookmark'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Comment' has no attributes or methods.",
+   "fix": "Add appropriate attributes and methods to class 'Comment'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Site' has no attributes or methods.",
+   "fix": "Add appropriate attributes and methods to class 'Site'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship 'Restaurant -> UseCase [1..1..*]' is missing from the model.",
+   "fix": "Add the relationship 'Restaurant -> UseCase [1..1..*]' to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship 'Tourist -> UseCase [1..1..*]' is missing from the model.",
+   "fix": "Add the relationship 'Tourist -> UseCase [1..1..*]' to the model."
+  }
+ ]
+}

@@ -1,0 +1,112 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "ArchitectureDescription",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "selectView",
+     "use_case": null
+    },
+    {
+     "name": "selectViewPoint",
+     "use_case": null
+    },
+    {
+     "name": "describeArchitecture",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "ArchitectureView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "projectOnto",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R12",
+    "R8",
+    "R9",
+    "R11"
+   ]
+  },
+  {
+   "name": "ArchitectureViewPoint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "conformTo",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "MainView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "defineView",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "ArchitectureView",
+   "target": "ArchitectureViewPoint",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/Architectural_Description.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass ArchitectureDescription:\n    \"\"\"Source: R7, R8, R9, R10, R11\"\"\"\n\n    def selectView(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def selectViewPoint(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def describeArchitecture(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ArchitectureView:\n    \"\"\"Source: R12, R8, R9, R11\"\"\"\n    architectureViewPoints: _t.List[\"ArchitectureViewPoint\"] = _dc.field(default_factory=list)\n\n    def projectOnto(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ArchitectureViewPoint:\n    \"\"\"Source: R10, R11\"\"\"\n\n    def conformTo(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass MainView:\n    \"\"\"Source: R11, R12\"\"\"\n\n    def defineView(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "ArchitectureDescription.java": "/** Generated from shared model D2/Architectural_Description. Source: R7, R8, R9, R10, R11 */\npublic class ArchitectureDescription {\n\n    /** Operation. */\n    public void selectView() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void selectViewPoint() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void describeArchitecture() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ArchitectureView.java": "/** Generated from shared model D2/Architectural_Description. Source: R12, R8, R9, R11 */\npublic class ArchitectureView {\n    private java.util.List<ArchitectureViewPoint> architectureViewPoints;\n\n    /** Operation. */\n    public void projectOnto() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ArchitectureViewPoint.java": "/** Generated from shared model D2/Architectural_Description. Source: R10, R11 */\npublic class ArchitectureViewPoint {\n\n    /** Operation. */\n    public void conformTo() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "MainView.java": "/** Generated from shared model D2/Architectural_Description. Source: R11, R12 */\npublic class MainView {\n\n    /** Operation. */\n    public void defineView() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Game.java": "/** Generated from shared model D2/Architectural_Description. Source: R1 */\npublic class Game {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

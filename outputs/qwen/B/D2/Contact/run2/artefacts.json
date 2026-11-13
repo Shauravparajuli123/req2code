@@ -1,0 +1,67 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Phone",
+   "kind": "class",
+   "attributes": [
+    "number"
+   ],
+   "methods": [],
+   "src": [
+    "R2",
+    "R3"
+   ]
+  },
+  {
+   "name": "LandLine",
+   "kind": "class",
+   "attributes": [
+    "number"
+   ],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "CellPhone",
+   "kind": "class",
+   "attributes": [
+    "number"
+   ],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Contact",
+   "target": "LandLine",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/Contact.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Contact:\n    \"\"\"Source: R1\"\"\"\n    name: _t.Optional[str] = None\n    landLine: _t.Optional[\"LandLine\"] = None\n\n\n@_dc.dataclass\nclass Phone:\n    \"\"\"Source: R2, R3\"\"\"\n    number: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass LandLine:\n    \"\"\"Source: R5\"\"\"\n    number: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass CellPhone:\n    \"\"\"Source: R6\"\"\"\n    number: _t.Optional[str] = None\n",
+ "java": {
+  "Contact.java": "/** Generated from shared model D2/Contact. Source: R1 */\npublic class Contact {\n    private java.lang.String name;\n    private LandLine landLine;\n}\n",
+  "Phone.java": "/** Generated from shared model D2/Contact. Source: R2, R3 */\npublic class Phone {\n    private java.lang.String number;\n}\n",
+  "LandLine.java": "/** Generated from shared model D2/Contact. Source: R5 */\npublic class LandLine {\n    private java.lang.String number;\n}\n",
+  "CellPhone.java": "/** Generated from shared model D2/Contact. Source: R6 */\npublic class CellPhone {\n    private java.lang.String number;\n}\n"
+ }
+}

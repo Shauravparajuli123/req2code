@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "SystemAdministrator" as A1
+actor "Employee" as A2
+rectangle "northwind" {
+  usecase "Maintain Company Records" as UC1
+  usecase "Maintain Employee Records" as UC2
+  usecase "Maintain Product Catalog" as UC3
+  usecase "Maintain Stock Takes" as UC4
+  usecase "Record Customer Orders" as UC5
+  usecase "Manage Purchase Orders" as UC6
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A2 --> UC5
+A2 --> UC6
+@enduml

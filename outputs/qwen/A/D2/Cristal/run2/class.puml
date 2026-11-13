@@ -1,0 +1,21 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Condition {
+}
+class CompositeParDef {
+}
+class ElementaryPartDef {
+}
+class ElementaryActDef {
+}
+class CompositeActDef {
+}
+class ActCompositeMember {
+}
+class PartCompositeMember {
+}
+Condition "0..*" -- "1" PartCompositeMember : may have
+CompositeParDef "1" *-- "0..*" PartCompositeMember : may be composed by
+CompositeActDef "1" *-- "0..*" ActCompositeMember : may be composed by
+@enduml

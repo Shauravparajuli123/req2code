@@ -1,0 +1,41 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class MavenProject {
+  name : String
+  contributors : String
+  mailingLists : String
+  buildConfiguration : String
+  +addContributor()
+  +addMailingList()
+}
+class Contributor {
+  name : String
+  url : String
+  organizationUrl : String
+  timeZone : String
+  identifier : String
+}
+class BuildConfiguration {
+  defaultGoal : String
+  path : String
+}
+class MailingList {
+  name : String
+  subscribeString : String
+  archiveString : String
+}
+class Resource {
+  targetPath : String
+  directory : String
+  excludes : String
+}
+class Game {
+  name : String
+  +createGame()
+}
+MavenProject "1" *-- "0..1" BuildConfiguration : has
+MavenProject "1" o-- "0..*" Resource : has
+MavenProject "1" -- "0..*" MailingList : has
+Resource "0..*" -- "1" Game : uses
+@enduml

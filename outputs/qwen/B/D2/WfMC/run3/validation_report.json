@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The class 'ProcessActivity' is assumed to represent a process activity in the workflow, even though it is not explicitly mentioned in the requirements."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for WorkflowApplicationDeclaration",
+   "fix": "Add class WorkflowApplicationDeclaration"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for WorkflowState",
+   "fix": "Add class WorkflowState"
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'Interface for workflow' is not represented",
+   "fix": "Add use case 'Interface for workflow'"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for ProcessParticipantSpecification",
+   "fix": "Add class ProcessParticipantSpecification"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between WorkflowProcessDefinition and ProcessParticipantSpecification",
+   "fix": "Add relationship WorkflowProcessDefinition -> ProcessParticipantSpecification [0..1]"
+  }
+ ]
+}

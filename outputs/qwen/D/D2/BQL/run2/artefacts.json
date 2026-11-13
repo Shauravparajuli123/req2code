@@ -1,0 +1,139 @@
+{
+ "actors": [
+  "Moderator",
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Create BLQModel",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Create BQLModel",
+   "actor": "User",
+   "src": [
+    "R2",
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "BQLModel",
+   "kind": "class",
+   "attributes": [
+    "queries",
+    "entries",
+    "fields"
+   ],
+   "methods": [
+    {
+     "name": "createBQLModel",
+     "use_case": "Create BQLModel"
+    }
+   ],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R7",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Entry",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "allFields"
+   ],
+   "methods": [
+    {
+     "name": "createEntry",
+     "use_case": "Create BQLModel"
+    }
+   ],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "Field",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Query",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "location",
+    "comments"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "BQLModel",
+   "target": "Query",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "source": "BQLModel",
+   "target": "Entry",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "BQLModel",
+   "target": "Field",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Entry",
+   "target": "Field",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/BQL.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass BQLModel:\n    \"\"\"Source: R2, R3, R4, R7, R9, R10\"\"\"\n    queries: _t.Optional[str] = None\n    entries: _t.Optional[str] = None\n    fields: _t.Optional[str] = None\n\n    def createBQLModel(self) -> None:\n        \"\"\"Realizes UC2 \"Create BQLModel\" (R2, R3, R4).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Entry:\n    \"\"\"Source: R3, R10\"\"\"\n    name: _t.Optional[str] = None\n    allFields: _t.Optional[bool] = None\n    field: _t.Optional[\"Field\"] = None\n\n    def createEntry(self) -> None:\n        \"\"\"Realizes UC2 \"Create BQLModel\" (R2, R3, R4).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Field:\n    \"\"\"Source: R4, R8, R9\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Query:\n    \"\"\"Source: R7\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Element:\n    \"\"\"Source: R1\"\"\"\n    location: _t.Optional[str] = None\n    comments: _t.Optional[str] = None\n",
+ "java": {
+  "BQLModel.java": "/** Generated from shared model D2/BQL. Source: R2, R3, R4, R7, R9, R10 */\npublic class BQLModel {\n    private java.lang.String queries;\n    private java.lang.String entries;\n    private java.lang.String fields;\n\n    /** Realizes UC2 \"Create BQLModel\" (R2, R3, R4). */\n    public void createBQLModel() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Entry.java": "/** Generated from shared model D2/BQL. Source: R3, R10 */\npublic class Entry {\n    private java.lang.String name;\n    private boolean allFields;\n    private Field field;\n\n    /** Realizes UC2 \"Create BQLModel\" (R2, R3, R4). */\n    public void createEntry() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Field.java": "/** Generated from shared model D2/BQL. Source: R4, R8, R9 */\npublic class Field {\n    private java.lang.String name;\n}\n",
+  "Query.java": "/** Generated from shared model D2/BQL. Source: R7 */\npublic class Query {\n}\n",
+  "Element.java": "/** Generated from shared model D2/BQL. Source: R1 */\npublic class Element {\n    private java.lang.String location;\n    private java.lang.String comments;\n}\n"
+ }
+}

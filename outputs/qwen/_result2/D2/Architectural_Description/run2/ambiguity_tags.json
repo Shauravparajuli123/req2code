@@ -1,0 +1,138 @@
+[
+ {
+  "id": "A1",
+  "type": "referential",
+  "sid": "R7.s3",
+  "req_id": "R7",
+  "cue": "it",
+  "text": "An \"Architecture Description\" does not know the \"Architecture\" it describes.",
+  "readings": [
+   "An 'Architecture Description' does not know the 'Architecture' it describes.",
+   "An 'Architecture' does not know the 'Architecture Description' it describes."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The sentence is ambiguous and could be interpreted in two ways, affecting the direction of the relationship.",
+  "chosen": "An 'Architecture' does not know the 'Architecture Description' it describes."
+ },
+ {
+  "id": "A2",
+  "type": "quantifier",
+  "sid": "R8.s2",
+  "req_id": "R8",
+  "cue": "one or more",
+  "text": "An \"ArchitectureDescription\" selects one or more \"ArchitectureView\".",
+  "readings": [
+   "An 'ArchitectureDescription' selects one 'ArchitectureView'.",
+   "An 'ArchitectureDescription' selects one or more 'ArchitectureView'."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The sentence is ambiguous and could be interpreted to mean either one or multiple views are selected.",
+  "chosen": "An 'ArchitectureDescription' selects one or more 'ArchitectureView'."
+ },
+ {
+  "id": "A3",
+  "type": "quantifier",
+  "sid": "R9.s1",
+  "req_id": "R9",
+  "cue": "one or more",
+  "text": "Package \"ArchitecturalDescription\" contains component \"ArchitectureView\" which is selected by one or more \"ArchitectureDescription\" (another component).",
+  "readings": [
+   "Package 'ArchitecturalDescription' contains one 'ArchitectureView'.",
+   "Package 'ArchitecturalDescription' contains one or more 'ArchitectureView'."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The sentence is ambiguous and could be interpreted to mean either one or multiple views are contained.",
+  "chosen": "Package 'ArchitecturalDescription' contains one or more 'ArchitectureView'."
+ },
+ {
+  "id": "A4",
+  "type": "quantifier",
+  "sid": "R10.s2",
+  "req_id": "R10",
+  "cue": "one or more",
+  "text": "Component \"ArchitectureView\" conforms to one or more components \"ArchitectureViewPoint\".",
+  "readings": [
+   "Component 'ArchitectureView' conforms to one 'ArchitectureViewPoint'.",
+   "Component 'ArchitectureView' conforms to one or more 'ArchitectureViewPoint'."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The sentence is ambiguous and could be interpreted to mean either one or multiple view points are conformed to.",
+  "chosen": "Component 'ArchitectureView' conforms to one or more 'ArchitectureViewPoint'."
+ },
+ {
+  "id": "A5",
+  "type": "referential",
+  "sid": "R10.s3",
+  "req_id": "R10",
+  "cue": "it",
+  "text": "An \"ArchitectureViewPoint\" does not know the \"ArchitectureView\" that conform to it.",
+  "readings": [
+   "An 'ArchitectureViewPoint' does not know the 'ArchitectureView' that conform to it.",
+   "An 'ArchitectureViewPoint' does not know the 'ArchitectureView' that conforms to it."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "referential",
+  "explanation": "The sentence is ambiguous and could be interpreted in two ways, affecting the direction of the relationship.",
+  "chosen": "An 'ArchitectureViewPoint' does not know the 'ArchitectureView' that conforms to it."
+ },
+ {
+  "id": "A6",
+  "type": "quantifier",
+  "sid": "R11.s1",
+  "req_id": "R11",
+  "cue": "several",
+  "text": "In package \"ArchitecturalDescription\" there are several components, including \"ArchitectureViewPoint\" and \"MainView\".",
+  "readings": [
+   "In package 'ArchitecturalDescription' there are several components, including 'ArchitectureViewPoint' and 'MainView'.",
+   "In package 'ArchitecturalDescription' there are one or more components, including 'ArchitectureViewPoint' and 'MainView'."
+  ],
+  "status": "rejected",
+  "confirmed": false,
+  "llm_type": "quantifier",
+  "explanation": "The sentence is ambiguous and could be interpreted to mean either several or one or more components are present.",
+  "chosen": ""
+ },
+ {
+  "id": "A7",
+  "type": "quantifier",
+  "sid": "R12.s1",
+  "req_id": "R12",
+  "cue": "one or more",
+  "text": "a \"MainView\" is projected onto one or more \"ArchitectureView\".",
+  "readings": [
+   "A 'MainView' is projected onto one 'ArchitectureView'.",
+   "A 'MainView' is projected onto one or more 'ArchitectureView'."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "quantifier",
+  "explanation": "The sentence is ambiguous and could be interpreted to mean either one or multiple views are projected.",
+  "chosen": "A 'MainView' is projected onto one or more 'ArchitectureView'."
+ },
+ {
+  "id": "A8",
+  "type": "actor",
+  "sid": "R12.s1",
+  "req_id": "R12",
+  "cue": "passive 'projected' without agent",
+  "text": "a \"MainView\" is projected onto one or more \"ArchitectureView\".",
+  "readings": [
+   "A 'MainView' is projected onto one or more 'ArchitectureView' by an actor.",
+   "A 'MainView' is projected onto one or more 'ArchitectureView' without an actor."
+  ],
+  "status": "resolved",
+  "confirmed": true,
+  "llm_type": "actor",
+  "explanation": "The sentence is ambiguous and could be interpreted to mean either an actor is involved or not.",
+  "chosen": "A 'MainView' is projected onto one or more 'ArchitectureView' without an actor."
+ }
+]

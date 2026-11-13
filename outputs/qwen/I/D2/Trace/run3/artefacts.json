@@ -1,0 +1,84 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineTraceName",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Trace",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Level",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Call",
+   "kind": "class",
+   "attributes": [
+    "methodName",
+    "databaseRows"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Index",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "type": "aggregation",
+   "source": "Trace",
+   "target": "Level",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "Call",
+   "target": "Level",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Trace:\n    def __init__(self, name: str):\n        self.name = name\n        self.levels: List['Level'] = []\n\nclass Level:\n    def __init__(self, trace: Trace, index: int):\n        self.trace = trace\n        self.index = index\n\nclass Call:\n    def __init__(self, method_name: str, database_row: int):\n        self.method_name = method_name\n        self.database_row = database_row\n\nclass Index:\n    def __init__(self, value: int):\n        self.value = value",
+ "java": {}
+}

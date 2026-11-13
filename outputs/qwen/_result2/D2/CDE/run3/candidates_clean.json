@@ -1,0 +1,331 @@
+{
+ "case": "D2/CDE",
+ "stage": "result2_after_ambiguity_removal",
+ "actors": [
+  {
+   "id": "A1",
+   "src": [
+    "R10"
+   ],
+   "rule": [
+    "person_noun"
+   ],
+   "evidence": [
+    {
+     "sid": "R10.s1",
+     "text": "The overall model seems to describe the structure of UML types (classes or components), and the fragment represents the fact that each type has a bunch of members (attributes/functions)"
+    }
+   ],
+   "name": "member"
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "src": [
+    "R6"
+   ],
+   "rule": [
+    "explicit_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R6.s1",
+     "text": "A class named ICdeComponent"
+    }
+   ],
+   "name": "IcdeComponent",
+   "freq": 0
+  },
+  {
+   "id": "C2",
+   "src": [
+    "R8"
+   ],
+   "rule": [
+    "explicit_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R8.s1",
+     "text": "A class named ICdeMember in the CDE package."
+    }
+   ],
+   "name": "IcdeMember",
+   "freq": 0
+  },
+  {
+   "id": "C3",
+   "src": [
+    "R5"
+   ],
+   "rule": [
+    "explicit_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R5.s1",
+     "text": "A class named ICdeServer"
+    }
+   ],
+   "name": "IcdeServer",
+   "freq": 0
+  },
+  {
+   "id": "C4",
+   "src": [
+    "R4"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "IUmlComponent is a subtype of IUmlClass"
+    }
+   ],
+   "name": "IumlComponent",
+   "freq": 1
+  },
+  {
+   "id": "C5",
+   "src": [
+    "R7"
+   ],
+   "rule": [
+    "explicit_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R7.s1",
+     "text": "A class named IUmlMember"
+    }
+   ],
+   "name": "IumlMember",
+   "freq": 0
+  },
+  {
+   "id": "C6",
+   "src": [
+    "R2",
+    "R3"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R2.s1",
+     "text": "Class ICdeComponentSpec represents a subtype of IUmlType"
+    },
+    {
+     "sid": "R3.s1",
+     "text": "Class IUmlClass is a subclass of IUmlType"
+    }
+   ],
+   "name": "IumlType",
+   "freq": 2
+  },
+  {
+   "id": "C7",
+   "src": [
+    "R4"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "IUmlComponent is a subtype of IUmlClass"
+    }
+   ],
+   "name": "Iumlclass",
+   "freq": 1
+  },
+  {
+   "id": "C8",
+   "src": [
+    "R10"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R10.s1",
+     "text": "The overall model seems to describe the structure of UML types (classes or components), and the fragment represents the fact that each type has a bunch of members (attributes/functions)"
+    }
+   ],
+   "name": "Member",
+   "freq": 1
+  },
+  {
+   "id": "C9",
+   "src": [
+    "R3"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "Class IUmlClass is a subclass of IUmlType"
+    }
+   ],
+   "name": "Subclass",
+   "freq": 1
+  },
+  {
+   "id": "C10",
+   "src": [
+    "R2",
+    "R4"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R2.s1",
+     "text": "Class ICdeComponentSpec represents a subtype of IUmlType"
+    },
+    {
+     "sid": "R4.s1",
+     "text": "IUmlComponent is a subtype of IUmlClass"
+    }
+   ],
+   "name": "Subtype",
+   "freq": 2
+  }
+ ],
+ "attributes": [
+  {
+   "id": "AT1",
+   "src": [
+    "R10"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R10.s1",
+     "text": "The overall model seems to describe the structure of UML types (classes or components), and the fragment represents the fact that each type has a bunch of members (attributes/functions)"
+    }
+   ],
+   "owner": "Member",
+   "name": "bunch",
+   "type_hint": null
+  }
+ ],
+ "relations": [
+  {
+   "id": "REL1",
+   "src": [
+    "R3"
+   ],
+   "rule": [
+    "is_a"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "Class IUmlClass is a subclass of IUmlType"
+    }
+   ],
+   "kind": "generalization",
+   "source": "ClassIumlClass",
+   "target": "Subclass",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL2",
+   "src": [
+    "R4"
+   ],
+   "rule": [
+    "is_a"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "IUmlComponent is a subtype of IUmlClass"
+    }
+   ],
+   "kind": "generalization",
+   "source": "IumlComponent",
+   "target": "Iumlclass",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL3",
+   "src": [
+    "R3"
+   ],
+   "rule": [
+    "of_phrase"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "Class IUmlClass is a subclass of IUmlType"
+    }
+   ],
+   "kind": "has",
+   "source": "IumlType",
+   "target": "Subclass",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL4",
+   "src": [
+    "R2"
+   ],
+   "rule": [
+    "of_phrase"
+   ],
+   "evidence": [
+    {
+     "sid": "R2.s1",
+     "text": "Class ICdeComponentSpec represents a subtype of IUmlType"
+    }
+   ],
+   "kind": "has",
+   "source": "IumlType",
+   "target": "Subtype",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL5",
+   "src": [
+    "R4"
+   ],
+   "rule": [
+    "of_phrase"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "IUmlComponent is a subtype of IUmlClass"
+    }
+   ],
+   "kind": "has",
+   "source": "Iumlclass",
+   "target": "Subtype",
+   "multiplicity_target": null
+  }
+ ],
+ "enums": [],
+ "applied_edits": {
+  "remove_classes": [],
+  "merge_classes": [],
+  "merge_actors": [],
+  "enums": [],
+  "multiplicities": [],
+  "actor_assumptions": []
+ }
+}

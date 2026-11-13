@@ -1,0 +1,73 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  email : String
+  password : String
+  profile : String
+  schedule : String
+  transactionHistory : String
+  +viewPublicInformation()
+  +enterZipCode()
+  +getFacilityHours()
+  +selectWasteTypes()
+  +addFavoriteFacility()
+  +giveEmailID()
+  +viewMapDisplayPublicBins()
+  +viewMapDisplaySpecialWasteSites()
+  +viewSafeDisposalEvents()
+  +choosePickUpTime()
+  +viewUserDocumentation()
+  +viewInvalidZipCodeFeedback()
+  +createAccount()
+  +viewAllLocationsOfRecyclingCenters()
+  +uploadWeeksSchedule()
+  +linkEmailAccountToProfile()
+  +contactAdministrators()
+}
+class Admin {
+  errorLogs : String
+  dashboard : String
+  +addRemoveFacilityInfo()
+  +readFeedbackComplaints()
+  +blockUsersBasedOnIP()
+  +viewDashboard()
+  +viewEncryptedData()
+  +addRecyclingCenterInfo()
+  +viewUserErrorLogs()
+  +onboardRecyclingCenters()
+  +communicateWithFacilities()
+}
+class Superuser {
+  +handleUserActivities()
+  +onboardRecyclingCenters()
+  +updateRecyclingCenterInfo()
+  +viewUsersStats()
+  +replyToUserQuestions()
+}
+class Employee {
+  +accessRoutePlanningSystem()
+  +accessEmployeeInfo()
+}
+class Developer {
+  +accessWebsiteAPI()
+  +useBootstrap()
+  +attendUIUXLessons()
+}
+class CompanyAccountant {
+  +viewActivityFees()
+}
+class RecyclingFacilityRepresentative {
+  facilityInformation : String
+  +updateFacilityInfo()
+  +viewUserStatsAndSchedules()
+  +communicateWithSiteAdmin()
+}
+class RecyclingFacility {
+  +communicateWithSiteAdmin()
+}
+User "0..*" -- "1" RecyclingFacility : has
+Admin "0..*" -- "1" RecyclingFacility : has
+Superuser "0..*" -- "1" RecyclingFacility : has
+RecyclingFacilityRepresentative "1" -- "1" RecyclingFacility : is part of
+@enduml

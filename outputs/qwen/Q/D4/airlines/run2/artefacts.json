@@ -1,0 +1,176 @@
+{
+ "actors": [
+  "Airline",
+  "Airport"
+ ],
+ "use_cases": [
+  {
+   "name": "Operate",
+   "actor": "Airline",
+   "src": [
+    "R1",
+    "R4"
+   ]
+  },
+  {
+   "name": "UpdateOperatingCost",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "StartOperation",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "StopOperation",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "SetAirportCode",
+   "actor": "Airport",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "SetCity",
+   "actor": "Airport",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "SetOperatingCost",
+   "actor": "Airline",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airline",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "operations"
+   ],
+   "methods": [
+    {
+     "name": "operate",
+     "use_case": "Operate"
+    },
+    {
+     "name": "updateOperatingCost",
+     "use_case": "UpdateOperatingCost"
+    },
+    {
+     "name": "startOperation",
+     "use_case": "StartOperation"
+    },
+    {
+     "name": "stopOperation",
+     "use_case": "StopOperation"
+    },
+    {
+     "name": "setOperatingCost",
+     "use_case": "SetOperatingCost"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "code",
+    "city"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Operation",
+   "kind": "class",
+   "attributes": [
+    "airline",
+    "airport",
+    "cost"
+   ],
+   "methods": [
+    {
+     "name": "start",
+     "use_case": "StartOperation"
+    },
+    {
+     "name": "stop",
+     "use_case": "StopOperation"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "OperatingCost",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Airline",
+   "target": "Operation",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Operation",
+   "target": "Airport",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Operation",
+   "target": "OperatingCost",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass OperatingCost:\n    pass\n\nclass Airport:\n    def __init__(self, code: str, city: str):\n        self.code = code\n        self.city = city\n\nclass Operation:\n    def __init__(self, airline: Airline, airport: Airport, cost: OperatingCost):\n        self.airline = airline\n        self.airport = airport\n        self.cost = cost\n    def start(self):\n        raise NotImplementedError\n    def stop(self):\n        raise NotImplementedError\n\nclass Airline:\n    def __init__(self, name: str):\n        self.name = name\n        self.operations: List[Operation] = []\n    def operate(self):\n        raise NotImplementedError\n    def updateOperatingCost(self):\n        raise NotImplementedError\n    def startOperation(self):\n        raise NotImplementedError\n    def stopOperation(self):\n        raise NotImplementedError\n    def setOperatingCost(self):\n        raise NotImplementedError",
+ "java": {}
+}

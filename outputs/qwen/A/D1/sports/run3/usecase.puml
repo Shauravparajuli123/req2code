@@ -1,0 +1,122 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Customer" as A1
+actor "ReturningCustomer" as A2
+actor "Admin" as A3
+actor "Trainer" as A4
+actor "Moderator" as A5
+actor "User" as A6
+rectangle "sports" {
+  usecase "Create Account" as UC1
+  usecase "Add Personal Information" as UC2
+  usecase "Add Banking Details" as UC3
+  usecase "Choose Membership Type" as UC4
+  usecase "Extend Subscription" as UC5
+  usecase "Know Subscription Duration" as UC6
+  usecase "Unsubscribe" as UC7
+  usecase "Reset Password" as UC8
+  usecase "Change Personal Details" as UC9
+  usecase "Update Payment Information" as UC10
+  usecase "See Family Membership Users" as UC11
+  usecase "Add Person To Family Membership" as UC12
+  usecase "Remove Person From Family Membership" as UC13
+  usecase "See Available Lessons" as UC14
+  usecase "See Future Lessons" as UC15
+  usecase "See Past Lessons" as UC16
+  usecase "Call Gym To Book Lesson" as UC17
+  usecase "Call Gym To Cancel Lesson" as UC18
+  usecase "Book Spot For Free Practice Area" as UC19
+  usecase "See Booked Spots" as UC20
+  usecase "See Free Rooms" as UC21
+  usecase "Add Lesson To Schedule" as UC22
+  usecase "Set Lesson Time" as UC23
+  usecase "Set Lesson Description" as UC24
+  usecase "Set Lesson Room" as UC25
+  usecase "Set Lesson Type" as UC26
+  usecase "Set Lesson Capacity" as UC27
+  usecase "See Schedule" as UC28
+  usecase "Edit Own Lesson Time" as UC29
+  usecase "Edit Own Lesson Room" as UC30
+  usecase "Edit Own Lesson Description" as UC31
+  usecase "Edit Own Lesson Capacity" as UC32
+  usecase "Edit Any Lesson" as UC33
+  usecase "Cancel Lesson" as UC34
+  usecase "Receive Cancellation Notification" as UC35
+  usecase "Receive No Show Notification" as UC36
+  usecase "Admin See No Show" as UC37
+  usecase "Admin See No Show Count" as UC38
+  usecase "Admin Issue Fine" as UC39
+  usecase "Admin Issue Fine Exponentially" as UC40
+  usecase "Admin Add Trainer" as UC41
+  usecase "Admin Add Admin" as UC42
+  usecase "Admin Remove Trainer" as UC43
+  usecase "Login" as UC44
+  usecase "Choose Notification Method" as UC45
+  usecase "Receive Email Notification" as UC46
+  usecase "Receive Push Notification" as UC47
+  usecase "Choose Notifications" as UC48
+  usecase "Receive Cancellation Confirmation" as UC49
+  usecase "Admin See Customer Cancellation Confirmation" as UC50
+  usecase "See Personal Information" as UC51
+  usecase "See Membership Information" as UC52
+  usecase "See Past And Future Training Sessions" as UC53
+  usecase "Check In" as UC54
+  usecase "Admin See Customer Check In" as UC55
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+A1 --> UC7
+A1 --> UC8
+A1 --> UC9
+A1 --> UC10
+A1 --> UC11
+A1 --> UC12
+A1 --> UC13
+A1 --> UC14
+A1 --> UC15
+A1 --> UC16
+A1 --> UC17
+A1 --> UC18
+A1 --> UC19
+A1 --> UC20
+A4 --> UC21
+A4 --> UC22
+A4 --> UC23
+A4 --> UC24
+A4 --> UC25
+A4 --> UC26
+A4 --> UC27
+A4 --> UC28
+A4 --> UC29
+A4 --> UC30
+A4 --> UC31
+A4 --> UC32
+A3 --> UC33
+A4 --> UC34
+A1 --> UC35
+A1 --> UC36
+A3 --> UC37
+A3 --> UC38
+A3 --> UC39
+A3 --> UC40
+A3 --> UC41
+A3 --> UC42
+A3 --> UC43
+A6 --> UC44
+A1 --> UC45
+A1 --> UC46
+A1 --> UC47
+A1 --> UC48
+A1 --> UC49
+A3 --> UC50
+A1 --> UC51
+A1 --> UC52
+A4 --> UC53
+A1 --> UC54
+A3 --> UC55
+@enduml

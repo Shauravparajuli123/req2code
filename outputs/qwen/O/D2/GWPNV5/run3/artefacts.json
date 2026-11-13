@@ -1,0 +1,176 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "ModelPetriNet",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    "source",
+    "destination",
+    "weight"
+   ],
+   "methods": [
+    {
+     "name": "set_weight",
+     "use_case": "ModelPetriNet"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "places",
+    "transitions"
+   ],
+   "methods": [
+    {
+     "name": "add_place",
+     "use_case": "ModelPetriNet"
+    },
+    {
+     "name": "add_transition",
+     "use_case": "ModelPetriNet"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R12"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "net",
+    "input_arcs"
+   ],
+   "methods": [
+    {
+     "name": "add_input_arc",
+     "use_case": "ModelPetriNet"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "PlaceTransitionArc",
+   "kind": "class",
+   "attributes": [
+    "transition"
+   ],
+   "methods": [
+    {
+     "name": "set_transition",
+     "use_case": "ModelPetriNet"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "net",
+    "output_arcs"
+   ],
+   "methods": [
+    {
+     "name": "add_output_arc",
+     "use_case": "ModelPetriNet"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Weight",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Net",
+   "target": "Transition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Place",
+   "target": "Arc",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PlaceTransitionArc",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Arc",
+   "target": "Weight",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "python": "class Arc:\n    def __init__(self, source: Place, destination: Transition, weight: Weight):\n        self.source = source\n        self.destination = destination\n        self.weight = weight\n\n    def set_weight(self, weight: Weight):\n        raise NotImplementedError\n\nclass Net:\n    def __init__(self):\n        self.places = []\n        self.transitions = []\n\n    def add_place(self, place: Place):\n        raise NotImplementedError\n\n    def add_transition(self, transition: Transition):\n        raise NotImplementedError\n\nclass Place:\n    def __init__(self, net: Net):\n        self.net = net\n        self.input_arcs = []\n\n    def add_input_arc(self, arc: Arc):\n        raise NotImplementedError\n\nclass PlaceTransitionArc:\n    def __init__(self, transition: Transition):\n        self.transition = transition\n\n    def set_transition(self, transition: Transition):\n        raise NotImplementedError\n\nclass Transition:\n    def __init__(self, net: Net):\n        self.net = net\n        self.output_arcs = []\n\n    def add_output_arc(self, arc: Arc):\n        raise NotImplementedError\n\nclass Weight:\n    pass",
+ "java": {}
+}

@@ -1,0 +1,89 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Airline",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "operatingCosts"
+   ],
+   "methods": [
+    {
+     "name": "addOperatingCost",
+     "use_case": null
+    },
+    {
+     "name": "removeOperatingCost",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R3"
+   ]
+  },
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "code",
+    "city"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "OperatingCost",
+   "kind": "class",
+   "attributes": [
+    "airline",
+    "airport",
+    "cost"
+   ],
+   "methods": [
+    {
+     "name": "updateCost",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Airline",
+   "target": "Airport",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "source": "Airline",
+   "target": "OperatingCost",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "OperatingCost",
+   "target": "Airport",
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D4/airlines.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Airline:\n    \"\"\"Source: R2, R3\"\"\"\n    name: _t.Optional[str] = None\n    operatingCosts: _t.Optional[str] = None\n    airports: _t.List[\"Airport\"] = _dc.field(default_factory=list)\n    operatingCost: _t.Optional[\"OperatingCost\"] = None\n\n    def addOperatingCost(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removeOperatingCost(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Airport:\n    \"\"\"Source: R2\"\"\"\n    code: _t.Optional[str] = None\n    city: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass OperatingCost:\n    \"\"\"Source: R3\"\"\"\n    airline: _t.Optional[str] = None\n    airport: _t.Optional[str] = None\n    cost: _t.Optional[float] = None\n\n    def updateCost(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Airline.java": "/** Generated from shared model D4/airlines. Source: R2, R3 */\npublic class Airline {\n    private java.lang.String name;\n    private java.lang.String operatingCosts;\n    private java.util.List<Airport> airports;\n    private OperatingCost operatingCost;\n\n    /** Operation. */\n    public void addOperatingCost() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removeOperatingCost() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Airport.java": "/** Generated from shared model D4/airlines. Source: R2 */\npublic class Airport {\n    private java.lang.String code;\n    private java.lang.String city;\n}\n",
+  "OperatingCost.java": "/** Generated from shared model D4/airlines. Source: R3 */\npublic class OperatingCost {\n    private java.lang.String airline;\n    private java.lang.String airport;\n    private double cost;\n\n    /** Operation. */\n    public void updateCost() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

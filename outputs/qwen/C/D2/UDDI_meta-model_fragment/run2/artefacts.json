@@ -1,0 +1,136 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "BusinessEntity",
+   "kind": "class",
+   "attributes": [
+    "businessContact",
+    "identifiers"
+   ],
+   "methods": [
+    {
+     "name": "addBusinessContact",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R9"
+   ]
+  },
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "IdentifierBag",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "overviewDocuments"
+   ],
+   "methods": [
+    {
+     "name": "addOverviewDocument",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R6",
+    "R10"
+   ]
+  },
+  {
+   "name": "OverviewDocument",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "PifModel",
+   "kind": "class",
+   "attributes": [
+    "businessTemplates"
+   ],
+   "methods": [
+    {
+     "name": "addBusinessTemplate",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "BusinessTemplate",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "PifModel",
+   "target": "BusinessEntity",
+   "src": []
+  },
+  {
+   "source": "Model",
+   "target": "OverviewDocument",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "BusinessEntity",
+   "target": "Contact",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "BusinessEntity",
+   "target": "BusinessTemplate",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "source": "BusinessEntity",
+   "target": "IdentifierBag",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/UDDI_meta-model_fragment.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass BusinessEntity:\n    \"\"\"Source: R4, R9\"\"\"\n    businessContact: _t.Optional[str] = None\n    identifiers: _t.Optional[str] = None\n    contact: _t.Optional[\"Contact\"] = None\n    businessTemplates: _t.List[\"BusinessTemplate\"] = _dc.field(default_factory=list)\n    identifierBag: _t.Optional[\"IdentifierBag\"] = None\n\n    def addBusinessContact(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Contact:\n    \"\"\"Source: R2\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass IdentifierBag:\n    \"\"\"Source: -\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Model:\n    \"\"\"Source: R6, R10\"\"\"\n    overviewDocuments: _t.Optional[str] = None\n    overviewDocument: _t.Optional[\"OverviewDocument\"] = None\n\n    def addOverviewDocument(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass OverviewDocument:\n    \"\"\"Source: R7\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass PifModel(BusinessEntity):\n    \"\"\"Source: R1\"\"\"\n    businessTemplates: _t.Optional[str] = None\n\n    def addBusinessTemplate(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\nclass BusinessTemplate(_enum.Enum):\n    \"\"\"Source: R1\"\"\"\n    BUSINESS_TEMPLATE = \"BUSINESS_TEMPLATE\"\n",
+ "java": {
+  "BusinessEntity.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R4, R9 */\npublic class BusinessEntity {\n    private java.lang.String businessContact;\n    private java.lang.String identifiers;\n    private Contact contact;\n    private java.util.List<BusinessTemplate> businessTemplates;\n    private IdentifierBag identifierBag;\n\n    /** Operation. */\n    public void addBusinessContact() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Contact.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R2 */\npublic class Contact {\n}\n",
+  "IdentifierBag.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: - */\npublic class IdentifierBag {\n}\n",
+  "Model.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R6, R10 */\npublic class Model {\n    private java.lang.String overviewDocuments;\n    private OverviewDocument overviewDocument;\n\n    /** Operation. */\n    public void addOverviewDocument() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "OverviewDocument.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R7 */\npublic class OverviewDocument {\n}\n",
+  "PifModel.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R1 */\npublic class PifModel extends BusinessEntity {\n    private java.lang.String businessTemplates;\n\n    /** Operation. */\n    public void addBusinessTemplate() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "BusinessTemplate.java": "/** Generated from shared model D2/UDDI_meta-model_fragment. Source: R1 */\npublic enum BusinessTemplate {\n    BUSINESS_TEMPLATE\n}\n"
+ }
+}

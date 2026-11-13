@@ -1,0 +1,76 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  name : String
+  personalInformation : String
+  bankingDetails : String
+  membershipType : String
+  subscriptionDuration : int
+  familyMembers : String
+  pastLessons : String
+  futureLessons : String
+  personalInformationUpdated : boolean
+  paymentInformationUpdated : boolean
+  checkInStatus : boolean
+  +createAccount()
+  +addPersonalInformation()
+  +addBankingDetails()
+  +chooseMembershipType()
+  +extendSubscription()
+  +knowSubscriptionDuration()
+  +unsubscribe()
+  +resetPassword()
+  +changePersonalDetails()
+  +updatePaymentInformation()
+  +addPersonToFamilyMembership()
+  +removePersonFromFamilyMembership()
+  +seeAvailableLessons()
+  +seeFutureLessons()
+  +seePastLessons()
+  +callGymToBookLesson()
+  +callGymToCancelLesson()
+  +bookSpotForFreePracticeArea()
+  +seeBookedSpots()
+  +seeFreeRooms()
+  +seePersonalInformation()
+  +seeMembershipInformation()
+  +seePastAndFutureTrainingSessions()
+  +checkIn()
+}
+class Trainer {
+  name : String
+  lessonSchedule : String
+  +addLessonToSchedule()
+  +setLessonTime()
+  +setLessonDescription()
+  +setLessonRoom()
+  +setLessonType()
+  +setLessonCapacity()
+  +editOwnLessonTime()
+  +editOwnLessonRoom()
+  +editOwnLessonDescription()
+  +editOwnLessonCapacity()
+}
+class Admin {
+  +cancelLesson()
+  +seeNoShow()
+  +seeNoShowCount()
+  +issueFine()
+  +issueFineExponentially()
+  +addTrainer()
+  +addAdmin()
+  +removeTrainer()
+}
+enum NotificationMethod {
+  EMAIL
+  PUSH
+}
+class Notification {
+  method : String
+  confirmed : boolean
+  +receiveNotification()
+}
+Customer "1" -- "1" NotificationMethod : uses
+Customer "1" -- "1" Notification : receives
+@enduml

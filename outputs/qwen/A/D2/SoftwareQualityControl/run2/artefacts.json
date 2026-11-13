@@ -1,0 +1,147 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    "day",
+    "year"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Control",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "date"
+   ],
+   "methods": [
+    {
+     "name": "createControl",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "ControlsSequence",
+   "kind": "class",
+   "attributes": [
+    "controls"
+   ],
+   "methods": [
+    {
+     "name": "addControl",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "ControlType",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Bug",
+   "kind": "class",
+   "attributes": [
+    "number",
+    "description",
+    "originator",
+    "comments",
+    "closeDate"
+   ],
+   "methods": [
+    {
+     "name": "createBug",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R6",
+    "R13"
+   ]
+  },
+  {
+   "name": "BugTracking",
+   "kind": "class",
+   "attributes": [
+    "bugs"
+   ],
+   "methods": [
+    {
+     "name": "addBug",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "createArchitecture",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Control",
+   "target": "ControlsSequence",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "source": "Control",
+   "target": "ControlType",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "Bug",
+   "target": "BugTracking",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/SoftwareQualityControl.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Date:\n    \"\"\"Source: R1\"\"\"\n    day: _t.Optional[int] = None\n    year: _t.Optional[int] = None\n\n\n@_dc.dataclass\nclass Control:\n    \"\"\"Source: -\"\"\"\n    type: _t.Optional[str] = None\n    date: _t.Optional[str] = None\n    controlsSequences: _t.List[\"ControlsSequence\"] = _dc.field(default_factory=list)\n    controlType: _t.Optional[\"ControlType\"] = None\n\n    def createControl(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ControlsSequence:\n    \"\"\"Source: R2, R3, R7, R8\"\"\"\n    controls: _t.Optional[str] = None\n\n    def addControl(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\nclass ControlType(_enum.Enum):\n    \"\"\"Source: R4\"\"\"\n    TYPE1 = \"TYPE1\"\n    TYPE2 = \"TYPE2\"\n    TYPE3 = \"TYPE3\"\n\n\n@_dc.dataclass\nclass Bug:\n    \"\"\"Source: R6, R13\"\"\"\n    number: _t.Optional[int] = None\n    description: _t.Optional[str] = None\n    originator: _t.Optional[str] = None\n    comments: _t.Optional[str] = None\n    closeDate: _t.Optional[str] = None\n    bugTracking: _t.Optional[\"BugTracking\"] = None\n\n    def createBug(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass BugTracking:\n    \"\"\"Source: R12, R13\"\"\"\n    bugs: _t.Optional[str] = None\n\n    def addBug(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Architecture:\n    \"\"\"Source: R11\"\"\"\n\n    def createArchitecture(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Date.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R1 */\npublic class Date {\n    private int day;\n    private int year;\n}\n",
+  "Control.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: - */\npublic class Control {\n    private java.lang.String type;\n    private java.time.LocalDate date;\n    private java.util.List<ControlsSequence> controlsSequences;\n    private ControlType controlType;\n\n    /** Operation. */\n    public void createControl() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ControlsSequence.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R2, R3, R7, R8 */\npublic class ControlsSequence {\n    private java.lang.String controls;\n\n    /** Operation. */\n    public void addControl() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ControlType.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R4 */\npublic enum ControlType {\n    TYPE1, TYPE2, TYPE3\n}\n",
+  "Bug.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R6, R13 */\npublic class Bug {\n    private int number;\n    private java.lang.String description;\n    private java.lang.String originator;\n    private java.lang.String comments;\n    private java.time.LocalDate closeDate;\n    private BugTracking bugTracking;\n\n    /** Operation. */\n    public void createBug() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "BugTracking.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R12, R13 */\npublic class BugTracking {\n    private java.lang.String bugs;\n\n    /** Operation. */\n    public void addBug() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Architecture.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R11 */\npublic class Architecture {\n\n    /** Operation. */\n    public void createArchitecture() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

@@ -1,0 +1,174 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D2/UMLDI-UseCases",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "noun_role",
+     "explicit_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "AttributeLink is a class which belongs to Common_Behavior package"
+     }
+    ],
+    "name": "AttributeLink",
+    "freq": 1
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R10",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "attributelink has zero or one instance of the Instance type."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "attributelink has zero or one linkend attributes from the linkend type"
+     }
+    ],
+    "name": "Attributelink",
+    "freq": 2
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R10",
+     "R14"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "attributelink has zero or one instance of the Instance type."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "linkend has one attribute of the instance type"
+     }
+    ],
+    "name": "InstanceType",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R11",
+     "R13",
+     "R14"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "attributelink has zero or one linkend attributes from the linkend type"
+     },
+     {
+      "sid": "R13.s1",
+      "text": "linkend has one link attribute of the link type"
+     },
+     {
+      "sid": "R14.s1",
+      "text": "linkend has one attribute of the instance type"
+     }
+    ],
+    "name": "Linkend",
+    "freq": 3
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R15",
+     "R16"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "componentinstance has zero or more residents"
+     },
+     {
+      "sid": "R16.s1",
+      "text": "nodeinstance has 0 or more componentinstance node that serves as resident"
+     }
+    ],
+    "name": "Resident",
+    "freq": 2
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "explicit_attribute"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "AttributeLink is a class which belongs to Common_Behavior package"
+     }
+    ],
+    "owner": "AttributeLink",
+    "name": "link",
+    "type_hint": null
+   }
+  ],
+  "relations": [],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "InstanceType",
+     "target": "InstanceType",
+     "multiplicity": "0..*"
+    },
+    {
+     "source": "InstanceType",
+     "target": "Classifier",
+     "multiplicity": "1..*"
+    },
+    {
+     "source": "InstanceType",
+     "target": "Slot",
+     "multiplicity": "0..*"
+    },
+    {
+     "source": "ComponentInstance",
+     "target": "Resident",
+     "multiplicity": "0..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

@@ -1,0 +1,86 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "identifier",
+    "category",
+    "taskType",
+    "importance",
+    "complexityLevel",
+    "centrality"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Task",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "decompose",
+     "use_case": null
+    },
+    {
+     "name": "associateExpression",
+     "use_case": null
+    },
+    {
+     "name": "associateOperator",
+     "use_case": null
+    },
+    {
+     "name": "binaryOperator",
+     "use_case": null
+    },
+    {
+     "name": "unaryOperator",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Task",
+   "target": "Node",
+   "src": [
+    "R6",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "source": "Node",
+   "target": "Task",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "source": "Node",
+   "target": "Task",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/UsiXML-task.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: -\"\"\"\n    identifier: _t.Optional[str] = None\n    category: _t.Optional[str] = None\n    taskType: _t.Optional[str] = None\n    importance: _t.Optional[int] = None\n    complexityLevel: _t.Optional[int] = None\n    centrality: _t.Optional[int] = None\n    tasks: _t.List[\"Task\"] = _dc.field(default_factory=list)\n    task: _t.Optional[\"Task\"] = None\n\n\n@_dc.dataclass\nclass Task:\n    \"\"\"Source: R6, R7, R8, R9, R10\"\"\"\n    node: _t.Optional[\"Node\"] = None\n\n    def decompose(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def associateExpression(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def associateOperator(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def binaryOperator(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def unaryOperator(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Node.java": "/** Generated from shared model D2/UsiXML-task. Source: - */\npublic class Node {\n    private java.lang.String identifier;\n    private java.lang.String category;\n    private java.lang.String taskType;\n    private int importance;\n    private int complexityLevel;\n    private int centrality;\n    private java.util.List<Task> tasks;\n    private Task task;\n}\n",
+  "Task.java": "/** Generated from shared model D2/UsiXML-task. Source: R6, R7, R8, R9, R10 */\npublic class Task {\n    private Node node;\n\n    /** Operation. */\n    public void decompose() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void associateExpression() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void associateOperator() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void binaryOperator() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void unaryOperator() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

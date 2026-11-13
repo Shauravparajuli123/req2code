@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "The class Course does not have the attribute 'professors' as stated in R3.",
+   "fix": "Add the attribute 'professors' to the class Course."
+  },
+  {
+   "agent": "class",
+   "issue": "The class Course does not have the method 'addProfessor' as stated in the relationship with Professor.",
+   "fix": "Add the method 'addProfessor' to the class Course."
+  },
+  {
+   "agent": "class",
+   "issue": "The class Student does not have the method 'enrollInCourse' as stated in R5.",
+   "fix": "Add the method 'enrollInCourse' to the class Student."
+  },
+  {
+   "agent": "class",
+   "issue": "The class Course does not have the attribute 'students' as stated in R5.",
+   "fix": "Add the attribute 'students' to the class Course."
+  },
+  {
+   "agent": "class",
+   "issue": "The class Dormitory does not have the attribute 'price' as stated in R8.",
+   "fix": "Add the attribute 'price' to the class Dormitory."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Course and Student is incorrectly defined as aggregation with a lower bound of 1, which contradicts R5 where a course can have at least 5 students.",
+   "fix": "Change the aggregation relationship between Course and Student to have a lower bound of 5."
+  }
+ ]
+}

@@ -1,0 +1,170 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [
+   {
+    "name": "Professor",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "name": "Student",
+    "src": [
+     "R5",
+     "R6"
+    ]
+   },
+   {
+    "name": "Dormitory Manager",
+    "src": [
+     "R7",
+     "R8"
+    ]
+   }
+  ],
+  "use_cases": [
+   {
+    "name": "Teach Course",
+    "actor": "Professor",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "name": "Enroll In Course",
+    "actor": "Student",
+    "src": [
+     "R5",
+     "R6"
+    ]
+   },
+   {
+    "name": "Accommodate In Dormitory",
+    "actor": "Dormitory Manager",
+    "src": [
+     "R7",
+     "R8"
+    ]
+   }
+  ],
+  "classes": [
+   {
+    "name": "Course",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R5",
+     "R6"
+    ]
+   },
+   {
+    "name": "Professor",
+    "src": [
+     "R3",
+     "R4"
+    ]
+   },
+   {
+    "name": "Student",
+    "src": [
+     "R5",
+     "R6",
+     "R7"
+    ]
+   },
+   {
+    "name": "Dormitory",
+    "src": [
+     "R7",
+     "R8"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Course",
+    "name": "name",
+    "src": [
+     "R1",
+     "R2"
+    ]
+   },
+   {
+    "owner": "Course",
+    "name": "credits",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "owner": "Professor",
+    "name": "name",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "owner": "Student",
+    "name": "name",
+    "src": [
+     "R5",
+     "R6"
+    ]
+   },
+   {
+    "owner": "Dormitory",
+    "name": "price",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "owner": "Dormitory",
+    "name": "students",
+    "src": [
+     "R7"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Course",
+    "target": "Professor",
+    "src": [
+     "R3",
+     "R4"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Course",
+    "target": "Student",
+    "src": [
+     "R5",
+     "R6"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Dormitory",
+    "target": "Student",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "Course",
+    "target": "Dormitory",
+    "src": [
+     "R8"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

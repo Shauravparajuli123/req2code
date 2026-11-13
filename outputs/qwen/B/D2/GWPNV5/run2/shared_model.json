@@ -1,0 +1,167 @@
+{
+ "case": "D2/GWPNV5",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "tokens",
+     "type": "int",
+     "src": [
+      "R7",
+      "R15"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9",
+    "R12",
+    "R15"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Net",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "weight",
+     "type": "double",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "PlaceTransitionArc",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "transition",
+     "type": "String",
+     "src": [
+      "R5",
+      "R13",
+      "R14"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "TransitionPlaceArc",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "transition",
+     "type": "String",
+     "src": [
+      "R6",
+      "R14"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R14"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is part of",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C5",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "connects",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

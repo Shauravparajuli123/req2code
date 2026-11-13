@@ -1,0 +1,23 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class ArchitectureDescription {
+  +selectView()
+  +selectViewPoint()
+  +describeArchitecture()
+}
+class ArchitectureView {
+  +projectOnto()
+}
+class ArchitectureViewPoint {
+  +conformTo()
+}
+class MainView {
+  +defineView()
+}
+class Game {
+  name : String
+  +createGame()
+}
+ArchitectureView "1" -- "1..*" ArchitectureViewPoint : conformsTo
+@enduml

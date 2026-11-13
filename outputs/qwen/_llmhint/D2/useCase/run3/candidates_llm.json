@@ -1,0 +1,93 @@
+{
+ "actors": [
+  {
+   "name": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "Login",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Logout",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "UseCase",
+   "src": [
+    "R2",
+    "R10",
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "name": "Actor",
+   "src": [
+    "R1",
+    "R12"
+   ]
+  },
+  {
+   "name": "Association",
+   "src": [
+    "R8",
+    "R12"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "UseCase",
+   "name": "name",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "owner": "Association",
+   "name": "name",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "UseCase",
+   "target": "Actor",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "kind": "generalization",
+   "source": "UseCase",
+   "target": "UseCase",
+   "src": [
+    "R10",
+    "R11"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

@@ -1,0 +1,139 @@
+{
+ "actors": [
+  "member"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "IumlType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "IumlClass",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "IumlComponent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "ICdeServer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "ICdeComponent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "ICdeMember",
+   "kind": "class",
+   "attributes": [
+    "executionPerformance",
+    "executionDetails"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "IumlMember",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "IumlClass",
+   "target": "IumlType",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "IumlComponent",
+   "target": "IumlClass",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "ICdeServer",
+   "target": "ICdeComponent",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "ICdeMember",
+   "target": "IumlMember",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "IumlType",
+   "target": "IumlClass",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "IumlType",
+   "target": "IumlComponent",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "python": "class IumlType:\n    pass\n\nclass IumlClass(IumlType):\n    pass\n\nclass IumlComponent(IumlClass):\n    pass\n\nclass ICdeServer:\n    pass\n\nclass ICdeComponent:\n    pass\n\nclass ICdeMember(ICdeComponent):\n    def __init__(self, executionPerformance: str, executionDetails: str):\n        self.executionPerformance = executionPerformance\n        self.executionDetails = executionDetails\n\nclass IumlMember:\n    pass",
+ "java": {}
+}

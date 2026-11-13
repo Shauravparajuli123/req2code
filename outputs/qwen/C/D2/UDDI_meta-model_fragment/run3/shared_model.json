@@ -1,0 +1,190 @@
+{
+ "case": "D2/UDDI_meta-model_fragment",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "BusinessEntity",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "businessContact",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "identifiers",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addBusinessContact",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R9"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "IdentifierBag",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C4",
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "overviewDocuments",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "addOverviewDocument",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R10"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "OverviewDocument",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "PifModel",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "businessTemplates",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addBusinessTemplate",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "BusinessTemplate",
+   "kind": "enum",
+   "attributes": [],
+   "methods": [],
+   "literals": [
+    "BUSINESS_TEMPLATE"
+   ],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "generalization",
+   "source": "C6",
+   "target": "C2",
+   "mult_source": "*",
+   "mult_target": "1",
+   "label": "is",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C4",
+   "target": "C5",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "contains",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "0..1",
+   "mult_target": "1",
+   "label": "may have",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "characterised through",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

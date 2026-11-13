@@ -1,0 +1,299 @@
+{
+ "case": "D2/QVT",
+ "stage": "result2_after_ambiguity_removal",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "A collection template expression has a collection kind."
+    },
+    {
+     "sid": "R7.s1",
+     "text": "A collection template expression may contain any number of OCL expressions"
+    },
+    {
+     "sid": "R8.s1",
+     "text": "A collection template expression may be matched to one OCL expression."
+    }
+   ],
+   "name": "CollectionTemplateExpression",
+   "freq": 3
+  },
+  {
+   "id": "C2",
+   "src": [
+    "R2"
+   ],
+   "rule": [
+    "explicit_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R2.s1",
+     "text": "ObjectTemplateExp is a class that represents Object Template Expressions"
+    }
+   ],
+   "name": "ObjectTemplateExp",
+   "freq": 0
+  },
+  {
+   "id": "C3",
+   "src": [
+    "R2",
+    "R6",
+    "R9"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R2.s1",
+     "text": "ObjectTemplateExp is a class that represents Object Template Expressions"
+    },
+    {
+     "sid": "R6.s1",
+     "text": "An object template expression may contain multiple property template items."
+    },
+    {
+     "sid": "R9.s1",
+     "text": "A property template item has exactly one Object Template Expression as its object container."
+    }
+   ],
+   "name": "ObjectTemplateExpression",
+   "freq": 3
+  },
+  {
+   "id": "C4",
+   "src": [
+    "R7",
+    "R8"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R7.s1",
+     "text": "A collection template expression may contain any number of OCL expressions"
+    },
+    {
+     "sid": "R8.s1",
+     "text": "A collection template expression may be matched to one OCL expression."
+    }
+   ],
+   "name": "OclExpression",
+   "freq": 2
+  },
+  {
+   "id": "C5",
+   "src": [
+    "R10"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R10.s1",
+     "text": "A property template item has exactly one property as its referred property."
+    }
+   ],
+   "name": "Property",
+   "freq": 2
+  },
+  {
+   "id": "C6",
+   "src": [
+    "R6",
+    "R9",
+    "R10"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R6.s1",
+     "text": "An object template expression may contain multiple property template items."
+    },
+    {
+     "sid": "R9.s1",
+     "text": "A property template item has exactly one Object Template Expression as its object container."
+    },
+    {
+     "sid": "R10.s1",
+     "text": "A property template item has exactly one property as its referred property."
+    }
+   ],
+   "name": "PropertyTemplateItem",
+   "freq": 3
+  },
+  {
+   "id": "C7",
+   "src": [
+    "R1"
+   ],
+   "rule": [
+    "noun_role",
+    "explicit_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "TemplateExp is a class that represents template expressions."
+    }
+   ],
+   "name": "TemplateExp",
+   "freq": 1
+  },
+  {
+   "id": "C8",
+   "src": [
+    "R1",
+    "R5"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "TemplateExp is a class that represents template expressions."
+    },
+    {
+     "sid": "R5.s1",
+     "text": "A template expression can be bound to a variable"
+    }
+   ],
+   "name": "TemplateExpression",
+   "freq": 2
+  }
+ ],
+ "attributes": [
+  {
+   "id": "AT1",
+   "src": [
+    "R9"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R9.s1",
+     "text": "A property template item has exactly one Object Template Expression as its object container."
+    }
+   ],
+   "owner": "PropertyTemplateItem",
+   "name": "object container",
+   "type_hint": null
+  }
+ ],
+ "relations": [
+  {
+   "id": "REL1",
+   "src": [
+    "R7"
+   ],
+   "rule": [
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R7.s1",
+     "text": "A collection template expression may contain any number of OCL expressions"
+    }
+   ],
+   "kind": "has",
+   "source": "CollectionTemplateExpression",
+   "target": "OclExpression",
+   "multiplicity_target": "1..*"
+  },
+  {
+   "id": "REL2",
+   "src": [
+    "R6"
+   ],
+   "rule": [
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R6.s1",
+     "text": "An object template expression may contain multiple property template items."
+    }
+   ],
+   "kind": "has",
+   "source": "ObjectTemplateExpression",
+   "target": "PropertyTemplateItem",
+   "multiplicity_target": "multiple"
+  },
+  {
+   "id": "REL3",
+   "src": [
+    "R9"
+   ],
+   "rule": [
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R9.s1",
+     "text": "A property template item has exactly one Object Template Expression as its object container."
+    }
+   ],
+   "kind": "has",
+   "source": "PropertyTemplateItem",
+   "target": "ObjectTemplateExpression",
+   "multiplicity_target": "one"
+  },
+  {
+   "id": "REL4",
+   "src": [
+    "R10"
+   ],
+   "rule": [
+    "has_verb",
+    "possessive"
+   ],
+   "evidence": [
+    {
+     "sid": "R10.s1",
+     "text": "A property template item has exactly one property as its referred property."
+    }
+   ],
+   "kind": "has",
+   "source": "PropertyTemplateItem",
+   "target": "Property",
+   "multiplicity_target": "one"
+  }
+ ],
+ "enums": [],
+ "applied_edits": {
+  "remove_classes": [],
+  "merge_classes": [],
+  "merge_actors": [],
+  "enums": [],
+  "multiplicities": [
+   {
+    "source": "CollectionTemplateExpression",
+    "target": "OclExpression",
+    "multiplicity": "1..*"
+   }
+  ],
+  "actor_assumptions": []
+ }
+}

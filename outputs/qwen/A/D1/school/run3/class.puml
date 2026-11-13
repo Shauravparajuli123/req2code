@@ -1,0 +1,77 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Guardian {
+  +directMessage()
+  +fillAbsence()
+  +receiveNotification()
+  +viewInformation()
+}
+class Student {
+  +accessFilesAndDLM()
+  +directMessageTeachers()
+  +directMessageMentor()
+  +handHomework()
+  +viewTimetable()
+  +viewAccountInformation()
+  +viewContactInformation()
+  +changePreferences()
+  +receiveNotificationForDueDate()
+  +receiveNotificationForNewFiles()
+  +receiveNotificationForTimetableChanges()
+}
+class Teacher {
+  +addVideoToDLM()
+  +addTextAndPicturesToDLM()
+  +addQuestionToDLM()
+  +assignDLM()
+  +assignDueDate()
+  +automaticallyGradeDLM()
+  +createDLM()
+  +directMessageStudents()
+  +editDLMPage()
+  +addSubmissionElements()
+  +addAnswerToQuestion()
+  +confirmFileUpload()
+  +recordDisciplinaryActions()
+  +recordStudentBehavior()
+  +recordGrades()
+  +recordAttendance()
+  +viewStudentSubmissions()
+  +viewClassPerformance()
+  +viewStudentProgress()
+  +setAppearanceDate()
+  +setAvailableDates()
+  +uploadFiles()
+  +viewClassInformation()
+  +viewClassAttendance()
+}
+class Administrator {
+  +sendDirectMessage()
+  +assignSchedules()
+  +createAccount()
+  +editAccountData()
+  +changeView()
+  +receiveNotificationForMessages()
+  +receiveNotificationForAbsenceForms()
+  +registerScheduleChanges()
+  +registerAbsence()
+  +sendBroadcastMessage()
+  +setAccountRole()
+  +uploadSchedules()
+  +viewAccountDetails()
+  +viewStatistics()
+}
+class Account {
+  role : String
+}
+Guardian "0..*" -- "1" Teacher : can message
+Guardian "0..*" -- "1" Administrator : can message
+Student "0..*" -- "1" Teacher : can message
+Teacher "1" -- "0..*" Student : can message
+Administrator "1" -- "0..*" Student : can message
+Administrator "1" -- "0..*" Teacher : can message
+Administrator "1" -- "0..*" Guardian : can message
+Administrator "1" -- "1" Account : create
+Student "1" -- "1" Guardian : view information
+@enduml

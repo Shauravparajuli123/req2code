@@ -1,0 +1,65 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "R2: AttributeLink is a class which belongs to Common_Behavior package is not represented in the model.",
+   "fix": "Add a class named AttributeLink to the model and assign it to the Common_Behavior package."
+  },
+  {
+   "agent": "class",
+   "issue": "R4: The linkend class is not represented in the model.",
+   "fix": "Add a class named Linkend to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "R5: the componentinstance class is not represented in the model.",
+   "fix": "Add a class named ComponentInstance to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "R6: the nodeinstance class is not represented in the model.",
+   "fix": "Add a class named NodeInstance to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R10: attributelink has zero or one instance of the Instance type is not represented in the model.",
+   "fix": "Add an association between AttributeLink and Instance with the appropriate multiplicity."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R11: attributelink has zero or one linkend attributes from the linkend type is not represented in the model.",
+   "fix": "Add an association between AttributeLink and Linkend with the appropriate multiplicity."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R12: the link instance has an association attribute from the association type is not represented in the model.",
+   "fix": "Add an association between Link and Association."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R13: linkend has one link attribute of the link type is not represented in the model.",
+   "fix": "Add an association between Linkend and Link with the appropriate multiplicity."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R14: linkend has one attribute of the instance type is not represented in the model.",
+   "fix": "Add an association between Linkend and Instance with the appropriate multiplicity."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R15: componentinstance has zero or more residents is not represented in the model.",
+   "fix": "Add an association between ComponentInstance and Instance with the appropriate multiplicity."
+  },
+  {
+   "agent": "relationship",
+   "issue": "R16: nodeinstance has 0 or more componentinstance node that serves as resident is not represented in the model.",
+   "fix": "Add an association between NodeInstance and ComponentInstance with the appropriate multiplicity."
+  }
+ ]
+}

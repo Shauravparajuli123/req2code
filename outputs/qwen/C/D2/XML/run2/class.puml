@@ -1,0 +1,23 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Element {
+  name : String
+  children : String
+  parent : String
+  +addChildren()
+}
+class Node {
+  name : String
+  startLine : int
+  endLine : int
+  parent : String
+  +createGame()
+}
+class XmlFile {
+  rootElement : String
+}
+XmlFile "1" -- "1..*" Element : has
+XmlFile "1" -- "1..*" Node : has
+Element "1" *-- "0..1" Node : contains
+@enduml

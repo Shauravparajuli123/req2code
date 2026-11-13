@@ -1,0 +1,130 @@
+{
+ "actors": [
+  "operator"
+ ],
+ "use_cases": [
+  {
+   "name": "describe task",
+   "actor": "operator",
+   "src": [
+    "R6",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "task decomposition",
+   "actor": "operator",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "binary operator",
+   "actor": "operator",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "unary operator",
+   "actor": "operator",
+   "src": [
+    "R4",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "task with expression",
+   "actor": "operator",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "task with operator",
+   "actor": "operator",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "task node",
+   "actor": "operator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TaskNode",
+   "kind": "class",
+   "attributes": [
+    "identifier",
+    "category",
+    "taskType",
+    "importance",
+    "complexityLevel",
+    "centrality"
+   ],
+   "methods": [
+    {
+     "name": "describeTask",
+     "use_case": "describe task"
+    },
+    {
+     "name": "decomposeTask",
+     "use_case": "task decomposition"
+    },
+    {
+     "name": "applyOperator",
+     "use_case": "task with operator"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Operator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "binaryOperator",
+     "use_case": "binary operator"
+    },
+    {
+     "name": "unaryOperator",
+     "use_case": "unary operator"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "TaskNode",
+   "target": "Operator",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "class TaskNode:\n    def __init__(self, identifier: str, category: str, taskType: str, importance: int, complexityLevel: int, centrality: int):\n        self.identifier = identifier\n        self.category = category\n        self.taskType = taskType\n        self.importance = importance\n        self.complexityLevel = complexityLevel\n        self.centrality = centrality\n\n    def describeTask(self):\n        raise NotImplementedError()\n\n    def decomposeTask(self):\n        raise NotImplementedError()\n\n    def applyOperator(self, operator: Operator):\n        raise NotImplementedError()\n\nclass Operator:\n    def __init__(self):\n        pass\n\n    def binaryOperator(self, task: TaskNode):\n        raise NotImplementedError()\n\n    def unaryOperator(self, task: TaskNode):\n        raise NotImplementedError()",
+ "java": {}
+}

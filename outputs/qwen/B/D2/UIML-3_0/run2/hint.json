@@ -1,0 +1,120 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D2/UIML-3_0",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R1",
+     "R2"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "There is UIML in the model."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "There are headers in the model."
+     }
+    ],
+    "name": "Model",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R1",
+     "R4",
+     "R5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "There is UIML in the model."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "One UIML may have one Header head."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A UIML has zero or more interfaces."
+     }
+    ],
+    "name": "Uiml",
+    "freq": 3
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "One UIML may have one Header head."
+     }
+    ],
+    "owner": "Uiml",
+    "name": "header head",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A UIML has zero or more interfaces."
+     }
+    ],
+    "owner": "Uiml",
+    "name": "interface",
+    "type_hint": null
+   }
+  ],
+  "relations": [],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Uiml",
+     "target": "Interface",
+     "multiplicity": "1..*"
+    },
+    {
+     "source": "Header",
+     "target": "MetaData",
+     "multiplicity": "1"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

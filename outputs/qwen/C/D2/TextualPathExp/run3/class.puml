@@ -1,0 +1,18 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class AlternativeTrans {
+  name : String
+}
+class Path {
+  transitions : String
+}
+class Transition {
+}
+class TextualPathExp {
+  +createGame()
+}
+Path "1" -- "1..*" Transition : has
+TextualPathExp "1" -- "1" Path : has
+Path "1" *-- "0..*" AlternativeTrans : contains
+@enduml

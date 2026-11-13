@@ -1,0 +1,121 @@
+{
+ "case": "D2/QoS_Statement",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "qoSContraint",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "qoSStatements",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "QoSConstraint",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "qualificationKind",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [
+    "NAME____QUALIFICATIONKIND____LITERALS_____R11"
+   ],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "generalization",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is a",
+   "src": [
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is composed of",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that 'CompoundQoSStatement' is a class which belongs to the QoSStatement package, as stated in Requirement R3."
+  }
+ ],
+ "open_tags": []
+}

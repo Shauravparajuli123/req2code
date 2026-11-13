@@ -1,0 +1,55 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "qoSConstraint"
+   ],
+   "methods": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "qoSStatement"
+   ],
+   "methods": [],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "CompoundQoSStatement",
+   "target": "QoSStatement",
+   "src": [
+    "R7",
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/QoS_Statement.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass QoSStatement:\n    \"\"\"Source: R7, R8\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass SingleQoSStatement:\n    \"\"\"Source: R9\"\"\"\n    qoSConstraint: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass CompoundQoSStatement(QoSStatement):\n    \"\"\"Source: R3, R10\"\"\"\n    qoSStatement: _t.Optional[str] = None\n",
+ "java": {
+  "QoSStatement.java": "/** Generated from shared model D2/QoS_Statement. Source: R7, R8 */\npublic class QoSStatement {\n}\n",
+  "SingleQoSStatement.java": "/** Generated from shared model D2/QoS_Statement. Source: R9 */\npublic class SingleQoSStatement {\n    private java.lang.String qoSConstraint;\n}\n",
+  "CompoundQoSStatement.java": "/** Generated from shared model D2/QoS_Statement. Source: R3, R10 */\npublic class CompoundQoSStatement extends QoSStatement {\n    private java.lang.String qoSStatement;\n}\n"
+ }
+}

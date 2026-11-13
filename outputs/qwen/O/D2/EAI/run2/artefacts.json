@@ -1,0 +1,93 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "EAIResource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "EAIQueue",
+   "kind": "class",
+   "attributes": [
+    "maxLength"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "FCMSource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "EAIModel",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "EAISource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "FCMSink",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "EAISink",
+   "kind": "class",
+   "attributes": [
+    "resources"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "EAISink",
+   "target": "EAIResource",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "python": "class EAIResource:\n    pass\n\nclass EAIQueue:\n    def __init__(self):\n        self.maxLength = 0\n\nclass FCMSource:\n    pass\n\nclass EAIModel:\n    pass\n\nclass EAISource:\n    pass\n\nclass FCMSink:\n    pass\n\nclass EAISink:\n    def __init__(self):\n        self.resources = []",
+ "java": {}
+}

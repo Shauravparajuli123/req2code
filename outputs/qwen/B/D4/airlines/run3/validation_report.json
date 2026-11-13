@@ -1,0 +1,27 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [
+  "R1 (quantifier, \"Many\"): readings ['Many different airlines can operate in the same airport.', 'A single airline can operate in many airports.']"
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that 'Many different airlines can operate in the same airport' as per the ambiguity in R1."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Airline and Airport should be many-to-many, not 1..1..*",
+   "fix": "Change the relationship from 1..1..* to *..*"
+  },
+  {
+   "agent": "class",
+   "issue": "The class OperatingCost should be an aggregation of both Airline and Airport, not a separate class",
+   "fix": "Remove the class OperatingCost and make the attributes of OperatingCost part of the Airline and Airport classes"
+  }
+ ]
+}

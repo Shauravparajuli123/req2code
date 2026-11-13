@@ -1,0 +1,2423 @@
+{
+ "case": "D1/sports",
+ "stage": "result2_after_ambiguity_removal",
+ "actors": [
+  {
+   "id": "A1",
+   "src": [
+    "R20",
+    "R38",
+    "R40",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R57",
+    "R62",
+    "R63"
+   ],
+   "rule": [
+    "story_role",
+    "person_noun"
+   ],
+   "evidence": [
+    {
+     "sid": "R20.s1",
+     "text": "As an Admin, I want to be able to edit all personal training sessions."
+    },
+    {
+     "sid": "R38.s1",
+     "text": "As an Admin, I want to be able to edit any lesson."
+    },
+    {
+     "sid": "R40.s1",
+     "text": "As an Admin, I want to cancel a lesson, so customers won't show up in an empty room when the Trainer can't make it."
+    }
+   ],
+   "name": "admin"
+  },
+  {
+   "id": "A2",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R41",
+    "R42",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56",
+    "R58",
+    "R59",
+    "R61"
+   ],
+   "rule": [
+    "story_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "As a new Customer, I want to open an account in the system, so I can start training at Daily Sports."
+    },
+    {
+     "sid": "R2.s1",
+     "text": "As a Customer, I want to add my personal information, so I meet the requirements of the gym for signing up."
+    },
+    {
+     "sid": "R3.s1",
+     "text": "As a Customer, I want to add my banking details, so I can pay for my subscription."
+    }
+   ],
+   "name": "customer"
+  },
+  {
+   "id": "A3",
+   "src": [
+    "R12",
+    "R13",
+    "R14"
+   ],
+   "rule": [
+    "story_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R12.s1",
+     "text": "As a Customer with a Family Membership, I want to see who is using my membership."
+    },
+    {
+     "sid": "R13.s1",
+     "text": "As a Customer with a Family Membership, I want to add a person to my membership, so that I can utilize it effectively."
+    },
+    {
+     "sid": "R14.s1",
+     "text": "As a Customer with a Family Membership, I want to remove a person from my membership."
+    }
+   ],
+   "name": "customer with a family membership"
+  },
+  {
+   "id": "A4",
+   "src": [
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R39",
+    "R60"
+   ],
+   "rule": [
+    "story_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R25.s1",
+     "text": "As a Trainer, I want to see which rooms are free at a given timeslot, so I can organize a lesson."
+    },
+    {
+     "sid": "R26.s1",
+     "text": "As a Trainer, I want to add a lesson to the schedule, so customers would be able to sign-up."
+    },
+    {
+     "sid": "R27.s1",
+     "text": "As a Trainer, I want to set the time of the lesson, so the customers know when they should be at Daily Sports."
+    }
+   ],
+   "name": "trainer"
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "src": [
+    "R3"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "As a Customer, I want to add my banking details, so I can pay for my subscription."
+    }
+   ],
+   "name": "Add BankingDetail",
+   "actor": "customer",
+   "goal_text": "add my banking details"
+  },
+  {
+   "id": "UC2",
+   "src": [
+    "R2"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R2.s1",
+     "text": "As a Customer, I want to add my personal information, so I meet the requirements of the gym for signing up."
+    }
+   ],
+   "name": "Add Information",
+   "actor": "customer",
+   "goal_text": "add my personal information"
+  },
+  {
+   "id": "UC3",
+   "src": [
+    "R26"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R26.s1",
+     "text": "As a Trainer, I want to add a lesson to the schedule, so customers would be able to sign-up."
+    }
+   ],
+   "name": "Add Lesson",
+   "actor": "trainer",
+   "goal_text": "add a lesson to the schedule"
+  },
+  {
+   "id": "UC4",
+   "src": [
+    "R13"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R13.s1",
+     "text": "As a Customer with a Family Membership, I want to add a person to my membership, so that I can utilize it effectively."
+    }
+   ],
+   "name": "Add Person",
+   "actor": "customer with a family membership",
+   "goal_text": "add a person to my membership"
+  },
+  {
+   "id": "UC5",
+   "src": [
+    "R23"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R23.s1",
+     "text": "As a Customer, I want to be able to book a spot for the free practice area, so that I know it will have capacity for me when I arrive."
+    }
+   ],
+   "name": "Book Spot",
+   "actor": "customer",
+   "goal_text": "book a spot for the free practice area"
+  },
+  {
+   "id": "UC6",
+   "src": [
+    "R18",
+    "R19",
+    "R21",
+    "R22"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R18.s1",
+     "text": "As a Customer, I want to be able to call the gym to book a lesson, so that I don't have to use the application."
+    },
+    {
+     "sid": "R19.s1",
+     "text": "As a Customer, I want to be able to call the gym to cancel a lesson, so that I don't have to use the application."
+    },
+    {
+     "sid": "R21.s1",
+     "text": "As a Customer, I want to call the gym to book a personal training session, so that I don't have to use the application."
+    }
+   ],
+   "name": "Call Gym",
+   "actor": "customer",
+   "goal_text": "call the gym to book a lesson"
+  },
+  {
+   "id": "UC7",
+   "src": [
+    "R39",
+    "R40"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R39.s1",
+     "text": "As a Trainer, I want to cancel a lesson, so customers won't show up in an empty room when I can't make it."
+    },
+    {
+     "sid": "R40.s1",
+     "text": "As an Admin, I want to cancel a lesson, so customers won't show up in an empty room when the Trainer can't make it."
+    }
+   ],
+   "name": "Cancel Lesson",
+   "actor": "trainer",
+   "goal_text": "cancel a lesson"
+  },
+  {
+   "id": "UC8",
+   "src": [
+    "R10"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R10.s1",
+     "text": "As a Customer, I want to be able to change my personal details."
+    }
+   ],
+   "name": "Change Detail",
+   "actor": "customer",
+   "goal_text": "change my personal details."
+  },
+  {
+   "id": "UC9",
+   "src": [
+    "R35"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R35.s1",
+     "text": "As a Trainer, I want to change the room of the lesson, so I can move the lesson to another place."
+    }
+   ],
+   "name": "Change Room",
+   "actor": "trainer",
+   "goal_text": "change the room of the lesson"
+  },
+  {
+   "id": "UC10",
+   "src": [
+    "R4"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "As a Customer, I want to be able to choose my membership type, so I can pay according to my wishes."
+    }
+   ],
+   "name": "Choose MembershipType",
+   "actor": "customer",
+   "goal_text": "choose my membership type"
+  },
+  {
+   "id": "UC11",
+   "src": [
+    "R54"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R54.s1",
+     "text": "As a Customer, I want to choose what to receive notifications for."
+    }
+   ],
+   "name": "Choose Notification",
+   "actor": "customer",
+   "goal_text": "choose what to receive notifications for."
+  },
+  {
+   "id": "UC12",
+   "src": [
+    "R56"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R56.s1",
+     "text": "As a Customer, I want to confirm that I am aware that my booking has been canceled."
+    }
+   ],
+   "name": "Confirm Booking",
+   "actor": "customer",
+   "goal_text": "confirm that I am aware that my booking has been canceled."
+  },
+  {
+   "id": "UC13",
+   "src": [
+    "R36"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R36.s1",
+     "text": "As a Trainer, I want to edit the description of the lesson, so the customers know what to expect."
+    }
+   ],
+   "name": "Edit Description",
+   "actor": "trainer",
+   "goal_text": "edit the description of the lesson"
+  },
+  {
+   "id": "UC14",
+   "src": [
+    "R33",
+    "R38"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R33.s1",
+     "text": "As a Trainer, I want to be the only Trainer who can edit my lessons."
+    },
+    {
+     "sid": "R38.s1",
+     "text": "As an Admin, I want to be able to edit any lesson."
+    }
+   ],
+   "name": "Edit Lesson",
+   "actor": "trainer",
+   "goal_text": "be the only Trainer who can edit my lessons."
+  },
+  {
+   "id": "UC15",
+   "src": [
+    "R37"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R37.s1",
+     "text": "As a Trainer, I want to edit the maximum number of people allowed in the lesson, so it is correct for this lesson."
+    }
+   ],
+   "name": "Edit Number",
+   "actor": "trainer",
+   "goal_text": "edit the maximum number of people allowed in the lesson"
+  },
+  {
+   "id": "UC16",
+   "src": [
+    "R34"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R34.s1",
+     "text": "As a Trainer, I want to edit the time of the lesson, so a more suitable time can be set."
+    }
+   ],
+   "name": "Edit Time",
+   "actor": "trainer",
+   "goal_text": "edit the time of the lesson"
+  },
+  {
+   "id": "UC17",
+   "src": [
+    "R20"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R20.s1",
+     "text": "As an Admin, I want to be able to edit all personal training sessions."
+    }
+   ],
+   "name": "Edit TrainingSession",
+   "actor": "admin",
+   "goal_text": "edit all personal training sessions."
+  },
+  {
+   "id": "UC18",
+   "src": [
+    "R5"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R5.s1",
+     "text": "As a Customer, I want to be able to extend my subscription for Daily Sports, so I can continue working out."
+    }
+   ],
+   "name": "Extend Subscription",
+   "actor": "customer",
+   "goal_text": "extend my subscription for Daily Sports"
+  },
+  {
+   "id": "UC19",
+   "src": [
+    "R46"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R46.s1",
+     "text": "As an Admin, I want to have the fines for repeat offenders to increase exponentially for each subsequent offense, so we can deter no-shows."
+    }
+   ],
+   "name": "Have Fine",
+   "actor": "admin",
+   "goal_text": "have the fines for repeat offenders to increase exponentially for each subsequent offense"
+  },
+  {
+   "id": "UC20",
+   "src": [
+    "R61"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R61.s1",
+     "text": "As a Customer, I want to have a method by which I can check-in."
+    }
+   ],
+   "name": "Have Method",
+   "actor": "customer",
+   "goal_text": "have a method by which I can check-in."
+  },
+  {
+   "id": "UC21",
+   "src": [
+    "R45"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R45.s1",
+     "text": "As an Admin, I want to have the system to issue a fine if a customer does not show up more than 2 times, so that we can deter no-shows."
+    }
+   ],
+   "name": "Have System",
+   "actor": "admin",
+   "goal_text": "have the system to issue a fine if a customer does not show up more than 2 times"
+  },
+  {
+   "id": "UC22",
+   "src": [
+    "R57"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R57.s1",
+     "text": "As an Admin, I want to know which customers are aware that their booking has been canceled, so that I can call them if they aren't."
+    }
+   ],
+   "name": "Know Customer",
+   "actor": "admin",
+   "goal_text": "know which customers are aware that their booking has been canceled"
+  },
+  {
+   "id": "UC23",
+   "src": [
+    "R6"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R6.s1",
+     "text": "As a Customer, I want to know how long my subscription lasts, so I know when I need to extend it."
+    }
+   ],
+   "name": "Know Subscription",
+   "actor": "customer",
+   "goal_text": "know how long my subscription lasts"
+  },
+  {
+   "id": "UC24",
+   "src": [
+    "R50"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R50.s1",
+     "text": "As a User, I want to log in to the system, so that I can use the system."
+    }
+   ],
+   "name": "Log System",
+   "actor": "Customer",
+   "goal_text": "log in to the system"
+  },
+  {
+   "id": "UC25",
+   "src": [
+    "R42"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R42.s1",
+     "text": "As a Customer, I want to be notified if I didn't go to a session I had booked, so that I know it happened."
+    }
+   ],
+   "name": "Notify Session",
+   "actor": "customer",
+   "goal_text": "be notified if I didn't go to a session I had booked"
+  },
+  {
+   "id": "UC26",
+   "src": [
+    "R1"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "As a new Customer, I want to open an account in the system, so I can start training at Daily Sports."
+    }
+   ],
+   "name": "Open Account",
+   "actor": "customer",
+   "goal_text": "open an account in the system"
+  },
+  {
+   "id": "UC27",
+   "src": [
+    "R41",
+    "R51",
+    "R52",
+    "R55"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R41.s1",
+     "text": "As a Customer, I want to receive a notification when my booked lesson is canceled, so I won't go to Daily Sports for a canceled lesson."
+    },
+    {
+     "sid": "R51.s1",
+     "text": "As a Customer, I want to receive notifications by the method which I prefer, so that I am able to see them and not be annoyed by them."
+    },
+    {
+     "sid": "R52.s1",
+     "text": "As a Customer, I want to receive notifications by email."
+    }
+   ],
+   "name": "Receive Notification",
+   "actor": "customer",
+   "goal_text": "receive a notification when my booked lesson is canceled"
+  },
+  {
+   "id": "UC28",
+   "src": [
+    "R53"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R53.s1",
+     "text": "As a Customer, I want to receive push notifications from the system."
+    }
+   ],
+   "name": "Receive PushNotification",
+   "actor": "customer",
+   "goal_text": "receive push notifications from the system."
+  },
+  {
+   "id": "UC29",
+   "src": [
+    "R14"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R14.s1",
+     "text": "As a Customer with a Family Membership, I want to remove a person from my membership."
+    }
+   ],
+   "name": "Remove Person",
+   "actor": "customer with a family membership",
+   "goal_text": "remove a person from my membership."
+  },
+  {
+   "id": "UC30",
+   "src": [
+    "R9"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R9.s1",
+     "text": "As a Customer, I want to be able to reset my password."
+    }
+   ],
+   "name": "Reset Password",
+   "actor": "customer",
+   "goal_text": "reset my password."
+  },
+  {
+   "id": "UC31",
+   "src": [
+    "R43",
+    "R62",
+    "R63"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R43.s1",
+     "text": "As an Admin, I want to see if a customer did not show up for a session they had booked, so that I can take further action."
+    },
+    {
+     "sid": "R62.s1",
+     "text": "As an Admin, I want to see if the Customer who is checking-in has a subscription."
+    },
+    {
+     "sid": "R63.s1",
+     "text": "As an Admin, I want to see if the Customer who is checking-in has any bookings."
+    }
+   ],
+   "name": "See Customer",
+   "actor": "admin",
+   "goal_text": "see if a customer did not show up for a session they had booked"
+  },
+  {
+   "id": "UC32",
+   "src": [
+    "R59",
+    "R60"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R59.s1",
+     "text": "As a Customer, I want to see information about my membership."
+    },
+    {
+     "sid": "R60.s1",
+     "text": "As a Trainer, I want to see information about my past and future training sessions."
+    }
+   ],
+   "name": "See Information",
+   "actor": "customer",
+   "goal_text": "see information about my membership."
+  },
+  {
+   "id": "UC33",
+   "src": [
+    "R16"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R16.s1",
+     "text": "As a Customer, I want to see what future lessons I have booked, so that I can manage my time."
+    }
+   ],
+   "name": "See Lesson",
+   "actor": "customer",
+   "goal_text": "see what future lessons I have booked"
+  },
+  {
+   "id": "UC34",
+   "src": [
+    "R12"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R12.s1",
+     "text": "As a Customer with a Family Membership, I want to see who is using my membership."
+    }
+   ],
+   "name": "See Membership",
+   "actor": "customer with a family membership",
+   "goal_text": "see who is using my membership."
+  },
+  {
+   "id": "UC35",
+   "src": [
+    "R15",
+    "R58"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R15.s1",
+     "text": "As a Customer, I want to see an overview of all available lessons, so that I can choose which one to book."
+    },
+    {
+     "sid": "R58.s1",
+     "text": "As a Customer, I want to see an overview of my personal information."
+    }
+   ],
+   "name": "See Overview",
+   "actor": "customer",
+   "goal_text": "see an overview of all available lessons"
+  },
+  {
+   "id": "UC36",
+   "src": [
+    "R17"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R17.s1",
+     "text": "As a Customer, I want to see a record of previous lessons I have booked, so I can track my progress."
+    }
+   ],
+   "name": "See Record",
+   "actor": "customer",
+   "goal_text": "see a record of previous lessons I have booked"
+  },
+  {
+   "id": "UC37",
+   "src": [
+    "R25"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R25.s1",
+     "text": "As a Trainer, I want to see which rooms are free at a given timeslot, so I can organize a lesson."
+    }
+   ],
+   "name": "See Room",
+   "actor": "trainer",
+   "goal_text": "see which rooms are free at a given timeslot"
+  },
+  {
+   "id": "UC38",
+   "src": [
+    "R32"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R32.s1",
+     "text": "As a Trainer, I want to be able to see what my schedule is."
+    }
+   ],
+   "name": "See Schedule",
+   "actor": "trainer",
+   "goal_text": "see what my schedule is."
+  },
+  {
+   "id": "UC39",
+   "src": [
+    "R24"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R24.s1",
+     "text": "As a Customer, I want to see how many spots have been booked for a given timeslot."
+    }
+   ],
+   "name": "See Spot",
+   "actor": "customer",
+   "goal_text": "see how many spots have been booked for a given timeslot."
+  },
+  {
+   "id": "UC40",
+   "src": [
+    "R44"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R44.s1",
+     "text": "As an Admin, I want to see how many times a customer did not show up for a session."
+    }
+   ],
+   "name": "See Time",
+   "actor": "admin",
+   "goal_text": "see how many times a customer did not show up for a session."
+  },
+  {
+   "id": "UC41",
+   "src": [
+    "R28"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R28.s1",
+     "text": "As a Trainer, I want to set the description of the lesson, so the customers know what to expect from it."
+    }
+   ],
+   "name": "Set Description",
+   "actor": "trainer",
+   "goal_text": "set the description of the lesson"
+  },
+  {
+   "id": "UC42",
+   "src": [
+    "R31"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R31.s1",
+     "text": "As a Trainer, I want to set the maximum number of people allowed in the lesson, so that we don't over-crowd a room."
+    }
+   ],
+   "name": "Set Number",
+   "actor": "trainer",
+   "goal_text": "set the maximum number of people allowed in the lesson"
+  },
+  {
+   "id": "UC43",
+   "src": [
+    "R29"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R29.s1",
+     "text": "As a Trainer, I want to set the room of the lesson, so the customers know where to go."
+    }
+   ],
+   "name": "Set Room",
+   "actor": "trainer",
+   "goal_text": "set the room of the lesson"
+  },
+  {
+   "id": "UC44",
+   "src": [
+    "R27"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R27.s1",
+     "text": "As a Trainer, I want to set the time of the lesson, so the customers know when they should be at Daily Sports."
+    }
+   ],
+   "name": "Set Time",
+   "actor": "trainer",
+   "goal_text": "set the time of the lesson"
+  },
+  {
+   "id": "UC45",
+   "src": [
+    "R30"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R30.s1",
+     "text": "As a Trainer, I want to set the type of lesson."
+    }
+   ],
+   "name": "Set Type",
+   "actor": "trainer",
+   "goal_text": "set the type of lesson."
+  },
+  {
+   "id": "UC46",
+   "src": [
+    "R8"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R8.s1",
+     "text": "As a Customer, I want to be able to unsubscribe."
+    }
+   ],
+   "name": "Unsubscribe",
+   "actor": "customer",
+   "goal_text": "unsubscribe."
+  },
+  {
+   "id": "UC47",
+   "src": [
+    "R11"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R11.s1",
+     "text": "As a Customer, I want to be able to update my payment information."
+    }
+   ],
+   "name": "Update PaymentInformation",
+   "actor": "customer",
+   "goal_text": "update my payment information."
+  },
+  {
+   "id": "UC48",
+   "src": [
+    "R7"
+   ],
+   "rule": [
+    "story_goal"
+   ],
+   "evidence": [
+    {
+     "sid": "R7.s1",
+     "text": "As a Returning Customer, I want to be able to use my previous information, so that sign-up is easier."
+    }
+   ],
+   "name": "Use Information",
+   "actor": "customer",
+   "goal_text": "use my previous information"
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "src": [
+    "R20",
+    "R38",
+    "R40",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R57",
+    "R62",
+    "R63"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R20.s1",
+     "text": "As an Admin, I want to be able to edit all personal training sessions."
+    },
+    {
+     "sid": "R38.s1",
+     "text": "As an Admin, I want to be able to edit any lesson."
+    },
+    {
+     "sid": "R40.s1",
+     "text": "As an Admin, I want to cancel a lesson, so customers won't show up in an empty room when the Trainer can't make it."
+    }
+   ],
+   "name": "Admin",
+   "freq": 15
+  },
+  {
+   "id": "C2",
+   "src": [
+    "R56",
+    "R57",
+    "R63"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R56.s1",
+     "text": "As a Customer, I want to confirm that I am aware that my booking has been canceled."
+    },
+    {
+     "sid": "R57.s1",
+     "text": "As an Admin, I want to know which customers are aware that their booking has been canceled, so that I can call them if they aren't."
+    },
+    {
+     "sid": "R63.s1",
+     "text": "As an Admin, I want to see if the Customer who is checking-in has any bookings."
+    }
+   ],
+   "name": "Booking",
+   "freq": 3
+  },
+  {
+   "id": "C3",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R36",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R51",
+    "R52",
+    "R53",
+    "R54",
+    "R55",
+    "R56",
+    "R57",
+    "R58",
+    "R59",
+    "R61",
+    "R62",
+    "R63"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "As a new Customer, I want to open an account in the system, so I can start training at Daily Sports."
+    },
+    {
+     "sid": "R2.s1",
+     "text": "As a Customer, I want to add my personal information, so I meet the requirements of the gym for signing up."
+    },
+    {
+     "sid": "R3.s1",
+     "text": "As a Customer, I want to add my banking details, so I can pay for my subscription."
+    }
+   ],
+   "name": "Customer",
+   "freq": 46
+  },
+  {
+   "id": "C6",
+   "src": [
+    "R12",
+    "R13",
+    "R14"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R12.s1",
+     "text": "As a Customer with a Family Membership, I want to see who is using my membership."
+    },
+    {
+     "sid": "R13.s1",
+     "text": "As a Customer with a Family Membership, I want to add a person to my membership, so that I can utilize it effectively."
+    },
+    {
+     "sid": "R14.s1",
+     "text": "As a Customer with a Family Membership, I want to remove a person from my membership."
+    }
+   ],
+   "name": "FamilyMembership",
+   "freq": 3
+  },
+  {
+   "id": "C7",
+   "src": [
+    "R45",
+    "R46"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R45.s1",
+     "text": "As an Admin, I want to have the system to issue a fine if a customer does not show up more than 2 times, so that we can deter no-shows."
+    },
+    {
+     "sid": "R46.s1",
+     "text": "As an Admin, I want to have the fines for repeat offenders to increase exponentially for each subsequent offense, so we can deter no-shows."
+    }
+   ],
+   "name": "Fine",
+   "freq": 2
+  },
+  {
+   "id": "C8",
+   "src": [
+    "R2",
+    "R18",
+    "R19",
+    "R21",
+    "R22"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R2.s1",
+     "text": "As a Customer, I want to add my personal information, so I meet the requirements of the gym for signing up."
+    },
+    {
+     "sid": "R18.s1",
+     "text": "As a Customer, I want to be able to call the gym to book a lesson, so that I don't have to use the application."
+    },
+    {
+     "sid": "R19.s1",
+     "text": "As a Customer, I want to be able to call the gym to cancel a lesson, so that I don't have to use the application."
+    }
+   ],
+   "name": "Gym",
+   "freq": 5
+  },
+  {
+   "id": "C9",
+   "src": [
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R15.s1",
+     "text": "As a Customer, I want to see an overview of all available lessons, so that I can choose which one to book."
+    },
+    {
+     "sid": "R16.s1",
+     "text": "As a Customer, I want to see what future lessons I have booked, so that I can manage my time."
+    },
+    {
+     "sid": "R17.s1",
+     "text": "As a Customer, I want to see a record of previous lessons I have booked, so I can track my progress."
+    }
+   ],
+   "name": "Lesson",
+   "freq": 24
+  },
+  {
+   "id": "C10",
+   "src": [
+    "R12",
+    "R13",
+    "R14",
+    "R59"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R12.s1",
+     "text": "As a Customer with a Family Membership, I want to see who is using my membership."
+    },
+    {
+     "sid": "R13.s1",
+     "text": "As a Customer with a Family Membership, I want to add a person to my membership, so that I can utilize it effectively."
+    },
+    {
+     "sid": "R14.s1",
+     "text": "As a Customer with a Family Membership, I want to remove a person from my membership."
+    }
+   ],
+   "name": "Membership",
+   "freq": 4
+  },
+  {
+   "id": "C11",
+   "src": [
+    "R51",
+    "R61"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R51.s1",
+     "text": "As a Customer, I want to receive notifications by the method which I prefer, so that I am able to see them and not be annoyed by them."
+    },
+    {
+     "sid": "R61.s1",
+     "text": "As a Customer, I want to have a method by which I can check-in."
+    }
+   ],
+   "name": "Method",
+   "freq": 2
+  },
+  {
+   "id": "C12",
+   "src": [
+    "R41",
+    "R51",
+    "R52",
+    "R54",
+    "R55"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R41.s1",
+     "text": "As a Customer, I want to receive a notification when my booked lesson is canceled, so I won't go to Daily Sports for a canceled lesson."
+    },
+    {
+     "sid": "R51.s1",
+     "text": "As a Customer, I want to receive notifications by the method which I prefer, so that I am able to see them and not be annoyed by them."
+    },
+    {
+     "sid": "R52.s1",
+     "text": "As a Customer, I want to receive notifications by email."
+    }
+   ],
+   "name": "Notification",
+   "freq": 5
+  },
+  {
+   "id": "C13",
+   "src": [
+    "R31",
+    "R37"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R31.s1",
+     "text": "As a Trainer, I want to set the maximum number of people allowed in the lesson, so that we don't over-crowd a room."
+    },
+    {
+     "sid": "R37.s1",
+     "text": "As a Trainer, I want to edit the maximum number of people allowed in the lesson, so it is correct for this lesson."
+    }
+   ],
+   "name": "People",
+   "freq": 2
+  },
+  {
+   "id": "C14",
+   "src": [
+    "R13",
+    "R14"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R13.s1",
+     "text": "As a Customer with a Family Membership, I want to add a person to my membership, so that I can utilize it effectively."
+    },
+    {
+     "sid": "R14.s1",
+     "text": "As a Customer with a Family Membership, I want to remove a person from my membership."
+    }
+   ],
+   "name": "Person",
+   "freq": 2
+  },
+  {
+   "id": "C15",
+   "src": [
+    "R25",
+    "R29",
+    "R31",
+    "R35",
+    "R39",
+    "R40"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R25.s1",
+     "text": "As a Trainer, I want to see which rooms are free at a given timeslot, so I can organize a lesson."
+    },
+    {
+     "sid": "R29.s1",
+     "text": "As a Trainer, I want to set the room of the lesson, so the customers know where to go."
+    },
+    {
+     "sid": "R31.s1",
+     "text": "As a Trainer, I want to set the maximum number of people allowed in the lesson, so that we don't over-crowd a room."
+    }
+   ],
+   "name": "Room",
+   "freq": 6
+  },
+  {
+   "id": "C16",
+   "src": [
+    "R26",
+    "R32"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R26.s1",
+     "text": "As a Trainer, I want to add a lesson to the schedule, so customers would be able to sign-up."
+    },
+    {
+     "sid": "R32.s1",
+     "text": "As a Trainer, I want to be able to see what my schedule is."
+    }
+   ],
+   "name": "Schedule",
+   "freq": 2
+  },
+  {
+   "id": "C17",
+   "src": [
+    "R42",
+    "R43",
+    "R44"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R42.s1",
+     "text": "As a Customer, I want to be notified if I didn't go to a session I had booked, so that I know it happened."
+    },
+    {
+     "sid": "R43.s1",
+     "text": "As an Admin, I want to see if a customer did not show up for a session they had booked, so that I can take further action."
+    },
+    {
+     "sid": "R44.s1",
+     "text": "As an Admin, I want to see how many times a customer did not show up for a session."
+    }
+   ],
+   "name": "Session",
+   "freq": 3
+  },
+  {
+   "id": "C18",
+   "src": [
+    "R45",
+    "R46"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R45.s1",
+     "text": "As an Admin, I want to have the system to issue a fine if a customer does not show up more than 2 times, so that we can deter no-shows."
+    },
+    {
+     "sid": "R46.s1",
+     "text": "As an Admin, I want to have the fines for repeat offenders to increase exponentially for each subsequent offense, so we can deter no-shows."
+    }
+   ],
+   "name": "Show",
+   "freq": 2
+  },
+  {
+   "id": "C19",
+   "src": [
+    "R23",
+    "R24"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R23.s1",
+     "text": "As a Customer, I want to be able to book a spot for the free practice area, so that I know it will have capacity for me when I arrive."
+    },
+    {
+     "sid": "R24.s1",
+     "text": "As a Customer, I want to see how many spots have been booked for a given timeslot."
+    }
+   ],
+   "name": "Spot",
+   "freq": 2
+  },
+  {
+   "id": "C20",
+   "src": [
+    "R3",
+    "R5",
+    "R6",
+    "R62"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "As a Customer, I want to add my banking details, so I can pay for my subscription."
+    },
+    {
+     "sid": "R5.s1",
+     "text": "As a Customer, I want to be able to extend my subscription for Daily Sports, so I can continue working out."
+    },
+    {
+     "sid": "R6.s1",
+     "text": "As a Customer, I want to know how long my subscription lasts, so I know when I need to extend it."
+    }
+   ],
+   "name": "Subscription",
+   "freq": 4
+  },
+  {
+   "id": "C21",
+   "src": [
+    "R24",
+    "R25"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R24.s1",
+     "text": "As a Customer, I want to see how many spots have been booked for a given timeslot."
+    },
+    {
+     "sid": "R25.s1",
+     "text": "As a Trainer, I want to see which rooms are free at a given timeslot, so I can organize a lesson."
+    }
+   ],
+   "name": "Timeslot",
+   "freq": 2
+  },
+  {
+   "id": "C22",
+   "src": [
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R39",
+    "R40",
+    "R47",
+    "R49",
+    "R60"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R25.s1",
+     "text": "As a Trainer, I want to see which rooms are free at a given timeslot, so I can organize a lesson."
+    },
+    {
+     "sid": "R26.s1",
+     "text": "As a Trainer, I want to add a lesson to the schedule, so customers would be able to sign-up."
+    },
+    {
+     "sid": "R27.s1",
+     "text": "As a Trainer, I want to set the time of the lesson, so the customers know when they should be at Daily Sports."
+    }
+   ],
+   "name": "Trainer",
+   "freq": 20
+  },
+  {
+   "id": "C23",
+   "src": [
+    "R20",
+    "R21",
+    "R22",
+    "R55",
+    "R60"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R20.s1",
+     "text": "As an Admin, I want to be able to edit all personal training sessions."
+    },
+    {
+     "sid": "R21.s1",
+     "text": "As a Customer, I want to call the gym to book a personal training session, so that I don't have to use the application."
+    },
+    {
+     "sid": "R22.s1",
+     "text": "As a Customer, I want to call the gym to cancel a personal training session, so that I don't have to use the application."
+    }
+   ],
+   "name": "TrainingSession",
+   "freq": 5
+  },
+  {
+   "id": "C24",
+   "src": [
+    "R50"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R50.s1",
+     "text": "As a User, I want to log in to the system, so that I can use the system."
+    }
+   ],
+   "name": "User",
+   "freq": 1
+  }
+ ],
+ "attributes": [
+  {
+   "id": "AT1",
+   "src": [
+    "R2"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R2.s1",
+     "text": "As a Customer, I want to add my personal information, so I meet the requirements of the gym for signing up."
+    }
+   ],
+   "owner": "Gym",
+   "name": "requirement",
+   "type_hint": null
+  },
+  {
+   "id": "AT2",
+   "src": [
+    "R28"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R28.s1",
+     "text": "As a Trainer, I want to set the description of the lesson, so the customers know what to expect from it."
+    }
+   ],
+   "owner": "Lesson",
+   "name": "description",
+   "type_hint": null
+  },
+  {
+   "id": "AT3",
+   "src": [
+    "R17"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R17.s1",
+     "text": "As a Customer, I want to see a record of previous lessons I have booked, so I can track my progress."
+    }
+   ],
+   "owner": "Lesson",
+   "name": "record",
+   "type_hint": null
+  }
+ ],
+ "relations": [
+  {
+   "id": "REL1",
+   "src": [
+    "R43",
+    "R57",
+    "R62",
+    "R63"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R43.s1",
+     "text": "As an Admin, I want to see if a customer did not show up for a session they had booked, so that I can take further action."
+    },
+    {
+     "sid": "R57.s1",
+     "text": "As an Admin, I want to know which customers are aware that their booking has been canceled, so that I can call them if they aren't."
+    },
+    {
+     "sid": "R62.s1",
+     "text": "As an Admin, I want to see if the Customer who is checking-in has a subscription."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Admin",
+   "target": "Customer",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL2",
+   "src": [
+    "R46"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R46.s1",
+     "text": "As an Admin, I want to have the fines for repeat offenders to increase exponentially for each subsequent offense, so we can deter no-shows."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Admin",
+   "target": "Fine",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL3",
+   "src": [
+    "R38",
+    "R40"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R38.s1",
+     "text": "As an Admin, I want to be able to edit any lesson."
+    },
+    {
+     "sid": "R40.s1",
+     "text": "As an Admin, I want to cancel a lesson, so customers won't show up in an empty room when the Trainer can't make it."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Admin",
+   "target": "Lesson",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL4",
+   "src": [
+    "R20"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R20.s1",
+     "text": "As an Admin, I want to be able to edit all personal training sessions."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Admin",
+   "target": "TrainingSession",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL5",
+   "src": [
+    "R12"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R12.s1",
+     "text": "As a Customer with a Family Membership, I want to see who is using my membership."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Membership",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL6",
+   "src": [
+    "R13",
+    "R14"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R13.s1",
+     "text": "As a Customer with a Family Membership, I want to add a person to my membership, so that I can utilize it effectively."
+    },
+    {
+     "sid": "R14.s1",
+     "text": "As a Customer with a Family Membership, I want to remove a person from my membership."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Person",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL7",
+   "src": [
+    "R1"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "As a new Customer, I want to open an account in the system, so I can start training at Daily Sports."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Account",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL8",
+   "src": [
+    "R3"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R3.s1",
+     "text": "As a Customer, I want to add my banking details, so I can pay for my subscription."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "BankingDetail",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL9",
+   "src": [
+    "R56"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R56.s1",
+     "text": "As a Customer, I want to confirm that I am aware that my booking has been canceled."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Booking",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL10",
+   "src": [
+    "R18",
+    "R19",
+    "R21",
+    "R22"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R18.s1",
+     "text": "As a Customer, I want to be able to call the gym to book a lesson, so that I don't have to use the application."
+    },
+    {
+     "sid": "R19.s1",
+     "text": "As a Customer, I want to be able to call the gym to cancel a lesson, so that I don't have to use the application."
+    },
+    {
+     "sid": "R21.s1",
+     "text": "As a Customer, I want to call the gym to book a personal training session, so that I don't have to use the application."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Gym",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL11",
+   "src": [
+    "R16"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R16.s1",
+     "text": "As a Customer, I want to see what future lessons I have booked, so that I can manage my time."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Lesson",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL12",
+   "src": [
+    "R4"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "As a Customer, I want to be able to choose my membership type, so I can pay according to my wishes."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "MembershipType",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL13",
+   "src": [
+    "R61"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R61.s1",
+     "text": "As a Customer, I want to have a method by which I can check-in."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Method",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL14",
+   "src": [
+    "R41",
+    "R51",
+    "R52",
+    "R54",
+    "R55"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R41.s1",
+     "text": "As a Customer, I want to receive a notification when my booked lesson is canceled, so I won't go to Daily Sports for a canceled lesson."
+    },
+    {
+     "sid": "R51.s1",
+     "text": "As a Customer, I want to receive notifications by the method which I prefer, so that I am able to see them and not be annoyed by them."
+    },
+    {
+     "sid": "R52.s1",
+     "text": "As a Customer, I want to receive notifications by email."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Notification",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL15",
+   "src": [
+    "R9"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R9.s1",
+     "text": "As a Customer, I want to be able to reset my password."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Password",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL16",
+   "src": [
+    "R11"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R11.s1",
+     "text": "As a Customer, I want to be able to update my payment information."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "PaymentInformation",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL17",
+   "src": [
+    "R53"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R53.s1",
+     "text": "As a Customer, I want to receive push notifications from the system."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "PushNotification",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL18",
+   "src": [
+    "R17"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R17.s1",
+     "text": "As a Customer, I want to see a record of previous lessons I have booked, so I can track my progress."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Record",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL19",
+   "src": [
+    "R42"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R42.s1",
+     "text": "As a Customer, I want to be notified if I didn't go to a session I had booked, so that I know it happened."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Session",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL20",
+   "src": [
+    "R23",
+    "R24"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R23.s1",
+     "text": "As a Customer, I want to be able to book a spot for the free practice area, so that I know it will have capacity for me when I arrive."
+    },
+    {
+     "sid": "R24.s1",
+     "text": "As a Customer, I want to see how many spots have been booked for a given timeslot."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Spot",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL21",
+   "src": [
+    "R5",
+    "R6"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R5.s1",
+     "text": "As a Customer, I want to be able to extend my subscription for Daily Sports, so I can continue working out."
+    },
+    {
+     "sid": "R6.s1",
+     "text": "As a Customer, I want to know how long my subscription lasts, so I know when I need to extend it."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Customer",
+   "target": "Subscription",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL22",
+   "src": [
+    "R28",
+    "R36"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R28.s1",
+     "text": "As a Trainer, I want to set the description of the lesson, so the customers know what to expect from it."
+    },
+    {
+     "sid": "R36.s1",
+     "text": "As a Trainer, I want to edit the description of the lesson, so the customers know what to expect."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Trainer",
+   "target": "Description",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL23",
+   "src": [
+    "R26",
+    "R33",
+    "R39"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R26.s1",
+     "text": "As a Trainer, I want to add a lesson to the schedule, so customers would be able to sign-up."
+    },
+    {
+     "sid": "R33.s1",
+     "text": "As a Trainer, I want to be the only Trainer who can edit my lessons."
+    },
+    {
+     "sid": "R39.s1",
+     "text": "As a Trainer, I want to cancel a lesson, so customers won't show up in an empty room when I can't make it."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Trainer",
+   "target": "Lesson",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL24",
+   "src": [
+    "R25",
+    "R29",
+    "R35"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R25.s1",
+     "text": "As a Trainer, I want to see which rooms are free at a given timeslot, so I can organize a lesson."
+    },
+    {
+     "sid": "R29.s1",
+     "text": "As a Trainer, I want to set the room of the lesson, so the customers know where to go."
+    },
+    {
+     "sid": "R35.s1",
+     "text": "As a Trainer, I want to change the room of the lesson, so I can move the lesson to another place."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Trainer",
+   "target": "Room",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL25",
+   "src": [
+    "R32"
+   ],
+   "rule": [
+    "story_role_object"
+   ],
+   "evidence": [
+    {
+     "sid": "R32.s1",
+     "text": "As a Trainer, I want to be able to see what my schedule is."
+    }
+   ],
+   "kind": "actor_object",
+   "source": "Trainer",
+   "target": "Schedule",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL26",
+   "src": [
+    "R57",
+    "R63"
+   ],
+   "rule": [
+    "possessive",
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R57.s1",
+     "text": "As an Admin, I want to know which customers are aware that their booking has been canceled, so that I can call them if they aren't."
+    },
+    {
+     "sid": "R63.s1",
+     "text": "As an Admin, I want to see if the Customer who is checking-in has any bookings."
+    }
+   ],
+   "kind": "has",
+   "source": "Customer",
+   "target": "Booking",
+   "multiplicity_target": "any"
+  },
+  {
+   "id": "REL27",
+   "src": [
+    "R62"
+   ],
+   "rule": [
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R62.s1",
+     "text": "As an Admin, I want to see if the Customer who is checking-in has a subscription."
+    }
+   ],
+   "kind": "has",
+   "source": "Customer",
+   "target": "Subscription",
+   "multiplicity_target": null
+  },
+  {
+   "id": "REL28",
+   "src": [
+    "R29",
+    "R35"
+   ],
+   "rule": [
+    "of_phrase"
+   ],
+   "evidence": [
+    {
+     "sid": "R29.s1",
+     "text": "As a Trainer, I want to set the room of the lesson, so the customers know where to go."
+    },
+    {
+     "sid": "R35.s1",
+     "text": "As a Trainer, I want to change the room of the lesson, so I can move the lesson to another place."
+    }
+   ],
+   "kind": "has",
+   "source": "Lesson",
+   "target": "Room",
+   "multiplicity_target": null
+  }
+ ],
+ "enums": [],
+ "applied_edits": {
+  "remove_classes": [
+   "DailySports"
+  ],
+  "merge_classes": [
+   [
+    "Customer",
+    "CustomerWithAFamilyMembership"
+   ]
+  ],
+  "merge_actors": [
+   [
+    "Customer",
+    "User"
+   ]
+  ],
+  "enums": [],
+  "multiplicities": [],
+  "actor_assumptions": []
+ }
+}

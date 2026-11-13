@@ -1,0 +1,141 @@
+{
+ "case": "D2/UsiXML-task",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "identifier",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "category",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "taskType",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "importance",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "complexityLevel",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "centrality",
+     "type": "int",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C2",
+   "name": "Task",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createTask",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "decomposeTask",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "associateExpression",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M4",
+     "name": "associateOperator",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M5",
+     "name": "actOnTask",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is described by",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "describes",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

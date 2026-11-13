@@ -1,0 +1,56 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Mesh",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "points"
+   ],
+   "methods": [
+    {
+     "name": "addPoint",
+     "use_case": "R4"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R4"
+   ]
+  },
+  {
+   "name": "Point",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "x",
+    "z"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Mesh",
+   "target": "Point",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R4",
+    "R5"
+   ]
+  }
+ ],
+ "python": "class Mesh:\n    def __init__(self, name: str):\n        self.name = name\n        self.points = []\n\n    def addPoint(self, point: Point):\n        self.points.append(point)\n\n    def __str__(self):\n        return f'Mesh(name={self.name}, points={self.points})'\n\nclass Point:\n    def __init__(self, name: str, x: float, z: float):\n        self.name = name\n        self.x = x\n        self.z = z\n\n    def __str__(self):\n        return f'Point(name={self.name}, x={self.x}, z={self.z})'",
+ "java": {}
+}

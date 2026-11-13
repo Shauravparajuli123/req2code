@@ -1,0 +1,244 @@
+{
+ "case": "D2/QVT_SimpleRDBMS",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "RmodelElement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "kind",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Schema",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addColumn",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addKey",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addColumn",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Key",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "addKey",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "ForeignKey",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "addForeignKey",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R14",
+    "R15"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "contains",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C3",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "belongs to",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "composition",
+   "source": "C3",
+   "target": "C5",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "contains",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "belongs to",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C4",
+   "target": "C6",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "is associated with",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C5",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "belongs to",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "id": "R7",
+   "kind": "association",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "refers to",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "id": "R8",
+   "kind": "association",
+   "source": "C6",
+   "target": "C4",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "concerns",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "id": "R9",
+   "kind": "association",
+   "source": "C6",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "refers to",
+   "src": [
+    "R15"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

@@ -1,0 +1,85 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Assuming that the association between Table and Schema is mandatory and unique (1..1) as per R8."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class RModelElement in the model",
+   "fix": "Add class RModelElement to the model"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between RModelElement and SimpleRDBMS package",
+   "fix": "Add association between RModelElement and SimpleRDBMS package"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Schema and SimpleRDBMS package",
+   "fix": "Add association between Schema and SimpleRDBMS package"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Table and SimpleRDBMS package",
+   "fix": "Add association between Table and SimpleRDBMS package"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Column and SimpleRDBMS package",
+   "fix": "Add association between Column and SimpleRDBMS package"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Key and SimpleRDBMS package",
+   "fix": "Add association between Key and SimpleRDBMS package"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between ForeignKey and SimpleRDBMS package",
+   "fix": "Add association between ForeignKey and SimpleRDBMS package"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Table and Schema [1..1]",
+   "fix": "Add association between Table and Schema [1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Table and Key [0..*..1]",
+   "fix": "Add association between Table and Key [0..*..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Column and Table [1..1]",
+   "fix": "Add association between Column and Table [1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between ForeignKey and Column [0..*..1]",
+   "fix": "Add association between ForeignKey and Column [0..*..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Key and ForeignKey [0..*..1]",
+   "fix": "Add association between Key and ForeignKey [0..*..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between ForeignKey and Key [1..1]",
+   "fix": "Add association between ForeignKey and Key [1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between Schema and Table [1..0..*]",
+   "fix": "Add association between Schema and Table [1..0..*]"
+  }
+ ]
+}

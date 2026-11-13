@@ -1,0 +1,261 @@
+{
+ "case": "D2/FeatureDiagrams",
+ "stage": "result2_after_ambiguity_removal",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "src": [
+    "R4",
+    "R10",
+    "R11"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R4.s1",
+     "text": "A feature diagrams (may) have children"
+    },
+    {
+     "sid": "R10.s1",
+     "text": "A child may have some nodes."
+    },
+    {
+     "sid": "R11.s1",
+     "text": "A child may have some ORGroup"
+    }
+   ],
+   "name": "Child",
+   "freq": 3
+  },
+  {
+   "id": "C2",
+   "src": [
+    "R1",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R12",
+    "R13"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "A node has a description and and object, both of type string"
+    },
+    {
+     "sid": "R7.s1",
+     "text": "A node is composed of any number of attributes"
+    },
+    {
+     "sid": "R8.s1",
+     "text": "A node may have/reference to one or many XORGroup"
+    }
+   ],
+   "name": "Node",
+   "freq": 7
+  },
+  {
+   "id": "C3",
+   "src": [
+    "R6",
+    "R11",
+    "R13"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R6.s1",
+     "text": "An ORGRoup has an attribute that is a boolean and is called preliminary."
+    },
+    {
+     "sid": "R11.s1",
+     "text": "A child may have some ORGroup"
+    },
+    {
+     "sid": "R13.s1",
+     "text": "AN ORGroup may have a node"
+    }
+   ],
+   "name": "Orgroup",
+   "freq": 3
+  },
+  {
+   "id": "C4",
+   "src": [
+    "R5",
+    "R8",
+    "R12"
+   ],
+   "rule": [
+    "noun_role"
+   ],
+   "evidence": [
+    {
+     "sid": "R5.s1",
+     "text": "An XORGroup has one attribute : preliminary, which is a boolean."
+    },
+    {
+     "sid": "R8.s1",
+     "text": "A node may have/reference to one or many XORGroup"
+    },
+    {
+     "sid": "R12.s1",
+     "text": "AN XORGroup may have a node"
+    }
+   ],
+   "name": "Xorgroup",
+   "freq": 3
+  }
+ ],
+ "attributes": [
+  {
+   "id": "AT1",
+   "src": [
+    "R1"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R1.s1",
+     "text": "A node has a description and and object, both of type string"
+    }
+   ],
+   "owner": "Node",
+   "name": "description",
+   "type_hint": null
+  },
+  {
+   "id": "AT2",
+   "src": [
+    "R8"
+   ],
+   "rule": [
+    "has_non_class"
+   ],
+   "evidence": [
+    {
+     "sid": "R8.s1",
+     "text": "A node may have/reference to one or many XORGroup"
+    }
+   ],
+   "owner": "Node",
+   "name": "reference",
+   "type_hint": null
+  }
+ ],
+ "relations": [
+  {
+   "id": "REL1",
+   "src": [
+    "R10"
+   ],
+   "rule": [
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R10.s1",
+     "text": "A child may have some nodes."
+    }
+   ],
+   "kind": "has",
+   "source": "Child",
+   "target": "Node",
+   "multiplicity_target": "1..*"
+  },
+  {
+   "id": "REL2",
+   "src": [
+    "R11"
+   ],
+   "rule": [
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R11.s1",
+     "text": "A child may have some ORGroup"
+    }
+   ],
+   "kind": "has",
+   "source": "Child",
+   "target": "Orgroup",
+   "multiplicity_target": "some"
+  },
+  {
+   "id": "REL3",
+   "src": [
+    "R13"
+   ],
+   "rule": [
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R13.s1",
+     "text": "AN ORGroup may have a node"
+    }
+   ],
+   "kind": "has",
+   "source": "Orgroup",
+   "target": "Node",
+   "multiplicity_target": "1..*"
+  },
+  {
+   "id": "REL4",
+   "src": [
+    "R12"
+   ],
+   "rule": [
+    "has_verb"
+   ],
+   "evidence": [
+    {
+     "sid": "R12.s1",
+     "text": "AN XORGroup may have a node"
+    }
+   ],
+   "kind": "has",
+   "source": "Xorgroup",
+   "target": "Node",
+   "multiplicity_target": "1..*"
+  }
+ ],
+ "enums": [],
+ "applied_edits": {
+  "remove_classes": [],
+  "merge_classes": [],
+  "merge_actors": [],
+  "enums": [],
+  "multiplicities": [
+   {
+    "source": "Child",
+    "target": "Node",
+    "multiplicity": "1..*"
+   },
+   {
+    "source": "Orgroup",
+    "target": "Node",
+    "multiplicity": "1..*"
+   },
+   {
+    "source": "Xorgroup",
+    "target": "Node",
+    "multiplicity": "1..*"
+   }
+  ],
+  "actor_assumptions": []
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The 'Company' class is assumed to have a 'contacts' attribute to support FR-CM-07, even though it is not explicitly mentioned in the requirements."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "The class 'Company' does not have a 'type' attribute as per FR-CM-04.",
+   "fix": "Add a 'type' attribute to the 'Company' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Company' does not have a 'state' attribute as per FR-CM-05.",
+   "fix": "Add a 'state' attribute to the 'Company' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Company' does not have a 'taxStatus' attribute as per FR-CM-06.",
+   "fix": "Add a 'taxStatus' attribute to the 'Company' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Contact' is missing as per FR-CM-07 and FR-CM-08.",
+   "fix": "Create a 'Contact' class with the required attributes and methods."
+  },
+  {
+   "agent": "use_case",
+   "issue": "The use case 'addContact' in the 'Company' class is not supported by any requirement.",
+   "fix": "Remove the 'addContact' method from the 'Company' class or find a requirement that supports it."
+  },
+  {
+   "agent": "use_case",
+   "issue": "The use case 'removeContact' in the 'Company' class is not supported by any requirement.",
+   "fix": "Remove the 'removeContact' method from the 'Company' class or find a requirement that supports it."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Employee' does not have a 'title' attribute as per FR-EM-02.",
+   "fix": "Add a 'title' attribute to the 'Employee' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Employee' does not have a 'supervisor' attribute as per FR-EM-03.",
+   "fix": "Add a 'supervisor' attribute to the 'Employee' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Employee' does not have a 'privileges' attribute as per FR-EM-05.",
+   "fix": "Add a 'privileges' attribute to the 'Employee' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Product' does not have a 'category' attribute as per FR-PM-02.",
+   "fix": "Add a 'category' attribute to the 'Product' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Product' does not have a 'discontinued' attribute as per FR-PM-05.",
+   "fix": "Add a 'discontinued' attribute to the 'Product' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Order' does not have a 'customer' attribute as per FR-SOP-02.",
+   "fix": "Add a 'customer' attribute to the 'Order' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Order' does not have a 'employee' attribute as per FR-SOP-03.",
+   "fix": "Add a 'employee' attribute to the 'Order' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Order' does not have a 'shipper' attribute as per FR-SOP-05.",
+   "fix": "Add a 'shipper' attribute to the 'Order' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Order' does not have a 'taxRate' attribute as per FR-SOP-06.",
+   "fix": "Add a 'taxRate' attribute to the 'Order' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Order' does not have a 'taxStatus' attribute as per FR-SOP-06.",
+   "fix": "Add a 'taxStatus' attribute to the 'Order' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Order' does not have a 'invoiceDate' attribute as per FR-SOP-07.",
+   "fix": "Add an 'invoiceDate' attribute to the 'Order' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Order' does not have a 'paymentMethod' attribute as per FR-SOP-07.",
+   "fix": "Add a 'paymentMethod' attribute to the 'Order' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Order' does not have a 'paymentDate' attribute as per FR-SOP-07.",
+   "fix": "Add a 'paymentDate' attribute to the 'Order' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Order' does not have a 'details' attribute as per FR-SOP-08.",
+   "fix": "Add a 'details' attribute to the 'Order' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'OrderDetailItem' does not have a 'status' attribute as per FR-SOP-10.",
+   "fix": "Add a 'status' attribute to the 'OrderDetailItem' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'PurchaseOrder' does not have a 'approver' attribute as per FR-POP-04.",
+   "fix": "Add an 'approver' attribute to the 'PurchaseOrder' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'PurchaseOrder' does not have a 'details' attribute as per FR-POP-07.",
+   "fix": "Add a 'details' attribute to the 'PurchaseOrder' class."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'PurchaseOrderDetailItem' does not have a 'status' attribute as per FR-POP-08.",
+   "fix": "Add a 'status' attribute to the 'PurchaseOrderDetailItem' class."
+  }
+ ]
+}

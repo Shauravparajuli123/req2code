@@ -1,0 +1,116 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineTextualPath",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TextualPathExp",
+   "kind": "class",
+   "attributes": [
+    "path"
+   ],
+   "methods": [
+    {
+     "name": "hasPath",
+     "use_case": "R6"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6"
+   ]
+  },
+  {
+   "name": "Path",
+   "kind": "class",
+   "attributes": [
+    "transitions"
+   ],
+   "methods": [
+    {
+     "name": "containsTransitions",
+     "use_case": "R7"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R5"
+   ]
+  },
+  {
+   "name": "AlternativeTrans",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "belongsToManyPaths",
+     "use_case": "R8"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "TextualPathExp",
+   "target": "Path",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Path",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AlternativeTrans",
+   "target": "Path",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "R8"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass String:\n    pass\n\nclass AlternativeTrans:\n    def __init__(self, name: String):\n        self.name = name\n\nclass Transition:\n    pass\n\nclass Path:\n    def __init__(self, transitions: List[Transition]):\n        self.transitions = transitions\n\nclass Paths:\n    pass\n\nclass TextualPathExp:\n    def __init__(self, path: Path):\n        self.path = path\n\nclass String:\n    pass",
+ "java": {}
+}

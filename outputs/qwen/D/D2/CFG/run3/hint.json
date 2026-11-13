@@ -1,0 +1,83 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "Node",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R6"
+    ]
+   },
+   {
+    "name": "Expression",
+    "src": [
+     "R4",
+     "R5"
+    ]
+   },
+   {
+    "name": "ConditionNode",
+    "src": [
+     "R7"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Node",
+    "name": "inNode",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "owner": "Expression",
+    "name": "name",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "owner": "AbstractNode",
+    "name": "expression",
+    "src": [
+     "R5"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Node",
+    "target": "Node",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "AbstractNode",
+    "target": "Node",
+    "src": [
+     "R1",
+     "R5"
+    ]
+   },
+   {
+    "kind": "has",
+    "source": "ConditionNode",
+    "target": "Node",
+    "src": [
+     "R7"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

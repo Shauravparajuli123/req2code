@@ -1,0 +1,207 @@
+{
+ "case": "D2/GWPNV5",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "tokens",
+     "type": "int",
+     "src": []
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addToken",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "removeToken",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C2",
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addOutputArc",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M4",
+     "name": "removeOutputArc",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C3",
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "weight",
+     "type": "double",
+     "src": []
+    }
+   ],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "setDestination",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M6",
+     "name": "setSource",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C4",
+   "name": "PlaceTransitionArc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M7",
+     "name": "connectToPlace",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M8",
+     "name": "disconnectFromPlace",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C5",
+   "name": "TransitionPlaceArc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M9",
+     "name": "connectToTransition",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M10",
+     "name": "disconnectFromTransition",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C6",
+   "name": "Net",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M11",
+     "name": "addPlace",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M12",
+     "name": "removePlace",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M13",
+     "name": "addTransition",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M14",
+     "name": "removeTransition",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is part of",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C4",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "connects",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

@@ -1,0 +1,164 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "src": [
+    "R1",
+    "R7",
+    "R8",
+    "R10",
+    "R11",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "name": "FeatureDiagram",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "XORGroup",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "name": "ORGroup",
+   "src": [
+    "R6",
+    "R13"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Node",
+   "name": "description",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Node",
+   "name": "object",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "owner": "Attribute",
+   "name": "description",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "Attribute",
+   "name": "name",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "Attribute",
+   "name": "key",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "FeatureDiagram",
+   "name": "root",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "owner": "XORGroup",
+   "name": "preliminary",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "ORGroup",
+   "name": "preliminary",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "has",
+   "source": "Node",
+   "target": "Attribute",
+   "src": [
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Node",
+   "target": "XORGroup",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Node",
+   "target": "ORGroup",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "FeatureDiagram",
+   "target": "Node",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "FeatureDiagram",
+   "target": "ORGroup",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "XORGroup",
+   "target": "Node",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "ORGroup",
+   "target": "Node",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

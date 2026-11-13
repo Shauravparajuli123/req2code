@@ -1,0 +1,112 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Agency {
+}
+class CulturalHeritage {
+  name : String
+  id : int
+  +searchCulturalHeritage()
+  +viewCulturalDetails()
+}
+class RefreshmentPoint {
+  name : String
+  id : int
+  status : String
+  +searchRefreshmentPoint()
+  +viewRefreshmentPointDetails()
+  +viewRefreshmentPointHistory()
+}
+class TouristAccount {
+  username : String
+  id : int
+  status : String
+  +searchTouristAccount()
+  +viewTouristAccountDetails()
+  +enableDisableTouristAccount()
+}
+class Tourist {
+  name : String
+  position : String
+  +modifyTouristData()
+  +deleteTouristAccount()
+  +editPersonalSearchPreferences()
+  +changeDataAssociatedAccount()
+  +editGenericPersonalPreferences()
+  +viewPersonalFavorites()
+  +viewSitesVisited()
+  +insertSiteBookmark()
+  +deleteSiteBookmark()
+  +insertFeedback()
+  +searchSite()
+  +advancedSearch()
+}
+class Banner {
+  image : String
+  refreshmentPoint : String
+  +changeBannerImage()
+  +checkBannerLimit()
+  +deleteBanner()
+  +insertBanner()
+}
+class News {
+  title : String
+  content : String
+  +insertNews()
+  +deleteNews()
+  +modifyNewsData()
+}
+class Site {
+  name : String
+  +viewSiteFeedback()
+  +viewStatisticalReport()
+  +editFeedbackComment()
+}
+class User {
+  username : String
+  password : String
+  accountStatus : String
+  +searchSite()
+  +removeSearchTag()
+  +enterSearchTag()
+  +insertNewSearchTag()
+  +changePassword()
+  +confirmPasswordChange()
+  +createAccount()
+  +searchCulturalHeritage()
+  +login()
+  +logout()
+}
+class Moderator {
+  +changePassword()
+  +insertBanner()
+  +editBanner()
+  +deleteBanner()
+}
+class GuestUser {
+  +createAccount()
+  +searchCulturalHeritage()
+}
+class RestaurantOperator {
+  +changeDailyMenu()
+  +deleteDailyMenu()
+  +changeDataPointRefreshment()
+  +requestConvention()
+}
+class Feedback {
+  comment : String
+  +editComment()
+}
+Agency "1" -- "0..*" CulturalHeritage : manages
+Agency "1" -- "0..*" RefreshmentPoint : manages
+Agency "1" -- "0..*" TouristAccount : manages
+Agency "1" -- "0..*" Tourist : manages
+Agency "1" -- "0..*" Site : manages
+RefreshmentPoint "1" -- "0..*" Banner : has
+GuestUser "0..*" -- "1" Site : visits
+RestaurantOperator "1" -- "1..*" RefreshmentPoint : manages
+Tourist "0..*" -- "1" Site : visits
+Tourist "0..*" -- "1" Feedback : gives
+Tourist "1" -- "1" TouristAccount : has
+Agency "0..*" -- "1" RestaurantOperator : contracts
+@enduml

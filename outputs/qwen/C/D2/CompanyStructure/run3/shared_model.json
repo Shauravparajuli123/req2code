@@ -1,0 +1,218 @@
+{
+ "case": "D2/CompanyStructure",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "CompanyStructureModel",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "hq",
+     "type": "String",
+     "src": [
+      "R8",
+      "R9"
+     ]
+    },
+    {
+     "name": "stores",
+     "type": "String",
+     "src": [
+      "R3",
+      "R9",
+      "R10"
+     ]
+    },
+    {
+     "name": "backOffice",
+     "type": "String",
+     "src": [
+      "R4",
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createCompany",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Hq",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "stores",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Store",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "backOffice",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "cashRegisters",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Office",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "CashRegister",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C1",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "composition",
+   "source": "C4",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is composed by",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "contains",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The relationship between Company and Store is one-to-many, as indicated by the association [1..1..*] in the model."
+  }
+ ],
+ "open_tags": []
+}

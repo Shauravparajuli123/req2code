@@ -1,0 +1,178 @@
+{
+ "condition": "C",
+ "hint": {
+  "case": "D2/TextualPathExp",
+  "stage": "result1_before_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "An AlternativeTrans belongs to one or more Paths."
+     }
+    ],
+    "name": "AlternativeTrans",
+    "freq": 1
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R2",
+     "R3",
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Textual paths have paths"
+     },
+     {
+      "sid": "R3.s1",
+      "text": "In a textual path, a transition could be multiple."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A TextualPathExp has exactly one path."
+     }
+    ],
+    "name": "Path",
+    "freq": 5
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "An AlternativeTrans belongs to one or more Paths."
+     }
+    ],
+    "name": "Paths",
+    "freq": 1
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R1",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "TextualPathExp is part of the package TextualPathExp"
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A TextualPathExp has exactly one path."
+     }
+    ],
+    "name": "Textualpathexp",
+    "freq": 2
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R3",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "In a textual path, a transition could be multiple."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "A path contains at least one transition."
+     }
+    ],
+    "name": "Transition",
+    "freq": 2
+   }
+  ],
+  "attributes": [],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "An AlternativeTrans belongs to one or more Paths."
+     }
+    ],
+    "kind": "association",
+    "source": "AlternativeTrans",
+    "target": "Paths",
+    "multiplicity_target": "one or more"
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A path contains at least one transition."
+     }
+    ],
+    "kind": "has",
+    "source": "Path",
+    "target": "Transition",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A TextualPathExp has exactly one path."
+     }
+    ],
+    "kind": "has",
+    "source": "Textualpathexp",
+    "target": "Path",
+    "multiplicity_target": "one"
+   }
+  ]
+ },
+ "open_tags": []
+}

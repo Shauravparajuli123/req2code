@@ -1,0 +1,126 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "Architecture",
+    "src": [
+     "R7",
+     "R12"
+    ]
+   },
+   {
+    "name": "ArchitectureDescription",
+    "src": [
+     "R7",
+     "R8",
+     "R9",
+     "R11"
+    ]
+   },
+   {
+    "name": "ArchitectureView",
+    "src": [
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12"
+    ]
+   },
+   {
+    "name": "ArchitectureViewPoint",
+    "src": [
+     "R10",
+     "R11"
+    ]
+   },
+   {
+    "name": "MainView",
+    "src": [
+     "R11",
+     "R12"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Architecture",
+    "name": "architecture_description",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "owner": "ArchitectureDescription",
+    "name": "architecture_views",
+    "src": [
+     "R8",
+     "R9"
+    ]
+   },
+   {
+    "owner": "ArchitectureView",
+    "name": "architecture_view_points",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "owner": "ArchitectureViewPoint",
+    "name": "main_view",
+    "src": [
+     "R11"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Architecture",
+    "target": "ArchitectureDescription",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "ArchitectureDescription",
+    "target": "ArchitectureView",
+    "src": [
+     "R8",
+     "R9"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "ArchitectureView",
+    "target": "ArchitectureViewPoint",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "ArchitectureViewPoint",
+    "target": "MainView",
+    "src": [
+     "R11"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "MainView",
+    "target": "ArchitectureView",
+    "src": [
+     "R12"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

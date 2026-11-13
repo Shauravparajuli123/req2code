@@ -1,0 +1,84 @@
+{
+ "actors": [],
+ "use_cases": [
+  {
+   "name": "CreateClassDefinition",
+   "actor": "",
+   "src": [
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "DefineMethod",
+   "actor": "",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Definition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "invoke",
+     "use_case": "invoking a class"
+    },
+    {
+     "name": "defineMethod",
+     "use_case": "the definition of a method inside a class"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R5",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "name": "MethodDefinition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "implement",
+     "use_case": "the definition of a method inside a class"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Definition",
+   "target": "MethodDefinition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Definition:\n    pass\n\nclass Method:\n    def __init__(self, definition: Definition):\n        self.definition = definition\n        self.name: str = ''\n        self.return_type: str = ''\n        self.parameters: List[str] = []\n\nclass MethodDefinition:\n    def __init__(self, name: str):\n        self.name = name\n        self.parameters: List[str] = []\n\nclass JavaSource:\n    def __init__(self):\n        self.classes: List[Definition] = []\n\ndef invoke_class(class_name: str):\n    raise NotImplementedError\n\ndef invoke_method(method: Method):\n    raise NotImplementedError\n",
+ "java": {}
+}

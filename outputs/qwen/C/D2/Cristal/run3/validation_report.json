@@ -1,0 +1,60 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The Condition class is assumed to be a part of the Cristal model as per Requirement R1, but it is not explicitly linked to any other classes in the model."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R3 is not represented in the model.",
+   "fix": "Add a class named ElementaryPartDef."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R4 is not represented in the model.",
+   "fix": "Add a class named ElementaryActDef."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R5 is not represented in the model.",
+   "fix": "Add a class named CompositeActDef."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R6 is not represented in the model.",
+   "fix": "Add a class named ActCompositeMember."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R7 is not represented in the model.",
+   "fix": "Add a class named ActivityDefinition."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R8 is not represented in the model.",
+   "fix": "Add a class named CompositeParDef."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R11 is not fully represented in the model. The relationship between CompositeParDef and PartCompositeMember is missing.",
+   "fix": "Add a relationship between CompositeParDef and PartCompositeMember with the appropriate multiplicity."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R12 is not fully represented in the model. The relationship between CompositeActDef and ActCompositeMember is missing.",
+   "fix": "Add a relationship between CompositeActDef and ActCompositeMember with the appropriate multiplicity."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R13 is not fully represented in the model. The relationship between ActCompositeMember and ActivityDefinition is missing.",
+   "fix": "Add a relationship between ActCompositeMember and ActivityDefinition with the appropriate multiplicity."
+  }
+ ]
+}

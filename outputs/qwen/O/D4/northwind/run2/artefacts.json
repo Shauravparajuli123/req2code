@@ -1,0 +1,197 @@
+{
+ "actors": [
+  "customer",
+  "employee"
+ ],
+ "use_cases": [
+  {
+   "name": "MaintainCompanyRecords",
+   "actor": "customer",
+   "src": [
+    "FR-CM-01",
+    "FR-CM-02",
+    "FR-CM-03",
+    "FR-CM-04",
+    "FR-CM-05",
+    "FR-CM-06",
+    "FR-CM-07",
+    "FR-CM-08"
+   ]
+  },
+  {
+   "name": "MaintainEmployeeRecords",
+   "actor": "employee",
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02",
+    "FR-EM-03",
+    "FR-EM-04",
+    "FR-EM-05"
+   ]
+  },
+  {
+   "name": "MaintainProductCatalog",
+   "actor": "employee",
+   "src": [
+    "FR-PM-01",
+    "FR-PM-02",
+    "FR-PM-03",
+    "FR-PM-04",
+    "FR-PM-05",
+    "FR-PM-06",
+    "FR-PM-07"
+   ]
+  },
+  {
+   "name": "MaintainStockTakes",
+   "actor": "employee",
+   "src": [
+    "FR-IM-01",
+    "FR-IM-02",
+    "FR-IM-03"
+   ]
+  },
+  {
+   "name": "RecordCustomerOrders",
+   "actor": "employee",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-02",
+    "FR-SOP-03",
+    "FR-SOP-04",
+    "FR-SOP-05",
+    "FR-SOP-06",
+    "FR-SOP-07",
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "name": "ManagePurchaseOrders",
+   "actor": "employee",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-02",
+    "FR-POP-03",
+    "FR-POP-04",
+    "FR-POP-05",
+    "FR-POP-06",
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "phone_number",
+    "address_details",
+    "state",
+    "zip_code",
+    "website",
+    "tax_status"
+   ],
+   "methods": [
+    {
+     "name": "add_contact",
+     "use_case": "MaintainCompanyRecords"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-CM-03",
+    "FR-CM-05",
+    "FR-CM-06"
+   ]
+  },
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    "first_name",
+    "last_name",
+    "primary_phone_number",
+    "secondary_phone_number",
+    "email_address",
+    "job_title",
+    "notes"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-07",
+    "FR-CM-08"
+   ]
+  },
+  {
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "phone_number",
+    "address_details",
+    "state",
+    "zip_code",
+    "website",
+    "tax_status"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-01",
+    "FR-CM-03",
+    "FR-CM-05",
+    "FR-CM-06"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    "first_name",
+    "last_name",
+    "phone_number",
+    "job_title",
+    "email_address"
+   ],
+   "methods": [
+    {
+     "name": "assign_supervisor",
+     "use_case": "MaintainEmployeeRecords"
+    },
+    {
+     "name": "assign_privileges",
+     "use_case": "MaintainEmployeeRecords"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02",
+    "FR-EM-03",
+    "FR-EM-04",
+    "FR-EM-05"
+   ]
+  },
+  {
+   "name": "Entity",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-02",
+    "FR-EM-01",
+    "FR-PM-01",
+    "FR-POP-01"
+   ]
+  }
+ ],
+ "relations": [],
+ "python": "",
+ "java": {}
+}

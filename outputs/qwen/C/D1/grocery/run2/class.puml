@@ -1,0 +1,67 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Employee {
+  name : String
+  certificate : String
+  status : String
+  group : String
+  qualification : String
+  +expressWorkingHours()
+  +viewSchedule()
+  +changeInformation()
+  +viewContract()
+}
+class Manager {
+  +sendSalaryStatement()
+  +enableOption()
+  +automatePaymentSystem()
+  +outsourcePart()
+  +semiSchedulingProcess()
+  +manuallyEditSchedule()
+  +notifyAdjustment()
+  +receiveNewScheduleNotification()
+  +viewSchedule()
+  +viewEmployeeContracts()
+  +viewEmployeeCertificates()
+  +hireEmployee()
+  +notifyHiringProcess()
+  +haveOverviewOfEmployees()
+  +haveOverviewOfAbsentEmployees()
+  +respondComplaint()
+  +categorizeComplaint()
+  +prioritizeComplaint()
+}
+class Applicant {
+  +registerAccount()
+}
+class Complaint {
+  status : String
+}
+class SalaryStatement {
+}
+class Schedule {
+  +semiSchedulingProcess()
+  +manuallyEditSchedule()
+  +notifyAdjustment()
+  +receiveNewScheduleNotification()
+  +viewSchedule()
+}
+class Notification {
+}
+class OfficeEmployee {
+  +respondComplaint()
+  +categorizeComplaint()
+  +prioritizeComplaint()
+}
+Manager "1" -- "1..*" SalaryStatement : has
+Manager "1" -- "1..*" Notification : sends
+Employee "1" -- "1" SalaryStatement : receives
+Employee "1" -- "1..*" Notification : receives
+Manager "1" -- "1..*" Schedule : manages
+Employee "1" -- "1" Schedule : views
+Manager "1" -- "1..*" Complaint : manages
+OfficeEmployee "1" -- "1..*" Complaint : manages
+Employee "1" -- "1..*" Complaint : files
+Manager "1" -- "1..*" Employee : manages
+@enduml

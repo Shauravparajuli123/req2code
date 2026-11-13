@@ -1,0 +1,25 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "A Network can contain multiple Places, as stated in R7"
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "The class 'Place' is missing an attribute 'transitions'",
+   "fix": "Add 'transitions: List[Transition]' to the class 'Place'"
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Network' is missing a relationship to 'Place'",
+   "fix": "Add a relationship 'places: List[Place]' to the class 'Network'"
+  }
+ ]
+}

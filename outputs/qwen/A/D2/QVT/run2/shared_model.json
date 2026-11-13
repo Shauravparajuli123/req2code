@@ -1,0 +1,135 @@
+{
+ "case": "D2/QVT",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "TemplateExp",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "ObjectTemplateExp",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "objectContainer",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "name": "referredProperty",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createGame",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "PropertyTemplateItem",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "objectContainer",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "name": "referredProperty",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "contains",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "aggregation",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "generalization",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is-a",
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

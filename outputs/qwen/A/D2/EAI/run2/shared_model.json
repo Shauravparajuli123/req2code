@@ -1,0 +1,127 @@
+{
+ "case": "D2/EAI",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "FCMSource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "EAISource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "FCMSink",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "EAISink",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "EAIResource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "EAIQueue",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "maxLength",
+     "type": "int",
+     "src": []
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "generalization",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is-a",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C5",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C4",
+   "target": "C5",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "aggregation",
+   "source": "C6",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": []
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

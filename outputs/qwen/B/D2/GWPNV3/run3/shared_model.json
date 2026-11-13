@@ -1,0 +1,195 @@
+{
+ "case": "D2/GWPNV3",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "places",
+     "type": "String",
+     "src": [
+      "R7",
+      "R11"
+     ]
+    },
+    {
+     "name": "transitions",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addPlace",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addTransition",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "net",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "net",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "name": "outgoingArcs",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [
+    "TPARCS"
+   ],
+   "src": [
+    "R2",
+    "R9",
+    "R10",
+    "R13"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Tparcs",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "srcTransition",
+     "type": "String",
+     "src": [
+      "R12",
+      "R13"
+     ]
+    },
+    {
+     "name": "dstTransition",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R12",
+    "R13"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a Petri net is composed of one or more transitions, places, and arcs, but does not specify the exact number."
+  }
+ ],
+ "open_tags": []
+}

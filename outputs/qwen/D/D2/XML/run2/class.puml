@@ -1,0 +1,14 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Node {
+  name : String
+  startLine : int
+  endLine : int
+}
+class Element {
+  +addChild()
+}
+Element --|> Node
+Element "1..*" -- "0..*" Node : has
+@enduml

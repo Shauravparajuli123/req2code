@@ -1,0 +1,28 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Condition {
+}
+class CompositeParDef {
+}
+class ElementaryPartDef {
+}
+class ElementaryActDef {
+}
+class CompositeActDef {
+}
+class ActCompositeMember {
+}
+class ActivityDefinition {
+}
+class PartCompositeMember {
+  partDefinition : String
+  compositeParDef : String
+  compositeActDef : String
+  activityDefinition : String
+  +addActivityDefinition()
+}
+CompositeActDef "1" *-- "1..*" ActCompositeMember : composed_by
+CompositeParDef "1" *-- "1..*" PartCompositeMember : composed_by
+ActCompositeMember "1" -- "1" ActivityDefinition : has
+@enduml

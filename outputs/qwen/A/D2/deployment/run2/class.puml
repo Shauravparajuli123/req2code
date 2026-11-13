@@ -1,0 +1,15 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Node {
+  name : String
+}
+class Deployment {
+  nodes : String
+  specification : String
+}
+class Specification {
+}
+Deployment "0..*" -- "1" Node : contains
+Node --|> Specification
+@enduml

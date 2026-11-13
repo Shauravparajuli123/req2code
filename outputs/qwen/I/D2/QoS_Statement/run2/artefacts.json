@@ -1,0 +1,111 @@
+{
+ "actors": [],
+ "use_cases": [
+  {
+   "name": "DefineQoSStatement",
+   "actor": "",
+   "src": [
+    "R1",
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "QoSConstraint",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Parameter",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "CompoundQoSStatement",
+   "target": "QoSStatement",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "SingleQoSStatement",
+   "target": "QoSConstraint",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "CompoundQoSStatement",
+   "target": "QoSStatement",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "SingleQoSStatement",
+   "target": "QoSStatement",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from abc import ABC, abstractmethod\n\nclass Parameter:\n    pass\n\nclass QoSConstraint:\n    pass\n\nclass QualificationKind:\n    pass\n\nclass QoSStatement(ABC):\n    def __init__(self, compound_qos_statement: 'CompoundQoSStatement'):\n        self.compound_qos_statement = compound_qos_statement\n\n    @abstractmethod\ndefine_qos_constraint(self) -> QoSConstraint:\n        pass\n\nclass SingleQoSStatement(QoSStatement):\n    def __init__(self, qos_constraint: QoSConstraint):\n        super().__init__(compound_qos_statement=None)\n        self.qos_constraint = qos_constraint\n\n    def define_qos_constraint(self) -> QoSConstraint:\n        return self.qos_constraint\n\nclass CompoundQoSStatement(QoSStatement):\n    def __init__(self, qos_statements: list[QoSStatement]):\n        super().__init__(compound_qos_statement=None)\n        if len(qos_statements) < 2:\n            raise ValueError(\"A CompoundQoSStatement must contain at least 2 QoSStatements.\")\n        self.qos_statements = qos_statements\n\n    def define_qos_constraint(self) -> QoSConstraint:\n        # Implement logic to define a QoSConstraint based on the compound statements\n        raise NotImplementedError()\n",
+ "java": {}
+}

@@ -1,0 +1,105 @@
+{
+ "case": "D2/JavaSource",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "JavaDeveloper",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Invoke A Class",
+   "actor": "A1",
+   "src": [
+    "R2"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC2",
+   "name": "Invoke A Method",
+   "actor": "A1",
+   "src": [
+    "R9"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "MethodDefinition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "method",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R9"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Class",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "invokeMethod",
+     "realizes": "UC2",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

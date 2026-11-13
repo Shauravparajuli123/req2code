@@ -1,0 +1,114 @@
+{
+ "actors": [
+  "Airport",
+  "Passenger",
+  "Airline",
+  "Flight"
+ ],
+ "use_cases": [
+  {
+   "name": "Departure Management",
+   "actor": "Airport",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "name": "Passenger Assignment",
+   "actor": "Airline",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Flight Scheduling",
+   "actor": "Airline",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6"
+   ]
+  },
+  {
+   "name": "Flight",
+   "kind": "class",
+   "attributes": [
+    "departureTime",
+    "originAirport",
+    "maxPassengers"
+   ],
+   "methods": [
+    {
+     "name": "assignPassenger",
+     "use_case": "Passenger Assignment"
+    },
+    {
+     "name": "scheduleFlight",
+     "use_case": "Flight Scheduling"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "name": "Passenger",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "gender"
+   ],
+   "methods": [
+    {
+     "name": "assignToFlight",
+     "use_case": "Passenger Assignment"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Airport",
+   "target": "Flight",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Flight",
+   "target": "Passenger",
+   "multiplicity_target": "1",
+   "src": [
+    "R8",
+    "R11"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Airport:\n    def __init__(self, name: str):\n        self.name = name\n    \n    def __str__(self):\n        return self.name\n\nclass Time:\n    def __init__(self, year: int, day: int, minute: int):\n        self.year = year\n        self.day = day\n        self.minute = minute\n    \n    def __str__(self):\n        return f'{self.year}-{self.day}-{self.minute}''\n\nclass Flight:\n    def __init__(self, departureTime: Time, originAirport: Airport, maxPassengers: int):\n        self.departureTime = departureTime\n        self.originAirport = originAirport\n        self.maxPassengers = maxPassengers\n        self.passengers: List[Passenger] = []\n    \n    def assignPassenger(self, passenger: Passenger):\n        if len(self.passengers) < self.maxPassengers:\n            self.passengers.append(passenger)\n        else:\n            raise ValueError('Flight is full')\n    \n    def scheduleFlight(self):\n        pass\n    \n    def __str__(self):\n        return f'Flight from {self.originAirport.name} at {self.departureTime}'\n\nclass Passenger:\n    def __init__(self, name: str, gender: str):\n        self.name = name\n        self.gender = gender\n    \n    def assignToFlight(self, flight: Flight):\n        flight.assignPassenger(self)\n    \n    def __str__(self):\n        return self.name",
+ "java": {}
+}

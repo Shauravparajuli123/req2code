@@ -1,0 +1,64 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "RelationalDatabase",
+   "src": [
+    "R1",
+    "R6",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Table",
+   "src": [
+    "R3",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Tuple",
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "name": "TupleElement",
+   "src": [
+    "R5",
+    "R9"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "RelationalDatabase",
+   "name": "sgbdName",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "TupleElement",
+   "name": "value",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "TupleElement",
+   "target": "Tuple",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

@@ -1,0 +1,115 @@
+{
+ "actors": [
+  "Node"
+ ],
+ "use_cases": [
+  {
+   "name": "HasExpression",
+   "actor": "Node",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "SetInNode",
+   "actor": "Node",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "TrueCondition",
+   "actor": "ConditionalNode",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "expression",
+    "inNode"
+   ],
+   "methods": [
+    {
+     "name": "hasExpression",
+     "use_case": "HasExpression"
+    },
+    {
+     "name": "setInNode",
+     "use_case": "SetInNode"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "ConditionalNode",
+   "kind": "class",
+   "attributes": [
+    "trueCondition"
+   ],
+   "methods": [
+    {
+     "name": "trueCondition",
+     "use_case": "TrueCondition"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Expression",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ConditionalNode",
+   "target": "Node",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import TypeVar, Generic, Type\n\nExpression = TypeVar('Expression', bound='Expression')\nNode = TypeVar('Node', bound='Node')\nConditionalNode = TypeVar('ConditionalNode', bound='ConditionalNode')\nclass Expression(Generic[Expression]): \n    def __init__(self, name: str):\n        self.name = name\n\nclass Node(Generic[Node]):\n    def __init__(self, expression: Expression, in_node: Node = None):\n        self.expression: Expression = expression\n        self.inNode: Node = in_node\n\ndef hasExpression(self) -> Expression:\n    raise NotImplementedError\n\ndef setInNode(self, in_node: Node) -> None:\n    self.inNode = in_node\n\nclass ConditionalNode(Node[ConditionalNode]):\n    def __init__(self, true_condition: Node, expression: Expression):\n        super().__init__(expression)\n        self.trueCondition: Node = true_condition\n\ndef trueCondition(self) -> Node:\n    raise NotImplementedError",
+ "java": {}
+}

@@ -1,0 +1,66 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  account : String
+  newsletterSubscription : boolean
+  pushNotifications : boolean
+  password : String
+  language : String
+  fontSize : int
+  contrast : int
+  +createAccount()
+  +subscribeNewsletter()
+  +unsubscribeNewsletter()
+  +activatePushNotifications()
+  +deactivatePushNotifications()
+  +resetPassword()
+  +changeFontSize()
+  +changeContrast()
+  +changeLanguage()
+  +receiveProductSuggestions()
+  +receivePersonalDiscount()
+  +receivePersonalDiscountNotifications()
+  +subscribeDeliveryService()
+  +receiveRecipeSuggestions()
+  +contactCustomerService()
+  +scanProductForShoppingList()
+  +addProductToWishlist()
+  +searchForProduct()
+  +filterProductsByDietaryRestrictions()
+  +orderByPrice()
+  +orderByPopularity()
+  +receiveSaleNotifications()
+  +scanBarcodeForProductInformation()
+  +readProductInformation()
+  +checkProductStock()
+  +receiveStockNotifications()
+  +checkOtherStoreAvailability()
+  +seeProductQuantityInStore()
+  +checkProductAvailability()
+  +getRecipeIdeas()
+  +seeRecipeProducts()
+  +purchaseProductsOnline()
+  +haveGroceriesDelivered()
+  +selectDeliveryDate()
+  +selectDeliveryTime()
+  +useExpressDelivery()
+  +viewOrderHistory()
+  +repeatPreviousOrder()
+  +addPreviousOrderToNewOrder()
+  +digitallyPayForGroceries()
+  +findProductLocation()
+  +getNearestStoreRecommendation()
+  +changeDefaultStore()
+  +linkLoyaltyCard()
+}
+class Employee {
+  +updateRecipes()
+  +editProductDiscounts()
+  +confirmDeliveryTime()
+  +notifyUnavailableProducts()
+  +notifyDelayedDelivery()
+  +notifyCanceledDelivery()
+  +provideNewDeliveryTime()
+}
+@enduml

@@ -1,0 +1,193 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "TrackBug",
+   "actor": "User",
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "name": "DescribeControl",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R6",
+    "R10"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    "day",
+    "year"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ControlType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Bug",
+   "kind": "class",
+   "attributes": [
+    "number",
+    "description",
+    "originator",
+    "commentsanswer",
+    "closedate"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R12"
+   ]
+  },
+  {
+   "name": "ControlsObject",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Control",
+   "kind": "class",
+   "attributes": [
+    "type"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "ControlsSequence",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "BugTracking",
+   "kind": "class",
+   "attributes": [
+    "bugs"
+   ],
+   "methods": [
+    {
+     "name": "trackBug",
+     "use_case": "TrackBug"
+    },
+    {
+     "name": "describeControl",
+     "use_case": "DescribeControl"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "SoftwareQualityControl",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R4"
+   ]
+  },
+  {
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Bug",
+   "target": "BugTracking",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Control",
+   "target": "ControlsSequence",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ControlsObject",
+   "target": "ControlsSequence",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Control",
+   "target": "SoftwareQualityControl",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ControlType",
+   "target": "BugTracking",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Date:\n    def __init__(self, day: int, year: int):\n        self.day = day\n        self.year = year\n    \n    # No methods implemented\n    pass\n\nclass ControlType:\n    # No attributes or methods implemented\n    pass\n\nclass Bug:\n    def __init__(self, number: int, description: str, originator: str, commentsanswer: str, closedate: Date):\n        self.number = number\n        self.description = description\n        self.originator = originator\n        self.commentsanswer = commentsanswer\n        self.closedate = closedate\n    \n    # No methods implemented\n    pass\n\nclass ControlsObject:\n    def __init__(self, role: str):\n        self.role = role\n    \n    # No methods implemented\n    pass\n\nclass Control:\n    def __init__(self, type: ControlType):\n        self.type = type\n    \n    # No methods implemented\n    pass\n\nclass ControlsSequence:\n    # No attributes or methods implemented\n    pass\n\nclass BugTracking:\n    def __init__(self, bugs: List[Bug]):\n        self.bugs = bugs\n    \n    def trackBug(self):\n        raise NotImplementedError\n    \n    def describeControl(self):\n        raise NotImplementedError\n    \n    pass\n\nclass SoftwareQualityControl:\n    # No attributes or methods implemented\n    pass\n\nclass Architecture:\n    # No attributes or methods implemented\n    pass",
+ "java": {}
+}

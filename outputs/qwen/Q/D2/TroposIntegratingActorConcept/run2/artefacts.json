@@ -1,0 +1,86 @@
+{
+ "actors": [
+  "Agent"
+ ],
+ "use_cases": [
+  {
+   "name": "OccupiesPosition",
+   "actor": "Agent",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Actor",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "Agent",
+   "kind": "class",
+   "attributes": [
+    "position"
+   ],
+   "methods": [
+    {
+     "name": "occupiesPosition",
+     "use_case": "OccupiesPosition"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Position",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R6"
+   ]
+  },
+  {
+   "name": "Role",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Agent",
+   "target": "Position",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Position",
+   "target": "Role",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "from typing import Optional\n\nclass Actor:\n    pass\n\nclass Position:\n    def __init__(self, role: Optional[Role] = None):\n        self.role = role\n\nclass Role:\n    pass\nclass Agent:\n    def __init__(self, position: Position):\n        self.position = position\n    def occupiesPosition(self) -> None:\n        raise NotImplementedError",
+ "java": {}
+}

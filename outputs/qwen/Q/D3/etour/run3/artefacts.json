@@ -1,0 +1,1934 @@
+{
+ "actors": [
+  "Agency",
+  "Tourist",
+  "Tourist",
+  "Agency",
+  "Guest User",
+  "Registered User",
+  "Agency Operator",
+  "Restaurant Operator",
+  "Guest",
+  "Restaurant Operator",
+  "Tourist",
+  "tourist",
+  "system"
+ ],
+ "use_cases": [
+  {
+   "name": "Delete Object",
+   "actor": "Agency",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Insert Object",
+   "actor": "Agency",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Change Data",
+   "actor": "Agency",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Return List",
+   "actor": "Agency",
+   "src": [
+    "R4",
+    "R9"
+   ]
+  },
+  {
+   "name": "View Detail",
+   "actor": "Agency",
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "View History",
+   "actor": "Agency",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Convention Request",
+   "actor": "Agency",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Edit Data",
+   "actor": "Agency",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Enable Account",
+   "actor": "Agency",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "SearchTourist",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC15",
+    "UC23",
+    "UC24"
+   ]
+  },
+  {
+   "name": "SearchRefreshmentPoint",
+   "actor": "Agency",
+   "src": [
+    "UC17",
+    "UC18",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "name": "SearchSite",
+   "actor": "Agency",
+   "src": [
+    "UC24",
+    "UC25"
+   ]
+  },
+  {
+   "name": "ChangeData",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC15",
+    "UC23"
+   ]
+  },
+  {
+   "name": "ChangeImage",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC17"
+   ]
+  },
+  {
+   "name": "CheckPoint",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC18"
+   ]
+  },
+  {
+   "name": "DeleteAccount",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC16"
+   ]
+  },
+  {
+   "name": "DeleteBannerAd",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC19"
+   ]
+  },
+  {
+   "name": "DeleteNews",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC22"
+   ]
+  },
+  {
+   "name": "EditComment",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC26"
+   ]
+  },
+  {
+   "name": "InsertBanner",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC20"
+   ]
+  },
+  {
+   "name": "InsertNews",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC21"
+   ]
+  },
+  {
+   "name": "ViewFeedback",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC24"
+   ]
+  },
+  {
+   "name": "ViewReport",
+   "actor": "Agency",
+   "src": [
+    "R1",
+    "UC25"
+   ]
+  },
+  {
+   "name": "Search Site",
+   "actor": "Guest",
+   "src": [
+    "UC27"
+   ]
+  },
+  {
+   "name": "Remove SearchTag",
+   "actor": "Registered User",
+   "src": [
+    "UC28"
+   ]
+  },
+  {
+   "name": "Insert TagSearch",
+   "actor": "Registered User",
+   "src": [
+    "UC30"
+   ]
+  },
+  {
+   "name": "Ensure User",
+   "actor": "Guest User",
+   "src": [
+    "UC35"
+   ]
+  },
+  {
+   "name": "Require Creation",
+   "actor": "Guest User",
+   "src": [
+    "UC33"
+   ]
+  },
+  {
+   "name": "Research Heritage",
+   "actor": "Guest User",
+   "src": [
+    "UC34"
+   ]
+  },
+  {
+   "name": "Supply Login",
+   "actor": "Guest User",
+   "src": [
+    "UC36"
+   ]
+  },
+  {
+   "name": "End Session",
+   "actor": "Registered User",
+   "src": [
+    "UC37"
+   ]
+  },
+  {
+   "name": "Insert Banner",
+   "actor": "Restaurant Operator",
+   "src": [
+    "UC38"
+   ]
+  },
+  {
+   "name": "Change Image",
+   "actor": "Restaurant Operator",
+   "src": [
+    "UC39"
+   ]
+  },
+  {
+   "name": "Delete BannerAd",
+   "actor": "Restaurant Operator",
+   "src": [
+    "UC40"
+   ]
+  },
+  {
+   "name": "Change Menu",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC41"
+   ]
+  },
+  {
+   "name": "Delete Menu",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC42"
+   ]
+  },
+  {
+   "name": "Change DataPoint",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC43"
+   ]
+  },
+  {
+   "name": "Require Convention",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC44"
+   ]
+  },
+  {
+   "name": "View Statistic",
+   "actor": "Restaurant Operator",
+   "src": [
+    "R1",
+    "UC45"
+   ]
+  },
+  {
+   "name": "Edit SearchPreference",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC46"
+   ]
+  },
+  {
+   "name": "Edit EditPreferences",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC48"
+   ]
+  },
+  {
+   "name": "Insert Feedback",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC53"
+   ]
+  },
+  {
+   "name": "Delete Site",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC52"
+   ]
+  },
+  {
+   "name": "Insert Site",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC51"
+   ]
+  },
+  {
+   "name": "View List",
+   "actor": "Tourist",
+   "src": [
+    "R1",
+    "UC49",
+    "UC50"
+   ]
+  },
+  {
+   "name": "Edit Comment",
+   "actor": "tourist",
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "Entry EntryCondition",
+   "actor": "tourist",
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  },
+  {
+   "name": "Return Position",
+   "actor": "tourist",
+   "src": [
+    "R1",
+    "UC56"
+   ]
+  },
+  {
+   "name": "Search Site",
+   "actor": "tourist",
+   "src": [
+    "R1",
+    "UC57"
+   ]
+  },
+  {
+   "name": "View Detail",
+   "actor": "tourist",
+   "src": [
+    "R1",
+    "UC58"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Agency",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "deleteObject",
+     "use_case": "Delete Object"
+    },
+    {
+     "name": "insertObject",
+     "use_case": "Insert Object"
+    },
+    {
+     "name": "changeData",
+     "use_case": "Change Data"
+    },
+    {
+     "name": "returnList",
+     "use_case": "Return List"
+    },
+    {
+     "name": "viewDetail",
+     "use_case": "View Detail"
+    },
+    {
+     "name": "viewHistory",
+     "use_case": "View History"
+    },
+    {
+     "name": "conventionRequest",
+     "use_case": "Convention Request"
+    },
+    {
+     "name": "editData",
+     "use_case": "Edit Data"
+    },
+    {
+     "name": "enableAccount",
+     "use_case": "Enable Account"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R11",
+    "R7",
+    "R8",
+    "R13"
+   ]
+  },
+  {
+   "name": "CulturalHeritage",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name",
+    "description"
+   ],
+   "methods": [
+    {
+     "name": "delete",
+     "use_case": "Delete Object"
+    },
+    {
+     "name": "insert",
+     "use_case": "Insert Object"
+    },
+    {
+     "name": "change",
+     "use_case": "Change Data"
+    },
+    {
+     "name": "viewDetail",
+     "use_case": "View Detail"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "name": "RefreshmentPoint",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name",
+    "address"
+   ],
+   "methods": [
+    {
+     "name": "delete",
+     "use_case": "Delete Object"
+    },
+    {
+     "name": "insert",
+     "use_case": "Insert Object"
+    },
+    {
+     "name": "change",
+     "use_case": "Change Data"
+    },
+    {
+     "name": "viewDetail",
+     "use_case": "View Detail"
+    },
+    {
+     "name": "viewHistory",
+     "use_case": "View History"
+    },
+    {
+     "name": "conventionRequest",
+     "use_case": "Convention Request"
+    },
+    {
+     "name": "editData",
+     "use_case": "Edit Data"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R5",
+    "R7",
+    "R8",
+    "R11"
+   ]
+  },
+  {
+   "name": "TouristAccount",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name",
+    "email"
+   ],
+   "methods": [
+    {
+     "name": "viewDetail",
+     "use_case": "View Detail"
+    },
+    {
+     "name": "enableDisable",
+     "use_case": "Enable Account"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R13"
+   ]
+  },
+  {
+   "name": "System",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "returnList",
+     "use_case": "Return List"
+    },
+    {
+     "name": "search",
+     "use_case": "Return List"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R9",
+    "R14"
+   ]
+  },
+  {
+   "name": "Agency",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "searchTourist",
+     "use_case": "SearchTourist"
+    },
+    {
+     "name": "searchRefreshmentPoint",
+     "use_case": "SearchRefreshmentPoint"
+    },
+    {
+     "name": "searchSite",
+     "use_case": "SearchSite"
+    },
+    {
+     "name": "changeData",
+     "use_case": "ChangeData"
+    },
+    {
+     "name": "changeImage",
+     "use_case": "ChangeImage"
+    },
+    {
+     "name": "checkPoint",
+     "use_case": "CheckPoint"
+    },
+    {
+     "name": "deleteAccount",
+     "use_case": "DeleteAccount"
+    },
+    {
+     "name": "deleteBannerAd",
+     "use_case": "DeleteBannerAd"
+    },
+    {
+     "name": "deleteNews",
+     "use_case": "DeleteNews"
+    },
+    {
+     "name": "editComment",
+     "use_case": "EditComment"
+    },
+    {
+     "name": "insertBanner",
+     "use_case": "InsertBanner"
+    },
+    {
+     "name": "insertNews",
+     "use_case": "InsertNews"
+    },
+    {
+     "name": "viewFeedback",
+     "use_case": "ViewFeedback"
+    },
+    {
+     "name": "viewReport",
+     "use_case": "ViewReport"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC15",
+    "UC16",
+    "UC17",
+    "UC18",
+    "UC19",
+    "UC20",
+    "UC21",
+    "UC22",
+    "UC23",
+    "UC24",
+    "UC25",
+    "UC26"
+   ]
+  },
+  {
+   "name": "AccountTourist",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "BannerAd",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "image",
+    "location"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC17",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "name": "Banner",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "image",
+    "location"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC17",
+    "UC18",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "text"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC26"
+   ]
+  },
+  {
+   "name": "DataNews",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "title",
+    "content"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC21",
+    "UC22",
+    "UC23"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "text",
+    "rating"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC24",
+    "UC26"
+   ]
+  },
+  {
+   "name": "Image",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "path"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC17"
+   ]
+  },
+  {
+   "name": "Point",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC18",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "name": "Report",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "data"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC25"
+   ]
+  },
+  {
+   "name": "Tourist",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "GuestUser",
+   "kind": "class",
+   "attributes": [
+    "username",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "supplyLogin",
+     "use_case": "Supply Login"
+    },
+    {
+     "name": "ensureUser",
+     "use_case": "Ensure User"
+    },
+    {
+     "name": "researchHeritage",
+     "use_case": "Research Heritage"
+    },
+    {
+     "name": "searchSite",
+     "use_case": "Search Site"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC36",
+    "UC35",
+    "UC34",
+    "UC27"
+   ]
+  },
+  {
+   "name": "RegisteredUser",
+   "kind": "class",
+   "attributes": [
+    "username",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "login",
+     "use_case": "Login"
+    },
+    {
+     "name": "endSession",
+     "use_case": "End Session"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC35",
+    "UC37"
+   ]
+  },
+  {
+   "name": "RestaurantOperator",
+   "kind": "class",
+   "attributes": [
+    "restaurantName"
+   ],
+   "methods": [
+    {
+     "name": "insertBanner",
+     "use_case": "Insert Banner"
+    },
+    {
+     "name": "changeImage",
+     "use_case": "Change Image"
+    },
+    {
+     "name": "deleteBannerAd",
+     "use_case": "Delete BannerAd"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "name": "SearchTag",
+   "kind": "class",
+   "attributes": [
+    "tagName"
+   ],
+   "methods": [
+    {
+     "name": "removeSearchTag",
+     "use_case": "Remove SearchTag"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC28"
+   ]
+  },
+  {
+   "name": "TagSearch",
+   "kind": "class",
+   "attributes": [
+    "searchCriteria"
+   ],
+   "methods": [
+    {
+     "name": "insertTagSearch",
+     "use_case": "Insert TagSearch"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "UC30"
+   ]
+  },
+  {
+   "name": "RestaurantOperator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "changeMenu",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "deleteMenu",
+     "use_case": "Delete Menu"
+    },
+    {
+     "name": "changeDataPoint",
+     "use_case": "Change DataPoint"
+    },
+    {
+     "name": "requireConvention",
+     "use_case": "Require Convention"
+    },
+    {
+     "name": "viewStatistic",
+     "use_case": "View Statistic"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC41",
+    "UC42",
+    "UC43",
+    "UC44",
+    "UC45"
+   ]
+  },
+  {
+   "name": "Tourist",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "editSearchPreference",
+     "use_case": "Edit SearchPreference"
+    },
+    {
+     "name": "insertSite",
+     "use_case": "Insert Site"
+    },
+    {
+     "name": "deleteSite",
+     "use_case": "Delete Site"
+    },
+    {
+     "name": "viewList",
+     "use_case": "View List"
+    },
+    {
+     "name": "insertFeedback",
+     "use_case": "Insert Feedback"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC46",
+    "UC51",
+    "UC52",
+    "UC53",
+    "UC49",
+    "UC50"
+   ]
+  },
+  {
+   "name": "Menu",
+   "kind": "class",
+   "attributes": [
+    "day"
+   ],
+   "methods": [
+    {
+     "name": "edit",
+     "use_case": "Change Menu"
+    },
+    {
+     "name": "delete",
+     "use_case": "Delete Menu"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC41",
+    "UC42"
+   ]
+  },
+  {
+   "name": "Day",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "DataPoint",
+   "kind": "class",
+   "attributes": [
+    "refreshment"
+   ],
+   "methods": [
+    {
+     "name": "change",
+     "use_case": "Change DataPoint"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC43"
+   ]
+  },
+  {
+   "name": "Convention",
+   "kind": "class",
+   "attributes": [
+    "agreement"
+   ],
+   "methods": [
+    {
+     "name": "request",
+     "use_case": "Require Convention"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC44"
+   ]
+  },
+  {
+   "name": "Statistic",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "view",
+     "use_case": "View Statistic"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC45"
+   ]
+  },
+  {
+   "name": "SearchPreference",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "edit",
+     "use_case": "Edit SearchPreference"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC46"
+   ]
+  },
+  {
+   "name": "Site",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "insert",
+     "use_case": "Insert Site"
+    },
+    {
+     "name": "delete",
+     "use_case": "Delete Site"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC51",
+    "UC52"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [
+    "vote",
+    "comment"
+   ],
+   "methods": [
+    {
+     "name": "insert",
+     "use_case": "Insert Feedback"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC53"
+   ]
+  },
+  {
+   "name": "Tourist",
+   "kind": "class",
+   "attributes": [
+    "position"
+   ],
+   "methods": [
+    {
+     "name": "editComment",
+     "use_case": "Edit Comment"
+    },
+    {
+     "name": "entryEntryCondition",
+     "use_case": "Entry EntryCondition"
+    },
+    {
+     "name": "returnPosition",
+     "use_case": "Return Position"
+    },
+    {
+     "name": "searchSite",
+     "use_case": "Search Site"
+    },
+    {
+     "name": "viewDetail",
+     "use_case": "View Detail"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54",
+    "UC55",
+    "UC56",
+    "UC57",
+    "UC58"
+   ]
+  },
+  {
+   "name": "Position",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC56"
+   ]
+  },
+  {
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "alteration",
+     "use_case": "Edit Comment"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "Change",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "confirmation",
+     "use_case": "Edit Comment"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "Confirmation",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  },
+  {
+   "name": "Connection",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "interruption",
+     "use_case": "Edit Comment"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "Etour",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "EventsUserSystem",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "Gps",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "calculatePosition",
+     "use_case": "Return Position"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC56"
+   ]
+  },
+  {
+   "name": "Interruption",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "reading",
+     "use_case": "Entry EntryCondition"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  },
+  {
+   "name": "Operation",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "QualityRequirement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54",
+    "UC56",
+    "UC57"
+   ]
+  },
+  {
+   "name": "Result",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "Search",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "advancedSearch",
+     "use_case": "Search Site"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC57"
+   ]
+  },
+  {
+   "name": "SearchForm",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC57"
+   ]
+  },
+  {
+   "name": "Server",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC57"
+   ]
+  },
+  {
+   "name": "Site",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC58"
+   ]
+  },
+  {
+   "name": "State",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  },
+  {
+   "name": "Transaction",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC57"
+   ]
+  },
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  },
+  {
+   "name": "UserInteraction",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  },
+  {
+   "name": "Area",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC58"
+   ]
+  },
+  {
+   "name": "Card",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC58"
+   ]
+  },
+  {
+   "name": "Form",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC57"
+   ]
+  },
+  {
+   "name": "Flow",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "name": "Result",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "UC57"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Agency",
+   "target": "CulturalHeritage",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Agency",
+   "target": "RefreshmentPoint",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R5",
+    "R7",
+    "R8",
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Agency",
+   "target": "TouristAccount",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R13"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "System",
+   "target": "CulturalHeritage",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4",
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "System",
+   "target": "RefreshmentPoint",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4",
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "System",
+   "target": "TouristAccount",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4",
+    "R9",
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Agency",
+   "target": "AccountTourist",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BannerAd",
+   "target": "Image",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC17",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Banner",
+   "target": "Image",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC17",
+    "UC18",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BannerAd",
+   "target": "Point",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC17",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Banner",
+   "target": "Point",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC17",
+    "UC18",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Feedback",
+   "target": "Comment",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC26"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "DataNews",
+   "target": "Image",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC21",
+    "UC22",
+    "UC23"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Point",
+   "target": "RefreshmentPoint",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC18",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Report",
+   "target": "Location",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC25"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "GuestUser",
+   "target": "Operation",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC36",
+    "UC35",
+    "UC34",
+    "UC27"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RegisteredUser",
+   "target": "Login",
+   "multiplicity_target": "1",
+   "src": [
+    "UC35",
+    "UC37"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RestaurantOperator",
+   "target": "Point",
+   "multiplicity_target": "1",
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SearchTag",
+   "target": "Elimination",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC28"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "TagSearch",
+   "target": "Inclusion",
+   "multiplicity_target": "0..*",
+   "src": [
+    "UC30"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RestaurantOperator",
+   "target": "Menu",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC41",
+    "UC42"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Site",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC51",
+    "UC52"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Feedback",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC53"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Menu",
+   "target": "Day",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC41",
+    "UC42"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Position",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC56"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tourist",
+   "target": "Feedback",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Change",
+   "target": "Confirmation",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Comment",
+   "target": "Change",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Connection",
+   "target": "Interruption",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC54"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Gps",
+   "target": "Position",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC56"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Notification",
+   "target": "Reading",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Search",
+   "target": "Form",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC57"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Server",
+   "target": "Transaction",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC57"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Feedback",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "State",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC55"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Area",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC58"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Card",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC58"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Form",
+   "target": "Result",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "UC57"
+   ]
+  }
+ ],
+ "python": "from typing import TypedDict, List\n\nclass Agency:\n    def deleteObject(self) -> None:\n        raise NotImplementedError\n    def insertObject(self) -> None:\n        raise NotImplementedError\n    def changeData(self) -> None:\n        raise NotImplementedError\n    def returnList(self) -> List[str]:\n        raise NotImplementedError\n    def viewDetail(self) -> None:\n        raise NotImplementedError\n    def viewHistory(self) -> None:\n        raise NotImplementedError\n    def conventionRequest(self) -> None:\n        raise NotImplementedError\n    def editData(self) -> None:\n        raise NotImplementedError\n    def enableAccount(self) -> None:\n        raise NotImplementedError\n\nclass CulturalHeritage(TypedDict):\n    id: str\n    name: str\n    description: str\n\nclass RefreshmentPoint(TypedDict):\n    id: str\n    name: str\n    address: str\n\nclass TouristAccount(TypedDict):\n    id: str\n    name: str\n    email: str\n\nclass System:\n    def returnList(self) -> List[str]:\n        raise NotImplementedError\n    def search(self) -> List[str]:\n        raise NotImplementedError\n\n\nfrom typing import TypedDict, String, Integer, Image, Point, String, List, Optional\n\nclass Agency:\n    def searchTourist(self) -> None:\n        raise NotImplementedError\n\n    def searchRefreshmentPoint(self) -> None:\n        raise NotImplementedError\n\n    def searchSite(self) -> None:\n        raise NotImplementedError\n\n    def changeData(self) -> None:\n        raise NotImplementedError\n\n    def changeImage(self) -> None:\n        raise NotImplementedError\n\n    def checkPoint(self) -> None:\n        raise NotImplementedError\n\n    def deleteAccount(self) -> None:\n        raise NotImplementedError\n\n    def deleteBannerAd(self) -> None:\n        raise NotImplementedError\n\n    def deleteNews(self) -> None:\n        raise NotImplementedError\n\n    def editComment(self) -> None:\n        raise NotImplementedError\n\n    def insertBanner(self) -> None:\n        raise NotImplementedError\n\n    def insertNews(self) -> None:\n        raise NotImplementedError\n\n    def viewFeedback(self) -> None:\n        raise NotImplementedError\n\n    def viewReport(self) -> None:\n        raise NotImplementedError\n\nclass AccountTourist(TypedDict):\n    id: String\n    name: String\n\nclass BannerAd:\n    id: String\n    image: Image\n    location: Point\n\nclass Banner:\n    id: String\n    image: Image\n    location: Point\n\nclass Comment(TypedDict):\n    id: String\n    text: String\n\nclass DataNews(TypedDict):\n    id: String\n    title: String\n    content: String\n\nclass Feedback(TypedDict):\n    id: String\n    text: String\n    rating: Integer\n\nclass Image(TypedDict):\n    id: String\n    path: String\n\nclass Point(TypedDict):\n    id: String\n    name: String\n\nclass Tourist(TypedDict):\n    id: String\n    name: String\n\n\nfrom typing import TypedDict, List\n\nclass GuestUser:\n    username: str\n    password: str\n\n    def supplyLogin(self) -> None:\n        raise NotImplementedError\n\n    def ensureUser(self) -> None:\n        raise NotImplementedError\n\n    def researchHeritage(self) -> None:\n        raise NotImplementedError\n\n    def searchSite(self) -> List[str]:\n        raise NotImplementedError\n\nclass RegisteredUser:\n    username: str\n    password: str\n\n    def login(self) -> None:\n        raise NotImplementedError\n\n    def endSession(self) -> None:\n        raise NotImplementedError\n\nclass RestaurantOperator:\n    restaurantName: str\n\n    def insertBanner(self) -> None:\n        raise NotImplementedError\n\n    def changeImage(self) -> None:\n        raise NotImplementedError\n\n    def deleteBannerAd(self) -> None:\n        raise NotImplementedError\n\nclass SearchTag:\n    tagName: str\n\n    def removeSearchTag(self) -> None:\n        raise NotImplementedError\n\nclass TagSearch:\n    searchCriteria: str\n\n    def insertTagSearch(self) -> None:\n        raise NotImplementedError\n\nfrom typing import TypedDict, Integer\n\nclass Day(TypedDict):\n    name: str\n\nclass Menu:\n    def __init__(self, day: Day):\n        self.day = day\n    def edit(self) -> None:\n        raise NotImplementedError\n    def delete(self) -> None:\n        raise NotImplementedError\n\nclass DataPoint:\n    def __init__(self, refreshment: str):\n        self.refreshment = refreshment\n    def change(self) -> None:\n        raise NotImplementedError\n\nclass Convention:\n    def __init__(self, agreement: str):\n        self.agreement = agreement\n    def request(self) -> None:\n        raise NotImplementedError\n\nclass Statistic:\n    def view(self) -> None:\n        raise NotImplementedError\n\nclass SearchPreference:\n    def edit(self) -> None:\n        raise NotImplementedError\n\nclass Site:\n    def __init__(self, name: str):\n        self.name = name\n    def insert(self) -> None:\n        raise NotImplementedError\n    def delete(self) -> None:\n        raise NotImplementedError\n\nclass Feedback:\n    def __init__(self, vote: Integer, comment: str):\n        self.vote = vote\n        self.comment = comment\n    def insert(self) -> None:\n        raise NotImplementedError\n\nclass RestaurantOperator:\n    def changeMenu(self) -> None:\n        raise NotImplementedError\n    def deleteMenu(self) -> None:\n        raise NotImplementedError\n    def changeDataPoint(self) -> None:\n        raise NotImplementedError\n    def requireConvention(self) -> None:\n        raise NotImplementedError\n    def viewStatistic(self) -> None:\n        raise NotImplementedError\n\nclass Tourist:\n    def editSearchPreference(self) -> None:\n        raise NotImplementedError\n    def insertSite(self) -> None:\n        raise NotImplementedError\n    def deleteSite(self) -> None:\n        raise NotImplementedError\n    def viewList(self) -> None:\n        raise NotImplementedError\n    def insertFeedback(self) -> None:\n        raise NotImplementedError\n\nfrom typing import TypedDict\n\nclass Position:\n    pass\n\nclass Comment:\n    def alteration(self) -> None:\n        raise NotImplementedError\n\nclass Change:\n    def confirmation(self) -> None:\n        raise NotImplementedError\n\nclass Confirmation:\n    pass\n\nclass Feedback:\n    pass\n\nclass Connection:\n    def interruption(self) -> None:\n        raise NotImplementedError\n\nclass Etour:\n    pass\n\nclass EventsUserSystem:\n    pass\n\nclass Gps:\n    def calculatePosition(self) -> None:\n        raise NotImplementedError\n\nclass Interruption:\n    pass\n\nclass Notification:\n    def reading(self) -> None:\n        raise NotImplementedError\n\nclass Operation:\n    pass\n\nclass QualityRequirement:\n    pass\n\nclass Result:\n    pass\n\nclass Search:\n    def advancedSearch(self) -> None:\n        raise NotImplementedError\n\nclass SearchForm:\n    pass\n\nclass Server:\n    pass\n\nclass Site:\n    pass\n\nclass State:\n    pass\n\nclass Transaction:\n    pass\n\nclass User:\n    pass\n\nclass UserInteraction:\n    pass\n\nclass Area:\n    pass\n\nclass Card:\n    pass\n\nclass Form:\n    pass\n\nclass Flow:\n    pass\n\nclass Tourist:\n    def __init__(self, position: Position):\n        self.position = position\n    def editComment(self) -> None:\n        raise NotImplementedError\n    def entryEntryCondition(self) -> None:\n        raise NotImplementedError\n    def returnPosition(self) -> None:\n        raise NotImplementedError\n    def searchSite(self) -> None:\n        raise NotImplementedError\n    def viewDetail(self) -> None:\n        raise NotImplementedError",
+ "java": {}
+}

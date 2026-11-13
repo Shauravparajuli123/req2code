@@ -1,0 +1,12 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class MethodDefinition {
+  method : String
+}
+class Class {
+  name : String
+  +invokeMethod()
+}
+Class "1" -- "0..*" MethodDefinition : has
+@enduml

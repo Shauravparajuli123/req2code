@@ -1,0 +1,86 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Login",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R2",
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Actor",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R1",
+    "R13"
+   ]
+  },
+  {
+   "name": "UseCase",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "containers",
+    "includes",
+    "extends_"
+   ],
+   "methods": [
+    {
+     "name": "includeUseCase",
+     "use_case": "Login"
+    }
+   ],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "name": "UseCaseContainer",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "useCases"
+   ],
+   "methods": [],
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Actor",
+   "target": "UseCase",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/useCase.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Actor:\n    \"\"\"Source: R1, R13\"\"\"\n    name: _t.Optional[str] = None\n    useCase: _t.Optional[\"UseCase\"] = None\n\n\n@_dc.dataclass\nclass UseCase:\n    \"\"\"Source: R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12\"\"\"\n    name: _t.Optional[str] = None\n    containers: _t.Optional[str] = None\n    includes: _t.Optional[str] = None\n    extends_: _t.Optional[str] = None\n\n    def includeUseCase(self) -> None:\n        \"\"\"Realizes UC1 \"Login\" (R1, R2, R9).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass UseCaseContainer:\n    \"\"\"Source: R12\"\"\"\n    name: _t.Optional[str] = None\n    useCases: _t.Optional[str] = None\n",
+ "java": {
+  "Actor.java": "/** Generated from shared model D2/useCase. Source: R1, R13 */\npublic class Actor {\n    private java.lang.String name;\n    private UseCase useCase;\n}\n",
+  "UseCase.java": "/** Generated from shared model D2/useCase. Source: R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12 */\npublic class UseCase {\n    private java.lang.String name;\n    private java.lang.String containers;\n    private java.lang.String includes;\n    private java.lang.String extends_;\n\n    /** Realizes UC1 \"Login\" (R1, R2, R9). */\n    public void includeUseCase() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "UseCaseContainer.java": "/** Generated from shared model D2/useCase. Source: R12 */\npublic class UseCaseContainer {\n    private java.lang.String name;\n    private java.lang.String useCases;\n}\n"
+ }
+}

@@ -1,0 +1,35 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Graph {
+  type : String
+  dimension : int
+  elements : String
+}
+class GraphElement {
+  label : String
+  parentGraph : String
+  zIndex : int
+  +addGraphElement()
+  +removeGraphElement()
+}
+class Node {
+  shape : String
+}
+class DirectedArc {
+  sourceNode : String
+  targetNode : String
+  shape : String
+}
+class Constraint {
+  value : String
+}
+class SubGraph {
+}
+Graph "1" *-- "0..*" GraphElement : contains
+GraphElement "1" -- "0..1" Node : is
+GraphElement "1" -- "0..1" DirectedArc : is
+Node "0..*" -- "1" Graph : is part of
+DirectedArc "1" -- "1" Node : links
+SubGraph --|> Graph
+@enduml

@@ -1,0 +1,155 @@
+{
+ "actors": [
+  "Author",
+  "Participant",
+  "Theater"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Play",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "type",
+    "location",
+    "author",
+    "session",
+    "theaters"
+   ],
+   "methods": [
+    {
+     "name": "addAuthor",
+     "use_case": null
+    },
+    {
+     "name": "addSession",
+     "use_case": null
+    },
+    {
+     "name": "addTheater",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R3",
+    "R11"
+   ]
+  },
+  {
+   "name": "Author",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "writePlay",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "name": "Participant",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "actInPlay",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5",
+    "R7",
+    "R12"
+   ]
+  },
+  {
+   "name": "Theater",
+   "kind": "class",
+   "attributes": [
+    "location"
+   ],
+   "methods": [
+    {
+     "name": "playPlay",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R11"
+   ]
+  },
+  {
+   "name": "Session",
+   "kind": "class",
+   "attributes": [
+    "beginTime",
+    "endTime"
+   ],
+   "methods": [
+    {
+     "name": "actInSession",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R6",
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Play",
+   "target": "Theater",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "source": "Play",
+   "target": "Author",
+   "src": [
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "source": "Play",
+   "target": "Participant",
+   "src": [
+    "R5",
+    "R6",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "source": "Session",
+   "target": "Participant",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D4/theater.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Play:\n    \"\"\"Source: R2, R3, R11\"\"\"\n    name: _t.Optional[str] = None\n    type: _t.Optional[str] = None\n    location: _t.Optional[str] = None\n    author: _t.Optional[str] = None\n    session: _t.Optional[str] = None\n    theaters: _t.Optional[str] = None\n    theater: _t.Optional[\"Theater\"] = None\n    authors: _t.List[\"Author\"] = _dc.field(default_factory=list)\n    participants: _t.List[\"Participant\"] = _dc.field(default_factory=list)\n\n    def addAuthor(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addSession(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addTheater(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Author:\n    \"\"\"Source: R4, R7, R10\"\"\"\n    name: _t.Optional[str] = None\n\n    def writePlay(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Participant:\n    \"\"\"Source: R5, R7, R12\"\"\"\n    name: _t.Optional[str] = None\n\n    def actInPlay(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Theater:\n    \"\"\"Source: R2, R11\"\"\"\n    location: _t.Optional[str] = None\n\n    def playPlay(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Session:\n    \"\"\"Source: R6, R9\"\"\"\n    beginTime: _t.Optional[str] = None\n    endTime: _t.Optional[str] = None\n    participant: _t.Optional[\"Participant\"] = None\n\n    def actInSession(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Play.java": "/** Generated from shared model D4/theater. Source: R2, R3, R11 */\npublic class Play {\n    private java.lang.String name;\n    private java.lang.String type;\n    private java.lang.String location;\n    private java.lang.String author;\n    private java.lang.String session;\n    private java.lang.String theaters;\n    private Theater theater;\n    private java.util.List<Author> authors;\n    private java.util.List<Participant> participants;\n\n    /** Operation. */\n    public void addAuthor() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addSession() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addTheater() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Author.java": "/** Generated from shared model D4/theater. Source: R4, R7, R10 */\npublic class Author {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void writePlay() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Participant.java": "/** Generated from shared model D4/theater. Source: R5, R7, R12 */\npublic class Participant {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void actInPlay() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Theater.java": "/** Generated from shared model D4/theater. Source: R2, R11 */\npublic class Theater {\n    private java.lang.String location;\n\n    /** Operation. */\n    public void playPlay() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Session.java": "/** Generated from shared model D4/theater. Source: R6, R9 */\npublic class Session {\n    private java.time.LocalDate beginTime;\n    private java.time.LocalDate endTime;\n    private Participant participant;\n\n    /** Operation. */\n    public void actInSession() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

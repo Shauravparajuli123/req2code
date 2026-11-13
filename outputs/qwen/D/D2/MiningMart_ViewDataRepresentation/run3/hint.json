@@ -1,0 +1,89 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "ModelElement",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "Classifier",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "name": "StructuralFeature",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "name": "Class",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "DataType",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "name": "Attribute",
+    "src": [
+     "R6"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Class",
+    "name": "name",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "owner": "DataType",
+    "name": "Attribute",
+    "src": [
+     "R8"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Class",
+    "target": "Attribute",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "DataType",
+    "target": "Attribute",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Attribute",
+    "target": "Class",
+    "src": [
+     "R9"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

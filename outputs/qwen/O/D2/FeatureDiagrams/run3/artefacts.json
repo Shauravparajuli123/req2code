@@ -1,0 +1,153 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineNode",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "reference"
+   ],
+   "methods": [
+    {
+     "name": "addAttribute",
+     "use_case": "DefineNode"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "name",
+    "key"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Child",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": "DefineNode"
+    },
+    {
+     "name": "addOrgroup",
+     "use_case": "DefineNode"
+    },
+    {
+     "name": "addXorgroup",
+     "use_case": "DefineNode"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Orgroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": "DefineNode"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Xorgroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [
+    {
+     "name": "addNode",
+     "use_case": "DefineNode"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Node",
+   "target": "Attribute",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Child",
+   "target": "Node",
+   "multiplicity_target": "1",
+   "src": [
+    "R10",
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Child",
+   "target": "Orgroup",
+   "multiplicity_target": "1",
+   "src": [
+    "R11",
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Xorgroup",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R12",
+    "R13"
+   ]
+  }
+ ],
+ "python": "class Node:\n    def __init__(self, description, reference):\n        self.description = description\n        self.reference = reference\n        self.attributes = []\n        self.xorgroups = []\n        self.orgroups = []\n\n    def addAttribute(self, attribute):\n        if isinstance(attribute, Attribute):\n            self.attributes.append(attribute)\n        else:\n            raise ValueError('Attribute must be an instance of Attribute class')\n\n    def addXorgroup(self, xorgroup):\n        if isinstance(xorgroup, Xorgroup):\n            self.xorgroups.append(xorgroup)\n        else:\n            raise ValueError('Xorgroup must be an instance of Xorgroup class')\n\n    def addOrgroup(self, orgroup):\n        if isinstance(orgroup, Orgroup):\n            self.orgroups.append(orgroup)\n        else:\n            raise ValueError('Orgroup must be an instance of Orgroup class')\n\nclass Attribute:\n    def __init__(self, description, name, key):\n        self.description = description\n        self.name = name\n        self.key = key\n\nclass Child:\n    def __init__(self):\n        self.nodes = []\n        self.orgroups = []\n        self.xorgroups = []\n\n    def addNode(self, node):\n        if isinstance(node, Node):\n            self.nodes.append(node)\n        else:\n            raise ValueError('Node must be an instance of Node class')\n\n    def addOrgroup(self, orgroup):\n        if isinstance(orgroup, Orgroup):\n            self.orgroups.append(orgroup)\n        else:\n            raise ValueError('Orgroup must be an instance of Orgroup class')\n\n    def addXorgroup(self, xorgroup):\n        if isinstance(xorgroup, Xorgroup):\n            self.xorgroups.append(xorgroup)\n        else:\n            raise ValueError('Xorgroup must be an instance of Xorgroup class')\n\nclass Orgroup:\n    def __init__(self, preliminary):\n        self.preliminary = preliminary\n        self.nodes = []\n\n    def addNode(self, node):\n        if isinstance(node, Node):\n            self.nodes.append(node)\n        else:\n            raise ValueError('Node must be an instance of Node class')\n\nclass Xorgroup:\n    def __init__(self, preliminary):\n        self.preliminary = preliminary\n        self.nodes = []\n\n    def addNode(self, node):\n        if isinstance(node, Node):\n            self.nodes.append(node)\n        else:\n            raise ValueError('Node must be an instance of Node class')",
+ "java": {}
+}

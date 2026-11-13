@@ -1,0 +1,263 @@
+{
+ "case": "D2/BQL",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "location",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "comments",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "BqlModel",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "queries",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "entries",
+     "type": "String",
+     "src": [
+      "R1",
+      "R3",
+      "R10"
+     ]
+    },
+    {
+     "name": "fields",
+     "type": "String",
+     "src": [
+      "R4",
+      "R8",
+      "R9"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addQuery",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addEntry",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "addField",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Query",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "entries",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Entry",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "allFields",
+     "type": "boolean",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "associatePredicate",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Field",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "associateEntry",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Predicate",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "entry",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R3",
+    "R7",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C4",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "associates",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C6",
+   "target": "C4",
+   "mult_source": "0..1",
+   "mult_target": "1",
+   "label": "associates",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R2",
+    "R7"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

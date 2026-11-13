@@ -1,0 +1,97 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DisplayNews",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    "day",
+    "month",
+    "hour",
+    "second"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "News",
+   "kind": "class",
+   "attributes": [
+    "title",
+    "link",
+    "author",
+    "date",
+    "newspaper"
+   ],
+   "methods": [
+    {
+     "name": "publish",
+     "use_case": "DisplayNews"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Newspaper",
+   "kind": "class",
+   "attributes": [
+    "language",
+    "category"
+   ],
+   "methods": [
+    {
+     "name": "publishNews",
+     "use_case": "DisplayNews"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R6",
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "News",
+   "target": "Date",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "News",
+   "target": "Newspaper",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "class Date:\n    def __init__(self, day, month, hour, second):\n        self.day = day\n        self.month = month\n        self.hour = hour\n        self.second = second\n\nclass News:\n    def __init__(self, title, link, author, date, newspaper):\n        self.title = title\n        self.link = link\n        self.author = author\n        self.date = date\n        self.newspaper = newspaper\n    def publish(self):\n        raise NotImplementedError\n\nclass Newspaper:\n    def __init__(self, language, category):\n        self.language = language\n        self.category = category\n    def publishNews(self):\n        raise NotImplementedError",
+ "java": {}
+}

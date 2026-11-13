@@ -1,0 +1,104 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "RModelElement",
+   "kind": "class",
+   "attributes": [
+    "kind"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Schema",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "type"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Key",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "ForeignKey",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "source": "Table",
+   "target": "Schema",
+   "src": []
+  },
+  {
+   "source": "Table",
+   "target": "Key",
+   "src": []
+  },
+  {
+   "source": "Column",
+   "target": "Table",
+   "src": []
+  },
+  {
+   "source": "ForeignKey",
+   "target": "Column",
+   "src": []
+  },
+  {
+   "source": "Key",
+   "target": "ForeignKey",
+   "src": []
+  },
+  {
+   "source": "ForeignKey",
+   "target": "Key",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "source": "Schema",
+   "target": "Table",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/QVT_SimpleRDBMS.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass RModelElement:\n    \"\"\"Source: R1\"\"\"\n    kind: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Schema:\n    \"\"\"Source: -\"\"\"\n    tables: _t.List[\"Table\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Table:\n    \"\"\"Source: -\"\"\"\n    schema: _t.Optional[\"Schema\"] = None\n    key: _t.Optional[\"Key\"] = None\n\n\n@_dc.dataclass\nclass Column:\n    \"\"\"Source: -\"\"\"\n    type: _t.Optional[str] = None\n    table: _t.Optional[\"Table\"] = None\n\n\n@_dc.dataclass\nclass Key:\n    \"\"\"Source: -\"\"\"\n    foreignKey: _t.Optional[\"ForeignKey\"] = None\n\n\n@_dc.dataclass\nclass ForeignKey:\n    \"\"\"Source: -\"\"\"\n    column: _t.Optional[\"Column\"] = None\n    key: _t.Optional[\"Key\"] = None\n",
+ "java": {
+  "RModelElement.java": "/** Generated from shared model D2/QVT_SimpleRDBMS. Source: R1 */\npublic class RModelElement {\n    private java.lang.String kind;\n}\n",
+  "Schema.java": "/** Generated from shared model D2/QVT_SimpleRDBMS. Source: - */\npublic class Schema {\n    private java.util.List<Table> tables;\n}\n",
+  "Table.java": "/** Generated from shared model D2/QVT_SimpleRDBMS. Source: - */\npublic class Table {\n    private Schema schema;\n    private Key key;\n}\n",
+  "Column.java": "/** Generated from shared model D2/QVT_SimpleRDBMS. Source: - */\npublic class Column {\n    private java.lang.String type;\n    private Table table;\n}\n",
+  "Key.java": "/** Generated from shared model D2/QVT_SimpleRDBMS. Source: - */\npublic class Key {\n    private ForeignKey foreignKey;\n}\n",
+  "ForeignKey.java": "/** Generated from shared model D2/QVT_SimpleRDBMS. Source: - */\npublic class ForeignKey {\n    private Column column;\n    private Key key;\n}\n"
+ }
+}

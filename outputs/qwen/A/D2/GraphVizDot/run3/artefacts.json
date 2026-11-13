@@ -1,0 +1,150 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "GraphElement",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "label",
+    "zIndex",
+    "parentGraph"
+   ],
+   "methods": [
+    {
+     "name": "createGraphElement",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "label",
+    "zIndex",
+    "shape",
+    "parentGraph"
+   ],
+   "methods": [
+    {
+     "name": "createNode",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5",
+    "R1",
+    "R9"
+   ]
+  },
+  {
+   "name": "DirectedArc",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "label",
+    "zIndex",
+    "sourceNode",
+    "targetNode",
+    "shape",
+    "parentGraph"
+   ],
+   "methods": [
+    {
+     "name": "createDirectedArc",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R6",
+    "R1",
+    "R9"
+   ]
+  },
+  {
+   "name": "Graph",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "dimension",
+    "elements"
+   ],
+   "methods": [
+    {
+     "name": "createGraph",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R9"
+   ]
+  },
+  {
+   "name": "SubGraph",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "value"
+   ],
+   "methods": [
+    {
+     "name": "createSubGraph",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Graph",
+   "target": "GraphElement",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "GraphElement",
+   "target": "Node",
+   "src": []
+  },
+  {
+   "source": "GraphElement",
+   "target": "DirectedArc",
+   "src": []
+  },
+  {
+   "source": "Graph",
+   "target": "SubGraph",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "GraphElement",
+   "target": "Graph",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GraphVizDot.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass GraphElement:\n    \"\"\"Source: R2, R4, R10\"\"\"\n    name: _t.Optional[str] = None\n    label: _t.Optional[str] = None\n    zIndex: _t.Optional[int] = None\n    parentGraph: _t.Optional[str] = None\n    nodes: _t.List[\"Node\"] = _dc.field(default_factory=list)\n    directedArcs: _t.List[\"DirectedArc\"] = _dc.field(default_factory=list)\n    graph: _t.Optional[\"Graph\"] = None\n\n    def createGraphElement(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R5, R1, R9\"\"\"\n    name: _t.Optional[str] = None\n    label: _t.Optional[str] = None\n    zIndex: _t.Optional[int] = None\n    shape: _t.Optional[str] = None\n    parentGraph: _t.Optional[str] = None\n\n    def createNode(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass DirectedArc:\n    \"\"\"Source: R6, R1, R9\"\"\"\n    name: _t.Optional[str] = None\n    label: _t.Optional[str] = None\n    zIndex: _t.Optional[int] = None\n    sourceNode: _t.Optional[str] = None\n    targetNode: _t.Optional[str] = None\n    shape: _t.Optional[str] = None\n    parentGraph: _t.Optional[str] = None\n\n    def createDirectedArc(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Graph:\n    \"\"\"Source: R3, R9\"\"\"\n    type: _t.Optional[str] = None\n    dimension: _t.Optional[int] = None\n    elements: _t.Optional[str] = None\n    graphElements: _t.List[\"GraphElement\"] = _dc.field(default_factory=list)\n    subGraphs: _t.List[\"SubGraph\"] = _dc.field(default_factory=list)\n\n    def createGraph(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass SubGraph:\n    \"\"\"Source: R8\"\"\"\n    name: _t.Optional[str] = None\n    value: _t.Optional[str] = None\n\n    def createSubGraph(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "GraphElement.java": "/** Generated from shared model D2/GraphVizDot. Source: R2, R4, R10 */\npublic class GraphElement {\n    private java.lang.String name;\n    private java.lang.String label;\n    private int zIndex;\n    private java.lang.String parentGraph;\n    private java.util.List<Node> nodes;\n    private java.util.List<DirectedArc> directedArcs;\n    private Graph graph;\n\n    /** Operation. */\n    public void createGraphElement() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Node.java": "/** Generated from shared model D2/GraphVizDot. Source: R5, R1, R9 */\npublic class Node {\n    private java.lang.String name;\n    private java.lang.String label;\n    private int zIndex;\n    private java.lang.String shape;\n    private java.lang.String parentGraph;\n\n    /** Operation. */\n    public void createNode() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "DirectedArc.java": "/** Generated from shared model D2/GraphVizDot. Source: R6, R1, R9 */\npublic class DirectedArc {\n    private java.lang.String name;\n    private java.lang.String label;\n    private int zIndex;\n    private java.lang.String sourceNode;\n    private java.lang.String targetNode;\n    private java.lang.String shape;\n    private java.lang.String parentGraph;\n\n    /** Operation. */\n    public void createDirectedArc() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Graph.java": "/** Generated from shared model D2/GraphVizDot. Source: R3, R9 */\npublic class Graph {\n    private java.lang.String type;\n    private int dimension;\n    private java.lang.String elements;\n    private java.util.List<GraphElement> graphElements;\n    private java.util.List<SubGraph> subGraphs;\n\n    /** Operation. */\n    public void createGraph() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "SubGraph.java": "/** Generated from shared model D2/GraphVizDot. Source: R8 */\npublic class SubGraph {\n    private java.lang.String name;\n    private java.lang.String value;\n\n    /** Operation. */\n    public void createSubGraph() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

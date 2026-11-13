@@ -1,0 +1,102 @@
+{
+ "actors": [
+  "Airport",
+  "Airline"
+ ],
+ "use_cases": [
+  {
+   "name": "AssignPassengerToFlight",
+   "actor": "Airline",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "DepartFlight",
+   "actor": "Airport",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "ManageFlights",
+   "actor": "Airline",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Flight",
+   "kind": "class",
+   "attributes": [
+    "departureTime",
+    "originAirport",
+    "maxPassengers"
+   ],
+   "methods": [
+    {
+     "name": "addPassenger",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Passenger",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "gender"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Airport",
+   "target": "Flight",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Flight",
+   "target": "Passenger",
+   "multiplicity_target": "1",
+   "src": [
+    "R8",
+    "R11"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Airport:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Flight:\n    def __init__(self, max_passengers: int, departure_time: 'Time', origin_airport: Airport):\n        self.max_passengers = max_passengers\n        self.departure_time = departure_time\n        self.origin_airport = origin_airport\n        self.passengers: List['Passenger'] = []\n\nclass Passenger:\n    def __init__(self, name: str, gender: str):\n        self.name = name\n        self.gender = gender\n\nclass Time:\n    def __init__(self, year: int, day: int, minute: int):\n        self.year = year\n        self.day = day\n        self.minute = minute\n\n# Additional classes and methods as per requirements\n# Airport has multiple flights departing from it\n# Each flight has exactly one origin airport\n# Each passenger is assigned to exactly one flight\n# Flight is connected to Passenger via a directed association\n# One end of the association is labeled 'passenger' and carries the multiplicity constraint '0..*'\n# A Passenger object can be associated with 0 or more Flight objects\n# An airline conducts any number of flights\n",
+ "java": {}
+}

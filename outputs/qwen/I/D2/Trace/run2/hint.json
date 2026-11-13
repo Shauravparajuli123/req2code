@@ -1,0 +1,219 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D2/Trace",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R3",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A Call has a string to store its method name and an integer to store the number of its database rows."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "A call has exactly one level."
+     }
+    ],
+    "name": "Call",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R2",
+     "R5",
+     "R6",
+     "R7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "Levels exist."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A trace has any number of levels."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A level has exactly one trace."
+     }
+    ],
+    "name": "Level",
+    "freq": 4
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R1",
+     "R5",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A trace has a string to store its name."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A trace has any number of levels."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A level has exactly one trace."
+     }
+    ],
+    "name": "Trace",
+    "freq": 3
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A Call has a string to store its method name and an integer to store the number of its database rows."
+     }
+    ],
+    "owner": "Call",
+    "name": "database row",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A Call has a string to store its method name and an integer to store the number of its database rows."
+     }
+    ],
+    "owner": "Call",
+    "name": "method name",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A trace has a string to store its name."
+     }
+    ],
+    "owner": "Trace",
+    "name": "name",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A call has exactly one level."
+     }
+    ],
+    "kind": "has",
+    "source": "Call",
+    "target": "Level",
+    "multiplicity_target": "1..*"
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A level has exactly one trace."
+     }
+    ],
+    "kind": "has",
+    "source": "Level",
+    "target": "Trace",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A trace has any number of levels."
+     }
+    ],
+    "kind": "has",
+    "source": "Trace",
+    "target": "Level",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Call",
+     "target": "Level",
+     "multiplicity": "1..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": []
+}

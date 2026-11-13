@@ -1,0 +1,49 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "ElementaryPartDef and ElementaryActDef classes are assumed to exist as per R3 and R4, but are not explicitly modeled."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class 'Condition' as per R1.",
+   "fix": "Add class 'Condition'."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class 'PartDefinition' as per R8 and R15.",
+   "fix": "Add class 'PartDefinition'."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class 'ActivityDefinition' as per R6, R7, R13, and R14.",
+   "fix": "Add class 'ActivityDefinition'."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Missing use case 'ActCompositeMember' as per R12 and R13.', "
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'CompositeParDef' and 'PartDefinition' as per R11.",
+   "fix": "Add relationship between 'CompositeParDef' and 'PartDefinition'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'CompositeActDef' and 'ActCompositeMember' as per R12.",
+   "fix": "Add relationship between 'CompositeActDef' and 'ActCompositeMember'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'ActivityDefinition' and 'ActCompositeMember' as per R13 and R14.",
+   "fix": "Add relationship between 'ActivityDefinition' and 'ActCompositeMember'."
+  }
+ ]
+}

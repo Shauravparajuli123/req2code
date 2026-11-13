@@ -1,0 +1,105 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  emailId : String
+  profile : String
+  schedule : String
+  activity : String
+  +giveEmailId()
+  +createAccount()
+  +browseList()
+  +viewLocation()
+  +viewMapDisplay()
+  +viewDisposalEvent()
+  +viewUserDocumentation()
+  +contactAdministrator()
+}
+class Profile {
+  favorites : String
+  activityHistory : String
+}
+class Facility {
+  type : String
+  openingHours : String
+  location : String
+  recyclingCenterInformation : String
+}
+class RecyclingCenterInformation {
+  materialAccepted : String
+  stats : String
+  schedule : String
+  contactInfo : String
+  +addRecyclingCenterInformation()
+  +onboardRecyclingCenter()
+  +replyToUserQuestions()
+  +communicateWithFacility()
+}
+class RecyclingFacility {
+  materialAccepted : String
+  stats : String
+  schedule : String
+  contactInfo : String
+  +addRecyclingCenterInformation()
+  +onboardRecyclingCenter()
+  +replyToUserQuestions()
+  +communicateWithFacility()
+}
+class RecyclingfacilityRepresentative {
+  materialAccepted : String
+  stats : String
+  schedule : String
+  +updateInformation()
+  +communicateWithSiteAdmin()
+}
+class Admin {
+  dashboard : String
+  +blockUser()
+  +viewUserErrorLog()
+  +communicateWithFacility()
+}
+class Dashboard {
+  usageStats : String
+  locations : String
+}
+class CompanyAccountant {
+  activityFees : String
+}
+class ActivityFee {
+  amount : double
+  description : String
+}
+class Developer {
+  apiAccess : boolean
+  uiDesign : boolean
+  uxLessons : boolean
+}
+class Executive {
+  companyPerformance : String
+}
+class Company {
+  website : String
+}
+class Location {
+  coordinates : String
+}
+class Material {
+}
+class Schedule {
+}
+class UserStats {
+}
+class UserErrorLog {
+}
+User "0..*" -- "1" RecyclingFacility : has
+RecyclingFacility "1" -- "1" Schedule : has
+User "1" -- "1" Profile : has
+Admin "1" -- "1" Dashboard : has
+Company "1" -- "1" CompanyAccountant : has
+RecyclingFacility "1" -- "1" RecyclingCenterInformation : has
+User "1" -- "1" UserStats : has
+Admin "1" -- "1" UserErrorLog : has
+RecyclingFacility "1" -- "1" Material : accepts
+User "0..*" -- "1" Schedule : has
+@enduml

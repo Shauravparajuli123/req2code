@@ -1,0 +1,87 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasColumn",
+     "use_case": "R5"
+    },
+    {
+     "name": "hasFkey",
+     "use_case": "R4"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5",
+    "R4"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Fkey",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "referencesTable",
+     "use_case": "R3"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Table",
+   "target": "Column",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Table",
+   "target": "Fkey",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "references",
+   "source": "Fkey",
+   "target": "Table",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass NameString(str):\n    pass\n\nclass Column:\n    def __init__(self, name: NameString):\n        self.name = name\n\nclass Fkey:\n    def __init__(self, referenced_table: 'Table'):\n        self.referenced_table = referenced_table\n\nclass Table:\n    def __init__(self, name: NameString):\n        self.name = name\n        self.columns: List[Column] = []\n        self.fkeys: List[Fkey] = []\n",
+ "java": {}
+}

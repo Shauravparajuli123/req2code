@@ -1,0 +1,72 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "Contact",
+    "src": [
+     "R1",
+     "R5",
+     "R6"
+    ]
+   },
+   {
+    "name": "LandLine",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "name": "CellPhone",
+    "src": [
+     "R6"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Contact",
+    "name": "name",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "LandLine",
+    "name": "phoneNumber",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "owner": "CellPhone",
+    "name": "phoneNumber",
+    "src": [
+     "R3"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Contact",
+    "target": "LandLine",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Contact",
+    "target": "CellPhone",
+    "src": [
+     "R6"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

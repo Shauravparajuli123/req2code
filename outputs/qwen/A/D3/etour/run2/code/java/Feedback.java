@@ -1,0 +1,9 @@
+/** Generated from shared model D3/etour. Source: UC54 */
+public class Feedback {
+    private java.lang.String comment;
+
+    /** Operation. */
+    public void editComment() {
+        throw new UnsupportedOperationException();
+    }
+}

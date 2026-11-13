@@ -1,0 +1,201 @@
+{
+ "case": "D2/BQL",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "location",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "comments",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Entry",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3",
+      "R9",
+      "R10"
+     ]
+    },
+    {
+     "name": "allFields",
+     "type": "boolean",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "BqlModel",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "queries",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "entries",
+     "type": "String",
+     "src": [
+      "R7",
+      "R8",
+      "R9",
+      "R10"
+     ]
+    },
+    {
+     "name": "fields",
+     "type": "String",
+     "src": [
+      "R8",
+      "R9",
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Query",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "entries",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Field",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4",
+      "R8",
+      "R9",
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C3",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C3",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C2",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

@@ -1,0 +1,274 @@
+{
+ "case": "D2/MavenProject",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Game",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Project",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "identifier",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "artifactIdentifier",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "BuildConfiguration",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "defaultGoal",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "pathToUnitTestSourceDirectory",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Resource",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "targetPath",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "directory",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "excludes",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "MailingList",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "subscribeString",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "archiveString",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Contributor",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Person",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "url",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "organizationUrl",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "timeZone",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Developer",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "identifier",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "0..1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C5",
+   "mult_source": "1..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

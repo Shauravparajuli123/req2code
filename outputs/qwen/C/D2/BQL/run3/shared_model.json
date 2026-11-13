@@ -1,0 +1,197 @@
+{
+ "case": "D2/BQL",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "location",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "comments",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Entry",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "allFields",
+     "type": "boolean",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Field",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4",
+      "R8",
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "BqlModel",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "queries",
+     "type": "String",
+     "src": [
+      "R7",
+      "R10"
+     ]
+    },
+    {
+     "name": "entries",
+     "type": "String",
+     "src": [
+      "R7",
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Query",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "entries",
+     "type": "String",
+     "src": [
+      "R7",
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Predicate",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "entry",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C4",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C4",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C4",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a BqlModel can have multiple Queries, Predicates, and Entries, but does not specify the exact relationships between these elements."
+  }
+ ],
+ "open_tags": []
+}

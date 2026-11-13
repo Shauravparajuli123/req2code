@@ -1,0 +1,140 @@
+{
+ "case": "D2/Architectural_Description",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "ArchitectureDescription",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "ArchitectureView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R12"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ArchitectureViewPoint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "MainView",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "described_by",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "selects",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "1..*",
+   "mult_target": "1",
+   "label": "conforms_to",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C4",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "defines",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C5",
+   "target": "C3",
+   "mult_source": "1..*",
+   "mult_target": "1",
+   "label": "projected_on",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The assumption is that 'ArchitectureView' is a component of the package 'ArchitecturalDescription' and is not directly related to 'Architecture' as per the given requirements."
+  }
+ ],
+ "open_tags": []
+}

@@ -1,0 +1,190 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DescribeDate",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    "day",
+    "year"
+   ],
+   "methods": [
+    {
+     "name": "DescribeDate",
+     "use_case": "DescribeDate"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Control",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "date"
+   ],
+   "methods": [
+    {
+     "name": "DescribeDate",
+     "use_case": "DescribeDate"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "ControlsSequence",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addControl",
+     "use_case": "R8"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "ControlType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "ControlsObject",
+   "kind": "class",
+   "attributes": [
+    "role"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Bug",
+   "kind": "class",
+   "attributes": [
+    "number",
+    "description",
+    "originator",
+    "commentsanswer",
+    "closedate"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "BugTracking",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "SoftwareQualityControl",
+   "kind": "class",
+   "attributes": [
+    "bugTracking"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "SoftwareBugTrackingSystem",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Control",
+   "target": "ControlsSequence",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ControlsObject",
+   "target": "ControlsSequence",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Bug",
+   "target": "BugTracking",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Control",
+   "target": "Date",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "class Date:\n    def __init__(self, day: int, year: int):\n        self.day = day\n        self.year = year\n\nclass Control:\n    def __init__(self, type: ControlType, date: Date):\n        self.type = type\n        self.date = date\n\nclass ControlsSequence:\n    def __init__(self):\n        self.controls = []\n    def addControl(self, control: Control):\n        self.controls.append(control)\n\nclass ControlType:\n    pass\n\nclass ControlsObject:\n    def __init__(self, role: str):\n        self.role = role\n\nclass Bug:\n    def __init__(self, number: int, description: str, originator: str, commentsanswer: str, closedate: Date):\n        self.number = number\n        self.description = description\n        self.originator = originator\n        self.commentsanswer = commentsanswer\n        self.closedate = closedate\n\nclass BugTracking:\n    pass\n\nclass SoftwareQualityControl:\n    def __init__(self, bugTracking: BugTracking):\n        self.bugTracking = bugTracking\n\nclass SoftwareBugTrackingSystem:\n    pass\n\nclass Architecture:\n    pass",
+ "java": {}
+}

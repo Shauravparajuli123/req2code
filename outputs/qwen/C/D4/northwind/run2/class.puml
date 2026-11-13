@@ -1,0 +1,101 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Company {
+  name : String
+  phoneNumbers : String
+  address : String
+  state : String
+  zipCode : String
+  website : String
+  type : String
+  taxStatus : String
+  contacts : String
+  +addContact()
+  +removeContact()
+}
+class Contact {
+  firstName : String
+  lastName : String
+  primaryPhoneNumber : String
+  secondaryPhoneNumber : String
+  email : String
+  jobTitle : String
+  notes : String
+}
+class Employee {
+  firstName : String
+  lastName : String
+  phoneNumbers : String
+  jobTitle : String
+  email : String
+  supervisor : String
+  privileges : String
+  +assignSupervisor()
+  +removeSupervisor()
+  +addPrivilege()
+  +removePrivilege()
+}
+class Product {
+  code : String
+  name : String
+  description : String
+  category : String
+  unitCost : double
+  retailPrice : double
+  inventory : int
+  reorderLevel : int
+  targetLevel : int
+  minReorderQuantity : int
+  discontinued : boolean
+  vendors : String
+  +addVendor()
+  +removeVendor()
+}
+class Order {
+  date : LocalDate
+  customer : String
+  employee : String
+  status : String
+  shipper : String
+  taxRate : double
+  taxStatus : String
+  invoiceDate : LocalDate
+  paymentMethod : String
+  paymentDate : LocalDate
+  details : String
+  +addDetail()
+  +removeDetail()
+  +updateStatus()
+}
+class OrderDetailItem {
+  product : String
+  quantity : int
+  unitPrice : double
+  discount : double
+  status : String
+  +updateQuantity()
+  +updateUnitPrice()
+  +updateDiscount()
+  +updateStatus()
+}
+class PurchaseOrder {
+  date : LocalDate
+  vendor : String
+  employee : String
+  approver : String
+  status : String
+  details : String
+  +addDetail()
+  +removeDetail()
+  +updateStatus()
+}
+class PurchaseOrderDetailItem {
+  product : String
+  quantity : int
+  unitPrice : double
+}
+Company "0..*" -- "1" Contact : has
+Order "1" -- "1..*" OrderDetailItem : contains
+PurchaseOrder "1" -- "1..*" PurchaseOrderDetailItem : contains
+@enduml

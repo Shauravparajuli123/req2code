@@ -1,0 +1,114 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Moderator" as A1
+actor "Agency" as A2
+actor "Tourist" as A3
+actor "Visitor" as A4
+actor "GuestUser" as A5
+actor "RegisteredUser" as A6
+actor "AgencyOperator" as A7
+actor "RestaurantOperator" as A8
+rectangle "etour" {
+  usecase "Delete Cultural Object" as UC1
+  usecase "Insert Cultural Object" as UC2
+  usecase "Change Cultural Object Data" as UC3
+  usecase "Search Cultural Heritage" as UC4
+  usecase "View Cultural Object Details" as UC5
+  usecase "Delete Refreshment Point" as UC6
+  usecase "Activate Convention At Refreshment Point" as UC7
+  usecase "Edit Refreshment Point Data" as UC8
+  usecase "Search Refreshment Point" as UC9
+  usecase "View Refreshment Point Details" as UC10
+  usecase "View Refreshment Point History" as UC11
+  usecase "View Tourist Account Details" as UC12
+  usecase "Enable Disable Tourist Account" as UC13
+  usecase "Search Tourist Account" as UC14
+  usecase "Change Data" as UC15
+  usecase "Delete Account" as UC16
+  usecase "Change Image" as UC17
+  usecase "Check Point" as UC18
+  usecase "Delete Banner Ad" as UC19
+  usecase "Insert Banner" as UC20
+  usecase "Insert News" as UC21
+  usecase "Delete News" as UC22
+  usecase "View Feedback" as UC23
+  usecase "View Report" as UC24
+  usecase "Edit Comment" as UC25
+  usecase "Search Site" as UC26
+  usecase "Remove Search Tag" as UC27
+  usecase "Ask Search Tag" as UC28
+  usecase "Insert Tag Search" as UC29
+  usecase "Ensure User" as UC30
+  usecase "Require Creation" as UC31
+  usecase "Research Heritage" as UC32
+  usecase "Supply Login" as UC33
+  usecase "Change Password" as UC34
+  usecase "End Session" as UC35
+  usecase "Change Menu" as UC36
+  usecase "Delete Menu" as UC37
+  usecase "Change Data Point" as UC38
+  usecase "Require Convention" as UC39
+  usecase "View Statistic" as UC40
+  usecase "Edit Search Preference" as UC41
+  usecase "Edit Preferences" as UC42
+  usecase "View List" as UC43
+  usecase "Insert Site" as UC44
+  usecase "Delete Site" as UC45
+  usecase "Insert Feedback" as UC46
+  usecase "Cancel Feedback" as UC47
+  usecase "Get Position" as UC48
+  usecase "Advanced Search" as UC49
+  usecase "View Detail" as UC50
+}
+A2 --> UC1
+A2 --> UC2
+A2 --> UC3
+A2 --> UC4
+A2 --> UC5
+A2 --> UC6
+A2 --> UC7
+A2 --> UC8
+A2 --> UC9
+A2 --> UC10
+A2 --> UC11
+A2 --> UC12
+A2 --> UC13
+A2 --> UC14
+A3 --> UC15
+A2 --> UC16
+A2 --> UC17
+A2 --> UC18
+A2 --> UC19
+A2 --> UC20
+A2 --> UC21
+A2 --> UC22
+A2 --> UC23
+A2 --> UC24
+A2 --> UC25
+A5 --> UC26
+A7 --> UC27
+A7 --> UC28
+A7 --> UC29
+A5 --> UC30
+A5 --> UC31
+A5 --> UC32
+A5 --> UC33
+A7 --> UC34
+A6 --> UC35
+A8 --> UC36
+A8 --> UC37
+A8 --> UC38
+A8 --> UC39
+A8 --> UC40
+A3 --> UC41
+A3 --> UC42
+A3 --> UC43
+A3 --> UC44
+A3 --> UC45
+A3 --> UC46
+A3 --> UC47
+A3 --> UC48
+A3 --> UC49
+A3 --> UC50
+@enduml

@@ -1,0 +1,40 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Schema {
+}
+class Table {
+  name : String
+  schema : String
+  keys : String
+  columns : String
+  +addKey()
+  +addColumn()
+}
+class Column {
+  name : String
+  type : String
+  table : String
+  foreignKeys : String
+  +addForeignKey()
+}
+class Key {
+  name : String
+  table : String
+  oppositeForeignKeys : String
+  +addOppositeForeignKey()
+}
+class ForeignKey {
+  name : String
+  columns : String
+  key : String
+  +addColumn()
+}
+Schema "1" *-- "0..*" Table : contains
+Table "1" -- "1" Schema : is part of
+Table "0..*" o-- "1" Key : contains
+Table "1" *-- "1..*" Column : contains
+Column "0..*" -- "0..*" ForeignKey : is associated with
+Key "1" -- "1" ForeignKey : refers to
+ForeignKey "0..*" -- "0..*" Column : concerns
+@enduml

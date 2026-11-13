@@ -1,0 +1,140 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "LocatedElement",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "Outline",
+    "src": [
+     "R2",
+     "R7",
+     "R8",
+     "R9"
+    ]
+   },
+   {
+    "name": "Node",
+    "src": [
+     "R3",
+     "R7",
+     "R8",
+     "R9"
+    ]
+   },
+   {
+    "name": "Label",
+    "src": [
+     "R4",
+     "R10"
+    ]
+   },
+   {
+    "name": "LabelSuite",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "name": "Map",
+    "src": [
+     "R6",
+     "R9"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "LocatedElement",
+    "name": "location",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "owner": "Outline",
+    "name": "extension",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "owner": "Node",
+    "name": "name",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "owner": "Node",
+    "name": "icon",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "owner": "Label",
+    "name": "label",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "owner": "LabelSuite",
+    "name": "label",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "owner": "Map",
+    "name": "mapString",
+    "src": [
+     "R6"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "has",
+    "source": "Outline",
+    "target": "Node",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "kind": "has",
+    "source": "Node",
+    "target": "Label",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "kind": "has",
+    "source": "Node",
+    "target": "Map",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "kind": "has",
+    "source": "Label",
+    "target": "LabelSuite",
+    "src": [
+     "R10"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

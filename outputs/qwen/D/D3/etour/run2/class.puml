@@ -1,0 +1,137 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class CulturalHeritage {
+  id : int
+  name : String
+  +deleteCulturalHeritage()
+  +createCulturalHeritage()
+  +updateCulturalHeritage()
+  +searchCulturalHeritage()
+  +viewCulturalHeritageDetails()
+  +viewCulturalHeritageHistory()
+}
+class RefreshmentPoint {
+  id : int
+  name : String
+  banners : String
+  +deleteRefreshmentPoint()
+  +createRefreshmentPoint()
+  +updateRefreshmentPoint()
+  +searchRefreshmentPoint()
+  +viewRefreshmentPointDetails()
+  +viewRefreshmentPointHistory()
+  +checkBannerLimit()
+}
+class TouristAccount {
+  id : int
+  name : String
+  +viewTouristAccountDetails()
+  +enableDisableTouristAccount()
+  +searchTouristAccount()
+}
+class Tourist {
+  accountData : String
+  searchPreferences : String
+  personalFavorites : String
+  +modifyData()
+  +updateSearchPreferences()
+  +updatePersonalData()
+  +viewPersonalFavorites()
+  +viewVisitedSites()
+  +addBookmark()
+  +removeBookmark()
+  +insertFeedback()
+}
+class Banner {
+  image : String
+  +changeImage()
+  +insertBanner()
+  +changeBannerImage()
+  +removeBanner()
+}
+class News {
+  content : String
+  +insertNews()
+  +deleteNews()
+  +modifyNews()
+}
+class Site {
+  feedbacks : String
+  id : int
+  name : String
+  +viewFeedbacks()
+  +viewStatisticalReport()
+  +editComment()
+}
+class Feedback {
+  comments : String
+  comment : String
+  siteId : int
+  +uploadFeedback()
+  +editComment()
+}
+class Comment {
+  +editComment()
+}
+class SearchTag {
+  tag : String
+  +removeSearchTag()
+  +enterSearchTag()
+}
+class UserAccount {
+  password : String
+  +changePassword()
+  +login()
+  +logout()
+}
+class Login {
+  status : String
+  +verifyLogin()
+  +loginError()
+  +logout()
+}
+class PointOfRestaurant {
+  banners : String
+}
+class Game {
+  name : String
+  +createGame()
+}
+class Restaurant {
+  menu : String
+  dataPoints : String
+  conventions : String
+  statistics : String
+  +createMenu()
+  +deleteMenu()
+  +updateDataPoint()
+  +requestConvention()
+}
+class Menu {
+  day : String
+}
+class DataPoint {
+}
+class Convention {
+}
+class Statistics {
+}
+class SearchPreference {
+}
+class Bookmark {
+}
+class User {
+  userId : int
+  username : String
+}
+RefreshmentPoint "1" -- "0..*" Banner : has
+Site "1" -- "0..*" Feedback : has
+Feedback "1" -- "0..*" Comment : has
+SearchTag "0..*" -- "1" UserAccount : has
+Banner "1..*" -- "1" PointOfRestaurant : is associated with
+Restaurant "1" -- "1..*" Menu : has
+Restaurant "1" -- "1..*" DataPoint : has
+Restaurant "1" -- "0..*" Convention : has
+Restaurant "1" -- "1" Statistics : has
+@enduml

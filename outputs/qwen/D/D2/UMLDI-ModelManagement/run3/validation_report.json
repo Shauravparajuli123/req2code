@@ -1,0 +1,100 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each generalizable element is linked to one and only one generalization as per R15."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'CoreModel' does not have attributes 'name' and 'containsElements' as per R1, R2, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15.",
+   "fix": "Add 'name' and 'containsElements' attributes to class 'CoreModel'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'ModelElement' does not have 'isASpecification' attribute as per R2.",
+   "fix": "Add 'isASpecification' attribute to class 'ModelElement'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Feature' does not have 'ownerScope' attribute as per R6.",
+   "fix": "Add 'ownerScope' attribute to class 'Feature'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'GeneralizableElement' does not have 'isARoot' and 'isAbstract' attributes as per R3.",
+   "fix": "Add 'isARoot' and 'isAbstract' attributes to class 'GeneralizableElement'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Generalization' does not have 'discriminator' and 'parent' attributes as per R8.",
+   "fix": "Add 'discriminator' and 'parent' attributes to class 'Generalization'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Classifier' does not have 'powerTypeRanges' attribute as per R12.",
+   "fix": "Add 'powerTypeRanges' attribute to class 'Classifier'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Classifier' does not have 'owner' attribute as per R13.",
+   "fix": "Add 'owner' attribute to class 'Classifier'."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'CoreModel' does not have 'containsNamespaces' and 'containsClassifiers' and 'containsFeatures' and 'containsGeneralizableElements' attributes as per R4, R5, R6, R10.",
+   "fix": "Add 'containsNamespaces', 'containsClassifiers', 'containsFeatures', and 'containsGeneralizableElements' attributes to class 'CoreModel'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'CoreModel' and 'Namespace' is missing as per R4.",
+   "fix": "Add association between 'CoreModel' and 'Namespace'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'CoreModel' and 'Classifier' is missing as per R5.",
+   "fix": "Add association between 'CoreModel' and 'Classifier'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'CoreModel' and 'Feature' is missing as per R6.",
+   "fix": "Add association between 'CoreModel' and 'Feature'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'CoreModel' and 'GeneralizableElement' is missing as per R10.",
+   "fix": "Add association between 'CoreModel' and 'GeneralizableElement'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'CoreModel' and 'Generalization' is missing as per R14.",
+   "fix": "Add association between 'CoreModel' and 'Generalization'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Namespace' and 'ModelElement' is missing as per R11.",
+   "fix": "Add association between 'Namespace' and 'ModelElement'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Classifier' and 'GeneralizableElement' is missing as per R12.",
+   "fix": "Add association between 'Classifier' and 'GeneralizableElement'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Feature' and 'Classifier' is missing as per R13.",
+   "fix": "Add association between 'Feature' and 'Classifier'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Generalization' and 'GeneralizableElement' is missing as per R14.",
+   "fix": "Add association between 'Generalization' and 'GeneralizableElement'."
+  }
+ ]
+}

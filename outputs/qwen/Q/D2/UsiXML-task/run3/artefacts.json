@@ -1,0 +1,96 @@
+{
+ "actors": [
+  "operator"
+ ],
+ "use_cases": [
+  {
+   "name": "describe task",
+   "actor": "operator",
+   "src": [
+    "R6",
+    "R1"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "operator",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "",
+   "actor": "operator",
+   "src": [
+    "R8",
+    "R10"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Task",
+   "kind": "class",
+   "attributes": [
+    "identifier",
+    "category",
+    "taskType",
+    "importance",
+    "complexityLevel",
+    "centrality"
+   ],
+   "methods": [
+    {
+     "name": "describeTask",
+     "use_case": "describe task"
+    },
+    {
+     "name": "actOnTask",
+     "use_case": "act on task"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6",
+    "R8"
+   ]
+  },
+  {
+   "name": "Operator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "associateExpression",
+     "use_case": "associate expression"
+    },
+    {
+     "name": "actOnTask",
+     "use_case": "act on task"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R7",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Operator",
+   "target": "Task",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R8",
+    "R10"
+   ]
+  }
+ ],
+ "python": "class Task:\n    def __init__(self, identifier: str, category: str, taskType: str, importance: int, complexityLevel: int, centrality: int):\n        self.identifier = identifier\n        self.category = category\n        self.taskType = taskType\n        self.importance = importance\n        self.complexityLevel = complexityLevel\n        self.centrality = centrality\n\n    def describeTask(self):\n        raise NotImplementedError()\n\n    def actOnTask(self):\n        raise NotImplementedError()\n\nclass Operator:\n    def __init__(self):\n        pass\n\n    def associateExpression(self):\n        raise NotImplementedError()\n\n    def actOnTask(self, task: Task):\n        raise NotImplementedError()",
+ "java": {}
+}

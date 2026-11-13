@@ -1,0 +1,76 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Employee" as A1
+actor "Manager" as A2
+actor "OfficeEmployee" as A3
+actor "Applicant" as A4
+rectangle "grocery" {
+  usecase "Receive Salary Statement" as UC1
+  usecase "Send Salary Statement" as UC2
+  usecase "Automate Payment System" as UC3
+  usecase "Enable Option" as UC4
+  usecase "Outsource Part" as UC5
+  usecase "Receive Notification" as UC6
+  usecase "Express Hour" as UC7
+  usecase "File Complaint" as UC8
+  usecase "Notify Hiring Process" as UC9
+  usecase "Have Overview" as UC10
+  usecase "Have System" as UC11
+  usecase "Hire Employee" as UC12
+  usecase "Semi Scheduling Process" as UC13
+  usecase "Have Ability" as UC14
+  usecase "Authorize Schedule" as UC15
+  usecase "Notify Adjustment" as UC16
+  usecase "Categorize Complaint" as UC17
+  usecase "Prioritize Complaint" as UC18
+  usecase "View Complaint" as UC19
+  usecase "Respond Complaint" as UC20
+  usecase "Choose Email" as UC21
+  usecase "Choose Payment" as UC22
+  usecase "View Schedule" as UC23
+  usecase "View Statement" as UC24
+  usecase "View Contract" as UC25
+  usecase "View Certificate" as UC26
+  usecase "Change Information" as UC27
+  usecase "Register Account" as UC28
+  usecase "Reset Password" as UC29
+  usecase "Use System" as UC30
+  usecase "Verify Work Hour" as UC31
+  usecase "Share Payment Handler" as UC32
+  usecase "Navigate Application" as UC33
+}
+A1 --> UC1
+A2 --> UC2
+A2 --> UC3
+A2 --> UC4
+A2 --> UC5
+A1 --> UC6
+A1 --> UC7
+A1 --> UC8
+A2 --> UC9
+A2 --> UC10
+A2 --> UC11
+A2 --> UC12
+A2 --> UC13
+A2 --> UC14
+A2 --> UC15
+A2 --> UC16
+A3 --> UC17
+A3 --> UC18
+A3 --> UC19
+A3 --> UC20
+A1 --> UC21
+A1 --> UC22
+A1 --> UC23
+A1 --> UC24
+A2 --> UC25
+A2 --> UC26
+A1 --> UC27
+A4 --> UC28
+A1 --> UC29
+A1 --> UC30
+A1 --> UC31
+A1 --> UC32
+A1 --> UC33
+@enduml

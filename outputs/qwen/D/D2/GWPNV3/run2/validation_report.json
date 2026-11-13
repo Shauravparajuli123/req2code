@@ -1,0 +1,90 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each place must be associated to exactly one net"
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Net'",
+   "fix": "Add class 'Net'"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Place'",
+   "fix": "Add class 'Place'"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Transition'",
+   "fix": "Add class 'Transition'"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'PTArc'",
+   "fix": "Add class 'PTArc'"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'TPArc'",
+   "fix": "Add class 'TPArc'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between 'PetriNet' and 'Net'",
+   "fix": "Add association PetriNet -> Net [1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between 'PetriNet' and 'Place'",
+   "fix": "Add association PetriNet -> Place [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between 'PetriNet' and 'Transition'",
+   "fix": "Add association PetriNet -> Transition [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between 'Net' and 'Place'",
+   "fix": "Add association Net -> Place [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing association between 'Net' and 'TPArc'",
+   "fix": "Add association Net -> TPArc [1..0..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing generalization between 'PTArc' and 'TPArc'",
+   "fix": "Add generalization PTArc -> TPArc [*..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'Place' and 'Net'",
+   "fix": "Add association Place -> Net [1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'PTArc' and 'Transition'",
+   "fix": "Add association PTArc -> Transition [1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'TPArc' and 'Transition'",
+   "fix": "Add association TPArc -> Transition [1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'PTArc' and 'TPArc'",
+   "fix": "Add association PTArc -> TPArc [1..1]"
+  }
+ ]
+}

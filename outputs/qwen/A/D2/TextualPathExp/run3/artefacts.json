@@ -1,0 +1,99 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "TextualPathExp",
+   "kind": "class",
+   "attributes": [
+    "path"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Path",
+   "kind": "class",
+   "attributes": [
+    "transitions"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "AlternativeTrans",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "PrimitiveTrans",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "source": "TextualPathExp",
+   "target": "Path",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "source": "Path",
+   "target": "Transition",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "source": "TextualPathExp",
+   "target": "Path",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "source": "Path",
+   "target": "AlternativeTrans",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "AlternativeTrans",
+   "target": "Transition",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/TextualPathExp.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass TextualPathExp:\n    \"\"\"Source: R1\"\"\"\n    path: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Path:\n    \"\"\"Source: -\"\"\"\n    transitions: _t.Optional[str] = None\n    alternativeTranses: _t.List[\"AlternativeTrans\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: -\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass AlternativeTrans(Transition):\n    \"\"\"Source: R8\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass PrimitiveTrans:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n",
+ "java": {
+  "TextualPathExp.java": "/** Generated from shared model D2/TextualPathExp. Source: R1 */\npublic class TextualPathExp {\n    private java.lang.String path;\n}\n",
+  "Path.java": "/** Generated from shared model D2/TextualPathExp. Source: - */\npublic class Path {\n    private java.lang.String transitions;\n    private java.util.List<AlternativeTrans> alternativeTranses;\n}\n",
+  "Transition.java": "/** Generated from shared model D2/TextualPathExp. Source: - */\npublic class Transition {\n}\n",
+  "AlternativeTrans.java": "/** Generated from shared model D2/TextualPathExp. Source: R8 */\npublic class AlternativeTrans extends Transition {\n    private java.lang.String name;\n}\n",
+  "PrimitiveTrans.java": "/** Generated from shared model D2/TextualPathExp. Source: - */\npublic class PrimitiveTrans {\n    private java.lang.String name;\n}\n"
+ }
+}

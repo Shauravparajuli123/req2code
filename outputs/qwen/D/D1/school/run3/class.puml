@@ -1,0 +1,145 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Guardian {
+  child : String
+  mentor : String
+  +directMessage()
+  +fillInAbsence()
+  +receiveNotification()
+  +viewInformation()
+}
+class Student {
+  teacher : String
+  mentor : String
+  class_ : String
+  dueDate : LocalDate
+  +directMessage()
+  +handHomework()
+  +viewTimetable()
+  +viewDLM()
+  +receiveNotification()
+  +viewAccountInformation()
+  +viewContactInformation()
+  +changePreferences()
+}
+class Teacher {
+  class_ : String
+  mentor : String
+  +directMessage()
+  +addPageToDLM()
+  +assignDLM()
+  +assignDueDate()
+  +automaticallyGradeDLM()
+  +createDLM()
+  +editDLMPage()
+  +makeSubmissionElements()
+  +addAnswerToDLM()
+  +confirmFileUpload()
+  +recordDisciplinaryActions()
+  +recordBehavior()
+  +recordGrades()
+  +recordAttendance()
+  +viewSubmissions()
+  +viewClassPerformance()
+  +setDLMAppearanceDate()
+  +setDLMAvailability()
+  +uploadFiles()
+  +viewStudentData()
+  +viewClassAttendance()
+}
+class Administrator {
+  user : String
+  +sendDirectMessage()
+  +assignSchedules()
+  +createAccount()
+  +editAccount()
+  +viewPerformanceData()
+  +receiveNotification()
+  +registerChanges()
+  +registerAbsence()
+}
+class DLM {
+  pages : String
+  dueDate : LocalDate
+  submissionElements : String
+  answers : String
+  +addPage()
+  +assignDueDate()
+  +automaticallyGrade()
+  +create()
+  +editPage()
+  +makeSubmissionElements()
+  +addAnswer()
+}
+class File {
+  name : String
+  uploadDate : LocalDate
+  +upload()
+}
+class Message {
+  sender : String
+  receiver : String
+  content : String
+  +send()
+}
+class Notification {
+  message : String
+  +receive()
+}
+class Schedule {
+  user : String
+  date : LocalDate
+  time : String
+  +assign()
+  +uploadSchedule()
+}
+class Submission {
+  content : String
+  date : LocalDate
+  +submit()
+}
+class Timetable {
+  date : LocalDate
+  class_ : String
+  +view()
+}
+class User {
+  username : String
+  password : String
+  +resetPassword()
+}
+class Class {
+  students : String
+  teacher : String
+  +view()
+}
+class Account {
+  role : String
+  details : String
+  +setRole()
+  +viewDetails()
+  +viewStatistics()
+}
+class BroadcastMessage {
+  message : String
+  recipients : String
+  +sendBroadcastMessage()
+}
+Guardian "1" -- "0..*" Teacher : can message
+Guardian "1" -- "0..*" Administrator : can message
+Student "1" -- "0..*" Teacher : can message
+Student "1" -- "1" Class : participates in
+Teacher "1" -- "1" Class : teaches
+Teacher "1" -- "0..*" Student : mentors
+Administrator "1" -- "1" User : creates
+Administrator "1" -- "1" Schedule : assigns
+Student "1" -- "0..*" Notification : receives
+Teacher "1" -- "0..*" Notification : receives
+Administrator "1" -- "0..*" Notification : receives
+Student "1" -- "1" Timetable : views
+Teacher "1" -- "1" Timetable : views
+Teacher "1" -- "1" DLM : creates
+Student "1" -- "1" DLM : accesses
+Administrator "1" -- "1..*" BroadcastMessage : sends
+@enduml

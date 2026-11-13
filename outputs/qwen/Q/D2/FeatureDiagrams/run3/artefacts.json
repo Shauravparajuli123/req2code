@@ -1,0 +1,126 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "reference"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "description",
+    "name",
+    "key"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Xorgroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "Orgroup",
+   "kind": "class",
+   "attributes": [
+    "preliminary"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R13"
+   ]
+  },
+  {
+   "name": "Child",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Attribute",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Xorgroup",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Node",
+   "target": "Orgroup",
+   "multiplicity_target": "1",
+   "src": [
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Xorgroup",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Orgroup",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6",
+    "R13"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Node:\n    def __init__(self, description: str, reference: Attribute):\n        self.description = description\n        self.reference = reference\n        self.xorgroups: List[Xorgroup] = []\n        self.orgroups: List[Orgroup] = []\n\n    def add_xorgroup(self, xorgroup: Xorgroup) -> None:\n        self.xorgroups.append(xorgroup)\n\n    def add_orgroup(self, orgroup: Orgroup) -> None:\n        self.orgroups.append(orgroup)\n\n    def __str__(self) -> str:\n        return self.description\n\n    src: List[str] = ['R1', 'R9', 'R10', 'R11']\n\nclass Attribute:\n    def __init__(self, description: str, name: str, key: bool):\n        self.description = description\n        self.name = name\n        self.key = key\n\n    src: List[str] = ['R2']\n\nclass Xorgroup:\n    def __init__(self, preliminary: bool):\n        self.preliminary = preliminary\n\n    def add_node(self, node: Node) -> None:\n        pass\n\n    src: List[str] = ['R5', 'R8', 'R12']\n\nclass Orgroup:\n    def __init__(self, preliminary: bool):\n        self.preliminary = preliminary\n\n    def add_node(self, node: Node) -> None:\n        pass\n\n    src: List[str] = ['R6', 'R13']\n\nclass Child:\n    def __init__(self):\n        pass\n\n    def add_node(self, node: Node) -> None:\n        pass\n\n    src: List[str] = ['R10', 'R11']",
+ "java": {}
+}

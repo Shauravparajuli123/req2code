@@ -1,0 +1,20 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Trace' is missing an attribute to store the name as per R1.",
+   "fix": "Add a String attribute to class 'Trace'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Trace' and 'Level' is not correctly defined as per R5 and R6. 'Trace' should have a one-to-many relationship with 'Level', and 'Level' should have a one-to-one relationship with 'Trace'.",
+   "fix": "Change the relationship from 'association Trace -> Level [0..*..1]' to 'aggregation Trace has* Level' and 'composition Level has1 Trace'."
+  }
+ ]
+}

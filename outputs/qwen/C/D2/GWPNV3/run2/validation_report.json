@@ -1,0 +1,50 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a Petri net model contains at least one net, as stated in R3."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Place' in requirements R1, R7, R8",
+   "fix": "Add class 'Place' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Transition' in requirements R2, R9, R10",
+   "fix": "Add class 'Transition' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Arc' in requirements R4, R8",
+   "fix": "Add class 'Arc' to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'Place' and 'Net' in requirement R7",
+   "fix": "Add association Net -> Place [1..1] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'Transition' and 'Net' in requirement R9",
+   "fix": "Add association Net -> Transition [1..1] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'Place' and 'Arc' in requirement R8",
+   "fix": "Add association Place -> Arc [0..*] to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'Arc' and 'Transition' in requirement R12 and R13",
+   "fix": "Add association Arc -> Transition [0..1] to the model."
+  }
+ ]
+}

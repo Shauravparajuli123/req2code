@@ -1,0 +1,83 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Call",
+   "actor": "User",
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Call",
+   "kind": "class",
+   "attributes": [
+    "method_name",
+    "database_row",
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "verbObject",
+     "use_case": "Create Call"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Level",
+   "kind": "class",
+   "attributes": [
+    "trace",
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "name": "Trace",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Call",
+   "target": "Level",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Level",
+   "target": "Trace",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "class Call:\n    def __init__(self, method_name, database_row, name):\n        self.method_name = method_name\n        self.database_row = database_row\n        self.name = name\n\nclass Level:\n    def __init__(self, trace, value):\n        self.trace = trace\n        self.value = value\n\nclass Trace:\n    def __init__(self, name):\n        self.name = name",
+ "java": {}
+}

@@ -1,0 +1,88 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Employee" as A1
+actor "Manager" as A2
+actor "OfficeEmployee" as A3
+actor "Applicant" as A4
+rectangle "grocery" {
+  usecase "Receive Salary Statement" as UC1
+  usecase "Send Salary Statement" as UC2
+  usecase "Enable Option" as UC3
+  usecase "Automate Payment System" as UC4
+  usecase "Outsource Part" as UC5
+  usecase "Receive Notification" as UC6
+  usecase "Express Working Hours" as UC7
+  usecase "Semi Scheduling Process" as UC8
+  usecase "Manually Edit Schedule" as UC9
+  usecase "Notify Adjustment" as UC10
+  usecase "Receive New Schedule Notification" as UC11
+  usecase "View Schedule" as UC12
+  usecase "Verify Work Hours" as UC13
+  usecase "File Complaint" as UC14
+  usecase "View Complaint" as UC15
+  usecase "Respond Complaint" as UC16
+  usecase "Categorize Complaint" as UC17
+  usecase "Prioritize Complaint" as UC18
+  usecase "Hire Employee" as UC19
+  usecase "Notify Hiring Process" as UC20
+  usecase "Have Overview Of Employees" as UC21
+  usecase "Have Overview Of Absent Employees" as UC22
+  usecase "View Employee Contracts" as UC23
+  usecase "View Employee Certificates" as UC24
+  usecase "Contact Management" as UC25
+  usecase "Contact Employee" as UC26
+  usecase "Forward Message" as UC27
+  usecase "Have Application" as UC28
+  usecase "Navigate Application" as UC29
+  usecase "Choose Email" as UC30
+  usecase "Choose Payment" as UC31
+  usecase "View Personal Inbox" as UC32
+  usecase "Reset Password" as UC33
+  usecase "Change Information" as UC34
+  usecase "View Contract" as UC35
+  usecase "View Statement" as UC36
+  usecase "Share Payment Handler" as UC37
+  usecase "Use System" as UC38
+  usecase "Register Account" as UC39
+}
+A1 --> UC1
+A2 --> UC2
+A2 --> UC3
+A2 --> UC4
+A2 --> UC5
+A1 --> UC6
+A1 --> UC7
+A2 --> UC8
+A2 --> UC9
+A2 --> UC10
+A1 --> UC11
+A1 --> UC12
+A1 --> UC13
+A1 --> UC14
+A3 --> UC15
+A3 --> UC16
+A3 --> UC17
+A3 --> UC18
+A2 --> UC19
+A2 --> UC20
+A2 --> UC21
+A2 --> UC22
+A2 --> UC23
+A2 --> UC24
+A1 --> UC25
+A2 --> UC26
+A2 --> UC27
+A1 --> UC28
+A1 --> UC29
+A1 --> UC30
+A1 --> UC31
+A1 --> UC32
+A1 --> UC33
+A1 --> UC34
+A2 --> UC35
+A1 --> UC36
+A1 --> UC37
+A1 --> UC38
+A4 --> UC39
+@enduml

@@ -1,0 +1,60 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Instance' is not present in the model.",
+   "fix": "Add class 'Instance' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'AttributeLink' is not present in the model.",
+   "fix": "Add class 'AttributeLink' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Link' is not present in the model.",
+   "fix": "Add class 'Link' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Linkend' is not present in the model.",
+   "fix": "Add class 'Linkend' to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Link' and 'Linkend' is missing.",
+   "fix": "Add association 'Link -> Linkend [1..1]' to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'AttributeLink' and 'Instance' is missing.",
+   "fix": "Add composition 'AttributeLink -> Instance [0..1..1]' to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'AttributeLink' and 'Linkend' is missing.",
+   "fix": "Add composition 'AttributeLink -> Linkend [0..1..1]' to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Linkend' and 'Instance' is missing.",
+   "fix": "Add association 'Linkend -> Instance [1..1]' to the model."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'R15' is not realized by any method in the model.",
+   "fix": "Add a method in 'Componentinstance' class to realize 'R15'."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case 'R16' is not realized by any method in the model.",
+   "fix": "Add a method in 'Nodeinstance' class to realize 'R16'."
+  }
+ ]
+}

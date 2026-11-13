@@ -1,0 +1,67 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Guardian {
+  +directMessage()
+  +fillInAbsence()
+  +receiveNotification()
+  +viewInformation()
+}
+class Student {
+  +accessFilesAndDLM()
+  +directMessage()
+  +directMessageMentor()
+  +handHomework()
+  +viewTimetable()
+  +viewAccountInformation()
+  +changePreferences()
+  +receiveNotification()
+  +receiveNotificationFiles()
+  +receiveNotificationTimetable()
+  +viewStudentData()
+}
+class Teacher {
+  +viewDLM()
+  +assignDLM()
+  +gradeDLM()
+  +createDLM()
+  +directMessage()
+  +editDLM()
+  +viewStudentInformation()
+  +viewClass()
+  +setDLMDate()
+  +uploadFiles()
+  +viewStudentData()
+  +viewStudentProgress()
+  +viewClassAttendance()
+}
+class Administrator {
+  +sendDirectMessage()
+  +assignSchedule()
+  +createAccount()
+  +editAccount()
+  +viewDashboard()
+  +receiveNotification()
+  +registerAbsence()
+}
+class Account {
+  role : String
+  details : String
+  +setRole()
+  +viewDetails()
+  +viewStatistics()
+}
+class Schedule {
+  date : LocalDate
+  time : String
+  +uploadSchedule()
+}
+class Statistic {
+  grade : String
+  attendance : String
+  disciplinaryAction : String
+}
+Guardian "1" -- "1..*" Student : has
+Teacher "1" -- "1..*" Student : teaches
+Student "1" -- "1..*" Teacher : is taught by
+@enduml

@@ -1,0 +1,988 @@
+{
+ "actors": [
+  "Moderator",
+  "Agency",
+  "Tourist",
+  "GuestUser",
+  "RegisteredUser",
+  "RestaurantOperator",
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Delete Cultural Object",
+   "actor": "Agency",
+   "src": [
+    "UC1"
+   ]
+  },
+  {
+   "name": "Insert Cultural Object",
+   "actor": "Agency",
+   "src": [
+    "UC2"
+   ]
+  },
+  {
+   "name": "Change Cultural Object Data",
+   "actor": "Agency",
+   "src": [
+    "UC3"
+   ]
+  },
+  {
+   "name": "Return List Of Cultural Objects",
+   "actor": "Agency",
+   "src": [
+    "UC4"
+   ]
+  },
+  {
+   "name": "View Cultural Object Details",
+   "actor": "Agency",
+   "src": [
+    "UC5"
+   ]
+  },
+  {
+   "name": "Delete Refreshment Point",
+   "actor": "Agency",
+   "src": [
+    "UC6"
+   ]
+  },
+  {
+   "name": "Convention Request By Refreshment Point",
+   "actor": "Agency",
+   "src": [
+    "UC7"
+   ]
+  },
+  {
+   "name": "Edit Refreshment Point Data",
+   "actor": "Agency",
+   "src": [
+    "UC8"
+   ]
+  },
+  {
+   "name": "Return List Of Refreshment Points",
+   "actor": "Agency",
+   "src": [
+    "UC9"
+   ]
+  },
+  {
+   "name": "View Refreshment Point Details",
+   "actor": "Agency",
+   "src": [
+    "UC10"
+   ]
+  },
+  {
+   "name": "View Refreshment Point History",
+   "actor": "Agency",
+   "src": [
+    "UC11"
+   ]
+  },
+  {
+   "name": "Enable Disable Tourist Account",
+   "actor": "Agency",
+   "src": [
+    "UC13"
+   ]
+  },
+  {
+   "name": "Return List Of Tourist Accounts",
+   "actor": "Agency",
+   "src": [
+    "UC14"
+   ]
+  },
+  {
+   "name": "View Tourist Account Details",
+   "actor": "Agency",
+   "src": [
+    "UC12"
+   ]
+  },
+  {
+   "name": "Change Data",
+   "actor": "Tourist",
+   "src": [
+    "UC15",
+    "UC23"
+   ]
+  },
+  {
+   "name": "Delete Account",
+   "actor": "Agency",
+   "src": [
+    "UC16"
+   ]
+  },
+  {
+   "name": "Change Image",
+   "actor": "Agency",
+   "src": [
+    "UC17",
+    "UC39"
+   ]
+  },
+  {
+   "name": "Check Point",
+   "actor": "Agency",
+   "src": [
+    "UC18"
+   ]
+  },
+  {
+   "name": "Delete Banner Ad",
+   "actor": "Agency",
+   "src": [
+    "UC19",
+    "UC40"
+   ]
+  },
+  {
+   "name": "Insert Banner",
+   "actor": "Agency",
+   "src": [
+    "UC20",
+    "UC38"
+   ]
+  },
+  {
+   "name": "Insert News",
+   "actor": "Agency",
+   "src": [
+    "UC21"
+   ]
+  },
+  {
+   "name": "Delete News",
+   "actor": "Agency",
+   "src": [
+    "UC22"
+   ]
+  },
+  {
+   "name": "View Feedback",
+   "actor": "Agency",
+   "src": [
+    "UC24"
+   ]
+  },
+  {
+   "name": "View Report",
+   "actor": "Agency",
+   "src": [
+    "UC25"
+   ]
+  },
+  {
+   "name": "Edit Comment",
+   "actor": "Agency",
+   "src": [
+    "UC26"
+   ]
+  },
+  {
+   "name": "Create Game",
+   "actor": "Moderator",
+   "src": [
+    "UC27"
+   ]
+  },
+  {
+   "name": "Remove Search Tag",
+   "actor": "Moderator",
+   "src": [
+    "UC28"
+   ]
+  },
+  {
+   "name": "Insert Tag Search",
+   "actor": "Moderator",
+   "src": [
+    "UC30"
+   ]
+  },
+  {
+   "name": "Change Password",
+   "actor": "Moderator",
+   "src": [
+    "UC31"
+   ]
+  },
+  {
+   "name": "Ask Search Tag",
+   "actor": "GuestUser",
+   "src": [
+    "UC29"
+   ]
+  },
+  {
+   "name": "Search Site",
+   "actor": "GuestUser",
+   "src": [
+    "UC34"
+   ]
+  },
+  {
+   "name": "Supply Login",
+   "actor": "GuestUser",
+   "src": [
+    "UC36"
+   ]
+  },
+  {
+   "name": "End Session",
+   "actor": "GuestUser",
+   "src": [
+    "UC37"
+   ]
+  },
+  {
+   "name": "Change Menu",
+   "actor": "RestaurantOperator",
+   "src": [
+    "UC41"
+   ]
+  },
+  {
+   "name": "Delete Menu",
+   "actor": "RestaurantOperator",
+   "src": [
+    "UC42"
+   ]
+  },
+  {
+   "name": "Change Data Point",
+   "actor": "RestaurantOperator",
+   "src": [
+    "UC43"
+   ]
+  },
+  {
+   "name": "Require Convention",
+   "actor": "RestaurantOperator",
+   "src": [
+    "UC44"
+   ]
+  },
+  {
+   "name": "View Statistic",
+   "actor": "RestaurantOperator",
+   "src": [
+    "UC45"
+   ]
+  },
+  {
+   "name": "Edit Search Preference",
+   "actor": "Tourist",
+   "src": [
+    "UC46"
+   ]
+  },
+  {
+   "name": "Edit Edit Preferences",
+   "actor": "Tourist",
+   "src": [
+    "UC48"
+   ]
+  },
+  {
+   "name": "Insert Feedback",
+   "actor": "Tourist",
+   "src": [
+    "UC53"
+   ]
+  },
+  {
+   "name": "Insert Site",
+   "actor": "Tourist",
+   "src": [
+    "UC51"
+   ]
+  },
+  {
+   "name": "Delete Site",
+   "actor": "Tourist",
+   "src": [
+    "UC52"
+   ]
+  },
+  {
+   "name": "View List",
+   "actor": "Tourist",
+   "src": [
+    "UC49",
+    "UC50"
+   ]
+  },
+  {
+   "name": "Entry Condition",
+   "actor": "User",
+   "src": []
+  },
+  {
+   "name": "Return Position",
+   "actor": "Tourist",
+   "src": []
+  },
+  {
+   "name": "View Detail",
+   "actor": "Tourist",
+   "src": []
+  }
+ ],
+ "classes": [
+  {
+   "name": "Agency",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "deleteCulturalObject",
+     "use_case": "Delete Cultural Object"
+    },
+    {
+     "name": "insertCulturalObject",
+     "use_case": "Insert Cultural Object"
+    },
+    {
+     "name": "changeCulturalObjectData",
+     "use_case": "Change Cultural Object Data"
+    },
+    {
+     "name": "getCulturalObjects",
+     "use_case": "Return List Of Cultural Objects"
+    },
+    {
+     "name": "viewCulturalObjectDetails",
+     "use_case": "View Cultural Object Details"
+    },
+    {
+     "name": "deleteRefreshmentPoint",
+     "use_case": "Delete Refreshment Point"
+    },
+    {
+     "name": "requestConvention",
+     "use_case": "Convention Request By Refreshment Point"
+    },
+    {
+     "name": "editRefreshmentPointData",
+     "use_case": "Edit Refreshment Point Data"
+    },
+    {
+     "name": "getRefreshmentPoints",
+     "use_case": "Return List Of Refreshment Points"
+    },
+    {
+     "name": "viewRefreshmentPointDetails",
+     "use_case": "View Refreshment Point Details"
+    },
+    {
+     "name": "viewRefreshmentPointHistory",
+     "use_case": "View Refreshment Point History"
+    },
+    {
+     "name": "enableDisableTouristAccount",
+     "use_case": "Enable Disable Tourist Account"
+    },
+    {
+     "name": "getTouristAccounts",
+     "use_case": "Return List Of Tourist Accounts"
+    },
+    {
+     "name": "viewTouristAccountDetails",
+     "use_case": "View Tourist Account Details"
+    },
+    {
+     "name": "deleteAccount",
+     "use_case": "Delete Account"
+    },
+    {
+     "name": "changeData",
+     "use_case": "Change Data"
+    },
+    {
+     "name": "viewReport",
+     "use_case": "View Report"
+    },
+    {
+     "name": "editComment",
+     "use_case": "Edit Comment"
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "CulturalObject",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "description"
+   ],
+   "methods": [],
+   "src": [
+    "UC1",
+    "UC2",
+    "UC3",
+    "UC4",
+    "UC5"
+   ]
+  },
+  {
+   "name": "RefreshmentPoint",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "address",
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "checkPoint",
+     "use_case": "Check Point"
+    },
+    {
+     "name": "insertBanner",
+     "use_case": "Insert Banner"
+    },
+    {
+     "name": "deleteBanner",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "UC6",
+    "UC7",
+    "UC8",
+    "UC9",
+    "UC10",
+    "UC11"
+   ]
+  },
+  {
+   "name": "TouristAccount",
+   "kind": "class",
+   "attributes": [
+    "username",
+    "status"
+   ],
+   "methods": [],
+   "src": [
+    "UC12",
+    "UC13",
+    "UC14"
+   ]
+  },
+  {
+   "name": "Tourist",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "authenticated"
+   ],
+   "methods": [
+    {
+     "name": "changeData",
+     "use_case": "Change Data"
+    },
+    {
+     "name": "deleteAccount",
+     "use_case": "Delete Account"
+    }
+   ],
+   "src": [
+    "UC15",
+    "UC16"
+   ]
+  },
+  {
+   "name": "BannerAd",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "changeImage",
+     "use_case": "Change Image"
+    }
+   ],
+   "src": [
+    "UC17"
+   ]
+  },
+  {
+   "name": "News",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "insertNews",
+     "use_case": "Insert News"
+    },
+    {
+     "name": "deleteNews",
+     "use_case": "Delete News"
+    },
+    {
+     "name": "changeData",
+     "use_case": "Change Data"
+    }
+   ],
+   "src": [
+    "UC21",
+    "UC22",
+    "UC23"
+   ]
+  },
+  {
+   "name": "Feedback",
+   "kind": "class",
+   "attributes": [
+    "touristId",
+    "siteId"
+   ],
+   "methods": [
+    {
+     "name": "viewFeedback",
+     "use_case": "View Feedback"
+    },
+    {
+     "name": "viewReport",
+     "use_case": "View Report"
+    },
+    {
+     "name": "editComment",
+     "use_case": "Edit Comment"
+    },
+    {
+     "name": "insertFeedback",
+     "use_case": "Insert Feedback"
+    },
+    {
+     "name": "viewFavoriteList",
+     "use_case": null
+    },
+    {
+     "name": "viewVisitedSites",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "UC24",
+    "UC25",
+    "UC26"
+   ]
+  },
+  {
+   "name": "Game",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createGame",
+     "use_case": "Create Game"
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "SearchTag",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "removeSearchTag",
+     "use_case": "Remove Search Tag"
+    },
+    {
+     "name": "insertTagSearch",
+     "use_case": "Insert Tag Search"
+    }
+   ],
+   "src": [
+    "UC28",
+    "UC29",
+    "UC30"
+   ]
+  },
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "supplyLogin",
+     "use_case": "Supply Login"
+    },
+    {
+     "name": "searchSite",
+     "use_case": "Search Site"
+    },
+    {
+     "name": "endSession",
+     "use_case": "End Session"
+    }
+   ],
+   "src": [
+    "UC33",
+    "UC34",
+    "UC35",
+    "UC36",
+    "UC37"
+   ]
+  },
+  {
+   "name": "RestaurantOperator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "insertBanner",
+     "use_case": "Insert Banner"
+    },
+    {
+     "name": "changeImage",
+     "use_case": "Change Image"
+    },
+    {
+     "name": "deleteBannerAd",
+     "use_case": "Delete Banner Ad"
+    }
+   ],
+   "src": [
+    "UC38",
+    "UC39",
+    "UC40"
+   ]
+  },
+  {
+   "name": "Menu",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "createMenu",
+     "use_case": "Create Game"
+    },
+    {
+     "name": "deleteMenu",
+     "use_case": "Delete Menu"
+    }
+   ],
+   "src": [
+    "UC41",
+    "UC42"
+   ]
+  },
+  {
+   "name": "DataPoint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "changeDataPoint",
+     "use_case": "Change Data Point"
+    }
+   ],
+   "src": [
+    "UC43"
+   ]
+  },
+  {
+   "name": "Convention",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "requireConvention",
+     "use_case": "Require Convention"
+    }
+   ],
+   "src": [
+    "UC44"
+   ]
+  },
+  {
+   "name": "Statistic",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "viewStatistic",
+     "use_case": "View Statistic"
+    }
+   ],
+   "src": [
+    "UC45"
+   ]
+  },
+  {
+   "name": "SearchPreference",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "editSearchPreference",
+     "use_case": "Edit Search Preference"
+    },
+    {
+     "name": "changePreference",
+     "use_case": "Change Data"
+    },
+    {
+     "name": "editPreference",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "UC46",
+    "UC47",
+    "UC48"
+   ]
+  },
+  {
+   "name": "Bookmark",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "insertBookmark",
+     "use_case": "Insert Feedback"
+    },
+    {
+     "name": "removeBookmark",
+     "use_case": "Delete Site"
+    }
+   ],
+   "src": [
+    "UC51",
+    "UC52"
+   ]
+  },
+  {
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [
+    "text",
+    "siteId"
+   ],
+   "methods": [
+    {
+     "name": "editComment",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "UC54"
+   ]
+  },
+  {
+   "name": "Gps",
+   "kind": "class",
+   "attributes": [
+    "position"
+   ],
+   "methods": [
+    {
+     "name": "getPosition",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "UC56"
+   ]
+  },
+  {
+   "name": "AdvancedSearch",
+   "kind": "class",
+   "attributes": [
+    "criteria"
+   ],
+   "methods": [
+    {
+     "name": "searchSites",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "UC57"
+   ]
+  },
+  {
+   "name": "Site",
+   "kind": "class",
+   "attributes": [
+    "id",
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "displayDetails",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "UC58"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Agency",
+   "target": "TouristAccount",
+   "src": [
+    "UC15",
+    "UC16"
+   ]
+  },
+  {
+   "source": "Agency",
+   "target": "RefreshmentPoint",
+   "src": [
+    "UC18",
+    "UC19",
+    "UC20"
+   ]
+  },
+  {
+   "source": "Agency",
+   "target": "Site",
+   "src": [
+    "UC24",
+    "UC25"
+   ]
+  },
+  {
+   "source": "Agency",
+   "target": "News",
+   "src": [
+    "UC21",
+    "UC22",
+    "UC23"
+   ]
+  },
+  {
+   "source": "Agency",
+   "target": "Feedback",
+   "src": [
+    "UC26"
+   ]
+  },
+  {
+   "source": "RefreshmentPoint",
+   "target": "BannerAd",
+   "src": [
+    "UC17"
+   ]
+  },
+  {
+   "source": "TouristAccount",
+   "target": "Comment",
+   "src": [
+    "UC26"
+   ]
+  },
+  {
+   "source": "Site",
+   "target": "Feedback",
+   "src": [
+    "UC24"
+   ]
+  },
+  {
+   "source": "Site",
+   "target": "Statistic",
+   "src": [
+    "UC25"
+   ]
+  },
+  {
+   "source": "RestaurantOperator",
+   "target": "Convention",
+   "src": [
+    "UC44"
+   ]
+  },
+  {
+   "source": "RestaurantOperator",
+   "target": "Statistic",
+   "src": [
+    "UC45"
+   ]
+  },
+  {
+   "source": "Tourist",
+   "target": "Feedback",
+   "src": [
+    "UC53"
+   ]
+  },
+  {
+   "source": "Tourist",
+   "target": "Bookmark",
+   "src": [
+    "UC51",
+    "UC52"
+   ]
+  },
+  {
+   "source": "Tourist",
+   "target": "Site",
+   "src": [
+    "UC53",
+    "UC51",
+    "UC52"
+   ]
+  },
+  {
+   "source": "Tourist",
+   "target": "Statistic",
+   "src": [
+    "UC45"
+   ]
+  },
+  {
+   "source": "User",
+   "target": "Feedback",
+   "src": [
+    "UC54",
+    "UC55"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D3/etour.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Agency:\n    \"\"\"Source: -\"\"\"\n    touristAccount: _t.Optional[\"TouristAccount\"] = None\n    refreshmentPoint: _t.Optional[\"RefreshmentPoint\"] = None\n    site: _t.Optional[\"Site\"] = None\n    news: _t.Optional[\"News\"] = None\n    feedback: _t.Optional[\"Feedback\"] = None\n\n    def deleteCulturalObject(self) -> None:\n        \"\"\"Realizes UC1 \"Delete Cultural Object\" (UC1).\"\"\"\n        raise NotImplementedError\n\n    def insertCulturalObject(self) -> None:\n        \"\"\"Realizes UC2 \"Insert Cultural Object\" (UC2).\"\"\"\n        raise NotImplementedError\n\n    def changeCulturalObjectData(self) -> None:\n        \"\"\"Realizes UC3 \"Change Cultural Object Data\" (UC3).\"\"\"\n        raise NotImplementedError\n\n    def getCulturalObjects(self) -> None:\n        \"\"\"Realizes UC4 \"Return List Of Cultural Objects\" (UC4).\"\"\"\n        raise NotImplementedError\n\n    def viewCulturalObjectDetails(self) -> None:\n        \"\"\"Realizes UC5 \"View Cultural Object Details\" (UC5).\"\"\"\n        raise NotImplementedError\n\n    def deleteRefreshmentPoint(self) -> None:\n        \"\"\"Realizes UC6 \"Delete Refreshment Point\" (UC6).\"\"\"\n        raise NotImplementedError\n\n    def requestConvention(self) -> None:\n        \"\"\"Realizes UC7 \"Convention Request By Refreshment Point\" (UC7).\"\"\"\n        raise NotImplementedError\n\n    def editRefreshmentPointData(self) -> None:\n        \"\"\"Realizes UC8 \"Edit Refreshment Point Data\" (UC8).\"\"\"\n        raise NotImplementedError\n\n    def getRefreshmentPoints(self) -> None:\n        \"\"\"Realizes UC9 \"Return List Of Refreshment Points\" (UC9).\"\"\"\n        raise NotImplementedError\n\n    def viewRefreshmentPointDetails(self) -> None:\n        \"\"\"Realizes UC10 \"View Refreshment Point Details\" (UC10).\"\"\"\n        raise NotImplementedError\n\n    def viewRefreshmentPointHistory(self) -> None:\n        \"\"\"Realizes UC11 \"View Refreshment Point History\" (UC11).\"\"\"\n        raise NotImplementedError\n\n    def enableDisableTouristAccount(self) -> None:\n        \"\"\"Realizes UC12 \"Enable Disable Tourist Account\" (UC13).\"\"\"\n        raise NotImplementedError\n\n    def getTouristAccounts(self) -> None:\n        \"\"\"Realizes UC13 \"Return List Of Tourist Accounts\" (UC14).\"\"\"\n        raise NotImplementedError\n\n    def viewTouristAccountDetails(self) -> None:\n        \"\"\"Realizes UC14 \"View Tourist Account Details\" (UC12).\"\"\"\n        raise NotImplementedError\n\n    def deleteAccount(self) -> None:\n        \"\"\"Realizes UC16 \"Delete Account\" (UC16).\"\"\"\n        raise NotImplementedError\n\n    def changeData(self) -> None:\n        \"\"\"Realizes UC15 \"Change Data\" (UC15, UC23).\"\"\"\n        raise NotImplementedError\n\n    def viewReport(self) -> None:\n        \"\"\"Realizes UC24 \"View Report\" (UC25).\"\"\"\n        raise NotImplementedError\n\n    def editComment(self) -> None:\n        \"\"\"Realizes UC25 \"Edit Comment\" (R1, UC26).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass CulturalObject:\n    \"\"\"Source: UC1, UC2, UC3, UC4, UC5\"\"\"\n    name: _t.Optional[str] = None\n    description: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass RefreshmentPoint:\n    \"\"\"Source: UC6, UC7, UC8, UC9, UC10, UC11\"\"\"\n    name: _t.Optional[str] = None\n    address: _t.Optional[str] = None\n    status: _t.Optional[str] = None\n    bannerAd: _t.Optional[\"BannerAd\"] = None\n\n    def checkPoint(self) -> None:\n        \"\"\"Realizes UC18 \"Check Point\" (UC18).\"\"\"\n        raise NotImplementedError\n\n    def insertBanner(self) -> None:\n        \"\"\"Realizes UC20 \"Insert Banner\" (UC20, UC38).\"\"\"\n        raise NotImplementedError\n\n    def deleteBanner(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass TouristAccount:\n    \"\"\"Source: UC12, UC13, UC14\"\"\"\n    username: _t.Optional[str] = None\n    status: _t.Optional[str] = None\n    comment: _t.Optional[\"Comment\"] = None\n\n\n@_dc.dataclass\nclass Tourist:\n    \"\"\"Source: UC15, UC16\"\"\"\n    id: _t.Optional[int] = None\n    authenticated: _t.Optional[bool] = None\n    feedback: _t.Optional[\"Feedback\"] = None\n    bookmark: _t.Optional[\"Bookmark\"] = None\n    site: _t.Optional[\"Site\"] = None\n    statistic: _t.Optional[\"Statistic\"] = None\n\n    def changeData(self) -> None:\n        \"\"\"Realizes UC15 \"Change Data\" (UC15, UC23).\"\"\"\n        raise NotImplementedError\n\n    def deleteAccount(self) -> None:\n        \"\"\"Realizes UC16 \"Delete Account\" (UC16).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass BannerAd:\n    \"\"\"Source: UC17\"\"\"\n\n    def changeImage(self) -> None:\n        \"\"\"Realizes UC17 \"Change Image\" (UC17, UC39).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass News:\n    \"\"\"Source: UC21, UC22, UC23\"\"\"\n\n    def insertNews(self) -> None:\n        \"\"\"Realizes UC21 \"Insert News\" (UC21).\"\"\"\n        raise NotImplementedError\n\n    def deleteNews(self) -> None:\n        \"\"\"Realizes UC22 \"Delete News\" (UC22).\"\"\"\n        raise NotImplementedError\n\n    def changeData(self) -> None:\n        \"\"\"Realizes UC15 \"Change Data\" (UC15, UC23).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Feedback:\n    \"\"\"Source: UC24, UC25, UC26\"\"\"\n    touristId: _t.Optional[int] = None\n    siteId: _t.Optional[int] = None\n\n    def viewFeedback(self) -> None:\n        \"\"\"Realizes UC23 \"View Feedback\" (UC24).\"\"\"\n        raise NotImplementedError\n\n    def viewReport(self) -> None:\n        \"\"\"Realizes UC24 \"View Report\" (UC25).\"\"\"\n        raise NotImplementedError\n\n    def editComment(self) -> None:\n        \"\"\"Realizes UC25 \"Edit Comment\" (R1, UC26).\"\"\"\n        raise NotImplementedError\n\n    def insertFeedback(self) -> None:\n        \"\"\"Realizes UC41 \"Insert Feedback\" (UC53).\"\"\"\n        raise NotImplementedError\n\n    def viewFavoriteList(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def viewVisitedSites(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Game:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n\n    def createGame(self) -> None:\n        \"\"\"Realizes UC26 \"Create Game\" (UC27).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass SearchTag:\n    \"\"\"Source: UC28, UC29, UC30\"\"\"\n\n    def removeSearchTag(self) -> None:\n        \"\"\"Realizes UC27 \"Remove Search Tag\" (UC28).\"\"\"\n        raise NotImplementedError\n\n    def insertTagSearch(self) -> None:\n        \"\"\"Realizes UC28 \"Insert Tag Search\" (UC30).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass User:\n    \"\"\"Source: UC33, UC34, UC35, UC36, UC37\"\"\"\n    feedback: _t.Optional[\"Feedback\"] = None\n\n    def supplyLogin(self) -> None:\n        \"\"\"Realizes UC32 \"Supply Login\" (UC36).\"\"\"\n        raise NotImplementedError\n\n    def searchSite(self) -> None:\n        \"\"\"Realizes UC31 \"Search Site\" (R4, UC34).\"\"\"\n        raise NotImplementedError\n\n    def endSession(self) -> None:\n        \"\"\"Realizes UC33 \"End Session\" (UC37).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass RestaurantOperator:\n    \"\"\"Source: UC38, UC39, UC40\"\"\"\n    convention: _t.Optional[\"Convention\"] = None\n    statistic: _t.Optional[\"Statistic\"] = None\n\n    def insertBanner(self) -> None:\n        \"\"\"Realizes UC20 \"Insert Banner\" (UC20, UC38).\"\"\"\n        raise NotImplementedError\n\n    def changeImage(self) -> None:\n        \"\"\"Realizes UC17 \"Change Image\" (UC17, UC39).\"\"\"\n        raise NotImplementedError\n\n    def deleteBannerAd(self) -> None:\n        \"\"\"Realizes UC19 \"Delete Banner Ad\" (UC19, UC40).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Menu:\n    \"\"\"Source: UC41, UC42\"\"\"\n    name: _t.Optional[str] = None\n\n    def createMenu(self) -> None:\n        \"\"\"Realizes UC26 \"Create Game\" (UC27).\"\"\"\n        raise NotImplementedError\n\n    def deleteMenu(self) -> None:\n        \"\"\"Realizes UC35 \"Delete Menu\" (UC42).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass DataPoint:\n    \"\"\"Source: UC43\"\"\"\n\n    def changeDataPoint(self) -> None:\n        \"\"\"Realizes UC36 \"Change Data Point\" (UC43).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Convention:\n    \"\"\"Source: UC44\"\"\"\n\n    def requireConvention(self) -> None:\n        \"\"\"Realizes UC37 \"Require Convention\" (UC44).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Statistic:\n    \"\"\"Source: UC45\"\"\"\n\n    def viewStatistic(self) -> None:\n        \"\"\"Realizes UC38 \"View Statistic\" (UC45).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass SearchPreference:\n    \"\"\"Source: UC46, UC47, UC48\"\"\"\n\n    def editSearchPreference(self) -> None:\n        \"\"\"Realizes UC39 \"Edit Search Preference\" (UC46).\"\"\"\n        raise NotImplementedError\n\n    def changePreference(self) -> None:\n        \"\"\"Realizes UC15 \"Change Data\" (UC15, UC23).\"\"\"\n        raise NotImplementedError\n\n    def editPreference(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Bookmark:\n    \"\"\"Source: UC51, UC52\"\"\"\n\n    def insertBookmark(self) -> None:\n        \"\"\"Realizes UC41 \"Insert Feedback\" (UC53).\"\"\"\n        raise NotImplementedError\n\n    def removeBookmark(self) -> None:\n        \"\"\"Realizes UC43 \"Delete Site\" (UC52).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Comment:\n    \"\"\"Source: UC54\"\"\"\n    text: _t.Optional[str] = None\n    siteId: _t.Optional[int] = None\n\n    def editComment(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Gps:\n    \"\"\"Source: UC56\"\"\"\n    position: _t.Optional[str] = None\n\n    def getPosition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass AdvancedSearch:\n    \"\"\"Source: UC57\"\"\"\n    criteria: _t.Optional[str] = None\n\n    def searchSites(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Site:\n    \"\"\"Source: UC58\"\"\"\n    id: _t.Optional[int] = None\n    name: _t.Optional[str] = None\n    feedback: _t.Optional[\"Feedback\"] = None\n    statistic: _t.Optional[\"Statistic\"] = None\n\n    def displayDetails(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Agency.java": "/** Generated from shared model D3/etour. Source: - */\npublic class Agency {\n    private TouristAccount touristAccount;\n    private RefreshmentPoint refreshmentPoint;\n    private Site site;\n    private News news;\n    private Feedback feedback;\n\n    /** Realizes UC1 \"Delete Cultural Object\" (UC1). */\n    public void deleteCulturalObject() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Insert Cultural Object\" (UC2). */\n    public void insertCulturalObject() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Change Cultural Object Data\" (UC3). */\n    public void changeCulturalObjectData() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC4 \"Return List Of Cultural Objects\" (UC4). */\n    public void getCulturalObjects() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC5 \"View Cultural Object Details\" (UC5). */\n    public void viewCulturalObjectDetails() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC6 \"Delete Refreshment Point\" (UC6). */\n    public void deleteRefreshmentPoint() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC7 \"Convention Request By Refreshment Point\" (UC7). */\n    public void requestConvention() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC8 \"Edit Refreshment Point Data\" (UC8). */\n    public void editRefreshmentPointData() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"Return List Of Refreshment Points\" (UC9). */\n    public void getRefreshmentPoints() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"View Refreshment Point Details\" (UC10). */\n    public void viewRefreshmentPointDetails() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC11 \"View Refreshment Point History\" (UC11). */\n    public void viewRefreshmentPointHistory() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC12 \"Enable Disable Tourist Account\" (UC13). */\n    public void enableDisableTouristAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC13 \"Return List Of Tourist Accounts\" (UC14). */\n    public void getTouristAccounts() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC14 \"View Tourist Account Details\" (UC12). */\n    public void viewTouristAccountDetails() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC16 \"Delete Account\" (UC16). */\n    public void deleteAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"Change Data\" (UC15, UC23). */\n    public void changeData() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC24 \"View Report\" (UC25). */\n    public void viewReport() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC25 \"Edit Comment\" (R1, UC26). */\n    public void editComment() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "CulturalObject.java": "/** Generated from shared model D3/etour. Source: UC1, UC2, UC3, UC4, UC5 */\npublic class CulturalObject {\n    private java.lang.String name;\n    private java.lang.String description;\n}\n",
+  "RefreshmentPoint.java": "/** Generated from shared model D3/etour. Source: UC6, UC7, UC8, UC9, UC10, UC11 */\npublic class RefreshmentPoint {\n    private java.lang.String name;\n    private java.lang.String address;\n    private java.lang.String status;\n    private BannerAd bannerAd;\n\n    /** Realizes UC18 \"Check Point\" (UC18). */\n    public void checkPoint() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC20 \"Insert Banner\" (UC20, UC38). */\n    public void insertBanner() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void deleteBanner() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "TouristAccount.java": "/** Generated from shared model D3/etour. Source: UC12, UC13, UC14 */\npublic class TouristAccount {\n    private java.lang.String username;\n    private java.lang.String status;\n    private Comment comment;\n}\n",
+  "Tourist.java": "/** Generated from shared model D3/etour. Source: UC15, UC16 */\npublic class Tourist {\n    private int id;\n    private boolean authenticated;\n    private Feedback feedback;\n    private Bookmark bookmark;\n    private Site site;\n    private Statistic statistic;\n\n    /** Realizes UC15 \"Change Data\" (UC15, UC23). */\n    public void changeData() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC16 \"Delete Account\" (UC16). */\n    public void deleteAccount() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "BannerAd.java": "/** Generated from shared model D3/etour. Source: UC17 */\npublic class BannerAd {\n\n    /** Realizes UC17 \"Change Image\" (UC17, UC39). */\n    public void changeImage() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "News.java": "/** Generated from shared model D3/etour. Source: UC21, UC22, UC23 */\npublic class News {\n\n    /** Realizes UC21 \"Insert News\" (UC21). */\n    public void insertNews() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC22 \"Delete News\" (UC22). */\n    public void deleteNews() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"Change Data\" (UC15, UC23). */\n    public void changeData() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Feedback.java": "/** Generated from shared model D3/etour. Source: UC24, UC25, UC26 */\npublic class Feedback {\n    private int touristId;\n    private int siteId;\n\n    /** Realizes UC23 \"View Feedback\" (UC24). */\n    public void viewFeedback() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC24 \"View Report\" (UC25). */\n    public void viewReport() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC25 \"Edit Comment\" (R1, UC26). */\n    public void editComment() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC41 \"Insert Feedback\" (UC53). */\n    public void insertFeedback() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewFavoriteList() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void viewVisitedSites() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Game.java": "/** Generated from shared model D3/etour. Source: - */\npublic class Game {\n    private java.lang.String name;\n\n    /** Realizes UC26 \"Create Game\" (UC27). */\n    public void createGame() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "SearchTag.java": "/** Generated from shared model D3/etour. Source: UC28, UC29, UC30 */\npublic class SearchTag {\n\n    /** Realizes UC27 \"Remove Search Tag\" (UC28). */\n    public void removeSearchTag() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC28 \"Insert Tag Search\" (UC30). */\n    public void insertTagSearch() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "User.java": "/** Generated from shared model D3/etour. Source: UC33, UC34, UC35, UC36, UC37 */\npublic class User {\n    private Feedback feedback;\n\n    /** Realizes UC32 \"Supply Login\" (UC36). */\n    public void supplyLogin() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC31 \"Search Site\" (R4, UC34). */\n    public void searchSite() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC33 \"End Session\" (UC37). */\n    public void endSession() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "RestaurantOperator.java": "/** Generated from shared model D3/etour. Source: UC38, UC39, UC40 */\npublic class RestaurantOperator {\n    private Convention convention;\n    private Statistic statistic;\n\n    /** Realizes UC20 \"Insert Banner\" (UC20, UC38). */\n    public void insertBanner() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC17 \"Change Image\" (UC17, UC39). */\n    public void changeImage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC19 \"Delete Banner Ad\" (UC19, UC40). */\n    public void deleteBannerAd() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Menu.java": "/** Generated from shared model D3/etour. Source: UC41, UC42 */\npublic class Menu {\n    private java.lang.String name;\n\n    /** Realizes UC26 \"Create Game\" (UC27). */\n    public void createMenu() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC35 \"Delete Menu\" (UC42). */\n    public void deleteMenu() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "DataPoint.java": "/** Generated from shared model D3/etour. Source: UC43 */\npublic class DataPoint {\n\n    /** Realizes UC36 \"Change Data Point\" (UC43). */\n    public void changeDataPoint() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Convention.java": "/** Generated from shared model D3/etour. Source: UC44 */\npublic class Convention {\n\n    /** Realizes UC37 \"Require Convention\" (UC44). */\n    public void requireConvention() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Statistic.java": "/** Generated from shared model D3/etour. Source: UC45 */\npublic class Statistic {\n\n    /** Realizes UC38 \"View Statistic\" (UC45). */\n    public void viewStatistic() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "SearchPreference.java": "/** Generated from shared model D3/etour. Source: UC46, UC47, UC48 */\npublic class SearchPreference {\n\n    /** Realizes UC39 \"Edit Search Preference\" (UC46). */\n    public void editSearchPreference() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"Change Data\" (UC15, UC23). */\n    public void changePreference() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void editPreference() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Bookmark.java": "/** Generated from shared model D3/etour. Source: UC51, UC52 */\npublic class Bookmark {\n\n    /** Realizes UC41 \"Insert Feedback\" (UC53). */\n    public void insertBookmark() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC43 \"Delete Site\" (UC52). */\n    public void removeBookmark() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Comment.java": "/** Generated from shared model D3/etour. Source: UC54 */\npublic class Comment {\n    private java.lang.String text;\n    private int siteId;\n\n    /** Operation. */\n    public void editComment() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Gps.java": "/** Generated from shared model D3/etour. Source: UC56 */\npublic class Gps {\n    private java.lang.String position;\n\n    /** Operation. */\n    public void getPosition() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "AdvancedSearch.java": "/** Generated from shared model D3/etour. Source: UC57 */\npublic class AdvancedSearch {\n    private java.lang.String criteria;\n\n    /** Operation. */\n    public void searchSites() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Site.java": "/** Generated from shared model D3/etour. Source: UC58 */\npublic class Site {\n    private int id;\n    private java.lang.String name;\n    private Feedback feedback;\n    private Statistic statistic;\n\n    /** Operation. */\n    public void displayDetails() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

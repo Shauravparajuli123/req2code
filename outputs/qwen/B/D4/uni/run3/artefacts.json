@@ -1,0 +1,105 @@
+{
+ "actors": [
+  "Student"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Course",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "credits",
+    "professors",
+    "students"
+   ],
+   "methods": [
+    {
+     "name": "addProfessor",
+     "use_case": null
+    },
+    {
+     "name": "addStudent",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "name": "Dormitory",
+   "kind": "class",
+   "attributes": [
+    "price",
+    "students"
+   ],
+   "methods": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Professor",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Student",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "enrollInCourse",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Course",
+   "target": "Professor",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "source": "Course",
+   "target": "Student",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "source": "Student",
+   "target": "Dormitory",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D4/uni.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Course:\n    \"\"\"Source: R1, R2, R3, R5\"\"\"\n    name: _t.Optional[str] = None\n    credits: _t.Optional[int] = None\n    professors: _t.Optional[str] = None\n    students: _t.Optional[str] = None\n\n    def addProfessor(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addStudent(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Dormitory:\n    \"\"\"Source: R7, R8\"\"\"\n    price: _t.Optional[float] = None\n    students: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Professor:\n    \"\"\"Source: R3\"\"\"\n    name: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Student:\n    \"\"\"Source: R5, R6\"\"\"\n    name: _t.Optional[str] = None\n    dormitories: _t.List[\"Dormitory\"] = _dc.field(default_factory=list)\n\n    def enrollInCourse(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Course.java": "/** Generated from shared model D4/uni. Source: R1, R2, R3, R5 */\npublic class Course {\n    private java.lang.String name;\n    private int credits;\n    private java.lang.String professors;\n    private java.lang.String students;\n\n    /** Operation. */\n    public void addProfessor() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addStudent() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Dormitory.java": "/** Generated from shared model D4/uni. Source: R7, R8 */\npublic class Dormitory {\n    private double price;\n    private java.lang.String students;\n}\n",
+  "Professor.java": "/** Generated from shared model D4/uni. Source: R3 */\npublic class Professor {\n    private java.lang.String name;\n}\n",
+  "Student.java": "/** Generated from shared model D4/uni. Source: R5, R6 */\npublic class Student {\n    private java.lang.String name;\n    private java.util.List<Dormitory> dormitories;\n\n    /** Operation. */\n    public void enrollInCourse() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

@@ -1,0 +1,15 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Contact {
+  name : String
+}
+class LandLine {
+  phoneNumber : String
+}
+class CellPhone {
+  phoneNumber : String
+}
+Contact "1" -- "0..1" LandLine : has
+Contact "1" -- "1..*" CellPhone : has
+@enduml

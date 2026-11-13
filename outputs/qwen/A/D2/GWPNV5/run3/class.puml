@@ -1,0 +1,39 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Place {
+  name : String
+  tokens : int
+  +addToken()
+  +removeToken()
+}
+class Transition {
+  name : String
+  outputArcs : String
+  inputArcs : String
+  +addOutputArc()
+  +removeOutputArc()
+  +addInputArc()
+  +removeInputArc()
+}
+class Arc {
+  weight : double
+  source : String
+  destination : String
+  +setWeight()
+}
+class Net {
+  name : String
+  places : String
+  transitions : String
+  +addPlace()
+  +removePlace()
+  +addTransition()
+  +removeTransition()
+}
+Net "1" -- "0..*" Place : has
+Net "1" -- "0..*" Transition : has
+Place "1" -- "0..*" Arc : has
+Transition "1" -- "0..*" Arc : has
+Net "1" *-- "1..*" Arc : composes
+@enduml

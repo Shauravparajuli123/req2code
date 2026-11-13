@@ -1,0 +1,2444 @@
+{
+ "condition": "Q",
+ "hint": {
+  "case": "D1/supermarket",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R15",
+     "R16",
+     "R17",
+     "R18",
+     "R19",
+     "R20",
+     "R21",
+     "R22",
+     "R23",
+     "R24",
+     "R25",
+     "R26",
+     "R27",
+     "R28",
+     "R29",
+     "R30",
+     "R31",
+     "R32",
+     "R33",
+     "R34",
+     "R35",
+     "R36",
+     "R37",
+     "R38",
+     "R39",
+     "R40",
+     "R41",
+     "R42",
+     "R43",
+     "R44"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a customer, I want to create a personal account."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "As a customer, I want to be able to sign up for the newsletter, so that I am aware of discounts and anomalies."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a customer, I want to be able to unsubscribe from the newsletter, so that I no longer receive the newsletter."
+     }
+    ],
+    "name": "customer"
+   },
+   {
+    "id": "A2",
+    "src": [
+     "R45",
+     "R46",
+     "R47",
+     "R48",
+     "R49",
+     "R50",
+     "R51"
+    ],
+    "rule": [
+     "story_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R45.s1",
+      "text": "As an employee, I want to update the application with new recipes, so that I can provide customers with inspiration for cooking a meal."
+     },
+     {
+      "sid": "R46.s1",
+      "text": "As an employee, I want to edit the discounts for a specific product, so that customers are provided with up-to-date information."
+     },
+     {
+      "sid": "R47.s1",
+      "text": "As an employee, I want to confirm an established delivery time, so that customers are accurately informed on when their groceries will arrive."
+     }
+    ],
+    "name": "employee"
+   }
+  ],
+  "use_cases": [
+   {
+    "id": "UC1",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a customer, I want to activate push notifications, so that I am aware of discounts and anomalies."
+     }
+    ],
+    "name": "Activate PushNotification",
+    "actor": "customer",
+    "goal_text": "activate push notifications"
+   },
+   {
+    "id": "UC2",
+    "src": [
+     "R17",
+     "R39"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R17.s1",
+      "text": "As a customer, I want to be able to add products to my wishlist, so that I can easily find them in the app."
+     },
+     {
+      "sid": "R39.s1",
+      "text": "As a customer, I want to add products from the overview of my previous order to my new order, so that I can save time adding products to my order."
+     }
+    ],
+    "name": "Add Product",
+    "actor": "customer",
+    "goal_text": "add products to my wishlist"
+   },
+   {
+    "id": "UC3",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a customer, I want to change the contrast between the text and the background, so that it is easier for me to read."
+     }
+    ],
+    "name": "Change Contrast",
+    "actor": "customer",
+    "goal_text": "change the contrast between the text and the background"
+   },
+   {
+    "id": "UC4",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a customer, I want to change the application's language to my native language, so that it is easier for me to understand the app."
+     }
+    ],
+    "name": "Change Language",
+    "actor": "customer",
+    "goal_text": "change the application's language to my native language"
+   },
+   {
+    "id": "UC5",
+    "src": [
+     "R43"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R43.s1",
+      "text": "As a customer, I want to be able to change the selection of my default store, so that I can easily order groceries at a different location."
+     }
+    ],
+    "name": "Change Selection",
+    "actor": "customer",
+    "goal_text": "change the selection of my default store"
+   },
+   {
+    "id": "UC6",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As a customer, I want to change the font size of the text, so that it is easier for me to read."
+     }
+    ],
+    "name": "Change Size",
+    "actor": "customer",
+    "goal_text": "change the font size of the text"
+   },
+   {
+    "id": "UC7",
+    "src": [
+     "R47"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R47.s1",
+      "text": "As an employee, I want to confirm an established delivery time, so that customers are accurately informed on when their groceries will arrive."
+     }
+    ],
+    "name": "Confirm DeliveryTime",
+    "actor": "employee",
+    "goal_text": "confirm an established delivery time"
+   },
+   {
+    "id": "UC8",
+    "src": [
+     "R50"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R50.s1",
+      "text": "As an employee, I want to contact the customer in case of a canceled delivery so that customers are given full transparency, and their delivery is handled adequately later."
+     }
+    ],
+    "name": "Contact Customer",
+    "actor": "employee",
+    "goal_text": "contact the customer in case of a canceled delivery"
+   },
+   {
+    "id": "UC9",
+    "src": [
+     "R15"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "As a customer, I want to contact customer service, so that I can have answers to urgent questions when I need them."
+     }
+    ],
+    "name": "Contact CustomerService",
+    "actor": "customer",
+    "goal_text": "contact customer service"
+   },
+   {
+    "id": "UC10",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a customer, I want to create a personal account."
+     }
+    ],
+    "name": "Create Account",
+    "actor": "customer",
+    "goal_text": "create a personal account."
+   },
+   {
+    "id": "UC11",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "As a customer, I want to be able to deactivate push notifications, so that I no longer receive push notifications."
+     }
+    ],
+    "name": "Deactivate PushNotification",
+    "actor": "customer",
+    "goal_text": "deactivate push notifications"
+   },
+   {
+    "id": "UC12",
+    "src": [
+     "R46"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R46.s1",
+      "text": "As an employee, I want to edit the discounts for a specific product, so that customers are provided with up-to-date information."
+     }
+    ],
+    "name": "Edit Discount",
+    "actor": "employee",
+    "goal_text": "edit the discounts for a specific product"
+   },
+   {
+    "id": "UC13",
+    "src": [
+     "R19"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R19.s1",
+      "text": "As a customer, I want to filter products on dietary restrictions, so that I know which products are suited for my diet."
+     }
+    ],
+    "name": "Filter Product",
+    "actor": "customer",
+    "goal_text": "filter products on dietary restrictions"
+   },
+   {
+    "id": "UC14",
+    "src": [
+     "R41"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R41.s1",
+      "text": "As a customer, I want to find the location of products in a specific store, so that my shopping becomes easier and faster."
+     }
+    ],
+    "name": "Find Location",
+    "actor": "customer",
+    "goal_text": "find the location of products in a specific store"
+   },
+   {
+    "id": "UC15",
+    "src": [
+     "R14"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "As a customer, I want to get recipes based on products I like, so I can potentially discover new meals to cook."
+     }
+    ],
+    "name": "Get Recipe",
+    "actor": "customer",
+    "goal_text": "get recipes based on products I like"
+   },
+   {
+    "id": "UC16",
+    "src": [
+     "R42"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R42.s1",
+      "text": "As a customer, I want to get recommendation regarding the nearest store, so that I won't be need to select the related store."
+     }
+    ],
+    "name": "Get Recommendation",
+    "actor": "customer",
+    "goal_text": "get recommendation regarding the nearest store"
+   },
+   {
+    "id": "UC17",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As a customer, I want to have a subscription-based delivery service, so that I gain discounts in case of frequent deliveries."
+     }
+    ],
+    "name": "Have DeliveryService",
+    "actor": "customer",
+    "goal_text": "have a subscription-based delivery service"
+   },
+   {
+    "id": "UC18",
+    "src": [
+     "R33",
+     "R36"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a customer, I want to have my groceries delivered to me, so that I do not have to go to the store myself."
+     },
+     {
+      "sid": "R36.s1",
+      "text": "As a customer, I want to have my groceries delivered using an express delivery service, so that I can have products delivered to me when I need them quickly."
+     }
+    ],
+    "name": "Have Grocery",
+    "actor": "customer",
+    "goal_text": "have my groceries delivered to me"
+   },
+   {
+    "id": "UC19",
+    "src": [
+     "R44"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R44.s1",
+      "text": "As a customer, I want to link my existing loyalty card, so that I do not have to physically have it."
+     }
+    ],
+    "name": "Link LoyaltyCard",
+    "actor": "customer",
+    "goal_text": "link my existing loyalty card"
+   },
+   {
+    "id": "UC20",
+    "src": [
+     "R48",
+     "R49"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R48.s1",
+      "text": "As an employee, I want to notify customers of suddenly unavailable products in their delivery, so that customers can manage their expectations accordingly."
+     },
+     {
+      "sid": "R49.s1",
+      "text": "As an employee, I want to notify customers in case of a delayed delivery, so that customers do not have to unnecessarily wait longer than needed."
+     }
+    ],
+    "name": "Notify Customer",
+    "actor": "employee",
+    "goal_text": "notify customers of suddenly unavailable products in their delivery"
+   },
+   {
+    "id": "UC21",
+    "src": [
+     "R12"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R12.s1",
+      "text": "As a customer, I want to be notified of special personal discounts, so that I do not miss out on them."
+     }
+    ],
+    "name": "Notify Discount",
+    "actor": "customer",
+    "goal_text": "be notified of special personal discounts"
+   },
+   {
+    "id": "UC22",
+    "src": [
+     "R26"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R26.s1",
+      "text": "As a customer, I want to be notified when an item I need is back in stock, so that I do not miss out on it."
+     }
+    ],
+    "name": "Notify Item",
+    "actor": "customer",
+    "goal_text": "be notified when an item I need is back in stock"
+   },
+   {
+    "id": "UC23",
+    "src": [
+     "R22"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R22.s1",
+      "text": "As a customer, I want to be notified of what products are on sale, so that I can save money."
+     }
+    ],
+    "name": "Notify Product",
+    "actor": "customer",
+    "goal_text": "be notified of what products are on sale"
+   },
+   {
+    "id": "UC24",
+    "src": [
+     "R20",
+     "R21"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R20.s1",
+      "text": "As a customer, I want to order products by price in ascending order, so that I can save money."
+     },
+     {
+      "sid": "R21.s1",
+      "text": "As a customer, I want to order products by popularity, so that I become aware of which products are liked by most people."
+     }
+    ],
+    "name": "Order Product",
+    "actor": "customer",
+    "goal_text": "order products by price in ascending order"
+   },
+   {
+    "id": "UC25",
+    "src": [
+     "R40"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R40.s1",
+      "text": "As a customer, I want to be able to digitally pay for my delivered groceries, so that I am not required to pay in person."
+     }
+    ],
+    "name": "Pay Grocery",
+    "actor": "customer",
+    "goal_text": "digitally pay for my delivered groceries"
+   },
+   {
+    "id": "UC26",
+    "src": [
+     "R38"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R38.s1",
+      "text": "As a customer, I want to be able to place a previous order again, so that I do not have to add the products to my shopping cart again."
+     }
+    ],
+    "name": "Place Order",
+    "actor": "customer",
+    "goal_text": "place a previous order again"
+   },
+   {
+    "id": "UC27",
+    "src": [
+     "R51"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R51.s1",
+      "text": "As an employee, I want to provide the customer with a new delivery time in case of a canceled delivery, so that the customer remains in control of when their groceries will arrive."
+     }
+    ],
+    "name": "Provide Customer",
+    "actor": "employee",
+    "goal_text": "provide the customer with a new delivery time in case of a canceled delivery"
+   },
+   {
+    "id": "UC28",
+    "src": [
+     "R30"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R30.s1",
+      "text": "As a customer, I want to be provided with recipe ideas, so that I gain inspiration for my meals."
+     }
+    ],
+    "name": "Provide RecipeIdea",
+    "actor": "customer",
+    "goal_text": "be provided with recipe ideas"
+   },
+   {
+    "id": "UC29",
+    "src": [
+     "R32"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R32.s1",
+      "text": "As a customer, I want to purchase products online, so that I do not have to find the products in the store myself."
+     }
+    ],
+    "name": "Purchase Product",
+    "actor": "customer",
+    "goal_text": "purchase products online"
+   },
+   {
+    "id": "UC30",
+    "src": [
+     "R24"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As a customer, I want to read the product information, so that I find it easier than reading the product's packaging."
+     }
+    ],
+    "name": "Read ProductInformation",
+    "actor": "customer",
+    "goal_text": "read the product information"
+   },
+   {
+    "id": "UC31",
+    "src": [
+     "R11"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a customer, I want to receive a special personal discount on the products that I frequently buy, so that I can save money."
+     }
+    ],
+    "name": "Receive Discount",
+    "actor": "customer",
+    "goal_text": "receive a special personal discount on the products that I frequently buy"
+   },
+   {
+    "id": "UC32",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "As a customer, I want to receive suggestions on products that I might like, so that I can find my new favorite products."
+     }
+    ],
+    "name": "Receive Suggestion",
+    "actor": "customer",
+    "goal_text": "receive suggestions on products that I might like"
+   },
+   {
+    "id": "UC33",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As a customer, I want to reset my password."
+     }
+    ],
+    "name": "Reset Password",
+    "actor": "customer",
+    "goal_text": "reset my password."
+   },
+   {
+    "id": "UC34",
+    "src": [
+     "R23"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As a customer, I want to scan the barcode of an item, so that I can see the product information without searching for it online."
+     }
+    ],
+    "name": "Scan Barcode",
+    "actor": "customer",
+    "goal_text": "scan the barcode of an item"
+   },
+   {
+    "id": "UC35",
+    "src": [
+     "R16"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As a customer, I want to scan products in the store to build my shopping list, so that I do not have to scan my products again at checkout."
+     }
+    ],
+    "name": "Scan Product",
+    "actor": "customer",
+    "goal_text": "scan products in the store to build my shopping list"
+   },
+   {
+    "id": "UC36",
+    "src": [
+     "R18"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R18.s1",
+      "text": "As a customer, I want to search for a product, so that I know if it is in the supermarket's stock."
+     }
+    ],
+    "name": "Search Product",
+    "actor": "customer",
+    "goal_text": "search for a product"
+   },
+   {
+    "id": "UC37",
+    "src": [
+     "R37"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a customer, I want to see my order history, so that I can easily find products that I have purchased before."
+     }
+    ],
+    "name": "See OrderHistory",
+    "actor": "customer",
+    "goal_text": "see my order history"
+   },
+   {
+    "id": "UC38",
+    "src": [
+     "R25",
+     "R27",
+     "R29",
+     "R31"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R25.s1",
+      "text": "As a customer, I want to see if the product I need is in stock, so that I do not end up going to the store for a product that is sold out."
+     },
+     {
+      "sid": "R27.s1",
+      "text": "As a customer, I want to be able to see if a product that is sold out in my store is available in another store, so that I can purchase the product there."
+     },
+     {
+      "sid": "R29.s1",
+      "text": "As a customer, I want to see when a product will be available again when it is currently sold out, so that I know when I can buy it again."
+     }
+    ],
+    "name": "See Product",
+    "actor": "customer",
+    "goal_text": "see if the product I need is in stock"
+   },
+   {
+    "id": "UC39",
+    "src": [
+     "R28"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a customer, I want to see the available quantity of a product in store, so that I know that there is enough to fulfill my needs."
+     }
+    ],
+    "name": "See Quantity",
+    "actor": "customer",
+    "goal_text": "see the available quantity of a product in store"
+   },
+   {
+    "id": "UC40",
+    "src": [
+     "R34"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R34.s1",
+      "text": "As a customer, I want to be able to select the date on which my groceries will be delivered, so that I am sure that I have them in time."
+     }
+    ],
+    "name": "Select Date",
+    "actor": "customer",
+    "goal_text": "select the date on which my groceries will be delivered"
+   },
+   {
+    "id": "UC41",
+    "src": [
+     "R35"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a customer, I want to be able to select a time slot for the delivery of my groceries so that I can make sure that I am home to receive the delivery."
+     }
+    ],
+    "name": "Select TimeSlot",
+    "actor": "customer",
+    "goal_text": "select a time slot for the delivery of my groceries"
+   },
+   {
+    "id": "UC42",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a customer, I want to be able to sign up for the newsletter, so that I am aware of discounts and anomalies."
+     }
+    ],
+    "name": "Sign Newsletter",
+    "actor": "customer",
+    "goal_text": "sign up for the newsletter"
+   },
+   {
+    "id": "UC43",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "As a customer, I want to be able to unsubscribe from the newsletter, so that I no longer receive the newsletter."
+     }
+    ],
+    "name": "Unsubscribe Newsletter",
+    "actor": "customer",
+    "goal_text": "unsubscribe from the newsletter"
+   },
+   {
+    "id": "UC44",
+    "src": [
+     "R45"
+    ],
+    "rule": [
+     "story_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "R45.s1",
+      "text": "As an employee, I want to update the application with new recipes, so that I can provide customers with inspiration for cooking a meal."
+     }
+    ],
+    "name": "Update Application",
+    "actor": "employee",
+    "goal_text": "update the application with new recipes"
+   }
+  ],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R2",
+     "R4"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a customer, I want to be able to sign up for the newsletter, so that I am aware of discounts and anomalies."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "As a customer, I want to activate push notifications, so that I am aware of discounts and anomalies."
+     }
+    ],
+    "name": "Anomaly",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14",
+     "R15",
+     "R16",
+     "R17",
+     "R18",
+     "R19",
+     "R20",
+     "R21",
+     "R22",
+     "R23",
+     "R24",
+     "R25",
+     "R26",
+     "R27",
+     "R28",
+     "R29",
+     "R30",
+     "R31",
+     "R32",
+     "R33",
+     "R34",
+     "R35",
+     "R36",
+     "R37",
+     "R38",
+     "R39",
+     "R40",
+     "R41",
+     "R42",
+     "R43",
+     "R44",
+     "R45",
+     "R46",
+     "R47",
+     "R48",
+     "R49",
+     "R50",
+     "R51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a customer, I want to create a personal account."
+     },
+     {
+      "sid": "R2.s1",
+      "text": "As a customer, I want to be able to sign up for the newsletter, so that I am aware of discounts and anomalies."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a customer, I want to be able to unsubscribe from the newsletter, so that I no longer receive the newsletter."
+     }
+    ],
+    "name": "Customer",
+    "freq": 55
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R34",
+     "R46"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R34.s1",
+      "text": "As a customer, I want to be able to select the date on which my groceries will be delivered, so that I am sure that I have them in time."
+     },
+     {
+      "sid": "R46.s1",
+      "text": "As an employee, I want to edit the discounts for a specific product, so that customers are provided with up-to-date information."
+     }
+    ],
+    "name": "Date",
+    "freq": 2
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R13",
+     "R35",
+     "R48",
+     "R49",
+     "R50",
+     "R51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As a customer, I want to have a subscription-based delivery service, so that I gain discounts in case of frequent deliveries."
+     },
+     {
+      "sid": "R35.s1",
+      "text": "As a customer, I want to be able to select a time slot for the delivery of my groceries so that I can make sure that I am home to receive the delivery."
+     },
+     {
+      "sid": "R48.s1",
+      "text": "As an employee, I want to notify customers of suddenly unavailable products in their delivery, so that customers can manage their expectations accordingly."
+     }
+    ],
+    "name": "Delivery",
+    "freq": 8
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R13",
+     "R36"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As a customer, I want to have a subscription-based delivery service, so that I gain discounts in case of frequent deliveries."
+     },
+     {
+      "sid": "R36.s1",
+      "text": "As a customer, I want to have my groceries delivered using an express delivery service, so that I can have products delivered to me when I need them quickly."
+     }
+    ],
+    "name": "DeliveryService",
+    "freq": 2
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R47",
+     "R51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R47.s1",
+      "text": "As an employee, I want to confirm an established delivery time, so that customers are accurately informed on when their groceries will arrive."
+     },
+     {
+      "sid": "R51.s1",
+      "text": "As an employee, I want to provide the customer with a new delivery time in case of a canceled delivery, so that the customer remains in control of when their groceries will arrive."
+     }
+    ],
+    "name": "DeliveryTime",
+    "freq": 2
+   },
+   {
+    "id": "C7",
+    "src": [
+     "R2",
+     "R4",
+     "R11",
+     "R12",
+     "R13",
+     "R46"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a customer, I want to be able to sign up for the newsletter, so that I am aware of discounts and anomalies."
+     },
+     {
+      "sid": "R4.s1",
+      "text": "As a customer, I want to activate push notifications, so that I am aware of discounts and anomalies."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "As a customer, I want to receive a special personal discount on the products that I frequently buy, so that I can save money."
+     }
+    ],
+    "name": "Discount",
+    "freq": 6
+   },
+   {
+    "id": "C8",
+    "src": [
+     "R45",
+     "R46",
+     "R47",
+     "R48",
+     "R49",
+     "R50",
+     "R51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R45.s1",
+      "text": "As an employee, I want to update the application with new recipes, so that I can provide customers with inspiration for cooking a meal."
+     },
+     {
+      "sid": "R46.s1",
+      "text": "As an employee, I want to edit the discounts for a specific product, so that customers are provided with up-to-date information."
+     },
+     {
+      "sid": "R47.s1",
+      "text": "As an employee, I want to confirm an established delivery time, so that customers are accurately informed on when their groceries will arrive."
+     }
+    ],
+    "name": "Employee",
+    "freq": 7
+   },
+   {
+    "id": "C9",
+    "src": [
+     "R33",
+     "R34",
+     "R35",
+     "R36",
+     "R40",
+     "R43",
+     "R47",
+     "R51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a customer, I want to have my groceries delivered to me, so that I do not have to go to the store myself."
+     },
+     {
+      "sid": "R34.s1",
+      "text": "As a customer, I want to be able to select the date on which my groceries will be delivered, so that I am sure that I have them in time."
+     },
+     {
+      "sid": "R35.s1",
+      "text": "As a customer, I want to be able to select a time slot for the delivery of my groceries so that I can make sure that I am home to receive the delivery."
+     }
+    ],
+    "name": "Grocery",
+    "freq": 8
+   },
+   {
+    "id": "C10",
+    "src": [
+     "R30",
+     "R45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R30.s1",
+      "text": "As a customer, I want to be provided with recipe ideas, so that I gain inspiration for my meals."
+     },
+     {
+      "sid": "R45.s1",
+      "text": "As an employee, I want to update the application with new recipes, so that I can provide customers with inspiration for cooking a meal."
+     }
+    ],
+    "name": "Inspiration",
+    "freq": 2
+   },
+   {
+    "id": "C11",
+    "src": [
+     "R23",
+     "R26"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As a customer, I want to scan the barcode of an item, so that I can see the product information without searching for it online."
+     },
+     {
+      "sid": "R26.s1",
+      "text": "As a customer, I want to be notified when an item I need is back in stock, so that I do not miss out on it."
+     }
+    ],
+    "name": "Item",
+    "freq": 2
+   },
+   {
+    "id": "C12",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a customer, I want to change the application's language to my native language, so that it is easier for me to understand the app."
+     }
+    ],
+    "name": "Language",
+    "freq": 2
+   },
+   {
+    "id": "C13",
+    "src": [
+     "R41",
+     "R43"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R41.s1",
+      "text": "As a customer, I want to find the location of products in a specific store, so that my shopping becomes easier and faster."
+     },
+     {
+      "sid": "R43.s1",
+      "text": "As a customer, I want to be able to change the selection of my default store, so that I can easily order groceries at a different location."
+     }
+    ],
+    "name": "Location",
+    "freq": 2
+   },
+   {
+    "id": "C14",
+    "src": [
+     "R14",
+     "R30",
+     "R45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "As a customer, I want to get recipes based on products I like, so I can potentially discover new meals to cook."
+     },
+     {
+      "sid": "R30.s1",
+      "text": "As a customer, I want to be provided with recipe ideas, so that I gain inspiration for my meals."
+     },
+     {
+      "sid": "R45.s1",
+      "text": "As an employee, I want to update the application with new recipes, so that I can provide customers with inspiration for cooking a meal."
+     }
+    ],
+    "name": "Meal",
+    "freq": 3
+   },
+   {
+    "id": "C15",
+    "src": [
+     "R11",
+     "R20",
+     "R22"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a customer, I want to receive a special personal discount on the products that I frequently buy, so that I can save money."
+     },
+     {
+      "sid": "R20.s1",
+      "text": "As a customer, I want to order products by price in ascending order, so that I can save money."
+     },
+     {
+      "sid": "R22.s1",
+      "text": "As a customer, I want to be notified of what products are on sale, so that I can save money."
+     }
+    ],
+    "name": "Money",
+    "freq": 3
+   },
+   {
+    "id": "C16",
+    "src": [
+     "R2",
+     "R3"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a customer, I want to be able to sign up for the newsletter, so that I am aware of discounts and anomalies."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a customer, I want to be able to unsubscribe from the newsletter, so that I no longer receive the newsletter."
+     }
+    ],
+    "name": "Newsletter",
+    "freq": 3
+   },
+   {
+    "id": "C17",
+    "src": [
+     "R20",
+     "R38",
+     "R39"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R20.s1",
+      "text": "As a customer, I want to order products by price in ascending order, so that I can save money."
+     },
+     {
+      "sid": "R38.s1",
+      "text": "As a customer, I want to be able to place a previous order again, so that I do not have to add the products to my shopping cart again."
+     },
+     {
+      "sid": "R39.s1",
+      "text": "As a customer, I want to add products from the overview of my previous order to my new order, so that I can save time adding products to my order."
+     }
+    ],
+    "name": "Order",
+    "freq": 5
+   },
+   {
+    "id": "C18",
+    "src": [
+     "R10",
+     "R11",
+     "R14",
+     "R16",
+     "R17",
+     "R18",
+     "R19",
+     "R20",
+     "R21",
+     "R22",
+     "R25",
+     "R27",
+     "R28",
+     "R29",
+     "R31",
+     "R32",
+     "R36",
+     "R37",
+     "R38",
+     "R39",
+     "R41",
+     "R46",
+     "R48"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "As a customer, I want to receive suggestions on products that I might like, so that I can find my new favorite products."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "As a customer, I want to receive a special personal discount on the products that I frequently buy, so that I can save money."
+     },
+     {
+      "sid": "R14.s1",
+      "text": "As a customer, I want to get recipes based on products I like, so I can potentially discover new meals to cook."
+     }
+    ],
+    "name": "Product",
+    "freq": 31
+   },
+   {
+    "id": "C19",
+    "src": [
+     "R23",
+     "R24"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As a customer, I want to scan the barcode of an item, so that I can see the product information without searching for it online."
+     },
+     {
+      "sid": "R24.s1",
+      "text": "As a customer, I want to read the product information, so that I find it easier than reading the product's packaging."
+     }
+    ],
+    "name": "ProductInformation",
+    "freq": 2
+   },
+   {
+    "id": "C20",
+    "src": [
+     "R4",
+     "R5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a customer, I want to activate push notifications, so that I am aware of discounts and anomalies."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "As a customer, I want to be able to deactivate push notifications, so that I no longer receive push notifications."
+     }
+    ],
+    "name": "PushNotification",
+    "freq": 3
+   },
+   {
+    "id": "C21",
+    "src": [
+     "R14",
+     "R31",
+     "R45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "As a customer, I want to get recipes based on products I like, so I can potentially discover new meals to cook."
+     },
+     {
+      "sid": "R31.s1",
+      "text": "As a customer, I want to see which products were used in a recipe, so that I know which products to buy when I am making a recipe."
+     },
+     {
+      "sid": "R45.s1",
+      "text": "As an employee, I want to update the application with new recipes, so that I can provide customers with inspiration for cooking a meal."
+     }
+    ],
+    "name": "Recipe",
+    "freq": 4
+   },
+   {
+    "id": "C22",
+    "src": [
+     "R18",
+     "R25",
+     "R26"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R18.s1",
+      "text": "As a customer, I want to search for a product, so that I know if it is in the supermarket's stock."
+     },
+     {
+      "sid": "R25.s1",
+      "text": "As a customer, I want to see if the product I need is in stock, so that I do not end up going to the store for a product that is sold out."
+     },
+     {
+      "sid": "R26.s1",
+      "text": "As a customer, I want to be notified when an item I need is back in stock, so that I do not miss out on it."
+     }
+    ],
+    "name": "Stock",
+    "freq": 3
+   },
+   {
+    "id": "C23",
+    "src": [
+     "R16",
+     "R25",
+     "R27",
+     "R28",
+     "R32",
+     "R33",
+     "R41",
+     "R42"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As a customer, I want to scan products in the store to build my shopping list, so that I do not have to scan my products again at checkout."
+     },
+     {
+      "sid": "R25.s1",
+      "text": "As a customer, I want to see if the product I need is in stock, so that I do not end up going to the store for a product that is sold out."
+     },
+     {
+      "sid": "R27.s1",
+      "text": "As a customer, I want to be able to see if a product that is sold out in my store is available in another store, so that I can purchase the product there."
+     }
+    ],
+    "name": "Store",
+    "freq": 10
+   },
+   {
+    "id": "C24",
+    "src": [
+     "R7",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As a customer, I want to change the font size of the text, so that it is easier for me to read."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "As a customer, I want to change the contrast between the text and the background, so that it is easier for me to read."
+     }
+    ],
+    "name": "Text",
+    "freq": 2
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R48"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R48.s1",
+      "text": "As an employee, I want to notify customers of suddenly unavailable products in their delivery, so that customers can manage their expectations accordingly."
+     }
+    ],
+    "owner": "Customer",
+    "name": "expectation",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R23"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As a customer, I want to scan the barcode of an item, so that I can see the product information without searching for it online."
+     }
+    ],
+    "owner": "Item",
+    "name": "barcode",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R24"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As a customer, I want to read the product information, so that I find it easier than reading the product's packaging."
+     }
+    ],
+    "owner": "Product",
+    "name": "packaging",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R28"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a customer, I want to see the available quantity of a product in store, so that I know that there is enough to fulfill my needs."
+     }
+    ],
+    "owner": "Product",
+    "name": "quantity",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As a customer, I want to change the font size of the text, so that it is easier for me to read."
+     }
+    ],
+    "owner": "Text",
+    "name": "size",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R1"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "As a customer, I want to create a personal account."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Account",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R23"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R23.s1",
+      "text": "As a customer, I want to scan the barcode of an item, so that I can see the product information without searching for it online."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Barcode",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "As a customer, I want to change the contrast between the text and the background, so that it is easier for me to read."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Contrast",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R15"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R15.s1",
+      "text": "As a customer, I want to contact customer service, so that I can have answers to urgent questions when I need them."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "CustomerService",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R34"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R34.s1",
+      "text": "As a customer, I want to be able to select the date on which my groceries will be delivered, so that I am sure that I have them in time."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Date",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "As a customer, I want to have a subscription-based delivery service, so that I gain discounts in case of frequent deliveries."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "DeliveryService",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL7",
+    "src": [
+     "R11",
+     "R12"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R11.s1",
+      "text": "As a customer, I want to receive a special personal discount on the products that I frequently buy, so that I can save money."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "As a customer, I want to be notified of special personal discounts, so that I do not miss out on them."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Discount",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL8",
+    "src": [
+     "R33",
+     "R36",
+     "R40"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R33.s1",
+      "text": "As a customer, I want to have my groceries delivered to me, so that I do not have to go to the store myself."
+     },
+     {
+      "sid": "R36.s1",
+      "text": "As a customer, I want to have my groceries delivered using an express delivery service, so that I can have products delivered to me when I need them quickly."
+     },
+     {
+      "sid": "R40.s1",
+      "text": "As a customer, I want to be able to digitally pay for my delivered groceries, so that I am not required to pay in person."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Grocery",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL9",
+    "src": [
+     "R26"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R26.s1",
+      "text": "As a customer, I want to be notified when an item I need is back in stock, so that I do not miss out on it."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Item",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL10",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "As a customer, I want to change the application's language to my native language, so that it is easier for me to understand the app."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Language",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL11",
+    "src": [
+     "R41"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R41.s1",
+      "text": "As a customer, I want to find the location of products in a specific store, so that my shopping becomes easier and faster."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Location",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL12",
+    "src": [
+     "R44"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R44.s1",
+      "text": "As a customer, I want to link my existing loyalty card, so that I do not have to physically have it."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "LoyaltyCard",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL13",
+    "src": [
+     "R2",
+     "R3"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "As a customer, I want to be able to sign up for the newsletter, so that I am aware of discounts and anomalies."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "As a customer, I want to be able to unsubscribe from the newsletter, so that I no longer receive the newsletter."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Newsletter",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL14",
+    "src": [
+     "R37"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R37.s1",
+      "text": "As a customer, I want to see my order history, so that I can easily find products that I have purchased before."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "OrderHistory",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL15",
+    "src": [
+     "R38"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R38.s1",
+      "text": "As a customer, I want to be able to place a previous order again, so that I do not have to add the products to my shopping cart again."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Order",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL16",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "As a customer, I want to reset my password."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Password",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL17",
+    "src": [
+     "R24"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R24.s1",
+      "text": "As a customer, I want to read the product information, so that I find it easier than reading the product's packaging."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "ProductInformation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL18",
+    "src": [
+     "R16",
+     "R17",
+     "R18",
+     "R19",
+     "R20",
+     "R21",
+     "R22",
+     "R25",
+     "R27",
+     "R29",
+     "R31",
+     "R32",
+     "R39"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R16.s1",
+      "text": "As a customer, I want to scan products in the store to build my shopping list, so that I do not have to scan my products again at checkout."
+     },
+     {
+      "sid": "R17.s1",
+      "text": "As a customer, I want to be able to add products to my wishlist, so that I can easily find them in the app."
+     },
+     {
+      "sid": "R18.s1",
+      "text": "As a customer, I want to search for a product, so that I know if it is in the supermarket's stock."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Product",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL19",
+    "src": [
+     "R4",
+     "R5"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "As a customer, I want to activate push notifications, so that I am aware of discounts and anomalies."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "As a customer, I want to be able to deactivate push notifications, so that I no longer receive push notifications."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "PushNotification",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL20",
+    "src": [
+     "R28"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R28.s1",
+      "text": "As a customer, I want to see the available quantity of a product in store, so that I know that there is enough to fulfill my needs."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Quantity",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL21",
+    "src": [
+     "R30"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R30.s1",
+      "text": "As a customer, I want to be provided with recipe ideas, so that I gain inspiration for my meals."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "RecipeIdea",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL22",
+    "src": [
+     "R14"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "As a customer, I want to get recipes based on products I like, so I can potentially discover new meals to cook."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Recipe",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL23",
+    "src": [
+     "R42"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R42.s1",
+      "text": "As a customer, I want to get recommendation regarding the nearest store, so that I won't be need to select the related store."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Recommendation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL24",
+    "src": [
+     "R43"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R43.s1",
+      "text": "As a customer, I want to be able to change the selection of my default store, so that I can easily order groceries at a different location."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Selection",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL25",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "As a customer, I want to change the font size of the text, so that it is easier for me to read."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Size",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL26",
+    "src": [
+     "R10"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R10.s1",
+      "text": "As a customer, I want to receive suggestions on products that I might like, so that I can find my new favorite products."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "Suggestion",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL27",
+    "src": [
+     "R35"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a customer, I want to be able to select a time slot for the delivery of my groceries so that I can make sure that I am home to receive the delivery."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Customer",
+    "target": "TimeSlot",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL28",
+    "src": [
+     "R48",
+     "R49",
+     "R50",
+     "R51"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R48.s1",
+      "text": "As an employee, I want to notify customers of suddenly unavailable products in their delivery, so that customers can manage their expectations accordingly."
+     },
+     {
+      "sid": "R49.s1",
+      "text": "As an employee, I want to notify customers in case of a delayed delivery, so that customers do not have to unnecessarily wait longer than needed."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As an employee, I want to contact the customer in case of a canceled delivery so that customers are given full transparency, and their delivery is handled adequately later."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Customer",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL29",
+    "src": [
+     "R47"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R47.s1",
+      "text": "As an employee, I want to confirm an established delivery time, so that customers are accurately informed on when their groceries will arrive."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "DeliveryTime",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL30",
+    "src": [
+     "R46"
+    ],
+    "rule": [
+     "story_role_object"
+    ],
+    "evidence": [
+     {
+      "sid": "R46.s1",
+      "text": "As an employee, I want to edit the discounts for a specific product, so that customers are provided with up-to-date information."
+     }
+    ],
+    "kind": "actor_object",
+    "source": "Employee",
+    "target": "Discount",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL31",
+    "src": [
+     "R48",
+     "R50"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R48.s1",
+      "text": "As an employee, I want to notify customers of suddenly unavailable products in their delivery, so that customers can manage their expectations accordingly."
+     },
+     {
+      "sid": "R50.s1",
+      "text": "As an employee, I want to contact the customer in case of a canceled delivery so that customers are given full transparency, and their delivery is handled adequately later."
+     }
+    ],
+    "kind": "has",
+    "source": "Customer",
+    "target": "Delivery",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL32",
+    "src": [
+     "R47",
+     "R51"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "R47.s1",
+      "text": "As an employee, I want to confirm an established delivery time, so that customers are accurately informed on when their groceries will arrive."
+     },
+     {
+      "sid": "R51.s1",
+      "text": "As an employee, I want to provide the customer with a new delivery time in case of a canceled delivery, so that the customer remains in control of when their groceries will arrive."
+     }
+    ],
+    "kind": "has",
+    "source": "Customer",
+    "target": "Grocery",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL33",
+    "src": [
+     "R35"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R35.s1",
+      "text": "As a customer, I want to be able to select a time slot for the delivery of my groceries so that I can make sure that I am home to receive the delivery."
+     }
+    ],
+    "kind": "has",
+    "source": "Grocery",
+    "target": "Delivery",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL34",
+    "src": [
+     "R48"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R48.s1",
+      "text": "As an employee, I want to notify customers of suddenly unavailable products in their delivery, so that customers can manage their expectations accordingly."
+     }
+    ],
+    "kind": "has",
+    "source": "Product",
+    "target": "Customer",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL35",
+    "src": [
+     "R41"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "R41.s1",
+      "text": "As a customer, I want to find the location of products in a specific store, so that my shopping becomes easier and faster."
+     }
+    ],
+    "kind": "has",
+    "source": "Product",
+    "target": "Location",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": [
+  "R23 (incompleteness, \"information\"): readings ['information refers to the product information', 'information refers to the barcode']",
+  "R24 (incompleteness, \"information\"): readings ['information refers to the product information', 'information refers to the packaging']",
+  "R36 (incompleteness, \"quickly\"): readings ['quickly refers to the delivery time', 'quickly refers to the service']",
+  "R46 (incompleteness, \"information\"): readings ['information refers to the discounts', 'information refers to the product']"
+ ]
+}

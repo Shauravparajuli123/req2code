@@ -1,0 +1,280 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D2/RelationalDBSchema",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "In a Relational Database Schema, a Column has exactly one Table as its owner."
+     }
+    ],
+    "name": "owner"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R4",
+     "R7",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A Column has a string to store its datatype and a string to store its default value."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "A table can have any number of columns as keys."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "In a Relational Database Schema, a Column has exactly one Table as its owner."
+     }
+    ],
+    "name": "Column",
+    "freq": 3
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R2",
+     "R5",
+     "R6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A Database has a String that stores its SGBD name."
+     },
+     {
+      "sid": "R5.s1",
+      "text": "A Database may contain any number of Tables."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A Table is associated with exactly one Database."
+     }
+    ],
+    "name": "Database",
+    "freq": 3
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R3",
+     "R6",
+     "R7",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A relational database schema can have a table."
+     },
+     {
+      "sid": "R6.s1",
+      "text": "A Table is associated with exactly one Database."
+     },
+     {
+      "sid": "R7.s1",
+      "text": "A table can have any number of columns as keys."
+     }
+    ],
+    "name": "Table",
+    "freq": 4
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A Column has a string to store its datatype and a string to store its default value."
+     }
+    ],
+    "owner": "Column",
+    "name": "datatype",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "A Column has a string to store its datatype and a string to store its default value."
+     }
+    ],
+    "owner": "Column",
+    "name": "default value",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "In a Relational Database Schema, a Column has exactly one Table as its owner."
+     }
+    ],
+    "owner": "Column",
+    "name": "owner",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A Database has a String that stores its SGBD name."
+     }
+    ],
+    "owner": "Database",
+    "name": "sgbd name",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R5"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A Database may contain any number of Tables."
+     }
+    ],
+    "owner": "Database",
+    "name": "tables",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R6"
+    ],
+    "rule": [
+     "assoc_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A Table is associated with exactly one Database."
+     }
+    ],
+    "kind": "association",
+    "source": "Table",
+    "target": "Database",
+    "multiplicity_target": "1..*"
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "In a Relational Database Schema, a Column has exactly one Table as its owner."
+     }
+    ],
+    "kind": "has",
+    "source": "Column",
+    "target": "Table",
+    "multiplicity_target": "one"
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R7"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R7.s1",
+      "text": "A table can have any number of columns as keys."
+     }
+    ],
+    "kind": "has",
+    "source": "Table",
+    "target": "Column",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [
+    {
+     "source": "Database",
+     "target": "Table",
+     "multiplicity": "1..*"
+    }
+   ],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": [
+  "R4 (referential, \"its\"): readings ['stores the datatype and default value of the column', 'stores the datatype and default value of the column']",
+  "R4 (referential, \"its\"): readings ['stores the datatype and default value of the column', 'stores the datatype and default value of the column']"
+ ]
+}

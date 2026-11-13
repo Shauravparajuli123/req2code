@@ -1,0 +1,67 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  personalInformation : String
+  paymentDetails : String
+  preferences : String
+  password : String
+  ticketOrders : String
+  favoritedArtistsAndEvents : String
+  +createPersonalInformation()
+  +createPaymentDetails()
+  +fillOutSurvey()
+  +editPreferences()
+  +changePassword()
+  +editPersonalInformation()
+  +seeTicketOrders()
+}
+class Visitor {
+  eventInformation : String
+  ticket : String
+  paymentMethod : String
+  searchResults : String
+  +readEventInformation()
+  +buyTicket()
+  +resellTicket()
+  +buyTicketAsGuest()
+  +fillInNameAndEmail()
+  +purchaseTicket()
+  +buyMultipleTickets()
+  +seeAvailableSeats()
+  +seeSeatsInMap()
+  +seeTypesOfTickets()
+  +addTicketsToCart()
+  +seeOrderSummary()
+  +seeListOfPaymentMethods()
+  +clickOnSearchResult()
+  +sortSearchResultsByDate()
+  +filterSearchResultsByPrice()
+  +filterSearchResultsByVenue()
+  +filterSearchResultsByGenre()
+  +seeUpcomingEventsInCalendarView()
+  +seePopularUpcomingEvents()
+}
+class Reseller {
+  ticket : String
+  bankAccount : String
+  +sellTicket()
+  +uploadDigitalTicket()
+  +setPriceForTicket()
+  +addDescriptionOfEvent()
+  +saveBankAccount()
+}
+class Company {
+  serviceFee : String
+  fraudulentBehavior : String
+  protectUsersFromOnlineFraud : String
+  +validateTickets()
+  +deductServiceFee()
+  +avoidFraudulentBehavior()
+  +protectUsers()
+}
+Visitor "1" -- "1" User : becomes
+Reseller "1" -- "1" User : becomes
+Company "1" -- "1" User : serves
+Company "1" -- "1" Reseller : serves
+@enduml

@@ -1,0 +1,258 @@
+{
+ "case": "D2/Make",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Makefile",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "comments",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "rules",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "shellLines",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    },
+    {
+     "name": "dependencies",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R11",
+    "R12"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "RuleDep",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "rule",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    },
+    {
+     "name": "dependency",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R13"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "FileDependency",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "text",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "ShellLine",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "command",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Macro",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "value",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R3",
+    "R11"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "0..1",
+   "label": "contains",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C6",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "contains",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

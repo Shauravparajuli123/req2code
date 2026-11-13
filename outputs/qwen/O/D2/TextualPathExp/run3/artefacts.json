@@ -1,0 +1,111 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefinePath",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "AlternativeTrans",
+   "kind": "class",
+   "attributes": [
+    "transitions"
+   ],
+   "methods": [
+    {
+     "name": "add_transition",
+     "use_case": "DefinePath"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "name": "Path",
+   "kind": "class",
+   "attributes": [
+    "transitions"
+   ],
+   "methods": [
+    {
+     "name": "add_transition",
+     "use_case": "DefinePath"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "TextualPathExp",
+   "kind": "class",
+   "attributes": [
+    "path"
+   ],
+   "methods": [
+    {
+     "name": "get_path",
+     "use_case": "DefinePath"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "AlternativeTrans",
+   "target": "Path",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Path",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "TextualPathExp",
+   "target": "Path",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Transition:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Path:\n    def __init__(self):\n        self.transitions: List[Transition] = []\n    def add_transition(self, transition: Transition):\n        self.transitions.append(transition)\n\nclass AlternativeTrans:\n    def __init__(self):\n        self.transitions: List[Transition] = []\n    def add_transition(self, transition: Transition):\n        self.transitions.append(transition)\n\nclass TextualPathExp:\n    def __init__(self):\n        self.path: Path = Path()\n    def get_path(self) -> Path:\n        return self.path\n",
+ "java": {}
+}

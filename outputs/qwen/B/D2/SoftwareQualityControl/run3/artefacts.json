@@ -1,0 +1,119 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    "day",
+    "year"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Control",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "date"
+   ],
+   "methods": [],
+   "src": [
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "ControlsSequence",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "ControlType",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Bug",
+   "kind": "class",
+   "attributes": [
+    "number",
+    "description",
+    "originator",
+    "commentsAnswer",
+    "closeDate"
+   ],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "BugTracking",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Control",
+   "target": "ControlsSequence",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "source": "Bug",
+   "target": "BugTracking",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "source": "ControlType",
+   "target": "Control",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/SoftwareQualityControl.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Date:\n    \"\"\"Source: R1\"\"\"\n    day: _t.Optional[int] = None\n    year: _t.Optional[int] = None\n\n\n@_dc.dataclass\nclass Control:\n    \"\"\"Source: R8, R9, R10\"\"\"\n    type: _t.Optional[str] = None\n    date: _t.Optional[str] = None\n    controlsSequences: _t.List[\"ControlsSequence\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass ControlsSequence:\n    \"\"\"Source: R7, R8\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass ControlType(Control):\n    \"\"\"Source: R4\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Bug:\n    \"\"\"Source: R6\"\"\"\n    number: _t.Optional[int] = None\n    description: _t.Optional[str] = None\n    originator: _t.Optional[str] = None\n    commentsAnswer: _t.Optional[str] = None\n    closeDate: _t.Optional[str] = None\n    bugTracking: _t.Optional[\"BugTracking\"] = None\n\n\n@_dc.dataclass\nclass BugTracking:\n    \"\"\"Source: R12, R13\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Architecture:\n    \"\"\"Source: R11\"\"\"\n    pass\n",
+ "java": {
+  "Date.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R1 */\npublic class Date {\n    private int day;\n    private int year;\n}\n",
+  "Control.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R8, R9, R10 */\npublic class Control {\n    private java.lang.String type;\n    private java.time.LocalDate date;\n    private java.util.List<ControlsSequence> controlsSequences;\n}\n",
+  "ControlsSequence.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R7, R8 */\npublic class ControlsSequence {\n}\n",
+  "ControlType.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R4 */\npublic class ControlType extends Control {\n}\n",
+  "Bug.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R6 */\npublic class Bug {\n    private int number;\n    private java.lang.String description;\n    private java.lang.String originator;\n    private java.lang.String commentsAnswer;\n    private java.time.LocalDate closeDate;\n    private BugTracking bugTracking;\n}\n",
+  "BugTracking.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R12, R13 */\npublic class BugTracking {\n}\n",
+  "Architecture.java": "/** Generated from shared model D2/SoftwareQualityControl. Source: R11 */\npublic class Architecture {\n}\n"
+ }
+}

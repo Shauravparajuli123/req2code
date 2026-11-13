@@ -1,0 +1,28 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class IumlType {
+}
+class IumlClass {
+}
+class IumlComponent {
+}
+class ICdeServer {
+  +implementComponent()
+}
+class ICdeComponent {
+}
+class ICdeMember {
+  executionPerformance : String
+  executionDetails : String
+}
+class IcdeComponentSpec {
+}
+class IUmlMember {
+}
+IumlClass --|> IumlType
+IumlComponent --|> IumlClass
+IumlType "1" -- "0..*" IUmlMember : has
+ICdeServer "0..*" *-- "1" ICdeComponent : has
+ICdeComponent "1" -- "0..*" ICdeMember : has
+@enduml

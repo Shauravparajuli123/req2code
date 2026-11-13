@@ -1,0 +1,99 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineGraphElement",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Graph",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "dimension",
+    "location"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R1"
+   ]
+  },
+  {
+   "name": "GraphElement",
+   "kind": "class",
+   "attributes": [
+    "label",
+    "zIndex",
+    "parentGraph"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R9",
+    "R10",
+    "R1"
+   ]
+  },
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "shape"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "DirectedArc",
+   "kind": "class",
+   "attributes": [
+    "sourceNode",
+    "targetNode",
+    "shape"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Constraint",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Graph",
+   "target": "GraphElement",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "class Graph:\n    def __init__(self, type: str, dimension: str, location: str):\n        self.type = type\n        self.dimension = dimension\n        self.location = location\n\n    def __str__(self):\n        return f'Graph(type={self.type}, dimension={self.dimension}, location={self.location})'\n\n\nclass GraphElement:\n    def __init__(self, label: str, zIndex: int, parentGraph: Graph):\n        self.label = label\n        self.zIndex = zIndex\n        self.parentGraph = parentGraph\n\n    def __str__(self):\n        return f'GraphElement(label={self.label}, zIndex={self.zIndex}, parentGraph={self.parentGraph})'\n\n\nclass Node(GraphElement):\n    def __init__(self, shape: str):\n        super().__init__(label=None, zIndex=0, parentGraph=None)\n        self.shape = shape\n\n    def __str__(self):\n        return f'Node(shape={self.shape})'\n\n\nclass DirectedArc(GraphElement):\n    def __init__(self, sourceNode: Node, targetNode: Node, shape: str):\n        super().__init__(label=None, zIndex=0, parentGraph=None)\n        self.sourceNode = sourceNode\n        self.targetNode = targetNode\n        self.shape = shape\n\n    def __str__(self):\n        return f'DirectedArc(sourceNode={self.sourceNode}, targetNode={self.targetNode}, shape={self.shape})'\n\n\nclass Constraint:\n    def __init__(self, value: str):\n        self.value = value\n\n    def __str__(self):\n        return f'Constraint(value={self.value})'",
+ "java": {}
+}

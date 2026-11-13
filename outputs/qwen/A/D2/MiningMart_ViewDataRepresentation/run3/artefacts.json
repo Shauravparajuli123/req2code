@@ -1,0 +1,79 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Class",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "attributes"
+   ],
+   "methods": [
+    {
+     "name": "addAttribute",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "dataType",
+    "class_"
+   ],
+   "methods": [],
+   "src": [
+    "R6",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "DataType",
+   "kind": "class",
+   "attributes": [
+    "attribute"
+   ],
+   "methods": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Class",
+   "target": "Attribute",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "DataType",
+   "target": "Attribute",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Class",
+   "target": "Attribute",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/MiningMart_ViewDataRepresentation.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Class:\n    \"\"\"Source: R4\"\"\"\n    name: _t.Optional[str] = None\n    attributes: _t.Optional[str] = None\n    attribute: _t.Optional[\"Attribute\"] = None\n\n    def addAttribute(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Attribute:\n    \"\"\"Source: R6, R8, R9\"\"\"\n    name: _t.Optional[str] = None\n    dataType: _t.Optional[str] = None\n    class_: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass DataType:\n    \"\"\"Source: R5, R8\"\"\"\n    attribute: _t.Optional[str] = None\n",
+ "java": {
+  "Class.java": "/** Generated from shared model D2/MiningMart_ViewDataRepresentation. Source: R4 */\npublic class Class {\n    private java.lang.String name;\n    private java.lang.String attributes;\n    private Attribute attribute;\n\n    /** Operation. */\n    public void addAttribute() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Attribute.java": "/** Generated from shared model D2/MiningMart_ViewDataRepresentation. Source: R6, R8, R9 */\npublic class Attribute {\n    private java.lang.String name;\n    private java.lang.String dataType;\n    private java.lang.String class_;\n}\n",
+  "DataType.java": "/** Generated from shared model D2/MiningMart_ViewDataRepresentation. Source: R5, R8 */\npublic class DataType {\n    private java.lang.String attribute;\n}\n"
+ }
+}

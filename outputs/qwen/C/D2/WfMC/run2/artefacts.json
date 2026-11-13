@@ -1,0 +1,119 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "WorkflowProcessDefinition",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "participantSpecifications"
+   ],
+   "methods": [
+    {
+     "name": "addSpecification",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R8",
+    "R15"
+   ]
+  },
+  {
+   "name": "Specification",
+   "kind": "class",
+   "attributes": [
+    "processDefinition"
+   ],
+   "methods": [],
+   "src": [
+    "R4",
+    "R15"
+   ]
+  },
+  {
+   "name": "ProcessDefinition",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "processActivities"
+   ],
+   "methods": [
+    {
+     "name": "addProcessActivity",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5",
+    "R6",
+    "R7",
+    "R17"
+   ]
+  },
+  {
+   "name": "ProcessActivity",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "processDefinition",
+    "relevantData"
+   ],
+   "methods": [
+    {
+     "name": "addRelevantData",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R13",
+    "R16",
+    "R17",
+    "R18",
+    "R19"
+   ]
+  },
+  {
+   "name": "TransitionInformation",
+   "kind": "class",
+   "attributes": [
+    "targetProcessActivity"
+   ],
+   "methods": [
+    {
+     "name": "setTargetProcessActivity",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R20",
+    "R21"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "WorkflowProcessDefinition",
+   "target": "TransitionInformation",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "ProcessActivity",
+   "target": "ProcessDefinition",
+   "src": [
+    "R17"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/WfMC.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass WorkflowProcessDefinition:\n    \"\"\"Source: R8, R15\"\"\"\n    name: _t.Optional[str] = None\n    participantSpecifications: _t.Optional[str] = None\n    transitionInformation: _t.Optional[\"TransitionInformation\"] = None\n\n    def addSpecification(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Specification:\n    \"\"\"Source: R4, R15\"\"\"\n    processDefinition: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass ProcessDefinition:\n    \"\"\"Source: R5, R6, R7, R17\"\"\"\n    name: _t.Optional[str] = None\n    processActivities: _t.Optional[str] = None\n\n    def addProcessActivity(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ProcessActivity:\n    \"\"\"Source: R13, R16, R17, R18, R19\"\"\"\n    name: _t.Optional[str] = None\n    processDefinition: _t.Optional[str] = None\n    relevantData: _t.Optional[str] = None\n\n    def addRelevantData(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass TransitionInformation:\n    \"\"\"Source: R20, R21\"\"\"\n    targetProcessActivity: _t.Optional[str] = None\n\n    def setTargetProcessActivity(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "WorkflowProcessDefinition.java": "/** Generated from shared model D2/WfMC. Source: R8, R15 */\npublic class WorkflowProcessDefinition {\n    private java.lang.String name;\n    private java.lang.String participantSpecifications;\n    private TransitionInformation transitionInformation;\n\n    /** Operation. */\n    public void addSpecification() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Specification.java": "/** Generated from shared model D2/WfMC. Source: R4, R15 */\npublic class Specification {\n    private java.lang.String processDefinition;\n}\n",
+  "ProcessDefinition.java": "/** Generated from shared model D2/WfMC. Source: R5, R6, R7, R17 */\npublic class ProcessDefinition {\n    private java.lang.String name;\n    private java.lang.String processActivities;\n\n    /** Operation. */\n    public void addProcessActivity() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ProcessActivity.java": "/** Generated from shared model D2/WfMC. Source: R13, R16, R17, R18, R19 */\npublic class ProcessActivity {\n    private java.lang.String name;\n    private java.lang.String processDefinition;\n    private java.lang.String relevantData;\n\n    /** Operation. */\n    public void addRelevantData() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "TransitionInformation.java": "/** Generated from shared model D2/WfMC. Source: R20, R21 */\npublic class TransitionInformation {\n    private java.lang.String targetProcessActivity;\n\n    /** Operation. */\n    public void setTargetProcessActivity() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

@@ -1,0 +1,33 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Game {
+  name : String
+  +createGame()
+}
+class StateMachine {
+  name : String
+  rootFolder : String
+  +addTransition()
+  +removeTransition()
+}
+class RootFolder {
+  name : String
+  subFolders : String
+}
+class State {
+  stateMachine : String
+  associationStateSources : String
+}
+class AssociationState {
+  transition : String
+  sourceStates : String
+}
+class Transition {
+  stateMachine : String
+  states : String
+}
+StateMachine "1" *-- "1" RootFolder : has
+StateMachine "0..*" o-- "0..*" Transition : has
+AssociationState --|> State
+@enduml

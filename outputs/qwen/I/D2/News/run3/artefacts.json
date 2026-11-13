@@ -1,0 +1,76 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DisplayNews",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "News",
+   "kind": "class",
+   "attributes": [
+    "title",
+    "link",
+    "author",
+    "date"
+   ],
+   "methods": [
+    {
+     "name": "publishOn",
+     "use_case": "R8"
+    },
+    {
+     "name": "report",
+     "use_case": "R7"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Newspaper",
+   "kind": "class",
+   "attributes": [
+    "language",
+    "datePublished"
+   ],
+   "methods": [
+    {
+     "name": "publish",
+     "use_case": "R6"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "aggregation",
+   "source": "Newspaper",
+   "target": "News",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R9"
+   ]
+  }
+ ],
+ "python": "from typing import List, Tuple\n\nclass Date:\n    def __init__(self, day_of_week: str, month: int, hours: int, seconds: int):\n        self.day_of_week = day_of_week\n        self.month = month\n        self.hours = hours\n        self.seconds = seconds\n\nclass News:\n    def __init__(self, title: str, link: str, author: str):\n        self.title = title\n        self.link = link\n        self.author = author\n        self.publication_date: Date = None\n        self.category: str = None\n\nclass Newspaper:\n    def __init__(self, language: str, publication_date: Date):\n        self.language = language\n        self.publication_date = publication_date\n        self.news: List[News] = []\n\n    def add_news(self, news: News):\n        if news not in self.news:\n            self.news.append(news)\n        else:\n            raise ValueError('News already exists in this newspaper')\n\n    def get_news_by_category(self, category: str) -> List[News]:\n        return [news for news in self.news if news.category == category]\n",
+ "java": {}
+}

@@ -1,0 +1,70 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Guardian" as A1
+actor "Student" as A2
+actor "Teacher" as A3
+actor "Administrator" as A4
+rectangle "school" {
+  usecase "Direct Message" as UC1
+  usecase "Fill In Absence" as UC2
+  usecase "Receive Notification" as UC3
+  usecase "View Information" as UC4
+  usecase "Access Files And DLM" as UC5
+  usecase "Hand Homework" as UC6
+  usecase "View Timetable" as UC7
+  usecase "View Account Information" as UC8
+  usecase "Change Preferences" as UC9
+  usecase "View DLM" as UC10
+  usecase "Assign DLM" as UC11
+  usecase "Grade DLM" as UC12
+  usecase "Create DLM" as UC13
+  usecase "Edit DLM" as UC14
+  usecase "View Student Information" as UC15
+  usecase "View Class" as UC16
+  usecase "Set DLM Date" as UC17
+  usecase "Upload Files" as UC18
+  usecase "View Student Data" as UC19
+  usecase "Send Direct Message" as UC20
+  usecase "Assign Schedule" as UC21
+  usecase "Create Account" as UC22
+  usecase "Edit Account" as UC23
+  usecase "View Dashboard" as UC24
+  usecase "Register Absence" as UC25
+  usecase "Send Broadcast Messages" as UC26
+  usecase "Set Role Of An Account" as UC27
+  usecase "Upload Schedules" as UC28
+  usecase "View Account Details" as UC29
+  usecase "View Statistics" as UC30
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A2 --> UC5
+A2 --> UC6
+A2 --> UC7
+A2 --> UC8
+A2 --> UC9
+A3 --> UC10
+A3 --> UC11
+A3 --> UC12
+A3 --> UC13
+A3 --> UC14
+A3 --> UC15
+A3 --> UC16
+A3 --> UC17
+A3 --> UC18
+A3 --> UC19
+A4 --> UC20
+A4 --> UC21
+A4 --> UC22
+A4 --> UC23
+A4 --> UC24
+A4 --> UC25
+A4 --> UC26
+A4 --> UC27
+A4 --> UC28
+A4 --> UC29
+A4 --> UC30
+@enduml

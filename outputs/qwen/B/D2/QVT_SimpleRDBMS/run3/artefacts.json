@@ -1,0 +1,171 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "RmodelElement",
+   "kind": "class",
+   "attributes": [
+    "kind"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Schema",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addColumn",
+     "use_case": null
+    },
+    {
+     "name": "addKey",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    "type"
+   ],
+   "methods": [
+    {
+     "name": "addColumn",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R4",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Key",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addKey",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R5",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "ForeignKey",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addForeignKey",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R6",
+    "R14",
+    "R15"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Schema",
+   "target": "Table",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "Table",
+   "target": "Schema",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Table",
+   "target": "Key",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "Column",
+   "target": "Table",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "Column",
+   "target": "ForeignKey",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "source": "Key",
+   "target": "Table",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "source": "Key",
+   "target": "ForeignKey",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "source": "ForeignKey",
+   "target": "Key",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "source": "ForeignKey",
+   "target": "Column",
+   "src": [
+    "R14"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/QVT_SimpleRDBMS.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass RmodelElement:\n    \"\"\"Source: R1\"\"\"\n    kind: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Schema:\n    \"\"\"Source: R2\"\"\"\n    table: _t.Optional[\"Table\"] = None\n\n\n@_dc.dataclass\nclass Table:\n    \"\"\"Source: R3, R7, R8, R9\"\"\"\n    schema: _t.Optional[\"Schema\"] = None\n    key: _t.Optional[\"Key\"] = None\n\n    def addColumn(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addKey(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Column:\n    \"\"\"Source: R4, R10, R11\"\"\"\n    type: _t.Optional[str] = None\n    table: _t.Optional[\"Table\"] = None\n    foreignKeys: _t.List[\"ForeignKey\"] = _dc.field(default_factory=list)\n\n    def addColumn(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Key:\n    \"\"\"Source: R5, R12, R13\"\"\"\n    table: _t.Optional[\"Table\"] = None\n    foreignKeys: _t.List[\"ForeignKey\"] = _dc.field(default_factory=list)\n\n    def addKey(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass ForeignKey:\n    \"\"\"Source: R6, R14, R15\"\"\"\n    key: _t.Optional[\"Key\"] = None\n    columns: _t.List[\"Column\"] = _dc.field(default_factory=list)\n\n    def addForeignKey(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "RmodelElement.java": "/** Generated from shared model D2/QVT_SimpleRDBMS. Source: R1 */\npublic class RmodelElement {\n    private java.lang.String kind;\n}\n",
+  "Schema.java": "/** Generated from shared model D2/QVT_SimpleRDBMS. Source: R2 */\npublic class Schema {\n    private Table table;\n}\n",
+  "Table.java": "/** Generated from shared model D2/QVT_SimpleRDBMS. Source: R3, R7, R8, R9 */\npublic class Table {\n    private Schema schema;\n    private Key key;\n\n    /** Operation. */\n    public void addColumn() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addKey() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Column.java": "/** Generated from shared model D2/QVT_SimpleRDBMS. Source: R4, R10, R11 */\npublic class Column {\n    private java.lang.String type;\n    private Table table;\n    private java.util.List<ForeignKey> foreignKeys;\n\n    /** Operation. */\n    public void addColumn() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Key.java": "/** Generated from shared model D2/QVT_SimpleRDBMS. Source: R5, R12, R13 */\npublic class Key {\n    private Table table;\n    private java.util.List<ForeignKey> foreignKeys;\n\n    /** Operation. */\n    public void addKey() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "ForeignKey.java": "/** Generated from shared model D2/QVT_SimpleRDBMS. Source: R6, R14, R15 */\npublic class ForeignKey {\n    private Key key;\n    private java.util.List<Column> columns;\n\n    /** Operation. */\n    public void addForeignKey() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

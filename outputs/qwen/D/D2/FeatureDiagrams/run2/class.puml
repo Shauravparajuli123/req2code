@@ -1,0 +1,32 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Node {
+  description : String
+  object_ : String
+  attributes : String
+}
+class Attribute {
+  description : String
+  name : String
+  key : boolean
+  node : String
+}
+class FeatureDiagram {
+  root : String
+}
+class XORGroup {
+  preliminary : boolean
+  +addNode()
+}
+class ORGroup {
+  preliminary : boolean
+  +addNode()
+}
+Node "1" -- "0..*" Attribute : has
+Node "0..*" -- "0..*" XORGroup : has
+Node "0..*" -- "0..*" ORGroup : has
+FeatureDiagram "1" -- "0..*" Node : has
+Node "1" *-- "1" Attribute : is composed of
+FeatureDiagram "1" o-- "0..*" Node : has
+@enduml

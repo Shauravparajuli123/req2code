@@ -1,0 +1,201 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "ManageCompanyStructure",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "backOffice",
+    "employees"
+   ],
+   "methods": [
+    {
+     "name": "addEmployee",
+     "use_case": "ManageCompanyStructure"
+    },
+    {
+     "name": "removeEmployee",
+     "use_case": "ManageCompanyStructure"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "CompanyStructureModel",
+   "kind": "class",
+   "attributes": [
+    "hq",
+    "stores",
+    "cashRegisters"
+   ],
+   "methods": [
+    {
+     "name": "addStore",
+     "use_case": "ManageCompanyStructure"
+    },
+    {
+     "name": "removeStore",
+     "use_case": "ManageCompanyStructure"
+    },
+    {
+     "name": "addCashRegister",
+     "use_case": "ManageCompanyStructure"
+    },
+    {
+     "name": "removeCashRegister",
+     "use_case": "ManageCompanyStructure"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R7"
+   ]
+  },
+  {
+   "name": "Hq",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Office",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "Store",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "backOffice",
+    "cashRegisters"
+   ],
+   "methods": [
+    {
+     "name": "addCashRegister",
+     "use_case": "ManageCompanyStructure"
+    },
+    {
+     "name": "removeCashRegister",
+     "use_case": "ManageCompanyStructure"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "CashRegister",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "CompanyStructureModel",
+   "target": "Company",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "CompanyStructureModel",
+   "target": "Hq",
+   "multiplicity_target": "1",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Company",
+   "target": "Office",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Store",
+   "target": "Office",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Store",
+   "target": "CashRegister",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "python": "class Company:\n    def __init__(self, name: str):\n        self.name = name\n        self.backOffice = None\n        self.employees = []\n\n    def addEmployee(self, employee):\n        raise NotImplementedError\n\n    def removeEmployee(self, employee):\n        raise NotImplementedError\n\n\nclass CompanyStructureModel:\n    def __init__(self, hq: Hq):\n        self.hq = hq\n        self.stores = []\n        self.cashRegisters = []\n\n    def addStore(self, store: Store):\n        raise NotImplementedError\n\n    def removeStore(self, store: Store):\n        raise NotImplementedError\n\n    def addCashRegister(self, cashRegister: CashRegister):\n        raise NotImplementedError\n\n    def removeCashRegister(self, cashRegister: CashRegister):\n        raise NotImplementedError\n\n\nclass Hq:\n    def __init__(self):\n        pass\n\n\nclass Office:\n    def __init__(self):\n        pass\n\n\nclass Store:\n    def __init__(self, name: str, backOffice: Office):\n        self.name = name\n        self.backOffice = backOffice\n        self.cashRegisters = []\n\n    def addCashRegister(self, cashRegister: CashRegister):\n        raise NotImplementedError\n\n    def removeCashRegister(self, cashRegister: CashRegister):\n        raise NotImplementedError\n\n\nclass CashRegister:\n    def __init__(self):\n        pass",
+ "java": {}
+}

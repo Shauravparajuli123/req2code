@@ -1,0 +1,152 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "PetriNet",
+    "src": [
+     "R1",
+     "R2",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11"
+    ]
+   },
+   {
+    "name": "PetriNetModel",
+    "src": [
+     "R3",
+     "R4"
+    ]
+   },
+   {
+    "name": "PTArc",
+    "src": [
+     "R5",
+     "R8"
+    ]
+   },
+   {
+    "name": "TPArc",
+    "src": [
+     "R6",
+     "R12",
+     "R13"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "PetriNet",
+    "name": "places",
+    "src": [
+     "R7",
+     "R11"
+    ]
+   },
+   {
+    "owner": "PetriNet",
+    "name": "nets",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "owner": "PetriNet",
+    "name": "transitions",
+    "src": [
+     "R2",
+     "R9"
+    ]
+   },
+   {
+    "owner": "PTArc",
+    "name": "dst",
+    "src": [
+     "R12"
+    ]
+   },
+   {
+    "owner": "TPArc",
+    "name": "src",
+    "src": [
+     "R13"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "PetriNet",
+    "target": "Net",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "PetriNet",
+    "target": "Place",
+    "src": [
+     "R11"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "PetriNet",
+    "target": "TPArc",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "PetriNetModel",
+    "target": "Net",
+    "src": [
+     "R3",
+     "R4"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Net",
+    "target": "Place",
+    "src": [
+     "R11"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Net",
+    "target": "Transition",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Transition",
+    "target": "TPArc",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "PTArc",
+    "target": "TPArc",
+    "src": [
+     "R5",
+     "R6"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

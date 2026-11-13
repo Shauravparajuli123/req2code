@@ -1,0 +1,60 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Task",
+   "kind": "class",
+   "attributes": [
+    "identifier",
+    "category",
+    "taskType",
+    "importance",
+    "complexityLevel",
+    "centrality"
+   ],
+   "methods": [
+    {
+     "name": "decompose",
+     "use_case": null
+    },
+    {
+     "name": "associateExpression",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Operator",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "applyToTask",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/UsiXML-task.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Task:\n    \"\"\"Source: R1\"\"\"\n    identifier: _t.Optional[str] = None\n    category: _t.Optional[str] = None\n    taskType: _t.Optional[str] = None\n    importance: _t.Optional[int] = None\n    complexityLevel: _t.Optional[int] = None\n    centrality: _t.Optional[int] = None\n\n    def decompose(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def associateExpression(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Operator:\n    \"\"\"Source: R2, R3, R4, R6, R7, R8, R9, R10\"\"\"\n\n    def applyToTask(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Task.java": "/** Generated from shared model D2/UsiXML-task. Source: R1 */\npublic class Task {\n    private java.lang.String identifier;\n    private java.lang.String category;\n    private java.lang.String taskType;\n    private int importance;\n    private int complexityLevel;\n    private int centrality;\n\n    /** Operation. */\n    public void decompose() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void associateExpression() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Operator.java": "/** Generated from shared model D2/UsiXML-task. Source: R2, R3, R4, R6, R7, R8, R9, R10 */\npublic class Operator {\n\n    /** Operation. */\n    public void applyToTask() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

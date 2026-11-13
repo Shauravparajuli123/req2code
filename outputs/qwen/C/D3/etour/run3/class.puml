@@ -1,0 +1,139 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Agency {
+  +deleteCulturalObject()
+  +insertCulturalObject()
+  +changeCulturalObjectData()
+  +getCulturalObjects()
+  +viewCulturalObjectDetails()
+  +deleteRefreshmentPoint()
+  +requestConvention()
+  +editRefreshmentPointData()
+  +getRefreshmentPoints()
+  +viewRefreshmentPointDetails()
+  +viewRefreshmentPointHistory()
+  +enableDisableTouristAccount()
+  +getTouristAccounts()
+  +viewTouristAccountDetails()
+  +deleteAccount()
+  +changeData()
+  +viewReport()
+  +editComment()
+}
+class CulturalObject {
+  name : String
+  description : String
+}
+class RefreshmentPoint {
+  name : String
+  address : String
+  status : String
+  +checkPoint()
+  +insertBanner()
+  +deleteBanner()
+}
+class TouristAccount {
+  username : String
+  status : String
+}
+class Tourist {
+  id : int
+  authenticated : boolean
+  +changeData()
+  +deleteAccount()
+}
+class BannerAd {
+  +changeImage()
+}
+class News {
+  +insertNews()
+  +deleteNews()
+  +changeData()
+}
+class Feedback {
+  touristId : int
+  siteId : int
+  +viewFeedback()
+  +viewReport()
+  +editComment()
+  +insertFeedback()
+  +viewFavoriteList()
+  +viewVisitedSites()
+}
+class Game {
+  name : String
+  +createGame()
+}
+class SearchTag {
+  +removeSearchTag()
+  +insertTagSearch()
+}
+class User {
+  +supplyLogin()
+  +searchSite()
+  +endSession()
+}
+class RestaurantOperator {
+  +insertBanner()
+  +changeImage()
+  +deleteBannerAd()
+}
+class Menu {
+  name : String
+  +createMenu()
+  +deleteMenu()
+}
+class DataPoint {
+  +changeDataPoint()
+}
+class Convention {
+  +requireConvention()
+}
+class Statistic {
+  +viewStatistic()
+}
+class SearchPreference {
+  +editSearchPreference()
+  +changePreference()
+  +editPreference()
+}
+class Bookmark {
+  +insertBookmark()
+  +removeBookmark()
+}
+class Comment {
+  text : String
+  siteId : int
+  +editComment()
+}
+class Gps {
+  position : String
+  +getPosition()
+}
+class AdvancedSearch {
+  criteria : String
+  +searchSites()
+}
+class Site {
+  id : int
+  name : String
+  +displayDetails()
+}
+Agency "1" -- "1" TouristAccount : has
+Agency "1" -- "1" RefreshmentPoint : has
+Agency "1" -- "1" Site : has
+Agency "1" -- "1" News : has
+Agency "1" -- "1" Feedback : has
+RefreshmentPoint "1" -- "1" BannerAd : has
+TouristAccount "1" -- "1" Comment : has
+Site "1" -- "1" Feedback : has
+Site "1" -- "1" Statistic : has
+RestaurantOperator "1" -- "1" Convention : has
+RestaurantOperator "1" -- "1" Statistic : has
+Tourist "1" -- "1" Feedback : has
+Tourist "1" -- "1" Bookmark : has
+Tourist "1" -- "1" Site : has
+Tourist "1" -- "1" Statistic : has
+User "1" -- "1" Feedback : has
+@enduml

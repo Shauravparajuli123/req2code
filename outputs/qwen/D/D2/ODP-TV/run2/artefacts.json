@@ -1,0 +1,72 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "TechnologyObject",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1",
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "ImplementableStandard",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "name": "Implementation",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R2",
+    "R6"
+   ]
+  },
+  {
+   "name": "IXIT",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "ImplementableStandard",
+   "target": "TechnologyObject",
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "source": "IXIT",
+   "target": "Implementation",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/ODP-TV.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass TechnologyObject:\n    \"\"\"Source: R1, R5, R8\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass ImplementableStandard(TechnologyObject):\n    \"\"\"Source: R4, R8\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass Implementation:\n    \"\"\"Source: R2, R6\"\"\"\n    pass\n\n\n@_dc.dataclass\nclass IXIT(Implementation):\n    \"\"\"Source: R3, R7\"\"\"\n    pass\n",
+ "java": {
+  "TechnologyObject.java": "/** Generated from shared model D2/ODP-TV. Source: R1, R5, R8 */\npublic class TechnologyObject {\n}\n",
+  "ImplementableStandard.java": "/** Generated from shared model D2/ODP-TV. Source: R4, R8 */\npublic class ImplementableStandard extends TechnologyObject {\n}\n",
+  "Implementation.java": "/** Generated from shared model D2/ODP-TV. Source: R2, R6 */\npublic class Implementation {\n}\n",
+  "IXIT.java": "/** Generated from shared model D2/ODP-TV. Source: R3, R7 */\npublic class IXIT extends Implementation {\n}\n"
+ }
+}

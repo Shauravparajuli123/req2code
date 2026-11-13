@@ -1,0 +1,60 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for Project description in R1",
+   "fix": "Add class Project with attributes identifier, artifactIdentifier, and description"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for BuildConfiguration description in R2",
+   "fix": "Add class BuildConfiguration with attributes defaultGoal and pathToUnitTestSourceDirectory"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for Resource description in R3",
+   "fix": "Add class Resource with attributes targetPath, directory, and excludes"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for MailingList description in R4",
+   "fix": "Add class MailingList with attributes name, subscribeString, and archiveString"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for Person description in R5",
+   "fix": "Add class Person with attributes name, url, organizationUrl, and timeZone"
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for Developer description in R6",
+   "fix": "Add class Developer with attribute identifier"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship for R7",
+   "fix": "Add association Project -> Contributor [1..*..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship for R8",
+   "fix": "Add association Project -> MailingList [0..*..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship for R9",
+   "fix": "Add association BuildConfiguration -> Project [0..1..1]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship for R10",
+   "fix": "Add association BuildConfiguration -> Resource [0..*..1]"
+  }
+ ]
+}

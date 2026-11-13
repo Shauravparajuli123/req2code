@@ -1,0 +1,139 @@
+{
+ "actors": [
+  "BusinessEntity"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineBusinessEntity",
+   "actor": "BusinessEntity",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "IdentifierBag",
+   "kind": "class",
+   "attributes": [
+    "identifiers"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "BusinessEntity",
+   "kind": "class",
+   "attributes": [
+    "businessContact",
+    "identifierBag"
+   ],
+   "methods": [
+    {
+     "name": "defineBusinessEntity",
+     "use_case": "DefineBusinessEntity"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "businessTemplates"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6"
+   ]
+  },
+  {
+   "name": "OverviewDocument",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "PifModel",
+   "kind": "class",
+   "attributes": [
+    "businessTemplates"
+   ],
+   "methods": [
+    {
+     "name": "addBusinessTemplate",
+     "use_case": "DefineBusinessEntity"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "BusinessEntity",
+   "target": "Contact",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Model",
+   "target": "OverviewDocument",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "UtilityClass",
+   "target": "IdentifierBag",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "PifModel",
+   "target": "Model",
+   "multiplicity_target": "1",
+   "src": [
+    "R1",
+    "R6"
+   ]
+  }
+ ],
+ "python": "class IdentifierBag:\n    def __init__(self):\n        self.identifiers = []\n\nclass BusinessEntity:\n    def __init__(self, identifier_bag, business_contact=None):\n        self.identifierBag = identifier_bag\n        self.businessContact = business_contact\n    def defineBusinessEntity(self):\n        raise NotImplementedError\n\nclass Contact:\n    pass\nclass Model:\n    def __init__(self):\n        self.businessTemplates = []\nclass OverviewDocument:\n    pass\nclass PifModel(Model):\n    def __init__(self):\n        super().__init__()\n    def addBusinessTemplate(self, business_template):\n        raise NotImplementedError",
+ "java": {}
+}

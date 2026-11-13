@@ -1,0 +1,136 @@
+{
+ "actors": [
+  "Moderator"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Game",
+   "actor": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Project",
+   "kind": "class",
+   "attributes": [
+    "identifier",
+    "artifactIdentifier",
+    "description"
+   ],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "BuildConfiguration",
+   "kind": "class",
+   "attributes": [
+    "defaultGoal",
+    "pathToUnitTestSourceDirectory"
+   ],
+   "methods": [
+    {
+     "name": "associateWithResources",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Resource",
+   "kind": "class",
+   "attributes": [
+    "targetPath",
+    "directory",
+    "excludes"
+   ],
+   "methods": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "MailingList",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "subscribeString",
+    "archiveString"
+   ],
+   "methods": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Contributor",
+   "kind": "class",
+   "attributes": [
+    "identifier"
+   ],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Person",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "url",
+    "organizationUrl",
+    "timeZone"
+   ],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Project",
+   "target": "BuildConfiguration",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "Project",
+   "target": "Resource",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "Project",
+   "target": "MailingList",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Project",
+   "target": "Contributor",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/MavenProject.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Project:\n    \"\"\"Source: R1\"\"\"\n    identifier: _t.Optional[str] = None\n    artifactIdentifier: _t.Optional[str] = None\n    description: _t.Optional[str] = None\n    buildConfiguration: _t.Optional[\"BuildConfiguration\"] = None\n    resources: _t.List[\"Resource\"] = _dc.field(default_factory=list)\n    mailingList: _t.Optional[\"MailingList\"] = None\n    contributors: _t.List[\"Contributor\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass BuildConfiguration:\n    \"\"\"Source: R9\"\"\"\n    defaultGoal: _t.Optional[str] = None\n    pathToUnitTestSourceDirectory: _t.Optional[str] = None\n\n    def associateWithResources(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Resource:\n    \"\"\"Source: R10\"\"\"\n    targetPath: _t.Optional[str] = None\n    directory: _t.Optional[str] = None\n    excludes: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass MailingList:\n    \"\"\"Source: R4\"\"\"\n    name: _t.Optional[str] = None\n    subscribeString: _t.Optional[str] = None\n    archiveString: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Contributor:\n    \"\"\"Source: R7\"\"\"\n    identifier: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Person:\n    \"\"\"Source: R5\"\"\"\n    name: _t.Optional[str] = None\n    url: _t.Optional[str] = None\n    organizationUrl: _t.Optional[str] = None\n    timeZone: _t.Optional[str] = None\n",
+ "java": {
+  "Project.java": "/** Generated from shared model D2/MavenProject. Source: R1 */\npublic class Project {\n    private java.lang.String identifier;\n    private java.lang.String artifactIdentifier;\n    private java.lang.String description;\n    private BuildConfiguration buildConfiguration;\n    private java.util.List<Resource> resources;\n    private MailingList mailingList;\n    private java.util.List<Contributor> contributors;\n}\n",
+  "BuildConfiguration.java": "/** Generated from shared model D2/MavenProject. Source: R9 */\npublic class BuildConfiguration {\n    private java.lang.String defaultGoal;\n    private java.lang.String pathToUnitTestSourceDirectory;\n\n    /** Operation. */\n    public void associateWithResources() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Resource.java": "/** Generated from shared model D2/MavenProject. Source: R10 */\npublic class Resource {\n    private java.lang.String targetPath;\n    private java.lang.String directory;\n    private java.lang.String excludes;\n}\n",
+  "MailingList.java": "/** Generated from shared model D2/MavenProject. Source: R4 */\npublic class MailingList {\n    private java.lang.String name;\n    private java.lang.String subscribeString;\n    private java.lang.String archiveString;\n}\n",
+  "Contributor.java": "/** Generated from shared model D2/MavenProject. Source: R7 */\npublic class Contributor {\n    private java.lang.String identifier;\n}\n",
+  "Person.java": "/** Generated from shared model D2/MavenProject. Source: R5 */\npublic class Person {\n    private java.lang.String name;\n    private java.lang.String url;\n    private java.lang.String organizationUrl;\n    private java.lang.String timeZone;\n}\n"
+ }
+}

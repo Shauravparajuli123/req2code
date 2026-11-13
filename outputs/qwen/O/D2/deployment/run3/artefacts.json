@@ -1,0 +1,152 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "CreateDeployment",
+   "actor": "User",
+   "src": [
+    "R2",
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "AddNodeToDeployment",
+   "actor": "User",
+   "src": [
+    "R2",
+    "R7"
+   ]
+  },
+  {
+   "name": "AddCommunicationLink",
+   "actor": "User",
+   "src": [
+    "R2",
+    "R5",
+    "R8"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7"
+   ]
+  },
+  {
+   "name": "CommunicationLink",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "source_node"
+   ],
+   "methods": [
+    {
+     "name": "add_node",
+     "use_case": "AddNodeToDeployment"
+    },
+    {
+     "name": "add_link",
+     "use_case": "AddCommunicationLink"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Deployment",
+   "kind": "class",
+   "attributes": [
+    "execution_environment",
+    "nodes"
+   ],
+   "methods": [
+    {
+     "name": "add_node",
+     "use_case": "AddNodeToDeployment"
+    },
+    {
+     "name": "add_link",
+     "use_case": "AddCommunicationLink"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R7"
+   ]
+  },
+  {
+   "name": "Nodes",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "add_node",
+     "use_case": "AddNodeToDeployment"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Specification",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "ExecutionEnvironment",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Deployment",
+   "target": "Nodes",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "CommunicationLink",
+   "target": "Node",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "class Node:\n    def __init__(self, name: str):\n        self.name = name\n\nclass CommunicationLink:\n    def __init__(self, name: str, source_node: Node):\n        self.name = name\n        self.source_node = source_node\n    def add_node(self, node: Node):\n        raise NotImplementedError\n    def add_link(self, link: CommunicationLink):\n        raise NotImplementedError\nclass Deployment:\n    def __init__(self, execution_environment: ExecutionEnvironment):\n        self.execution_environment = execution_environment\n        self.nodes = Nodes()\n    def add_node(self, node: Node):\n        raise NotImplementedError\n    def add_link(self, link: CommunicationLink):\n        raise NotImplementedError\nclass Nodes:\n    def add_node(self, node: Node):\n        raise NotImplementedError\nclass Specification:\n    pass\nclass ExecutionEnvironment:\n    pass",
+ "java": {}
+}

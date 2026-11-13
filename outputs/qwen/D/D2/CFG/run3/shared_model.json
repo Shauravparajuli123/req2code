@@ -1,0 +1,100 @@
+{
+ "case": "D2/CFG",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "inNode",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C2",
+   "name": "Expression",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "AbstractNode",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "expression",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ConditionalNode",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "trueConditionNode",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "generalization",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is-a",
+   "src": [
+    "R1",
+    "R2"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

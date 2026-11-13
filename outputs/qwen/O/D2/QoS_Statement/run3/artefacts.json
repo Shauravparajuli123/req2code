@@ -1,0 +1,94 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Domain",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "QoSConstraint",
+   "kind": "class",
+   "attributes": [
+    "qualification"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Parameter",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "compoundQoSStatement",
+     "use_case": "Verb Object"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "qosConstraint"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "qosStatements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Domain",
+   "target": "QoSConstraint",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R11"
+   ]
+  }
+ ],
+ "python": "class Domain:\n    pass\n\nclass QoSConstraint:\n    def __init__(self, qualification: QualificationKind):\n        self.qualification = qualification\n\nclass Parameter:\n    def __init__(self, value: str):\n        self.value = value\n\nclass QoSStatement:\n    def __init__(self):\n        pass\n    def compoundQoSStatement(self) -> CompoundQoSStatement:\n        raise NotImplementedError\n\nclass SingleQoSStatement:\n    def __init__(self, qosConstraint: QoSConstraint):\n        self.qosConstraint = qosConstraint\n\nclass CompoundQoSStatement:\n    def __init__(self, qosStatements: List[QoSStatement]):\n        self.qosStatements = qosStatements",
+ "java": {}
+}

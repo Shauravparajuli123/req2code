@@ -1,0 +1,298 @@
+{
+ "case": "D2/GWPNV5",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "net",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "inputArcs",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addInputArc",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "removeInputArc",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9",
+    "R15"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "outputArcs",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addOutputArc",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M4",
+     "name": "removeOutputArc",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "weight",
+     "type": "int",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "transition",
+     "type": "String",
+     "src": [
+      "R13",
+      "R14"
+     ]
+    },
+    {
+     "name": "place",
+     "type": "String",
+     "src": [
+      "R13",
+      "R14"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "setWeight",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M6",
+     "name": "setTransition",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M7",
+     "name": "setPlace",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Token",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "place",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M8",
+     "name": "moveTo",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R15"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "places",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "transitions",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [
+    {
+     "id": "M9",
+     "name": "addPlace",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M10",
+     "name": "removePlace",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M11",
+     "name": "addTransition",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M12",
+     "name": "removeTransition",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C5",
+   "target": "C1",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R1",
+    "R12"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C5",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C3",
+   "target": "C2",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C4",
+   "target": "C1",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "is in",
+   "src": [
+    "R7",
+    "R15"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

@@ -1,0 +1,157 @@
+{
+ "case": "D4/amphibious",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Vehicle",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "position",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "speed",
+     "type": "int",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "maxSpeed",
+     "type": "int",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "environment",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "move",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [
+    "LAND",
+    "WATER",
+    "AIR"
+   ],
+   "src": [
+    "R2",
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "LandVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "MarineVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "AmphibiousVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "generalization",
+   "source": "C2",
+   "target": "C1",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is a",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "generalization",
+   "source": "C3",
+   "target": "C1",
+   "mult_source": "*",
+   "mult_target": "*",
+   "label": "is a",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "0..1",
+   "mult_target": "1",
+   "label": "can be",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C4",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is a",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is a",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

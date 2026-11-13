@@ -1,0 +1,122 @@
+{
+ "actors": [],
+ "use_cases": [
+  {
+   "name": "Define Petri Net",
+   "actor": "",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [
+    "nets"
+   ],
+   "methods": [
+    {
+     "name": "definePetriNet",
+     "use_case": "Define Petri Net"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "places",
+    "transitions"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4",
+    "R6"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Network",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "PetriNet",
+   "target": "Net",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "python": "class PetriNet:\n    def __init__(self):\n        self.nets = []\n    def definePetriNet(self):\n        raise NotImplementedError\n\nclass Net:\n    def __init__(self, places, transitions):\n        self.places = places\n        self.transitions = transitions\nclass Place:\n    pass\nclass Transition:\n    pass\nclass Network:\n    pass",
+ "java": {}
+}

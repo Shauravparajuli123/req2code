@@ -1,0 +1,128 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefinePlace",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8"
+   ]
+  },
+  {
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasTransition",
+     "use_case": "R2"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasDestination",
+     "use_case": "R5"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "hasNet",
+     "use_case": "R6"
+    },
+    {
+     "name": "hasDestinationPlace",
+     "use_case": "R7"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PetriNet",
+   "target": "Transition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R2",
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Place",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Transition",
+   "target": "Net",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Net:\n    def __init__(self, name: str):\n        self.name = name\n        self.places: List[Place] = []\n        self.transitions: List[Transition] = []\n\nclass PetriNet:\n    def __init__(self, name: str):\n        self.name = name\n        self.transitions: List[Transition] = []\n\nclass Place:\n    def __init__(self, name: str):\n        self.name = name\n        self.destination: List[Transition] = []\n\nclass Transition:\n    def __init__(self, name: str, net: Net):\n        self.name = name\n        self.net = net\n        self.destination: List[Place] = []\n        self.net.places.append(self)\n\n    def set_net(self, net: Net):\n        raise NotImplementedError\n\n    def add_destination(self, place: Place):\n        raise NotImplementedError\n\n    def get_net(self) -> Net:\n        raise NotImplementedError\n\n    def get_destinations(self) -> List[Place]:\n        raise NotImplementedError\n\ndef main():\n    net = Net('Net1')\n    petri_net = PetriNet('PetriNet1')\n    place = Place('Place1')\n    transition = Transition('Transition1', net)\n    place.destination.append(transition)\n    petri_net.transitions.append(transition)\n\n    # Add more code to test the classes and their interactions\n\nif __name__ == '__main__':\n    main()",
+ "java": {}
+}

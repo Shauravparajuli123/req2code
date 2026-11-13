@@ -1,0 +1,117 @@
+{
+ "case": "D2/QVT",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "TemplateExp",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "ObjectTemplateExp",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "propertyTemplateItems",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "CollectionTemplateExp",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "oclExpressions",
+     "type": "String",
+     "src": [
+      "R7",
+      "R8"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C4",
+   "name": "PropertyTemplateItem",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "objectContainer",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "name": "referredProperty",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C4",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "contains",
+   "src": []
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

@@ -1,0 +1,205 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "Instance",
+    "src": [
+     "R1",
+     "R7",
+     "R8",
+     "R9"
+    ]
+   },
+   {
+    "name": "AttributeLink",
+    "src": [
+     "R2",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14"
+    ]
+   },
+   {
+    "name": "Link",
+    "src": [
+     "R3"
+    ]
+   },
+   {
+    "name": "Linkend",
+    "src": [
+     "R4",
+     "R13",
+     "R14"
+    ]
+   },
+   {
+    "name": "ComponentInstance",
+    "src": [
+     "R5",
+     "R15"
+    ]
+   },
+   {
+    "name": "NodeInstance",
+    "src": [
+     "R6",
+     "R16"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Instance",
+    "name": "owned_by",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "owner": "Instance",
+    "name": "has_classifiers",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "owner": "Instance",
+    "name": "has_slots",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "owner": "AttributeLink",
+    "name": "instance",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "owner": "AttributeLink",
+    "name": "linkend",
+    "src": [
+     "R11"
+    ]
+   },
+   {
+    "owner": "AttributeLink",
+    "name": "association",
+    "src": [
+     "R12"
+    ]
+   },
+   {
+    "owner": "Linkend",
+    "name": "link",
+    "src": [
+     "R13"
+    ]
+   },
+   {
+    "owner": "Linkend",
+    "name": "instance",
+    "src": [
+     "R14"
+    ]
+   },
+   {
+    "owner": "ComponentInstance",
+    "name": "residents",
+    "src": [
+     "R15"
+    ]
+   },
+   {
+    "owner": "NodeInstance",
+    "name": "componentinstance",
+    "src": [
+     "R16"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Instance",
+    "target": "Classifier",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Instance",
+    "target": "Slot",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "AttributeLink",
+    "target": "Instance",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "AttributeLink",
+    "target": "Linkend",
+    "src": [
+     "R11"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "AttributeLink",
+    "target": "Association",
+    "src": [
+     "R12"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Linkend",
+    "target": "Link",
+    "src": [
+     "R13"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Linkend",
+    "target": "Instance",
+    "src": [
+     "R14"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "ComponentInstance",
+    "target": "Resident",
+    "src": [
+     "R15"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "NodeInstance",
+    "target": "ComponentInstance",
+    "src": [
+     "R16"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

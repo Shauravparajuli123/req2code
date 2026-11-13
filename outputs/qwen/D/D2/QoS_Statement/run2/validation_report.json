@@ -1,0 +1,50 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that 'CompoundQoSStatement' is a class which belongs to the QoSStatement package, as stated in Requirement R3."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R4: 'Parameter' class is missing in the model.",
+   "fix": "Add a 'Parameter' class to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R5: 'QoSConstraint' class is already present but not named as such in the model.",
+   "fix": "Rename the existing 'QoSConstraint' class to 'Parameter'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Requirement R7: There is no relationship indicating that QoSStatement is a superclass of SingleQoSStatement and CompoundQoSStatement.",
+   "fix": "Add a generalization relationship from QoSStatement to SingleQoSStatement and CompoundQoSStatement."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Requirement R8: There is no use case or relationship indicating that each QoSStatement is related to a CompoundQoSStatement.",
+   "fix": "Add a use case or relationship indicating the relationship between QoSStatement and CompoundQoSStatement."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Requirement R9: There is no use case or relationship indicating that each SingleQoSStatement is composed of a QoSConstraint.",
+   "fix": "Add a use case or relationship indicating the composition between SingleQoSStatement and QoSConstraint."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R10: There is no class 'CoumpoundQoSStatement' in the model, and the existing 'CompoundQoSStatement' class name is misspelled.",
+   "fix": "Correct the spelling of the class name to 'CompoundQoSStatement' and ensure it is present in the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R11: The 'QualificationKind' class is missing in the model.",
+   "fix": "Add a 'QualificationKind' class to the model."
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "actors": [
+  "Airline Operator"
+ ],
+ "use_cases": [
+  {
+   "name": "Start Operation",
+   "actor": "Airline Operator",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Stop Operation",
+   "actor": "Airline Operator",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Update Operating Cost",
+   "actor": "Airline Operator",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airline",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "operations"
+   ],
+   "methods": [
+    {
+     "name": "startOperation",
+     "use_case": "Start Operation"
+    },
+    {
+     "name": "stopOperation",
+     "use_case": "Stop Operation"
+    },
+    {
+     "name": "updateOperatingCost",
+     "use_case": "Update Operating Cost"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4"
+   ]
+  },
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "code",
+    "city"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "OperatingCost",
+   "kind": "class",
+   "attributes": [
+    "cost",
+    "airport"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Airline",
+   "target": "OperatingCost",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "python": "class Airline:\n    def __init__(self, name):\n        self.name = name\n        self.operations = []\n    def startOperation(self, airport, cost):\n        raise NotImplementedError\n    def stopOperation(self, airport):\n        raise NotImplementedError\n    def updateOperatingCost(self, airport, new_cost):\n        raise NotImplementedError\nclass Airport:\n    def __init__(self, code, city):\n        self.code = code\n        self.city = city\nclass OperatingCost:\n    def __init__(self, cost, airport):\n        self.cost = cost\n        self.airport = airport",
+ "java": {}
+}

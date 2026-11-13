@@ -1,0 +1,25 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class RModelElement {
+  kind : String
+}
+class Schema {
+}
+class Table {
+}
+class Column {
+  type : String
+}
+class Key {
+}
+class ForeignKey {
+}
+Table "1" -- "1" Schema : is part of
+Table "0..*" -- "1" Key : has
+Column "1" -- "1" Table : is part of
+ForeignKey "0..*" -- "1" Column : references
+Key "0..*" -- "1" ForeignKey : has
+ForeignKey "1" -- "1" Key : references
+Schema "1" *-- "0..*" Table : contains
+@enduml

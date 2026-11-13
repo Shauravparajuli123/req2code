@@ -1,0 +1,137 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "ModelBusinessTemplates",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "UtilityClass",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "IdentifierBag",
+   "kind": "class",
+   "attributes": [
+    "identifiers"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "BusinessEntity",
+   "kind": "class",
+   "attributes": [
+    "businessContacts",
+    "identifiers"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "businessTemplates",
+    "overviewDocuments"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R10"
+   ]
+  },
+  {
+   "name": "OverviewDocument",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "PifModel",
+   "kind": "class",
+   "attributes": [
+    "businessTemplates"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "UtilityClass",
+   "target": "IdentifierBag",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BusinessEntity",
+   "target": "Contact",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Model",
+   "target": "OverviewDocument",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PifModel",
+   "target": "BusinessTemplate",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass IdentifierBag:\n    pass\n\nclass Contact:\n    pass\n\nclass BusinessEntity:\n    def __init__(self, identifier_bag: IdentifierBag):\n        self.identifier_bag = identifier_bag\n    def business_contact(self) -> Contact:\n        raise NotImplementedError\n\nclass UtilityClass:\n    pass\n\nclass Model(UtilityClass):\n    pass\n\nclass OverviewDocument:\n    pass\n\nclass PifModel(Model):\n    def __init__(self, business_template: Contact):\n        self.business_template = business_template\n    def business_template(self) -> Contact:\n        return self.business_template\n\nclass Model:\n    def __init__(self):\n        self.overview_documents: List[OverviewDocument] = []\n    def has_overview_documents(self) -> List[OverviewDocument]:\n        return self.overview_documents",
+ "java": {}
+}

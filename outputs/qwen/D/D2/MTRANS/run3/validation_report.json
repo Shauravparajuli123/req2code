@@ -1,0 +1,65 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each module is associated with a single rule as stated in R12."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class MetaClass as required by R1.",
+   "fix": "Add class MetaClass to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Expression has an attribute instruction of type Instruction but R18 states that an expression can be composed of one and only inherited rule, not an instruction.",
+   "fix": "Change the attribute of class Expression to be of type Inheritance."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Instruction should have an attribute as stated in R19.",
+   "fix": "Add an attribute to class Instruction."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Expression and Inheritance is missing as required by R18.",
+   "fix": "Add association Expression -> Inheritance [1..1]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Instruction and Expression is missing as required by R20 and R21.",
+   "fix": "Add association Instruction -> Expression [1..1]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Module is missing as required by R11 and R12.",
+   "fix": "Add association Rule -> Module [1..1]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Section is missing as required by R20.",
+   "fix": "Add association Rule -> Section [1..*]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between Rule and Variable is missing as required by R22.",
+   "fix": "Add association Rule -> Variable [1..*]."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case R10 is not represented in the model.",
+   "fix": "Add a use case for R10."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Use case R17 is not represented in the model.",
+   "fix": "Add a use case for R17."
+  }
+ ]
+}

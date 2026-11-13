@@ -1,0 +1,188 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [
+   {
+    "name": "User",
+    "src": [
+     "R1"
+    ]
+   }
+  ],
+  "use_cases": [
+   {
+    "name": "execute",
+    "actor": "User",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "contains",
+    "actor": "Makefile",
+    "src": [
+     "R3",
+     "R9"
+    ]
+   },
+   {
+    "name": "has",
+    "actor": "Macro",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "represents",
+    "actor": "ShellLine",
+    "src": [
+     "R5"
+    ]
+   },
+   {
+    "name": "characterized_by",
+    "actor": "Comment",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "name": "contains",
+    "actor": "Makefile",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "name": "contains",
+    "actor": "Makefile",
+    "src": [
+     "R11"
+    ]
+   },
+   {
+    "name": "contains",
+    "actor": "MakeModel",
+    "src": [
+     "R12"
+    ]
+   }
+  ],
+  "classes": [
+   {
+    "name": "File",
+    "src": [
+     "R1"
+    ]
+   },
+   {
+    "name": "Makefile",
+    "src": [
+     "R2",
+     "R3",
+     "R9",
+     "R10",
+     "R11"
+    ]
+   },
+   {
+    "name": "Element",
+    "src": [
+     "R2"
+    ]
+   },
+   {
+    "name": "Rule",
+    "src": [
+     "R3",
+     "R11",
+     "R12"
+    ]
+   },
+   {
+    "name": "Macro",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "ShellLine",
+    "src": [
+     "R5",
+     "R12"
+    ]
+   },
+   {
+    "name": "Comment",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "name": "RuleDep",
+    "src": [
+     "R7",
+     "R8",
+     "R13"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "Macro",
+    "name": "value",
+    "src": [
+     "R4"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "Makefile",
+    "target": "Rule",
+    "src": [
+     "R3",
+     "R9",
+     "R11"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Rule",
+    "target": "RuleDep",
+    "src": [
+     "R8",
+     "R13"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Makefile",
+    "target": "Comment",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Makefile",
+    "target": "Element",
+    "src": [
+     "R2",
+     "R3"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "MakeModel",
+    "target": "ShellLine",
+    "src": [
+     "R12"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

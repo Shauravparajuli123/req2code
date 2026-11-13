@@ -1,0 +1,117 @@
+{
+ "actors": [
+  "owner"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Database",
+   "kind": "class",
+   "attributes": [
+    "sgbdName"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "RelationalDBContent",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Tuple",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "name": "TupleElement",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "RelationalDBContent",
+   "target": "Table",
+   "multiplicity_target": "1",
+   "src": [
+    "R3",
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "RelationalDBContent",
+   "target": "Tuple",
+   "multiplicity_target": "1",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Table",
+   "target": "Database",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Tuple",
+   "target": "Table",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Tuple",
+   "target": "TupleElement",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass String:\n    pass\n\nclass TupleElement:\n    def __init__(self, value: str):\n        self.value: str = value\n\nclass Tuple:\n    def __init__(self, tuple_element: TupleElement):\n        self.tuple_element: TupleElement = tuple_element\n\nclass Table:\n    def __init__(self, database: 'Database'):\n        self.database: Database = database\n\nclass Database:\n    def __init__(self, sgbd_name: str):\n        self.sgbd_name: str = sgbd_name\n        self.tables: List[Table] = []\n\nclass RelationalDBContent:\n    def __init__(self):\n        self.tables: List[Table] = []\n        self.tuples: List[Tuple] = []\n\nclass Association:\n    def __init__(self, owner: 'Object'):\n        self.owner: 'Object' = owner\n\n# Association between TupleElement and Tuple\nassociation = Association(owner=None)\ntuple_element = TupleElement(value=\"example_value\")\ntuple_ = Tuple(tuple_element=tuple_element)\n",
+ "java": {}
+}

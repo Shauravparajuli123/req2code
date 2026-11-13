@@ -1,0 +1,143 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Login",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Actor",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Association",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CaseContainer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Extend",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "extend",
+     "use_case": "Extend"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "UseCase",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "include",
+     "use_case": "Include"
+    },
+    {
+     "name": "extend",
+     "use_case": "Extend"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "UseCaseDiagram",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "has",
+     "use_case": "Association"
+    },
+    {
+     "name": "has",
+     "use_case": "Actor"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Extend",
+   "target": "UseCase",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "CaseContainer",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "Actor",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "UseCaseDiagram",
+   "target": "Association",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "python": "class Actor:\n    pass\n\nclass Association:\n    pass\n\nclass CaseContainer:\n    pass\n\nclass Extend:\n    def extend(self):\n        raise NotImplementedError\n\nclass UseCase:\n    def __init__(self, name):\n        self.name = name\n    def include(self):\n        raise NotImplementedError\n    def extend(self):\n        raise NotImplementedError\n\nclass UseCaseDiagram:\n    def __init__(self, name):\n        self.name = name\n    def has(self, association):\n        raise NotImplementedError\n    def has(self, actor):\n        raise NotImplementedError\n",
+ "java": {}
+}

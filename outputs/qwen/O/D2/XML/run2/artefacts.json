@@ -1,0 +1,104 @@
+{
+ "actors": [
+  "parent"
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "startLine",
+    "endLine",
+    "parent"
+   ],
+   "methods": [
+    {
+     "name": "Node",
+     "use_case": ""
+    },
+    {
+     "name": "setName",
+     "use_case": ""
+    },
+    {
+     "name": "setStartLine",
+     "use_case": ""
+    },
+    {
+     "name": "setEndLine",
+     "use_case": ""
+    },
+    {
+     "name": "setParent",
+     "use_case": ""
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "children"
+   ],
+   "methods": [
+    {
+     "name": "Element",
+     "use_case": ""
+    },
+    {
+     "name": "addChild",
+     "use_case": ""
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "XmlFile",
+   "kind": "class",
+   "attributes": [
+    "root_element",
+    "text_elements"
+   ],
+   "methods": [
+    {
+     "name": "XmlFile",
+     "use_case": ""
+    },
+    {
+     "name": "addRootElement",
+     "use_case": ""
+    },
+    {
+     "name": "addTextElement",
+     "use_case": ""
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Node",
+   "target": "Element",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "python": "class Node:\n    def __init__(self, name, startLine, endLine):\n        self.name = name\n        self.startLine = startLine\n        self.endLine = endLine\n        self.parent = None\n\n    def setName(self, name):\n        raise NotImplementedError\n\n    def setStartLine(self, startLine):\n        raise NotImplementedError\n\n    def setEndLine(self, endLine):\n        raise NotImplementedError\n\n    def setParent(self, parent):\n        raise NotImplementedError\n\n\nclass Element:\n    def __init__(self):\n        self.children = []\n\n    def addChild(self, child):\n        raise NotImplementedError\n\n\nclass XmlFile:\n    def __init__(self):\n        self.root_element = None\n        self.text_elements = []\n\n    def addRootElement(self, root_element):\n        raise NotImplementedError\n\n    def addTextElement(self, text_element):\n        raise NotImplementedError\n",
+ "java": {}
+}

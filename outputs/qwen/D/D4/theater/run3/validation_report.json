@@ -1,0 +1,20 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R8 is not supported by the model, as the relationship between Play and Participant is defined as 1..*..1..* which implies a one-to-many relationship in both directions.",
+   "fix": "Change the relationship between Play and Participant to 1..*..0..* to allow multiple participants per play and multiple plays per participant."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R11 is not supported by the model, as the relationship between Play and Theater is defined as 0..*..1 which implies that a play can be in zero or one theater.",
+   "fix": "Change the relationship between Play and Theater to 1..*..0..* to allow a play to be in multiple theaters."
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Domain",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Parameter",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "QoSConstraint",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "QoSStatement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "CompoundQoSStatement",
+     "use_case": "Verb Object"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "SingleQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "QoSConstraint"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "CompoundQoSStatement",
+   "kind": "class",
+   "attributes": [
+    "QoSStatements"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Domain",
+   "target": "QoSConstraint",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "QoSStatement",
+   "target": "CompoundQoSStatement",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SingleQoSStatement",
+   "target": "QoSConstraint",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "CompoundQoSStatement",
+   "target": "QoSStatement",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "class Domain:\n    pass\n\nclass Parameter:\n    def __init__(self, value: str):\n        self.value = value\n\nclass QoSConstraint:\n    pass\n\nclass QoSStatement:\n    def __init__(self):\n        pass\n    def CompoundQoSStatement(self) -> CompoundQoSStatement:\n        raise NotImplementedError\n\nclass SingleQoSStatement(QoSStatement):\n    def __init__(self, qos_constraint: QoSConstraint):\n        super().__init__()\n        self.qos_constraint = qos_constraint\n\nclass CompoundQoSStatement(QoSStatement):\n    def __init__(self, qos_statements: List[QoSStatement]):\n        super().__init__()\n        self.qos_statements = qos_statements",
+ "java": {}
+}

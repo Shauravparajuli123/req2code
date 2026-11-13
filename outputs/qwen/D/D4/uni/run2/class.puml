@@ -1,0 +1,26 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Course {
+  name : String
+  credits : int
+  professors : String
+  +addProfessor()
+}
+class Professor {
+  name : String
+}
+class Student {
+  name : String
+  +enrollInCourse()
+}
+class Dormitory {
+  students : String
+  price : double
+  +accommodateStudent()
+}
+Course "1" -- "0..*" Professor : has
+Course "1" -- "0..*" Student : has
+Course "1" o-- "5..*" Student : aggregates
+Dormitory "1" -- "1..4" Student : has
+@enduml

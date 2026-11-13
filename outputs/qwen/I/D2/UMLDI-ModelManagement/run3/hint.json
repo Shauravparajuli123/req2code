@@ -1,0 +1,473 @@
+{
+ "condition": "I",
+ "hint": {
+  "case": "D2/UMLDI-ModelManagement",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "R13"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R13.s1",
+      "text": "In a core model, Features may have an owner which is a classifier"
+     }
+    ],
+    "name": "owner"
+   },
+   {
+    "id": "A2",
+    "src": [
+     "R14"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s2",
+      "text": "Each generalization has a parent which is a generalizable element"
+     }
+    ],
+    "name": "parent"
+   }
+  ],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R5",
+     "R12",
+     "R13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A core model contains classifiers"
+     },
+     {
+      "sid": "R12.s1",
+      "text": "Core models contain classifiers."
+     },
+     {
+      "sid": "R12.s2",
+      "text": "Each classifier may have power type ranges, which are generalizations"
+     }
+    ],
+    "name": "Classifier",
+    "freq": 4
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A core model contains elements"
+     },
+     {
+      "sid": "R2.s1",
+      "text": "A core model contains model elements."
+     },
+     {
+      "sid": "R3.s1",
+      "text": "In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract"
+     }
+    ],
+    "name": "CoreModel",
+    "freq": 11
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R1",
+     "R3",
+     "R10",
+     "R11",
+     "R14"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A core model contains elements"
+     },
+     {
+      "sid": "R3.s1",
+      "text": "In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract"
+     },
+     {
+      "sid": "R10.s1",
+      "text": "A core model contains generalizable elements."
+     }
+    ],
+    "name": "Element",
+    "freq": 7
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R8",
+     "R12",
+     "R14",
+     "R15"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s2",
+      "text": "Each generalization has an attribute discriminator"
+     },
+     {
+      "sid": "R12.s2",
+      "text": "Each classifier may have power type ranges, which are generalizations"
+     },
+     {
+      "sid": "R14.s1",
+      "text": "A core model contain generalizations."
+     }
+    ],
+    "name": "Generalization",
+    "freq": 5
+   },
+   {
+    "id": "C5",
+    "src": [
+     "R2",
+     "R9",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A core model contains model elements."
+     },
+     {
+      "sid": "R2.s2",
+      "text": "Each model element contains a name and a boolean value that states whether or not the model element is a specification"
+     },
+     {
+      "sid": "R9.s1",
+      "text": "Model elements may have a namespace"
+     }
+    ],
+    "name": "ModelElement",
+    "freq": 5
+   },
+   {
+    "id": "C6",
+    "src": [
+     "R4",
+     "R9",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "core models contains namespaces"
+     },
+     {
+      "sid": "R9.s1",
+      "text": "Model elements may have a namespace"
+     },
+     {
+      "sid": "R11.s2",
+      "text": "Each namespace is composed by model elements"
+     }
+    ],
+    "name": "Namespace",
+    "freq": 3
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "R12"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R12.s2",
+      "text": "Each classifier may have power type ranges, which are generalizations"
+     }
+    ],
+    "owner": "Classifier",
+    "name": "power type range",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "explicit_attribute"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract"
+     }
+    ],
+    "owner": "Element",
+    "name": "one",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "R3"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract"
+     }
+    ],
+    "owner": "Element",
+    "name": "root",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s2",
+      "text": "Each generalization has an attribute discriminator"
+     }
+    ],
+    "owner": "Generalization",
+    "name": "attribute discriminator",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "R14"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s2",
+      "text": "Each generalization has a parent which is a generalizable element"
+     }
+    ],
+    "owner": "Generalization",
+    "name": "parent",
+    "type_hint": null
+   },
+   {
+    "id": "AT6",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s2",
+      "text": "Each model element contains a name and a boolean value that states whether or not the model element is a specification"
+     }
+    ],
+    "owner": "ModelElement",
+    "name": "name",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R5",
+     "R12"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R5.s1",
+      "text": "A core model contains classifiers"
+     },
+     {
+      "sid": "R12.s1",
+      "text": "Core models contain classifiers."
+     }
+    ],
+    "kind": "has",
+    "source": "CoreModel",
+    "target": "Classifier",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "R1",
+     "R10",
+     "R11"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A core model contains elements"
+     },
+     {
+      "sid": "R10.s1",
+      "text": "A core model contains generalizable elements."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "A core model contains elements of type namespace."
+     }
+    ],
+    "kind": "has",
+    "source": "CoreModel",
+    "target": "Element",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "R14"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R14.s1",
+      "text": "A core model contain generalizations."
+     }
+    ],
+    "kind": "has",
+    "source": "CoreModel",
+    "target": "Generalization",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "R2"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R2.s1",
+      "text": "A core model contains model elements."
+     }
+    ],
+    "kind": "has",
+    "source": "CoreModel",
+    "target": "ModelElement",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "R4"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R4.s1",
+      "text": "core models contains namespaces"
+     }
+    ],
+    "kind": "has",
+    "source": "CoreModel",
+    "target": "Namespace",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "R9"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R9.s1",
+      "text": "Model elements may have a namespace"
+     }
+    ],
+    "kind": "has",
+    "source": "ModelElement",
+    "target": "Namespace",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [],
+   "merge_classes": [],
+   "merge_actors": [],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": []
+  }
+ },
+ "open_tags": [
+  "R2 (coordination, \"and+or\"): readings ['Each model element contains a name and a boolean value that states whether or not the model element is a specification.', 'Each model element contains a name and a boolean value that states whether or not the model element is a specification, and a boolean value that states whether or not the model element is a root.']",
+  "R3 (referential, \"it\"): readings ['In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract.', 'In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract, and another attribute that states whether the element is a specification.']",
+  "R3 (coordination, \"modifier scope: root (relative clause)\"): readings ['In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract.', 'In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract, and another attribute that states whether the element is a specification.']",
+  "R10 (quantifier, \"zero or many\"): readings ['Each element is linked to zero or many generalizations.', 'Each element is linked to one or more generalizations.']"
+ ]
+}

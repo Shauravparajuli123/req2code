@@ -1,0 +1,73 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "TechnologyObject",
+    "src": [
+     "R1",
+     "R5",
+     "R8"
+    ]
+   },
+   {
+    "name": "ImplementableStandard",
+    "src": [
+     "R1",
+     "R5",
+     "R8"
+    ]
+   },
+   {
+    "name": "Implementation",
+    "src": [
+     "R2",
+     "R6",
+     "R7"
+    ]
+   },
+   {
+    "name": "IXIT",
+    "src": [
+     "R3",
+     "R6",
+     "R7"
+    ]
+   }
+  ],
+  "attributes": [],
+  "relations": [
+   {
+    "kind": "extends",
+    "source": "ImplementableStandard",
+    "target": "TechnologyObject",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "kind": "implements|extends",
+    "source": "Implementation",
+    "target": "TechnologyObject",
+    "src": [
+     "R5",
+     "R6",
+     "R7"
+    ]
+   },
+   {
+    "kind": "extends",
+    "source": "IXIT",
+    "target": "Implementation",
+    "src": [
+     "R6",
+     "R7"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

@@ -1,0 +1,971 @@
+{
+ "actors": [
+  "user",
+  "admin",
+  "superuser",
+  "recyclingfacility",
+  "recyclingfacility representative",
+  "company",
+  "company accountant",
+  "developer",
+  "employee",
+  "employee from the hr department",
+  "executive"
+ ],
+ "use_cases": [
+  {
+   "name": "Click Address",
+   "actor": "user",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Enter ZipCode",
+   "actor": "user",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Get Hour",
+   "actor": "user",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Get Notification",
+   "actor": "employee",
+   "src": [
+    "R32"
+   ]
+  },
+  {
+   "name": "Get Feedback",
+   "actor": "user",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "Choose Pick",
+   "actor": "user",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Select Type",
+   "actor": "user",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Add DonationCenter",
+   "actor": "user",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Add RecyclingCenterInformation",
+   "actor": "admin",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "Add RecyclingFacility",
+   "actor": "admin",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "Browse List",
+   "actor": "user",
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "name": "Check TransactionHistory",
+   "actor": "user",
+   "src": [
+    "R18"
+   ]
+  },
+  {
+   "name": "Create Acocunt",
+   "actor": "user",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "Communicate Facility",
+   "actor": "admin",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Communicate Site",
+   "actor": "recyclingfacility",
+   "src": [
+    "R51"
+   ]
+  },
+  {
+   "name": "Contact Administrator",
+   "actor": "user",
+   "src": [
+    "R39"
+   ]
+  },
+  {
+   "name": "Handle Activity",
+   "actor": "admin",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Have Access",
+   "actor": "executive",
+   "src": [
+    "R24",
+    "R26",
+    "R50"
+   ]
+  },
+  {
+   "name": "Have Dashboard",
+   "actor": "admin",
+   "src": [
+    "R22",
+    "R46"
+   ]
+  },
+  {
+   "name": "Have Data",
+   "actor": "admin",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Have Information",
+   "actor": "user",
+   "src": [
+    "R29"
+   ]
+  },
+  {
+   "name": "Have Website",
+   "actor": "company",
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Link EmailAccount",
+   "actor": "user",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "Onboard RecyclingCenter",
+   "actor": "admin",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Read Feedback",
+   "actor": "admin",
+   "src": [
+    "R17"
+   ]
+  },
+  {
+   "name": "Receive Reward",
+   "actor": "user",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Reply UserQuestion",
+   "actor": "superuser",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Update Information",
+   "actor": "recyclingfacility representative",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "name": "Update RecyclingCenterInformation",
+   "actor": "superuser",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "Upload Schedule",
+   "actor": "user",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "Use Bootstrap",
+   "actor": "developer",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "View ActivityFee",
+   "actor": "company accountant",
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "name": "View Dashboard",
+   "actor": "admin",
+   "src": [
+    "R22",
+    "R46"
+   ]
+  },
+  {
+   "name": "View DisposalEvent",
+   "actor": "user",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "View Information",
+   "actor": "user",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "View Location",
+   "actor": "user",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "View MapDisplay",
+   "actor": "user",
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "View Stat",
+   "actor": "superuser",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "View UserDocumentation",
+   "actor": "user",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "View UserErrorLog",
+   "actor": "admin",
+   "src": [
+    "R41"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    "email",
+    "password",
+    "profile",
+    "stat"
+   ],
+   "methods": [
+    {
+     "name": "clickAddress",
+     "use_case": "Click Address"
+    },
+    {
+     "name": "enterZipCode",
+     "use_case": "Enter ZipCode"
+    },
+    {
+     "name": "getHour",
+     "use_case": "Get Hour"
+    },
+    {
+     "name": "getNotification",
+     "use_case": "Get Notification"
+    },
+    {
+     "name": "getFeedback",
+     "use_case": "Get Feedback"
+    },
+    {
+     "name": "choosePick",
+     "use_case": "Choose Pick"
+    },
+    {
+     "name": "selectType",
+     "use_case": "Select Type"
+    },
+    {
+     "name": "addDonationCenter",
+     "use_case": "Add DonationCenter"
+    },
+    {
+     "name": "browseList",
+     "use_case": "Browse List"
+    },
+    {
+     "name": "checkTransactionHistory",
+     "use_case": "Check TransactionHistory"
+    },
+    {
+     "name": "createAccount",
+     "use_case": "Create Acocunt"
+    },
+    {
+     "name": "linkEmailAccount",
+     "use_case": "Link EmailAccount"
+    },
+    {
+     "name": "contactAdministrator",
+     "use_case": "Contact Administrator"
+    },
+    {
+     "name": "viewInformation",
+     "use_case": "View Information"
+    },
+    {
+     "name": "viewLocation",
+     "use_case": "View Location"
+    },
+    {
+     "name": "viewMapDisplay",
+     "use_case": "View MapDisplay"
+    },
+    {
+     "name": "viewDisposalEvent",
+     "use_case": "View DisposalEvent"
+    },
+    {
+     "name": "viewUserDocumentation",
+     "use_case": "View UserDocumentation"
+    },
+    {
+     "name": "viewUserErrorLog",
+     "use_case": "View UserErrorLog"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R4",
+    "R14",
+    "R15",
+    "R38",
+    "R39",
+    "R29",
+    "R9",
+    "R10",
+    "R11",
+    "R13",
+    "R18",
+    "R41"
+   ]
+  },
+  {
+   "name": "Admin",
+   "kind": "class",
+   "attributes": [
+    "dashboard",
+    "data"
+   ],
+   "methods": [
+    {
+     "name": "handleActivity",
+     "use_case": "Handle Activity"
+    },
+    {
+     "name": "readFeedback",
+     "use_case": "Read Feedback"
+    },
+    {
+     "name": "viewDashboard",
+     "use_case": "View Dashboard"
+    },
+    {
+     "name": "viewData",
+     "use_case": "Have Data"
+    },
+    {
+     "name": "viewInformation",
+     "use_case": "Have Information"
+    },
+    {
+     "name": "viewUserStats",
+     "use_case": "View Stat"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R21",
+    "R30",
+    "R17",
+    "R22",
+    "R46",
+    "R23",
+    "R44"
+   ]
+  },
+  {
+   "name": "RecyclingFacility",
+   "kind": "class",
+   "attributes": [
+    "typeOfMaterial",
+    "openingHours"
+   ],
+   "methods": [
+    {
+     "name": "communicateSite",
+     "use_case": "Communicate Site"
+    },
+    {
+     "name": "updateInformation",
+     "use_case": "Update Information"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R51",
+    "R49"
+   ]
+  },
+  {
+   "name": "RecyclingCenter",
+   "kind": "class",
+   "attributes": [
+    "location",
+    "typeOfWaste"
+   ],
+   "methods": [
+    {
+     "name": "browseList",
+     "use_case": "Browse List"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "name": "Profile",
+   "kind": "class",
+   "attributes": [
+    "favorites"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Dashboard",
+   "kind": "class",
+   "attributes": [
+    "usageStats",
+    "locations"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "CompanyAccountant",
+   "kind": "class",
+   "attributes": [
+    "activityFees"
+   ],
+   "methods": [
+    {
+     "name": "viewActivityFees",
+     "use_case": "View ActivityFee"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "name": "Executive",
+   "kind": "class",
+   "attributes": [
+    "companyPerformance"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "accessRoutePlanningSystem",
+     "use_case": "Access RoutePlanningSystem"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "Superuser",
+   "kind": "class",
+   "attributes": [
+    "recyclingCenterInformation"
+   ],
+   "methods": [
+    {
+     "name": "replyUserQuestion",
+     "use_case": "Reply UserQuestion"
+    },
+    {
+     "name": "updateRecyclingCenterInformation",
+     "use_case": "Update RecyclingCenterInformation"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R45",
+    "R43"
+   ]
+  },
+  {
+   "name": "RecyclingCenterInformation",
+   "kind": "class",
+   "attributes": [
+    "recyclingCenter",
+    "stats"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "website"
+   ],
+   "methods": [
+    {
+     "name": "haveWebsite",
+     "use_case": "Have Website"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Developer",
+   "kind": "class",
+   "attributes": [
+    "apiAccess",
+    "bootstrapUsage"
+   ],
+   "methods": [
+    {
+     "name": "useBootstrap",
+     "use_case": "Use Bootstrap"
+    },
+    {
+     "name": "attendUxLesson",
+     "use_case": "Attend UxLesson"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R34",
+    "R35"
+   ]
+  },
+  {
+   "name": "Admin",
+   "kind": "class",
+   "attributes": [
+    "dashboard",
+    "data"
+   ],
+   "methods": [
+    {
+     "name": "handleActivity",
+     "use_case": "Handle Activity"
+    },
+    {
+     "name": "readFeedback",
+     "use_case": "Read Feedback"
+    },
+    {
+     "name": "viewDashboard",
+     "use_case": "View Dashboard"
+    },
+    {
+     "name": "viewData",
+     "use_case": "Have Data"
+    },
+    {
+     "name": "viewInformation",
+     "use_case": "Have Information"
+    },
+    {
+     "name": "viewUserStats",
+     "use_case": "View Stat"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R21",
+    "R30",
+    "R17",
+    "R22",
+    "R46",
+    "R23",
+    "R44"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "accessRoutePlanningSystem",
+     "use_case": "Access RoutePlanningSystem"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "Executive",
+   "kind": "class",
+   "attributes": [
+    "companyPerformance"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "RecyclingFacility",
+   "kind": "class",
+   "attributes": [
+    "typeOfMaterial",
+    "openingHours"
+   ],
+   "methods": [
+    {
+     "name": "communicateSite",
+     "use_case": "Communicate Site"
+    },
+    {
+     "name": "updateInformation",
+     "use_case": "Update Information"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R51",
+    "R49"
+   ]
+  },
+  {
+   "name": "RecyclingCenter",
+   "kind": "class",
+   "attributes": [
+    "location",
+    "typeOfWaste"
+   ],
+   "methods": [
+    {
+     "name": "browseList",
+     "use_case": "Browse List"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R48"
+   ]
+  },
+  {
+   "name": "Profile",
+   "kind": "class",
+   "attributes": [
+    "favorites"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Dashboard",
+   "kind": "class",
+   "attributes": [
+    "usageStats",
+    "locations"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "CompanyAccountant",
+   "kind": "class",
+   "attributes": [
+    "activityFees"
+   ],
+   "methods": [
+    {
+     "name": "viewActivityFees",
+     "use_case": "View ActivityFee"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "name": "Executive",
+   "kind": "class",
+   "attributes": [
+    "companyPerformance"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "accessRoutePlanningSystem",
+     "use_case": "Access RoutePlanningSystem"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "name": "Superuser",
+   "kind": "class",
+   "attributes": [
+    "recyclingCenterInformation"
+   ],
+   "methods": [
+    {
+     "name": "replyUserQuestion",
+     "use_case": "Reply UserQuestion"
+    },
+    {
+     "name": "updateRecyclingCenterInformation",
+     "use_case": "Update RecyclingCenterInformation"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R45",
+    "R43"
+   ]
+  },
+  {
+   "name": "RecyclingCenterInformation",
+   "kind": "class",
+   "attributes": [
+    "recyclingCenter",
+    "stats"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "website"
+   ],
+   "methods": [
+    {
+     "name": "haveWebsite",
+     "use_case": "Have Website"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "name": "Developer",
+   "kind": "class",
+   "attributes": [
+    "apiAccess",
+    "bootstrapUsage"
+   ],
+   "methods": [
+    {
+     "name": "useBootstrap",
+     "use_case": "Use Bootstrap"
+    },
+    {
+     "name": "attendUxLesson",
+     "use_case": "Attend UxLesson"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R34",
+    "R35"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "User",
+   "target": "Profile",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Admin",
+   "target": "Dashboard",
+   "multiplicity_target": "1",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "CompanyAccountant",
+   "target": "ActivityFee",
+   "multiplicity_target": "1",
+   "src": [
+    "R33"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Executive",
+   "target": "Company",
+   "multiplicity_target": "1",
+   "src": [
+    "R24"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Employee",
+   "target": "RecyclingFacility",
+   "multiplicity_target": "1",
+   "src": [
+    "R25"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Superuser",
+   "target": "RecyclingCenterInformation",
+   "multiplicity_target": "1",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RecyclingFacility",
+   "target": "Hour",
+   "multiplicity_target": "1",
+   "src": [
+    "R49"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "RecyclingCenter",
+   "target": "Location",
+   "multiplicity_target": "1",
+   "src": [
+    "R48"
+   ]
+  }
+ ],
+ "python": "",
+ "java": {}
+}

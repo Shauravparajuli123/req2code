@@ -1,0 +1,153 @@
+{
+ "actors": [
+  {
+   "name": "Airline",
+   "src": [
+    "R1",
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Airport",
+   "src": [
+    "R1",
+    "R2"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "name": "operate",
+   "actor": "Airline",
+   "src": [
+    "R1",
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "start",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "stop",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "update_cost",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airline",
+   "src": [
+    "R1",
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Airport",
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "name": "Operation",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Details",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Airline",
+   "name": "name",
+   "src": [
+    "R2",
+    "R1",
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "owner": "Airport",
+   "name": "code",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "Airport",
+   "name": "city",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "owner": "Operation",
+   "name": "operating_cost",
+   "src": [
+    "R3",
+    "R4",
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Airline",
+   "target": "Operation",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Operation",
+   "target": "Airport",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Airline",
+   "target": "Details",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Details",
+   "target": "Operation",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

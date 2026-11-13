@@ -1,0 +1,55 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The CompositeParDef of a Cristal is assumed to be a class in the model, but it is not explicitly defined."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class ElementaryPartDef",
+   "fix": "Add class ElementaryPartDef to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class ElementaryActDef",
+   "fix": "Add class ElementaryActDef to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class PartDefinition",
+   "fix": "Add class PartDefinition to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class ActivityDefinition",
+   "fix": "Add class ActivityDefinition to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Cristal and ElementaryPartDef",
+   "fix": "Add association Cristal -> ElementaryPartDef [1..1]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Cristal and ElementaryActDef",
+   "fix": "Add association Cristal -> ElementaryActDef [1..1]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Cristal and PartDefinition",
+   "fix": "Add association Cristal -> PartDefinition [1..*]."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between Cristal and ActivityDefinition",
+   "fix": "Add association Cristal -> ActivityDefinition [1..*]."
+  }
+ ]
+}

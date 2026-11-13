@@ -1,0 +1,84 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  name : String
+  personalInformation : String
+  bankingDetails : String
+  membershipType : String
+  subscriptionDuration : int
+  familyMembers : String
+  availableLessons : String
+  futureLessons : String
+  pastLessons : String
+  notificationMethod : String
+  subscription : boolean
+  bookedSpots : String
+  freeRooms : String
+  +createAccount()
+  +addPersonalInformation()
+  +addBankingDetails()
+  +chooseMembershipType()
+  +extendSubscription()
+  +knowSubscriptionDuration()
+  +unsubscribe()
+  +resetPassword()
+  +changePersonalDetails()
+  +updatePaymentInformation()
+  +seeFamilyMembershipUsers()
+  +addPersonToFamilyMembership()
+  +removePersonFromFamilyMembership()
+  +seeAvailableLessons()
+  +seeFutureLessons()
+  +seePastLessons()
+  +callGymToBookLesson()
+  +callGymToCancelLesson()
+  +bookFreePracticeArea()
+  +seeBookedSpots()
+  +seeFreeRooms()
+  +login()
+  +chooseNotificationMethod()
+  +receiveEmailNotifications()
+  +receivePushNotifications()
+  +chooseNotifications()
+  +receiveCancellationNotification()
+  +confirmCancellation()
+  +seePersonalInformation()
+  +seeMembershipInformation()
+  +seePastAndFutureTrainingSessions()
+  +checkIn()
+  +seeSubscription()
+  +seeBookings()
+}
+class Trainer {
+  lessonTime : String
+  lessonDescription : String
+  lessonRoom : String
+  lessonType : String
+  lessonCapacity : int
+  +addLesson()
+  +setLessonTime()
+  +setLessonDescription()
+  +setLessonRoom()
+  +setLessonType()
+  +setLessonCapacity()
+  +seeSchedule()
+  +editOwnLessonTime()
+  +editOwnLessonRoom()
+  +editOwnLessonDescription()
+  +editOwnLessonCapacity()
+}
+class Admin {
+  +editAnyLesson()
+  +cancelLesson()
+  +notifyCustomerOfCancellation()
+  +notifyCustomerOfNoShow()
+  +adminSeeNoShow()
+  +adminSeeNoShowCount()
+  +adminIssueFine()
+  +adminIncreaseFine()
+  +addTrainer()
+  +addAdmin()
+  +removeTrainer()
+}
+@enduml

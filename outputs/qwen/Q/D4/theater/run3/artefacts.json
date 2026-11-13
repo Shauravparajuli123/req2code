@@ -1,0 +1,172 @@
+{
+ "actors": [
+  "participant"
+ ],
+ "use_cases": [
+  {
+   "name": "actInPlay",
+   "actor": "participant",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Author",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "name": "Participant",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "actInPlay",
+     "use_case": "actInPlay"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "name": "Play",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "day",
+    "night"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3"
+   ]
+  },
+  {
+   "name": "Session",
+   "kind": "class",
+   "attributes": [
+    "beginTime",
+    "endTime"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "name": "Theater",
+   "kind": "class",
+   "attributes": [
+    "location"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "Author",
+   "target": "Person",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "Musical",
+   "target": "Play",
+   "multiplicity_target": "1",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "Opera",
+   "target": "Play",
+   "multiplicity_target": "1",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "Participant",
+   "target": "Person",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Play",
+   "target": "Author",
+   "multiplicity_target": "1",
+   "src": [
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Play",
+   "target": "Participant",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Play",
+   "target": "Session",
+   "multiplicity_target": "1",
+   "src": [
+    "R6",
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Theater",
+   "target": "Play",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Person:\n    def __init__(self, name: str):\n        self.name = name\n\nclass Author(Person):\n    def __init__(self, name: str):\n        super().__init__(name)\n\nclass Participant(Person):\n    def __init__(self, name: str):\n        super().__init__(name)\n    def actInPlay(self, play: 'Play') -> None:\n        raise NotImplementedError\n\nclass Play:\n    def __init__(self, name: str, day: bool, night: bool):\n        self.name = name\n        self.day = day\n        self.night = night\n        self.authors: List[Author] = []\n        self.participants: List[Participant] = []\n        self.session: Session = None\n\nclass Session:\n    def __init__(self, beginTime: str, endTime: str):\n        self.beginTime = beginTime\n        self.endTime = endTime\n\nclass Theater:\n    def __init__(self, location: str):\n        self.location = location\n        self.plays: List[Play] = []\n",
+ "java": {}
+}

@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class Node is missing the 'object' attribute mentioned in R1.",
+   "fix": "Add an 'object' attribute to the Node class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Node is missing the 'reference' attribute mentioned in R1.",
+   "fix": "Add a 'reference' attribute to the Node class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Attribute is missing the 'object' attribute mentioned in R1.",
+   "fix": "Add an 'object' attribute to the Attribute class."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between Node and Xorgroup is bidirectional, but R8 states that a Node may have one or many Xorgroup, not the other way around.",
+   "fix": "Change the relationship to be from Node to Xorgroup."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Orgroup is missing the 'preliminary' attribute mentioned in R6.",
+   "fix": "Add a 'preliminary' attribute to the Orgroup class."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Xorgroup is missing the 'preliminary' attribute mentioned in R5.",
+   "fix": "Add a 'preliminary' attribute to the Xorgroup class."
+  }
+ ]
+}

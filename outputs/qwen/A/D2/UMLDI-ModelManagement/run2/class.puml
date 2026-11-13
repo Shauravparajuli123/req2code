@@ -1,0 +1,54 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class CoreModel {
+  name : String
+  isSpecification : boolean
+}
+class ModelElement {
+  name : String
+  isSpecification : boolean
+}
+class Namespace {
+  name : String
+  modelElements : String
+}
+class Classifier {
+  name : String
+  isSpecification : boolean
+  powerTypeRanges : String
+  owner : String
+}
+class Feature {
+  name : String
+  ownerScope : String
+  owner : String
+}
+class GeneralizableElement {
+  name : String
+  isRoot : boolean
+  isAbstract : boolean
+  generalizations : String
+  generalization : String
+}
+class Generalization {
+  name : String
+  parent : String
+  discriminator : String
+}
+enum ScopeKind {
+  CLASS
+  INTERFACE
+  VALUE
+}
+CoreModel "1" -- "0..*" ModelElement : contains
+CoreModel "1" -- "1..*" Classifier : contains
+CoreModel "1" -- "0..*" Feature : contains
+CoreModel "1" -- "0..*" Namespace : contains
+CoreModel "1" -- "0..*" Generalization : contains
+GeneralizableElement "1" -- "0..*" Generalization : has
+Namespace "1" *-- "1..*" ModelElement : composedBy
+Feature "0..*" -- "1" Classifier : ownedBy
+GeneralizableElement --|> Classifier
+Generalization "1" -- "1" GeneralizableElement : hasParent
+@enduml

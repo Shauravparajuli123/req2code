@@ -1,0 +1,20 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Net' is missing an attribute 'transitions'",
+   "fix": "Add 'transitions: List[Transition]' to class 'Net'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Association between 'Net' and 'Place' should be [1..*..1..*] to reflect that a Net can have multiple Places but each Place is part of one Net",
+   "fix": "Change the association to [1..*..1..*]"
+  }
+ ]
+}

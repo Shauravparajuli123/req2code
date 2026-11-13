@@ -1,0 +1,177 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Initialize FSM",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Fsm",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "initialize_fsm",
+     "use_case": "Initialize FSM"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "RootFolder",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R10",
+    "R12"
+   ]
+  },
+  {
+   "name": "State",
+   "kind": "class",
+   "attributes": [
+    "association_state_source"
+   ],
+   "methods": [
+    {
+     "name": "add_association_state",
+     "use_case": "R14"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4",
+    "R8",
+    "R9",
+    "R14"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "state_machine"
+   ],
+   "methods": [
+    {
+     "name": "add_source_state",
+     "use_case": "R13"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R11",
+    "R13"
+   ]
+  },
+  {
+   "name": "AssociationState",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R13",
+    "R14"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Fsm",
+   "target": "State",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3",
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Fsm",
+   "target": "RootFolder",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Fsm",
+   "target": "Transition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "State",
+   "target": "Fsm",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Transition",
+   "target": "Fsm",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "State",
+   "target": "AssociationState",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AssociationState",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AssociationState",
+   "target": "State",
+   "multiplicity_target": "1",
+   "src": [
+    "R14"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass AssociationState:\n    pass\n\nclass State:\n    def __init__(self):\n        self.association_state_source: List[AssociationState] = []\n    def add_association_state(self, association_state: AssociationState):\n        raise NotImplementedError\n\nclass Transition:\n    def __init__(self, state_machine: 'FSM'):\n        self.state_machine = state_machine\n    def add_source_state(self, source_state: State):\n        raise NotImplementedError\n\nclass Fsm:\n    def __init__(self, name: str):\n        self.name = name\n    def initialize_fsm(self):\n        raise NotImplementedError\n\nclass RootFolder:\n    def __init__(self, name: str):\n        self.name = name",
+ "java": {}
+}

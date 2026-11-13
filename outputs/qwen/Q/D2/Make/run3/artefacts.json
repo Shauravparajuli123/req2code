@@ -1,0 +1,165 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "File",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Makefile",
+   "kind": "class",
+   "attributes": [
+    "fileDependencies",
+    "comment",
+    "rules"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    "dependencies"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R12"
+   ]
+  },
+  {
+   "name": "RuleDep",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Dependency",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Macro",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [
+    "text"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "ShellLine",
+   "kind": "class",
+   "attributes": [
+    "rule"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "File",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "Element",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "Rule",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Rule",
+   "target": "RuleDep",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "RuleDep",
+   "target": "Dependency",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "from typing import List, String\n\nclass File:\n    def __init__(self, name: String):\n        self.name = name\n    # src: R1\n\nclass Element:\n    def __init__(self, name: String):\n        self.name = name\n    # src: R2\nclass Macro:\n    def __init__(self, value: String):\n        self.value = value\n    # src: R4\nclass Comment:\n    def __init__(self, text: String):\n        self.text = text\n    # src: R10\nclass Dependency:\n    def __init__(self, name: String):\n        self.name = name\n    # src: R9\nclass RuleDep:\n    def __init__(self):\n        pass\n    # src: R8\nclass Rule:\n    def __init__(self):\n        self.dependencies = []\n    # src: R7, R12\nclass ShellLine:\n    def __init__(self, rule: Rule):\n        self.rule = rule\n    # src: R12\nclass Makefile:\n    def __init__(self):\n        self.fileDependencies = []\n        self.comment = None\n        self.rules = []\n    # src: R9, R11",
+ "java": {}
+}

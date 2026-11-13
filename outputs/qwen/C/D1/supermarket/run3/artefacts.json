@@ -1,0 +1,518 @@
+{
+ "actors": [
+  "Customer",
+  "Employee"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Account",
+   "actor": "Customer",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Sign Newsletter",
+   "actor": "Customer",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Unsubscribe Newsletter",
+   "actor": "Customer",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Activate Push Notification",
+   "actor": "Customer",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Deactivate Push Notification",
+   "actor": "Customer",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Reset Password",
+   "actor": "Customer",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Change Size",
+   "actor": "Customer",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Change Contrast",
+   "actor": "Customer",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Change Language",
+   "actor": "Customer",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Receive Suggestion",
+   "actor": "Customer",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Receive Discount",
+   "actor": "Customer",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Have Delivery Service",
+   "actor": "Customer",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Have Grocery",
+   "actor": "Customer",
+   "src": [
+    "R33",
+    "R36"
+   ]
+  },
+  {
+   "name": "Order Product",
+   "actor": "Customer",
+   "src": [
+    "R20",
+    "R21"
+   ]
+  },
+  {
+   "name": "Pay Grocery",
+   "actor": "Customer",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "Place Order",
+   "actor": "Customer",
+   "src": [
+    "R38"
+   ]
+  },
+  {
+   "name": "See Order History",
+   "actor": "Customer",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "See Product",
+   "actor": "Customer",
+   "src": [
+    "R25",
+    "R27",
+    "R29"
+   ]
+  },
+  {
+   "name": "See Quantity",
+   "actor": "Customer",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Select Date",
+   "actor": "Customer",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Select Time Slot",
+   "actor": "Customer",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Scan Barcode",
+   "actor": "Customer",
+   "src": [
+    "R23"
+   ]
+  },
+  {
+   "name": "Scan Product",
+   "actor": "Customer",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "Search Product",
+   "actor": "Customer",
+   "src": [
+    "R18"
+   ]
+  },
+  {
+   "name": "Find Location",
+   "actor": "Customer",
+   "src": [
+    "R41"
+   ]
+  },
+  {
+   "name": "Get Recommendation",
+   "actor": "Customer",
+   "src": [
+    "R42"
+   ]
+  },
+  {
+   "name": "Get Recipe Idea",
+   "actor": "Customer",
+   "src": [
+    "R30"
+   ]
+  },
+  {
+   "name": "Add Product",
+   "actor": "Customer",
+   "src": [
+    "R17",
+    "R39"
+   ]
+  },
+  {
+   "name": "Change Selection",
+   "actor": "Customer",
+   "src": [
+    "R43"
+   ]
+  },
+  {
+   "name": "Link Loyalty Card",
+   "actor": "Customer",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Update Application",
+   "actor": "Employee",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Edit Discount",
+   "actor": "Employee",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "Confirm Delivery Time",
+   "actor": "Employee",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Notify Customer",
+   "actor": "Employee",
+   "src": [
+    "R48",
+    "R49"
+   ]
+  },
+  {
+   "name": "Notify Discount",
+   "actor": "Employee",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "name": "Contact Customer",
+   "actor": "Employee",
+   "src": [
+    "R51"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "language",
+    "pushNotifications",
+    "newsletterSubscription",
+    "defaultStore",
+    "loyaltyCard"
+   ],
+   "methods": [
+    {
+     "name": "createAccount",
+     "use_case": "Create Account"
+    },
+    {
+     "name": "signNewsletter",
+     "use_case": "Sign Newsletter"
+    },
+    {
+     "name": "unsubscribeNewsletter",
+     "use_case": "Unsubscribe Newsletter"
+    },
+    {
+     "name": "activatePushNotification",
+     "use_case": "Activate Push Notification"
+    },
+    {
+     "name": "deactivatePushNotification",
+     "use_case": "Deactivate Push Notification"
+    },
+    {
+     "name": "resetPassword",
+     "use_case": "Reset Password"
+    },
+    {
+     "name": "changeFontSize",
+     "use_case": "Change Size"
+    },
+    {
+     "name": "changeContrast",
+     "use_case": "Change Contrast"
+    },
+    {
+     "name": "changeLanguage",
+     "use_case": "Change Language"
+    },
+    {
+     "name": "receiveSuggestion",
+     "use_case": "Receive Suggestion"
+    },
+    {
+     "name": "receiveDiscount",
+     "use_case": "Receive Discount"
+    },
+    {
+     "name": "haveDeliveryService",
+     "use_case": "Have Delivery Service"
+    },
+    {
+     "name": "getRecipeIdea",
+     "use_case": "Get Recipe Idea"
+    },
+    {
+     "name": "contactCustomerService",
+     "use_case": "Contact Customer"
+    },
+    {
+     "name": "scanProduct",
+     "use_case": "Scan Product"
+    },
+    {
+     "name": "addProductToWishlist",
+     "use_case": "Add Product"
+    },
+    {
+     "name": "searchProduct",
+     "use_case": "Search Product"
+    },
+    {
+     "name": "filterProducts",
+     "use_case": null
+    },
+    {
+     "name": "orderProductByPrice",
+     "use_case": null
+    },
+    {
+     "name": "orderProductByPopularity",
+     "use_case": null
+    },
+    {
+     "name": "seeOnSaleProducts",
+     "use_case": null
+    },
+    {
+     "name": "scanBarcode",
+     "use_case": "Scan Barcode"
+    },
+    {
+     "name": "readProductInformation",
+     "use_case": null
+    },
+    {
+     "name": "seeProductStock",
+     "use_case": null
+    },
+    {
+     "name": "seeProductRestockDate",
+     "use_case": null
+    },
+    {
+     "name": "getInspiration",
+     "use_case": null
+    },
+    {
+     "name": "seeOrderHistory",
+     "use_case": "See Order History"
+    },
+    {
+     "name": "placeOrder",
+     "use_case": "Place Order"
+    },
+    {
+     "name": "payGrocery",
+     "use_case": "Pay Grocery"
+    },
+    {
+     "name": "seeStoreLocation",
+     "use_case": null
+    },
+    {
+     "name": "getNearestStore",
+     "use_case": null
+    },
+    {
+     "name": "changeDefaultStore",
+     "use_case": null
+    },
+    {
+     "name": "linkLoyaltyCard",
+     "use_case": "Link Loyalty Card"
+    }
+   ],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "updateApplication",
+     "use_case": "Update Application"
+    },
+    {
+     "name": "editDiscount",
+     "use_case": "Edit Discount"
+    },
+    {
+     "name": "confirmDeliveryTime",
+     "use_case": "Confirm Delivery Time"
+    },
+    {
+     "name": "notifyCustomerOfUnavailability",
+     "use_case": null
+    },
+    {
+     "name": "notifyCustomerOfDelay",
+     "use_case": null
+    },
+    {
+     "name": "contactCustomerForCanceledDelivery",
+     "use_case": null
+    },
+    {
+     "name": "provideNewDeliveryTime",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Employee",
+   "target": "Customer",
+   "src": [
+    "R50"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D1/supermarket.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Customer:\n    \"\"\"Source: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44\"\"\"\n    name: _t.Optional[str] = None\n    language: _t.Optional[str] = None\n    pushNotifications: _t.Optional[bool] = None\n    newsletterSubscription: _t.Optional[bool] = None\n    defaultStore: _t.Optional[str] = None\n    loyaltyCard: _t.Optional[str] = None\n\n    def createAccount(self) -> None:\n        \"\"\"Realizes UC1 \"Create Account\" (R1).\"\"\"\n        raise NotImplementedError\n\n    def signNewsletter(self) -> None:\n        \"\"\"Realizes UC2 \"Sign Newsletter\" (R2).\"\"\"\n        raise NotImplementedError\n\n    def unsubscribeNewsletter(self) -> None:\n        \"\"\"Realizes UC3 \"Unsubscribe Newsletter\" (R3).\"\"\"\n        raise NotImplementedError\n\n    def activatePushNotification(self) -> None:\n        \"\"\"Realizes UC4 \"Activate Push Notification\" (R4).\"\"\"\n        raise NotImplementedError\n\n    def deactivatePushNotification(self) -> None:\n        \"\"\"Realizes UC5 \"Deactivate Push Notification\" (R5).\"\"\"\n        raise NotImplementedError\n\n    def resetPassword(self) -> None:\n        \"\"\"Realizes UC6 \"Reset Password\" (R6).\"\"\"\n        raise NotImplementedError\n\n    def changeFontSize(self) -> None:\n        \"\"\"Realizes UC7 \"Change Size\" (R7).\"\"\"\n        raise NotImplementedError\n\n    def changeContrast(self) -> None:\n        \"\"\"Realizes UC8 \"Change Contrast\" (R8).\"\"\"\n        raise NotImplementedError\n\n    def changeLanguage(self) -> None:\n        \"\"\"Realizes UC9 \"Change Language\" (R9).\"\"\"\n        raise NotImplementedError\n\n    def receiveSuggestion(self) -> None:\n        \"\"\"Realizes UC10 \"Receive Suggestion\" (R10).\"\"\"\n        raise NotImplementedError\n\n    def receiveDiscount(self) -> None:\n        \"\"\"Realizes UC11 \"Receive Discount\" (R11).\"\"\"\n        raise NotImplementedError\n\n    def haveDeliveryService(self) -> None:\n        \"\"\"Realizes UC12 \"Have Delivery Service\" (R13).\"\"\"\n        raise NotImplementedError\n\n    def getRecipeIdea(self) -> None:\n        \"\"\"Realizes UC27 \"Get Recipe Idea\" (R30).\"\"\"\n        raise NotImplementedError\n\n    def contactCustomerService(self) -> None:\n        \"\"\"Realizes UC36 \"Contact Customer\" (R51).\"\"\"\n        raise NotImplementedError\n\n    def scanProduct(self) -> None:\n        \"\"\"Realizes UC23 \"Scan Product\" (R16).\"\"\"\n        raise NotImplementedError\n\n    def addProductToWishlist(self) -> None:\n        \"\"\"Realizes UC28 \"Add Product\" (R17, R39).\"\"\"\n        raise NotImplementedError\n\n    def searchProduct(self) -> None:\n        \"\"\"Realizes UC24 \"Search Product\" (R18).\"\"\"\n        raise NotImplementedError\n\n    def filterProducts(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def orderProductByPrice(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def orderProductByPopularity(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def seeOnSaleProducts(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def scanBarcode(self) -> None:\n        \"\"\"Realizes UC22 \"Scan Barcode\" (R23).\"\"\"\n        raise NotImplementedError\n\n    def readProductInformation(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def seeProductStock(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def seeProductRestockDate(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def getInspiration(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def seeOrderHistory(self) -> None:\n        \"\"\"Realizes UC17 \"See Order History\" (R37).\"\"\"\n        raise NotImplementedError\n\n    def placeOrder(self) -> None:\n        \"\"\"Realizes UC16 \"Place Order\" (R38).\"\"\"\n        raise NotImplementedError\n\n    def payGrocery(self) -> None:\n        \"\"\"Realizes UC15 \"Pay Grocery\" (R40).\"\"\"\n        raise NotImplementedError\n\n    def seeStoreLocation(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def getNearestStore(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def changeDefaultStore(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def linkLoyaltyCard(self) -> None:\n        \"\"\"Realizes UC30 \"Link Loyalty Card\" (R44).\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Employee:\n    \"\"\"Source: R45, R46, R47, R48, R49, R50, R51\"\"\"\n    customer: _t.Optional[\"Customer\"] = None\n\n    def updateApplication(self) -> None:\n        \"\"\"Realizes UC31 \"Update Application\" (R45).\"\"\"\n        raise NotImplementedError\n\n    def editDiscount(self) -> None:\n        \"\"\"Realizes UC32 \"Edit Discount\" (R46).\"\"\"\n        raise NotImplementedError\n\n    def confirmDeliveryTime(self) -> None:\n        \"\"\"Realizes UC33 \"Confirm Delivery Time\" (R47).\"\"\"\n        raise NotImplementedError\n\n    def notifyCustomerOfUnavailability(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def notifyCustomerOfDelay(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def contactCustomerForCanceledDelivery(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def provideNewDeliveryTime(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Customer.java": "/** Generated from shared model D1/supermarket. Source: R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44 */\npublic class Customer {\n    private java.lang.String name;\n    private java.lang.String language;\n    private boolean pushNotifications;\n    private boolean newsletterSubscription;\n    private java.lang.String defaultStore;\n    private java.lang.String loyaltyCard;\n\n    /** Realizes UC1 \"Create Account\" (R1). */\n    public void createAccount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC2 \"Sign Newsletter\" (R2). */\n    public void signNewsletter() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC3 \"Unsubscribe Newsletter\" (R3). */\n    public void unsubscribeNewsletter() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC4 \"Activate Push Notification\" (R4). */\n    public void activatePushNotification() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC5 \"Deactivate Push Notification\" (R5). */\n    public void deactivatePushNotification() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC6 \"Reset Password\" (R6). */\n    public void resetPassword() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC7 \"Change Size\" (R7). */\n    public void changeFontSize() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC8 \"Change Contrast\" (R8). */\n    public void changeContrast() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC9 \"Change Language\" (R9). */\n    public void changeLanguage() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC10 \"Receive Suggestion\" (R10). */\n    public void receiveSuggestion() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC11 \"Receive Discount\" (R11). */\n    public void receiveDiscount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC12 \"Have Delivery Service\" (R13). */\n    public void haveDeliveryService() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC27 \"Get Recipe Idea\" (R30). */\n    public void getRecipeIdea() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC36 \"Contact Customer\" (R51). */\n    public void contactCustomerService() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC23 \"Scan Product\" (R16). */\n    public void scanProduct() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC28 \"Add Product\" (R17, R39). */\n    public void addProductToWishlist() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC24 \"Search Product\" (R18). */\n    public void searchProduct() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void filterProducts() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void orderProductByPrice() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void orderProductByPopularity() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void seeOnSaleProducts() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC22 \"Scan Barcode\" (R23). */\n    public void scanBarcode() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void readProductInformation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void seeProductStock() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void seeProductRestockDate() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void getInspiration() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC17 \"See Order History\" (R37). */\n    public void seeOrderHistory() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC16 \"Place Order\" (R38). */\n    public void placeOrder() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC15 \"Pay Grocery\" (R40). */\n    public void payGrocery() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void seeStoreLocation() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void getNearestStore() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void changeDefaultStore() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC30 \"Link Loyalty Card\" (R44). */\n    public void linkLoyaltyCard() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Employee.java": "/** Generated from shared model D1/supermarket. Source: R45, R46, R47, R48, R49, R50, R51 */\npublic class Employee {\n    private Customer customer;\n\n    /** Realizes UC31 \"Update Application\" (R45). */\n    public void updateApplication() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC32 \"Edit Discount\" (R46). */\n    public void editDiscount() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Realizes UC33 \"Confirm Delivery Time\" (R47). */\n    public void confirmDeliveryTime() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void notifyCustomerOfUnavailability() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void notifyCustomerOfDelay() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void contactCustomerForCanceledDelivery() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void provideNewDeliveryTime() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

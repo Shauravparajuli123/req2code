@@ -1,0 +1,35 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that a Company contains one back office for each store, which is represented by the association between Store and Office with a multiplicity of 1..1."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R2 is not represented in the model.",
+   "fix": "Add a class for HQ and establish an association between CompanyStructureModel and HQ."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R6 is not represented in the model.",
+   "fix": "Add a class for employees and establish a relationship with the Company class."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Requirement R8 is not represented in the model.",
+   "fix": "Ensure that the association between Company and Hq is a composition or aggregation with the correct multiplicities."
+  },
+  {
+   "agent": "class",
+   "issue": "Requirement R10 is not represented in the model.",
+   "fix": "Establish an association between Store and Office with the correct multiplicities."
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "MoveVehicle",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Vehicle",
+   "kind": "class",
+   "attributes": [
+    "position",
+    "speed",
+    "max_speed",
+    "environment"
+   ],
+   "methods": [
+    {
+     "name": "move",
+     "use_case": "MoveVehicle"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "LandVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R5"
+   ]
+  },
+  {
+   "name": "MarineVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6",
+    "R5"
+   ]
+  },
+  {
+   "name": "AmphibiousVehicle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Speed",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "LandVehicle",
+   "target": "Vehicle",
+   "multiplicity_target": "1",
+   "src": [
+    "R6",
+    "R5"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "MarineVehicle",
+   "target": "Vehicle",
+   "multiplicity_target": "1",
+   "src": [
+    "R6",
+    "R5"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "AmphibiousVehicle",
+   "target": "Vehicle",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Vehicle",
+   "target": "Speed",
+   "multiplicity_target": "1",
+   "src": [
+    "R2",
+    "R5"
+   ]
+  }
+ ],
+ "python": "class Vehicle:\n    def __init__(self, position: str, speed: Speed, max_speed: Speed, environment: str):\n        self.position = position\n        self.speed = speed\n        self.max_speed = max_speed\n        self.environment = environment\n\n    def move(self, time: float):\n        raise NotImplementedError\n\nclass LandVehicle(Vehicle):\n    pass\nclass MarineVehicle(Vehicle):\n    pass\nclass AmphibiousVehicle(Vehicle):\n    pass\nclass Speed:\n    pass",
+ "java": {}
+}

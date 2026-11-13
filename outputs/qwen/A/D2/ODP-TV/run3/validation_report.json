@@ -1,0 +1,25 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "TechnologyObject is not represented in the model.",
+   "fix": "Add a TechnologyObject class to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between ImplementableStandard and TechnologyObject is missing.",
+   "fix": "Add a generalization relationship from ImplementableStandard to TechnologyObject."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between IXIT and Implementation is incorrectly defined. It should be a generalization relationship.",
+   "fix": "Change the association between IXIT and Implementation to a generalization relationship with the correct multiplicities."
+  }
+ ]
+}

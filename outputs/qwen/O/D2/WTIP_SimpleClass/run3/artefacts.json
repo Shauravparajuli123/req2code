@@ -1,0 +1,148 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineClassifier",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "PrimitiveDataType",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Association",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "src"
+   ],
+   "methods": [
+    {
+     "name": "verbObject",
+     "use_case": "DefineClassifier"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R7"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "type"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "SimpleClass",
+   "kind": "class",
+   "attributes": [
+    "parent",
+    "association",
+    "attribute"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "PrimitiveDataType",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "TypeString",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R4",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Association",
+   "target": "Classifier",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R4",
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SimpleClass",
+   "target": "Classifier",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SimpleClass",
+   "target": "Association",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "SimpleClass",
+   "target": "Attribute",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "class Classifier:\n    def __init__(self, name):\n        self.name = name\n\nclass PrimitiveDataType(Classifier):\n    def __init__(self, name):\n        super().__init__(name)\n\nclass Association:\n    def __init__(self, name, src):\n        self.name = name\n        self.src = src\n\nclass Attribute:\n    def __init__(self, name, type):\n        self.name = name\n        self.type = type\n\nclass SimpleClass:\n    def __init__(self, parent, association, attribute):\n        self.parent = parent\n        self.association = association\n        self.attribute = attribute\n",
+ "java": {}
+}

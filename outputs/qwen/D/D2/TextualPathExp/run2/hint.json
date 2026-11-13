@@ -1,0 +1,80 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "TextualPathExp",
+    "src": [
+     "R1",
+     "R6"
+    ]
+   },
+   {
+    "name": "Path",
+    "src": [
+     "R6",
+     "R7"
+    ]
+   },
+   {
+    "name": "Transition",
+    "src": [
+     "R3",
+     "R7"
+    ]
+   },
+   {
+    "name": "AlternativeTrans",
+    "src": [
+     "R4",
+     "R8"
+    ]
+   },
+   {
+    "name": "PrimitiveTrans",
+    "src": [
+     "R5"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "PrimitiveTrans",
+    "name": "name",
+    "src": [
+     "R5"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "association",
+    "source": "TextualPathExp",
+    "target": "Path",
+    "src": [
+     "R6"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "Path",
+    "target": "Transition",
+    "src": [
+     "R7"
+    ]
+   },
+   {
+    "kind": "association",
+    "source": "AlternativeTrans",
+    "target": "Path",
+    "src": [
+     "R8"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

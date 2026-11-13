@@ -1,0 +1,353 @@
+{
+ "case": "D2/Cristal",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Cristal",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "elementaryActDef",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "elementaryPartDef",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "compositeActDef",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "compositeParDef",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "condition",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "name": "activityDefinitions",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createGame",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3",
+    "R4",
+    "R5",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Condition",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "CompositeParDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "CompositeActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "ElementaryActDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "ElementaryPartDef",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "ActivityDefinition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "actCompositeMember",
+     "type": "String",
+     "src": [
+      "R12"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "createGame",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "ActCompositeMember",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "activityDefinitions",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "createGame",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "PartCompositeMember",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "partDefinitionNode",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "createGame",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C10",
+   "name": "PartDefinitionNode",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "partCompositeMemberNode",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "createGame",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R15"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C4",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "composes",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "aggregation",
+   "source": "C10",
+   "target": "C9",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C9",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "contains",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C1",
+   "target": "C8",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "R7",
+   "kind": "association",
+   "source": "C1",
+   "target": "C7",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "id": "R8",
+   "kind": "association",
+   "source": "C2",
+   "target": "C9",
+   "mult_source": "0..*",
+   "mult_target": "1..*",
+   "label": "may have",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The Condition class is assumed to be a part of the Cristal model as per Requirement R1, but it is not explicitly linked to any other classes in the model."
+  }
+ ],
+ "open_tags": []
+}

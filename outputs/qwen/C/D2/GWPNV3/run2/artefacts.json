@@ -1,0 +1,120 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "places",
+    "transitions"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "net"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "net",
+    "outgoingArcs"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "PTArc",
+   "kind": "class",
+   "attributes": [
+    "srcPlace",
+    "dstNet"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "TPArc",
+   "kind": "class",
+   "attributes": [
+    "srcTransition",
+    "dstTransition"
+   ],
+   "methods": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "source": "Net",
+   "target": "Place",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "Net",
+   "target": "TPArc",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Net",
+   "target": "Place",
+   "src": []
+  },
+  {
+   "source": "Net",
+   "target": "Transition",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "Transition",
+   "target": "TPArc",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "source": "Net",
+   "target": "PTArc",
+   "src": []
+  },
+  {
+   "source": "PTArc",
+   "target": "Transition",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "source": "TPArc",
+   "target": "Transition",
+   "src": [
+    "R13"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GWPNV3.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Net:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    places: _t.Optional[str] = None\n    transitions: _t.Optional[str] = None\n    place: _t.Optional[\"Place\"] = None\n    tPArcs: _t.List[\"TPArc\"] = _dc.field(default_factory=list)\n    transition: _t.Optional[\"Transition\"] = None\n    pTArcs: _t.List[\"PTArc\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass Place:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    net: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    net: _t.Optional[str] = None\n    outgoingArcs: _t.Optional[str] = None\n    tPArcs: _t.List[\"TPArc\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass PTArc:\n    \"\"\"Source: -\"\"\"\n    srcPlace: _t.Optional[str] = None\n    dstNet: _t.Optional[str] = None\n    transition: _t.Optional[\"Transition\"] = None\n\n\n@_dc.dataclass\nclass TPArc:\n    \"\"\"Source: -\"\"\"\n    srcTransition: _t.Optional[str] = None\n    dstTransition: _t.Optional[str] = None\n    transition: _t.Optional[\"Transition\"] = None\n",
+ "java": {
+  "Net.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class Net {\n    private java.lang.String name;\n    private java.lang.String places;\n    private java.lang.String transitions;\n    private Place place;\n    private java.util.List<TPArc> tPArcs;\n    private Transition transition;\n    private java.util.List<PTArc> pTArcs;\n}\n",
+  "Place.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class Place {\n    private java.lang.String name;\n    private java.lang.String net;\n}\n",
+  "Transition.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class Transition {\n    private java.lang.String name;\n    private java.lang.String net;\n    private java.lang.String outgoingArcs;\n    private java.util.List<TPArc> tPArcs;\n}\n",
+  "PTArc.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class PTArc {\n    private java.lang.String srcPlace;\n    private java.lang.String dstNet;\n    private Transition transition;\n}\n",
+  "TPArc.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class TPArc {\n    private java.lang.String srcTransition;\n    private java.lang.String dstTransition;\n    private Transition transition;\n}\n"
+ }
+}

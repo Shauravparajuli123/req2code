@@ -1,0 +1,38 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Project {
+  identifier : String
+  artifactIdentifier : String
+  description : String
+}
+class BuildConfiguration {
+  defaultGoal : String
+  pathToUnitTestSourceDirectory : String
+}
+class Resource {
+  targetPath : String
+  directory : String
+  excludes : String
+}
+class MailingList {
+  name : String
+  subscribeString : String
+  archiveString : String
+}
+class Contributor {
+}
+class Person {
+  name : String
+  url : String
+  organizationUrl : String
+  timeZone : String
+}
+class Developer {
+  identifier : String
+}
+Project "0..1" -- "1" BuildConfiguration : has
+Project "0..*" -- "1" MailingList : has
+Project "1..*" -- "1" Contributor : has
+BuildConfiguration "0..*" -- "1" Resource : has
+@enduml

@@ -1,0 +1,156 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "CreateTemplateExpression",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R5",
+    "R6",
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "TemplateExpression",
+   "kind": "class",
+   "attributes": [
+    "boundVariable"
+   ],
+   "methods": [
+    {
+     "name": "bindToVariable",
+     "use_case": "CreateTemplateExpression"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R5"
+   ]
+  },
+  {
+   "name": "ObjectTemplateExpression",
+   "kind": "class",
+   "attributes": [
+    "propertyTemplateItems"
+   ],
+   "methods": [
+    {
+     "name": "addPropertyTemplateItem",
+     "use_case": "CreateTemplateExpression"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6"
+   ]
+  },
+  {
+   "name": "CollectionTemplateExpression",
+   "kind": "class",
+   "attributes": [
+    "oclExpressions"
+   ],
+   "methods": [
+    {
+     "name": "addOclExpression",
+     "use_case": "CreateTemplateExpression"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "PropertyTemplateItem",
+   "kind": "class",
+   "attributes": [
+    "objectContainer",
+    "referredProperty"
+   ],
+   "methods": [
+    {
+     "name": "setObjectContainer",
+     "use_case": "CreateTemplateExpression"
+    },
+    {
+     "name": "setReferredProperty",
+     "use_case": "CreateTemplateExpression"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "OclExpression",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "Property",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "CollectionTemplateExpression",
+   "target": "OclExpression",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ObjectTemplateExpression",
+   "target": "PropertyTemplateItem",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PropertyTemplateItem",
+   "target": "ObjectTemplateExpression",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "PropertyTemplateItem",
+   "target": "Property",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass TemplateExpression:\n    def __init__(self, boundVariable: str):\n        self.boundVariable = boundVariable\n    def bindToVariable(self):\n        raise NotImplementedError()\n\nclass ObjectTemplateExpression(TemplateExpression):\n    def __init__(self, propertyTemplateItems: List['PropertyTemplateItem'] = []):\n        super().__init__('')\n        self.propertyTemplateItems = propertyTemplateItems\n    def addPropertyTemplateItem(self, item: 'PropertyTemplateItem'):\n        raise NotImplementedError()\n\nclass CollectionTemplateExpression(TemplateExpression):\n    def __init__(self, oclExpressions: List['OclExpression'] = []):\n        super().__init__('')\n        self.oclExpressions = oclExpressions\n    def addOclExpression(self, expression: 'OclExpression'):\n        raise NotImplementedError()\n\nclass PropertyTemplateItem:\n    def __init__(self, objectContainer: 'ObjectTemplateExpression', referredProperty: 'Property'):\n        self.objectContainer = objectContainer\n        self.referredProperty = referredProperty\n    def setObjectContainer(self, container: 'ObjectTemplateExpression'):\n        raise NotImplementedError()\n    def setReferredProperty(self, property: 'Property'):\n        raise NotImplementedError()\n\nclass OclExpression:\n    pass\n\nclass Property:\n    pass",
+ "java": {}
+}

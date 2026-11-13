@@ -1,0 +1,173 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "MetaClass",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "MTRANSModel",
+   "src": [
+    "R2",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17"
+   ]
+  },
+  {
+   "name": "Module",
+   "src": [
+    "R3",
+    "R10",
+    "R11",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "name": "Rule",
+   "src": [
+    "R4",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "name": "Inheritance",
+   "src": [
+    "R5",
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "name": "Expression",
+   "src": [
+    "R6",
+    "R18",
+    "R19"
+   ]
+  },
+  {
+   "name": "Section",
+   "src": [
+    "R7",
+    "R20"
+   ]
+  },
+  {
+   "name": "Instruction",
+   "src": [
+    "R8",
+    "R21"
+   ]
+  },
+  {
+   "name": "Variable",
+   "src": [
+    "R9",
+    "R22"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Expression",
+   "name": "instruction",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "owner": "Instruction",
+   "name": "expression",
+   "src": [
+    "R21"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "has",
+   "source": "MTRANSModel",
+   "target": "Module",
+   "src": [
+    "R10",
+    "R11",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Module",
+   "target": "Rule",
+   "src": [
+    "R11",
+    "R12",
+    "R13"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Rule",
+   "target": "Section",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Rule",
+   "target": "Variable",
+   "src": [
+    "R22"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Expression",
+   "target": "Instruction",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Instruction",
+   "target": "Expression",
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Rule",
+   "target": "Inheritance",
+   "src": [
+    "R15",
+    "R16"
+   ]
+  },
+  {
+   "kind": "has",
+   "source": "Inheritance",
+   "target": "Rule",
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

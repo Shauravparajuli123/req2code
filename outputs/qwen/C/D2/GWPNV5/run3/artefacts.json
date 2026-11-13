@@ -1,0 +1,147 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "tokens"
+   ],
+   "methods": [
+    {
+     "name": "addToken",
+     "use_case": null
+    },
+    {
+     "name": "removeToken",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "addOutputArc",
+     "use_case": null
+    },
+    {
+     "name": "removeOutputArc",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    "weight"
+   ],
+   "methods": [
+    {
+     "name": "setDestination",
+     "use_case": null
+    },
+    {
+     "name": "setSource",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "PlaceTransitionArc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "connectToPlace",
+     "use_case": null
+    },
+    {
+     "name": "disconnectFromPlace",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "TransitionPlaceArc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "connectToTransition",
+     "use_case": null
+    },
+    {
+     "name": "disconnectFromTransition",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addPlace",
+     "use_case": null
+    },
+    {
+     "name": "removePlace",
+     "use_case": null
+    },
+    {
+     "name": "addTransition",
+     "use_case": null
+    },
+    {
+     "name": "removeTransition",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R3",
+    "R8",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Place",
+   "target": "Net",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "PlaceTransitionArc",
+   "target": "Transition",
+   "src": [
+    "R13",
+    "R14"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GWPNV5.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Place:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    tokens: _t.Optional[int] = None\n    net: _t.Optional[\"Net\"] = None\n\n    def addToken(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removeToken(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n\n    def addOutputArc(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removeOutputArc(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Arc:\n    \"\"\"Source: -\"\"\"\n    weight: _t.Optional[float] = None\n\n    def setDestination(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def setSource(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass PlaceTransitionArc:\n    \"\"\"Source: -\"\"\"\n    transition: _t.Optional[\"Transition\"] = None\n\n    def connectToPlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def disconnectFromPlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass TransitionPlaceArc:\n    \"\"\"Source: -\"\"\"\n\n    def connectToTransition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def disconnectFromTransition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Net:\n    \"\"\"Source: R3, R8, R12\"\"\"\n\n    def addPlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removePlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addTransition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def removeTransition(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n",
+ "java": {
+  "Place.java": "/** Generated from shared model D2/GWPNV5. Source: - */\npublic class Place {\n    private java.lang.String name;\n    private int tokens;\n    private Net net;\n\n    /** Operation. */\n    public void addToken() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removeToken() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Transition.java": "/** Generated from shared model D2/GWPNV5. Source: - */\npublic class Transition {\n    private java.lang.String name;\n\n    /** Operation. */\n    public void addOutputArc() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removeOutputArc() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Arc.java": "/** Generated from shared model D2/GWPNV5. Source: - */\npublic class Arc {\n    private double weight;\n\n    /** Operation. */\n    public void setDestination() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void setSource() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "PlaceTransitionArc.java": "/** Generated from shared model D2/GWPNV5. Source: - */\npublic class PlaceTransitionArc {\n    private Transition transition;\n\n    /** Operation. */\n    public void connectToPlace() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void disconnectFromPlace() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "TransitionPlaceArc.java": "/** Generated from shared model D2/GWPNV5. Source: - */\npublic class TransitionPlaceArc {\n\n    /** Operation. */\n    public void connectToTransition() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void disconnectFromTransition() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Net.java": "/** Generated from shared model D2/GWPNV5. Source: R3, R8, R12 */\npublic class Net {\n\n    /** Operation. */\n    public void addPlace() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removePlace() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addTransition() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void removeTransition() {\n        throw new UnsupportedOperationException();\n    }\n}\n"
+ }
+}

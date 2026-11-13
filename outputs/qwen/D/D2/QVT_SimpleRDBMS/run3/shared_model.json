@@ -1,0 +1,160 @@
+{
+ "case": "D2/QVT_SimpleRDBMS",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "RModelElement",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "kind",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Schema",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C3",
+   "name": "Table",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C4",
+   "name": "Column",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "type",
+     "type": "String",
+     "src": []
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C5",
+   "name": "Key",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "id": "C6",
+   "name": "ForeignKey",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C3",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is part of",
+   "src": []
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C3",
+   "target": "C5",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": []
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is part of",
+   "src": []
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C6",
+   "target": "C4",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "references",
+   "src": []
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": []
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C6",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "references",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "id": "R7",
+   "kind": "composition",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "contains",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Assuming that the association between Table and Schema is mandatory and unique (1..1) as per R8."
+  }
+ ],
+ "open_tags": []
+}

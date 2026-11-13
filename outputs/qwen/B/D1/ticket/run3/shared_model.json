@@ -1,0 +1,798 @@
+{
+ "case": "D1/ticket",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "User",
+   "src": [
+    "R1",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R15",
+    "R16",
+    "R17",
+    "R25",
+    "R26",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R38",
+    "R39",
+    "R40",
+    "R45",
+    "R46",
+    "R47",
+    "R53"
+   ]
+  },
+  {
+   "id": "A2",
+   "name": "Visitor",
+   "src": [
+    "R11",
+    "R12",
+    "R14",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R46",
+    "R47",
+    "R48"
+   ]
+  },
+  {
+   "id": "A3",
+   "name": "Reseller",
+   "src": [
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40",
+    "R41",
+    "R45"
+   ]
+  },
+  {
+   "id": "A4",
+   "name": "Artist",
+   "src": [
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "id": "A5",
+   "name": "Company",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "id": "A6",
+   "name": "Guest",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "id": "A7",
+   "name": "GuestIESingleTimeUser",
+   "src": [
+    "R15"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Save Information",
+   "actor": "A1",
+   "src": [
+    "R1",
+    "R17"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC2",
+   "name": "Change Password",
+   "actor": "A1",
+   "src": [
+    "R6"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC3",
+   "name": "Edit Information",
+   "actor": "A1",
+   "src": [
+    "R7"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC4",
+   "name": "See History",
+   "actor": "A1",
+   "src": [
+    "R8"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC5",
+   "name": "See Overview",
+   "actor": "A1",
+   "src": [
+    "R9"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC6",
+   "name": "See Preference",
+   "actor": "A1",
+   "src": [
+    "R5"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC7",
+   "name": "Purchase Ticket",
+   "actor": "A2",
+   "src": [
+    "R12",
+    "R14",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC8",
+   "name": "Read Event",
+   "actor": "A2",
+   "src": [
+    "R11"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC9",
+   "name": "Resell Ticket",
+   "actor": "A3",
+   "src": [
+    "R41"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC10",
+   "name": "Validate Ticket",
+   "actor": "A5",
+   "src": [
+    "R37"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC11",
+   "name": "Avoid Behavior",
+   "actor": "A5",
+   "src": [
+    "R39"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC12",
+   "name": "Deduct Service Fee",
+   "actor": "A5",
+   "src": [
+    "R38"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC13",
+   "name": "Have Buying Process",
+   "actor": "A5",
+   "src": [
+    "R27"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC14",
+   "name": "Have Description",
+   "actor": "A4",
+   "src": [
+    "R52"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC15",
+   "name": "Have Link",
+   "actor": "A4",
+   "src": [
+    "R50",
+    "R51",
+    "R54"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC16",
+   "name": "Have Price",
+   "actor": "A5",
+   "src": [
+    "R35"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC17",
+   "name": "Have Reseller",
+   "actor": "A5",
+   "src": [
+    "R36"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC18",
+   "name": "Have Search Engine",
+   "actor": "A2",
+   "src": [
+    "R30"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC19",
+   "name": "Filter List",
+   "actor": "A2",
+   "src": [
+    "R34"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC20",
+   "name": "Filter Search",
+   "actor": "A2",
+   "src": [
+    "R32"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC21",
+   "name": "Filter Search Result",
+   "actor": "A2",
+   "src": [
+    "R33"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC22",
+   "name": "Sort Search Result",
+   "actor": "A2",
+   "src": [
+    "R31"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC23",
+   "name": "Land Event Page",
+   "actor": "A2",
+   "src": [
+    "R29"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC24",
+   "name": "Click Event",
+   "actor": "A2",
+   "src": [
+    "R48"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC25",
+   "name": "See Event",
+   "actor": "A2",
+   "src": [
+    "R19",
+    "R46",
+    "R47"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC26",
+   "name": "See Seat",
+   "actor": "A2",
+   "src": [
+    "R21",
+    "R22"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC27",
+   "name": "See Type",
+   "actor": "A2",
+   "src": [
+    "R23"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC28",
+   "name": "Add Ticket",
+   "actor": "A2",
+   "src": [
+    "R24"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC29",
+   "name": "See Order Summary",
+   "actor": "A2",
+   "src": [
+    "R25"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC30",
+   "name": "See Content",
+   "actor": "A1",
+   "src": [
+    "R4"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC31",
+   "name": "Favorite Event",
+   "actor": "A1",
+   "src": [
+    "R53"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC32",
+   "name": "Save Bank Account",
+   "actor": "A3",
+   "src": [
+    "R45"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC33",
+   "name": "Fill Information",
+   "actor": "A6",
+   "src": [
+    "R16"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC34",
+   "name": "Fill Name",
+   "actor": "A7",
+   "src": [
+    "R15"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC35",
+   "name": "Fill Survey",
+   "actor": "A1",
+   "src": [
+    "R3"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "User",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "dateOfBirth",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "email",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "address",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "preferences",
+     "type": "String",
+     "src": [
+      "R3",
+      "R4",
+      "R5"
+     ]
+    },
+    {
+     "name": "bankAccount",
+     "type": "String",
+     "src": [
+      "R45"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "createUser",
+     "realizes": "UC1",
+     "src": [
+      "R1",
+      "R17"
+     ]
+    },
+    {
+     "id": "M2",
+     "name": "changePassword",
+     "realizes": "UC2",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "id": "M3",
+     "name": "editInformation",
+     "realizes": "UC3",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "id": "M4",
+     "name": "seeHistory",
+     "realizes": "UC4",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "id": "M5",
+     "name": "seeOverview",
+     "realizes": "UC5",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "id": "M6",
+     "name": "seePreference",
+     "realizes": "UC6",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "id": "M7",
+     "name": "fillInformation",
+     "realizes": "UC33",
+     "src": [
+      "R16"
+     ]
+    },
+    {
+     "id": "M8",
+     "name": "fillName",
+     "realizes": "UC34",
+     "src": [
+      "R15"
+     ]
+    },
+    {
+     "id": "M9",
+     "name": "fillSurvey",
+     "realizes": "UC35",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R44",
+    "R49",
+    "R50",
+    "R51",
+    "R52",
+    "R53",
+    "R54"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Address",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "street",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "city",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "state",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "zipCode",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Preference",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "genre",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "eventTypes",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "BankAccount",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "iban",
+     "type": "String",
+     "src": [
+      "R45"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R45"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R2",
+    "R45"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "R13, R42, R43, R44, R45 are not explicitly modeled but assumed to be related to the Reseller class."
+  }
+ ],
+ "open_tags": []
+}

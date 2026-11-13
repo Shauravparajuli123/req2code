@@ -1,0 +1,493 @@
+{
+ "actors": [
+  "customer",
+  "employee"
+ ],
+ "use_cases": [
+  {
+   "name": "RecordCustomerOrder",
+   "actor": "customer",
+   "src": [
+    "FR-SOP-01"
+   ]
+  },
+  {
+   "name": "ProcessOrder",
+   "actor": "employee",
+   "src": [
+    "FR-SOP-03"
+   ]
+  },
+  {
+   "name": "SubmitPurchaseOrder",
+   "actor": "employee",
+   "src": [
+    "FR-POP-03"
+   ]
+  },
+  {
+   "name": "ApprovePurchaseOrder",
+   "actor": "employee",
+   "src": [
+    "FR-POP-04"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "phone_number",
+    "address_details",
+    "state",
+    "zip_code",
+    "website",
+    "tax_status"
+   ],
+   "methods": [
+    {
+     "name": "assignTaxStatus",
+     "use_case": "FR-CM-06"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-CM-03",
+    "FR-CM-05",
+    "FR-CM-06"
+   ]
+  },
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    "first_name",
+    "last_name",
+    "primary_phone_number",
+    "secondary_phone_number",
+    "email_address",
+    "job_title",
+    "notes"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-EM-01",
+    "FR-PM-01"
+   ]
+  },
+  {
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "phone_number",
+    "address_details",
+    "state",
+    "zip_code",
+    "website",
+    "tax_status"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-01",
+    "FR-CM-03",
+    "FR-CM-05",
+    "FR-CM-06"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    "first_name",
+    "last_name",
+    "phone_number",
+    "job_title",
+    "email_address"
+   ],
+   "methods": [
+    {
+     "name": "assignJobTitle",
+     "use_case": "FR-EM-02"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02",
+    "FR-EM-03",
+    "FR-EM-04",
+    "FR-EM-05"
+   ]
+  },
+  {
+   "name": "Entity",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-02",
+    "FR-PM-01"
+   ]
+  },
+  {
+   "name": "JobTitle",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-EM-02"
+   ]
+  },
+  {
+   "name": "Order",
+   "kind": "class",
+   "attributes": [
+    "date",
+    "customer",
+    "employee",
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "assignStatus",
+     "use_case": "FR-SOP-04"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-02",
+    "FR-SOP-03",
+    "FR-SOP-04",
+    "FR-SOP-05",
+    "FR-SOP-06",
+    "FR-SOP-07",
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "name": "OrderDetailItem",
+   "kind": "class",
+   "attributes": [
+    "product",
+    "quantity",
+    "unit_price",
+    "discount"
+   ],
+   "methods": [
+    {
+     "name": "assignStatus",
+     "use_case": "FR-SOP-10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "name": "PhoneNumber",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-EM-01",
+    "FR-PM-01"
+   ]
+  },
+  {
+   "name": "Product",
+   "kind": "class",
+   "attributes": [
+    "code",
+    "name",
+    "description",
+    "unit_cost",
+    "retail_price",
+    "inventory_level",
+    "reorder_level",
+    "target_level",
+    "min_reorder_quantity",
+    "discontinued"
+   ],
+   "methods": [
+    {
+     "name": "assignStatus",
+     "use_case": "FR-PM-05"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-PM-01",
+    "FR-PM-02",
+    "FR-PM-03",
+    "FR-PM-04",
+    "FR-PM-05",
+    "FR-PM-06",
+    "FR-PM-07",
+    "FR-PM-08"
+   ]
+  },
+  {
+   "name": "PurchaseOrder",
+   "kind": "class",
+   "attributes": [
+    "date",
+    "vendor",
+    "employee",
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "assignStatus",
+     "use_case": "FR-POP-05"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-POP-01",
+    "FR-POP-02",
+    "FR-POP-03",
+    "FR-POP-04",
+    "FR-POP-05",
+    "FR-POP-06",
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  },
+  {
+   "name": "PurchaseOrderDetailItem",
+   "kind": "class",
+   "attributes": [
+    "product",
+    "quantity",
+    "unit_price"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  },
+  {
+   "name": "Quantity",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-PM-04",
+    "FR-PM-07",
+    "FR-POP-08"
+   ]
+  },
+  {
+   "name": "Record",
+   "kind": "class",
+   "attributes": [
+    "added_by",
+    "added_date"
+   ],
+   "methods": [
+    {
+     "name": "addRecord",
+     "use_case": "FR-DA-01"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-DA-01",
+    "FR-DA-02"
+   ]
+  },
+  {
+   "name": "State",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-05"
+   ]
+  },
+  {
+   "name": "TaxStatus",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-06"
+   ]
+  },
+  {
+   "name": "UnitPrice",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-PM-03",
+    "FR-PM-07",
+    "FR-POP-08"
+   ]
+  },
+  {
+   "name": "Vendor",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "phone_number",
+    "address_details",
+    "state",
+    "zip_code",
+    "website",
+    "tax_status"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-01",
+    "FR-CM-03",
+    "FR-CM-05",
+    "FR-CM-06"
+   ]
+  },
+  {
+   "name": "Shippers",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "phone_number",
+    "address_details",
+    "state",
+    "zip_code",
+    "website",
+    "tax_status"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-01",
+    "FR-CM-03",
+    "FR-CM-05",
+    "FR-CM-06"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Company",
+   "target": "Contact",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-PM-01"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Employee",
+   "target": "PurchaseOrder",
+   "multiplicity_target": "0..*",
+   "src": [
+    "FR-POP-03",
+    "FR-POP-04"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Employee",
+   "target": "Record",
+   "multiplicity_target": "0..*",
+   "src": [
+    "FR-DA-01",
+    "FR-DA-02"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Employee",
+   "target": "Supervisor",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-EM-03",
+    "FR-EM-04"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Order",
+   "target": "Customer",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-SOP-02",
+    "FR-SOP-03"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Order",
+   "target": "Employee",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-SOP-03"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Order",
+   "target": "OrderDetailItem",
+   "multiplicity_target": "0..*",
+   "src": [
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PurchaseOrder",
+   "target": "Vendor",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-POP-02"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PurchaseOrder",
+   "target": "Employee",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-POP-03",
+    "FR-POP-04"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PurchaseOrder",
+   "target": "PurchaseOrderDetailItem",
+   "multiplicity_target": "0..*",
+   "src": [
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  }
+ ],
+ "python": "from datetime import date\n\nclass PhoneNumber:\n    pass\n\nclass Quantity:\n    pass\n\nclass UnitPrice:\n    pass\n\nclass State:\n    pass\n\nclass TaxStatus:\n    pass\n\nclass JobTitle:\n    pass\n\nclass Record:\n    def addRecord(self):\n        raise NotImplementedError\n\nclass Company(Entity):\n    def assignTaxStatus(self):\n        raise NotImplementedError\n\nclass Contact:\n    def __init__(self, first_name, last_name, primary_phone_number, secondary_phone_number, email_address, job_title, notes):\n        self.first_name = first_name\n        self.last_name = last_name\n        self.primary_phone_number = primary_phone_number\n        self.secondary_phone_number = secondary_phone_number\n        self.email_address = email_address\n        self.job_title = job_title\n        self.notes = notes\n\nclass Customer(Company):\n    pass\n\nclass Employee:\n    def assignJobTitle(self):\n        raise NotImplementedError\n\nclass Order:\n    def assignStatus(self):\n        raise NotImplementedError\n\nclass OrderDetailItem:\n    def assignStatus(self):\n        raise NotImplementedError\n\nclass Product:\n    def assignStatus(self):\n        raise NotImplementedError\n\nclass PurchaseOrder:\n    def assignStatus(self):\n        raise NotImplementedError\n\nclass PurchaseOrderDetailItem:\n    pass\n\nclass Vendor(Entity):\n    pass\n\nclass Shippers(Entity):\n    pass",
+ "java": {}
+}

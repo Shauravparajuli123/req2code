@@ -1,0 +1,58 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  account : String
+  newsletterSubscription : boolean
+  pushNotifications : boolean
+  password : String
+  language : String
+  fontSize : int
+  contrast : int
+  +createAccount()
+  +subscribeToNewsletter()
+  +unsubscribeFromNewsletter()
+  +activatePushNotifications()
+  +deactivatePushNotifications()
+  +resetPassword()
+  +changeFontSize()
+  +changeContrast()
+  +changeLanguage()
+}
+class Product {
+  discount : boolean
+  availability : boolean
+  +suggestProduct()
+  +personalDiscount()
+  +personalDiscountNotification()
+  +filterByDietaryRestrictions()
+  +orderByPrice()
+  +orderByPopularity()
+  +checkStock()
+  +checkBackInStock()
+  +checkAvailabilityInOtherStores()
+  +seeQuantityInStore()
+  +seeAvailabilityDate()
+  +getRecipeIdeas()
+  +seeProductsUsedInRecipe()
+}
+class Order {
+  history : String
+  previousOrder : String
+  +purchaseOnline()
+  +haveGroceriesDelivered()
+  +selectDeliveryDate()
+  +selectDeliveryTimeSlot()
+  +useExpressDelivery()
+  +repeatPreviousOrder()
+  +addPreviousOrderToNewOrder()
+}
+class Notification {
+  type : String
+  +notifySale()
+  +notifyBackInStock()
+  +payDigitally()
+}
+Customer "0..*" -- "1" Notification : receives
+Product "1..*" -- "1" Order : isIn
+@enduml

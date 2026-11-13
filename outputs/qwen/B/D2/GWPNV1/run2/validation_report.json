@@ -1,0 +1,27 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [
+  "R4 (terminological, \"passive 'mapped' without agent\"): readings ['A Place is mapped to a single Network.', 'A Network is mapped to a single Place.']"
+ ],
+ "assumptions": [
+  {
+   "tag": "R4",
+   "assumption": "A Place is mapped to a single Network and a Network is mapped to a single Place."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "The class 'Net' is missing an attribute 'place'",
+   "fix": "Add 'place: String' to the class 'Net'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between 'Net' and 'Place' should be 'mappedTo'",
+   "fix": "Change the relationship from 'association Net -> Place [1..1..*]' to 'mappedTo Net -> Place [1..1..*]'"
+  }
+ ]
+}

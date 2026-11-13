@@ -1,0 +1,173 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "ModelBusinessTemplates",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "UtilityClass",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "IdentifierBag",
+   "kind": "class",
+   "attributes": [
+    "identifiers"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  },
+  {
+   "name": "BusinessEntity",
+   "kind": "class",
+   "attributes": [
+    "businessContacts",
+    "identifiers"
+   ],
+   "methods": [
+    {
+     "name": "addBusinessContact",
+     "use_case": "R8"
+    },
+    {
+     "name": "getBusinessContacts",
+     "use_case": "R8"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R9",
+    "R8"
+   ]
+  },
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Model",
+   "kind": "class",
+   "attributes": [
+    "overviewDocuments"
+   ],
+   "methods": [
+    {
+     "name": "addOverviewDocument",
+     "use_case": "R7"
+    },
+    {
+     "name": "getOverviewDocuments",
+     "use_case": "R7"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R10"
+   ]
+  },
+  {
+   "name": "OverviewDocument",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "PifModel",
+   "kind": "class",
+   "attributes": [
+    "businessTemplates"
+   ],
+   "methods": [
+    {
+     "name": "addBusinessTemplate",
+     "use_case": "R1"
+    },
+    {
+     "name": "getBusinessTemplates",
+     "use_case": "R1"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "BusinessEntity",
+   "target": "Contact",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Model",
+   "target": "OverviewDocument",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "UtilityClass",
+   "target": "IdentifierBag",
+   "multiplicity_target": "1",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "PifModel",
+   "target": "Contact",
+   "multiplicity_target": "1",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PifModel",
+   "target": "BusinessEntity",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass IdentifierBag:\n    pass\n\nclass Contact:\n    pass\n\nclass BusinessEntity:\n    def __init__(self, identifier_bag: IdentifierBag):\n        self.identifier_bag = identifier_bag\n    def business_contact(self) -> Contact:\n        raise NotImplementedError\n\nclass Model:\n    pass\n\nclass OverviewDocument:\n    pass\n\nclass PifModel(Model):\n    def __init__(self, business_template: Contact):\n        self.business_template = business_template\n\nclass UtilityClass:\n    pass",
+ "java": {}
+}

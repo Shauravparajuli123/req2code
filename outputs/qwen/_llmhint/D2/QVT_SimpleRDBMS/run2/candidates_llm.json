@@ -1,0 +1,141 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "RModelElement",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Schema",
+   "src": [
+    "R2",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Table",
+   "src": [
+    "R3",
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "Column",
+   "src": [
+    "R4",
+    "R10",
+    "R11"
+   ],
+   "attributes": [
+    {
+     "owner": "Column",
+     "name": "type",
+     "src": [
+      "R4"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Key",
+   "src": [
+    "R5",
+    "R12",
+    "R13"
+   ],
+   "attributes": []
+  },
+  {
+   "name": "ForeignKey",
+   "src": [
+    "R6",
+    "R14",
+    "R15"
+   ],
+   "attributes": []
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "Column",
+   "name": "type",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "Schema",
+   "target": "Table",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Table",
+   "target": "Key",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Column",
+   "target": "Table",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Column",
+   "target": "ForeignKey",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Key",
+   "target": "Table",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "Key",
+   "target": "ForeignKey",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "ForeignKey",
+   "target": "Column",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "ForeignKey",
+   "target": "Key",
+   "src": [
+    "R15"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

@@ -1,0 +1,7666 @@
+{
+ "condition": "B",
+ "hint": {
+  "case": "D3/etour",
+  "stage": "result2_after_ambiguity_removal",
+  "actors": [
+   {
+    "id": "A1",
+    "src": [
+     "UC12",
+     "UC15"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "UC12.s1",
+      "text": "Description: View the details of a selected account Tourist."
+     },
+     {
+      "sid": "UC15.s1",
+      "text": "Description: Change data of a selected account Tourist."
+     },
+     {
+      "sid": "UC15.s12",
+      "text": "Exit conditions: The system has been reporting the information required by the selected account Tourist."
+     }
+    ],
+    "name": "account tourist"
+   },
+   {
+    "id": "A2",
+    "src": [
+     "UC31"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "UC31.s1",
+      "text": "Description: The Agency Operator chooses to change the password associated with your account Entry Operator conditions: The agency has logged."
+     }
+    ],
+    "name": "agency operator"
+   },
+   {
+    "id": "A3",
+    "src": [
+     "UC34"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "UC34.s7",
+      "text": "4 Gets the position of the Guest citing the case of use location and process research."
+     }
+    ],
+    "name": "guest"
+   },
+   {
+    "id": "A4",
+    "src": [
+     "UC33",
+     "UC34"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "UC33.s2",
+      "text": "Entry conditions: Guest User have access to the system."
+     },
+     {
+      "sid": "UC33.s13",
+      "text": "Guest User cancels the operation."
+     },
+     {
+      "sid": "UC34.s2",
+      "text": "Entry conditions: Guest User logs on."
+     }
+    ],
+    "name": "guest user"
+   },
+   {
+    "id": "A5",
+    "src": [
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s15",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     },
+     {
+      "sid": "UC42.s12",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     },
+     {
+      "sid": "UC43.s13",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     }
+    ],
+    "name": "operator"
+   },
+   {
+    "id": "A6",
+    "src": [
+     "UC43"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "UC43.s2",
+      "text": "Entry conditions: The Point Restaurant Operator has successfully authenticated to the system."
+     }
+    ],
+    "name": "point restaurant operator"
+   },
+   {
+    "id": "A7",
+    "src": [
+     "UC37"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "UC37.s7",
+      "text": "4 Disconnects the Registered User."
+     }
+    ],
+    "name": "registered user"
+   },
+   {
+    "id": "A8",
+    "src": [
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC44",
+     "UC45"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "UC38.s2",
+      "text": "Entry conditions: The Point Of Restaurant Operator has successfully authenticated to the system."
+     },
+     {
+      "sid": "UC39.s2",
+      "text": "Entry conditions: The Point Of Restaurant Operator has successfully authenticated to the system."
+     },
+     {
+      "sid": "UC40.s2",
+      "text": "Entry conditions: The Point Of Restaurant Operator has successfully authenticated to the system."
+     }
+    ],
+    "name": "restaurant operator"
+   },
+   {
+    "id": "A9",
+    "src": [
+     "UC13"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "UC13.s4",
+      "text": "Activate the feature for the activation / deactivation by a given sheet tourist."
+     }
+    ],
+    "name": "sheet tourist"
+   },
+   {
+    "id": "A10",
+    "src": [
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC49",
+     "UC50",
+     "UC52",
+     "UC53",
+     "UC56",
+     "UC57",
+     "UC58"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "UC12.s6",
+      "text": "Exit conditions: The system displays the card's Tourist selected."
+     },
+     {
+      "sid": "UC13.s1",
+      "text": "Description: Enable or disable the account of a tourist."
+     },
+     {
+      "sid": "UC13.s2",
+      "text": "Entry Operator conditions: The Agency is in the form of a tourist."
+     }
+    ],
+    "name": "tourist"
+   },
+   {
+    "id": "A12",
+    "src": [
+     "UC13",
+     "UC53"
+    ],
+    "rule": [
+     "person_noun"
+    ],
+    "evidence": [
+     {
+      "sid": "UC13.s7",
+      "text": "4 Enable / disable the account of the visitor you selected."
+     },
+     {
+      "sid": "UC53.s5",
+      "text": "2 Verify that the visitor has not already issued a feedback for the site and displays a form for entering the feedback for the selected site."
+     },
+     {
+      "sid": "UC53.s6",
+      "text": "In case the visitor has already issued a feedback for the site selected, activates the use case FeedbackAlreadyReleased."
+     }
+    ],
+    "name": "visitor"
+   }
+  ],
+  "use_cases": [
+   {
+    "id": "UC1",
+    "src": [
+     "UC32"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC32.s1",
+      "text": "Description: He was asked to enter a password but is not confirmed in a correct way."
+     }
+    ],
+    "name": "Ask Password",
+    "actor": null,
+    "goal_text": "He was asked to enter a password but is not confirmed in a correct way."
+   },
+   {
+    "id": "UC2",
+    "src": [
+     "UC29"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC29.s1",
+      "text": "Description: He was asked to enter a search tags already in the system."
+     }
+    ],
+    "name": "Ask SearchTag",
+    "actor": null,
+    "goal_text": "He was asked to enter a search tags already in the system."
+   },
+   {
+    "id": "UC3",
+    "src": [
+     "UC47"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC47.s1",
+      "text": "Description: Change data associated with your account."
+     }
+    ],
+    "name": "Associate Account",
+    "actor": "tourist",
+    "goal_text": "Change data associated with your account."
+   },
+   {
+    "id": "UC4",
+    "src": [
+     "UC43"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC43.s1",
+      "text": "Description: Change data point associated refreshment."
+     }
+    ],
+    "name": "Change DataPoint",
+    "actor": "operator",
+    "goal_text": "Change data point associated refreshment."
+   },
+   {
+    "id": "UC5",
+    "src": [
+     "UC15"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC15.s1",
+      "text": "Description: Change data of a selected account Tourist."
+     }
+    ],
+    "name": "Change Data",
+    "actor": "account tourist",
+    "goal_text": "Change data of a selected account Tourist."
+   },
+   {
+    "id": "UC6",
+    "src": [
+     "UC23"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC23.s1",
+      "text": "Description: Change data of a news on the computer."
+     }
+    ],
+    "name": "Change Data",
+    "actor": null,
+    "goal_text": "Change data of a news on the computer."
+   },
+   {
+    "id": "UC7",
+    "src": [
+     "UC3"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC3.s1",
+      "text": "Description: Change data of a cultural object in the system."
+     }
+    ],
+    "name": "Change Data",
+    "actor": null,
+    "goal_text": "Change data of a cultural object in the system."
+   },
+   {
+    "id": "UC8",
+    "src": [
+     "UC17"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s1",
+      "text": "Description: Changing the image of a banner ad."
+     }
+    ],
+    "name": "Change Image",
+    "actor": null,
+    "goal_text": "Changing the image of a banner ad."
+   },
+   {
+    "id": "UC9",
+    "src": [
+     "UC39"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC39.s1",
+      "text": "Description: Changing the image of a banner ad."
+     }
+    ],
+    "name": "Change Image",
+    "actor": "restaurant operator",
+    "goal_text": "Changing the image of a banner ad."
+   },
+   {
+    "id": "UC10",
+    "src": [
+     "UC41"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s1",
+      "text": "Description: Change the daily menu of a restaurant."
+     }
+    ],
+    "name": "Change Menu",
+    "actor": "restaurant operator",
+    "goal_text": "Change the daily menu of a restaurant."
+   },
+   {
+    "id": "UC11",
+    "src": [
+     "UC18"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC18.s1",
+      "text": "Description: Check if a point Refreshments included the maximum number of allowed banners to it."
+     }
+    ],
+    "name": "Check Point",
+    "actor": null,
+    "goal_text": "Check if a point Refreshments included the maximum number of allowed banners to it."
+   },
+   {
+    "id": "UC12",
+    "src": [
+     "UC7"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC7.s1",
+      "text": "Description: Convention active request by a refreshment point."
+     }
+    ],
+    "name": "Convention Request",
+    "actor": null,
+    "goal_text": "Convention active request by a refreshment point."
+   },
+   {
+    "id": "UC13",
+    "src": [
+     "UC16"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC16.s1",
+      "text": "Description: Delete the account of a tourist from the system."
+     }
+    ],
+    "name": "Delete Account",
+    "actor": "tourist",
+    "goal_text": "Delete the account of a tourist from the system."
+   },
+   {
+    "id": "UC14",
+    "src": [
+     "UC19"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC19.s1",
+      "text": "Description: Delete a banner ad associated with a refreshment bar on the computer."
+     }
+    ],
+    "name": "Delete BannerAd",
+    "actor": null,
+    "goal_text": "Delete a banner ad associated with a refreshment bar on the computer."
+   },
+   {
+    "id": "UC15",
+    "src": [
+     "UC40"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC40.s1",
+      "text": "Description: Delete a banner ad associated with the point of rest."
+     }
+    ],
+    "name": "Delete BannerAd",
+    "actor": "restaurant operator",
+    "goal_text": "Delete a banner ad associated with the point of rest."
+   },
+   {
+    "id": "UC16",
+    "src": [
+     "UC42"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC42.s1",
+      "text": "Description: Delete a daily menu of a restaurant."
+     }
+    ],
+    "name": "Delete Menu",
+    "actor": "restaurant operator",
+    "goal_text": "Delete a daily menu of a restaurant."
+   },
+   {
+    "id": "UC17",
+    "src": [
+     "UC22"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC22.s1",
+      "text": "Description: Delete a news in the system."
+     }
+    ],
+    "name": "Delete News",
+    "actor": null,
+    "goal_text": "Delete a news in the system."
+   },
+   {
+    "id": "UC18",
+    "src": [
+     "UC1"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s1",
+      "text": "Description: Delete a cultural object in the system."
+     }
+    ],
+    "name": "Delete Object",
+    "actor": null,
+    "goal_text": "Delete a cultural object in the system."
+   },
+   {
+    "id": "UC19",
+    "src": [
+     "UC6"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC6.s1",
+      "text": "Description: Delete a refreshment from the system."
+     }
+    ],
+    "name": "Delete Refreshment",
+    "actor": null,
+    "goal_text": "Delete a refreshment from the system."
+   },
+   {
+    "id": "UC20",
+    "src": [
+     "UC52"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC52.s1",
+      "text": "Description: Tourism delete a site from the list of bookmarks."
+     }
+    ],
+    "name": "Delete Site",
+    "actor": "tourist",
+    "goal_text": "Tourism delete a site from the list of bookmarks."
+   },
+   {
+    "id": "UC21",
+    "src": [
+     "UC26"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC26.s1",
+      "text": "Description: Editing a comment by a feedback selected."
+     }
+    ],
+    "name": "Edit Comment",
+    "actor": null,
+    "goal_text": "Editing a comment by a feedback selected."
+   },
+   {
+    "id": "UC22",
+    "src": [
+     "UC54"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC54.s1",
+      "text": "Description: Edit the comment previously issued."
+     }
+    ],
+    "name": "Edit Comment",
+    "actor": null,
+    "goal_text": "Edit the comment previously issued."
+   },
+   {
+    "id": "UC23",
+    "src": [
+     "UC8"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC8.s1",
+      "text": "Description: Edit the data pertaining to a designated point of rest."
+     }
+    ],
+    "name": "Edit Data",
+    "actor": null,
+    "goal_text": "Edit the data pertaining to a designated point of rest."
+   },
+   {
+    "id": "UC24",
+    "src": [
+     "UC48"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC48.s1",
+      "text": "Description: Edit Preferences generic personal."
+     }
+    ],
+    "name": "Edit EditPreferences",
+    "actor": "tourist",
+    "goal_text": "Edit Preferences generic personal."
+   },
+   {
+    "id": "UC25",
+    "src": [
+     "UC46"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC46.s1",
+      "text": "Description: Edit your personal search preferences."
+     }
+    ],
+    "name": "Edit SearchPreference",
+    "actor": "tourist",
+    "goal_text": "Edit your personal search preferences."
+   },
+   {
+    "id": "UC26",
+    "src": [
+     "UC13"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC13.s1",
+      "text": "Description: Enable or disable the account of a tourist."
+     }
+    ],
+    "name": "Enable Account",
+    "actor": "tourist",
+    "goal_text": "Enable or disable the account of a tourist."
+   },
+   {
+    "id": "UC27",
+    "src": [
+     "UC37"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC37.s1",
+      "text": "Description: Ends the current session."
+     }
+    ],
+    "name": "End Session",
+    "actor": "GuestUser",
+    "goal_text": "Ends the current session."
+   },
+   {
+    "id": "UC28",
+    "src": [
+     "UC35"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC35.s1",
+      "text": "Description: Ensures a registered user to access the system with the privileges that fall."
+     }
+    ],
+    "name": "Ensure User",
+    "actor": "GuestUser",
+    "goal_text": "Ensures a registered user to access the system with the privileges that fall."
+   },
+   {
+    "id": "UC29",
+    "src": [
+     "UC55"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC55.s1",
+      "text": "Description: Entry conditions: He already been issued with a feedback for the selected site."
+     }
+    ],
+    "name": "Entry EntryCondition",
+    "actor": "GuestUser",
+    "goal_text": "Entry conditions: He already been issued with a feedback for the selected site."
+   },
+   {
+    "id": "UC30",
+    "src": [
+     "UC20"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC20.s1",
+      "text": "Description: Inserting a new banner associated with a point of rest."
+     }
+    ],
+    "name": "Insert Banner",
+    "actor": null,
+    "goal_text": "Inserting a new banner associated with a point of rest."
+   },
+   {
+    "id": "UC31",
+    "src": [
+     "UC38"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC38.s1",
+      "text": "Description: Inserting a new banner associated with the point of rest."
+     }
+    ],
+    "name": "Insert Banner",
+    "actor": "restaurant operator",
+    "goal_text": "Inserting a new banner associated with the point of rest."
+   },
+   {
+    "id": "UC32",
+    "src": [
+     "UC53"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC53.s1",
+      "text": "Description: Inserts a feedback for the selected site."
+     }
+    ],
+    "name": "Insert Feedback",
+    "actor": "tourist",
+    "goal_text": "Inserts a feedback for the selected site."
+   },
+   {
+    "id": "UC33",
+    "src": [
+     "UC21"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC21.s1",
+      "text": "Description: Inserts a new news in the system."
+     }
+    ],
+    "name": "Insert News",
+    "actor": null,
+    "goal_text": "Inserts a new news in the system."
+   },
+   {
+    "id": "UC34",
+    "src": [
+     "UC2"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s1",
+      "text": "Description: Inserts a new cultural object in the system."
+     }
+    ],
+    "name": "Insert Object",
+    "actor": null,
+    "goal_text": "Inserts a new cultural object in the system."
+   },
+   {
+    "id": "UC35",
+    "src": [
+     "UC51"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC51.s1",
+      "text": "Description: Inserts a site selected in the list of bookmarks."
+     }
+    ],
+    "name": "Insert Site",
+    "actor": null,
+    "goal_text": "Inserts a site selected in the list of bookmarks."
+   },
+   {
+    "id": "UC36",
+    "src": [
+     "UC30"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC30.s1",
+      "text": "Description: Inserts a new tag search."
+     }
+    ],
+    "name": "Insert TagSearch",
+    "actor": null,
+    "goal_text": "Inserts a new tag search."
+   },
+   {
+    "id": "UC37",
+    "src": [
+     "UC28"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC28.s1",
+      "text": "Description: Removes one or more search tags in the system."
+     }
+    ],
+    "name": "Remove SearchTag",
+    "actor": null,
+    "goal_text": "Removes one or more search tags in the system."
+   },
+   {
+    "id": "UC38",
+    "src": [
+     "UC44"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC44.s1",
+      "text": "Description: Require to conclude a Convention between the points of rest and the agency involved."
+     }
+    ],
+    "name": "Require Convention",
+    "actor": "restaurant operator",
+    "goal_text": "Require to conclude a Convention between the points of rest and the agency involved."
+   },
+   {
+    "id": "UC39",
+    "src": [
+     "UC33"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC33.s1",
+      "text": "Description: Requires the creation of a new system."
+     }
+    ],
+    "name": "Require Creation",
+    "actor": "guest user",
+    "goal_text": "Requires the creation of a new system."
+   },
+   {
+    "id": "UC40",
+    "src": [
+     "UC34"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC34.s1",
+      "text": "Description: Research and cultural heritage for all."
+     }
+    ],
+    "name": "Research Heritage",
+    "actor": "guest user",
+    "goal_text": "Research and cultural heritage for all."
+   },
+   {
+    "id": "UC41",
+    "src": [
+     "UC14"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC14.s1",
+      "text": "Description: Returns the list of tourist account in the system according to certain parameters."
+     }
+    ],
+    "name": "Return List",
+    "actor": "tourist",
+    "goal_text": "Returns the list of tourist account in the system according to certain parameters."
+   },
+   {
+    "id": "UC42",
+    "src": [
+     "UC4"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC4.s1",
+      "text": "Description: Returns the list of cultural objects in the system according to certain parameters."
+     }
+    ],
+    "name": "Return List",
+    "actor": "tourist",
+    "goal_text": "Returns the list of cultural objects in the system according to certain parameters."
+   },
+   {
+    "id": "UC43",
+    "src": [
+     "UC9"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC9.s1",
+      "text": "Description: Returns the list of points of rest in the system according to certain parameters."
+     }
+    ],
+    "name": "Return List",
+    "actor": "tourist",
+    "goal_text": "Returns the list of points of rest in the system according to certain parameters."
+   },
+   {
+    "id": "UC44",
+    "src": [
+     "UC56"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC56.s1",
+      "text": "Description: Returns the current position of the tourist."
+     }
+    ],
+    "name": "Return Position",
+    "actor": "tourist",
+    "goal_text": "Returns the current position of the tourist."
+   },
+   {
+    "id": "UC45",
+    "src": [
+     "UC27"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC27.s1",
+      "text": "Description: Searching for a specific site on the computer."
+     }
+    ],
+    "name": "Search Site",
+    "actor": null,
+    "goal_text": "Searching for a specific site on the computer."
+   },
+   {
+    "id": "UC46",
+    "src": [
+     "UC57"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC57.s1",
+      "text": "Description: The tourist searching for a site using the potential offered by the Advanced Search."
+     }
+    ],
+    "name": "Search Site",
+    "actor": "tourist",
+    "goal_text": "The tourist searching for a site using the potential offered by the Advanced Search."
+   },
+   {
+    "id": "UC47",
+    "src": [
+     "UC36"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC36.s1",
+      "text": "Description: The data supplied for the login is incorrect."
+     }
+    ],
+    "name": "Supply Login",
+    "actor": "guest user",
+    "goal_text": "The data supplied for the login is incorrect."
+   },
+   {
+    "id": "UC48",
+    "src": [
+     "UC31"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC31.s1",
+      "text": "Description: The Agency Operator chooses to change the password associated with your account Entry Operator conditions: The agency has logged."
+     }
+    ],
+    "name": "The AgencyOperator",
+    "actor": "agency operator",
+    "goal_text": "The Agency Operator chooses to change the password associated with your account Entry Operator conditions: The agency has logged."
+   },
+   {
+    "id": "UC49",
+    "src": [
+     "UC10"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC10.s1",
+      "text": "Description: View the details of a selected point of rest."
+     }
+    ],
+    "name": "View Detail",
+    "actor": "tourist",
+    "goal_text": "View the details of a selected point of rest."
+   },
+   {
+    "id": "UC50",
+    "src": [
+     "UC12"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC12.s1",
+      "text": "Description: View the details of a selected account Tourist."
+     }
+    ],
+    "name": "View Detail",
+    "actor": "account tourist",
+    "goal_text": "View the details of a selected account Tourist."
+   },
+   {
+    "id": "UC51",
+    "src": [
+     "UC5"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC5.s1",
+      "text": "Description: View the details of the selected cultural."
+     }
+    ],
+    "name": "View Detail",
+    "actor": "tourist",
+    "goal_text": "View the details of the selected cultural."
+   },
+   {
+    "id": "UC52",
+    "src": [
+     "UC58"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC58.s1",
+      "text": "Description: View the details of a particular site."
+     }
+    ],
+    "name": "View Detail",
+    "actor": "tourist",
+    "goal_text": "View the details of a particular site."
+   },
+   {
+    "id": "UC53",
+    "src": [
+     "UC24"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC24.s1",
+      "text": "Description: View all feedback for a particular site."
+     }
+    ],
+    "name": "View Feedback",
+    "actor": null,
+    "goal_text": "View all feedback for a particular site."
+   },
+   {
+    "id": "UC54",
+    "src": [
+     "UC11"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC11.s1",
+      "text": "Description: View the history of conventions derived from a selected point of rest."
+     }
+    ],
+    "name": "View History",
+    "actor": null,
+    "goal_text": "View the history of conventions derived from a selected point of rest."
+   },
+   {
+    "id": "UC55",
+    "src": [
+     "UC49"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC49.s1",
+      "text": "Description: View the list of personal favorites."
+     }
+    ],
+    "name": "View List",
+    "actor": "tourist",
+    "goal_text": "View the list of personal favorites."
+   },
+   {
+    "id": "UC56",
+    "src": [
+     "UC50"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC50.s1",
+      "text": "Description: View the list of sites for which it has issued a feedback."
+     }
+    ],
+    "name": "View List",
+    "actor": "tourist",
+    "goal_text": "View the list of sites for which it has issued a feedback."
+   },
+   {
+    "id": "UC57",
+    "src": [
+     "UC25"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC25.s1",
+      "text": "Description: View statistical report relating to a selected location."
+     }
+    ],
+    "name": "View Report",
+    "actor": null,
+    "goal_text": "View statistical report relating to a selected location."
+   },
+   {
+    "id": "UC58",
+    "src": [
+     "UC45"
+    ],
+    "rule": [
+     "description_goal"
+    ],
+    "evidence": [
+     {
+      "sid": "UC45.s1",
+      "text": "Description: Viewing statistics for Point Of Restaurants Entry conditions: The Point Of Restaurant Operator has successfully authenticated to the system."
+     }
+    ],
+    "name": "View Statistic",
+    "actor": "restaurant operator",
+    "goal_text": "Viewing statistics for Point Of Restaurants Entry conditions: The Point Of Restaurant Operator has successfully authenticated to the system."
+   }
+  ],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "UC20",
+     "UC33",
+     "UC35",
+     "UC46",
+     "UC47",
+     "UC48"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC20.s4",
+      "text": "Receives a list of turning points of the rest use case SearchRefreshmentPoint and select one from the list and access to the function of inserting banners."
+     },
+     {
+      "sid": "UC33.s2",
+      "text": "Entry conditions: Guest User have access to the system."
+     },
+     {
+      "sid": "UC35.s2",
+      "text": "Entry conditions: A registered user has access to the system."
+     }
+    ],
+    "name": "Access",
+    "freq": 6
+   },
+   {
+    "id": "C2",
+    "src": [
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC31",
+     "UC33",
+     "UC47"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC12.s5",
+      "text": "2 Upload data to the selected account."
+     },
+     {
+      "sid": "UC13.s1",
+      "text": "Description: Enable or disable the account of a tourist."
+     },
+     {
+      "sid": "UC13.s7",
+      "text": "4 Enable / disable the account of the visitor you selected."
+     }
+    ],
+    "name": "Account",
+    "freq": 10
+   },
+   {
+    "id": "C3",
+    "src": [
+     "UC12",
+     "UC15"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC12.s1",
+      "text": "Description: View the details of a selected account Tourist."
+     },
+     {
+      "sid": "UC15.s1",
+      "text": "Description: Change data of a selected account Tourist."
+     },
+     {
+      "sid": "UC15.s12",
+      "text": "Exit conditions: The system has been reporting the information required by the selected account Tourist."
+     }
+    ],
+    "name": "AccountTourist",
+    "freq": 3
+   },
+   {
+    "id": "C4",
+    "src": [
+     "UC7"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC7.s6",
+      "text": "3 Check the data of the agreement and decide for activation."
+     },
+     {
+      "sid": "UC7.s7",
+      "text": "4 Asks for confirmation of the activation."
+     },
+     {
+      "sid": "UC7.s11",
+      "text": "Exit conditions: The system shall notify the activation of the convention."
+     }
+    ],
+    "name": "Activation",
+    "freq": 3
+   },
+   {
+    "id": "C5",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC5",
+     "UC6",
+     "UC7",
+     "UC8",
+     "UC10",
+     "UC11",
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC17",
+     "UC18",
+     "UC19",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC24",
+     "UC25",
+     "UC26",
+     "UC28",
+     "UC30",
+     "UC31",
+     "UC44"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s2",
+      "text": "Entry Operator conditions: The agency has logged."
+     },
+     {
+      "sid": "UC2.s2",
+      "text": "Entry Operator conditions: The agency has logged."
+     },
+     {
+      "sid": "UC3.s2",
+      "text": "Entry Operator conditions: The agency has logged."
+     }
+    ],
+    "name": "Agency",
+    "freq": 30
+   },
+   {
+    "id": "C6",
+    "src": [
+     "UC7",
+     "UC44"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC7.s6",
+      "text": "3 Check the data of the agreement and decide for activation."
+     },
+     {
+      "sid": "UC44.s6",
+      "text": "3 Inserts the data in the form of the agreement and submit."
+     }
+    ],
+    "name": "Agreement",
+    "freq": 2
+   },
+   {
+    "id": "C7",
+    "src": [
+     "UC35",
+     "UC57",
+     "UC58"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC35.s8",
+      "text": "Exit conditions: The system displays the area of work registered."
+     },
+     {
+      "sid": "UC57.s4",
+      "text": "Enable the advanced search feature from your personal area."
+     },
+     {
+      "sid": "UC58.s2",
+      "text": "Entry conditions: The Tourist has successfully authenticated to the system and is located in one of the following areas: Research Results, List of Sites Visited Sites and List of Favorites Flow of events User System: 1."
+     }
+    ],
+    "name": "Area",
+    "freq": 3
+   },
+   {
+    "id": "C8",
+    "src": [
+     "UC17",
+     "UC18",
+     "UC19",
+     "UC20",
+     "UC38",
+     "UC39",
+     "UC40"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s4",
+      "text": "Receives a list of turning points of the rest use case SearchRefreshmentPoint and select one from accessing the function of editing a banner."
+     },
+     {
+      "sid": "UC17.s5",
+      "text": "2 View the list of banner associated with the point of rest."
+     },
+     {
+      "sid": "UC17.s6",
+      "text": "3 Select a banner from the list and enter the editing functionality."
+     }
+    ],
+    "name": "Banner",
+    "freq": 39
+   },
+   {
+    "id": "C9",
+    "src": [
+     "UC17",
+     "UC19",
+     "UC39",
+     "UC40"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s1",
+      "text": "Description: Changing the image of a banner ad."
+     },
+     {
+      "sid": "UC19.s1",
+      "text": "Description: Delete a banner ad associated with a refreshment bar on the computer."
+     },
+     {
+      "sid": "UC39.s1",
+      "text": "Description: Changing the image of a banner ad."
+     }
+    ],
+    "name": "BannerAd",
+    "freq": 4
+   },
+   {
+    "id": "C10",
+    "src": [
+     "UC1",
+     "UC3",
+     "UC8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s11",
+      "text": "Quality requirements: The system requirements blocks of input controls on receipt of confirmation of cancellation to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC3.s15",
+      "text": "Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC8.s15",
+      "text": "Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation."
+     }
+    ],
+    "name": "Block",
+    "freq": 3
+   },
+   {
+    "id": "C11",
+    "src": [
+     "UC17",
+     "UC39",
+     "UC49",
+     "UC51",
+     "UC52"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s13",
+      "text": "8 Bookmark this new image for the selected banner."
+     },
+     {
+      "sid": "UC39.s13",
+      "text": "8 Bookmark this new image for the selected banner."
+     },
+     {
+      "sid": "UC49.s5",
+      "text": "2 Upload the list of bookmarks."
+     }
+    ],
+    "name": "Bookmark",
+    "freq": 10
+   },
+   {
+    "id": "C12",
+    "src": [
+     "UC42",
+     "UC44"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC42.s7",
+      "text": "4 Calls to confirm the deletion."
+     },
+     {
+      "sid": "UC44.s12",
+      "text": "Exit conditions: The notification about the call for the Convention to the Agency."
+     }
+    ],
+    "name": "Call",
+    "freq": 2
+   },
+   {
+    "id": "C13",
+    "src": [
+     "UC5",
+     "UC10",
+     "UC12",
+     "UC58"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC5.s4",
+      "text": "View the list of cultural goods as a result of the use case SearchCulturalHeritage, it selects and activates a function to view the card."
+     },
+     {
+      "sid": "UC10.s4",
+      "text": "View the list of points of rest as a result of the use case SearchRefreshmentPoint, it selects and activates a function to view the card."
+     },
+     {
+      "sid": "UC12.s4",
+      "text": "Tourists from the list obtained by activating the use case SearchTourist will select and activate a function for displaying the card."
+     }
+    ],
+    "name": "Card",
+    "freq": 4
+   },
+   {
+    "id": "C14",
+    "src": [
+     "UC3",
+     "UC8",
+     "UC15",
+     "UC17",
+     "UC26",
+     "UC31",
+     "UC39",
+     "UC41",
+     "UC43",
+     "UC47",
+     "UC48",
+     "UC54"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC3.s4",
+      "text": "View the list of cultural goods as a result of the use case SearchCulturalHeritage, it selects and activates a function of change."
+     },
+     {
+      "sid": "UC3.s15",
+      "text": "Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC8.s5",
+      "text": "2 Upload data from the point of rest and displays the form of change."
+     }
+    ],
+    "name": "Change",
+    "freq": 17
+   },
+   {
+    "id": "C16",
+    "src": [
+     "UC17",
+     "UC20",
+     "UC38",
+     "UC39"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s10",
+      "text": "Check the characteristics of the inserted and asks for confirmation of the change of the banner."
+     },
+     {
+      "sid": "UC20.s7",
+      "text": "4 Check the characteristics of the inserted, check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner."
+     },
+     {
+      "sid": "UC38.s7",
+      "text": "4 Check the characteristics of the inserted, check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner."
+     }
+    ],
+    "name": "Characteristic",
+    "freq": 4
+   },
+   {
+    "id": "C17",
+    "src": [
+     "UC1",
+     "UC31"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s7",
+      "text": "4 Delete the cultural choice."
+     },
+     {
+      "sid": "UC31.s3",
+      "text": "Upload the form to change the password associated with that work agency 7 Change your password by entering the new choice and confirming 8 Save your changes Exit conditions: The system confirms the success of Operation Interruption of the connection to the server Quality requirements:"
+     }
+    ],
+    "name": "Choice",
+    "freq": 2
+   },
+   {
+    "id": "C18",
+    "src": [
+     "UC26",
+     "UC53",
+     "UC54"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC26.s1",
+      "text": "Description: Editing a comment by a feedback selected."
+     },
+     {
+      "sid": "UC26.s4",
+      "text": "View the list of sites as a result of the use case SearchSite, it selects and activates a function of change in the selected comment."
+     },
+     {
+      "sid": "UC26.s7",
+      "text": "4 Displays a form for editing the comment of feedback selected."
+     }
+    ],
+    "name": "Comment",
+    "freq": 10
+   },
+   {
+    "id": "C19",
+    "src": [
+     "UC19",
+     "UC23",
+     "UC27"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC19.s1",
+      "text": "Description: Delete a banner ad associated with a refreshment bar on the computer."
+     },
+     {
+      "sid": "UC23.s1",
+      "text": "Description: Change data of a news on the computer."
+     },
+     {
+      "sid": "UC27.s1",
+      "text": "Description: Searching for a specific site on the computer."
+     }
+    ],
+    "name": "Computer",
+    "freq": 3
+   },
+   {
+    "id": "C20",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC6",
+     "UC7",
+     "UC8",
+     "UC13",
+     "UC15",
+     "UC16",
+     "UC17",
+     "UC18",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC26",
+     "UC29",
+     "UC32",
+     "UC33",
+     "UC36",
+     "UC37",
+     "UC38",
+     "UC39",
+     "UC41",
+     "UC43",
+     "UC44",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC54",
+     "UC55"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s5",
+      "text": "2 Asks confirmation."
+     },
+     {
+      "sid": "UC1.s11",
+      "text": "Quality requirements: The system requirements blocks of input controls on receipt of confirmation of cancellation to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC2.s7",
+      "text": "4 Verify the data entered and asks for confirmation of the transaction."
+     }
+    ],
+    "name": "Confirmation",
+    "freq": 40
+   },
+   {
+    "id": "C21",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC4",
+     "UC5",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC10",
+     "UC11",
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC17",
+     "UC18",
+     "UC19",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC24",
+     "UC25",
+     "UC26",
+     "UC27",
+     "UC28",
+     "UC30",
+     "UC31",
+     "UC33",
+     "UC34",
+     "UC35",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44",
+     "UC45",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC49",
+     "UC50",
+     "UC51",
+     "UC52",
+     "UC53",
+     "UC54",
+     "UC57",
+     "UC58"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s10",
+      "text": "Interruption of connection to the server ETOUR."
+     },
+     {
+      "sid": "UC2.s14",
+      "text": "Interruption of the connection to the server ETOUR."
+     },
+     {
+      "sid": "UC3.s14",
+      "text": "Interruption of the connection to the server ETOUR."
+     }
+    ],
+    "name": "Connection",
+    "freq": 51
+   },
+   {
+    "id": "C22",
+    "src": [
+     "UC7",
+     "UC11",
+     "UC18",
+     "UC44"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC7.s4",
+      "text": "Enable the activation function of the Convention."
+     },
+     {
+      "sid": "UC7.s5",
+      "text": "2 Load the data request of the Convention from the point of rest and displays the corresponding form."
+     },
+     {
+      "sid": "UC7.s11",
+      "text": "Exit conditions: The system shall notify the activation of the convention."
+     }
+    ],
+    "name": "Convention",
+    "freq": 13
+   },
+   {
+    "id": "C23",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s8",
+      "text": "Exit conditions: The system shall notify the successful elimination of the cultural."
+     },
+     {
+      "sid": "UC2.s12",
+      "text": "Exit conditions: The system shall notify the proper inclusion of the cultural."
+     },
+     {
+      "sid": "UC3.s5",
+      "text": "2 Load the data of the cultural and displays the form for editing."
+     }
+    ],
+    "name": "Cultural",
+    "freq": 8
+   },
+   {
+    "id": "C24",
+    "src": [
+     "UC22",
+     "UC23"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC22.s10",
+      "text": "Delete the data news."
+     },
+     {
+      "sid": "UC23.s12",
+      "text": "7 Confirm the operation of changing the data news."
+     }
+    ],
+    "name": "DataNews",
+    "freq": 2
+   },
+   {
+    "id": "C25",
+    "src": [
+     "UC41",
+     "UC42"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s5",
+      "text": "2 Displays a form with seven days of the week."
+     },
+     {
+      "sid": "UC41.s7",
+      "text": "4 Upload the data menu for the selected day and loads them into a form."
+     },
+     {
+      "sid": "UC41.s8",
+      "text": "5 Edit menu of the selected day and submit the form."
+     }
+    ],
+    "name": "Day",
+    "freq": 4
+   },
+   {
+    "id": "C26",
+    "src": [
+     "UC13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC13.s4",
+      "text": "Activate the feature for the activation / deactivation by a given sheet tourist."
+     },
+     {
+      "sid": "UC13.s5",
+      "text": "2 Asks for confirmation of activation / deactivation."
+     }
+    ],
+    "name": "Deactivation",
+    "freq": 2
+   },
+   {
+    "id": "C27",
+    "src": [
+     "UC1",
+     "UC16",
+     "UC19",
+     "UC22",
+     "UC28",
+     "UC40",
+     "UC42"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s1",
+      "text": "Description: Delete a cultural object in the system."
+     },
+     {
+      "sid": "UC1.s7",
+      "text": "4 Delete the cultural choice."
+     },
+     {
+      "sid": "UC16.s7",
+      "text": "4 Delete the selected data."
+     }
+    ],
+    "name": "Delete",
+    "freq": 10
+   },
+   {
+    "id": "C28",
+    "src": [
+     "UC6",
+     "UC19",
+     "UC22",
+     "UC28",
+     "UC40",
+     "UC42"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC6.s6",
+      "text": "3 Confirm the deletion."
+     },
+     {
+      "sid": "UC19.s7",
+      "text": "4 Displays a message confirming the deletion."
+     },
+     {
+      "sid": "UC22.s8",
+      "text": "5 Confirm the deletion of the news."
+     }
+    ],
+    "name": "Deletion",
+    "freq": 6
+   },
+   {
+    "id": "C29",
+    "src": [
+     "UC37"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC37.s4",
+      "text": "Access the functionality of disconnection from the system."
+     },
+     {
+      "sid": "UC37.s6",
+      "text": "3 Confirm the request for disconnection."
+     }
+    ],
+    "name": "Disconnection",
+    "freq": 2
+   },
+   {
+    "id": "C30",
+    "src": [
+     "UC2",
+     "UC11",
+     "UC19",
+     "UC21",
+     "UC26",
+     "UC34",
+     "UC35",
+     "UC40",
+     "UC41",
+     "UC45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s5",
+      "text": "2 Displays the corresponding form."
+     },
+     {
+      "sid": "UC11.s4",
+      "text": "Access the features on the display of historical conventions."
+     },
+     {
+      "sid": "UC19.s7",
+      "text": "4 Displays a message confirming the deletion."
+     }
+    ],
+    "name": "Display",
+    "freq": 10
+   },
+   {
+    "id": "C31",
+    "src": [
+     "UC17",
+     "UC20",
+     "UC38",
+     "UC39",
+     "UC42",
+     "UC44"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s7",
+      "text": "4 Displays a form for the selection of an image."
+     },
+     {
+      "sid": "UC20.s5",
+      "text": "2 Displays a form for the selection of an image."
+     },
+     {
+      "sid": "UC38.s5",
+      "text": "2 Displays a form for the selection of an image."
+     }
+    ],
+    "name": "Displays",
+    "freq": 6
+   },
+   {
+    "id": "C32",
+    "src": [
+     "UC20",
+     "UC38"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC20.s14",
+      "text": "The point of eating has already entered the maximum number of banners allowed."
+     },
+     {
+      "sid": "UC38.s14",
+      "text": "The point of eating has already entered the maximum number of banners allowed."
+     }
+    ],
+    "name": "Eating",
+    "freq": 2
+   },
+   {
+    "id": "C33",
+    "src": [
+     "UC41"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s8",
+      "text": "5 Edit menu of the selected day and submit the form."
+     },
+     {
+      "sid": "UC41.s10",
+      "text": "Verify the data entered and asks for confirmation of the edit menu."
+     }
+    ],
+    "name": "EditMenu",
+    "freq": 2
+   },
+   {
+    "id": "C34",
+    "src": [
+     "UC1",
+     "UC6",
+     "UC16",
+     "UC19",
+     "UC22",
+     "UC28",
+     "UC40",
+     "UC42"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s4",
+      "text": "View the list of CulturalHeritage as a result of the use case SearchCulturalHeritage, it selects and activates a function of elimination."
+     },
+     {
+      "sid": "UC1.s8",
+      "text": "Exit conditions: The system shall notify the successful elimination of the cultural."
+     },
+     {
+      "sid": "UC6.s4",
+      "text": "View a list of points of rest as a result of the use case SearchCulturalHeritage, it selects and activates a function of elimination."
+     }
+    ],
+    "name": "Elimination",
+    "freq": 13
+   },
+   {
+    "id": "C35",
+    "src": [
+     "UC4",
+     "UC9",
+     "UC27"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC4.s2",
+      "text": "Entry conditions: Flow of events User System: 1."
+     },
+     {
+      "sid": "UC9.s2",
+      "text": "Entry conditions: Flow of events User System: 1."
+     },
+     {
+      "sid": "UC27.s2",
+      "text": "Entry conditions: Flow of events User System: 1."
+     }
+    ],
+    "name": "EntryCondition",
+    "freq": 3
+   },
+   {
+    "id": "C36",
+    "src": [
+     "UC29",
+     "UC32"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC29.s4",
+      "text": "Notice the error message and asks for confirmation of its reading."
+     },
+     {
+      "sid": "UC32.s2",
+      "text": "Entry conditions: It has been pressed the button to confirm the password change Flow of events User System: 4 Notify an error message."
+     }
+    ],
+    "name": "ErrorMessage",
+    "freq": 2
+   },
+   {
+    "id": "C37",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC4",
+     "UC5",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC10",
+     "UC11",
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC17",
+     "UC18",
+     "UC19",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC27",
+     "UC28",
+     "UC30",
+     "UC33",
+     "UC34",
+     "UC35",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC49",
+     "UC50",
+     "UC51",
+     "UC52",
+     "UC53",
+     "UC54",
+     "UC57",
+     "UC58"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s10",
+      "text": "Interruption of connection to the server ETOUR."
+     },
+     {
+      "sid": "UC2.s14",
+      "text": "Interruption of the connection to the server ETOUR."
+     },
+     {
+      "sid": "UC3.s14",
+      "text": "Interruption of the connection to the server ETOUR."
+     }
+    ],
+    "name": "Etour",
+    "freq": 46
+   },
+   {
+    "id": "C38",
+    "src": [
+     "UC17",
+     "UC20",
+     "UC38",
+     "UC39"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s11",
+      "text": "In the event that the inserted image is not valid, enable the use case Errored."
+     },
+     {
+      "sid": "UC20.s8",
+      "text": "In the event that the inserted image is not valid, enable the use case Errored."
+     },
+     {
+      "sid": "UC38.s8",
+      "text": "In the event that the inserted image is not valid, enable the use case Errored."
+     }
+    ],
+    "name": "Event",
+    "freq": 4
+   },
+   {
+    "id": "C39",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC4",
+     "UC5",
+     "UC6",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC10",
+     "UC11",
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC17",
+     "UC18",
+     "UC19",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC24",
+     "UC25",
+     "UC26",
+     "UC27",
+     "UC28",
+     "UC29",
+     "UC30",
+     "UC31",
+     "UC32",
+     "UC33",
+     "UC34",
+     "UC35",
+     "UC36",
+     "UC37",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44",
+     "UC45",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC49",
+     "UC50",
+     "UC51",
+     "UC52",
+     "UC53",
+     "UC54",
+     "UC55",
+     "UC57",
+     "UC58"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s3",
+      "text": "Flow of events User System: 1."
+     },
+     {
+      "sid": "UC2.s3",
+      "text": "Flow of events User System: 1."
+     },
+     {
+      "sid": "UC3.s3",
+      "text": "Flow of events User System: 1."
+     }
+    ],
+    "name": "EventsUserSystem",
+    "freq": 57
+   },
+   {
+    "id": "C40",
+    "src": [
+     "UC27",
+     "UC30",
+     "UC31",
+     "UC38",
+     "UC44",
+     "UC51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC27.s4",
+      "text": "2 Show the form for research 3 Fill in the form of research and submit 4 Processing the request Exit conditions: The system returns a list of sites found Interruption of the connection to the server ETOUR."
+     },
+     {
+      "sid": "UC30.s10",
+      "text": "Exit conditions: The notification about the inclusion of the tag."
+     },
+     {
+      "sid": "UC31.s3",
+      "text": "Upload the form to change the password associated with that work agency 7 Change your password by entering the new choice and confirming 8 Save your changes Exit conditions: The system confirms the success of Operation Interruption of the connection to the server Quality requirements:"
+     }
+    ],
+    "name": "ExitCondition",
+    "freq": 6
+   },
+   {
+    "id": "C41",
+    "src": [
+     "UC49",
+     "UC51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC49.s1",
+      "text": "Description: View the list of personal favorites."
+     },
+     {
+      "sid": "UC49.s4",
+      "text": "Select the feature to display the list of personal favorites."
+     },
+     {
+      "sid": "UC51.s7",
+      "text": "Exit conditions: The notification about the insertion site to favorites Interruption of connection to the server ETOUR."
+     }
+    ],
+    "name": "Favorite",
+    "freq": 3
+   },
+   {
+    "id": "C42",
+    "src": [
+     "UC24",
+     "UC26",
+     "UC50",
+     "UC53",
+     "UC54",
+     "UC55"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC24.s1",
+      "text": "Description: View all feedback for a particular site."
+     },
+     {
+      "sid": "UC24.s4",
+      "text": "View the list of sites as a result of the use case SearchSite, it selects and activates a function to view the feedback."
+     },
+     {
+      "sid": "UC24.s6",
+      "text": "Exit conditions: The system displays all feedback regarding the site selected."
+     }
+    ],
+    "name": "Feedback",
+    "freq": 19
+   },
+   {
+    "id": "C43",
+    "src": [
+     "UC50",
+     "UC54"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC50.s5",
+      "text": "2 Upload the list of sites for which the tourist has issued a Feedback Exit conditions: The system displays a list of sites visited."
+     },
+     {
+      "sid": "UC54.s8",
+      "text": "4 Edit commentary on selected feedback Exit conditions: The system shall notify the alterations of the comment Interruption of the connection to the server ETOUR."
+     }
+    ],
+    "name": "FeedbackExitCondition",
+    "freq": 2
+   },
+   {
+    "id": "C44",
+    "src": [
+     "UC4",
+     "UC9",
+     "UC27",
+     "UC57"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC4.s5",
+      "text": "3 Fill in the search form and submit."
+     },
+     {
+      "sid": "UC9.s5",
+      "text": "3 Fill in the search form and submit."
+     },
+     {
+      "sid": "UC27.s4",
+      "text": "2 Show the form for research 3 Fill in the form of research and submit 4 Processing the request Exit conditions: The system returns a list of sites found Interruption of the connection to the server ETOUR."
+     }
+    ],
+    "name": "Fill",
+    "freq": 4
+   },
+   {
+    "id": "C45",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC4",
+     "UC5",
+     "UC6",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC10",
+     "UC11",
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC17",
+     "UC19",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC24",
+     "UC25",
+     "UC26",
+     "UC27",
+     "UC28",
+     "UC29",
+     "UC30",
+     "UC32",
+     "UC33",
+     "UC34",
+     "UC35",
+     "UC36",
+     "UC37",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44",
+     "UC45",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC49",
+     "UC50",
+     "UC51",
+     "UC52",
+     "UC53",
+     "UC54",
+     "UC55",
+     "UC56",
+     "UC57"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s3",
+      "text": "Flow of events User System: 1."
+     },
+     {
+      "sid": "UC2.s3",
+      "text": "Flow of events User System: 1."
+     },
+     {
+      "sid": "UC3.s3",
+      "text": "Flow of events User System: 1."
+     }
+    ],
+    "name": "Flow",
+    "freq": 55
+   },
+   {
+    "id": "C46",
+    "src": [
+     "UC2",
+     "UC3",
+     "UC4",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC11",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC17",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC25",
+     "UC26",
+     "UC27",
+     "UC28",
+     "UC30",
+     "UC31",
+     "UC33",
+     "UC34",
+     "UC35",
+     "UC39",
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC53",
+     "UC57"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s5",
+      "text": "2 Displays the corresponding form."
+     },
+     {
+      "sid": "UC2.s6",
+      "text": "3 Fill out the form with the data of the cultural and submit."
+     },
+     {
+      "sid": "UC3.s5",
+      "text": "2 Load the data of the cultural and displays the form for editing."
+     }
+    ],
+    "name": "Form",
+    "freq": 61
+   },
+   {
+    "id": "C48",
+    "src": [
+     "UC2",
+     "UC3",
+     "UC4",
+     "UC5"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s4",
+      "text": "Activate the feature for the insertion of a new cultural good."
+     },
+     {
+      "sid": "UC2.s11",
+      "text": "Memorize your new cultural good."
+     },
+     {
+      "sid": "UC3.s4",
+      "text": "View the list of cultural goods as a result of the use case SearchCulturalHeritage, it selects and activates a function of change."
+     }
+    ],
+    "name": "Good",
+    "freq": 5
+   },
+   {
+    "id": "C49",
+    "src": [
+     "UC56"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC56.s5",
+      "text": "2 The GPS calculates the position of the tourist."
+     },
+     {
+      "sid": "UC56.s8",
+      "text": "The position of the tourist is not detectable by GPS."
+     }
+    ],
+    "name": "Gps",
+    "freq": 2
+   },
+   {
+    "id": "C50",
+    "src": [
+     "UC33",
+     "UC34"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC33.s2",
+      "text": "Entry conditions: Guest User have access to the system."
+     },
+     {
+      "sid": "UC33.s13",
+      "text": "Guest User cancels the operation."
+     },
+     {
+      "sid": "UC34.s2",
+      "text": "Entry conditions: Guest User logs on."
+     }
+    ],
+    "name": "GuestUser",
+    "freq": 3
+   },
+   {
+    "id": "C51",
+    "src": [
+     "UC2",
+     "UC34"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s15",
+      "text": "Quality requirements: The system requirements will not accept duplicates cultural heritage."
+     },
+     {
+      "sid": "UC34.s1",
+      "text": "Description: Research and cultural heritage for all."
+     }
+    ],
+    "name": "Heritage",
+    "freq": 2
+   },
+   {
+    "id": "C52",
+    "src": [
+     "UC11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC11.s1",
+      "text": "Description: View the history of conventions derived from a selected point of rest."
+     },
+     {
+      "sid": "UC11.s6",
+      "text": "Exit conditions: The system displays the history of conventions concerning the point of eating selected."
+     }
+    ],
+    "name": "History",
+    "freq": 2
+   },
+   {
+    "id": "C53",
+    "src": [
+     "UC17",
+     "UC20",
+     "UC38",
+     "UC39"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s1",
+      "text": "Description: Changing the image of a banner ad."
+     },
+     {
+      "sid": "UC17.s7",
+      "text": "4 Displays a form for the selection of an image."
+     },
+     {
+      "sid": "UC17.s11",
+      "text": "In the event that the inserted image is not valid, enable the use case Errored."
+     }
+    ],
+    "name": "Image",
+    "freq": 14
+   },
+   {
+    "id": "C54",
+    "src": [
+     "UC2",
+     "UC30",
+     "UC51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s12",
+      "text": "Exit conditions: The system shall notify the proper inclusion of the cultural."
+     },
+     {
+      "sid": "UC30.s10",
+      "text": "Exit conditions: The notification about the inclusion of the tag."
+     },
+     {
+      "sid": "UC51.s5",
+      "text": "2 Prompt the inclusion 3 Confirm the input."
+     }
+    ],
+    "name": "Inclusion",
+    "freq": 3
+   },
+   {
+    "id": "C55",
+    "src": [
+     "UC1",
+     "UC3",
+     "UC8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s11",
+      "text": "Quality requirements: The system requirements blocks of input controls on receipt of confirmation of cancellation to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC3.s15",
+      "text": "Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC8.s15",
+      "text": "Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation."
+     }
+    ],
+    "name": "InputControl",
+    "freq": 3
+   },
+   {
+    "id": "C56",
+    "src": [
+     "UC2",
+     "UC21",
+     "UC30",
+     "UC51",
+     "UC53"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s1",
+      "text": "Description: Inserts a new cultural object in the system."
+     },
+     {
+      "sid": "UC21.s1",
+      "text": "Description: Inserts a new news in the system."
+     },
+     {
+      "sid": "UC30.s1",
+      "text": "Description: Inserts a new tag search."
+     }
+    ],
+    "name": "Insert",
+    "freq": 5
+   },
+   {
+    "id": "C57",
+    "src": [
+     "UC2",
+     "UC20",
+     "UC21",
+     "UC38",
+     "UC51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s4",
+      "text": "Activate the feature for the insertion of a new cultural good."
+     },
+     {
+      "sid": "UC20.s7",
+      "text": "4 Check the characteristics of the inserted, check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner."
+     },
+     {
+      "sid": "UC20.s9",
+      "text": "5 Confirm the operation of insertion."
+     }
+    ],
+    "name": "Insertion",
+    "freq": 10
+   },
+   {
+    "id": "C58",
+    "src": [
+     "UC44",
+     "UC51"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC44.s6",
+      "text": "3 Inserts the data in the form of the agreement and submit."
+     },
+     {
+      "sid": "UC51.s6",
+      "text": "4 Inserts the selected site in the list of bookmarks."
+     }
+    ],
+    "name": "Inserts",
+    "freq": 2
+   },
+   {
+    "id": "C59",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC4",
+     "UC5",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC10",
+     "UC11",
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC17",
+     "UC18",
+     "UC19",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC24",
+     "UC25",
+     "UC26",
+     "UC27",
+     "UC28",
+     "UC30",
+     "UC33",
+     "UC34",
+     "UC35",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44",
+     "UC45",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC49",
+     "UC50",
+     "UC51",
+     "UC52",
+     "UC53",
+     "UC54",
+     "UC57",
+     "UC58"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s10",
+      "text": "Interruption of connection to the server ETOUR."
+     },
+     {
+      "sid": "UC2.s14",
+      "text": "Interruption of the connection to the server ETOUR."
+     },
+     {
+      "sid": "UC3.s14",
+      "text": "Interruption of the connection to the server ETOUR."
+     }
+    ],
+    "name": "Interruption",
+    "freq": 50
+   },
+   {
+    "id": "C60",
+    "src": [
+     "UC53"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC53.s4",
+      "text": "Activate the feature on the issue of feedback."
+     },
+     {
+      "sid": "UC53.s10",
+      "text": "5 Confirming the issue of feedback."
+     }
+    ],
+    "name": "Issue",
+    "freq": 2
+   },
+   {
+    "id": "C61",
+    "src": [
+     "UC3",
+     "UC5",
+     "UC7",
+     "UC15",
+     "UC47"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC3.s5",
+      "text": "2 Load the data of the cultural and displays the form for editing."
+     },
+     {
+      "sid": "UC5.s5",
+      "text": "2 Loads the data for the selected cultural."
+     },
+     {
+      "sid": "UC7.s5",
+      "text": "2 Load the data request of the Convention from the point of rest and displays the corresponding form."
+     }
+    ],
+    "name": "Load",
+    "freq": 5
+   },
+   {
+    "id": "C62",
+    "src": [
+     "UC25"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC25.s1",
+      "text": "Description: View statistical report relating to a selected location."
+     },
+     {
+      "sid": "UC25.s6",
+      "text": "3 Select a location and submit the form."
+     },
+     {
+      "sid": "UC25.s7",
+      "text": "4 Upload midsize site feedback obtained by activating the SearchSite use case for the location selected."
+     }
+    ],
+    "name": "Location",
+    "freq": 4
+   },
+   {
+    "id": "C63",
+    "src": [
+     "UC36",
+     "UC37"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC36.s1",
+      "text": "Description: The data supplied for the login is incorrect."
+     },
+     {
+      "sid": "UC36.s2",
+      "text": "Entry Conditions: The data supplied for the login is incorrect."
+     },
+     {
+      "sid": "UC36.s4",
+      "text": "Notice that the data entered for the login is not valid and asks for confirmation of the reading."
+     }
+    ],
+    "name": "Login",
+    "freq": 4
+   },
+   {
+    "id": "C64",
+    "src": [
+     "UC41",
+     "UC42"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s1",
+      "text": "Description: Change the daily menu of a restaurant."
+     },
+     {
+      "sid": "UC41.s4",
+      "text": "Activate the editing functionality of the menu."
+     },
+     {
+      "sid": "UC41.s13",
+      "text": "8 Saves changes to the menu selected."
+     }
+    ],
+    "name": "Menu",
+    "freq": 6
+   },
+   {
+    "id": "C65",
+    "src": [
+     "UC42"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC42.s10",
+      "text": "Delete the daily menu selection."
+     },
+     {
+      "sid": "UC42.s11",
+      "text": "Exit conditions: The system shall notify the successful elimination of the daily menu selection."
+     }
+    ],
+    "name": "MenuSelection",
+    "freq": 2
+   },
+   {
+    "id": "C66",
+    "src": [
+     "UC19",
+     "UC40"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC19.s7",
+      "text": "4 Displays a message confirming the deletion."
+     },
+     {
+      "sid": "UC40.s7",
+      "text": "4 Displays a message confirming the deletion."
+     }
+    ],
+    "name": "Message",
+    "freq": 2
+   },
+   {
+    "id": "C68",
+    "src": [
+     "UC21",
+     "UC22",
+     "UC23"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC21.s1",
+      "text": "Description: Inserts a new news in the system."
+     },
+     {
+      "sid": "UC21.s4",
+      "text": "Activate the feature to insert a news."
+     },
+     {
+      "sid": "UC21.s11",
+      "text": "Stores the data of the new news."
+     }
+    ],
+    "name": "News",
+    "freq": 17
+   },
+   {
+    "id": "C69",
+    "src": [
+     "UC13",
+     "UC18",
+     "UC20",
+     "UC29",
+     "UC30",
+     "UC32",
+     "UC36",
+     "UC38",
+     "UC44",
+     "UC51",
+     "UC55"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC13.s8",
+      "text": "Exit conditions: The notification of the outcome."
+     },
+     {
+      "sid": "UC18.s4",
+      "text": "If not checked, will end the operation input and displays a notification."
+     },
+     {
+      "sid": "UC18.s5",
+      "text": "2 Confirmation of the reading of the notification."
+     }
+    ],
+    "name": "Notification",
+    "freq": 13
+   },
+   {
+    "id": "C70",
+    "src": [
+     "UC26",
+     "UC52"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC26.s14",
+      "text": "Exit conditions: The notification system has been modified for the comment feedback selected."
+     },
+     {
+      "sid": "UC52.s7",
+      "text": "Exit conditions: The notification system has been removed from the site bookmarks."
+     }
+    ],
+    "name": "NotificationSystem",
+    "freq": 2
+   },
+   {
+    "id": "C71",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC4"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s1",
+      "text": "Description: Delete a cultural object in the system."
+     },
+     {
+      "sid": "UC2.s1",
+      "text": "Description: Inserts a new cultural object in the system."
+     },
+     {
+      "sid": "UC3.s1",
+      "text": "Description: Change data of a cultural object in the system."
+     }
+    ],
+    "name": "Object",
+    "freq": 5
+   },
+   {
+    "id": "C72",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC6",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC13",
+     "UC15",
+     "UC16",
+     "UC19",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC26",
+     "UC33",
+     "UC35",
+     "UC37",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC52",
+     "UC53",
+     "UC55"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s6",
+      "text": "3 Confirm the operation."
+     },
+     {
+      "sid": "UC1.s9",
+      "text": "Operator Agency cancels the operation."
+     },
+     {
+      "sid": "UC1.s11",
+      "text": "Quality requirements: The system requirements blocks of input controls on receipt of confirmation of cancellation to avoid multiple submissions before the end of the operation."
+     }
+    ],
+    "name": "Operation",
+    "freq": 52
+   },
+   {
+    "id": "C73",
+    "src": [
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s15",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     },
+     {
+      "sid": "UC42.s12",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     },
+     {
+      "sid": "UC43.s13",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     }
+    ],
+    "name": "Operator",
+    "freq": 4
+   },
+   {
+    "id": "C74",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC6",
+     "UC8",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC26"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s9",
+      "text": "Operator Agency cancels the operation."
+     },
+     {
+      "sid": "UC2.s13",
+      "text": "Operator Agency cancels the operation."
+     },
+     {
+      "sid": "UC3.s13",
+      "text": "Operator Agency cancels the operation."
+     }
+    ],
+    "name": "OperatorAgency",
+    "freq": 10
+   },
+   {
+    "id": "C75",
+    "src": [
+     "UC38",
+     "UC39",
+     "UC40"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC38.s13",
+      "text": "The Point Of Operator Restaurant cancels the operation."
+     },
+     {
+      "sid": "UC39.s15",
+      "text": "The Point Of Operator Restaurant cancels the operation."
+     },
+     {
+      "sid": "UC40.s12",
+      "text": "The Point Of Operator Restaurant cancels the operation."
+     }
+    ],
+    "name": "OperatorRestaurant",
+    "freq": 3
+   },
+   {
+    "id": "C76",
+    "src": [
+     "UC4",
+     "UC9",
+     "UC14"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC4.s1",
+      "text": "Description: Returns the list of cultural objects in the system according to certain parameters."
+     },
+     {
+      "sid": "UC9.s1",
+      "text": "Description: Returns the list of points of rest in the system according to certain parameters."
+     },
+     {
+      "sid": "UC14.s1",
+      "text": "Description: Returns the list of tourist account in the system according to certain parameters."
+     }
+    ],
+    "name": "Parameter",
+    "freq": 3
+   },
+   {
+    "id": "C77",
+    "src": [
+     "UC17",
+     "UC39"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s8",
+      "text": "5 Select a picture and send the request to change the system."
+     },
+     {
+      "sid": "UC39.s8",
+      "text": "5 Select a picture and send the request to change the system."
+     }
+    ],
+    "name": "Picture",
+    "freq": 2
+   },
+   {
+    "id": "C78",
+    "src": [
+     "UC6",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC10",
+     "UC11",
+     "UC17",
+     "UC18",
+     "UC19",
+     "UC20",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44",
+     "UC45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC6.s4",
+      "text": "View a list of points of rest as a result of the use case SearchCulturalHeritage, it selects and activates a function of elimination."
+     },
+     {
+      "sid": "UC6.s7",
+      "text": "4 Deletes the selected point of rest."
+     },
+     {
+      "sid": "UC6.s8",
+      "text": "Exit conditions: The system shall notify the successful elimination of the point of rest."
+     }
+    ],
+    "name": "Point",
+    "freq": 49
+   },
+   {
+    "id": "C79",
+    "src": [
+     "UC34",
+     "UC56",
+     "UC57"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC34.s7",
+      "text": "4 Gets the position of the Guest citing the case of use location and process research."
+     },
+     {
+      "sid": "UC56.s1",
+      "text": "Description: Returns the current position of the tourist."
+     },
+     {
+      "sid": "UC56.s4",
+      "text": "The system requires the data for the position."
+     }
+    ],
+    "name": "Position",
+    "freq": 8
+   },
+   {
+    "id": "C80",
+    "src": [
+     "UC48"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC48.s4",
+      "text": "Access to functionality for the modification of generic personal preferences."
+     },
+     {
+      "sid": "UC48.s5",
+      "text": "2 Upload your preferences and the general view in a form."
+     },
+     {
+      "sid": "UC48.s11",
+      "text": "Exit conditions: The system shall notify the successful modification of general preferences."
+     }
+    ],
+    "name": "Preference",
+    "freq": 3
+   },
+   {
+    "id": "C81",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC4",
+     "UC5",
+     "UC6",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC10",
+     "UC11",
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC17",
+     "UC18",
+     "UC19",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC24",
+     "UC25",
+     "UC26",
+     "UC27",
+     "UC28",
+     "UC29",
+     "UC30",
+     "UC31",
+     "UC32",
+     "UC33",
+     "UC34",
+     "UC35",
+     "UC36",
+     "UC37",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44",
+     "UC45",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC49",
+     "UC50",
+     "UC51",
+     "UC52",
+     "UC53",
+     "UC54",
+     "UC55",
+     "UC56",
+     "UC58"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s11",
+      "text": "Quality requirements: The system requirements blocks of input controls on receipt of confirmation of cancellation to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC2.s15",
+      "text": "Quality requirements: The system requirements will not accept duplicates cultural heritage."
+     },
+     {
+      "sid": "UC3.s15",
+      "text": "Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation."
+     }
+    ],
+    "name": "QualityRequirement",
+    "freq": 57
+   },
+   {
+    "id": "C82",
+    "src": [
+     "UC18",
+     "UC29",
+     "UC32",
+     "UC36",
+     "UC55"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC18.s5",
+      "text": "2 Confirmation of the reading of the notification."
+     },
+     {
+      "sid": "UC29.s4",
+      "text": "Notice the error message and asks for confirmation of its reading."
+     },
+     {
+      "sid": "UC29.s5",
+      "text": "2 Confirmation of the reading of the notification."
+     }
+    ],
+    "name": "Reading",
+    "freq": 7
+   },
+   {
+    "id": "C83",
+    "src": [
+     "UC18",
+     "UC29",
+     "UC36",
+     "UC55"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC18.s6",
+      "text": "3 Recovers the previous state."
+     },
+     {
+      "sid": "UC29.s6",
+      "text": "3 Recovers the previous state."
+     },
+     {
+      "sid": "UC36.s6",
+      "text": "3 Recovers the previous state."
+     }
+    ],
+    "name": "Recovers",
+    "freq": 4
+   },
+   {
+    "id": "C84",
+    "src": [
+     "UC7",
+     "UC18",
+     "UC45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC7.s1",
+      "text": "Description: Convention active request by a refreshment point."
+     },
+     {
+      "sid": "UC18.s3",
+      "text": "Load the data of the Convention of refreshment point and verify that the number of banners is less than the specified number of the current banner."
+     },
+     {
+      "sid": "UC45.s4",
+      "text": "2 Displays a form that shows data for the statistics associated refreshment point."
+     }
+    ],
+    "name": "RefreshmentPoint",
+    "freq": 3
+   },
+   {
+    "id": "C85",
+    "src": [
+     "UC18",
+     "UC20"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC18.s1",
+      "text": "Description: Check if a point Refreshments included the maximum number of allowed banners to it."
+     },
+     {
+      "sid": "UC20.s12",
+      "text": "Exit conditions: The notification about the insertion of new banner to the Refreshments selected."
+     }
+    ],
+    "name": "Refreshments",
+    "freq": 2
+   },
+   {
+    "id": "C86",
+    "src": [
+     "UC19",
+     "UC40",
+     "UC52"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC19.s4",
+      "text": "Receives a list of turning points of the rest use case SearchRefreshmentPoint and select one from accessing the function of removal of the banner."
+     },
+     {
+      "sid": "UC40.s4",
+      "text": "Select the feature for removal of the banner."
+     },
+     {
+      "sid": "UC52.s5",
+      "text": "2 Prompt removal 3 Confirm the removal."
+     }
+    ],
+    "name": "Removal",
+    "freq": 4
+   },
+   {
+    "id": "C87",
+    "src": [
+     "UC25"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC25.s1",
+      "text": "Description: View statistical report relating to a selected location."
+     },
+     {
+      "sid": "UC25.s4",
+      "text": "Activate the feature on the statistical report."
+     },
+     {
+      "sid": "UC25.s8",
+      "text": "Prepare the statistical report."
+     }
+    ],
+    "name": "Report",
+    "freq": 4
+   },
+   {
+    "id": "C88",
+    "src": [
+     "UC4",
+     "UC7",
+     "UC9",
+     "UC14",
+     "UC17",
+     "UC20",
+     "UC27",
+     "UC28",
+     "UC37",
+     "UC38",
+     "UC39",
+     "UC44",
+     "UC57"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC4.s6",
+      "text": "4 Processing the request."
+     },
+     {
+      "sid": "UC7.s1",
+      "text": "Description: Convention active request by a refreshment point."
+     },
+     {
+      "sid": "UC7.s10",
+      "text": "Processing the request."
+     }
+    ],
+    "name": "Request",
+    "freq": 15
+   },
+   {
+    "id": "C89",
+    "src": [
+     "UC4",
+     "UC9",
+     "UC27",
+     "UC28",
+     "UC34"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC4.s4",
+      "text": "2 Show the form for research."
+     },
+     {
+      "sid": "UC9.s4",
+      "text": "2 Show the form for research."
+     },
+     {
+      "sid": "UC27.s4",
+      "text": "2 Show the form for research 3 Fill in the form of research and submit 4 Processing the request Exit conditions: The system returns a list of sites found Interruption of the connection to the server ETOUR."
+     }
+    ],
+    "name": "Research",
+    "freq": 5
+   },
+   {
+    "id": "C90",
+    "src": [
+     "UC6",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC10",
+     "UC11",
+     "UC17",
+     "UC19",
+     "UC20",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC43",
+     "UC44"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC6.s4",
+      "text": "View a list of points of rest as a result of the use case SearchCulturalHeritage, it selects and activates a function of elimination."
+     },
+     {
+      "sid": "UC6.s7",
+      "text": "4 Deletes the selected point of rest."
+     },
+     {
+      "sid": "UC6.s8",
+      "text": "Exit conditions: The system shall notify the successful elimination of the point of rest."
+     }
+    ],
+    "name": "Rest",
+    "freq": 30
+   },
+   {
+    "id": "C91",
+    "src": [
+     "UC17",
+     "UC19",
+     "UC20"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s4",
+      "text": "Receives a list of turning points of the rest use case SearchRefreshmentPoint and select one from accessing the function of editing a banner."
+     },
+     {
+      "sid": "UC19.s4",
+      "text": "Receives a list of turning points of the rest use case SearchRefreshmentPoint and select one from accessing the function of removal of the banner."
+     },
+     {
+      "sid": "UC20.s4",
+      "text": "Receives a list of turning points of the rest use case SearchRefreshmentPoint and select one from the list and access to the function of inserting banners."
+     }
+    ],
+    "name": "RestUseCaseSearchrefreshmentpoint",
+    "freq": 3
+   },
+   {
+    "id": "C92",
+    "src": [
+     "UC10",
+     "UC11",
+     "UC20",
+     "UC38",
+     "UC41",
+     "UC42",
+     "UC43"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC10.s5",
+      "text": "2 Upload data to a selected restaurant."
+     },
+     {
+      "sid": "UC11.s5",
+      "text": "2 Upload data on conventions from the restaurant selected."
+     },
+     {
+      "sid": "UC20.s7",
+      "text": "4 Check the characteristics of the inserted, check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner."
+     }
+    ],
+    "name": "Restaurant",
+    "freq": 7
+   },
+   {
+    "id": "C93",
+    "src": [
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC44",
+     "UC45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC38.s2",
+      "text": "Entry conditions: The Point Of Restaurant Operator has successfully authenticated to the system."
+     },
+     {
+      "sid": "UC39.s2",
+      "text": "Entry conditions: The Point Of Restaurant Operator has successfully authenticated to the system."
+     },
+     {
+      "sid": "UC40.s2",
+      "text": "Entry conditions: The Point Of Restaurant Operator has successfully authenticated to the system."
+     }
+    ],
+    "name": "RestaurantOperator",
+    "freq": 7
+   },
+   {
+    "id": "C94",
+    "src": [
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s15",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     },
+     {
+      "sid": "UC42.s12",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     },
+     {
+      "sid": "UC43.s13",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     }
+    ],
+    "name": "RestaurantPoint",
+    "freq": 4
+   },
+   {
+    "id": "C95",
+    "src": [
+     "UC1",
+     "UC3",
+     "UC4",
+     "UC5",
+     "UC6",
+     "UC8",
+     "UC10",
+     "UC24",
+     "UC26",
+     "UC27",
+     "UC57"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s4",
+      "text": "View the list of CulturalHeritage as a result of the use case SearchCulturalHeritage, it selects and activates a function of elimination."
+     },
+     {
+      "sid": "UC3.s4",
+      "text": "View the list of cultural goods as a result of the use case SearchCulturalHeritage, it selects and activates a function of change."
+     },
+     {
+      "sid": "UC4.s9",
+      "text": "Quality requirements: The system requirements should return the results within a set time."
+     }
+    ],
+    "name": "Result",
+    "freq": 11
+   },
+   {
+    "id": "C96",
+    "src": [
+     "UC4",
+     "UC9",
+     "UC14",
+     "UC56"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC4.s1",
+      "text": "Description: Returns the list of cultural objects in the system according to certain parameters."
+     },
+     {
+      "sid": "UC9.s1",
+      "text": "Description: Returns the list of points of rest in the system according to certain parameters."
+     },
+     {
+      "sid": "UC14.s1",
+      "text": "Description: Returns the list of tourist account in the system according to certain parameters."
+     }
+    ],
+    "name": "Return",
+    "freq": 4
+   },
+   {
+    "id": "C97",
+    "src": [
+     "UC56",
+     "UC57"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC56.s2",
+      "text": "Entry conditions: He began a search or an advanced search."
+     },
+     {
+      "sid": "UC57.s6",
+      "text": "3 Fill in the form of advanced search and submit."
+     }
+    ],
+    "name": "Search",
+    "freq": 3
+   },
+   {
+    "id": "C98",
+    "src": [
+     "UC4",
+     "UC9",
+     "UC14",
+     "UC34"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC4.s7",
+      "text": "Exit conditions: The system returns a list of cultural goods that meet the search criteria."
+     },
+     {
+      "sid": "UC9.s7",
+      "text": "Exit conditions: The system returns a list of points of rest which meet your search criteria."
+     },
+     {
+      "sid": "UC14.s8",
+      "text": "Exit conditions: The system returns a list of accounts that meet Tourist your search criteria."
+     }
+    ],
+    "name": "SearchCriterion",
+    "freq": 4
+   },
+   {
+    "id": "C99",
+    "src": [
+     "UC4",
+     "UC9",
+     "UC57"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC4.s5",
+      "text": "3 Fill in the search form and submit."
+     },
+     {
+      "sid": "UC9.s5",
+      "text": "3 Fill in the search form and submit."
+     },
+     {
+      "sid": "UC57.s5",
+      "text": "2 View the advanced search form."
+     }
+    ],
+    "name": "SearchForm",
+    "freq": 3
+   },
+   {
+    "id": "C100",
+    "src": [
+     "UC46"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC46.s1",
+      "text": "Description: Edit your personal search preferences."
+     },
+     {
+      "sid": "UC46.s4",
+      "text": "Access to functionality for the modification of personal search preferences."
+     },
+     {
+      "sid": "UC46.s5",
+      "text": "2 Upload your search preferences and displays them in a form."
+     }
+    ],
+    "name": "SearchPreference",
+    "freq": 5
+   },
+   {
+    "id": "C101",
+    "src": [
+     "UC24",
+     "UC26"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC24.s4",
+      "text": "View the list of sites as a result of the use case SearchSite, it selects and activates a function to view the feedback."
+     },
+     {
+      "sid": "UC26.s4",
+      "text": "View the list of sites as a result of the use case SearchSite, it selects and activates a function of change in the selected comment."
+     }
+    ],
+    "name": "SearchSite",
+    "freq": 2
+   },
+   {
+    "id": "C102",
+    "src": [
+     "UC28",
+     "UC29"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC28.s1",
+      "text": "Description: Removes one or more search tags in the system."
+     },
+     {
+      "sid": "UC28.s7",
+      "text": "4 Delete the selected search tag."
+     },
+     {
+      "sid": "UC29.s1",
+      "text": "Description: He was asked to enter a search tags already in the system."
+     }
+    ],
+    "name": "SearchTag",
+    "freq": 4
+   },
+   {
+    "id": "C103",
+    "src": [
+     "UC12",
+     "UC15",
+     "UC16"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC12.s4",
+      "text": "Tourists from the list obtained by activating the use case SearchTourist will select and activate a function for displaying the card."
+     },
+     {
+      "sid": "UC15.s4",
+      "text": "Tourists from the list obtained by activating the use case SearchTourist it selects and activates a function to modify data."
+     },
+     {
+      "sid": "UC16.s4",
+      "text": "Tourists from the list obtained by activating the use case SearchTourist will select and activate a feature for disposal."
+     }
+    ],
+    "name": "SearchTourist",
+    "freq": 3
+   },
+   {
+    "id": "C104",
+    "src": [
+     "UC9",
+     "UC56",
+     "UC57"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC9.s9",
+      "text": "Quality requirements: The system performs the operation in 15 seconds maximum"
+     },
+     {
+      "sid": "UC56.s9",
+      "text": "Quality requirements: The GPS requirements into the transaction in more than 5 seconds."
+     },
+     {
+      "sid": "UC57.s10",
+      "text": "Quality requirements: The system requirements into the transaction in more than 15 seconds."
+     }
+    ],
+    "name": "Second",
+    "freq": 3
+   },
+   {
+    "id": "C105",
+    "src": [
+     "UC28",
+     "UC41",
+     "UC42"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC28.s6",
+      "text": "3 Select one or more tags from the list and sends the request for deletion."
+     },
+     {
+      "sid": "UC41.s6",
+      "text": "3 Select a day of the week and submit the form."
+     },
+     {
+      "sid": "UC42.s6",
+      "text": "3 Select a day of the week and submit the form."
+     }
+    ],
+    "name": "Select",
+    "freq": 3
+   },
+   {
+    "id": "C106",
+    "src": [
+     "UC17",
+     "UC20",
+     "UC38",
+     "UC39"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s7",
+      "text": "4 Displays a form for the selection of an image."
+     },
+     {
+      "sid": "UC20.s5",
+      "text": "2 Displays a form for the selection of an image."
+     },
+     {
+      "sid": "UC38.s5",
+      "text": "2 Displays a form for the selection of an image."
+     }
+    ],
+    "name": "Selection",
+    "freq": 4
+   },
+   {
+    "id": "C107",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC4",
+     "UC5",
+     "UC6",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC10",
+     "UC11",
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC17",
+     "UC18",
+     "UC19",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC24",
+     "UC25",
+     "UC26",
+     "UC27",
+     "UC28",
+     "UC30",
+     "UC31",
+     "UC33",
+     "UC34",
+     "UC35",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44",
+     "UC45",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC49",
+     "UC50",
+     "UC51",
+     "UC52",
+     "UC53",
+     "UC54",
+     "UC57",
+     "UC58"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s10",
+      "text": "Interruption of connection to the server ETOUR."
+     },
+     {
+      "sid": "UC2.s14",
+      "text": "Interruption of the connection to the server ETOUR."
+     },
+     {
+      "sid": "UC3.s14",
+      "text": "Interruption of the connection to the server ETOUR."
+     }
+    ],
+    "name": "Server",
+    "freq": 52
+   },
+   {
+    "id": "C108",
+    "src": [
+     "UC58"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC58.s2",
+      "text": "Entry conditions: The Tourist has successfully authenticated to the system and is located in one of the following areas: Research Results, List of Sites Visited Sites and List of Favorites Flow of events User System: 1."
+     }
+    ],
+    "name": "Sites",
+    "freq": 2
+   },
+   {
+    "id": "C109",
+    "src": [
+     "UC18",
+     "UC29",
+     "UC36",
+     "UC55"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC18.s6",
+      "text": "3 Recovers the previous state."
+     },
+     {
+      "sid": "UC29.s6",
+      "text": "3 Recovers the previous state."
+     },
+     {
+      "sid": "UC36.s6",
+      "text": "3 Recovers the previous state."
+     }
+    ],
+    "name": "State",
+    "freq": 4
+   },
+   {
+    "id": "C110",
+    "src": [
+     "UC45"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC45.s1",
+      "text": "Description: Viewing statistics for Point Of Restaurants Entry conditions: The Point Of Restaurant Operator has successfully authenticated to the system."
+     },
+     {
+      "sid": "UC45.s3",
+      "text": "Select the feature to display personal statistics."
+     }
+    ],
+    "name": "Statistic",
+    "freq": 2
+   },
+   {
+    "id": "C111",
+    "src": [
+     "UC3",
+     "UC8",
+     "UC15",
+     "UC21",
+     "UC43",
+     "UC47"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC3.s11",
+      "text": "Stores the modified data of the cultural."
+     },
+     {
+      "sid": "UC8.s11",
+      "text": "Stores the modified data of the point of rest."
+     },
+     {
+      "sid": "UC15.s11",
+      "text": "Stores the modified data selected account."
+     }
+    ],
+    "name": "Store",
+    "freq": 6
+   },
+   {
+    "id": "C112",
+    "src": [
+     "UC1",
+     "UC3",
+     "UC8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s11",
+      "text": "Quality requirements: The system requirements blocks of input controls on receipt of confirmation of cancellation to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC3.s15",
+      "text": "Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC8.s15",
+      "text": "Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation."
+     }
+    ],
+    "name": "Submission",
+    "freq": 3
+   },
+   {
+    "id": "C113",
+    "src": [
+     "UC2",
+     "UC4",
+     "UC27"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s15",
+      "text": "Quality requirements: The system requirements will not accept duplicates cultural heritage."
+     },
+     {
+      "sid": "UC4.s9",
+      "text": "Quality requirements: The system requirements should return the results within a set time."
+     },
+     {
+      "sid": "UC27.s5",
+      "text": "Quality requirements: The system requirements should return the results within a time limit set"
+     }
+    ],
+    "name": "SystemRequirement",
+    "freq": 3
+   },
+   {
+    "id": "C114",
+    "src": [
+     "UC28",
+     "UC30"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC28.s4",
+      "text": "Access the functionality to delete a tag."
+     },
+     {
+      "sid": "UC28.s5",
+      "text": "2 Research in the existing system, the tags and displays them in a form."
+     },
+     {
+      "sid": "UC28.s6",
+      "text": "3 Select one or more tags from the list and sends the request for deletion."
+     }
+    ],
+    "name": "Tag",
+    "freq": 7
+   },
+   {
+    "id": "C115",
+    "src": [
+     "UC30"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC30.s1",
+      "text": "Description: Inserts a new tag search."
+     },
+     {
+      "sid": "UC30.s4",
+      "text": "Access the functionality of inserting new tag search."
+     }
+    ],
+    "name": "TagSearch",
+    "freq": 2
+   },
+   {
+    "id": "C116",
+    "src": [
+     "UC47",
+     "UC48",
+     "UC52"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC47.s2",
+      "text": "Entry Conditions: Tourism has successfully authenticated to the system."
+     },
+     {
+      "sid": "UC48.s2",
+      "text": "Entry Conditions: Tourism has successfully authenticated to the system."
+     },
+     {
+      "sid": "UC52.s1",
+      "text": "Description: Tourism delete a site from the list of bookmarks."
+     }
+    ],
+    "name": "Tourism",
+    "freq": 3
+   },
+   {
+    "id": "C117",
+    "src": [
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC49",
+     "UC50",
+     "UC52",
+     "UC53",
+     "UC56",
+     "UC57",
+     "UC58"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC12.s4",
+      "text": "Tourists from the list obtained by activating the use case SearchTourist will select and activate a function for displaying the card."
+     },
+     {
+      "sid": "UC12.s6",
+      "text": "Exit conditions: The system displays the card's Tourist selected."
+     },
+     {
+      "sid": "UC13.s1",
+      "text": "Description: Enable or disable the account of a tourist."
+     }
+    ],
+    "name": "Tourist",
+    "freq": 26
+   },
+   {
+    "id": "C118",
+    "src": [
+     "UC51",
+     "UC52",
+     "UC53"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC51.s2",
+      "text": "Entry conditions: The tourist card is in a particular site."
+     },
+     {
+      "sid": "UC52.s2",
+      "text": "Entry conditions: The tourist card is in a particular site."
+     },
+     {
+      "sid": "UC53.s2",
+      "text": "Entry conditions: The tourist card is in a particular site."
+     }
+    ],
+    "name": "TouristCard",
+    "freq": 3
+   },
+   {
+    "id": "C119",
+    "src": [
+     "UC2",
+     "UC3",
+     "UC6",
+     "UC8",
+     "UC16",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC33",
+     "UC37",
+     "UC56",
+     "UC57"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s7",
+      "text": "4 Verify the data entered and asks for confirmation of the transaction."
+     },
+     {
+      "sid": "UC3.s7",
+      "text": "4 Verify the data entered and asks for confirmation of the transaction."
+     },
+     {
+      "sid": "UC6.s5",
+      "text": "2 Asks for confirmation of the transaction."
+     }
+    ],
+    "name": "Transaction",
+    "freq": 12
+   },
+   {
+    "id": "C120",
+    "src": [
+     "UC17",
+     "UC39",
+     "UC47"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s12",
+      "text": "7 Confirmation of the transaction change."
+     },
+     {
+      "sid": "UC39.s12",
+      "text": "7 Confirmation of the transaction change."
+     },
+     {
+      "sid": "UC47.s9",
+      "text": "5 Confirmation of the transaction change."
+     }
+    ],
+    "name": "TransactionChange",
+    "freq": 3
+   },
+   {
+    "id": "C121",
+    "src": [
+     "UC8",
+     "UC10",
+     "UC11",
+     "UC12",
+     "UC58"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC8.s5",
+      "text": "2 Upload data from the point of rest and displays the form of change."
+     },
+     {
+      "sid": "UC10.s5",
+      "text": "2 Upload data to a selected restaurant."
+     },
+     {
+      "sid": "UC11.s5",
+      "text": "2 Upload data on conventions from the restaurant selected."
+     }
+    ],
+    "name": "UploadData",
+    "freq": 5
+   },
+   {
+    "id": "C122",
+    "src": [
+     "UC2",
+     "UC3",
+     "UC8",
+     "UC12",
+     "UC15",
+     "UC16",
+     "UC17",
+     "UC20",
+     "UC21",
+     "UC23",
+     "UC24",
+     "UC26",
+     "UC30",
+     "UC33",
+     "UC35",
+     "UC38",
+     "UC39",
+     "UC41",
+     "UC43",
+     "UC44",
+     "UC47",
+     "UC53",
+     "UC54"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s8",
+      "text": "Where the data is invalid or insufficient, the system activates the use case Errored."
+     },
+     {
+      "sid": "UC3.s8",
+      "text": "Where the data is invalid or insufficient, the system activates the use case Errored."
+     },
+     {
+      "sid": "UC8.s8",
+      "text": "Where the data is invalid or insufficient, the system activates the use case Errored."
+     }
+    ],
+    "name": "UseCase",
+    "freq": 27
+   },
+   {
+    "id": "C123",
+    "src": [
+     "UC1",
+     "UC3",
+     "UC5",
+     "UC6"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s4",
+      "text": "View the list of CulturalHeritage as a result of the use case SearchCulturalHeritage, it selects and activates a function of elimination."
+     },
+     {
+      "sid": "UC3.s4",
+      "text": "View the list of cultural goods as a result of the use case SearchCulturalHeritage, it selects and activates a function of change."
+     },
+     {
+      "sid": "UC5.s4",
+      "text": "View the list of cultural goods as a result of the use case SearchCulturalHeritage, it selects and activates a function to view the card."
+     }
+    ],
+    "name": "UseCaseSearchculturalheritage",
+    "freq": 4
+   },
+   {
+    "id": "C124",
+    "src": [
+     "UC8",
+     "UC10"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC8.s4",
+      "text": "View a list of points of rest as a result of the use case SearchRefreshmentPoint, it selects an active and functional data changes."
+     },
+     {
+      "sid": "UC10.s4",
+      "text": "View the list of points of rest as a result of the use case SearchRefreshmentPoint, it selects and activates a function to view the card."
+     }
+    ],
+    "name": "UseCaseSearchrefreshmentpoint",
+    "freq": 2
+   },
+   {
+    "id": "C125",
+    "src": [
+     "UC35",
+     "UC37",
+     "UC55"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC35.s1",
+      "text": "Description: Ensures a registered user to access the system with the privileges that fall."
+     },
+     {
+      "sid": "UC35.s2",
+      "text": "Entry conditions: A registered user has access to the system."
+     },
+     {
+      "sid": "UC35.s9",
+      "text": "The registered user cancels the operation."
+     }
+    ],
+    "name": "User",
+    "freq": 5
+   },
+   {
+    "id": "C126",
+    "src": [
+     "UC18",
+     "UC29",
+     "UC32",
+     "UC36",
+     "UC55"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC18.s7",
+      "text": "Exit conditions: The system returns control to the user interaction."
+     },
+     {
+      "sid": "UC29.s7",
+      "text": "Exit conditions: The system returns control to the user interaction."
+     },
+     {
+      "sid": "UC32.s6",
+      "text": "Exit conditions: The system returns control to the user interaction."
+     }
+    ],
+    "name": "UserInteraction",
+    "freq": 5
+   },
+   {
+    "id": "C127",
+    "src": [
+     "UC22",
+     "UC23",
+     "UC48"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC22.s5",
+      "text": "2 View all news in a form."
+     },
+     {
+      "sid": "UC23.s5",
+      "text": "2 View all news in a form."
+     },
+     {
+      "sid": "UC48.s5",
+      "text": "2 Upload your preferences and the general view in a form."
+     }
+    ],
+    "name": "View",
+    "freq": 3
+   },
+   {
+    "id": "C128",
+    "src": [
+     "UC13",
+     "UC53"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC13.s7",
+      "text": "4 Enable / disable the account of the visitor you selected."
+     },
+     {
+      "sid": "UC53.s5",
+      "text": "2 Verify that the visitor has not already issued a feedback for the site and displays a form for entering the feedback for the selected site."
+     },
+     {
+      "sid": "UC53.s6",
+      "text": "In case the visitor has already issued a feedback for the site selected, activates the use case FeedbackAlreadyReleased."
+     }
+    ],
+    "name": "Visitor",
+    "freq": 3
+   },
+   {
+    "id": "C129",
+    "src": [
+     "UC41",
+     "UC42"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s5",
+      "text": "2 Displays a form with seven days of the week."
+     },
+     {
+      "sid": "UC41.s6",
+      "text": "3 Select a day of the week and submit the form."
+     },
+     {
+      "sid": "UC42.s5",
+      "text": "2 Displays a form containing the seven days of the week."
+     }
+    ],
+    "name": "Week",
+    "freq": 4
+   }
+  ],
+  "attributes": [
+   {
+    "id": "AT1",
+    "src": [
+     "UC39"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC39.s4",
+      "text": "Select the editing functionality of the banner."
+     }
+    ],
+    "owner": "Banner",
+    "name": "editing functionality",
+    "type_hint": null
+   },
+   {
+    "id": "AT2",
+    "src": [
+     "UC54"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC54.s8",
+      "text": "4 Edit commentary on selected feedback Exit conditions: The system shall notify the alterations of the comment Interruption of the connection to the server ETOUR."
+     }
+    ],
+    "owner": "Comment",
+    "name": "alteration",
+    "type_hint": null
+   },
+   {
+    "id": "AT3",
+    "src": [
+     "UC1"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s11",
+      "text": "Quality requirements: The system requirements blocks of input controls on receipt of confirmation of cancellation to avoid multiple submissions before the end of the operation."
+     }
+    ],
+    "owner": "Confirmation",
+    "name": "receipt",
+    "type_hint": null
+   },
+   {
+    "id": "AT4",
+    "src": [
+     "UC31"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC31.s3",
+      "text": "Upload the form to change the password associated with that work agency 7 Change your password by entering the new choice and confirming 8 Save your changes Exit conditions: The system confirms the success of Operation Interruption of the connection to the server Quality requirements:"
+     }
+    ],
+    "owner": "Connection",
+    "name": "operation interruption",
+    "type_hint": null
+   },
+   {
+    "id": "AT5",
+    "src": [
+     "UC7"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC7.s4",
+      "text": "Enable the activation function of the Convention."
+     }
+    ],
+    "owner": "Convention",
+    "name": "activation function",
+    "type_hint": null
+   },
+   {
+    "id": "AT6",
+    "src": [
+     "UC7"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC7.s5",
+      "text": "2 Load the data request of the Convention from the point of rest and displays the corresponding form."
+     }
+    ],
+    "owner": "Convention",
+    "name": "data request",
+    "type_hint": null
+   },
+   {
+    "id": "AT7",
+    "src": [
+     "UC18"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC18.s2",
+      "text": "Entry Operator conditions: The agency wants to put a new banner Flow of events User System: 1."
+     }
+    ],
+    "owner": "EventsUserSystem",
+    "name": "banner flow",
+    "type_hint": null
+   },
+   {
+    "id": "AT8",
+    "src": [
+     "UC58"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC58.s2",
+      "text": "Entry conditions: The Tourist has successfully authenticated to the system and is located in one of the following areas: Research Results, List of Sites Visited Sites and List of Favorites Flow of events User System: 1."
+     }
+    ],
+    "owner": "EventsUserSystem",
+    "name": "favorites flow",
+    "type_hint": null
+   },
+   {
+    "id": "AT9",
+    "src": [
+     "UC53"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC53.s13",
+      "text": "Exit conditions: The system shall notify the successful combination of feedback to the site The Tourist cancel the operation Interruption of the connection to the server ETOUR."
+     }
+    ],
+    "owner": "Feedback",
+    "name": "combination",
+    "type_hint": null
+   },
+   {
+    "id": "AT10",
+    "src": [
+     "UC41"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s4",
+      "text": "Activate the editing functionality of the menu."
+     }
+    ],
+    "owner": "Menu",
+    "name": "editing functionality",
+    "type_hint": null
+   },
+   {
+    "id": "AT11",
+    "src": [
+     "UC23"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC23.s14",
+      "text": "Exit conditions: The system shall notify the successful amendment of news."
+     }
+    ],
+    "owner": "News",
+    "name": "amendment",
+    "type_hint": null
+   },
+   {
+    "id": "AT12",
+    "src": [
+     "UC23"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC23.s4",
+      "text": "Activate the editing functionality of a news."
+     }
+    ],
+    "owner": "News",
+    "name": "editing functionality",
+    "type_hint": null
+   },
+   {
+    "id": "AT13",
+    "src": [
+     "UC21"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC21.s12",
+      "text": "Exit conditions: The system shall notify the proper placement of the news."
+     }
+    ],
+    "owner": "News",
+    "name": "placement",
+    "type_hint": null
+   },
+   {
+    "id": "AT14",
+    "src": [
+     "UC4"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC4.s3",
+      "text": "Activate the search functionality of a cultural object."
+     }
+    ],
+    "owner": "Object",
+    "name": "search functionality",
+    "type_hint": null
+   },
+   {
+    "id": "AT15",
+    "src": [
+     "UC9"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC9.s3",
+      "text": "Activate the search functionality of a point of rest."
+     }
+    ],
+    "owner": "Point",
+    "name": "search functionality",
+    "type_hint": null
+   },
+   {
+    "id": "AT16",
+    "src": [
+     "UC14"
+    ],
+    "rule": [
+     "has_non_class"
+    ],
+    "evidence": [
+     {
+      "sid": "UC14.s4",
+      "text": "Access the search functionality of a tourist."
+     }
+    ],
+    "owner": "Tourist",
+    "name": "search functionality",
+    "type_hint": null
+   }
+  ],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "UC41"
+    ],
+    "rule": [
+     "verb:submit"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s8",
+      "text": "5 Edit menu of the selected day and submit the form."
+     }
+    ],
+    "kind": "association",
+    "source": "EditMenu",
+    "target": "Form",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL2",
+    "src": [
+     "UC4"
+    ],
+    "rule": [
+     "verb:meet"
+    ],
+    "evidence": [
+     {
+      "sid": "UC4.s7",
+      "text": "Exit conditions: The system returns a list of cultural goods that meet the search criteria."
+     }
+    ],
+    "kind": "association",
+    "source": "Good",
+    "target": "SearchCriterion",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL3",
+    "src": [
+     "UC56"
+    ],
+    "rule": [
+     "verb:calculate"
+    ],
+    "evidence": [
+     {
+      "sid": "UC56.s5",
+      "text": "2 The GPS calculates the position of the tourist."
+     }
+    ],
+    "kind": "association",
+    "source": "Gps",
+    "target": "Position",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL4",
+    "src": [
+     "UC33"
+    ],
+    "rule": [
+     "verb:cancel"
+    ],
+    "evidence": [
+     {
+      "sid": "UC33.s13",
+      "text": "Guest User cancels the operation."
+     }
+    ],
+    "kind": "association",
+    "source": "GuestUser",
+    "target": "Operation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL5",
+    "src": [
+     "UC43"
+    ],
+    "rule": [
+     "verb:change"
+    ],
+    "evidence": [
+     {
+      "sid": "UC43.s12",
+      "text": "Exit conditions: The notification system has been changing the data point selected restaurants."
+     }
+    ],
+    "kind": "association",
+    "source": "NotificationSystem",
+    "target": "Restaurant",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL6",
+    "src": [
+     "UC1"
+    ],
+    "rule": [
+     "verb:cancel"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s9",
+      "text": "Operator Agency cancels the operation."
+     }
+    ],
+    "kind": "association",
+    "source": "OperatorAgency",
+    "target": "Operation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL7",
+    "src": [
+     "UC38"
+    ],
+    "rule": [
+     "verb:cancel"
+    ],
+    "evidence": [
+     {
+      "sid": "UC38.s13",
+      "text": "The Point Of Operator Restaurant cancels the operation."
+     }
+    ],
+    "kind": "association",
+    "source": "Point",
+    "target": "Operation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL8",
+    "src": [
+     "UC9"
+    ],
+    "rule": [
+     "verb:meet"
+    ],
+    "evidence": [
+     {
+      "sid": "UC9.s7",
+      "text": "Exit conditions: The system returns a list of points of rest which meet your search criteria."
+     }
+    ],
+    "kind": "association",
+    "source": "Point",
+    "target": "SearchCriterion",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL9",
+    "src": [
+     "UC41"
+    ],
+    "rule": [
+     "verb:cancel"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s15",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     }
+    ],
+    "kind": "association",
+    "source": "RestaurantPoint",
+    "target": "Operation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL10",
+    "src": [
+     "UC15"
+    ],
+    "rule": [
+     "verb:select"
+    ],
+    "evidence": [
+     {
+      "sid": "UC15.s11",
+      "text": "Stores the modified data selected account."
+     }
+    ],
+    "kind": "association",
+    "source": "Store",
+    "target": "Account",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL11",
+    "src": [
+     "UC4"
+    ],
+    "rule": [
+     "verb:return"
+    ],
+    "evidence": [
+     {
+      "sid": "UC4.s9",
+      "text": "Quality requirements: The system requirements should return the results within a set time."
+     }
+    ],
+    "kind": "association",
+    "source": "SystemRequirement",
+    "target": "Result",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL12",
+    "src": [
+     "UC50"
+    ],
+    "rule": [
+     "verb:issue"
+    ],
+    "evidence": [
+     {
+      "sid": "UC50.s5",
+      "text": "2 Upload the list of sites for which the tourist has issued a Feedback Exit conditions: The system displays a list of sites visited."
+     }
+    ],
+    "kind": "association",
+    "source": "Tourist",
+    "target": "FeedbackExitCondition",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL14",
+    "src": [
+     "UC46"
+    ],
+    "rule": [
+     "verb:cancel"
+    ],
+    "evidence": [
+     {
+      "sid": "UC46.s12",
+      "text": "The Tourist cancels the operation."
+     }
+    ],
+    "kind": "association",
+    "source": "Tourist",
+    "target": "Operation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL15",
+    "src": [
+     "UC55"
+    ],
+    "rule": [
+     "verb:issue"
+    ],
+    "evidence": [
+     {
+      "sid": "UC55.s3",
+      "text": "Notification that the user has already issued a feedback for the site and cancel the operation to insert a new feedback."
+     }
+    ],
+    "kind": "association",
+    "source": "User",
+    "target": "Feedback",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL16",
+    "src": [
+     "UC37"
+    ],
+    "rule": [
+     "verb:make"
+    ],
+    "evidence": [
+     {
+      "sid": "UC37.s2",
+      "text": "Entry conditions: A registered user has previously made a successful Login."
+     }
+    ],
+    "kind": "association",
+    "source": "User",
+    "target": "Login",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL17",
+    "src": [
+     "UC35"
+    ],
+    "rule": [
+     "verb:cancel"
+    ],
+    "evidence": [
+     {
+      "sid": "UC35.s9",
+      "text": "The registered user cancels the operation."
+     }
+    ],
+    "kind": "association",
+    "source": "User",
+    "target": "Operation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL18",
+    "src": [
+     "UC53"
+    ],
+    "rule": [
+     "verb:issue"
+    ],
+    "evidence": [
+     {
+      "sid": "UC53.s5",
+      "text": "2 Verify that the visitor has not already issued a feedback for the site and displays a form for entering the feedback for the selected site."
+     }
+    ],
+    "kind": "association",
+    "source": "Visitor",
+    "target": "Feedback",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL19",
+    "src": [
+     "UC16"
+    ],
+    "rule": [
+     "is_a"
+    ],
+    "evidence": [
+     {
+      "sid": "UC16.s8",
+      "text": "Exit conditions: The notification system has been elimination of selected accounts Tourist."
+     }
+    ],
+    "kind": "generalization",
+    "source": "NotificationSystem",
+    "target": "Elimination",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL20",
+    "src": [
+     "UC16"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC16.s8",
+      "text": "Exit conditions: The notification system has been elimination of selected accounts Tourist."
+     }
+    ],
+    "kind": "has",
+    "source": "Account",
+    "target": "Elimination",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL21",
+    "src": [
+     "UC7"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC7.s7",
+      "text": "4 Asks for confirmation of the activation."
+     }
+    ],
+    "kind": "has",
+    "source": "Activation",
+    "target": "Confirmation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL22",
+    "src": [
+     "UC44"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC44.s6",
+      "text": "3 Inserts the data in the form of the agreement and submit."
+     }
+    ],
+    "kind": "has",
+    "source": "Agreement",
+    "target": "Form",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL23",
+    "src": [
+     "UC17",
+     "UC39"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s1",
+      "text": "Description: Changing the image of a banner ad."
+     },
+     {
+      "sid": "UC39.s1",
+      "text": "Description: Changing the image of a banner ad."
+     }
+    ],
+    "kind": "has",
+    "source": "BannerAd",
+    "target": "Image",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL24",
+    "src": [
+     "UC17",
+     "UC39"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s10",
+      "text": "Check the characteristics of the inserted and asks for confirmation of the change of the banner."
+     },
+     {
+      "sid": "UC39.s10",
+      "text": "Check the characteristics of the inserted and asks for confirmation of the change of the banner."
+     }
+    ],
+    "kind": "has",
+    "source": "Banner",
+    "target": "Change",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL25",
+    "src": [
+     "UC19",
+     "UC40"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC19.s11",
+      "text": "Exit conditions: The system shall notify the successful elimination of the selected banner."
+     },
+     {
+      "sid": "UC40.s11",
+      "text": "Exit conditions: The system shall notify the successful elimination of the selected banner."
+     }
+    ],
+    "kind": "has",
+    "source": "Banner",
+    "target": "Elimination",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL26",
+    "src": [
+     "UC20",
+     "UC38"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC20.s7",
+      "text": "4 Check the characteristics of the inserted, check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner."
+     },
+     {
+      "sid": "UC20.s12",
+      "text": "Exit conditions: The notification about the insertion of new banner to the Refreshments selected."
+     },
+     {
+      "sid": "UC38.s4",
+      "text": "Select the feature for the insertion of a new banner."
+     }
+    ],
+    "kind": "has",
+    "source": "Banner",
+    "target": "Insertion",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL27",
+    "src": [
+     "UC17",
+     "UC39"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s14",
+      "text": "Exit conditions: The system shall notify the successful modification of the banner."
+     },
+     {
+      "sid": "UC39.s14",
+      "text": "Exit conditions: The system shall notify the successful modification of the banner."
+     }
+    ],
+    "kind": "has",
+    "source": "Banner",
+    "target": "Change",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL28",
+    "src": [
+     "UC19",
+     "UC40"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC19.s4",
+      "text": "Receives a list of turning points of the rest use case SearchRefreshmentPoint and select one from accessing the function of removal of the banner."
+     },
+     {
+      "sid": "UC40.s4",
+      "text": "Select the feature for removal of the banner."
+     }
+    ],
+    "kind": "has",
+    "source": "Banner",
+    "target": "Removal",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL29",
+    "src": [
+     "UC12"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "UC12.s6",
+      "text": "Exit conditions: The system displays the card's Tourist selected."
+     }
+    ],
+    "kind": "has",
+    "source": "Card",
+    "target": "Tourist",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL30",
+    "src": [
+     "UC3",
+     "UC8",
+     "UC15",
+     "UC17",
+     "UC26",
+     "UC39",
+     "UC43",
+     "UC47",
+     "UC48",
+     "UC54"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC3.s15",
+      "text": "Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC8.s15",
+      "text": "Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC15.s7",
+      "text": "4 Verify the information and asks for confirmation of the change."
+     }
+    ],
+    "kind": "has",
+    "source": "Change",
+    "target": "Confirmation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL31",
+    "src": [
+     "UC8"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC8.s5",
+      "text": "2 Upload data from the point of rest and displays the form of change."
+     }
+    ],
+    "kind": "has",
+    "source": "Change",
+    "target": "Form",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL33",
+    "src": [
+     "UC54"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC54.s7",
+      "text": "3 Confirm the change of the comment."
+     }
+    ],
+    "kind": "has",
+    "source": "Comment",
+    "target": "Change",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL34",
+    "src": [
+     "UC29"
+    ],
+    "rule": [
+     "possessive"
+    ],
+    "evidence": [
+     {
+      "sid": "UC29.s4",
+      "text": "Notice the error message and asks for confirmation of its reading."
+     }
+    ],
+    "kind": "has",
+    "source": "Confirmation",
+    "target": "Reading",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL35",
+    "src": [
+     "UC51"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC51.s7",
+      "text": "Exit conditions: The notification about the insertion site to favorites Interruption of connection to the server ETOUR."
+     }
+    ],
+    "kind": "has",
+    "source": "Connection",
+    "target": "Favorite",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL36",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC4",
+     "UC5",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC10",
+     "UC11",
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC17",
+     "UC18",
+     "UC19",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC24",
+     "UC25",
+     "UC26",
+     "UC27",
+     "UC28",
+     "UC30",
+     "UC33",
+     "UC34",
+     "UC35",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44",
+     "UC45",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC49",
+     "UC50",
+     "UC52",
+     "UC53",
+     "UC54",
+     "UC57",
+     "UC58"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s10",
+      "text": "Interruption of connection to the server ETOUR."
+     },
+     {
+      "sid": "UC2.s14",
+      "text": "Interruption of the connection to the server ETOUR."
+     },
+     {
+      "sid": "UC3.s14",
+      "text": "Interruption of the connection to the server ETOUR."
+     }
+    ],
+    "kind": "has",
+    "source": "Connection",
+    "target": "Interruption",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL37",
+    "src": [
+     "UC7"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC7.s11",
+      "text": "Exit conditions: The system shall notify the activation of the convention."
+     }
+    ],
+    "kind": "has",
+    "source": "Convention",
+    "target": "Activation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL38",
+    "src": [
+     "UC11"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC11.s4",
+      "text": "Access the features on the display of historical conventions."
+     }
+    ],
+    "kind": "has",
+    "source": "Convention",
+    "target": "Display",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL39",
+    "src": [
+     "UC11"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC11.s1",
+      "text": "Description: View the history of conventions derived from a selected point of rest."
+     },
+     {
+      "sid": "UC11.s6",
+      "text": "Exit conditions: The system displays the history of conventions concerning the point of eating selected."
+     }
+    ],
+    "kind": "has",
+    "source": "Convention",
+    "target": "History",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL40",
+    "src": [
+     "UC1"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s8",
+      "text": "Exit conditions: The system shall notify the successful elimination of the cultural."
+     }
+    ],
+    "kind": "has",
+    "source": "Cultural",
+    "target": "Elimination",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL41",
+    "src": [
+     "UC2"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s12",
+      "text": "Exit conditions: The system shall notify the proper inclusion of the cultural."
+     }
+    ],
+    "kind": "has",
+    "source": "Cultural",
+    "target": "Inclusion",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL42",
+    "src": [
+     "UC41"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s8",
+      "text": "5 Edit menu of the selected day and submit the form."
+     }
+    ],
+    "kind": "has",
+    "source": "Day",
+    "target": "EditMenu",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL43",
+    "src": [
+     "UC13"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC13.s5",
+      "text": "2 Asks for confirmation of activation / deactivation."
+     }
+    ],
+    "kind": "has",
+    "source": "Deactivation",
+    "target": "Confirmation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL44",
+    "src": [
+     "UC20",
+     "UC38"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC20.s14",
+      "text": "The point of eating has already entered the maximum number of banners allowed."
+     },
+     {
+      "sid": "UC38.s14",
+      "text": "The point of eating has already entered the maximum number of banners allowed."
+     }
+    ],
+    "kind": "has",
+    "source": "Eating",
+    "target": "Point",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL45",
+    "src": [
+     "UC41"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s10",
+      "text": "Verify the data entered and asks for confirmation of the edit menu."
+     }
+    ],
+    "kind": "has",
+    "source": "EditMenu",
+    "target": "Confirmation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL47",
+    "src": [
+     "UC1",
+     "UC2",
+     "UC3",
+     "UC4",
+     "UC5",
+     "UC6",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC10",
+     "UC11",
+     "UC12",
+     "UC13",
+     "UC14",
+     "UC15",
+     "UC16",
+     "UC17",
+     "UC19",
+     "UC20",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC24",
+     "UC25",
+     "UC26",
+     "UC27",
+     "UC28",
+     "UC29",
+     "UC30",
+     "UC31",
+     "UC32",
+     "UC33",
+     "UC34",
+     "UC35",
+     "UC36",
+     "UC37",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44",
+     "UC45",
+     "UC46",
+     "UC47",
+     "UC48",
+     "UC49",
+     "UC50",
+     "UC51",
+     "UC52",
+     "UC53",
+     "UC54",
+     "UC55",
+     "UC57"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s3",
+      "text": "Flow of events User System: 1."
+     },
+     {
+      "sid": "UC2.s3",
+      "text": "Flow of events User System: 1."
+     },
+     {
+      "sid": "UC3.s3",
+      "text": "Flow of events User System: 1."
+     }
+    ],
+    "kind": "has",
+    "source": "EventsUserSystem",
+    "target": "Flow",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL48",
+    "src": [
+     "UC26"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC26.s7",
+      "text": "4 Displays a form for editing the comment of feedback selected."
+     }
+    ],
+    "kind": "has",
+    "source": "Feedback",
+    "target": "Comment",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL49",
+    "src": [
+     "UC53"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC53.s4",
+      "text": "Activate the feature on the issue of feedback."
+     },
+     {
+      "sid": "UC53.s10",
+      "text": "5 Confirming the issue of feedback."
+     }
+    ],
+    "kind": "has",
+    "source": "Feedback",
+    "target": "Issue",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL50",
+    "src": [
+     "UC2"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s4",
+      "text": "Activate the feature for the insertion of a new cultural good."
+     }
+    ],
+    "kind": "has",
+    "source": "Good",
+    "target": "Insertion",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL51",
+    "src": [
+     "UC33"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "UC33.s2",
+      "text": "Entry conditions: Guest User have access to the system."
+     }
+    ],
+    "kind": "has",
+    "source": "GuestUser",
+    "target": "Access",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL52",
+    "src": [
+     "UC34"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC34.s7",
+      "text": "4 Gets the position of the Guest citing the case of use location and process research."
+     }
+    ],
+    "kind": "has",
+    "source": "Guest",
+    "target": "Position",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL53",
+    "src": [
+     "UC17",
+     "UC20",
+     "UC38",
+     "UC39"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s7",
+      "text": "4 Displays a form for the selection of an image."
+     },
+     {
+      "sid": "UC20.s5",
+      "text": "2 Displays a form for the selection of an image."
+     },
+     {
+      "sid": "UC38.s5",
+      "text": "2 Displays a form for the selection of an image."
+     }
+    ],
+    "kind": "has",
+    "source": "Image",
+    "target": "Selection",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL54",
+    "src": [
+     "UC1",
+     "UC3",
+     "UC8"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s11",
+      "text": "Quality requirements: The system requirements blocks of input controls on receipt of confirmation of cancellation to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC3.s15",
+      "text": "Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation."
+     },
+     {
+      "sid": "UC8.s15",
+      "text": "Quality requirements: The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation."
+     }
+    ],
+    "kind": "has",
+    "source": "InputControl",
+    "target": "Block",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL55",
+    "src": [
+     "UC20",
+     "UC38"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC20.s7",
+      "text": "4 Check the characteristics of the inserted, check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner."
+     },
+     {
+      "sid": "UC38.s7",
+      "text": "4 Check the characteristics of the inserted, check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner."
+     }
+    ],
+    "kind": "has",
+    "source": "Insertion",
+    "target": "Confirmation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL56",
+    "src": [
+     "UC20",
+     "UC21",
+     "UC38"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC20.s9",
+      "text": "5 Confirm the operation of insertion."
+     },
+     {
+      "sid": "UC21.s9",
+      "text": "5 Confirm the operation of insertion."
+     },
+     {
+      "sid": "UC38.s9",
+      "text": "5 Confirm the operation of insertion."
+     }
+    ],
+    "kind": "has",
+    "source": "Insertion",
+    "target": "Operation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL57",
+    "src": [
+     "UC42"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC42.s11",
+      "text": "Exit conditions: The system shall notify the successful elimination of the daily menu selection."
+     }
+    ],
+    "kind": "has",
+    "source": "MenuSelection",
+    "target": "Elimination",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL58",
+    "src": [
+     "UC41"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s14",
+      "text": "Exit conditions: The system shall notify the successful modification of the menu."
+     }
+    ],
+    "kind": "has",
+    "source": "Menu",
+    "target": "Change",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL59",
+    "src": [
+     "UC22"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC22.s8",
+      "text": "5 Confirm the deletion of the news."
+     }
+    ],
+    "kind": "has",
+    "source": "News",
+    "target": "Deletion",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL60",
+    "src": [
+     "UC22"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC22.s4",
+      "text": "Activate the function of elimination of a news."
+     },
+     {
+      "sid": "UC22.s11",
+      "text": "Exit conditions: The system shall notify the successful elimination of the news."
+     }
+    ],
+    "kind": "has",
+    "source": "News",
+    "target": "Elimination",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL61",
+    "src": [
+     "UC18",
+     "UC29",
+     "UC32",
+     "UC36",
+     "UC55"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC18.s5",
+      "text": "2 Confirmation of the reading of the notification."
+     },
+     {
+      "sid": "UC29.s5",
+      "text": "2 Confirmation of the reading of the notification."
+     },
+     {
+      "sid": "UC32.s3",
+      "text": "5 Confirmation of the reading of the notification."
+     }
+    ],
+    "kind": "has",
+    "source": "Notification",
+    "target": "Reading",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL62",
+    "src": [
+     "UC38",
+     "UC39",
+     "UC40"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC38.s13",
+      "text": "The Point Of Operator Restaurant cancels the operation."
+     },
+     {
+      "sid": "UC39.s15",
+      "text": "The Point Of Operator Restaurant cancels the operation."
+     },
+     {
+      "sid": "UC40.s12",
+      "text": "The Point Of Operator Restaurant cancels the operation."
+     }
+    ],
+    "kind": "has",
+    "source": "OperatorRestaurant",
+    "target": "Point",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL63",
+    "src": [
+     "UC41",
+     "UC42",
+     "UC43",
+     "UC44"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s15",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     },
+     {
+      "sid": "UC42.s12",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     },
+     {
+      "sid": "UC43.s13",
+      "text": "Restaurant Point Of Operator cancels the operation."
+     }
+    ],
+    "kind": "has",
+    "source": "Operator",
+    "target": "RestaurantPoint",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL64",
+    "src": [
+     "UC18"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "UC18.s1",
+      "text": "Description: Check if a point Refreshments included the maximum number of allowed banners to it."
+     }
+    ],
+    "kind": "has",
+    "source": "Point",
+    "target": "Banner",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL65",
+    "src": [
+     "UC6"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC6.s8",
+      "text": "Exit conditions: The system shall notify the successful elimination of the point of rest."
+     }
+    ],
+    "kind": "has",
+    "source": "Point",
+    "target": "Elimination",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL66",
+    "src": [
+     "UC7",
+     "UC11"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC7.s2",
+      "text": "Entry Operator conditions: The Agency is in the form of a designated point of rest."
+     },
+     {
+      "sid": "UC11.s2",
+      "text": "Entry Operator conditions: The Agency is in the form of a designated point of rest."
+     }
+    ],
+    "kind": "has",
+    "source": "Point",
+    "target": "Form",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL67",
+    "src": [
+     "UC48"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC48.s4",
+      "text": "Access to functionality for the modification of generic personal preferences."
+     },
+     {
+      "sid": "UC48.s11",
+      "text": "Exit conditions: The system shall notify the successful modification of general preferences."
+     }
+    ],
+    "kind": "has",
+    "source": "Preference",
+    "target": "Change",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL68",
+    "src": [
+     "UC18",
+     "UC29",
+     "UC32",
+     "UC36",
+     "UC55"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC18.s5",
+      "text": "2 Confirmation of the reading of the notification."
+     },
+     {
+      "sid": "UC29.s4",
+      "text": "Notice the error message and asks for confirmation of its reading."
+     },
+     {
+      "sid": "UC29.s5",
+      "text": "2 Confirmation of the reading of the notification."
+     }
+    ],
+    "kind": "has",
+    "source": "Reading",
+    "target": "Confirmation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL69",
+    "src": [
+     "UC18"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC18.s3",
+      "text": "Load the data of the Convention of refreshment point and verify that the number of banners is less than the specified number of the current banner."
+     }
+    ],
+    "kind": "has",
+    "source": "RefreshmentPoint",
+    "target": "Convention",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL70",
+    "src": [
+     "UC18"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "UC18.s1",
+      "text": "Description: Check if a point Refreshments included the maximum number of allowed banners to it."
+     }
+    ],
+    "kind": "has",
+    "source": "Refreshments",
+    "target": "Banner",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL72",
+    "src": [
+     "UC44"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC44.s7",
+      "text": "4 Verify the data entered and asks for confirmation of the request."
+     }
+    ],
+    "kind": "has",
+    "source": "Request",
+    "target": "Confirmation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL73",
+    "src": [
+     "UC27"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC27.s4",
+      "text": "2 Show the form for research 3 Fill in the form of research and submit 4 Processing the request Exit conditions: The system returns a list of sites found Interruption of the connection to the server ETOUR."
+     }
+    ],
+    "kind": "has",
+    "source": "Research",
+    "target": "Form",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL74",
+    "src": [
+     "UC17",
+     "UC19",
+     "UC20"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s4",
+      "text": "Receives a list of turning points of the rest use case SearchRefreshmentPoint and select one from accessing the function of editing a banner."
+     },
+     {
+      "sid": "UC19.s4",
+      "text": "Receives a list of turning points of the rest use case SearchRefreshmentPoint and select one from accessing the function of removal of the banner."
+     },
+     {
+      "sid": "UC20.s4",
+      "text": "Receives a list of turning points of the rest use case SearchRefreshmentPoint and select one from the list and access to the function of inserting banners."
+     }
+    ],
+    "kind": "has",
+    "source": "RestUseCaseSearchrefreshmentpoint",
+    "target": "Point",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL75",
+    "src": [
+     "UC6",
+     "UC7",
+     "UC8",
+     "UC9",
+     "UC10",
+     "UC11",
+     "UC17",
+     "UC19",
+     "UC20",
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC43",
+     "UC44"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC6.s4",
+      "text": "View a list of points of rest as a result of the use case SearchCulturalHeritage, it selects and activates a function of elimination."
+     },
+     {
+      "sid": "UC6.s7",
+      "text": "4 Deletes the selected point of rest."
+     },
+     {
+      "sid": "UC6.s8",
+      "text": "Exit conditions: The system shall notify the successful elimination of the point of rest."
+     }
+    ],
+    "kind": "has",
+    "source": "Rest",
+    "target": "Point",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL76",
+    "src": [
+     "UC38",
+     "UC39",
+     "UC40",
+     "UC41",
+     "UC42",
+     "UC44",
+     "UC45"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC38.s2",
+      "text": "Entry conditions: The Point Of Restaurant Operator has successfully authenticated to the system."
+     },
+     {
+      "sid": "UC39.s2",
+      "text": "Entry conditions: The Point Of Restaurant Operator has successfully authenticated to the system."
+     },
+     {
+      "sid": "UC40.s2",
+      "text": "Entry conditions: The Point Of Restaurant Operator has successfully authenticated to the system."
+     }
+    ],
+    "kind": "has",
+    "source": "RestaurantOperator",
+    "target": "Point",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL77",
+    "src": [
+     "UC41",
+     "UC42"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s1",
+      "text": "Description: Change the daily menu of a restaurant."
+     },
+     {
+      "sid": "UC42.s1",
+      "text": "Description: Delete a daily menu of a restaurant."
+     }
+    ],
+    "kind": "has",
+    "source": "Restaurant",
+    "target": "Menu",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL78",
+    "src": [
+     "UC20",
+     "UC38"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC20.s7",
+      "text": "4 Check the characteristics of the inserted, check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner."
+     },
+     {
+      "sid": "UC38.s7",
+      "text": "4 Check the characteristics of the inserted, check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner."
+     }
+    ],
+    "kind": "has",
+    "source": "Restaurant",
+    "target": "Point",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL79",
+    "src": [
+     "UC46"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC46.s4",
+      "text": "Access to functionality for the modification of personal search preferences."
+     },
+     {
+      "sid": "UC46.s11",
+      "text": "Exit conditions: The system shall notify the successful modification of search preferences."
+     }
+    ],
+    "kind": "has",
+    "source": "SearchPreference",
+    "target": "Change",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL80",
+    "src": [
+     "UC57"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC57.s6",
+      "text": "3 Fill in the form of advanced search and submit."
+     }
+    ],
+    "kind": "has",
+    "source": "Search",
+    "target": "Form",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL81",
+    "src": [
+     "UC28"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC28.s8",
+      "text": "Exit conditions: The system shall notify the successful elimination of selected tags."
+     }
+    ],
+    "kind": "has",
+    "source": "Tag",
+    "target": "Elimination",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL82",
+    "src": [
+     "UC30"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC30.s10",
+      "text": "Exit conditions: The notification about the inclusion of the tag."
+     }
+    ],
+    "kind": "has",
+    "source": "Tag",
+    "target": "Inclusion",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL83",
+    "src": [
+     "UC13",
+     "UC16"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC13.s1",
+      "text": "Description: Enable or disable the account of a tourist."
+     },
+     {
+      "sid": "UC16.s1",
+      "text": "Description: Delete the account of a tourist from the system."
+     }
+    ],
+    "kind": "has",
+    "source": "Tourist",
+    "target": "Account",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL84",
+    "src": [
+     "UC16"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC16.s8",
+      "text": "Exit conditions: The notification system has been elimination of selected accounts Tourist."
+     }
+    ],
+    "kind": "has",
+    "source": "Tourist",
+    "target": "Elimination",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL85",
+    "src": [
+     "UC13"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC13.s2",
+      "text": "Entry Operator conditions: The Agency is in the form of a tourist."
+     }
+    ],
+    "kind": "has",
+    "source": "Tourist",
+    "target": "Form",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL86",
+    "src": [
+     "UC56"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC56.s1",
+      "text": "Description: Returns the current position of the tourist."
+     },
+     {
+      "sid": "UC56.s5",
+      "text": "2 The GPS calculates the position of the tourist."
+     },
+     {
+      "sid": "UC56.s7",
+      "text": "Exit conditions: The system receives the position of the tourist."
+     }
+    ],
+    "kind": "has",
+    "source": "Tourist",
+    "target": "Position",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL87",
+    "src": [
+     "UC17",
+     "UC39",
+     "UC47"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC17.s12",
+      "text": "7 Confirmation of the transaction change."
+     },
+     {
+      "sid": "UC39.s12",
+      "text": "7 Confirmation of the transaction change."
+     },
+     {
+      "sid": "UC47.s9",
+      "text": "5 Confirmation of the transaction change."
+     }
+    ],
+    "kind": "has",
+    "source": "TransactionChange",
+    "target": "Confirmation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL88",
+    "src": [
+     "UC2",
+     "UC3",
+     "UC6",
+     "UC8",
+     "UC16",
+     "UC21",
+     "UC22",
+     "UC23",
+     "UC33",
+     "UC37"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC2.s7",
+      "text": "4 Verify the data entered and asks for confirmation of the transaction."
+     },
+     {
+      "sid": "UC3.s7",
+      "text": "4 Verify the data entered and asks for confirmation of the transaction."
+     },
+     {
+      "sid": "UC6.s5",
+      "text": "2 Asks for confirmation of the transaction."
+     }
+    ],
+    "kind": "has",
+    "source": "Transaction",
+    "target": "Confirmation",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL89",
+    "src": [
+     "UC1",
+     "UC3",
+     "UC5",
+     "UC6"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC1.s4",
+      "text": "View the list of CulturalHeritage as a result of the use case SearchCulturalHeritage, it selects and activates a function of elimination."
+     },
+     {
+      "sid": "UC3.s4",
+      "text": "View the list of cultural goods as a result of the use case SearchCulturalHeritage, it selects and activates a function of change."
+     },
+     {
+      "sid": "UC5.s4",
+      "text": "View the list of cultural goods as a result of the use case SearchCulturalHeritage, it selects and activates a function to view the card."
+     }
+    ],
+    "kind": "has",
+    "source": "UseCaseSearchculturalheritage",
+    "target": "Result",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL90",
+    "src": [
+     "UC8",
+     "UC10"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC8.s4",
+      "text": "View a list of points of rest as a result of the use case SearchRefreshmentPoint, it selects an active and functional data changes."
+     },
+     {
+      "sid": "UC10.s4",
+      "text": "View the list of points of rest as a result of the use case SearchRefreshmentPoint, it selects and activates a function to view the card."
+     }
+    ],
+    "kind": "has",
+    "source": "UseCaseSearchrefreshmentpoint",
+    "target": "Result",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL91",
+    "src": [
+     "UC24",
+     "UC26"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC24.s4",
+      "text": "View the list of sites as a result of the use case SearchSite, it selects and activates a function to view the feedback."
+     },
+     {
+      "sid": "UC26.s4",
+      "text": "View the list of sites as a result of the use case SearchSite, it selects and activates a function of change in the selected comment."
+     }
+    ],
+    "kind": "has",
+    "source": "UseCase",
+    "target": "Result",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL92",
+    "src": [
+     "UC35"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "UC35.s2",
+      "text": "Entry conditions: A registered user has access to the system."
+     }
+    ],
+    "kind": "has",
+    "source": "User",
+    "target": "Access",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL93",
+    "src": [
+     "UC13"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC13.s7",
+      "text": "4 Enable / disable the account of the visitor you selected."
+     }
+    ],
+    "kind": "has",
+    "source": "Visitor",
+    "target": "Account",
+    "multiplicity_target": null
+   },
+   {
+    "id": "REL94",
+    "src": [
+     "UC41",
+     "UC42"
+    ],
+    "rule": [
+     "of_phrase"
+    ],
+    "evidence": [
+     {
+      "sid": "UC41.s5",
+      "text": "2 Displays a form with seven days of the week."
+     },
+     {
+      "sid": "UC41.s6",
+      "text": "3 Select a day of the week and submit the form."
+     },
+     {
+      "sid": "UC42.s5",
+      "text": "2 Displays a form containing the seven days of the week."
+     }
+    ],
+    "kind": "has",
+    "source": "Week",
+    "target": "Day",
+    "multiplicity_target": null
+   }
+  ],
+  "enums": [],
+  "applied_edits": {
+   "remove_classes": [
+    "Function",
+    "ChangeData"
+   ],
+   "merge_classes": [
+    [
+     "ChangeData",
+     "ChangeDataPoint"
+    ],
+    [
+     "Change",
+     "Modification"
+    ]
+   ],
+   "merge_actors": [
+    [
+     "GuestUser",
+     "User"
+    ],
+    [
+     "GuestUser",
+     "TouristCard"
+    ]
+   ],
+   "enums": [],
+   "multiplicities": [],
+   "actor_assumptions": [
+    {
+     "use_case": "Return List",
+     "actor": "tourist"
+    },
+    {
+     "use_case": "View Detail",
+     "actor": "tourist"
+    },
+    {
+     "use_case": "Supply Login",
+     "actor": "guest user"
+    }
+   ]
+  }
+ },
+ "open_tags": [
+  "UC22 (incompleteness, \"data\"): readings []",
+  "UC23 (incompleteness, \"information\"): readings []",
+  "UC23 (incompleteness, \"data\"): readings []",
+  "UC23 (incompleteness, \"data\"): readings []",
+  "UC26 (incompleteness, \"data\"): readings []",
+  "UC30 (incompleteness, \"information\"): readings []",
+  "UC30 (incompleteness, \"data\"): readings []",
+  "UC31 (incompleteness, \"appropriate\"): readings []",
+  "UC33 (incompleteness, \"data\"): readings []",
+  "UC35 (incompleteness, \"information\"): readings []",
+  "UC41 (incompleteness, \"data\"): readings []",
+  "UC43 (incompleteness, \"information\"): readings []",
+  "UC43 (incompleteness, \"data\"): readings []",
+  "UC44 (incompleteness, \"data\"): readings []",
+  "UC47 (incompleteness, \"information\"): readings []",
+  "UC47 (incompleteness, \"data\"): readings []"
+ ]
+}

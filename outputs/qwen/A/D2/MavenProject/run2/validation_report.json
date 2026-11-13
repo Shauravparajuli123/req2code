@@ -1,0 +1,45 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The relationship between 'Resource' and 'BuildConfiguration' is an association, which allows a Maven project to have zero to many resources associated with its build configuration."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "The class 'Project' is missing attributes for default goal, testSourceDirectoryPath, name, url, organizationUrl, timeZone, and identifier as per R1 and R5.",
+   "fix": "Add the missing attributes to the class 'Project'."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'BuildConfiguration' is missing attributes for defaultGoal and testSourceDirectoryPath as per R2.",
+   "fix": "Add the missing attributes to the class 'BuildConfiguration'."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Person' is missing attributes for name, url, organizationUrl, and timeZone as per R5.",
+   "fix": "Add the missing attributes to the class 'Person'."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Developer' is missing an attribute for identifier as per R6.",
+   "fix": "Add the missing attribute to the class 'Developer'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between 'MavenProject' and 'MailingList' is an aggregation, but R8 states that a Maven project can have zero to one mailing lists, which suggests a composition or a simple association.",
+   "fix": "Reconsider the relationship type between 'MavenProject' and 'MailingList'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between 'MavenProject' and 'BuildConfiguration' is a composition, but R9 states that a Maven project can have at most one build configuration, which is consistent with the current relationship type.",
+   "fix": "No action needed for the relationship between 'MavenProject' and 'BuildConfiguration'."
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "Each Company is associated with exactly one geographic state."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "The class 'Company' is missing attributes for 'type', 'taxStatus', and 'contacts'.",
+   "fix": "Add the attributes 'type', 'taxStatus', and 'contacts' to the class 'Company'."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Contact' is missing attributes for 'firstName', 'lastName', 'primaryPhoneNumber', 'secondaryPhoneNumber', 'jobTitle', and 'notes'.",
+   "fix": "Add the attributes 'firstName', 'lastName', 'primaryPhoneNumber', 'secondaryPhoneNumber', 'jobTitle', and 'notes' to the class 'Contact'."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Employee' is missing attributes for 'supervisor' and 'privileges'.",
+   "fix": "Add the attributes 'supervisor' and 'privileges' to the class 'Employee'."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Product' is missing attributes for 'category', 'unitCost', 'retailPrice', 'inventoryLevel', 'reorderLevel', 'targetLevel', 'minReorderQuantity', and 'discontinued'.",
+   "fix": "Add the attributes 'category', 'unitCost', 'retailPrice', 'inventoryLevel', 'reorderLevel', 'targetLevel', 'minReorderQuantity', and 'discontinued' to the class 'Product'."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'Order' is missing attributes for 'customer', 'employee', 'shipper', 'taxRate', 'taxStatus', 'invoiceDate', 'paymentMethod', 'paymentDate', and 'details'.",
+   "fix": "Add the attributes 'customer', 'employee', 'shipper', 'taxRate', 'taxStatus', 'invoiceDate', 'paymentMethod', 'paymentDate', and 'details' to the class 'Order'."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'OrderDetailItem' is missing attributes for 'product', 'quantity', 'unitPrice', and 'discount'.",
+   "fix": "Add the attributes 'product', 'quantity', 'unitPrice', and 'discount' to the class 'OrderDetailItem'."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'PurchaseOrder' is missing attributes for 'vendor', 'submitter', 'approver', and 'details'.",
+   "fix": "Add the attributes 'vendor', 'submitter', 'approver', and 'details' to the class 'PurchaseOrder'."
+  },
+  {
+   "agent": "class",
+   "issue": "The class 'PurchaseOrderDetailItem' is missing attributes for 'product', 'quantity', and 'unitPrice'.",
+   "fix": "Add the attributes 'product', 'quantity', and 'unitPrice' to the class 'PurchaseOrderDetailItem'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between 'Company' and 'Contact' is missing the multiplicity constraints.",
+   "fix": "Add the multiplicity constraints to the relationship between 'Company' and 'Contact'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between 'Order' and 'Employee' is missing the multiplicity constraints.",
+   "fix": "Add the multiplicity constraints to the relationship between 'Order' and 'Employee'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between 'PurchaseOrder' and 'Employee' is missing the multiplicity constraints.",
+   "fix": "Add the multiplicity constraints to the relationship between 'PurchaseOrder' and 'Employee'."
+  }
+ ]
+}

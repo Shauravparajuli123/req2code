@@ -1,0 +1,122 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "LocatedElement",
+   "kind": "class",
+   "attributes": [
+    "location"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Outline",
+   "kind": "class",
+   "attributes": [
+    "extension"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "icon"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Label",
+   "kind": "class",
+   "attributes": [
+    "label"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "LabelSuite",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "hasLabel",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Map",
+   "kind": "class",
+   "attributes": [
+    "mapString"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Node",
+   "target": "Label",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "Node",
+   "target": "Map",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "LabelSuite",
+   "target": "Label",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "composition",
+   "source": "Outline",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "class LocatedElement:\n    def __init__(self, location: str):\n        self.location = location\n\n    def __str__(self):\n        return self.location\n\n    src = 'R1'\n\n\nclass Outline:\n    def __init__(self, extension: str):\n        self.extension = extension\n\n    def __str__(self):\n        return self.extension\n\n    src = 'R2'\n\n\nclass Node:\n    def __init__(self, name: str, icon: str):\n        self.name = name\n        self.icon = icon\n\n    def __str__(self):\n        return f'Node(name={self.name}, icon={self.icon})'\n\n    src = 'R3'\n\n\nclass Label:\n    def __init__(self, label: str):\n        self.label = label\n\n    def __str__(self):\n        return self.label\n\n    src = 'R4'\n\n\nclass LabelSuite:\n    def __init__(self):\n        pass\n\n    def hasLabel(self, label: Label):\n        raise NotImplementedError\n\n    src = 'R10'\n\n\nclass Map:\n    def __init__(self, mapString: str):\n        self.mapString = mapString\n\n    def __str__(self):\n        return self.mapString\n\n    src = 'R6'\n\n",
+ "java": {}
+}

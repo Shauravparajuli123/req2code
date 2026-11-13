@@ -1,0 +1,94 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Customer" as A1
+actor "Admin" as A2
+actor "Trainer" as A3
+actor "User" as A4
+rectangle "sports" {
+  usecase "Open Account" as UC1
+  usecase "Add Information" as UC2
+  usecase "Add Banking Detail" as UC3
+  usecase "Choose Membership Type" as UC4
+  usecase "Extend Subscription" as UC5
+  usecase "Use Information" as UC6
+  usecase "Unsubscribe" as UC7
+  usecase "Reset Password" as UC8
+  usecase "Change Detail" as UC9
+  usecase "Update Payment Information" as UC10
+  usecase "Add Person" as UC11
+  usecase "Remove Person" as UC12
+  usecase "See Information" as UC13
+  usecase "See Lesson" as UC14
+  usecase "See Room" as UC15
+  usecase "See Schedule" as UC16
+  usecase "Add Lesson" as UC17
+  usecase "Set Description" as UC18
+  usecase "Set Room" as UC19
+  usecase "Set Time" as UC20
+  usecase "Set Number" as UC21
+  usecase "Set Type" as UC22
+  usecase "Edit Lesson" as UC23
+  usecase "Edit Description" as UC24
+  usecase "Edit Time" as UC25
+  usecase "Edit Room" as UC26
+  usecase "Edit Number" as UC27
+  usecase "Edit Training Session" as UC28
+  usecase "Cancel Lesson" as UC29
+  usecase "Have Fine" as UC30
+  usecase "Add Trainer" as UC31
+  usecase "Add Admin" as UC32
+  usecase "Remove Trainer" as UC33
+  usecase "Log System" as UC34
+  usecase "Call Gym" as UC35
+  usecase "Book Spot" as UC36
+  usecase "See Spot" as UC37
+  usecase "See Customer" as UC38
+  usecase "See Subscription" as UC39
+  usecase "See Notification" as UC40
+  usecase "Receive Notification" as UC41
+  usecase "Confirm Booking" as UC42
+}
+A1 --> UC1
+A1 --> UC2
+A1 --> UC3
+A1 --> UC4
+A1 --> UC5
+A1 --> UC6
+A1 --> UC7
+A1 --> UC8
+A1 --> UC9
+A1 --> UC10
+A1 --> UC11
+A1 --> UC12
+A1 --> UC13
+A1 --> UC14
+A3 --> UC15
+A3 --> UC16
+A3 --> UC17
+A3 --> UC18
+A3 --> UC19
+A3 --> UC20
+A3 --> UC21
+A3 --> UC22
+A3 --> UC23
+A3 --> UC24
+A3 --> UC25
+A3 --> UC26
+A3 --> UC27
+A2 --> UC28
+A3 --> UC29
+A2 --> UC30
+A2 --> UC31
+A2 --> UC32
+A2 --> UC33
+A4 --> UC34
+A1 --> UC35
+A1 --> UC36
+A1 --> UC37
+A2 --> UC38
+A1 --> UC39
+A1 --> UC40
+A1 --> UC41
+A1 --> UC42
+@enduml

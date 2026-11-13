@@ -1,0 +1,23 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class EAIResource {
+}
+class EAIQueue {
+  maxLength : int
+}
+class EAISource {
+  +addResource()
+}
+class FCMSink {
+}
+class FCMSource {
+}
+class EAISink {
+  resources : String
+  +addResource()
+}
+EAISink "0..*" -- "1" EAIResource : has
+EAISource --|> FCMSource
+EAIQueue "1" *-- "1" EAIResource : contains
+@enduml

@@ -1,0 +1,138 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "PetriNet",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "nets",
+    "tPArcs"
+   ],
+   "methods": [
+    {
+     "name": "addPlace",
+     "use_case": null
+    },
+    {
+     "name": "addNet",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "places"
+   ],
+   "methods": [
+    {
+     "name": "addPlace",
+     "use_case": null
+    }
+   ],
+   "src": []
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "net"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "PTArc",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "srcPlace",
+    "dstNet"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "TPArc",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "srcTransition",
+    "dstTransition"
+   ],
+   "methods": [],
+   "src": []
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "nets",
+    "outgoingTPArcs"
+   ],
+   "methods": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "source": "PetriNet",
+   "target": "Net",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "PetriNet",
+   "target": "Place",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "PetriNet",
+   "target": "TPArc",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "source": "Net",
+   "target": "Place",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "source": "Transition",
+   "target": "Net",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "TPArc",
+   "target": "Transition",
+   "src": [
+    "R12",
+    "R13"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GWPNV3.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass PetriNet:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    nets: _t.Optional[str] = None\n    tPArcs: _t.Optional[str] = None\n    net: _t.Optional[\"Net\"] = None\n    places: _t.List[\"Place\"] = _dc.field(default_factory=list)\n\n    def addPlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n    def addNet(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Net:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    places: _t.Optional[str] = None\n\n    def addPlace(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Place:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    net: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass PTArc:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    srcPlace: _t.Optional[str] = None\n    dstNet: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass TPArc:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    srcTransition: _t.Optional[str] = None\n    dstTransition: _t.Optional[str] = None\n    transition: _t.Optional[\"Transition\"] = None\n\n\n@_dc.dataclass\nclass Transition:\n    \"\"\"Source: -\"\"\"\n    name: _t.Optional[str] = None\n    nets: _t.Optional[str] = None\n    outgoingTPArcs: _t.Optional[str] = None\n    net: _t.Optional[\"Net\"] = None\n",
+ "java": {
+  "PetriNet.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class PetriNet {\n    private java.lang.String name;\n    private java.lang.String nets;\n    private java.lang.String tPArcs;\n    private Net net;\n    private java.util.List<Place> places;\n\n    /** Operation. */\n    public void addPlace() {\n        throw new UnsupportedOperationException();\n    }\n\n    /** Operation. */\n    public void addNet() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Net.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class Net {\n    private java.lang.String name;\n    private java.lang.String places;\n\n    /** Operation. */\n    public void addPlace() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Place.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class Place {\n    private java.lang.String name;\n    private java.lang.String net;\n}\n",
+  "PTArc.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class PTArc {\n    private java.lang.String name;\n    private java.lang.String srcPlace;\n    private java.lang.String dstNet;\n}\n",
+  "TPArc.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class TPArc {\n    private java.lang.String name;\n    private java.lang.String srcTransition;\n    private java.lang.String dstTransition;\n    private Transition transition;\n}\n",
+  "Transition.java": "/** Generated from shared model D2/GWPNV3. Source: - */\npublic class Transition {\n    private java.lang.String name;\n    private java.lang.String nets;\n    private java.lang.String outgoingTPArcs;\n    private Net net;\n}\n"
+ }
+}

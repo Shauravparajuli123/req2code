@@ -1,0 +1,11 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "JavaDeveloper" as A1
+rectangle "JavaSource" {
+  usecase "Invoke A Class" as UC1
+  usecase "Invoke A Method" as UC2
+}
+A1 --> UC1
+A1 --> UC2
+@enduml

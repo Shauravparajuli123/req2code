@@ -1,0 +1,71 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineGraphElement",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "GraphElement",
+   "kind": "class",
+   "attributes": [
+    "label",
+    "parent_graph",
+    "z_index"
+   ],
+   "methods": [
+    {
+     "name": "verbObject",
+     "use_case": "DefineGraphElement"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Graph",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "dimension"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Graph",
+   "target": "GraphElement",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "class Element:\n    pass\n\nclass GraphElement(Element):\n    def __init__(self, label, parent_graph, z_index):\n        self.label = label\n        self.parent_graph = parent_graph\n        self.z_index = z_index\n    def verbObject(self):\n        raise NotImplementedError\n\nclass Graph:\n    def __init__(self, type, dimension):\n        self.type = type\n        self.dimension = dimension\n",
+ "java": {}
+}

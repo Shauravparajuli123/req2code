@@ -1,0 +1,91 @@
+from enum import Enum
+
+class Employee:
+    def expressHour(self):
+        raise NotImplementedError
+    def verifyWorkHour(self):
+        raise NotImplementedError
+class Manager:
+    def enableOption(self):
+        raise NotImplementedError
+    def automatePaymentSystem(self):
+        raise NotImplementedError
+    def outsourcePart(self):
+        raise NotImplementedError
+    def hireEmployee(self):
+        raise NotImplementedError
+    def notifyHiringProcess(self):
+        raise NotImplementedError
+    def haveOverview(self):
+        raise NotImplementedError
+    def haveApplication(self):
+        raise NotImplementedError
+    def haveSystem(self):
+        raise NotImplementedError
+    def registerAccount(self):
+        raise NotImplementedError
+    def resetPassword(self):
+        raise NotImplementedError
+    def respondComplaint(self):
+        raise NotImplementedError
+    def semiSchedulingProcess(self):
+        raise NotImplementedError
+    def notifyAdjustment(self):
+        raise NotImplementedError
+    def viewSchedule(self):
+        raise NotImplementedError
+    def viewStatement(self):
+        raise NotImplementedError
+    def verifyWorkHour(self):
+        raise NotImplementedError
+    def changeInformation(self):
+        raise NotImplementedError
+    def contactManagement(self):
+        raise NotImplementedError
+    def contactEmployee(self):
+        raise NotImplementedError
+    def forwardMessage(self):
+        raise NotImplementedError
+    def navigateApplication(self):
+        raise NotImplementedError
+    def chooseEmail(self):
+        raise NotImplementedError
+    def choosePayment(self):
+        raise NotImplementedError
+    def useSystem(self):
+        raise NotImplementedError
+class OfficeEmployee:
+    def categorizeComplaint(self):
+        raise NotImplementedError
+    def prioritizeComplaint(self):
+        raise NotImplementedError
+    def viewComplaint(self):
+        raise NotImplementedError
+    def viewContract(self):
+        raise NotImplementedError
+class Applicant:
+    def registerAccount(self):
+        raise NotImplementedError
+class Complaint:
+    def viewComplaint(self):
+        raise NotImplementedError
+class Contract:
+    def viewContract(self):
+        raise NotImplementedError
+class HiringProcess:
+    def notifyHiringProcess(self):
+        raise NotImplementedError
+class Notification:
+    def receiveNotification(self):
+        raise NotImplementedError
+class Payment:
+    def automatePaymentSystem(self):
+        raise NotImplementedError
+    def outsourcePart(self):
+        raise NotImplementedError
+class Schedule:
+    def viewSchedule(self):
+        raise NotImplementedError
+class WorkHour:
+    def verifyWorkHour(self):
+        raise NotImplementedError

@@ -1,0 +1,16 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Class {
+  name : String
+}
+class Attribute {
+  name : String
+}
+class DataType {
+  attribute : String
+}
+Class "1" *-- "0..*" Attribute : has
+DataType "1" -- "1" Attribute : has
+Class "1" -- "1" Attribute : has
+@enduml

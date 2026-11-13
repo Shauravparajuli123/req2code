@@ -1,0 +1,880 @@
+{
+ "actors": [
+  "customer",
+  "employee"
+ ],
+ "use_cases": [
+  {
+   "name": "Create Account",
+   "actor": "customer",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Sign Newsletter",
+   "actor": "customer",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Unsubscribe Newsletter",
+   "actor": "customer",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Activate PushNotification",
+   "actor": "customer",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Deactivate PushNotification",
+   "actor": "customer",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Reset Password",
+   "actor": "customer",
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Change Size",
+   "actor": "customer",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "Change Contrast",
+   "actor": "customer",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Change Language",
+   "actor": "customer",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Receive Suggestion",
+   "actor": "customer",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "name": "Receive Discount",
+   "actor": "customer",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Have DeliveryService",
+   "actor": "customer",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "name": "Get Recipe",
+   "actor": "customer",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "Contact CustomerService",
+   "actor": "customer",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "Scan Product",
+   "actor": "customer",
+   "src": [
+    "R16"
+   ]
+  },
+  {
+   "name": "Add Product",
+   "actor": "customer",
+   "src": [
+    "R17",
+    "R39"
+   ]
+  },
+  {
+   "name": "Search Product",
+   "actor": "customer",
+   "src": [
+    "R18"
+   ]
+  },
+  {
+   "name": "Filter Product",
+   "actor": "customer",
+   "src": [
+    "R19"
+   ]
+  },
+  {
+   "name": "Order Product",
+   "actor": "customer",
+   "src": [
+    "R20",
+    "R21"
+   ]
+  },
+  {
+   "name": "Pay Grocery",
+   "actor": "customer",
+   "src": [
+    "R40"
+   ]
+  },
+  {
+   "name": "See OrderHistory",
+   "actor": "customer",
+   "src": [
+    "R37"
+   ]
+  },
+  {
+   "name": "See Product",
+   "actor": "customer",
+   "src": [
+    "R25",
+    "R27",
+    "R29"
+   ]
+  },
+  {
+   "name": "See Quantity",
+   "actor": "customer",
+   "src": [
+    "R28"
+   ]
+  },
+  {
+   "name": "Select Date",
+   "actor": "customer",
+   "src": [
+    "R34"
+   ]
+  },
+  {
+   "name": "Select TimeSlot",
+   "actor": "customer",
+   "src": [
+    "R35"
+   ]
+  },
+  {
+   "name": "Have Grocery",
+   "actor": "customer",
+   "src": [
+    "R33",
+    "R36"
+   ]
+  },
+  {
+   "name": "Link LoyaltyCard",
+   "actor": "customer",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Update Application",
+   "actor": "employee",
+   "src": [
+    "R45"
+   ]
+  },
+  {
+   "name": "Edit Discount",
+   "actor": "employee",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "Confirm DeliveryTime",
+   "actor": "employee",
+   "src": [
+    "R47"
+   ]
+  },
+  {
+   "name": "Notify Customer",
+   "actor": "employee",
+   "src": [
+    "R48",
+    "R49"
+   ]
+  },
+  {
+   "name": "Notify Discount",
+   "actor": "employee",
+   "src": [
+    "R50"
+   ]
+  },
+  {
+   "name": "Notify Item",
+   "actor": "employee",
+   "src": [
+    "R51"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [
+    "account",
+    "pushNotification",
+    "language",
+    "size",
+    "contrast",
+    "loyaltyCard"
+   ],
+   "methods": [
+    {
+     "name": "createAccount",
+     "use_case": "Create Account"
+    },
+    {
+     "name": "signNewsletter",
+     "use_case": "Sign Newsletter"
+    },
+    {
+     "name": "unsubscribeNewsletter",
+     "use_case": "Unsubscribe Newsletter"
+    },
+    {
+     "name": "activatePushNotification",
+     "use_case": "Activate PushNotification"
+    },
+    {
+     "name": "deactivatePushNotification",
+     "use_case": "Deactivate PushNotification"
+    },
+    {
+     "name": "resetPassword",
+     "use_case": "Reset Password"
+    },
+    {
+     "name": "changeSize",
+     "use_case": "Change Size"
+    },
+    {
+     "name": "changeContrast",
+     "use_case": "Change Contrast"
+    },
+    {
+     "name": "changeLanguage",
+     "use_case": "Change Language"
+    },
+    {
+     "name": "receiveSuggestion",
+     "use_case": "Receive Suggestion"
+    },
+    {
+     "name": "receiveDiscount",
+     "use_case": "Receive Discount"
+    },
+    {
+     "name": "haveDeliveryService",
+     "use_case": "Have DeliveryService"
+    },
+    {
+     "name": "getRecipe",
+     "use_case": "Get Recipe"
+    },
+    {
+     "name": "contactCustomerService",
+     "use_case": "Contact CustomerService"
+    },
+    {
+     "name": "scanProduct",
+     "use_case": "Scan Product"
+    },
+    {
+     "name": "addProduct",
+     "use_case": "Add Product"
+    },
+    {
+     "name": "searchProduct",
+     "use_case": "Search Product"
+    },
+    {
+     "name": "filterProduct",
+     "use_case": "Filter Product"
+    },
+    {
+     "name": "orderProduct",
+     "use_case": "Order Product"
+    },
+    {
+     "name": "payGrocery",
+     "use_case": "Pay Grocery"
+    },
+    {
+     "name": "seeOrderHistory",
+     "use_case": "See OrderHistory"
+    },
+    {
+     "name": "seeProduct",
+     "use_case": "See Product"
+    },
+    {
+     "name": "seeQuantity",
+     "use_case": "See Quantity"
+    },
+    {
+     "name": "selectDate",
+     "use_case": "Select Date"
+    },
+    {
+     "name": "selectTimeSlot",
+     "use_case": "Select TimeSlot"
+    },
+    {
+     "name": "haveGrocery",
+     "use_case": "Have Grocery"
+    },
+    {
+     "name": "linkLoyaltyCard",
+     "use_case": "Link LoyaltyCard"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R33",
+    "R36",
+    "R44"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    "application"
+   ],
+   "methods": [
+    {
+     "name": "updateApplication",
+     "use_case": "Update Application"
+    },
+    {
+     "name": "editDiscount",
+     "use_case": "Edit Discount"
+    },
+    {
+     "name": "confirmDeliveryTime",
+     "use_case": "Confirm DeliveryTime"
+    },
+    {
+     "name": "notifyCustomer",
+     "use_case": "Notify Customer"
+    },
+    {
+     "name": "notifyDiscount",
+     "use_case": "Notify Discount"
+    },
+    {
+     "name": "notifyItem",
+     "use_case": "Notify Item"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51"
+   ]
+  },
+  {
+   "name": "Account",
+   "kind": "class",
+   "attributes": [
+    "username",
+    "password"
+   ],
+   "methods": [
+    {
+     "name": "createAccount",
+     "use_case": "Create Account"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "PushNotification",
+   "kind": "class",
+   "attributes": [
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "activatePushNotification",
+     "use_case": "Activate PushNotification"
+    },
+    {
+     "name": "deactivatePushNotification",
+     "use_case": "Deactivate PushNotification"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Language",
+   "kind": "class",
+   "attributes": [
+    "language"
+   ],
+   "methods": [
+    {
+     "name": "changeLanguage",
+     "use_case": "Change Language"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Text",
+   "kind": "class",
+   "attributes": [
+    "size",
+    "contrast"
+   ],
+   "methods": [
+    {
+     "name": "changeSize",
+     "use_case": "Change Size"
+    },
+    {
+     "name": "changeContrast",
+     "use_case": "Change Contrast"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "LoyaltyCard",
+   "kind": "class",
+   "attributes": [
+    "cardNumber"
+   ],
+   "methods": [
+    {
+     "name": "linkLoyaltyCard",
+     "use_case": "Link LoyaltyCard"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "name": "Application",
+   "kind": "class",
+   "attributes": [
+    "recipes",
+    "discounts",
+    "deliveryTimes",
+    "products",
+    "stores"
+   ],
+   "methods": [
+    {
+     "name": "updateApplication",
+     "use_case": "Update Application"
+    },
+    {
+     "name": "editDiscount",
+     "use_case": "Edit Discount"
+    },
+    {
+     "name": "confirmDeliveryTime",
+     "use_case": "Confirm DeliveryTime"
+    },
+    {
+     "name": "notifyCustomer",
+     "use_case": "Notify Customer"
+    },
+    {
+     "name": "notifyDiscount",
+     "use_case": "Notify Discount"
+    },
+    {
+     "name": "notifyItem",
+     "use_case": "Notify Item"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51"
+   ]
+  },
+  {
+   "name": "Recipe",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "ingredients"
+   ],
+   "methods": [
+    {
+     "name": "getRecipe",
+     "use_case": "Get Recipe"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "name": "Discount",
+   "kind": "class",
+   "attributes": [
+    "product",
+    "discountAmount"
+   ],
+   "methods": [
+    {
+     "name": "editDiscount",
+     "use_case": "Edit Discount"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "name": "DeliveryTime",
+   "kind": "class",
+   "attributes": [
+    "time"
+   ],
+   "methods": [
+    {
+     "name": "confirmDeliveryTime",
+     "use_case": "Confirm DeliveryTime"
+    },
+    {
+     "name": "notifyCustomer",
+     "use_case": "Notify Customer"
+    },
+    {
+     "name": "notifyDiscount",
+     "use_case": "Notify Discount"
+    },
+    {
+     "name": "notifyItem",
+     "use_case": "Notify Item"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51"
+   ]
+  },
+  {
+   "name": "Product",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "quantity",
+    "price",
+    "dietaryRestrictions"
+   ],
+   "methods": [
+    {
+     "name": "orderProduct",
+     "use_case": "Order Product"
+    },
+    {
+     "name": "seeQuantity",
+     "use_case": "See Quantity"
+    },
+    {
+     "name": "filterProduct",
+     "use_case": "Filter Product"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R20",
+    "R21",
+    "R28",
+    "R29"
+   ]
+  },
+  {
+   "name": "Store",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "location"
+   ],
+   "methods": [
+    {
+     "name": "findLocation",
+     "use_case": "Find Location"
+    },
+    {
+     "name": "getRecommendation",
+     "use_case": "Get Recommendation"
+    },
+    {
+     "name": "changeSelection",
+     "use_case": "Change Selection"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R41",
+    "R42",
+    "R43"
+   ]
+  },
+  {
+   "name": "Location",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "coordinates"
+   ],
+   "methods": [
+    {
+     "name": "findLocation",
+     "use_case": "Find Location"
+    },
+    {
+     "name": "getRecommendation",
+     "use_case": "Get Recommendation"
+    },
+    {
+     "name": "changeSelection",
+     "use_case": "Change Selection"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R41",
+    "R42",
+    "R43"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Customer",
+   "target": "Account",
+   "multiplicity_target": "1",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Customer",
+   "target": "PushNotification",
+   "multiplicity_target": "1",
+   "src": [
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Customer",
+   "target": "Language",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Customer",
+   "target": "Text",
+   "multiplicity_target": "1",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Customer",
+   "target": "LoyaltyCard",
+   "multiplicity_target": "1",
+   "src": [
+    "R44"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Employee",
+   "target": "Application",
+   "multiplicity_target": "1",
+   "src": [
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Application",
+   "target": "Recipe",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Application",
+   "target": "Discount",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R46"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Application",
+   "target": "DeliveryTime",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R47",
+    "R48",
+    "R49",
+    "R50",
+    "R51"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Application",
+   "target": "Product",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R20",
+    "R21",
+    "R28",
+    "R29"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Application",
+   "target": "Store",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R41",
+    "R42",
+    "R43"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Product",
+   "target": "Customer",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R20",
+    "R21",
+    "R28",
+    "R29"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Product",
+   "target": "Location",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R28",
+    "R29"
+   ]
+  }
+ ],
+ "python": "class Account:\n    def __init__(self, username, password):\n        self.username = username\n        self.password = password\n\n    def createAccount(self):\n        raise NotImplementedError\n\n\nclass PushNotification:\n    def __init__(self, status):\n        self.status = status\n\n    def activatePushNotification(self):\n        raise NotImplementedError\n\n    def deactivatePushNotification(self):\n        raise NotImplementedError\n\n\nclass Language:\n    def __init__(self, language):\n        self.language = language\n\n    def changeLanguage(self):\n        raise NotImplementedError\n\n\nclass Text:\n    def __init__(self, size, contrast):\n        self.size = size\n        self.contrast = contrast\n\n    def changeSize(self):\n        raise NotImplementedError\n\n    def changeContrast(self):\n        raise NotImplementedError\n\n\nclass LoyaltyCard:\n    def __init__(self, cardNumber):\n        self.cardNumber = cardNumber\n\n    def linkLoyaltyCard(self):\n        raise NotImplementedError\n\n\nclass Customer:\n    def __init__(self, account, pushNotification, language, size, contrast, loyaltyCard):\n        self.account = account\n        self.pushNotification = pushNotification\n        self.language = language\n        self.size = size\n        self.contrast = contrast\n        self.loyaltyCard = loyaltyCard\n\n    def createAccount(self):\n        raise NotImplementedError\n\n    def signNewsletter(self):\n        raise NotImplementedError\n\n    def unsubscribeNewsletter(self):\n        raise NotImplementedError\n\n    def activatePushNotification(self):\n        raise NotImplementedError\n\n    def deactivatePushNotification(self):\n        raise NotImplementedError\n\n    def resetPassword(self):\n        raise NotImplementedError\n\n    def changeSize(self):\n        raise NotImplementedError\n\n    def changeContrast(self):\n        raise NotImplementedError\n\n    def changeLanguage(self):\n        raise NotImplementedError\n\n    def receiveSuggestion(self):\n        raise NotImplementedError\n\n    def receiveDiscount(self):\n        raise NotImplementedError\n\n    def haveDeliveryService(self):\n        raise NotImplementedError\n\n    def getRecipe(self):\n        raise NotImplementedError\n\n    def contactCustomerService(self):\n        raise NotImplementedError\n\n    def scanProduct(self):\n        raise NotImplementedError\n\n    def addProduct(self):\n        raise NotImplementedError\n\n    def searchProduct(self):\n        raise NotImplementedError\n\n    def filterProduct(self):\n        raise NotImplementedError\n\n    def orderProduct(self):\n        raise NotImplementedError\n\n    def payGrocery(self):\n        raise NotImplementedError\n\n    def seeOrderHistory(self):\n        raise NotImplementedError\n\n    def seeProduct(self):\n        raise NotImplementedError\n\n    def seeQuantity(self):\n        raise NotImplementedError\n\n    def selectDate(self):\n        raise NotImplementedError\n\n    def selectTimeSlot(self):\n        raise NotImplementedError\n\n    def haveGrocery(self):\n        raise NotImplementedError\n\n    def linkLoyaltyCard(self):\n        raise NotImplementedError\n\n\nclass Employee:\n    def __init__(self, application):\n        self.application = application\n\n    def updateApplication(self):\n        raise NotImplementedError\n\n    def editDiscount(self):\n        raise NotImplementedError\n\n    def confirmDeliveryTime(self):\n        raise NotImplementedError\n\n    def notifyCustomer(self):\n        raise NotImplementedError\n\n    def notifyDiscount(self):\n        raise NotImplementedError\n\n    def notifyItem(self):\n        raise NotImplementedError\n\n\nclass Application:\n    def __init__(self, recipes, discounts, deliveryTimes, products, stores):\n        self.recipes = recipes\n        self.discounts = discounts\n        self.deliveryTimes = deliveryTimes\n        self.products = products\n        self.stores = stores\n\n    def updateApplication(self):\n        raise NotImplementedError\n\n    def editDiscount(self):\n        raise NotImplementedError\n\n    def confirmDeliveryTime(self):\n        raise NotImplementedError\n\n    def notifyCustomer(self):\n        raise NotImplementedError\n\n    def notifyDiscount(self):\n        raise NotImplementedError\n\n    def notifyItem(self):\n        raise NotImplementedError\n\n\nclass Recipe:\n    def __init__(self, name, ingredients):\n        self.name = name\n        self.ingredients = ingredients\n\n    def getRecipe(self):\n        raise NotImplementedError\n\n\nclass Discount:\n    def __init__(self, product, discountAmount):\n        self.product = product\n        self.discountAmount = discountAmount\n\n    def editDiscount(self):\n        raise NotImplementedError\n\n\nclass DeliveryTime:\n    def __init__(self, time):\n        self.time = time\n\n    def confirmDeliveryTime(self):\n        raise NotImplementedError\n\n    def notifyCustomer(self):\n        raise NotImplementedError\n\n    def notifyDiscount(self):\n        raise NotImplementedError\n\n    def notifyItem(self):\n        raise NotImplementedError\n\n\nclass Product:\n    def __init__(self, name, quantity, price, dietaryRestrictions):\n        self.name = name\n        self.quantity = quantity\n        self.price = price\n        self.dietaryRestrictions = dietaryRestrictions\n\n    def orderProduct(self):\n        raise NotImplementedError\n\n    def seeQuantity(self):\n        raise NotImplementedError\n\n    def filterProduct(self):\n        raise NotImplementedError\n\n\nclass Store:\n    def __init__(self, name, location):\n        self.name = name\n        self.location = location\n\n    def findLocation(self):\n        raise NotImplementedError\n\n    def getRecommendation(self):\n        raise NotImplementedError\n\n    def changeSelection(self):\n        raise NotImplementedError\n\n\nclass Location:\n    def __init__(self, name, coordinates):\n        self.name = name\n        self.coordinates = coordinates\n\n    def findLocation(self):\n        raise NotImplementedError\n\n    def getRecommendation(self):\n        raise NotImplementedError\n\n    def changeSelection(self):\n        raise NotImplementedError\n",
+ "java": {}
+}

@@ -1,0 +1,90 @@
+{
+ "condition": "D",
+ "hint": {
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "name": "QoSStatement",
+    "src": [
+     "R1",
+     "R7",
+     "R8"
+    ]
+   },
+   {
+    "name": "SingleQoSStatement",
+    "src": [
+     "R2",
+     "R9"
+    ]
+   },
+   {
+    "name": "CompoundQoSStatement",
+    "src": [
+     "R3",
+     "R10"
+    ]
+   },
+   {
+    "name": "Parameter",
+    "src": [
+     "R4"
+    ]
+   },
+   {
+    "name": "QoSConstraint",
+    "src": [
+     "R5",
+     "R9",
+     "R11"
+    ]
+   }
+  ],
+  "attributes": [
+   {
+    "owner": "QoSConstraint",
+    "name": "kind",
+    "src": [
+     "R11"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "kind": "generalization",
+    "source": "QoSStatement",
+    "target": "CompoundQoSStatement",
+    "src": [
+     "R8"
+    ]
+   },
+   {
+    "kind": "generalization",
+    "source": "QoSStatement",
+    "target": "SingleQoSStatement",
+    "src": [
+     "R9"
+    ]
+   },
+   {
+    "kind": "composition",
+    "source": "CompoundQoSStatement",
+    "target": "QoSStatement",
+    "src": [
+     "R10"
+    ]
+   },
+   {
+    "kind": "composition",
+    "source": "SingleQoSStatement",
+    "target": "QoSConstraint",
+    "src": [
+     "R9"
+    ]
+   }
+  ],
+  "stage": "llm_hint"
+ },
+ "open_tags": []
+}

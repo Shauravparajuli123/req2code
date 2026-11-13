@@ -1,0 +1,126 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Graph",
+   "kind": "class",
+   "attributes": [
+    "type",
+    "dimension"
+   ],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "GraphElement",
+   "kind": "class",
+   "attributes": [
+    "label",
+    "zIndex",
+    "parentGraph"
+   ],
+   "methods": [
+    {
+     "name": "createGraphElement",
+     "use_case": null
+    }
+   ],
+   "src": [
+    "R1",
+    "R2",
+    "R4",
+    "R10"
+   ]
+  },
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "shape"
+   ],
+   "methods": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "DirectedArc",
+   "kind": "class",
+   "attributes": [
+    "sourceNode",
+    "targetNode",
+    "shape"
+   ],
+   "methods": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Constraint",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "SubGraph",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "Graph",
+   "target": "GraphElement",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "GraphElement",
+   "target": "Node",
+   "src": []
+  },
+  {
+   "source": "GraphElement",
+   "target": "DirectedArc",
+   "src": []
+  },
+  {
+   "source": "Node",
+   "target": "Graph",
+   "src": []
+  },
+  {
+   "source": "DirectedArc",
+   "target": "Node",
+   "src": []
+  },
+  {
+   "source": "Graph",
+   "target": "SubGraph",
+   "src": []
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/GraphVizDot.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass Graph:\n    \"\"\"Source: R3\"\"\"\n    type: _t.Optional[str] = None\n    dimension: _t.Optional[int] = None\n    graphElements: _t.List[\"GraphElement\"] = _dc.field(default_factory=list)\n    subGraphs: _t.List[\"SubGraph\"] = _dc.field(default_factory=list)\n\n\n@_dc.dataclass\nclass GraphElement:\n    \"\"\"Source: R1, R2, R4, R10\"\"\"\n    label: _t.Optional[str] = None\n    zIndex: _t.Optional[int] = None\n    parentGraph: _t.Optional[str] = None\n    node: _t.Optional[\"Node\"] = None\n    directedArc: _t.Optional[\"DirectedArc\"] = None\n\n    def createGraphElement(self) -> None:\n        \"\"\"Operation.\"\"\"\n        raise NotImplementedError\n\n\n@_dc.dataclass\nclass Node:\n    \"\"\"Source: R5\"\"\"\n    shape: _t.Optional[str] = None\n    graph: _t.Optional[\"Graph\"] = None\n\n\n@_dc.dataclass\nclass DirectedArc:\n    \"\"\"Source: R6\"\"\"\n    sourceNode: _t.Optional[str] = None\n    targetNode: _t.Optional[str] = None\n    shape: _t.Optional[str] = None\n    node: _t.Optional[\"Node\"] = None\n\n\n@_dc.dataclass\nclass Constraint:\n    \"\"\"Source: R7\"\"\"\n    value: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass SubGraph:\n    \"\"\"Source: R8\"\"\"\n    pass\n",
+ "java": {
+  "Graph.java": "/** Generated from shared model D2/GraphVizDot. Source: R3 */\npublic class Graph {\n    private java.lang.String type;\n    private int dimension;\n    private java.util.List<GraphElement> graphElements;\n    private java.util.List<SubGraph> subGraphs;\n}\n",
+  "GraphElement.java": "/** Generated from shared model D2/GraphVizDot. Source: R1, R2, R4, R10 */\npublic class GraphElement {\n    private java.lang.String label;\n    private int zIndex;\n    private java.lang.String parentGraph;\n    private Node node;\n    private DirectedArc directedArc;\n\n    /** Operation. */\n    public void createGraphElement() {\n        throw new UnsupportedOperationException();\n    }\n}\n",
+  "Node.java": "/** Generated from shared model D2/GraphVizDot. Source: R5 */\npublic class Node {\n    private java.lang.String shape;\n    private Graph graph;\n}\n",
+  "DirectedArc.java": "/** Generated from shared model D2/GraphVizDot. Source: R6 */\npublic class DirectedArc {\n    private java.lang.String sourceNode;\n    private java.lang.String targetNode;\n    private java.lang.String shape;\n    private Node node;\n}\n",
+  "Constraint.java": "/** Generated from shared model D2/GraphVizDot. Source: R7 */\npublic class Constraint {\n    private java.lang.String value;\n}\n",
+  "SubGraph.java": "/** Generated from shared model D2/GraphVizDot. Source: R8 */\npublic class SubGraph {\n}\n"
+ }
+}

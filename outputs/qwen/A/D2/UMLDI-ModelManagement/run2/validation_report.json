@@ -1,0 +1,45 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Classifier' is missing an attribute 'powerTypeRanges'",
+   "fix": "Add 'powerTypeRanges:String' to the attributes of class 'Classifier'"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Feature' is missing an attribute 'owner'",
+   "fix": "Add 'owner:String' to the attributes of class 'Feature'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'GeneralizableElement' and 'Classifier' is missing",
+   "fix": "Add a relationship 'GeneralizableElement -> Classifier [0..*..1]'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Generalization' and 'Classifier' is missing",
+   "fix": "Add a relationship 'Generalization -> Classifier [0..*]'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Generalization' and 'GeneralizableElement' is missing",
+   "fix": "Add a relationship 'Generalization -> GeneralizableElement [1..1]'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Feature' and 'Classifier' is missing",
+   "fix": "Add a relationship 'Feature -> Classifier [0..*]'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "Relationship between 'Generalization' and 'GeneralizableElement' is missing",
+   "fix": "Add a relationship 'Generalization -> GeneralizableElement [1..1]'"
+  }
+ ]
+}

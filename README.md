@@ -22,6 +22,23 @@ requirements.json ─► Step 1  input · spaCy · coreference · rules ─► R
 | RQ2 | S shared model (= B) · I three independent prompts · Q sequential chain · O one prompt for all three | `--rq2` |
 | RQ3 | 30 sampled class diagrams · exact F1 · synonym-aware F1 (SBERT) · LLM judge · human ratings | `rq3-sample`, `rq3-judge`, `rq3-analyze` |
 
+## Results in this repository (no GPU needed)
+
+The paper's experiment: Qwen2.5-7B-Instruct via Ollama, 60 test cases × 7 conditions (A, B, C, D, I, Q, O) × 3 runs
+(seeds 1042, 2042, 3042) = **1,260 runs**, 4,792 LLM calls.
+
+| What | Where |
+|---|---|
+| Every number in the paper (test cases, case = mean of the 3 runs) | `python scripts/paper_numbers.py results 1,2,3` |
+| Numbers of run 1 only | `python scripts/paper_numbers.py results 1` |
+| Per-run scores, consistency checks, timing | `results/scores_per_run.csv`, `results/consistency_per_run.csv`, `results/timing_per_run.csv` |
+| All outputs of every run: shared model, diagrams (`.puml` + `.png`), Python/Java code, checks, scores | `outputs/qwen/<condition>/<dataset>/<case>/run{1,2,3}/` |
+| Visual walk-through of every test case (run 1) | open `results/gallery/index.html` |
+| Human-rating material (RQ2 packets, RQ3 sample, LLM judge) | `human/` |
+
+Runs 2 and 3 were served by an Ollama instance with four parallel slots, flash attention and an 8-bit KV cache
+(`OLLAMA_NUM_PARALLEL=4 OLLAMA_FLASH_ATTENTION=1 OLLAMA_KV_CACHE_TYPE=q8_0`); run 1 used default Ollama settings.
+
 ---
 
 ## 0. Quick start (machine that already runs Ollama, no sudo needed)
@@ -74,7 +91,8 @@ source .venv/bin/activate
 |---|---|---|
 | Pilot: A, B, C on 6 dev cases, 3 runs | `bash scripts/run_pilot.sh` | 1–2 h |
 | Quick full test set, 1 run | `python cli.py run --rq1 --rq2 --split test --runs 1` | 3–5 h |
-| Everything as in the paper (dev + test, 3 runs, R included) | `bash scripts/run_experiments.sh` | 10–15 h |
+| As in the paper (test set, A–D and I/Q/O, 3 runs) | `python cli.py run --models qwen --rq1 --rq2 --split test --runs 3 --workers 4` | 5–7 h |
+| Everything incl. dev set and condition R | `bash scripts/run_experiments.sh` | 10–15 h |
 | One case only | `python cli.py run --conditions A,B,C --cases D4/robots --runs 1` | minutes |
 | Progress | `python cli.py status` | |
 | Tables + statistics | `python cli.py report` → `results/REPORT.md` | seconds |

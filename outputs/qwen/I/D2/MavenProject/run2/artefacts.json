@@ -1,0 +1,154 @@
+{
+ "actors": [
+  "developer"
+ ],
+ "use_cases": [
+  {
+   "name": "none",
+   "actor": "developer",
+   "src": []
+  }
+ ],
+ "classes": [
+  {
+   "name": "Project",
+   "kind": "class",
+   "attributes": [
+    "identifier",
+    "artifactIdentifier",
+    "description"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "BuildConfiguration",
+   "kind": "class",
+   "attributes": [
+    "defaultGoal",
+    "path"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R9"
+   ]
+  },
+  {
+   "name": "Resource",
+   "kind": "class",
+   "attributes": [
+    "targetPath",
+    "directory",
+    "excludes"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R10"
+   ]
+  },
+  {
+   "name": "MailingList",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "subscribeString",
+    "archiveString"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R8"
+   ]
+  },
+  {
+   "name": "Person",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "url",
+    "organizationUrl",
+    "timeZone"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Developer",
+   "kind": "class",
+   "attributes": [
+    "identifier"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Contribution",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "addContributor",
+     "use_case": "R7"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "MavenProject",
+   "target": "Contributor",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MavenProject",
+   "target": "MailingList",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MavenProject",
+   "target": "BuildConfiguration",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BuildConfiguration",
+   "target": "Resource",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Project:\n    def __init__(self, identifier: str, artifact_identifier: str, description: str):\n        self.identifier = identifier\n        self.artifact_identifier = artifact_identifier\n        self.description = description\n\nclass BuildConfiguration:\n    def __init__(self, default_goal: str, path: str):\n        self.default_goal = default_goal\n        self.path = path\n        self.resources: List['Resource'] = []\n\nclass Resource:\n    def __init__(self, target_path: str, directory: str, excludes: str):\n        self.target_path = target_path\n        self.directory = directory\n        self.excludes = excludes\n\nclass MailingList:\n    def __init__(self, name: str, subscribe_string: str, archive_string: str):\n        self.name = name\n        self.subscribe_string = subscribe_string\n        self.archive_string = archive_string\n\nclass Person:\n    def __init__(self, name: str, url: str, organization_url: str, time_zone: str):\n        self.name = name\n        self.url = url\n        self.organization_url = organization_url\n        self.time_zone = time_zone\n\nclass Developer(Person):\n    def __init__(self, identifier: str, name: str, url: str, organization_url: str, time_zone: str):\n        super().__init__(name, url, organization_url, time_zone)\n        self.identifier = identifier\n\nclass MavenProject:\n    def __init__(self, contributors: List[Person], mailing_lists: Optional[List[MailingList]] = None, build_configuration: Optional[BuildConfiguration] = None):\n        self.contributors = contributors\n        self.mailing_lists = mailing_lists\n        self.build_configuration = build_configuration\n",
+ "java": {}
+}

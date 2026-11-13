@@ -1,0 +1,164 @@
+{
+ "case": "D2/SimpleAirlineDomain",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Flight",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": []
+    },
+    {
+     "name": "departureTime",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "originAirport",
+     "type": "String",
+     "src": [
+      "R6",
+      "R9"
+     ]
+    },
+    {
+     "name": "maxPassengers",
+     "type": "int",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "passengers",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addPassenger",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "createFlight",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R6",
+    "R7",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Passenger",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "gender",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "flight",
+     "type": "String",
+     "src": [
+      "R11"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "assignToFlight",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R4",
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C3",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8",
+    "R11"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that the relationship between Flight and Passenger is one-to-many, as indicated by the multiplicity constraint '0..*..1'."
+  }
+ ],
+ "open_tags": []
+}

@@ -1,0 +1,75 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Customer {
+  name : String
+  personalInformation : String
+  bankingDetails : String
+  membershipType : String
+  subscription : String
+  previousInformation : String
+  familyMembership : boolean
+  lessonOverview : String
+  bookedLessons : String
+  recordOfLessons : String
+  lessonCancellation : String
+  personalTrainingBooking : String
+  freePracticeAreaBooking : String
+  notificationMethod : String
+  subscriptionCheck : boolean
+  checkIn : boolean
+  +createAccount()
+  +addPersonalInformation()
+  +addBankingDetail()
+  +chooseMembershipType()
+  +extendSubscription()
+  +knowSubscription()
+  +usePreviousInformation()
+  +unsubscribe()
+  +resetPassword()
+  +changePersonalDetails()
+  +updatePaymentInformation()
+  +addPersonToFamilyMembership()
+  +removePersonFromFamilyMembership()
+  +seeOverviewOfLessons()
+  +seeBookedLessons()
+  +seeRecordOfLessons()
+  +callGymToBookLesson()
+  +callGymToCancelLesson()
+  +callGymToBookPersonalTraining()
+  +callGymToCancelPersonalTraining()
+  +bookSpotForFreePracticeArea()
+  +seeBookedSpots()
+  +seeFreeRooms()
+  +seeTrainerSchedule()
+}
+class Admin {
+  name : String
+  notificationMethod : String
+  subscriptionCheck : boolean
+  +addTrainer()
+  +addAdmin()
+  +removeTrainer()
+  +logIntoSystem()
+  +chooseNotificationMethod()
+  +receiveEmailNotification()
+  +receivePushNotification()
+  +chooseNotifications()
+  +confirmBookingCancellation()
+  +seeCustomerNoShow()
+  +seeNumberOfNoShows()
+  +issueFineForNoShow()
+}
+class Trainer {
+  name : String
+  notificationMethod : String
+  subscriptionCheck : boolean
+  +editLesson()
+  +editLessonTime()
+  +editLessonRoom()
+  +editLessonDescription()
+  +editLessonNumber()
+  +cancelLesson()
+}
+Admin "0..*" -- "1" Trainer : manages
+@enduml

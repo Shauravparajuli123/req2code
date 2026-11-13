@@ -1,0 +1,235 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "CreateBLQModel",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "DefineElements",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "DefineBQLModel",
+   "actor": "User",
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "DefineQueries",
+   "actor": "User",
+   "src": [
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "name": "DefineEntries",
+   "actor": "User",
+   "src": [
+    "R7",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "DefineFields",
+   "actor": "User",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "BqlModel",
+   "kind": "class",
+   "attributes": [
+    "queries",
+    "entries",
+    "fields"
+   ],
+   "methods": [
+    {
+     "name": "addQuery",
+     "use_case": "DefineBQLModel"
+    },
+    {
+     "name": "addEntry",
+     "use_case": "DefineEntries"
+    },
+    {
+     "name": "addField",
+     "use_case": "DefineFields"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "location",
+    "comments"
+   ],
+   "methods": [
+    {
+     "name": "createBLQModel",
+     "use_case": "CreateBLQModel"
+    },
+    {
+     "name": "defineElements",
+     "use_case": "DefineElements"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Entry",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "allFields"
+   ],
+   "methods": [
+    {
+     "name": "defineEntries",
+     "use_case": "DefineEntries"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Predicate",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "name": "definePredicates",
+     "use_case": "DefineQueries"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R10"
+   ]
+  },
+  {
+   "name": "Query",
+   "kind": "class",
+   "attributes": [
+    "predicates"
+   ],
+   "methods": [
+    {
+     "name": "defineQueries",
+     "use_case": "DefineQueries"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "name": "Field",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "defineFields",
+     "use_case": "DefineFields"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "BqlModel",
+   "target": "Entry",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "BqlModel",
+   "target": "Predicate",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "BqlModel",
+   "target": "Query",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7",
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Query",
+   "target": "Predicate",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "BqlModel",
+   "target": "Field",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Element:\n    def __init__(self, location: str, comments: str):\n        self.location = location\n        self.comments = comments\n    def createBLQModel(self):\n        raise NotImplementedError\n    def defineElements(self):\n        raise NotImplementedError\nclass Entry:\n    def __init__(self, name: str, allFields: bool):\n        self.name = name\n        self.allFields = allFields\n    def defineEntries(self):\n        raise NotImplementedError\nclass Predicate:\n    def __init__(self):\n        pass\n    def definePredicates(self):\n        raise NotImplementedError\nclass Query:\n    def __init__(self, predicates: List[Predicate]):\n        self.predicates = predicates\n    def defineQueries(self):\n        raise NotImplementedError\nclass Field:\n    def __init__(self, name: str):\n        self.name = name\n    def defineFields(self):\n        raise NotImplementedError\nclass BqlModel:\n    def __init__(self, queries: List[Query], entries: List[Entry], fields: List[Field]):\n        self.queries = queries\n        self.entries = entries\n        self.fields = fields\n    def addQuery(self):\n        raise NotImplementedError\n    def addEntry(self):\n        raise NotImplementedError\n    def addField(self):\n        raise NotImplementedError",
+ "java": {}
+}

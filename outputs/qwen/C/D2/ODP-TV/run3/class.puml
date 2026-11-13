@@ -1,0 +1,16 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class ImplementableStandard {
+}
+class TechnologyObject {
+}
+class Implementation {
+  +extendTechnologyObject()
+}
+class IXIT {
+  +extendImplementation()
+}
+IXIT --|> Implementation
+ImplementableStandard --|> TechnologyObject
+@enduml

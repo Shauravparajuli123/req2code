@@ -1,0 +1,156 @@
+{
+ "case": "D4/airlines",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Create Game",
+   "actor": "A1",
+   "src": [
+    "R1"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Airline",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "startOperation",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "stopOperation",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "updateOperatingCost",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "code",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "city",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "OperatingCost",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "cost",
+     "type": "double",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "0..*",
+   "mult_target": "1",
+   "label": "operates at",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "R1",
+   "assumption": "Many different airlines can operate in different airports, implying a many-to-many relationship between Airline and Airport."
+  },
+  {
+   "tag": "R4",
+   "assumption": "The operation of an airline in a specific airport can be started and stopped at any time, and its operating cost can be updated at any time, suggesting the need for methods in the Airline class."
+  },
+  {
+   "tag": "R5",
+   "assumption": "The relation between airport and airline contains a details class with the operating cost, implying the need for a new class to represent this detail."
+  }
+ ],
+ "open_tags": [
+  "R1 (quantifier, \"Many\"): readings ['Many different airlines can operate in the same airport.', 'A single airline can operate in many airports.']",
+  "R4 (quantifier, \"any\"): readings ['The operation of an airline in a specific airport can be started and stopped at any time.', 'The operation of an airline in a specific airport can be started and stopped at any time, and its operating cost can be updated at any time.']",
+  "R4 (actor, \"passive 'started' without agent\"): readings ['The operation of an airline in a specific airport can be started and stopped at any time, and its operating cost can be updated at any time.', 'The operation of an airline in a specific airport can be started and stopped by the airport authority, and its operating cost can be updated by the airline.']",
+  "R5 (incompleteness, \"details\"): readings ['The relation between airport and airline contains a class with the operating cost.', 'The relation between airport and airline contains a class with the details of the operating cost.']"
+ ]
+}

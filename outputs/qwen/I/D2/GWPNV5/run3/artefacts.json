@@ -1,0 +1,253 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefinePetriNet",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R3",
+    "R7",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "AddPlace",
+   "actor": "User",
+   "src": [
+    "R1",
+    "R7",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "AddTransition",
+   "actor": "User",
+   "src": [
+    "R2",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "CreateArc",
+   "actor": "User",
+   "src": [
+    "R4",
+    "R5",
+    "R6",
+    "R9",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "AssociateToken",
+   "actor": "User",
+   "src": [
+    "R15"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Net",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "name": "Place",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "tokens"
+   ],
+   "methods": [
+    {
+     "name": "addToken",
+     "use_case": ""
+    },
+    {
+     "name": "removeToken",
+     "use_case": ""
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R9",
+    "R15"
+   ]
+  },
+  {
+   "name": "Transition",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [
+    {
+     "name": "addOutputArc",
+     "use_case": ""
+    },
+    {
+     "name": "removeOutputArc",
+     "use_case": ""
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Arc",
+   "kind": "class",
+   "attributes": [
+    "weight"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "PlaceTransitionArc",
+   "kind": "class",
+   "attributes": [
+    "transition"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "TransitionPlaceArc",
+   "kind": "class",
+   "attributes": [
+    "transition"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "Weight",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Net",
+   "target": "Place",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8",
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Net",
+   "target": "PlaceTransitionArc",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Net",
+   "target": "Transition",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Place",
+   "target": "PlaceTransitionArc",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PlaceTransitionArc",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Transition",
+   "target": "TransitionPlaceArc",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "TransitionPlaceArc",
+   "target": "Transition",
+   "multiplicity_target": "1",
+   "src": [
+    "R5",
+    "R6",
+    "R13",
+    "R14"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Arc:\n    def __init__(self, source: 'Place', destination: 'Transition', weight: Optional[Weight] = None):\n        self.source = source\n        self.destination = destination\n        self.weight = weight\n\nclass Net:\n    def __init__(self):\n        self.places = []\n        self.transitions = []\n\nclass PetriNet(Net):\n    def __init__(self):\n        super().__init__()\n        self.places = []\n        self.transitions = []\n\nclass Place:\n    def __init__(self, net: PetriNet):\n        self.net = net\n        self.input_arcs = []\n\nclass Transition:\n    def __init__(self, net: PetriNet):\n        self.net = net\n        self.output_arcs = []\n\nclass PlaceTransitionArc(Arc):\n    def __init__(self, source: Place, destination: Transition):\n        super().__init__(source, destination)\n\nclass TransitionPlaceArc(Arc):\n    def __init__(self, source: Transition, destination: Place):\n        super().__init__(source, destination)\n\nclass Weight:\n    pass\n",
+ "java": {}
+}

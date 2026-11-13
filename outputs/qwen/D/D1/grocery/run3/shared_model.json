@@ -1,0 +1,1549 @@
+{
+ "case": "D1/grocery",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Employee",
+   "src": [
+    "R1",
+    "R6",
+    "R15",
+    "R16",
+    "R18",
+    "R26",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49"
+   ]
+  },
+  {
+   "id": "A2",
+   "name": "Manager",
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R19",
+    "R20",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R39",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49"
+   ]
+  },
+  {
+   "id": "A3",
+   "name": "OfficeEmployee",
+   "src": [
+    "R17",
+    "R21",
+    "R23",
+    "R24",
+    "R25",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49"
+   ]
+  },
+  {
+   "id": "A4",
+   "name": "PaymentHandler",
+   "src": [
+    "R45",
+    "R46"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Receive Salary Statement",
+   "actor": "A1",
+   "src": [
+    "R1",
+    "R6",
+    "R45"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC2",
+   "name": "Send Salary Statements",
+   "actor": "A2",
+   "src": [
+    "R2",
+    "R18",
+    "R45"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC3",
+   "name": "Enable Payment Options",
+   "actor": "A2",
+   "src": [
+    "R3"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC4",
+   "name": "Automate Payment System",
+   "actor": "A2",
+   "src": [
+    "R4"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC5",
+   "name": "Outsource Payment Process",
+   "actor": "A2",
+   "src": [
+    "R5"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC6",
+   "name": "Receive Payment Notification",
+   "actor": "A1",
+   "src": [
+    "R6",
+    "R45"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC7",
+   "name": "Express Working Hours",
+   "actor": "A1",
+   "src": [
+    "R7"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC8",
+   "name": "Semi Automate Scheduling",
+   "actor": "A2",
+   "src": [
+    "R8"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC9",
+   "name": "Edit Schedule",
+   "actor": "A2",
+   "src": [
+    "R9"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC10",
+   "name": "Authorize Schedule",
+   "actor": "A2",
+   "src": [
+    "R10"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC11",
+   "name": "Receive Schedule Notification",
+   "actor": "A1",
+   "src": [
+    "R12"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC12",
+   "name": "View Schedule",
+   "actor": "A1",
+   "src": [
+    "R13"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC13",
+   "name": "Verify Work Hours",
+   "actor": "A1",
+   "src": [
+    "R15"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC14",
+   "name": "File Complaint",
+   "actor": "A2",
+   "src": [
+    "R19",
+    "R20"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC15",
+   "name": "View Complaints",
+   "actor": "A3",
+   "src": [
+    "R21"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC16",
+   "name": "Respond To Complaints",
+   "actor": "A3",
+   "src": [
+    "R23"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC17",
+   "name": "Categorize Complaints",
+   "actor": "A3",
+   "src": [
+    "R24"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC18",
+   "name": "Prioritize Complaints",
+   "actor": "A2",
+   "src": [
+    "R25"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC19",
+   "name": "Hire New Employees",
+   "actor": "A2",
+   "src": [
+    "R27"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC20",
+   "name": "View Employee Contracts",
+   "actor": "A2",
+   "src": [
+    "R32"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC21",
+   "name": "View Employee Certificates",
+   "actor": "A2",
+   "src": [
+    "R33"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC22",
+   "name": "Contact Management",
+   "actor": "A1",
+   "src": [
+    "R34"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC23",
+   "name": "Contact Employee",
+   "actor": "A2",
+   "src": [
+    "R35"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC24",
+   "name": "Message Other Employees",
+   "actor": "A1",
+   "src": [
+    "R36"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC25",
+   "name": "Forward Messages",
+   "actor": "A2",
+   "src": [
+    "R37"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC26",
+   "name": "View Personal Inbox",
+   "actor": "A1",
+   "src": [
+    "R38"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC27",
+   "name": "Login With One System",
+   "actor": "A2",
+   "src": [
+    "R39"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC28",
+   "name": "Reset Password",
+   "actor": "A1",
+   "src": [
+    "R40"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC29",
+   "name": "Use User Friendly Application",
+   "actor": "A1",
+   "src": [
+    "R41"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC30",
+   "name": "Navigate Through Application",
+   "actor": "A1",
+   "src": [
+    "R42"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC31",
+   "name": "Choose Notifications",
+   "actor": "A1",
+   "src": [
+    "R43"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC32",
+   "name": "Choose Payment Frequency",
+   "actor": "A1",
+   "src": [
+    "R44"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC33",
+   "name": "View Financial Statements",
+   "actor": "A1",
+   "src": [
+    "R45"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC34",
+   "name": "Ensure Application Security",
+   "actor": "A1",
+   "src": [
+    "R46"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC35",
+   "name": "Change Personal Information",
+   "actor": "A1",
+   "src": [
+    "R47"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC36",
+   "name": "View Contract",
+   "actor": "A1",
+   "src": [
+    "R48"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC37",
+   "name": "Ensure Data Security",
+   "actor": "A1",
+   "src": [
+    "R49"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "workingHours",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "personalInbox",
+     "type": "String",
+     "src": [
+      "R38"
+     ]
+    },
+    {
+     "name": "personalInformation",
+     "type": "String",
+     "src": [
+      "R47"
+     ]
+    },
+    {
+     "name": "contract",
+     "type": "String",
+     "src": [
+      "R48"
+     ]
+    },
+    {
+     "name": "dataSecurity",
+     "type": "boolean",
+     "src": [
+      "R49"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "expressWorkingHours",
+     "realizes": "UC7",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "id": "M2",
+     "name": "viewPersonalInbox",
+     "realizes": "UC26",
+     "src": [
+      "R38"
+     ]
+    },
+    {
+     "id": "M3",
+     "name": "changePersonalInformation",
+     "realizes": "UC35",
+     "src": [
+      "R47"
+     ]
+    },
+    {
+     "id": "M4",
+     "name": "viewContract",
+     "realizes": "UC36",
+     "src": [
+      "R48"
+     ]
+    },
+    {
+     "id": "M5",
+     "name": "viewFinancialStatements",
+     "realizes": "UC33",
+     "src": [
+      "R45"
+     ]
+    },
+    {
+     "id": "M6",
+     "name": "ensureApplicationSecurity",
+     "realizes": "UC34",
+     "src": [
+      "R46"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R6",
+    "R7",
+    "R13",
+    "R15",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Manager",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "paymentOptions",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "paymentSystem",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "paymentProcess",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "schedulingProcess",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "schedule",
+     "type": "String",
+     "src": [
+      "R14"
+     ]
+    },
+    {
+     "name": "newEmployees",
+     "type": "String",
+     "src": [
+      "R27"
+     ]
+    },
+    {
+     "name": "employeeContracts",
+     "type": "String",
+     "src": [
+      "R32"
+     ]
+    },
+    {
+     "name": "employeeCertificates",
+     "type": "String",
+     "src": [
+      "R33"
+     ]
+    },
+    {
+     "name": "oneSystem",
+     "type": "String",
+     "src": [
+      "R39"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M7",
+     "name": "sendSalaryStatements",
+     "realizes": "UC2",
+     "src": [
+      "R2",
+      "R18",
+      "R45"
+     ]
+    },
+    {
+     "id": "M8",
+     "name": "semiAutomateScheduling",
+     "realizes": "UC8",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "id": "M9",
+     "name": "editSchedule",
+     "realizes": "UC9",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "id": "M10",
+     "name": "authorizeSchedule",
+     "realizes": "UC10",
+     "src": [
+      "R10"
+     ]
+    },
+    {
+     "id": "M11",
+     "name": "viewSchedule",
+     "realizes": "UC12",
+     "src": [
+      "R13"
+     ]
+    },
+    {
+     "id": "M12",
+     "name": "viewComplaints",
+     "realizes": "UC15",
+     "src": [
+      "R21"
+     ]
+    },
+    {
+     "id": "M13",
+     "name": "respondToComplaints",
+     "realizes": "UC16",
+     "src": [
+      "R23"
+     ]
+    },
+    {
+     "id": "M14",
+     "name": "categorizeComplaints",
+     "realizes": "UC17",
+     "src": [
+      "R24"
+     ]
+    },
+    {
+     "id": "M15",
+     "name": "prioritizeComplaints",
+     "realizes": "UC18",
+     "src": [
+      "R25"
+     ]
+    },
+    {
+     "id": "M16",
+     "name": "hireNewEmployees",
+     "realizes": "UC19",
+     "src": [
+      "R27"
+     ]
+    },
+    {
+     "id": "M17",
+     "name": "viewEmployeeContracts",
+     "realizes": "UC20",
+     "src": [
+      "R32"
+     ]
+    },
+    {
+     "id": "M18",
+     "name": "viewEmployeeCertificates",
+     "realizes": "UC21",
+     "src": [
+      "R33"
+     ]
+    },
+    {
+     "id": "M19",
+     "name": "contactManagement",
+     "realizes": "UC22",
+     "src": [
+      "R34"
+     ]
+    },
+    {
+     "id": "M20",
+     "name": "contactEmployee",
+     "realizes": "UC23",
+     "src": [
+      "R35"
+     ]
+    },
+    {
+     "id": "M21",
+     "name": "messageOtherEmployees",
+     "realizes": "UC24",
+     "src": [
+      "R36"
+     ]
+    },
+    {
+     "id": "M22",
+     "name": "forwardMessages",
+     "realizes": "UC25",
+     "src": [
+      "R37"
+     ]
+    },
+    {
+     "id": "M23",
+     "name": "resetPassword",
+     "realizes": "UC28",
+     "src": [
+      "R40"
+     ]
+    },
+    {
+     "id": "M24",
+     "name": "useUserFriendlyApplication",
+     "realizes": "UC29",
+     "src": [
+      "R41"
+     ]
+    },
+    {
+     "id": "M25",
+     "name": "navigateThroughApplication",
+     "realizes": "UC30",
+     "src": [
+      "R42"
+     ]
+    },
+    {
+     "id": "M26",
+     "name": "chooseNotifications",
+     "realizes": "UC31",
+     "src": [
+      "R43"
+     ]
+    },
+    {
+     "id": "M27",
+     "name": "choosePaymentFrequency",
+     "realizes": "UC32",
+     "src": [
+      "R44"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R14",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R32",
+    "R33",
+    "R39",
+    "R40",
+    "R41",
+    "R42"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "OfficeEmployee",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M28",
+     "name": "viewComplaints",
+     "realizes": "UC15",
+     "src": [
+      "R21"
+     ]
+    },
+    {
+     "id": "M29",
+     "name": "respondToComplaints",
+     "realizes": "UC16",
+     "src": [
+      "R23"
+     ]
+    },
+    {
+     "id": "M30",
+     "name": "categorizeComplaints",
+     "realizes": "UC17",
+     "src": [
+      "R24"
+     ]
+    },
+    {
+     "id": "M31",
+     "name": "prioritizeComplaints",
+     "realizes": "UC18",
+     "src": [
+      "R25"
+     ]
+    },
+    {
+     "id": "M32",
+     "name": "fileComplaint",
+     "realizes": "UC14",
+     "src": [
+      "R19",
+      "R20"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R17",
+    "R26",
+    "R23",
+    "R24",
+    "R25"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Applicant",
+   "kind": "class",
+   "attributes": [],
+   "methods": [
+    {
+     "id": "M33",
+     "name": "registerAccount",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R31"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Complaint",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "title",
+     "type": "String",
+     "src": [
+      "R17"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R17"
+     ]
+    },
+    {
+     "name": "status",
+     "type": "String",
+     "src": [
+      "R23",
+      "R24",
+      "R25"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M34",
+     "name": "fileComplaint",
+     "realizes": "UC14",
+     "src": [
+      "R19",
+      "R20"
+     ]
+    },
+    {
+     "id": "M35",
+     "name": "respondToComplaint",
+     "realizes": "UC16",
+     "src": [
+      "R23"
+     ]
+    },
+    {
+     "id": "M36",
+     "name": "categorizeComplaint",
+     "realizes": "UC17",
+     "src": [
+      "R24"
+     ]
+    },
+    {
+     "id": "M37",
+     "name": "prioritizeComplaint",
+     "realizes": "UC18",
+     "src": [
+      "R25"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R23",
+    "R24",
+    "R25"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Notification",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "title",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R6"
+     ]
+    },
+    {
+     "name": "status",
+     "type": "String",
+     "src": [
+      "R6",
+      "R12",
+      "R26"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M38",
+     "name": "receiveNotification",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M39",
+     "name": "markAsRead",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R12",
+    "R26"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Schedule",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "date",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R13",
+      "R14"
+     ]
+    },
+    {
+     "name": "status",
+     "type": "String",
+     "src": [
+      "R14",
+      "R21",
+      "R22"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M40",
+     "name": "viewSchedule",
+     "realizes": "UC12",
+     "src": [
+      "R13"
+     ]
+    },
+    {
+     "id": "M41",
+     "name": "editSchedule",
+     "realizes": "UC9",
+     "src": [
+      "R9"
+     ]
+    },
+    {
+     "id": "M42",
+     "name": "authorizeSchedule",
+     "realizes": "UC10",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R13",
+    "R14",
+    "R19",
+    "R20",
+    "R21",
+    "R22"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "Contract",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "startDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R29"
+     ]
+    },
+    {
+     "name": "endDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R29"
+     ]
+    },
+    {
+     "name": "status",
+     "type": "String",
+     "src": [
+      "R29",
+      "R30",
+      "R32",
+      "R33"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M43",
+     "name": "viewContract",
+     "realizes": "UC36",
+     "src": [
+      "R48"
+     ]
+    },
+    {
+     "id": "M44",
+     "name": "viewEmployeeContracts",
+     "realizes": "UC20",
+     "src": [
+      "R32"
+     ]
+    },
+    {
+     "id": "M45",
+     "name": "viewEmployeeCertificates",
+     "realizes": "UC21",
+     "src": [
+      "R33"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R29",
+    "R30",
+    "R32",
+    "R33"
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "Message",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "sender",
+     "type": "String",
+     "src": [
+      "R36"
+     ]
+    },
+    {
+     "name": "receiver",
+     "type": "String",
+     "src": [
+      "R36"
+     ]
+    },
+    {
+     "name": "content",
+     "type": "String",
+     "src": [
+      "R36"
+     ]
+    },
+    {
+     "name": "status",
+     "type": "String",
+     "src": [
+      "R36",
+      "R37"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M46",
+     "name": "sendMessage",
+     "realizes": "UC24",
+     "src": [
+      "R36"
+     ]
+    },
+    {
+     "id": "M47",
+     "name": "forwardMessage",
+     "realizes": "UC25",
+     "src": [
+      "R37"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R36",
+    "R37"
+   ]
+  },
+  {
+   "id": "C10",
+   "name": "Application",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "userFriendly",
+     "type": "boolean",
+     "src": [
+      "R41"
+     ]
+    },
+    {
+     "name": "navigation",
+     "type": "String",
+     "src": [
+      "R42"
+     ]
+    },
+    {
+     "name": "notifications",
+     "type": "String",
+     "src": [
+      "R43"
+     ]
+    },
+    {
+     "name": "paymentFrequency",
+     "type": "String",
+     "src": [
+      "R44"
+     ]
+    },
+    {
+     "name": "financialStatements",
+     "type": "String",
+     "src": [
+      "R45"
+     ]
+    },
+    {
+     "name": "dataSecurity",
+     "type": "boolean",
+     "src": [
+      "R46"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M48",
+     "name": "useUserFriendlyApplication",
+     "realizes": "UC29",
+     "src": [
+      "R41"
+     ]
+    },
+    {
+     "id": "M49",
+     "name": "navigateThroughApplication",
+     "realizes": "UC30",
+     "src": [
+      "R42"
+     ]
+    },
+    {
+     "id": "M50",
+     "name": "chooseNotifications",
+     "realizes": "UC31",
+     "src": [
+      "R43"
+     ]
+    },
+    {
+     "id": "M51",
+     "name": "choosePaymentFrequency",
+     "realizes": "UC32",
+     "src": [
+      "R44"
+     ]
+    },
+    {
+     "id": "M52",
+     "name": "viewFinancialStatements",
+     "realizes": "UC33",
+     "src": [
+      "R45"
+     ]
+    },
+    {
+     "id": "M53",
+     "name": "ensureApplicationSecurity",
+     "realizes": "UC34",
+     "src": [
+      "R46"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C2",
+   "target": "C10",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "uses",
+   "src": [
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R39"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C10",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "uses",
+   "src": [
+    "R31",
+    "R34",
+    "R36",
+    "R37",
+    "R38",
+    "R40",
+    "R41",
+    "R42",
+    "R43",
+    "R44",
+    "R45",
+    "R46",
+    "R47",
+    "R48",
+    "R49"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C3",
+   "target": "C10",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "uses",
+   "src": [
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C5",
+   "target": "C10",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "uses",
+   "src": [
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R25",
+    "R26"
+   ]
+  },
+  {
+   "id": "R5",
+   "kind": "association",
+   "source": "C6",
+   "target": "C10",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "uses",
+   "src": [
+    "R6",
+    "R26"
+   ]
+  },
+  {
+   "id": "R6",
+   "kind": "association",
+   "source": "C7",
+   "target": "C10",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "uses",
+   "src": [
+    "R7",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "id": "R7",
+   "kind": "association",
+   "source": "C8",
+   "target": "C10",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "uses",
+   "src": [
+    "R27",
+    "R28",
+    "R29",
+    "R30",
+    "R32",
+    "R33"
+   ]
+  },
+  {
+   "id": "R8",
+   "kind": "association",
+   "source": "C9",
+   "target": "C10",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "uses",
+   "src": [
+    "R35",
+    "R36",
+    "R37"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

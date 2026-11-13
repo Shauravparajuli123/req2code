@@ -1,0 +1,213 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Instance",
+   "kind": "class",
+   "attributes": [
+    "classifiers",
+    "slots"
+   ],
+   "methods": [
+    {
+     "name": "addClassifier",
+     "use_case": "R8"
+    },
+    {
+     "name": "addSlot",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "AttributeLink",
+   "kind": "class",
+   "attributes": [
+    "instance",
+    "linkend"
+   ],
+   "methods": [
+    {
+     "name": "setInstance",
+     "use_case": "R10"
+    },
+    {
+     "name": "setLinkend",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10",
+    "R11"
+   ]
+  },
+  {
+   "name": "Link",
+   "kind": "class",
+   "attributes": [
+    "association"
+   ],
+   "methods": [
+    {
+     "name": "setAssociation",
+     "use_case": "R12"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Linkend",
+   "kind": "class",
+   "attributes": [
+    "link",
+    "instance"
+   ],
+   "methods": [
+    {
+     "name": "setLink",
+     "use_case": "R13"
+    },
+    {
+     "name": "setInstance",
+     "use_case": "R14"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R13",
+    "R14"
+   ]
+  },
+  {
+   "name": "ComponentInstance",
+   "kind": "class",
+   "attributes": [
+    "residents"
+   ],
+   "methods": [
+    {
+     "name": "addResident",
+     "use_case": "R15"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "NodeInstance",
+   "kind": "class",
+   "attributes": [
+    "componentInstances"
+   ],
+   "methods": [
+    {
+     "name": "addComponentInstance",
+     "use_case": "R16"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Instance",
+   "target": "Classifier",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Instance",
+   "target": "AttributeLink",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AttributeLink",
+   "target": "Instance",
+   "multiplicity_target": "1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "AttributeLink",
+   "target": "Linkend",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Link",
+   "target": "Association",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Linkend",
+   "target": "Link",
+   "multiplicity_target": "1",
+   "src": [
+    "R13"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Linkend",
+   "target": "Instance",
+   "multiplicity_target": "1",
+   "src": [
+    "R14"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "ComponentInstance",
+   "target": "NodeInstance",
+   "multiplicity_target": "1",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "NodeInstance",
+   "target": "ComponentInstance",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R16"
+   ]
+  }
+ ],
+ "python": "",
+ "java": {}
+}

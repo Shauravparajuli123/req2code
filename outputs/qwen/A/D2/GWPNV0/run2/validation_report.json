@@ -1,0 +1,49 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "R4",
+   "assumption": "A single 'Network' is associated with each 'Place'."
+  },
+  {
+   "tag": "R8",
+   "assumption": "A 'Network' can be composed of any number of 'Place' instances."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Place'",
+   "fix": "Add class 'Place' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Transition'",
+   "fix": "Add class 'Transition' to the model."
+  },
+  {
+   "agent": "class",
+   "issue": "Missing class for 'Network'",
+   "fix": "Add class 'Network' to the model."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'Transition' and 'Place' for R5",
+   "fix": "Add a relationship from 'Transition' to 'Place'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'Transition' and 'Network' for R6",
+   "fix": "Add a relationship from 'Transition' to 'Network'."
+  },
+  {
+   "agent": "relationship",
+   "issue": "Missing relationship between 'Place' and 'Network' for R7",
+   "fix": "Add a relationship from 'Place' to 'Network'."
+  }
+ ]
+}

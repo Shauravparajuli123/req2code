@@ -1,0 +1,201 @@
+{
+ "case": "D2/WfMC",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "WorkflowProcessDefinition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "participantSpecifications",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addSpecification",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R8",
+    "R15"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Specification",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "processDefinition",
+     "type": "String",
+     "src": [
+      "R15"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R15"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "ProcessDefinition",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "processActivities",
+     "type": "String",
+     "src": [
+      "R17"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "addProcessActivity",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R7",
+    "R17"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ProcessActivity",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R13"
+     ]
+    },
+    {
+     "name": "processDefinition",
+     "type": "String",
+     "src": [
+      "R17"
+     ]
+    },
+    {
+     "name": "relevantData",
+     "type": "String",
+     "src": [
+      "R18"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addRelevantData",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R13",
+    "R16",
+    "R17",
+    "R18",
+    "R19"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "TransitionInformation",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "targetProcessActivity",
+     "type": "String",
+     "src": [
+      "R21"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "setTargetProcessActivity",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R20",
+    "R21"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C1",
+   "target": "C5",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is composed of",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R17"
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that 'WorkflowProcessDefinition' is the main class representing a workflow process definition in the WfMC model, and it has the relationship with 'TransitionInformation' as a composition."
+  }
+ ],
+ "open_tags": []
+}

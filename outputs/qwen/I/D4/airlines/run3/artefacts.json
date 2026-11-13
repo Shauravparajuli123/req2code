@@ -1,0 +1,107 @@
+{
+ "actors": [
+  "Airline",
+  "Airport"
+ ],
+ "use_cases": [
+  {
+   "name": "OperateInAirport",
+   "actor": "Airline",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "StartOperation",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "StopOperation",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "UpdateOperatingCost",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airline",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "operations"
+   ],
+   "methods": [
+    {
+     "name": "startOperation",
+     "use_case": "R4"
+    },
+    {
+     "name": "stopOperation",
+     "use_case": "R4"
+    },
+    {
+     "name": "updateOperatingCost",
+     "use_case": "R4"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4"
+   ]
+  },
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "code",
+    "city"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "OperatingCost",
+   "kind": "class",
+   "attributes": [
+    "cost",
+    "airline",
+    "airport"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Airline",
+   "target": "OperatingCost",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3",
+    "R5"
+   ]
+  }
+ ],
+ "python": "from typing import Optional\n\nclass Airline:\n    def __init__(self, name: str):\n        self.name = name\n        self.operation = {}  # type: dict[Airport, OperatingCost]\n\nclass Airport:\n    def __init__(self, code: str, city: str):\n        self.code = code\n        self.city = city\n\nclass OperatingCost:\n    def __init__(self, cost: float):\n        self.cost = cost\n\n    def update_cost(self, new_cost: float) -> None:\n        raise NotImplementedError\n\n    def start_operation(self) -> None:\n        raise NotImplementedError\n\n    def stop_operation(self) -> None:\n        raise NotImplementedError\n\n    def get_cost(self) -> float:\n        raise NotImplementedError",
+ "java": {}
+}

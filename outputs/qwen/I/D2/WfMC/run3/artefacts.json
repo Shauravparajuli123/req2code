@@ -1,0 +1,208 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "Implement WorkflowApplicationDeclaration",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "WorkflowProcessDefinition",
+   "kind": "class",
+   "attributes": [
+    "participantSpecifications",
+    "applicationDeclarations",
+    "transitionDefinitions"
+   ],
+   "methods": [
+    {
+     "name": "addParticipantSpecification",
+     "use_case": "R7"
+    },
+    {
+     "name": "addApplicationDeclaration",
+     "use_case": "R8"
+    },
+    {
+     "name": "addTransitionDefinition",
+     "use_case": "R9"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8",
+    "R9"
+   ]
+  },
+  {
+   "name": "WorkflowApplicationDeclaration",
+   "kind": "class",
+   "attributes": [
+    "relevantData"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "Specification",
+   "kind": "class",
+   "attributes": [
+    "processDefinition"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "name": "ProcessDefinition",
+   "kind": "class",
+   "attributes": [
+    "processActivities"
+   ],
+   "methods": [
+    {
+     "name": "addProcessActivity",
+     "use_case": "R17"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R15",
+    "R17"
+   ]
+  },
+  {
+   "name": "ProcessActivity",
+   "kind": "class",
+   "attributes": [
+    "processDefinition",
+    "relevantData"
+   ],
+   "methods": [
+    {
+     "name": "setProcessDefinition",
+     "use_case": "R17"
+    },
+    {
+     "name": "addRelevantData",
+     "use_case": "R18"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R17",
+    "R18"
+   ]
+  },
+  {
+   "name": "TransitionInformation",
+   "kind": "class",
+   "attributes": [
+    "targetProcessActivity"
+   ],
+   "methods": [
+    {
+     "name": "setTargetProcessActivity",
+     "use_case": "R21"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R21"
+   ]
+  },
+  {
+   "name": "WfMc",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Workflow",
+   "kind": "class",
+   "attributes": [
+    "specification"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10",
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "WorkflowProcessDefinition",
+   "target": "Specification",
+   "multiplicity_target": "1",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Specification",
+   "target": "ProcessDefinition",
+   "multiplicity_target": "1",
+   "src": [
+    "R15"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ProcessDefinition",
+   "target": "ProcessActivity",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R17"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "WorkflowApplicationDeclaration",
+   "target": "ProcessActivity",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "WorkflowProcessDefinition",
+   "target": "TransitionInformation",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R20"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "TransitionInformation",
+   "target": "ProcessActivity",
+   "multiplicity_target": "1",
+   "src": [
+    "R21"
+   ]
+  }
+ ],
+ "python": "from abc import ABC, abstractmethod\n\nclass WorkflowApplicationDeclaration:\n    pass\n\nclass InterfaceForWorkflow:\n    pass\n\nclass WorkflowData:\n    pass\n\nclass WfMc:\n    pass\n\nclass WorkflowState(ABC):\n    @abstractmethod\ndef collaborate_with_WorkflowProcessActivity(self, activity):\n        pass\n\nclass WorkflowProcessDefinition:\n    def __init__(self, participant_specifications: list):\n        self.participant_specifications = participant_specifications\n\nclass Workflow:\n    def __init__(self, specification: Specification):\n        self.specification = specification\n\nclass WorkflowProcessActivity:\n    def __init__(self, process_definition: ProcessDefinition):\n        self.process_definition = process_definition\n\nclass ProcessDefinition:\n    def __init__(self, workflow_process_definition: WorkflowProcessDefinition):\n        self.workflow_process_definition = workflow_process_definition\n\nclass Specification:\n    def __init__(self, process_activities: list = [], process_definition: ProcessDefinition = None):\n        self.process_activities = process_activities\n        self.process_definition = process_definition\n\nclass TransitionInformation:\n    def __init__(self, workflow_process_activity: WorkflowProcessActivity):\n        self.workflow_process_activity = workflow_process_activity\n\nclass Concrete(Workflow):\n    pass\n\nclass ProcessActivity:\n    pass\n\nclass ProcessDefinition:\n    pass\n\nclass Specification:\n    pass\n\nclass WfMc:\n    pass\n\nclass Workflow:\n    pass\n\nclass WorkflowProcessDefinition:\n    pass\n\nclass WorkflowProcessActivity:\n    pass\n\nclass TransitionInformation:\n    pass",
+ "java": {}
+}

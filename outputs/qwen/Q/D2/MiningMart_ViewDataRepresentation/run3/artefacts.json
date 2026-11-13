@@ -1,0 +1,106 @@
+{
+ "actors": [
+  "none"
+ ],
+ "use_cases": [
+  {
+   "name": "none",
+   "actor": "none",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "ModelElement",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Class",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "DataType",
+   "kind": "class",
+   "attributes": [
+    "attribute"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Attribute",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "class"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Class",
+   "target": "Attribute",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "DataType",
+   "target": "Attribute",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Attribute",
+   "target": "Class",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass ModelElement:\n    def __init__(self):\n        pass\n    def __str__(self) -> str:\n        raise NotImplementedError()\n\nclass Classifier:\n    def __init__(self, name: str):\n        self.name = name\n    def __str__(self) -> str:\n        raise NotImplementedError()\n\nclass Class:\n    def __init__(self, name: str):\n        self.name = name\n        self.attributes: List[Attribute] = []\n    def __str__(self) -> str:\n        raise NotImplementedError()\n\nclass DataType:\n    def __init__(self, attribute: Attribute):\n        self.attribute = attribute\n    def __str__(self) -> str:\n        raise NotImplementedError()\n\nclass Attribute:\n    def __init__(self, name: str, class_: Class):\n        self.name = name\n        self.class_ = class_\n    def __str__(self) -> str:\n        raise NotImplementedError()",
+ "java": {}
+}

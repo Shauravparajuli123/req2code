@@ -1,0 +1,137 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Agency {
+  +deleteAccount()
+  +changeData()
+  +viewReport()
+  +editComment()
+}
+class Tourist {
+  name : String
+  account : String
+  id : int
+  area : String
+  +viewDetails()
+  +enableDisableAccount()
+  +search()
+  +changeData()
+  +deleteAccount()
+}
+class Account {
+  isActive : boolean
+  +changeData()
+}
+class CulturalHeritage {
+  name : String
+  details : String
+  +delete()
+  +changeData()
+  +search()
+  +viewDetails()
+}
+class RefreshmentPoint {
+  name : String
+  details : String
+  +delete()
+  +changeData()
+  +search()
+  +viewDetails()
+  +viewHistory()
+  +checkPoint()
+  +insertBanner()
+  +deleteBanner()
+}
+class UseCase {
+}
+class BannerAd {
+  +changeImage()
+}
+class News {
+  +insertNews()
+  +deleteNews()
+  +changeData()
+}
+class Feedback {
+  touristId : int
+  siteId : int
+  +viewFeedback()
+  +viewReport()
+  +editComment()
+  +insertFeedback()
+}
+class Game {
+  name : String
+  +createGame()
+}
+class SearchTag {
+  +removeSearchTag()
+  +insertTagSearch()
+  +askSearchTag()
+}
+class User {
+  +ensureUser()
+  +supplyLogin()
+  +endSession()
+}
+class RestaurantOperator {
+  +insertBanner()
+  +changeImage()
+  +deleteBannerAd()
+  +createGame()
+}
+class Restaurant {
+}
+class Menu {
+  name : String
+  +editMenu()
+}
+enum Day {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+}
+class SearchPreference {
+  +editPreferences()
+}
+class Bookmark {
+  +insertBookmark()
+  +removeBookmark()
+}
+class Comment {
+  text : String
+  siteId : int
+  +editComment()
+}
+class Gps {
+  position : String
+}
+class AdvancedSearch {
+  criteria : String
+}
+class Site {
+  id : int
+  name : String
+}
+Agency "1" -- "1..*" UseCase : activates
+Agency "1" -- "0..*" Tourist : manages
+Tourist "1" -- "1" Account : has
+Agency "1" -- "0..*" RefreshmentPoint : manages
+Agency "1" -- "0..*" CulturalHeritage : manages
+Agency "1" -- "0..*" Game : manages
+Feedback "1" -- "1" Comment : has
+Restaurant "1" -- "1..*" Menu : has
+Tourist "1" -- "0..*" Feedback : issues
+Tourist "1" -- "0..*" Bookmark : has
+RestaurantOperator "1" -- "1..*" Agency : concludes
+Restaurant "1" -- "1..*" Day : has
+Restaurant "1" -- "1..*" RefreshmentPoint : has
+Tourist "1" -- "1" SearchPreference : has
+Restaurant "1" -- "1..*" UseCase : requires
+Tourist "1" -- "1..*" UseCase : uses
+User "1" -- "1" Feedback : has
+@enduml

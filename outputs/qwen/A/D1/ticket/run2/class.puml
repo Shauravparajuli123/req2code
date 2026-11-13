@@ -1,0 +1,65 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class User {
+  name : String
+  dateOfBirth : LocalDate
+  email : String
+  address : String
+  preferences : String
+  paymentDetails : String
+  personalInformation : String
+  favoriteArtists : String
+  favoriteEvents : String
+  +savePersonalInformation()
+  +savePaymentDetails()
+  +fillOutSurvey()
+  +seePersonalizedContent()
+  +editPersonalInformation()
+  +changePassword()
+  +seeTicketOrderHistory()
+  +seeUpcomingEvents()
+  +favoriteArtistsAndEvents()
+}
+class Visitor {
+  name : String
+  email : String
+  +readAboutEvent()
+  +buyTicketsDirectly()
+  +purchaseTicket()
+  +searchEvents()
+  +clickOnEvent()
+  +findEventInformation()
+  +seeUpcomingEventsCalendar()
+  +seePopularEvents()
+}
+class Reseller {
+  bankAccount : String
+  +resellTicket()
+  +uploadDigitalTicket()
+}
+class Company {
+  +validateTickets()
+  +deductServiceFee()
+  +avoidFraud()
+}
+class Event {
+  name : String
+  date : LocalDate
+  artist : String
+  venue : String
+  genre : String
+  price : double
+  seats : String
+  description : String
+  linkToMusicPlatforms : String
+  +seeAvailableSeats()
+  +seeTypesOfTickets()
+  +addTicketToShoppingCart()
+  +seeOrderSummary()
+  +seePaymentMethods()
+}
+Visitor "0..*" -- "1" Event : buys
+Reseller "1" -- "1" Event : sells
+Company "1" -- "1" Event : hosts
+@enduml

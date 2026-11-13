@@ -1,0 +1,198 @@
+{
+ "case": "D4/uni",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Student",
+   "src": []
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Course",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1",
+      "R2"
+     ]
+    },
+    {
+     "name": "credits",
+     "type": "int",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "professors",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "students",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addProfessor",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addStudent",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R5"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Dormitory",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "price",
+     "type": "double",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "students",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M3",
+     "name": "addStudent",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Professor",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "teachCourse",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Student",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3",
+      "R5"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "enrollInCourse",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "has",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "5",
+   "mult_target": "0..*",
+   "label": "aggregates",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C2",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1..4",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The model assumes that the relationship between Flight and Passenger is one-to-many, as indicated by the multiplicity constraint '0..*..1'."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Requirement R3 (An airplane has a name which is of type string) is not represented in the model.",
+   "fix": "Add a class 'Airplane' with an attribute 'name' of type String."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Requirement R6 (Each airport has multiple flights that depart from it. Each flight can depart from only one airport) is not represented in the model.",
+   "fix": "Add a use case that ensures the relationship between Airport and Flight is correct."
+  },
+  {
+   "agent": "use_case",
+   "issue": "Requirement R7 (A flight in an Airpline Domain has a unique time of departure and that timing is specific for that flight) is not represented in the model.",
+   "fix": "Add a use case that ensures the uniqueness of the departure time for each flight."
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "TemplateExp",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "ObjectTemplateExp",
+   "kind": "class",
+   "attributes": [
+    "propertyTemplateItems"
+   ],
+   "methods": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "CollectionTemplateExp",
+   "kind": "class",
+   "attributes": [
+    "oclExpressions"
+   ],
+   "methods": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "PropertyTemplateItem",
+   "kind": "class",
+   "attributes": [
+    "objectContainer",
+    "referredProperty"
+   ],
+   "methods": [],
+   "src": [
+    "R9",
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "source": "PropertyTemplateItem",
+   "target": "ObjectTemplateExp",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "source": "TemplateExp",
+   "target": "ObjectTemplateExp",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "source": "CollectionTemplateExp",
+   "target": "TemplateExp",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "source": "ObjectTemplateExp",
+   "target": "PropertyTemplateItem",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "\"\"\"Code skeleton generated from the shared model of D2/QVT.\nEvery class and method records the requirement(s) it traces to.\"\"\"\nfrom __future__ import annotations\n\nimport dataclasses as _dc\nimport enum as _enum\nimport typing as _t\n\n\n@_dc.dataclass\nclass TemplateExp:\n    \"\"\"Source: R1\"\"\"\n    objectTemplateExp: _t.Optional[\"ObjectTemplateExp\"] = None\n\n\n@_dc.dataclass\nclass ObjectTemplateExp:\n    \"\"\"Source: R2\"\"\"\n    propertyTemplateItems: _t.Optional[str] = None\n\n\n@_dc.dataclass\nclass CollectionTemplateExp:\n    \"\"\"Source: R3\"\"\"\n    oclExpressions: _t.Optional[str] = None\n    templateExp: _t.Optional[\"TemplateExp\"] = None\n\n\n@_dc.dataclass\nclass PropertyTemplateItem:\n    \"\"\"Source: R9, R10\"\"\"\n    objectContainer: _t.Optional[str] = None\n    referredProperty: _t.Optional[str] = None\n    objectTemplateExp: _t.Optional[\"ObjectTemplateExp\"] = None\n",
+ "java": {
+  "TemplateExp.java": "/** Generated from shared model D2/QVT. Source: R1 */\npublic class TemplateExp {\n    private ObjectTemplateExp objectTemplateExp;\n}\n",
+  "ObjectTemplateExp.java": "/** Generated from shared model D2/QVT. Source: R2 */\npublic class ObjectTemplateExp {\n    private java.lang.String propertyTemplateItems;\n}\n",
+  "CollectionTemplateExp.java": "/** Generated from shared model D2/QVT. Source: R3 */\npublic class CollectionTemplateExp {\n    private java.lang.String oclExpressions;\n    private TemplateExp templateExp;\n}\n",
+  "PropertyTemplateItem.java": "/** Generated from shared model D2/QVT. Source: R9, R10 */\npublic class PropertyTemplateItem {\n    private java.lang.String objectContainer;\n    private java.lang.String referredProperty;\n    private ObjectTemplateExp objectTemplateExp;\n}\n"
+ }
+}

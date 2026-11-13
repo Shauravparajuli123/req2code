@@ -1,0 +1,169 @@
+{
+ "actors": [
+  "developer"
+ ],
+ "use_cases": [
+  {
+   "name": "none",
+   "actor": "developer",
+   "src": []
+  }
+ ],
+ "classes": [
+  {
+   "name": "Project",
+   "kind": "class",
+   "attributes": [
+    "identifier",
+    "artifactIdentifier",
+    "description"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "BuildConfiguration",
+   "kind": "class",
+   "attributes": [
+    "defaultGoal",
+    "path"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "MailingList",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "subscribeString",
+    "archiveString"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "Resource",
+   "kind": "class",
+   "attributes": [
+    "targetPath",
+    "directory",
+    "excludes"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Person",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "url",
+    "organizationUrl",
+    "timeZone"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "Developer",
+   "kind": "class",
+   "attributes": [
+    "identifier"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "MavenProject",
+   "kind": "class",
+   "attributes": [
+    "contributors"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "name": "MailingList",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "BuildConfiguration",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "name": "Resource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "MavenProject",
+   "target": "MailingList",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "MavenProject",
+   "target": "BuildConfiguration",
+   "multiplicity_target": "1",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "BuildConfiguration",
+   "target": "Resource",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R10"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Project:\n    def __init__(self, identifier: str, artifactIdentifier: str, description: str):\n        self.identifier = identifier\n        self.artifactIdentifier = artifactIdentifier\n        self.description = description\n\n    def __str__(self) -> str:\n        return f'Project(identifier={self.identifier}, artifactIdentifier={self.artifactIdentifier}, description={self.description})'\n\n    src = 'R1'\n\nclass BuildConfiguration:\n    def __init__(self, defaultGoal: str, path: str):\n        self.defaultGoal = defaultGoal\n        self.path = path\n\n    def __str__(self) -> str:\n        return f'BuildConfiguration(defaultGoal={self.defaultGoal}, path={self.path})'\n\n    src = 'R2'\n\nclass MailingList:\n    def __init__(self, name: str, subscribeString: str, archiveString: str):\n        self.name = name\n        self.subscribeString = subscribeString\n        self.archiveString = archiveString\n\n    def __str__(self) -> str:\n        return f'MailingList(name={self.name}, subscribeString={self.subscribeString}, archiveString={self.archiveString})'\n\n    src = 'R4'\n\nclass Resource:\n    def __init__(self, targetPath: str, directory: str, excludes: str):\n        self.targetPath = targetPath\n        self.directory = directory\n        self.excludes = excludes\n\n    def __str__(self) -> str:\n        return f'Resource(targetPath={self.targetPath}, directory={self.directory}, excludes={self.excludes})'\n\n    src = 'R3'\n\nclass Person:\n    def __init__(self, name: str, url: str, organizationUrl: str, timeZone: str):\n        self.name = name\n        self.url = url\n        self.organizationUrl = organizationUrl\n        self.timeZone = timeZone\n\n    def __str__(self) -> str:\n        return f'Person(name={self.name}, url={self.url}, organizationUrl={self.organizationUrl}, timeZone={self.timeZone})'\n\n    src = 'R5'\n\nclass Developer:\n    def __init__(self, identifier: str):\n        self.identifier = identifier\n\n    def __str__(self) -> str:\n        return f'Developer(identifier={self.identifier})'\n\n    src = 'R6'\n\nclass MavenProject:\n    def __init__(self, contributors: List[Person]):\n        self.contributors = contributors\n\n    def __str__(self) -> str:\n        return f'MavenProject(contributors={self.contributors})'\n\n    src = 'R7'\n",
+ "java": {}
+}

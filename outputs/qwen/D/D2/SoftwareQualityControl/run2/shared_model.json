@@ -1,0 +1,182 @@
+{
+ "case": "D2/SoftwareQualityControl",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "User",
+   "src": [
+    "R5",
+    "R3",
+    "R8"
+   ]
+  }
+ ],
+ "use_cases": [
+  {
+   "id": "UC1",
+   "name": "Track Bug",
+   "actor": "A1",
+   "src": [
+    "R5"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  },
+  {
+   "id": "UC2",
+   "name": "Link Control To Sequence",
+   "actor": "A1",
+   "src": [
+    "R3",
+    "R8"
+   ],
+   "includes": [],
+   "extends": [],
+   "tags": []
+  }
+ ],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Date",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "day",
+     "type": "int",
+     "src": []
+    },
+    {
+     "name": "year",
+     "type": "int",
+     "src": []
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Bug",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "number",
+     "type": "int",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "originator",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "comments",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "closeDate",
+     "type": "java.time.LocalDate",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R12"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Control",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "type",
+     "type": "String",
+     "src": [
+      "R10"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "linkControlToSequence",
+     "realizes": "UC2",
+     "src": [
+      "R3",
+      "R8"
+     ]
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "ControlsSequence",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2",
+    "R3",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Architecture",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R11"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "association",
+   "source": "C3",
+   "target": "C4",
+   "mult_source": "1",
+   "mult_target": "1..*",
+   "label": "belongs to",
+   "src": [
+    "R7",
+    "R8"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

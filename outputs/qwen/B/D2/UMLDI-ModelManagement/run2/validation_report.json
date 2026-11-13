@@ -1,0 +1,42 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [
+  "R2 (coordination, \"and+or\"): readings ['Each model element contains a name and a boolean value that states whether or not the model element is a specification.', 'Each model element contains a name and a boolean value that states whether or not the model element is a specification, and a boolean value that states whether or not the model element is a core model.']",
+  "R3 (referential, \"it\"): readings ['In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract.', 'In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract, and a boolean value that states whether the element is a core model.']",
+  "R3 (coordination, \"modifier scope: root (relative clause)\"): readings ['In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract.', 'In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract, and a boolean value that states whether the element is a core model.']",
+  "R10 (quantifier, \"zero or many\"): readings ['Each element is linked to zero or many generalizations.', 'Each element is linked to one or more generalizations.']"
+ ],
+ "assumptions": [
+  {
+   "tag": "R2 (coord+or)",
+   "assumption": "Each model element contains a name and a boolean value that states whether or not the model element is a specification."
+  },
+  {
+   "tag": "R3 (coord+or)",
+   "assumption": "In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract."
+  },
+  {
+   "tag": "R3 (refer+it)",
+   "assumption": "In a core model, a generalizable element contains two attributes: one that states whether the element is a root and another one that states whether it is abstract."
+  },
+  {
+   "tag": "R10 (quantifier)",
+   "assumption": "Each element is linked to zero or many generalizations."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "CoreModel does not contain elements directly, but contains generalizations, classifiers, namespaces, and features.",
+   "fix": "Add association CoreModel -> Element [1..0..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between CoreModel and Generalization is not correctly specified. It should be CoreModel -> Generalization [1..0..*] and Generalization -> CoreModel [0..*..1].",
+   "fix": "Correct the relationship direction and multiplicity."
+  }
+ ]
+}

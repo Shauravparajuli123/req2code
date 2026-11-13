@@ -1,0 +1,186 @@
+{
+ "case": "D4/uni",
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Course",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R1",
+      "R2"
+     ]
+    },
+    {
+     "name": "credits",
+     "type": "int",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "addProfessor",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M2",
+     "name": "addStudent",
+     "realizes": null,
+     "src": []
+    },
+    {
+     "id": "M3",
+     "name": "createCourse",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Professor",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M4",
+     "name": "teachCourse",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Student",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R5",
+      "R6"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M5",
+     "name": "enrollInCourse",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "Dormitory",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "price",
+     "type": "double",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M6",
+     "name": "accommodateStudent",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [
+    "NAME____CAPACITY____TYPE____ENUM____LITERALS_____ONE____TWO____THREE____FOUR_____SRC_____R7"
+   ],
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "aggregation",
+   "source": "C1",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "association",
+   "source": "C1",
+   "target": "C2",
+   "mult_source": "1",
+   "mult_target": "0..*",
+   "label": "has",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "association",
+   "source": "C4",
+   "target": "C3",
+   "mult_source": "1",
+   "mult_target": "1..4",
+   "label": "has",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "association",
+   "source": "C1",
+   "target": "C4",
+   "mult_source": "0..*",
+   "mult_target": "0..*",
+   "label": "can be located in",
+   "src": []
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

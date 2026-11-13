@@ -1,0 +1,77 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CommunicationLink",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "sourceNode"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Deployment",
+   "kind": "class",
+   "attributes": [
+    "executionEnvironment"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Specification",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Deployment",
+   "target": "CommunicationLink",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Specification",
+   "target": "Node",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Node:\n    def __init__(self, name: str):\n        self.name: str = name\n\nclass ExecutionEnvironment:\n    pass\nclass CommunicationLink:\n    def __init__(self, name: str, source_node: Optional[Node] = None):\n        self.name: str = name\n        self.source_node: Optional[Node] = source_node\nclass Specification:\n    def __init__(self):\n        self.nodes: List[Node] = []\nclass Deployment:\n    def __init__(self):\n        self.execution_environment: Optional[ExecutionEnvironment] = None\n        self.communication_links: List[CommunicationLink] = []\n",
+ "java": {}
+}

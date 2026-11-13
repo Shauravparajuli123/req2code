@@ -1,0 +1,481 @@
+{
+ "actors": [
+  "customer",
+  "employee"
+ ],
+ "use_cases": [
+  {
+   "name": "Maintain Company Records",
+   "actor": "employee",
+   "src": [
+    "FR-CM-01",
+    "FR-CM-03",
+    "FR-CM-04",
+    "FR-CM-05",
+    "FR-CM-06",
+    "FR-CM-07",
+    "FR-CM-08"
+   ]
+  },
+  {
+   "name": "Maintain Employee Records",
+   "actor": "employee",
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02",
+    "FR-EM-03",
+    "FR-EM-04",
+    "FR-EM-05"
+   ]
+  },
+  {
+   "name": "Maintain Product Catalog",
+   "actor": "employee",
+   "src": [
+    "FR-PM-01",
+    "FR-PM-02",
+    "FR-PM-03",
+    "FR-PM-04",
+    "FR-PM-05",
+    "FR-PM-06",
+    "FR-PM-07"
+   ]
+  },
+  {
+   "name": "Maintain Stock Takes",
+   "actor": "employee",
+   "src": [
+    "FR-IM-01",
+    "FR-IM-02",
+    "FR-IM-03"
+   ]
+  },
+  {
+   "name": "Record Customer Orders",
+   "actor": "employee",
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-02",
+    "FR-SOP-03",
+    "FR-SOP-04",
+    "FR-SOP-05",
+    "FR-SOP-06",
+    "FR-SOP-07",
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "name": "Manage Purchase Orders",
+   "actor": "employee",
+   "src": [
+    "FR-POP-01",
+    "FR-POP-02",
+    "FR-POP-03",
+    "FR-POP-04",
+    "FR-POP-05",
+    "FR-POP-06",
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Company",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "phoneNumbers",
+    "addressDetails",
+    "state",
+    "zipCode",
+    "website",
+    "taxStatus",
+    "companyType",
+    "contacts"
+   ],
+   "methods": [
+    {
+     "name": "addContact",
+     "use_case": "FR-CM-07"
+    },
+    {
+     "name": "removeContact",
+     "use_case": "FR-CM-07"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-CM-03",
+    "FR-CM-04",
+    "FR-CM-05",
+    "FR-CM-06",
+    "FR-CM-07",
+    "FR-CM-08"
+   ]
+  },
+  {
+   "name": "Contact",
+   "kind": "class",
+   "attributes": [
+    "firstName",
+    "lastName",
+    "primaryPhoneNumber",
+    "secondaryPhoneNumber",
+    "email",
+    "jobTitle",
+    "notes"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-08"
+   ]
+  },
+  {
+   "name": "Employee",
+   "kind": "class",
+   "attributes": [
+    "firstName",
+    "lastName",
+    "phoneNumbers",
+    "jobTitle",
+    "email",
+    "privileges",
+    "supervisor"
+   ],
+   "methods": [
+    {
+     "name": "assignSupervisor",
+     "use_case": "FR-EM-03"
+    },
+    {
+     "name": "removeSupervisor",
+     "use_case": "FR-EM-03"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-EM-01",
+    "FR-EM-02",
+    "FR-EM-04",
+    "FR-EM-05"
+   ]
+  },
+  {
+   "name": "Product",
+   "kind": "class",
+   "attributes": [
+    "productCode",
+    "name",
+    "description",
+    "price",
+    "category",
+    "unitCost",
+    "retailPrice",
+    "reorderLevel",
+    "targetLevel",
+    "minReorderQuantity",
+    "discontinued"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-PM-01",
+    "FR-PM-02",
+    "FR-PM-03",
+    "FR-PM-04",
+    "FR-PM-05",
+    "FR-PM-06",
+    "FR-PM-07"
+   ]
+  },
+  {
+   "name": "ProductCategory",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "code",
+    "description",
+    "image"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-PM-06"
+   ]
+  },
+  {
+   "name": "Order",
+   "kind": "class",
+   "attributes": [
+    "orderDate",
+    "customer",
+    "employee",
+    "status",
+    "shipper",
+    "taxStatus",
+    "invoiceDate",
+    "paymentMethod",
+    "paymentDate"
+   ],
+   "methods": [
+    {
+     "name": "addOrderDetail",
+     "use_case": "FR-SOP-08"
+    },
+    {
+     "name": "removeOrderDetail",
+     "use_case": "FR-SOP-08"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-SOP-01",
+    "FR-SOP-02",
+    "FR-SOP-03",
+    "FR-SOP-04",
+    "FR-SOP-05",
+    "FR-SOP-06",
+    "FR-SOP-07",
+    "FR-SOP-08",
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "name": "OrderDetailItem",
+   "kind": "class",
+   "attributes": [
+    "product",
+    "quantity",
+    "unitPrice",
+    "discount",
+    "status"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-SOP-09",
+    "FR-SOP-10"
+   ]
+  },
+  {
+   "name": "PurchaseOrder",
+   "kind": "class",
+   "attributes": [
+    "orderDate",
+    "vendor",
+    "employee",
+    "status"
+   ],
+   "methods": [
+    {
+     "name": "addPurchaseOrderDetail",
+     "use_case": "FR-POP-07"
+    },
+    {
+     "name": "removePurchaseOrderDetail",
+     "use_case": "FR-POP-07"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "FR-POP-01",
+    "FR-POP-02",
+    "FR-POP-03",
+    "FR-POP-04",
+    "FR-POP-05",
+    "FR-POP-06",
+    "FR-POP-07",
+    "FR-POP-08"
+   ]
+  },
+  {
+   "name": "PurchaseOrderDetailItem",
+   "kind": "class",
+   "attributes": [
+    "product",
+    "quantity",
+    "unitPrice"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-POP-08"
+   ]
+  },
+  {
+   "name": "PhoneNumber",
+   "kind": "class",
+   "attributes": [
+    "number"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-03",
+    "FR-EM-01"
+   ]
+  },
+  {
+   "name": "State",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-05"
+   ]
+  },
+  {
+   "name": "TaxStatus",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-06"
+   ]
+  },
+  {
+   "name": "UnitPrice",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-PM-03",
+    "FR-SOP-06"
+   ]
+  },
+  {
+   "name": "Customer",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-SOP-01"
+   ]
+  },
+  {
+   "name": "Shippers",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-CM-02"
+   ]
+  },
+  {
+   "name": "Vendor",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "FR-POP-02"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Company",
+   "target": "Contact",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-CM-07"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Employee",
+   "target": "Employee",
+   "multiplicity_target": "0..1",
+   "src": [
+    "FR-EM-03"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Order",
+   "target": "Customer",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-SOP-02"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Order",
+   "target": "Employee",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-SOP-03"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Order",
+   "target": "Shippers",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-SOP-05"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Order",
+   "target": "TaxStatus",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-SOP-06"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Order",
+   "target": "OrderDetailItem",
+   "multiplicity_target": "0..*",
+   "src": [
+    "FR-SOP-08"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PurchaseOrder",
+   "target": "Vendor",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-POP-02"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PurchaseOrder",
+   "target": "Employee",
+   "multiplicity_target": "1",
+   "src": [
+    "FR-POP-03"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "PurchaseOrder",
+   "target": "PurchaseOrderDetailItem",
+   "multiplicity_target": "0..*",
+   "src": [
+    "FR-POP-07"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional, Union\n\nclass PhoneNumber:\n    def __init__(self, number: str):\n        self.number = number\n\nclass State:\n    pass\n\nclass TaxStatus:\n    pass\n\nclass UnitPrice:\n    def __init__(self, value: float):\n        self.value = value\n\nclass ProductCategory:\n    def __init__(self, name: str, code: str, description: str, image: Optional[str] = None):\n        self.name = name\n        self.code = code\n        self.description = description\n        self.image = image\n\nclass Product:\n    def __init__(self, product_code: str, name: str, description: str, price: UnitPrice, category: ProductCategory, unit_cost: UnitPrice, retail_price: UnitPrice, reorder_level: int, target_level: int, min_reorder_quantity: int, discontinued: bool):\n        self.product_code = product_code\n        self.name = name\n        self.description = description\n        self.price = price\n        self.category = category\n        self.unit_cost = unit_cost\n        self.retail_price = retail_price\n        self.reorder_level = reorder_level\n        self.target_level = target_level\n        self.min_reorder_quantity = min_reorder_quantity\n        self.discontinued = discontinued\n\nclass Company:\n    def __init__(self, name: str, phoneNumbers: List[PhoneNumber], addressDetails: str, state: State, zipCode: str, website: str, taxStatus: TaxStatus, companyType: str, contacts: List['Contact']):\n        self.name = name\n        self.phoneNumbers = phoneNumbers\n        self.addressDetails = addressDetails\n        self.state = state\n        self.zipCode = zipCode\n        self.website = website\n        self.taxStatus = taxStatus\n        self.companyType = companyType\n        self.contacts = contacts\n\n    def addContact(self, contact: 'Contact'):\n        raise NotImplementedError\n\n    def removeContact(self, contact: 'Contact'):\n        raise NotImplementedError\n\nclass Contact:\n    def __init__(self, firstName: str, lastName: str, primaryPhoneNumber: PhoneNumber, secondaryPhoneNumber: Optional[PhoneNumber] = None, email: str, jobTitle: str, notes: str):\n        self.firstName = firstName\n        self.lastName = lastName\n        self.primaryPhoneNumber = primaryPhoneNumber\n        self.secondaryPhoneNumber = secondaryPhoneNumber\n        self.email = email\n        self.jobTitle = jobTitle\n        self.notes = notes\n\nclass Employee:\n    def __init__(self, firstName: str, lastName: str, phoneNumbers: List[PhoneNumber], jobTitle: str, email: str, privileges: List[str], supervisor: Optional['Employee'] = None):\n        self.firstName = firstName\n        self.lastName = lastName\n        self.phoneNumbers = phoneNumbers\n        self.jobTitle = jobTitle\n        self.email = email\n        self.privileges = privileges\n        self.supervisor = supervisor\n\n    def assignSupervisor(self, supervisor: 'Employee'):\n        raise NotImplementedError\n\n    def removeSupervisor(self, supervisor: 'Employee'):\n        raise NotImplementedError\n\nclass Order:\n    def __init__(self, orderDate: str, customer: 'Customer', employee: 'Employee', status: str, shipper: 'Shippers', taxStatus: TaxStatus, invoiceDate: str, paymentMethod: str, paymentDate: str):\n        self.orderDate = orderDate\n        self.customer = customer\n        self.employee = employee\n        self.status = status\n        self.shipper = shipper\n        self.taxStatus = taxStatus\n        self.invoiceDate = invoiceDate\n        self.paymentMethod = paymentMethod\n        self.paymentDate = paymentDate\n\n    def addOrderDetail(self, orderDetailItem: 'OrderDetailItem'):\n        raise NotImplementedError\n\n    def removeOrderDetail(self, orderDetailItem: 'OrderDetailItem'):\n        raise NotImplementedError\n\nclass OrderDetailItem:\n    def __init__(self, product: Product, quantity: int, unitPrice: UnitPrice, discount: Optional[UnitPrice] = None, status: str = 'Pending'):\n        self.product = product\n        self.quantity = quantity\n        self.unitPrice = unitPrice\n        self.discount = discount\n        self.status = status\n\nclass PurchaseOrder:\n    def __init__(self, orderDate: str, vendor: 'Vendor', employee: 'Employee', status: str):\n        self.orderDate = orderDate\n        self.vendor = vendor\n        self.employee = employee\n        self.status = status\n\n    def addPurchaseOrderDetail(self, purchaseOrderDetailItem: 'PurchaseOrderDetailItem'):\n        raise NotImplementedError\n\n    def removePurchaseOrderDetail(self, purchaseOrderDetailItem: 'PurchaseOrderDetailItem'):\n        raise NotImplementedError\n\nclass PurchaseOrderDetailItem:\n    def __init__(self, product: Product, quantity: int, unitPrice: UnitPrice):\n        self.product = product\n        self.quantity = quantity\n        self.unitPrice = unitPrice\n",
+ "java": {}
+}

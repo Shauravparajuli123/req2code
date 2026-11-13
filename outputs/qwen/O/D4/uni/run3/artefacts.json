@@ -1,0 +1,109 @@
+{
+ "actors": [
+  "student"
+ ],
+ "use_cases": [
+  {
+   "name": "EnrollStudentInCourse",
+   "actor": "student",
+   "src": [
+    "R6",
+    "R5"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Course",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "credits",
+    "professors",
+    "students"
+   ],
+   "methods": [
+    {
+     "name": "addProfessor",
+     "use_case": "EnrollStudentInCourse"
+    },
+    {
+     "name": "addStudent",
+     "use_case": "EnrollStudentInCourse"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Dormitory",
+   "kind": "class",
+   "attributes": [
+    "price"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Professor",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R4"
+   ]
+  },
+  {
+   "name": "Student",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R6",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Course",
+   "target": "Student",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5",
+    "R6"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "Course",
+   "target": "Professor",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "python": "class Course:\n    def __init__(self, name, credits):\n        self.name = name\n        self.credits = credits\n        self.professors = []\n        self.students = []\n\n    def addProfessor(self, professor):\n        raise NotImplementedError\n\n    def addStudent(self, student):\n        raise NotImplementedError\nclass Dormitory:\n    def __init__(self, price):\n        self.price = price\nclass Professor:\n    def __init__(self, name):\n        self.name = name\nclass Student:\n    def __init__(self, name):\n        self.name = name",
+ "java": {}
+}

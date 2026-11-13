@@ -1,0 +1,100 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "PetriNet",
+   "src": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "Place",
+   "src": [
+    "R1",
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Transition",
+   "src": [
+    "R2",
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "Network",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "attributes": [
+  {
+   "owner": "PetriNet",
+   "name": "hasPlaces",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "owner": "PetriNet",
+   "name": "hasTransitions",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "owner": "Place",
+   "name": "destination",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "owner": "Transition",
+   "name": "destination",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "kind": "association",
+   "source": "PetriNet",
+   "target": "Place",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "kind": "association",
+   "source": "PetriNet",
+   "target": "Transition",
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "kind": "generalization",
+   "source": "Network",
+   "target": "PetriNet",
+   "src": [
+    "R3",
+    "R4"
+   ]
+  }
+ ],
+ "stage": "llm_hint"
+}

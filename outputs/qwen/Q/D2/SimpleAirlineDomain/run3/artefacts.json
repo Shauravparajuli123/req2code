@@ -1,0 +1,104 @@
+{
+ "actors": [
+  "Airport",
+  "Airline"
+ ],
+ "use_cases": [
+  {
+   "name": "AssignPassengerToFlight",
+   "actor": "Airline",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "name": "DepartFlight",
+   "actor": "Airport",
+   "src": [
+    "R6",
+    "R7"
+   ]
+  },
+  {
+   "name": "ManageFlights",
+   "actor": "Airline",
+   "src": [
+    "R9"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Flight",
+   "kind": "class",
+   "attributes": [
+    "departureTime",
+    "originAirport",
+    "maxPassengers"
+   ],
+   "methods": [
+    {
+     "name": "depart",
+     "use_case": "DepartFlight"
+    },
+    {
+     "name": "assignPassenger",
+     "use_case": "AssignPassengerToFlight"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R6",
+    "R7",
+    "R9"
+   ]
+  },
+  {
+   "name": "Passenger",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "gender"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "Flight",
+   "target": "Passenger",
+   "multiplicity_target": "1",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Airport",
+   "target": "Flight",
+   "multiplicity_target": "1",
+   "src": [
+    "R6"
+   ]
+  }
+ ],
+ "python": "from typing import List, Time\n\nclass Airport:\n    def __init__(self, name: str):\n        self.name = name\n    \n    def __str__(self):\n        return self.name\n\nclass Flight:\n    def __init__(self, departureTime: Time, originAirport: Airport, maxPassengers: int):\n        self.departureTime = departureTime\n        self.originAirport = originAirport\n        self.maxPassengers = maxPassengers\n        self.passengers: List[Passenger] = []\n\n    def depart(self) -> None:\n        raise NotImplementedError('Method not implemented')\n\n    def assignPassenger(self, passenger: Passenger) -> None:\n        raise NotImplementedError('Method not implemented')\n\nclass Passenger:\n    def __init__(self, name: str, gender: str):\n        self.name = name\n        self.gender = gender\n\n    def __str__(self):\n        return self.name\n",
+ "java": {}
+}

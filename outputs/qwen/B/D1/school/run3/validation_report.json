@@ -1,0 +1,52 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [
+  "R4 (incompleteness, \"information\"): readings ['any information related to my children']",
+  "R15 (incompleteness, \"any\"): readings ['any information related to my account']",
+  "R16 (incompleteness, \"information\"): readings ['the contact information of students attending my classes']"
+ ],
+ "assumptions": [
+  {
+   "tag": "R4 (incompleteness, \"information\"): readings ['any information related to my children']",
+   "assumption": "The model assumes that 'View Information' use case involves retrieving information related to the Guardian's children."
+  },
+  {
+   "tag": "R15 (incompleteness, \"any\"): readings ['any information related to my account']",
+   "assumption": "The model assumes that 'View Information' use case involves retrieving any information related to the Guardian's account."
+  },
+  {
+   "tag": "R16 (incompleteness, \"information\"): readings ['the contact information of students attending my classes']",
+   "assumption": "The model assumes that 'View Contact Information' use case involves retrieving the contact information of students attending the Teacher's classes."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Information' is not used in any relationship or method, and there is no corresponding use case or actor.",
+   "fix": "Remove class 'Information' or integrate it into existing classes."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Dlm' is not used in any relationship or method, and there is no corresponding use case or actor.",
+   "fix": "Remove class 'Dlm' or integrate it into existing classes."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Grade' is not used in any relationship or method, and there is no corresponding use case or actor.",
+   "fix": "Remove class 'Grade' or integrate it into existing classes."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Attendance' is not used in any relationship or method, and there is no corresponding use case or actor.",
+   "fix": "Remove class 'Attendance' or integrate it into existing classes."
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Behavior' is not used in any relationship or method, and there is no corresponding use case or actor.",
+   "fix": "Remove class 'Behavior' or integrate it into existing classes."
+  }
+ ]
+}

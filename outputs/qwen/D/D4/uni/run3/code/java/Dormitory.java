@@ -1,0 +1,15 @@
+/** Generated from shared model D4/uni. Source: R7, R8 */
+public class Dormitory {
+    private double price;
+    private java.lang.String students;
+
+    /** Operation. */
+    public void addStudent() {
+        throw new UnsupportedOperationException();
+    }
+
+    /** Operation. */
+    public void removeStudent() {
+        throw new UnsupportedOperationException();
+    }
+}

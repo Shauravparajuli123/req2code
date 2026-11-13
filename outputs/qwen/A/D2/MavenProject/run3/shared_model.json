@@ -1,0 +1,325 @@
+{
+ "case": "D2/MavenProject",
+ "actors": [
+  {
+   "id": "A1",
+   "name": "Moderator",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "use_cases": [],
+ "classes": [
+  {
+   "id": "C1",
+   "name": "Project",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "identifier",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "artifactIdentifier",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    },
+    {
+     "name": "description",
+     "type": "String",
+     "src": [
+      "R1"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "BuildConfiguration",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "defaultGoal",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    },
+    {
+     "name": "unitTestSourceDirectoryPath",
+     "type": "String",
+     "src": [
+      "R2"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M1",
+     "name": "associateWithResources",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Resource",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "targetPath",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "directory",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    },
+    {
+     "name": "excludes",
+     "type": "String",
+     "src": [
+      "R3"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "MailingList",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "subscribeString",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    },
+    {
+     "name": "archiveString",
+     "type": "String",
+     "src": [
+      "R4"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "id": "C5",
+   "name": "Person",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "name",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "url",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "organizationUrl",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    },
+    {
+     "name": "timeZone",
+     "type": "String",
+     "src": [
+      "R5"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "Developer",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "identifier",
+     "type": "int",
+     "src": [
+      "R6"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "Contribution",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "person",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "developer",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    }
+   ],
+   "methods": [
+    {
+     "id": "M2",
+     "name": "addContributor",
+     "realizes": null,
+     "src": []
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R7"
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "MavenProject",
+   "kind": "class",
+   "attributes": [
+    {
+     "name": "contributors",
+     "type": "String",
+     "src": [
+      "R7"
+     ]
+    },
+    {
+     "name": "mailingLists",
+     "type": "String",
+     "src": [
+      "R8"
+     ]
+    },
+    {
+     "name": "buildConfiguration",
+     "type": "String",
+     "src": [
+      "R9"
+     ]
+    }
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8",
+    "R9"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "id": "R1",
+   "kind": "composition",
+   "source": "C8",
+   "target": "C2",
+   "mult_source": "0..1",
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "id": "R2",
+   "kind": "aggregation",
+   "source": "C8",
+   "target": "C4",
+   "mult_source": null,
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "id": "R3",
+   "kind": "aggregation",
+   "source": "C8",
+   "target": "C3",
+   "mult_source": null,
+   "mult_target": "1",
+   "label": "has",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "id": "R4",
+   "kind": "generalization",
+   "source": "C5",
+   "target": "C6",
+   "mult_source": "1",
+   "mult_target": "1",
+   "label": "is a",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "assumptions": [],
+ "open_tags": []
+}

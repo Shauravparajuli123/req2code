@@ -1,0 +1,18 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Agent {
+  position : String
+  +occupyPosition()
+}
+class Position {
+  role : String
+}
+enum Role {
+  ACTOR
+  AGENT
+}
+Agent "1" -- "1" Position : occupies
+Position "0..*" -- "1" Role : covers
+Agent "1" *-- "1" Position : has
+@enduml

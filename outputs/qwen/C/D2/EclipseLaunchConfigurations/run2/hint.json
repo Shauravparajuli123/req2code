@@ -1,0 +1,132 @@
+{
+ "condition": "C",
+ "hint": {
+  "case": "D2/EclipseLaunchConfigurations",
+  "stage": "result1_before_ambiguity_removal",
+  "actors": [],
+  "use_cases": [],
+  "classes": [
+   {
+    "id": "C1",
+    "src": [
+     "R1",
+     "R9"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R1.s1",
+      "text": "A launch configuration has a type."
+     },
+     {
+      "sid": "R9.s1",
+      "text": "A launch configuration has zero or more attributes."
+     }
+    ],
+    "name": "LaunchConfiguration",
+    "freq": 2
+   },
+   {
+    "id": "C2",
+    "src": [
+     "R8",
+     "R12",
+     "R13"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "A list entry has a string value."
+     },
+     {
+      "sid": "R12.s1",
+      "text": "A list attribute has zero or more list entries."
+     },
+     {
+      "sid": "R13.s1",
+      "text": "A list entry is connected to one list attribute."
+     }
+    ],
+    "name": "ListEntry",
+    "freq": 3
+   },
+   {
+    "id": "C3",
+    "src": [
+     "R6",
+     "R10",
+     "R11"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R6.s1",
+      "text": "A map entry is a class."
+     },
+     {
+      "sid": "R10.s1",
+      "text": "A map attribute has zero or more map entries."
+     },
+     {
+      "sid": "R11.s1",
+      "text": "A map entry is connected to one map attribute."
+     }
+    ],
+    "name": "MapEntry",
+    "freq": 3
+   },
+   {
+    "id": "C4",
+    "src": [
+     "R3",
+     "R8"
+    ],
+    "rule": [
+     "noun_role"
+    ],
+    "evidence": [
+     {
+      "sid": "R3.s1",
+      "text": "A string attribute has a string value."
+     },
+     {
+      "sid": "R8.s1",
+      "text": "A list entry has a string value."
+     }
+    ],
+    "name": "StringValue",
+    "freq": 2
+   }
+  ],
+  "attributes": [],
+  "relations": [
+   {
+    "id": "REL1",
+    "src": [
+     "R8"
+    ],
+    "rule": [
+     "has_verb"
+    ],
+    "evidence": [
+     {
+      "sid": "R8.s1",
+      "text": "A list entry has a string value."
+     }
+    ],
+    "kind": "has",
+    "source": "ListEntry",
+    "target": "StringValue",
+    "multiplicity_target": null
+   }
+  ]
+ },
+ "open_tags": []
+}

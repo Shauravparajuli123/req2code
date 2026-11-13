@@ -1,0 +1,76 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "Node",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "CommunicationLink",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "sourceNode"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5",
+    "R8"
+   ]
+  },
+  {
+   "name": "Deployment",
+   "kind": "class",
+   "attributes": [
+    "executionEnvironment"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Specification",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Deployment",
+   "target": "CommunicationLink",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Specification",
+   "target": "Nodes",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import List\n\nclass Node:\n    def __init__(self, name: str):\n        self.name = name\n    \n    def __str__(self):\n        return self.name\n    \n    def __repr__(self):\n        return f'Node(name={self.name})'\n\nclass CommunicationLink:\n    def __init__(self, name: str, sourceNode: Node):\n        self.name = name\n        self.sourceNode = sourceNode\n    \n    def __str__(self):\n        return self.name\n    \n    def __repr__(self):\n        return f'CommunicationLink(name={self.name}, sourceNode={self.sourceNode})'\n\nclass ExecutionEnvironment:\n    pass\n\nclass Deployment:\n    def __init__(self, executionEnvironment: ExecutionEnvironment):\n        self.executionEnvironment = executionEnvironment\n        self.communicationLinks: List[CommunicationLink] = []\n    \n    def addCommunicationLink(self, link: CommunicationLink):\n        self.communicationLinks.append(link)\n    \n    def __str__(self):\n        return str(self.executionEnvironment)\n    \n    def __repr__(self):\n        return f'Deployment(executionEnvironment={self.executionEnvironment})'\n\nclass Specification:\n    pass",
+ "java": {}
+}

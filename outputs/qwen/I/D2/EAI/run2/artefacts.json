@@ -1,0 +1,88 @@
+{
+ "actors": [],
+ "use_cases": [],
+ "classes": [
+  {
+   "name": "FCMSource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "EAISource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "FCMSink",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "EAISink",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "EAIResource",
+   "kind": "class",
+   "attributes": [],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R5"
+   ]
+  },
+  {
+   "name": "EAIQueue",
+   "kind": "class",
+   "attributes": [
+    "maxLength"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": []
+  }
+ ],
+ "relations": [
+  {
+   "type": "association",
+   "source": "EAISink",
+   "target": "EAIResource",
+   "multiplicity_target": "1",
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "type": "association",
+   "source": "EAISource",
+   "target": "EAIResource",
+   "multiplicity_target": "1",
+   "src": [
+    "R7"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\npackage EAI:\nclass EAIResource:\n    pass\nclass FCMSink:\n    pass\nclass EAISink(FCMSink):\n    def __init__(self):\n        self.resources: List[Optional[EAIResource]] = []\nclass FCMSource:\n    pass\nclass EAISource(FCMSource):\n    def __init__(self):\n        self.resources: List[Optional[EAIResource]] = []\nclass EAIQueue:\n    def __init__(self, maxLength: int):\n        self.maxLength: int = maxLength\n",
+ "java": {}
+}

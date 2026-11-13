@@ -1,0 +1,103 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "DefineClassifier",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Classifier",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1",
+    "R3"
+   ]
+  },
+  {
+   "name": "PrimitiveDataType",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "name": "Class",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "parent"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "SimpleClass",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "type"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R8"
+   ]
+  },
+  {
+   "name": "Association",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "src"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4",
+    "R7"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "generalization",
+   "source": "PrimitiveDataType",
+   "target": "Classifier",
+   "multiplicity_target": "",
+   "src": [
+    "R3"
+   ]
+  },
+  {
+   "type": "generalization",
+   "source": "Type",
+   "target": "Classifier",
+   "multiplicity_target": "",
+   "src": [
+    "R8"
+   ]
+  }
+ ],
+ "python": "from typing import Type, Optional\n\nclass Classifier:\n    def __init__(self, name: str):\n        self.name = name\n\nclass PrimitiveDataType(Classifier):\n    def __init__(self, name: str):\n        super().__init__(name)\n\nclass Class:\n    def __init__(self, name: str, parent: Optional['Class'] = None):\n        self.name = name\n        self.parent = parent\nclass SimpleClass(Class):\n    def __init__(self, name: str, type: Classifier):\n        super().__init__(name)\n        self.type = type\nclass Association:\n    def __init__(self, name: str, src: Class):\n        self.name = name\n        self.src = src",
+ "java": {}
+}

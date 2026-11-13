@@ -1,0 +1,30 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class 'Net' is missing an attribute 'place'",
+   "fix": "Add 'place: String' to class 'Net'"
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between 'Net' and 'Place' should be 'has'",
+   "fix": "Change the relationship to 'Net' has 'Place' [1..1..*]"
+  },
+  {
+   "agent": "relationship",
+   "issue": "The relationship between 'Transition' and 'Net' should be 'is part of'",
+   "fix": "Change the relationship to 'Transition' is part of 'Net' [1..1]"
+  },
+  {
+   "agent": "class",
+   "issue": "Class 'Place' is missing a method 'addTransition'",
+   "fix": "Add 'addTransition: void' to class 'Place'"
+  }
+ ]
+}

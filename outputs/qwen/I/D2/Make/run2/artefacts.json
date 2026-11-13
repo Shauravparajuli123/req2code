@@ -1,0 +1,220 @@
+{
+ "actors": [
+  "User"
+ ],
+ "use_cases": [
+  {
+   "name": "ExecuteFile",
+   "actor": "User",
+   "src": [
+    "R1"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "File",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "Makefile",
+   "kind": "class",
+   "attributes": [
+    "fileDependencies",
+    "comment"
+   ],
+   "methods": [
+    {
+     "name": "addFileDependency",
+     "use_case": "R9"
+    },
+    {
+     "name": "addComment",
+     "use_case": "R10"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R9",
+    "R10"
+   ]
+  },
+  {
+   "name": "Rule",
+   "kind": "class",
+   "attributes": [
+    "dependencies"
+   ],
+   "methods": [
+    {
+     "name": "addDependency",
+     "use_case": "R11"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R3",
+    "R11"
+   ]
+  },
+  {
+   "name": "Element",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "Dependency",
+   "kind": "class",
+   "attributes": [
+    "name"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R7",
+    "R8"
+   ]
+  },
+  {
+   "name": "RuleDep",
+   "kind": "class",
+   "attributes": [
+    "rule",
+    "dependency"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "name": "Comment",
+   "kind": "class",
+   "attributes": [
+    "text"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R6"
+   ]
+  },
+  {
+   "name": "Macro",
+   "kind": "class",
+   "attributes": [
+    "value"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "ShellLine",
+   "kind": "class",
+   "attributes": [
+    "rule"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "File",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R9"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "Element",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "Rule",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Rule",
+   "target": "Dependency",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R11"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "RuleDep",
+   "target": "Rule",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "RuleDep",
+   "target": "Dependency",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "Makefile",
+   "target": "Comment",
+   "multiplicity_target": "0..1",
+   "src": [
+    "R10"
+   ]
+  },
+  {
+   "type": "has",
+   "source": "ShellLine",
+   "target": "Rule",
+   "multiplicity_target": "1",
+   "src": [
+    "R12"
+   ]
+  }
+ ],
+ "python": "from typing import List, Optional\n\nclass Macro:\n    def __init__(self, value: str):\n        self.value = value\n    def __str__(self):\n        raise NotImplementedError\n\nclass Comment:\n    def __init__(self, text: str):\n        self.text = text\n    def __str__(self):\n        raise NotImplementedError\n\nclass Element:\n    def __init__(self, name: str):\n        self.name = name\n    def __str__(self):\n        raise NotImplementedError\n\nclass Dependency:\n    def __init__(self, name: str):\n        self.name = name\n    def __str__(self):\n        raise NotImplementedError\n\nclass File:\n    def __init__(self, name: str):\n        self.name = name\n    def __str__(self):\n        raise NotImplementedError\n\nclass RuleDep:\n    def __init__(self, rule: 'Rule', dependency: Dependency):\n        self.rule = rule\n        self.dependency = dependency\n    def __str__(self):\n        raise NotImplementedError\n\nclass Rule:\n    def __init__(self, dependencies: List[RuleDep]):\n        self.dependencies = dependencies\n    def __str__(self):\n        raise NotImplementedError\n\nclass Makefile:\n    def __init__(self, file_dependencies: List[File], comment: Optional[Comment] = None):\n        self.file_dependencies = file_dependencies\n        self.comment = comment\n    def __str__(self):\n        raise NotImplementedError\n\nclass ShellLine:\n    def __init__(self, rule: Rule):\n        self.rule = rule\n    def __str__(self):\n        raise NotImplementedError\n\nclass MakeModel:\n    def __init__(self, shell_lines: List[ShellLine]):\n        self.shell_lines = shell_lines\n    def __str__(self):\n        raise NotImplementedError",
+ "java": {}
+}

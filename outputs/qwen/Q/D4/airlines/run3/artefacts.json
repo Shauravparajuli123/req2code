@@ -1,0 +1,107 @@
+{
+ "actors": [
+  "Airline",
+  "Airport"
+ ],
+ "use_cases": [
+  {
+   "name": "OperateInAirport",
+   "actor": "Airline",
+   "src": [
+    "R1"
+   ]
+  },
+  {
+   "name": "StartOperation",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "StopOperation",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  },
+  {
+   "name": "UpdateOperatingCost",
+   "actor": "Airline",
+   "src": [
+    "R4"
+   ]
+  }
+ ],
+ "classes": [
+  {
+   "name": "Airline",
+   "kind": "class",
+   "attributes": [
+    "name",
+    "operations"
+   ],
+   "methods": [
+    {
+     "name": "startOperation",
+     "use_case": "StartOperation"
+    },
+    {
+     "name": "stopOperation",
+     "use_case": "StopOperation"
+    },
+    {
+     "name": "updateOperatingCost",
+     "use_case": "UpdateOperatingCost"
+    }
+   ],
+   "literals": [],
+   "src": [
+    "R1",
+    "R4",
+    "R5"
+   ]
+  },
+  {
+   "name": "Airport",
+   "kind": "class",
+   "attributes": [
+    "code",
+    "city"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R2"
+   ]
+  },
+  {
+   "name": "OperatingCost",
+   "kind": "class",
+   "attributes": [
+    "cost",
+    "airport",
+    "airline"
+   ],
+   "methods": [],
+   "literals": [],
+   "src": [
+    "R3",
+    "R5"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "composition",
+   "source": "Airline",
+   "target": "OperatingCost",
+   "multiplicity_target": "0..*",
+   "src": [
+    "R5"
+   ]
+  }
+ ],
+ "python": "from typing import List, Double\n\nclass Airline:\n    def __init__(self, name: String):\n        self.name = name\n        self.operations: List[OperatingCost] = []\n\n    def startOperation(self, airport: Airport, cost: Double):\n        raise NotImplementedError\n\n    def stopOperation(self, airport: Airport):\n        raise NotImplementedError\n\n    def updateOperatingCost(self, airport: Airport, new_cost: Double):\n        raise NotImplementedError\n\nclass Airport:\n    def __init__(self, code: String, city: String):\n        self.code = code\n        self.city = city\n\nclass OperatingCost:\n    def __init__(self, cost: Double, airport: Airport, airline: Airline):\n        self.cost = cost\n        self.airport = airport\n        self.airline = airline",
+ "java": {}
+}

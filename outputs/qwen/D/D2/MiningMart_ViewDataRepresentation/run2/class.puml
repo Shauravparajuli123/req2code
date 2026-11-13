@@ -1,0 +1,24 @@
+@startuml
+skinparam shadowing false
+hide empty members
+class Class {
+  name : String
+  +addAttribute()
+}
+class Attribute {
+  type : String
+  +associateWithClass()
+}
+class DataType {
+}
+class ModelElement {
+}
+class Classifier {
+}
+class StructuralFeature {
+}
+Class "1" -- "1..*" Attribute : has
+DataType "1" -- "1" Attribute : has
+Attribute "1" -- "1" Class : is part of
+Attribute --|> ModelElement
+@enduml

@@ -1,0 +1,40 @@
+{
+ "schema_valid": true,
+ "issues": [],
+ "fixes": [],
+ "open_ambiguity_tags": [],
+ "assumptions": [
+  {
+   "tag": "A3",
+   "assumption": "The name attribute in MetaData is of type String."
+  }
+ ],
+ "verifier_rounds": 1,
+ "verifier_problems_last": [
+  {
+   "agent": "class",
+   "issue": "Class Game is missing an attribute that should be named 'uiML'",
+   "fix": "Add 'uiML:Boolean' to the attributes of class Game."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Game is missing an attribute that should be named 'header'",
+   "fix": "Add 'header:Header' to the attributes of class Game."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Game is missing a relationship to class MetaData",
+   "fix": "Add a relationship from Game to MetaData with multiplicity 0..1."
+  },
+  {
+   "agent": "class",
+   "issue": "Class MetaData is missing an attribute that should be named 'name'",
+   "fix": "Add 'name:String' to the attributes of class MetaData."
+  },
+  {
+   "agent": "class",
+   "issue": "Class Header is missing an attribute that should be named 'metas'",
+   "fix": "Add 'metas:MetaData*' to the attributes of class Header."
+  }
+ ]
+}
